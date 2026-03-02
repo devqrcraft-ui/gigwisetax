@@ -4,13 +4,7 @@ import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() {
-  const params = []
-  for (const p of PLATFORMS) {
-    for (const s of STATES) {
-      params.push({ platform: p.slug, state: s.slug })
-    }
-  }
-  return params
+  return STATES.map(s => ({ state: s.slug }))
 }
 
 export async function generateMetadata({ params }: { params: { platform: string; state: string } }): Promise<Metadata> {
