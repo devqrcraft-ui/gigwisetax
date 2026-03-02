@@ -4,7 +4,6 @@ import GigCalculator from './GigCalculator'
 import type { Metadata } from 'next'
 
 export async function generateStaticParams() { return [{ platform: 'etsy' }] }
-}
 
 export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'etsy')
