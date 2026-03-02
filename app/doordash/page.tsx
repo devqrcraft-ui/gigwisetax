@@ -26,9 +26,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
   if (!platform) return notFound()
 
   const deductions = DEDUCTIONS['doordash' as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
-  const isPlatformDriver = ['doordash','uber','lyft','instacart','amazon-flex'].includes('doordash')
-  const isRental = 'doordash' === 'airbnb'
-  const isCreator = 'doordash' === 'onlyfans' || 'doordash' === 'etsy'
+  const isPlatformDriver = true
+  const isRental = false
+  const isCreator = false
 
   const schemaJson = {
     '@context': 'https://schema.org',
