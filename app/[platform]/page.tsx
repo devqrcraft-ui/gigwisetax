@@ -38,7 +38,7 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
         {p.name} Tax Calculator 2026
       </h1>
       <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.55)', marginBottom: 48, maxWidth: 600 }}>
-        Calculate your exact tax bill as a {p.description}. Includes self-employment tax, quarterly estimates, mileage deductions, and state taxes. Select your state:
+        Calculate your exact tax bill as a {p.name} worker. Includes self-employment tax, quarterly estimates, mileage deductions, and state taxes. Select your state:
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 10 }}>
@@ -53,7 +53,7 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
       <div style={{ marginTop: 60, background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 16, padding: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 700, marginBottom: 16 }}>How {p.name} taxes work</h2>
         <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, marginBottom: 12 }}>
-          As a {p.description}, you receive 1099 income. This means you&apos;re self-employed and must pay self-employment (SE) tax of <strong style={{ color: 'white' }}>15.3%</strong> on 92.35% of your net profit — covering both Social Security (12.4%) and Medicare (2.9%) that employers normally split with employees.
+          As a {p.name} worker, you receive 1099 income. This means you&apos;re self-employed and must pay self-employment (SE) tax of <strong style={{ color: 'white' }}>15.3%</strong> on 92.35% of your net profit — covering both Social Security (12.4%) and Medicare (2.9%) that employers normally split with employees.
         </p>
         <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
           On top of SE tax, you pay federal income tax and state income tax. The good news: you can deduct half your SE tax, business expenses, and mileage (70¢/mile in 2026) before calculating income tax.
