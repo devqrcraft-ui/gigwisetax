@@ -90,7 +90,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
 
-      <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
+      <div style={{ background: '#0d1b3e', minHeight: '100vh' }}>
 
         {/* HERO */}
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
