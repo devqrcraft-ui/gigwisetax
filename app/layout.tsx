@@ -43,7 +43,7 @@ const NAV = [
     label: 'Resources',
     items: [
       { label: '💵 Paycheck Calculator',        href: '/paycheck'     },
-      { label: '📋 W-2 vs 1099 Guide',         href: '/blog/w2-vs-1099' },
+      { label: '📋 W-2 vs 1099 Guide',         href: '/blog/w2-vs-1099-guide-2026' },
       { label: '📚 SE Tax Guide',              href: '/blog/quarterly-taxes-gig-workers' },
       { label: '✍️ Blog',                       href: '/blog'         },
     ],
@@ -263,7 +263,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>🔧 Tools</div>
               {[
                 { label: '💵 Paycheck Calculator', href: '/paycheck' },
-                { label: '📋 W-2 vs 1099', href: '/blog/w2-vs-1099' },
+                { label: '📋 W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
                 { label: '📚 SE Tax Guide', href: '/blog/quarterly-taxes-gig-workers' },
                 { label: '✍️ Blog', href: '/blog' },
                 { label: '❓ FAQ', href: '/faq' },
