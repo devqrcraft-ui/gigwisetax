@@ -44,8 +44,8 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 10 }}>
         {Object.entries(STATES).map(([slug, st]) => (
           <Link key={slug} href={`/${platform}/${slug}`} style={{ textDecoration: 'none', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: '14px 16px', transition: 'all 0.15s', display: 'block' }}>
-            <div style={{ fontWeight: 600, fontSize: 14, color: 'white', marginBottom: 4 }}>{st.noTax ? '⭐ ' : ''}{st.name}</div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{st.noTax ? 'No state tax!' : `${(st.rate * 100).toFixed(1)}% state tax`}</div>
+            <div style={{ fontWeight: 600, fontSize: 14, color: 'white', marginBottom: 4 }}>{st.rate === 0 ? '⭐ ' : ''}{st.name}</div>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{st.rate === 0 ? 'No state tax!' : `${(st.rate * 100).toFixed(1)}% state tax`}</div>
           </Link>
         ))}
       </div>
