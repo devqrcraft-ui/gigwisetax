@@ -92,14 +92,7 @@ export default async function PlatformStatePage({ params }: { params: Promise<{ 
       </div>
 
       {/* Calculator */}
-      <GigCalculator
-        platformName={p.name}
-        platformEmoji={p.emoji}
-        stateName={st.name}
-        stateRate={st.rate}
-        noTax={!!st.noTax}
-        showMileage={showMileage}
-      />
+      <GigCalculator platform={p} defaultState={state} />
 
       {/* FAQ */}
       <section style={{ marginTop: 60 }}>
