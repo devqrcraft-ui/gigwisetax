@@ -3,7 +3,7 @@ import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from
 import GigCalculator from './GigCalculator'
 import type { Metadata } from 'next'
 
-export async function generateStaticParams() { return [{ platform: 'lyft' }] }))
+export async function generateStaticParams() { return [{ platform: 'lyft' }] }
 }
 
 export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
