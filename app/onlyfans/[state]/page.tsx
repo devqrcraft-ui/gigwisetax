@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { platform: string; state: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { state: string } }): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'onlyfans')
   const s = STATES.find(x => x.slug === params.state)
   if (!p || !s) return {}
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { platform: string;
   }
 }
 
-export default function StatePage({ params }: { params: { platform: string; state: string } }) {
+export default function StatePage({ params }: { params: { state: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'onlyfans')
   const state    = STATES.find(s => s.slug === params.state)
   if (!platform || !state) return notFound()
