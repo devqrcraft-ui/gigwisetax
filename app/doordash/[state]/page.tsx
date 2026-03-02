@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
+import { PLATFORMS, STATES, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
 
@@ -7,9 +7,10 @@ export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { state: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
+  const { state: stateSlug } = await params
   const p = PLATFORMS.find(x => x.slug === 'doordash')
-  const s = STATES.find(x => x.slug === params.state)
+  const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
   const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
@@ -20,9 +21,10 @@ export async function generateMetadata({ params }: { params: { state: string } }
   }
 }
 
-export default function StatePage({ params }: { params: { state: string } }) {
+export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
+  const { state: stateSlug } = await params
   const platform = PLATFORMS.find(p => p.slug === 'doordash')
-  const state    = STATES.find(s => s.slug === params.state)
+  const state    = STATES.find(s => s.slug === stateSlug)
   if (!platform || !state) return notFound()
 
   const noStateTax = state.rate === 0
@@ -39,7 +41,7 @@ export default function StatePage({ params }: { params: { state: string } }) {
     'nevada':         `Nevada has NO state income tax — one of the best states for ${platform.name} gig workers. You only pay federal taxes and SE tax. No state quarterly payments required.`,
   }
 
-  const stateNote = stateNotes[params.state] || `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.` : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
+  const stateNote = stateNotes[stateSlug] || `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.` : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
 
   const card   = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)', overflow: 'hidden' as const }
   const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
@@ -99,112 +101,41 @@ export default function StatePage({ params }: { params: { state: string } }) {
           </div>
         </div>
 
-        {/* SPONSORED */}
-        <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
-            <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const }}>Sponsored</span>
-            <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
-              <strong>TurboTax Self-Employed</strong> — File your {state.name} 1099 taxes. Handles both federal and {state.abbr} state returns automatically.
-            </span>
-            <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#B22234', color: '#fff', padding: '7px 18px', borderRadius: 4, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap' }}>Start Free →</div>
-            </a>
-          </div>
-        </div>
-
-        {/* MAIN GRID */}
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
+        {/* MAIN CONTENT */}
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px', display: 'grid', gridTemplateColumns: '1fr 320px', gap: 24, alignItems: 'start' }} className="main-grid">
           <div>
             {/* CALCULATOR */}
-            <GigCalculator
-              platform={{ ...platform, name: `${platform.name} (${state.abbr})` }}
-              states={STATES}
-              deadlines={DEADLINES_2026}
-            />
-
-            {/* STATE GUIDE */}
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📚 {platform.name} Taxes in {state.name} — 2026 Guide</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>⚡ {platform.name} Tax Calculator — {state.name}</span>
               </div>
-              <div style={{ padding: 24 }}>
+              <div style={{ padding: 20 }}>
+                <GigCalculator platformSlug="doordash" stateSlug={stateSlug} stateName={state.name} stateRate={state.rate} platformName={platform.name} />
+              </div>
+            </div>
 
-                <h2 style={{ fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
-                  How {platform.name} Taxes Work in {state.name}
-                </h2>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify', marginBottom: 16 }}>
-                  {stateNote}
-                </p>
+            {/* STATE NOTE */}
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ {state.name} Tax Info for {platform.name} Workers</span>
+              </div>
+              <div style={{ padding: 20, fontSize: 14, color: '#374151', lineHeight: 1.8 }}>
+                {stateNote}
+              </div>
+            </div>
 
-                {/* STATE TAX BREAKDOWN */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }} className="three-grid">
-                  <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 14, borderLeft: '4px solid #B22234', textAlign: 'center' as const }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, marginBottom: 6 }}>SE Tax</div>
-                    <div style={{ fontSize: 24, fontWeight: 900, color: '#B22234' }}>15.3%</div>
-                    <div style={{ fontSize: 11, color: '#9ca3af' }}>Federal (all states)</div>
-                  </div>
-                  <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 14, borderLeft: '4px solid #1a1a2e', textAlign: 'center' as const }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, marginBottom: 6 }}>Federal Tax</div>
-                    <div style={{ fontSize: 24, fontWeight: 900, color: '#1a1a2e' }}>10–37%</div>
-                    <div style={{ fontSize: 11, color: '#9ca3af' }}>Based on income</div>
-                  </div>
-                  <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 14, borderLeft: noStateTax ? '4px solid #059669' : '4px solid #1a1a2e', textAlign: 'center' as const }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, marginBottom: 6 }}>{state.abbr} State Tax</div>
-                    <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax ? '#059669' : '#1a1a2e' }}>{noStateTax ? 'None' : stateRateStr}</div>
-                    <div style={{ fontSize: 11, color: '#9ca3af' }}>{noStateTax ? 'No state income tax' : `${state.name} rate`}</div>
-                  </div>
-                </div>
-
-                {/* QUARTERLY DEADLINES */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
-                  2026 Quarterly Tax Deadlines for {state.name}
-                </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
-                  <thead>
-                    <tr style={{ background: '#1a1a2e' }}>
-                      {['Quarter','Due Date','Federal (1040-ES)',`${state.abbr} State`].map(h => (
-                        <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {DEADLINES_2026.map((d, i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid #f0f1f3', background: i === 0 ? '#fff9f9' : '#fff' }}>
-                        <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
-                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
-                          {d.q} 2026
-                        </td>
-                        <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e' }}>{d.due}</td>
-                        <td style={{ padding: '12px 14px', color: '#059669', fontWeight: 600, fontSize: 13 }}>✓ Required</td>
-                        <td style={{ padding: '12px 14px', fontSize: 13 }}>
-                          {noStateTax
-                            ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
-                            : <span style={{ color: '#374151' }}>Required</span>
-                          }
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-
-                {/* TOP DEDUCTIONS */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
-                  Top Tax Deductions for {platform.name} Workers in {state.name}
-                </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
-                  {deductions.map((d: string) => (
-                    <div key={d} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: '#374151', fontWeight: 500 }}>{d}</div>
-                  ))}
-                </div>
-
-                {/* FAQ */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 16 }}>
-                  FAQ — {platform.name} Taxes in {state.name} 2026
-                </h3>
+            {/* FAQ */}
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>❓ Frequently Asked Questions</span>
+              </div>
+              <div style={{ padding: 20 }}>
                 {[
                   {
-                    q: `How much is {platform.name} tax in ${state.name}?`,
+                    q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
                       : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $50,000 net income, expect to owe approximately $17,000–$22,000 total in taxes.`,
@@ -225,9 +156,8 @@ export default function StatePage({ params }: { params: { state: string } }) {
                     <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                   </div>
                 ))}
-
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-                  ⚠️ <strong>Disclaimer:</strong> State tax rates are for estimation purposes. Verify with your state's department of revenue or a licensed CPA. Not affiliated with the IRS, {platform.name}, or any government agency.
+                  ⚠️ <strong>Disclaimer:</strong> State tax rates are for estimation purposes. Verify with your state&apos;s department of revenue or a licensed CPA. Not affiliated with the IRS, {platform.name}, or any government agency.
                 </div>
               </div>
             </div>
@@ -239,8 +169,8 @@ export default function StatePage({ params }: { params: { state: string } }) {
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ {platform.name} Tax in Other States</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
-                {STATES.filter(s => s.slug !== params.state).slice(0, 12).map(s => (
-                  <a key={s.slug} href={`/${'doordash'}/${s.slug}`} style={{ textDecoration: 'none' }}>
+                {STATES.filter(s => s.slug !== stateSlug).slice(0, 12).map(s => (
+                  <a key={s.slug} href={`/doordash/${s.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: '#fff' }}>
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{s.abbr}</div>
                       <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
