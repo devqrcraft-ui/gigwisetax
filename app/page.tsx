@@ -28,9 +28,7 @@ export default function HomePage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16, maxWidth: 900, margin: '0 auto' }}>
           {PLATFORMS.map(p => (
             <Link key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, padding: '24px 20px', transition: 'all 0.2s', cursor: 'pointer', textAlign: 'left' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = 'rgba(99,102,241,0.1)'; (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(99,102,241,0.3)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = 'rgba(255,255,255,0.04)'; (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.08)'; }}>
+              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 16, padding: '24px 20px', cursor: 'pointer', textAlign: 'left' }}>
                 <div style={{ fontSize: 32, marginBottom: 10 }}>{p.emoji}</div>
                 <div style={{ fontWeight: 700, fontSize: 16, color: 'white', marginBottom: 4 }}>{p.name}</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>Tax Calculator →</div>
