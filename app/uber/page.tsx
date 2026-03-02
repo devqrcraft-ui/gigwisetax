@@ -3,12 +3,11 @@ import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from
 import GigCalculator from './GigCalculator'
 import type { Metadata } from 'next'
 
-export async function generateStaticParams() {
-  return PLATFORMS.map(p => ({ platform: p.slug }))
+export async function generateStaticParams() { return [{ platform: 'uber' }] }))
 }
 
 export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
-  const p = PLATFORMS.find(x => x.slug === params.platform)
+  const p = PLATFORMS.find(x => x.slug === 'uber')
   if (!p) return {}
   return {
     title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
@@ -24,13 +23,13 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 export default function PlatformPage({ params }: { params: { platform: string } }) {
-  const platform = PLATFORMS.find(p => p.slug === params.platform)
+  const platform = PLATFORMS.find(p => p.slug === 'uber')
   if (!platform) return notFound()
 
-  const deductions = DEDUCTIONS[params.platform as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
-  const isPlatformDriver = ['doordash','uber','lyft','instacart','amazon-flex'].includes(params.platform)
-  const isRental = params.platform === 'airbnb'
-  const isCreator = params.platform === 'onlyfans' || params.platform === 'etsy'
+  const deductions = DEDUCTIONS['uber' as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
+  const isPlatformDriver = ['doordash','uber','lyft','instacart','amazon-flex'].includes('uber')
+  const isRental = 'uber' === 'airbnb'
+  const isCreator = 'uber' === 'onlyfans' || 'uber' === 'etsy'
 
   const schemaJson = {
     '@context': 'https://schema.org',
@@ -302,7 +301,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 Other Platform Calculators</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
-                {PLATFORMS.filter(p => p.slug !== params.platform).map(p => (
+                {PLATFORMS.filter(p => p.slug !== 'uber').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#fff', position: 'relative' as const }}>
                       <div style={{ fontSize: 24, marginBottom: 5 }}>{p.emoji}</div>
@@ -350,7 +349,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 { slug: 'nevada', name: 'Nevada', rate: 'No Tax' },
                 { slug: 'georgia', name: 'Georgia', rate: '5.5%' },
               ].map(s => (
-                <a key={s.slug} href={`/${params.platform}/${s.slug}`} style={{ textDecoration: 'none' }}>
+                <a key={s.slug} href={`/${'uber'}/${s.slug}`} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.emoji} {platform.name} in {s.name}</span>
                     <span style={{ fontSize: 11, color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700 }}>{s.rate}</span>

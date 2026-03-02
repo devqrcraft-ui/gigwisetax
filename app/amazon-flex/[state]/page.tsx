@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: { params: { platform: string; state: string } }): Promise<Metadata> {
-  const p = PLATFORMS.find(x => x.slug === params.platform)
+  const p = PLATFORMS.find(x => x.slug === 'amazon-flex')
   const s = STATES.find(x => x.slug === params.state)
   if (!p || !s) return {}
   const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: { params: { platform: string;
 }
 
 export default function StatePage({ params }: { params: { platform: string; state: string } }) {
-  const platform = PLATFORMS.find(p => p.slug === params.platform)
+  const platform = PLATFORMS.find(p => p.slug === 'amazon-flex')
   const state    = STATES.find(s => s.slug === params.state)
   if (!platform || !state) return notFound()
 
   const noStateTax = state.rate === 0
   const stateRateStr = noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
-  const deductions = DEDUCTIONS[params.platform as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
+  const deductions = DEDUCTIONS['amazon-flex' as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const stateNotes: Record<string, string> = {
     'california':     `California has one of the highest state income tax rates in the USA at up to 13.3%. For ${platform.name} workers in California, the base rate used for planning is 9.3% — but high earners may pay more. California also requires separate estimated tax payments to the Franchise Tax Board (FTB) using Form 540-ES.`,
@@ -240,7 +240,7 @@ export default function StatePage({ params }: { params: { platform: string; stat
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
                 {STATES.filter(s => s.slug !== params.state).slice(0, 12).map(s => (
-                  <a key={s.slug} href={`/${params.platform}/${s.slug}`} style={{ textDecoration: 'none' }}>
+                  <a key={s.slug} href={`/${'amazon-flex'}/${s.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: '#fff' }}>
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{s.abbr}</div>
                       <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
@@ -272,7 +272,7 @@ export default function StatePage({ params }: { params: { platform: string; stat
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Other Platforms in {state.abbr}</span>
               </div>
-              {PLATFORMS.filter(p => p.slug !== params.platform).map(p => (
+              {PLATFORMS.filter(p => p.slug !== 'amazon-flex').map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{p.emoji} {p.name} in {state.abbr}</span>
