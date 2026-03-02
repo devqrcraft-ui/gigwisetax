@@ -1,5 +1,3 @@
 import type { NextConfig } from "next";
-const nextConfig: NextConfig = {
-  trailingSlash: true,
-};
+const nextConfig: NextConfig = {};
 export default nextConfig;
