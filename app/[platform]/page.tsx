@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
   if (!p) return {};
   return {
     title: `${p.name} Tax Calculator 2026 — By State`,
-    description: `Free ${p.name} tax calculator. Calculate SE tax, quarterly payments, and take-home pay for ${p.description}s. Pick your state for exact results.`,
+    description: `Free ${p.name} tax calculator. Calculate SE tax, quarterly payments, and take-home pay for ${p.name} workers. Pick your state for exact results.`,
     alternates: { canonical: `https://www.gigwisetax.com/${platform}` },
   };
 }

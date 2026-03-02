@@ -1,160 +1,129 @@
-// @ts-nocheck
-import Link from "next/link";
-import type { Metadata } from "next";
-
+// ================================================================
+// FILE: app/blog/etsy-seller-taxes-2026/page.tsx
+// ================================================================
+import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: "Etsy Seller Taxes 2026 — Complete Guide for Shop Owners | GigWiseTax",
-  description: "How Etsy reports your income to the IRS, what you can deduct as an Etsy seller, self-employment tax, quarterly payments, and state taxes. Updated for 2026.",
-  keywords: "etsy seller taxes 2026, etsy tax calculator, etsy 1099, how much taxes etsy seller, etsy self employment tax",
-};
-
-const S = {
-  page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "#1a1a2e" },
-  govBar: { background: "#0d1b3e", borderBottom: "4px solid #B22234", padding: "7px 0" },
-  header: { background: "#1a1a2e", position: "sticky" as const, top: 0, zIndex: 100, boxShadow: "0 2px 16px rgba(0,0,0,0.4)" },
-  card: { background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
-  h2: { fontSize: 22, fontWeight: 800, color: "#1a1a2e", margin: "0 0 14px", lineHeight: 1.3 },
-  h3: { fontSize: 17, fontWeight: 700, color: "#1a1a2e", margin: "20px 0 10px" },
-  p: { fontSize: 15, color: "#374151", lineHeight: 1.8, marginBottom: 14 },
-  li: { fontSize: 15, color: "#374151", lineHeight: 1.8, marginBottom: 6 },
-};
-
-export default function EtsySellerTaxes2026() {
+  title: 'Etsy Seller Taxes 2026 — Complete 1099 Filing Guide | GigWiseTax',
+  description: 'How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 51 states.',
+  keywords: 'Etsy seller taxes 2026, Etsy 1099 how to file, Etsy self employment tax, Etsy COGS deduction, Etsy quarterly taxes 2026',
+  alternates: { canonical: 'https://gigwisetax.com/blog/etsy-seller-taxes-2026' },
+}
+export default function EtsyTaxGuide() {
+  const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 28 }
   return (
-    <div style={S.page}>
-      <div style={S.govBar}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 20 }}>🇺🇸</span>
-          <span style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
-        </div>
-      </div>
-
-      <header style={S.header}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
-          <Link href="/" style={{ textDecoration: "none" }}>
-            <div style={{ fontWeight: 900, fontSize: 19, color: "#fff" }}>
-              GIGWISE<span style={{ color: "#e8b84b" }}>TAX</span>
-              <span style={{ color: "rgba(255,255,255,.2)", fontWeight: 300, fontSize: 14 }}>.COM</span>
-            </div>
-          </Link>
-          <div style={{ display: "flex", gap: 10 }}>
-            <Link href="/blog" style={{ color: "rgba(255,255,255,.5)", fontSize: 13, textDecoration: "none", padding: "8px 14px" }}>← Blog</Link>
-            <Link href="/" style={{ background: "#B22234", color: "#fff", padding: "8px 18px", borderRadius: 4, fontSize: 13, fontWeight: 700, textDecoration: "none" }}>Calculator →</Link>
-          </div>
-        </div>
-      </header>
-
-      <div style={{ background: "linear-gradient(135deg,#1e2d5a,#0d1b3e)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
-        <div style={{ maxWidth: 860, margin: "0 auto", padding: "36px 20px" }}>
-          <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
-            <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>🛍️ Etsy</span>
-            <span style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}>6 min read</span>
-            <span style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}>Updated Jan 2026</span>
-          </div>
-          <h1 style={{ fontSize: 30, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
-            Etsy Seller Taxes 2026 — Full Guide for Shop Owners
+    <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
+          <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> ›{' '}
+            <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> ›{' '}
+            <span style={{ color: 'rgba(255,255,255,.7)' }}>Etsy Seller Taxes 2026</span>
+          </nav>
+          <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
+            🛍️ Etsy Seller Taxes 2026 — Complete 1099 Filing Guide
           </h1>
-          <p style={{ color: "rgba(255,255,255,.55)", fontSize: 15, lineHeight: 1.7 }}>
-            How Etsy reports your income, what you can deduct, self-employment tax, quarterly payments, and sales tax explained simply.
+          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
+            How Etsy sellers file taxes in 2026. Covers Schedule C, SE tax, cost of goods sold (COGS) deduction, home office, shipping costs, Etsy fees, and quarterly estimated payments.
           </p>
         </div>
       </div>
-
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "32px 20px 64px", display: "grid", gridTemplateColumns: "1fr 300px", gap: 28 }}>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
         <div>
-          <div style={{ background: "#fff9f9", border: "2px solid #B22234", borderRadius: 6, padding: "20px 24px", marginBottom: 24 }}>
-            <div style={{ fontSize: 12, fontWeight: 800, color: "#B22234", textTransform: "uppercase", letterSpacing: "1px", marginBottom: 10 }}>⚡ Quick Answer</div>
-            <p style={{ fontSize: 15, color: "#1a1a2e", lineHeight: 1.7, margin: 0 }}>
-              Etsy sellers owe <strong>15.3% self-employment tax</strong> plus federal and state income tax on net profit. Etsy sends a <strong>1099-K</strong> if you process $5,000+ in sales. You report profit (revenue minus expenses) on Schedule C. Set aside <strong>25–35%</strong> of net earnings and pay quarterly to avoid penalties.
+          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
+            <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
+              <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>🛍️ Calculate Your Etsy Taxes Instantly</div>
+              <a href="/etsy" style={{ textDecoration: 'none' }}><div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div></a>
+            </div>
+            <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+              <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: Etsy Taxes 2026</div>
+              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
+                <li><strong>Etsy sends 1099-K if you earn $600+</strong> (threshold lowered starting 2025)</li>
+                <li><strong>COGS (cost of goods sold) is fully deductible</strong> — materials, supplies, inventory</li>
+                <li><strong>Etsy fees are deductible</strong> — listing fees, transaction fees, ads</li>
+                <li><strong>Etsy collects sales tax</strong> for you in most states — you do NOT remit this</li>
+                <li><strong>File Schedule C</strong> for Etsy income and expenses</li>
+                <li><strong>NAICS Code 454110</strong> — Electronic Shopping (for Schedule C)</li>
+              </ul>
+            </div>
+            <h2 style={h2}>How Etsy Taxes Differ from Other Gig Platforms</h2>
+            <p style={prose}>
+              Unlike DoorDash or Uber where income is straightforward, Etsy sellers have a more complex tax situation.
+              You must account for <strong>cost of goods sold (COGS)</strong> — the cost of materials, supplies, and production
+              costs that went into creating what you sold. COGS directly reduces your gross income before calculating SE tax,
+              making it one of the most important deductions for Etsy sellers.
             </p>
-          </div>
-
-          <div style={S.card}>
-            <div style={{ padding: "18px 24px 22px" }}>
-              <h2 style={S.h2}>How Does Etsy Report Your Income?</h2>
-              <p style={S.p}>Etsy is a payment processor, so it issues a <strong>1099-K</strong> for sellers who exceed $5,000 in gross sales processed through Etsy Payments in a calendar year. Below that threshold, Etsy does not send a 1099 — but you are still required to report all income.</p>
-              <p style={S.p}>Important: the 1099-K shows your <strong>gross sales</strong> — before Etsy fees, shipping costs, and returns. You do not pay tax on gross sales. You pay tax on <strong>net profit</strong> (sales minus all business expenses).</p>
-            </div>
-          </div>
-
-          <div style={S.card}>
-            <div style={{ padding: "18px 24px 22px" }}>
-              <h2 style={S.h2}>What Can Etsy Sellers Deduct?</h2>
-              <p style={S.p}>Every dollar you deduct reduces your taxable profit. Here are the most common write-offs for Etsy sellers:</p>
-              <h3 style={S.h3}>Direct Cost of Goods</h3>
-              <ul style={{ paddingLeft: 20, marginBottom: 14 }}>
-                {["Raw materials and supplies", "Packaging, boxes, tape, and labels", "Printing costs for digital products", "Wholesale inventory purchases"].map(i => <li key={i} style={S.li}>{i}</li>)}
-              </ul>
-              <h3 style={S.h3}>Etsy Fees</h3>
-              <ul style={{ paddingLeft: 20, marginBottom: 14 }}>
-                {["Etsy listing fees ($0.20 per item)", "Etsy transaction fees (6.5%)", "Etsy Payments processing fees", "Etsy Ads and offsite ads charges"].map(i => <li key={i} style={S.li}>{i}</li>)}
-              </ul>
-              <h3 style={S.h3}>Business Operating Expenses</h3>
-              <ul style={{ paddingLeft: 20, marginBottom: 14 }}>
-                {["Home office (dedicated workspace)", "Camera and equipment for product photos", "Editing software subscriptions", "Shipping costs not reimbursed by buyers", "Postage and shipping supplies", "Phone and internet (business %)", "Business bank account fees"].map(i => <li key={i} style={S.li}>{i}</li>)}
-              </ul>
-            </div>
-          </div>
-
-          <div style={S.card}>
-            <div style={{ padding: "18px 24px 22px" }}>
-              <h2 style={S.h2}>Etsy Sales Tax — Handled for You</h2>
-              <p style={S.p}>Good news: Etsy automatically collects and remits sales tax on your behalf in most U.S. states under <strong>marketplace facilitator laws</strong>. You do not need to collect or remit sales tax yourself for those states.</p>
-              <p style={S.p}>Sales tax collected by Etsy is not your income — it flows through your account but does not appear on your 1099-K as taxable revenue.</p>
-              <div style={{ background: "#f0fdf4", border: "1px solid #bbf7d0", borderRadius: 4, padding: "12px 16px" }}>
-                <strong style={{ fontSize: 13, color: "#166534" }}>✓ Note:</strong>
-                <span style={{ fontSize: 13, color: "#166534" }}> If you sell outside Etsy (your own website, craft fairs), you are responsible for collecting and remitting sales tax in those transactions yourself.</span>
+            <p style={prose}>
+              Additionally, Etsy handles sales tax collection and remittance in most states — meaning the sales tax
+              collected from buyers is NOT your income and does NOT appear on your 1099-K.
+              Your taxable income is only the portion you receive as the seller.
+            </p>
+            <h2 style={h2}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
+            <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>💡 COGS Formula for Etsy Sellers</div>
+              <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.8, fontFamily: 'monospace' }}>
+                Beginning Inventory<br/>
+                + Purchases/Materials during year<br/>
+                − Ending Inventory<br/>
+                = <strong>Cost of Goods Sold (deductible)</strong>
               </div>
             </div>
-          </div>
-
-          <div style={S.card}>
-            <div style={{ padding: "18px 24px 22px" }}>
-              <h2 style={S.h2}>Hobby vs. Business — Important Distinction</h2>
-              <p style={S.p}>The IRS distinguishes between a hobby and a business. If you run your Etsy shop like a business (profit motive, regular activity, keeping records), you can deduct losses against other income. If the IRS classifies you as a hobby, you can only deduct expenses up to your income — no loss deductions.</p>
-              <p style={S.p}>Tip: if you are profitable 3 of the last 5 years, the IRS presumes you are running a business.</p>
-            </div>
-          </div>
-
-          <div style={{ background: "#1a1a2e", borderRadius: 6, padding: "24px 28px", textAlign: "center" }}>
-            <h3 style={{ color: "#fff", fontWeight: 800, fontSize: 20, marginBottom: 10 }}>Calculate Your Etsy Tax Estimate — Free</h3>
-            <p style={{ color: "rgba(255,255,255,.5)", fontSize: 14, marginBottom: 18 }}>Enter your net Etsy income and get your full tax breakdown including quarterly payments.</p>
-            <Link href="/" style={{ background: "#B22234", color: "#fff", padding: "13px 32px", borderRadius: 4, fontSize: 15, fontWeight: 800, textDecoration: "none", display: "inline-block" }}>
-              Open Free Calculator →
-            </Link>
-          </div>
-        </div>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ background: "#fff9f9", border: "2px solid #B22234", borderRadius: 6, padding: 16, position: "sticky" as const, top: 76 }}>
-            <div style={{ fontSize: 13, fontWeight: 800, color: "#B22234", marginBottom: 6 }}>⚠️ Q1 DUE: APRIL 15</div>
-            <Link href="/" style={{ background: "#B22234", color: "#fff", padding: "10px 16px", borderRadius: 4, fontSize: 13, fontWeight: 700, textDecoration: "none", display: "block", textAlign: "center" }}>
-              Calculate Q1 Payment →
-            </Link>
-          </div>
-          <div style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
-            <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}>📖 More Guides</span>
+            <h2 style={h2}>Top Tax Deductions for Etsy Sellers in 2026</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
+              {[
+                { icon: '🎨', name: 'Materials & Supplies (COGS)', detail: 'Yarn, fabric, clay, paint, wood, beads — all raw materials used to create your products.' },
+                { icon: '📦', name: 'Shipping & Packaging', detail: 'Boxes, tissue paper, bubble wrap, tape, Etsy shipping labels. Fully deductible.' },
+                { icon: '🏠', name: 'Home Office/Studio', detail: 'Dedicated workspace. $5/sq ft (up to 300 sq ft) or actual expense method.' },
+                { icon: '📸', name: 'Photography Equipment', detail: 'Camera, backdrop, ring light, props used for product photography. 100% deductible.' },
+                { icon: '💻', name: 'Etsy Fees', detail: 'Listing fees ($0.20), transaction fees (6.5%), payment processing, Etsy Ads. All deductible.' },
+                { icon: '📱', name: 'Phone & Internet (business %)', detail: 'Deduct business-use percentage of your monthly plan.' },
+                { icon: '🖨️', name: 'Printer & Office Supplies', detail: 'Printer, ink, labels, stickers, thank-you cards. 100% deductible for business use.' },
+                { icon: '📦', name: 'Software Subscriptions', detail: 'Canva, Adobe, Etsy Pattern, Quickbooks. 100% deductible if for business.' },
+              ].map(d => (
+                <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
+                  <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
+                  <div style={{ fontWeight: 700, color: '#1a1a2e', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
+                  <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
+                </div>
+              ))}
             </div>
             {[
-              { href: "/blog/doordash-taxes-2026", label: "🚗 DoorDash Tax Guide" },
-              { href: "/blog/uber-tax-guide-2026", label: "🚕 Uber Tax Guide" },
-              { href: "/blog/quarterly-taxes-gig-workers", label: "📅 Quarterly Taxes" },
-              { href: "/blog/onlyfans-tax-guide-2026", label: "⭐ OnlyFans Tax Guide" },
-            ].map(item => (
-              <Link key={item.href} href={item.href} style={{ padding: "10px 16px", borderBottom: "1px solid #f0f1f3", display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: "#374151", fontSize: 13 }}>
-                {item.label}<span style={{ color: "#B22234" }}>›</span>
-              </Link>
+              { q: 'Does Etsy report my sales to the IRS?', a: 'Yes. Etsy sends a 1099-K to both you and the IRS if your gross sales exceed $600 (for 2026 filings). This includes all transaction amounts — before Etsy fees. Your taxable profit is the net after deducting COGS and all business expenses.' },
+              { q: 'Do I pay self-employment tax on Etsy income?', a: 'Yes. If your Etsy net profit exceeds $400, you pay 15.3% self-employment tax plus federal income tax. If you sell on Etsy as a hobby (not primarily for profit), different rules may apply — consult a CPA if your Etsy activity is borderline hobby vs. business.' },
+              { q: 'What records should Etsy sellers keep?', a: 'Keep receipts for all materials, supplies, shipping costs, equipment, and software. Track inventory (beginning and ending). Save all Etsy statements and monthly billing summaries. The IRS recommends keeping records for at least 3 years after filing.' },
+            ].map((item, i) => (
+              <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
+                <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
+                <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
+              </div>
             ))}
+            <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
+              ⚠️ <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Etsy or the IRS. Consult a licensed CPA for your specific situation.
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
+          <a href="/etsy" style={{ textDecoration: 'none' }}>
+            <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
+              <div style={{ fontSize: 32, marginBottom: 8 }}>🛍️</div>
+              <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Etsy Tax Calculator</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · COGS included</div>
+              <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
+            </div>
+          </a>
+          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
+            <div style={{ padding: 16 }}>
+              <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span></div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>QuickBooks Self-Employed</div>
+              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Tracks Etsy inventory, COGS, and expenses automatically.</div>
+              <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
+              <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
+            </div>
           </div>
         </div>
       </div>
-
-      <footer style={{ background: "#1a1a2e", borderTop: "4px solid #B22234", padding: "24px 20px", textAlign: "center" }}>
-        <div style={{ fontSize: 12, color: "rgba(255,255,255,.3)" }}>
-          © 2026 GigWiseTax.com — Independent estimation tool. Not affiliated with IRS or any government agency.
-        </div>
-      </footer>
+      <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
-  );
+  )
 }

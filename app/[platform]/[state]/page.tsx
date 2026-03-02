@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
   const noTaxNote = st.noTax ? ` ${st.name} has no state income tax — great news for gig workers!` : '';
   return {
     title: `${p.name} Tax Calculator ${st.name} 2026 — SE Tax & Take-Home Pay`,
-    description: `Free ${p.name} tax calculator for ${st.name}. Calculate self-employment tax, quarterly payments, and exact take-home pay for ${st.name} ${p.description}s 2026.${noTaxNote}`,
+    description: `Free ${p.name} tax calculator for ${st.name}. Calculate self-employment tax, quarterly payments, and exact take-home pay for ${st.name} gig workers 2026.${noTaxNote}`,
     alternates: { canonical: `https://www.gigwisetax.com/${platform}/${state}` },
     openGraph: { title: `${p.name} Tax Calculator ${st.name} 2026`, description: `Calculate ${p.name} taxes in ${st.name}. Free, no signup, 100% private.` },
   };
