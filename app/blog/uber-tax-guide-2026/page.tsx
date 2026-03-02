@@ -159,7 +159,7 @@ export default function UberTaxGuide() {
                 </tr></thead>
                 <tbody>
                   {[['Q1 2026','April 15, 2026','45',true],['Q2 2026','June 16, 2026','107',false],['Q3 2026','Sept 15, 2026','198',false],['Q4 2026','Jan 15, 2027','320',false]].map(([q,due,d,now],i) => (
-                    <tr key={q} style={{ borderBottom: '1px solid #f0f1f3', background: now ? '#fff9f9' : '#fff' }}>
+                    <tr key={i} style={{ borderBottom: '1px solid #f0f1f3', background: now ? '#fff9f9' : '#fff' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 800, color: now ? '#B22234' : '#1a1a2e' }}>
                         {now && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                         {q}
