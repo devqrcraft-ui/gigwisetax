@@ -76,12 +76,12 @@ export default function CalculatorsIndex() {
             </div>
             <div style={{ padding: "14px 20px", display: "flex", gap: 10, flexWrap: "wrap" }}>
               {TOP_STATES.map(state => (
-                <Link key={state.slug} href={`/calculators/${platform.slug}/${state.slug}`} style={{ background: "#f8fafc", border: "1px solid #e2e5e9", borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: "#374151", fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
+                <Link key={state.slug} href={`/${platform.slug}/${state.slug}`} style={{ background: "#f8fafc", border: "1px solid #e2e5e9", borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: "#374151", fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
                   {state.name}
                   <span style={{ color: state.rate === "No Tax" ? "#059669" : "#B22234", fontWeight: 700, fontSize: 11 }}>{state.rate}</span>
                 </Link>
               ))}
-              <Link href={`/calculators/${platform.slug}/california`} style={{ background: "#1a1a2e", color: "#e8b84b", borderRadius: 4, padding: "8px 14px", textDecoration: "none", fontSize: 13, fontWeight: 700 }}>
+              <Link href={`/${platform.slug}/california`} style={{ background: "#1a1a2e", color: "#e8b84b", borderRadius: 4, padding: "8px 14px", textDecoration: "none", fontSize: 13, fontWeight: 700 }}>
                 All 50 States →
               </Link>
             </div>
