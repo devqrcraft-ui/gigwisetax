@@ -288,8 +288,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {STATES.filter(s => s.slug !== stateSlug).map(s => (
                   <a key={s.slug} href={`/${PLATFORM_SLUG}/${s.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: '#fff' }}
-                      onMouseEnter={e => (e.currentTarget.style.borderColor = '#B22234')}
-                      onMouseLeave={e => (e.currentTarget.style.borderColor = '#e2e5e9')}
                     >
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{s.abbr}</div>
                       <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
