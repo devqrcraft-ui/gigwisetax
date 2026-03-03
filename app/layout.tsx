@@ -33,6 +33,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1a1a2e" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Google Analytics G-KR8CY8PKT0 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0"></script>
+        <script
+          dangerouslySetInnerHTML={{ __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KR8CY8PKT0');
+          ` }}
+        />
         {/* JSON-LD: Organization schema for Google trust */}
         <script
           type="application/ld+json"
