@@ -1,140 +1,130 @@
-// ============================================================
-// FILE 1: app/blog/page.tsx — Blog Index
-// ============================================================
-// Save as: app/blog/page.tsx
-
-import type { Metadata } from 'next'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Blog 2026 — DoorDash, Uber, OnlyFans, Etsy | GigWiseTax',
-  description: 'Free tax guides for gig workers in 2026. Learn how to file taxes for DoorDash, Uber, Etsy, OnlyFans, Instacart, and Airbnb. Quarterly tax deadlines, deductions, and SE tax explained.',
-  alternates: { canonical: 'https://gigwisetax.com/blog' },
+  title: 'Gig Worker Tax Blog 2026 — GigWiseTax.com',
+  description: 'Free guides on gig worker taxes, quarterly payments, deductions, and IRS deadlines for 2026. DoorDash, Uber, Etsy, OnlyFans, and more.',
 }
 
 const POSTS = [
   {
-    slug: 'doordash-taxes-2026',
-    title: 'DoorDash Taxes 2026: Complete Guide for Dashers',
-    desc: 'Everything DoorDash drivers need to know about self-employment tax, quarterly payments, deductions, and the 2026 mileage rate ($0.725/mile).',
+    slug: 'amazon-flex-taxes-2026',
+    title: 'Amazon Flex Taxes 2026: Complete Guide for Drivers',
+    desc: 'How to calculate, pay, and minimize taxes as an Amazon Flex driver. SE tax, mileage deductions, quarterly payments, and every deduction you qualify for.',
     date: 'January 15, 2026',
+    readTime: '8 min read',
+    tags: ['Amazon Flex', 'Delivery', 'Mileage'],
+    emoji: '📦',
+  },
+  {
+    slug: 'mileage-rate-2026',
+    title: 'IRS Mileage Rate 2026: 72.5¢/Mile — What Gig Workers Need to Know',
+    desc: 'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Here\'s how to use it, when to use actual expenses instead, and how to track miles properly.',
+    date: 'January 3, 2026',
+    readTime: '5 min read',
+    tags: ['Mileage', 'IRS', 'Deductions'],
     emoji: '🚗',
-    readTime: '8 min read',
-    tags: ['DoorDash', 'Mileage', 'SE Tax'],
   },
   {
-    slug: 'uber-tax-guide-2026',
-    title: 'Uber Driver Tax Guide 2026 — How to File Your 1099',
-    desc: 'Complete Uber driver tax guide for 2026. Includes SE tax calculation, top deductions, quarterly payment schedule, and how to file Schedule C.',
-    date: 'January 20, 2026',
-    emoji: '🚕',
+    slug: 'onlyfans-taxes-2026',
+    title: 'OnlyFans Taxes 2026: What Creators Need to Know',
+    desc: 'OnlyFans income is self-employment income. Learn how to calculate SE tax, what you can deduct (equipment, lighting, subscriptions), and how to pay quarterly.',
+    date: 'January 8, 2026',
     readTime: '7 min read',
-    tags: ['Uber', '1099', 'Schedule C'],
-  },
-  {
-    slug: 'onlyfans-tax-guide-2026',
-    title: 'OnlyFans Tax Guide 2026 — How to File as a Creator (USA)',
-    desc: 'The only OnlyFans tax guide you need for 2026. Covers SE tax, top deductions for creators, home office, equipment, and quarterly payment deadlines.',
-    date: 'January 22, 2026',
+    tags: ['OnlyFans', 'Creator', '1099'],
     emoji: '⭐',
-    readTime: '9 min read',
-    tags: ['OnlyFans', 'Creator', '1099-NEC'],
-    badge: 'USA #1',
-  },
-  {
-    slug: 'etsy-seller-taxes-2026',
-    title: 'Etsy Seller Taxes 2026 — Complete 1099 Filing Guide',
-    desc: 'How Etsy sellers pay taxes in 2026. Covers Schedule C, SE tax, COGS deductions, home office, shipping costs, and quarterly estimated payments.',
-    date: 'January 25, 2026',
-    emoji: '🛍️',
-    readTime: '8 min read',
-    tags: ['Etsy', 'COGS', 'Schedule C'],
   },
   {
     slug: 'quarterly-taxes-gig-workers',
-    title: '2026 Quarterly Tax Guide for Gig Workers — All Deadlines',
-    desc: 'Complete guide to quarterly estimated taxes for gig workers in 2026. Covers Q1–Q4 deadlines, how to calculate payments, and how to avoid IRS penalties.',
-    date: 'January 10, 2026',
-    emoji: '📅',
-    readTime: '6 min read',
-    tags: ['Quarterly', 'IRS', 'Deadlines'],
-  },
-  {
-    slug: 'airbnb-host-taxes-2026',
-    title: 'Airbnb Host Tax Guide 2026 — What Hosts Need to Know',
-    desc: 'How Airbnb hosts pay taxes in 2026. 14-day rule, Schedule E vs Schedule C, allowable deductions, and state-specific occupancy taxes explained.',
-    date: 'February 1, 2026',
-    emoji: '🏠',
+    title: 'How to Pay Quarterly Taxes as a Gig Worker in 2026',
+    desc: 'Step-by-step guide to IRS estimated tax payments. Deadlines, how to calculate, how to pay online, and how to avoid underpayment penalties.',
+    date: 'December 28, 2025',
     readTime: '9 min read',
-    tags: ['Airbnb', 'Schedule E', 'Rental'],
-  },
-  {
-    slug: 'instacart-shopper-taxes-2026',
-    title: 'Instacart Shopper Taxes 2026 — Gig Worker Tax Guide',
-    desc: 'How Instacart shoppers and delivery workers file taxes in 2026. Includes SE tax, mileage deduction, and quarterly payment schedule.',
-    date: 'February 5, 2026',
-    emoji: '🛒',
-    readTime: '7 min read',
-    tags: ['Instacart', 'Mileage', '1099'],
+    tags: ['Quarterly Taxes', 'IRS', 'Deadlines'],
+    emoji: '📅',
   },
   {
     slug: 'w2-vs-1099-guide-2026',
-    title: 'W-2 vs 1099 in 2026 — What Gig Workers Need to Know',
-    desc: 'Understand the key differences between W-2 employment and 1099 self-employment in 2026. Covers taxes, deductions, and quarterly payment rules.',
-    date: 'February 10, 2026',
-    emoji: '📋',
+    title: 'W-2 vs 1099: Tax Differences Every Gig Worker Must Know',
+    desc: 'Side-by-side comparison of employee vs. independent contractor taxes. Why gig workers pay more, and how to legally reduce your bill.',
+    date: 'December 15, 2025',
     readTime: '6 min read',
-    tags: ['W-2', '1099', 'Self-Employment'],
+    tags: ['1099', 'W-2', 'Self-Employment'],
+    emoji: '📋',
+  },
+  {
+    slug: 'grubhub-vs-doordash-taxes-2026',
+    title: 'Grubhub vs DoorDash Taxes 2026: Are They Different?',
+    desc: 'Both platforms classify drivers as 1099 contractors. But your deductions, income patterns, and best strategies may differ. Full comparison here.',
+    date: 'January 20, 2026',
+    readTime: '6 min read',
+    tags: ['Grubhub', 'DoorDash', 'Comparison'],
+    emoji: '🍔',
+  },
+  {
+    slug: 'home-office-deduction-gig-workers-2026',
+    title: 'Home Office Deduction for Gig Workers 2026: Full Guide',
+    desc: 'Can Uber drivers, Etsy sellers, and OnlyFans creators deduct a home office? Yes — if you meet IRS requirements. Here\'s exactly how to qualify and calculate.',
+    date: 'January 25, 2026',
+    readTime: '7 min read',
+    tags: ['Home Office', 'Deductions', 'Schedule C'],
+    emoji: '🏠',
+  },
+  {
+    slug: 'walmart-spark-taxes-2026',
+    title: 'Walmart Spark Driver Taxes 2026: The Complete Guide',
+    desc: 'Walmart Spark is booming — but most drivers don\'t know they owe quarterly taxes. Here\'s everything you need to know about Spark taxes, deductions, and deadlines.',
+    date: 'February 1, 2026',
+    readTime: '8 min read',
+    tags: ['Walmart Spark', 'Delivery', '1099'],
+    emoji: '🛒',
   },
 ]
 
-export default function BlogIndex() {
-  const card = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
-
+export default function BlogPage() {
   return (
     <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
-      {/* HERO */}
+
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
-          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
-            <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
-            <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
-              ✍️ Gig Worker Tax Blog — 2026 Guides
-            </h1>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 28px' }}>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
+            <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Blog
           </div>
-          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 700, textAlign: 'justify' }}>
-            Free tax guides for DoorDash, Uber, Etsy, OnlyFans, Instacart, and Airbnb workers.
-            Learn how self-employment taxes work, which deductions to claim, and when to pay your quarterly taxes in 2026.
+          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
+            ✍️ Gig Worker Tax Blog 2026
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 14, marginTop: 10, marginBottom: 0 }}>
+            Free guides on taxes, deductions, and quarterly payments for DoorDash, Uber, Etsy, OnlyFans, Instacart, and more.
           </p>
         </div>
       </div>
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 48px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(340px,1fr))', gap: 20 }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 20 }}>
           {POSTS.map(post => (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-              <div style={{ ...card, height: '100%', transition: 'transform .18s, box-shadow .18s' }}>
-                <div style={{ background: '#1a1a2e', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
-                  <span style={{ fontSize: 24 }}>{post.emoji}</span>
-                  <div style={{ flex: 1 }}>
-                    <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
-                      {post.tags.map(t => (
-                        <span key={t} style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 10, padding: '2px 7px', borderRadius: 2, fontWeight: 600 }}>{t}</span>
-                      ))}
-                      {post.badge && <span style={{ background: '#B22234', color: '#fff', fontSize: 10, padding: '2px 7px', borderRadius: 2, fontWeight: 700 }}>{post.badge}</span>}
-                    </div>
+              <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', boxShadow: '0 1px 6px rgba(0,0,0,.05)', height: '100%', display: 'flex', flexDirection: 'column' as const, cursor: 'pointer', transition: 'box-shadow 0.2s' }}
+                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,.12)')}
+                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,.05)')}
+              >
+                <div style={{ background: '#1a1a2e', padding: '20px', display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <span style={{ fontSize: 32 }}>{post.emoji}</span>
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
+                    {post.tags.map(tag => (
+                      <span key={tag} style={{ background: 'rgba(232,184,75,.15)', color: '#e8b84b', fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 3, border: '1px solid rgba(232,184,75,.3)' }}>{tag}</span>
+                    ))}
                   </div>
                 </div>
-                <div style={{ padding: 20 }}>
-                  <h2 style={{ fontSize: 16, fontWeight: 800, color: '#1a1a2e', marginBottom: 10, lineHeight: 1.35 }}>{post.title}</h2>
-                  <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, marginBottom: 14, textAlign: 'justify' }}>{post.desc}</p>
+                <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' as const }}>
+                  <h2 style={{ fontSize: 15, fontWeight: 800, color: '#1a1a2e', lineHeight: 1.4, margin: '0 0 10px' }}>{post.title}</h2>
+                  <p style={{ fontSize: 13, color: '#6c757d', lineHeight: 1.7, flex: 1, margin: '0 0 16px' }}>{post.desc}</p>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <span style={{ fontSize: 11, color: '#9ca3af' }}>{post.date}</span>
                     <span style={{ fontSize: 11, color: '#9ca3af' }}>{post.readTime}</span>
                   </div>
-                  <div style={{ marginTop: 12, background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>
-                    Read Guide →
-                  </div>
+                </div>
+                <div style={{ padding: '12px 20px', borderTop: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: 13, color: '#B22234', fontWeight: 700 }}>Read Guide →</span>
                 </div>
               </div>
             </Link>
