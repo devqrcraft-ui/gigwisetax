@@ -103,10 +103,7 @@ export default function BlogPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 20 }}>
           {POSTS.map(post => (
             <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', boxShadow: '0 1px 6px rgba(0,0,0,.05)', height: '100%', display: 'flex', flexDirection: 'column' as const, cursor: 'pointer', transition: 'box-shadow 0.2s' }}
-                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,.12)')}
-                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 1px 6px rgba(0,0,0,.05)')}
-              >
+              <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', boxShadow: '0 1px 6px rgba(0,0,0,.05)', height: '100%', display: 'flex', flexDirection: 'column' as const, cursor: 'pointer' }}              >
                 <div style={{ background: '#1a1a2e', padding: '20px', display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ fontSize: 32 }}>{post.emoji}</span>
                   <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
