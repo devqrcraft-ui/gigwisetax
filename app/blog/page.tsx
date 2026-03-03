@@ -92,6 +92,7 @@ const posts = [
 
 export default function BlogPage() {
   return (
+    <div style={{ background: "#0d1117", width: "100%" }}>
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff', background: '#0d1117', minHeight: '100vh' }}>
       <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
       <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>
@@ -116,5 +117,6 @@ export default function BlogPage() {
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Free Calculator</a>
       </div>
     </main>
+    </div>
   )
 }
