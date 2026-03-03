@@ -116,7 +116,7 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+    <main style={{ maxWidth: 900, margin: '0 auto', background: '#0f1117', minHeight: '100vh', color: '#fff', padding: '48px 24px', color: '#fff' }}>
       <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
       <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>
         Free, no-nonsense tax guides for 1099 workers. Updated for 2026 IRS rules. No signup required.
