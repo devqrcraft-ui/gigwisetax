@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 
 export default function W2vs1099Guide() {
   return (
+    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › W-2 vs 1099
@@ -59,5 +60,6 @@ export default function W2vs1099Guide() {
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Calculate Now →</a>
       </div>
     </main>
+    </div>
   )
 }

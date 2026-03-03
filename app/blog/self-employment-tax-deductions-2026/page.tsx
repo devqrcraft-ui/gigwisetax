@@ -28,6 +28,7 @@ export default function DeductionsGuide() {
   ]
 
   return (
+    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' › '}
@@ -68,5 +69,6 @@ export default function DeductionsGuide() {
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Free Calculator</a>
       </div>
     </main>
+    </div>
   )
 }
