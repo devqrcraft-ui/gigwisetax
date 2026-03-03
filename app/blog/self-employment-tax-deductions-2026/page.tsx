@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   keywords: 'self employment tax deductions 2026, gig worker deductions, 1099 deductions, schedule C deductions',
   openGraph: {
     title: 'Self-Employment Tax Deductions 2026 — Complete List',
-    description: 'Don't overpay. Every deduction for DoorDash, Uber, Etsy, OnlyFans creators in 2026.',
+    description: "Don't overpay. Every deduction for DoorDash, Uber, Etsy, OnlyFans creators in 2026.",
     type: 'article',
   },
 }
