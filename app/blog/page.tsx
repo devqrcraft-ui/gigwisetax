@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Blog 2026 — Free Guides | GigWiseTax',
-  description: 'Free tax guides for gig workers in 2026. DoorDash, Uber, OnlyFans, Etsy, Airbnb, Instacart, Lyft tax tips, quarterly payment guides, and deduction lists.',
-  keywords: 'gig worker tax blog, 1099 tax guides 2026, self employment tax tips',
+  description: 'Free tax guides for gig workers in 2026. DoorDash, Uber, Grubhub, OnlyFans, Etsy, Airbnb, Instacart, Lyft, Turo, Walmart Spark tax tips and deduction guides.',
+  keywords: 'gig worker tax blog 2026, 1099 tax guides, self employment tax tips, delivery driver taxes',
 }
 
 const posts = [
@@ -50,16 +50,40 @@ const posts = [
   },
   {
     "slug": "lyft-driver-taxes-2026",
-    "title": "Lyft Driver Taxes 2026 — Complete Guide",
-    "desc": "Mileage deduction, 1099-NEC, deadhead miles explained.",
+    "title": "Lyft Driver Taxes 2026",
+    "desc": "Mileage, deadhead miles, 1099-NEC guide.",
     "tag": "Drivers",
     "tagColor": "#a5b4fc",
     "date": "Mar 2026"
   },
   {
+    "slug": "grubhub-driver-taxes-2026",
+    "title": "Grubhub Driver Taxes 2026",
+    "desc": "Complete tax guide for Grubhub delivery drivers.",
+    "tag": "Drivers",
+    "tagColor": "#a5b4fc",
+    "date": "Mar 2026"
+  },
+  {
+    "slug": "walmart-spark-taxes-2026",
+    "title": "Walmart Spark Driver Taxes 2026",
+    "desc": "Tax guide for Walmart Spark delivery drivers.",
+    "tag": "Drivers",
+    "tagColor": "#86efac",
+    "date": "Mar 2026"
+  },
+  {
+    "slug": "turo-host-taxes-2026",
+    "title": "Turo Host Taxes 2026",
+    "desc": "Depreciation, insurance, platform fees — complete Turo guide.",
+    "tag": "Hosts",
+    "tagColor": "#e8b84b",
+    "date": "Mar 2026"
+  },
+  {
     "slug": "amazon-flex-taxes-2026",
     "title": "Amazon Flex Taxes 2026",
-    "desc": "Driver tax guide. Mileage deduction, SE tax, quarterly payments.",
+    "desc": "Mileage deduction, SE tax, quarterly payments.",
     "tag": "Drivers",
     "tagColor": "#86efac",
     "date": "Jan 2026"
@@ -75,15 +99,15 @@ const posts = [
   {
     "slug": "grubhub-vs-doordash-taxes-2026",
     "title": "Grubhub vs DoorDash Taxes 2026",
-    "desc": "Tax differences between the two top delivery platforms.",
+    "desc": "Tax differences between the two delivery platforms.",
     "tag": "Comparison",
     "tagColor": "#a5b4fc",
     "date": "Jan 2026"
   },
   {
     "slug": "w2-vs-1099-guide-2026",
-    "title": "W-2 vs 1099: Key Tax Differences 2026",
-    "desc": "How 1099 gig work affects your taxes vs W-2 employment.",
+    "title": "W-2 vs 1099 Tax Differences 2026",
+    "desc": "How 1099 gig work affects your taxes vs W-2.",
     "tag": "Basics",
     "tagColor": "#fca5a5",
     "date": "Jan 2026"
@@ -92,8 +116,7 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <div style={{ background: "#0d1117", width: "100%" }}>
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff', background: '#0d1117', minHeight: '100vh' }}>
+    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
       <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
       <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>
         Free, no-nonsense tax guides for 1099 workers. Updated for 2026 IRS rules. No signup required.
@@ -117,6 +140,5 @@ export default function BlogPage() {
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Free Calculator</a>
       </div>
     </main>
-    </div>
   )
 }
