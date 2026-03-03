@@ -264,6 +264,23 @@ export default function TuroPage() {
         </div>
       </div>
 
+
+          {/* INTERNAL LINKS */}
+          <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
+            <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
+              <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>📚 Related Guides & Calculators</span>
+            </div>
+            <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
+              
+              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🏠 Airbnb Tax Calculator</a>
+              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🛍️ Etsy Seller Taxes</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📅 2026 Quarterly Deadlines</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📚 Quarterly Tax Guide</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📋 W-2 vs 1099 Guide</a>
+            </div>
+          </div>
+
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}
