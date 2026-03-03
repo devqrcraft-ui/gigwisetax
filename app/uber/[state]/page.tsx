@@ -63,9 +63,10 @@ export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
 }
 
-export async function generateMetadata({ params }: { params: { state: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
+  const { state: stateSlug } = await params
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
-  const s = STATES.find(x => x.slug === params.state)
+  const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
   const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
@@ -76,16 +77,17 @@ export async function generateMetadata({ params }: { params: { state: string } }
   }
 }
 
-export default function StatePage({ params }: { params: { state: string } }) {
+export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
+  const { state: stateSlug } = await params
   const platform = PLATFORMS.find(p => p.slug === PLATFORM_SLUG)
-  const state    = STATES.find(s => s.slug === params.state)
+  const state    = STATES.find(s => s.slug === stateSlug)
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
   const stateRateStr = noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
-  const noteGen = STATE_NOTES[params.state]
+  const noteGen = STATE_NOTES[stateSlug]
   const stateNote = noteGen
     ? noteGen(platform.name, stateRateStr, noStateTax)
     : `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax
@@ -283,11 +285,9 @@ export default function StatePage({ params }: { params: { state: string } }) {
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ {platform.name} Tax in Other States</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
-                {STATES.filter(s => s.slug !== params.state).map(s => (
+                {STATES.filter(s => s.slug !== stateSlug).map(s => (
                   <a key={s.slug} href={`/${PLATFORM_SLUG}/${s.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: '#fff' }}
-                      onMouseEnter={e => (e.currentTarget.style.borderColor = '#B22234')}
-                      onMouseLeave={e => (e.currentTarget.style.borderColor = '#e2e5e9')}
                     >
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{s.abbr}</div>
                       <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
