@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
+    images: ['https://www.gigwisetax.com/og-image.png'],
     title: 'GigWiseTax — Free Gig Worker Tax Calculator 2026',
     description: 'Free SE tax calculator for gig workers. All 51 states. No signup.',
   },
