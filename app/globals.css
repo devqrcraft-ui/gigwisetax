@@ -18,3 +18,12 @@ html, body {
   overflow-x: hidden;
   min-height: 100vh;
 }
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .results-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
