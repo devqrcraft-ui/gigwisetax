@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body style={{ margin:0, padding:0, boxSizing:"border-box", fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden' }}>
 
-        <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
+        <div style={{ background:'#0d1117', overflowX:'hidden', maxWidth:'100vw' }}><div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8 }}>
             <div style={{ display:'flex', alignItems:'center', gap:10 }}>
               <span style={{ fontSize:20 }}>🇺🇸</span>
@@ -148,7 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SpeedInsights />
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}`}</style>
-      </body>
+      </div></body>
     </html>
   )
 }
