@@ -38,7 +38,7 @@ export default function InstacartTaxGuide() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
-      <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
+      <div style={{ background: '#0d1117', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
             <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
