@@ -120,7 +120,7 @@ export default function WalmartSparkPage() {
           <span style={{ fontSize:13, color:'#78350f', flex:1 }}>
             <strong>TurboTax Self-Employed</strong> — File your 1099-NEC and Schedule C online. Finds every deduction for Spark drivers automatically.
           </span>
-          <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none' }}>
+          <a href="https://turbotax.intuit.com/personal-taxes/self-employment-taxes/?cid=affiliates_gigwisetax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration:'none' }}>
             <div style={{ background:'#B22234', color:'#fff', padding:'7px 18px', borderRadius:4, fontSize:12, fontWeight:700, cursor:'pointer', whiteSpace:'nowrap' }}>Start Free →</div>
           </a>
         </div>
@@ -286,7 +286,7 @@ export default function WalmartSparkPage() {
               </div>
               <div style={{ fontSize:14, fontWeight:800, color:'#1a1a2e', marginBottom:6 }}>📊 QuickBooks Self-Employed</div>
               <div style={{ fontSize:13, color:'#374151', marginBottom:14, lineHeight:1.6 }}>Track mileage, expenses, and quarterly taxes automatically. Built for 1099 contractors.</div>
-              <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration:'none' }}>
+              <a href="https://quickbooks.intuit.com/self-employed/?cid=affiliates_gigwisetax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration:'none' }}>
                 <div style={{ background:'#0d7a40', color:'#fff', padding:'11px 0', borderRadius:4, fontSize:13, fontWeight:700, textAlign:'center' as const, cursor:'pointer' }}>✓ Try Free for 30 Days</div>
               </a>
               <div style={{ fontSize:10, color:'#c4c9d4', marginTop:6, textAlign:'center' as const }}>Affiliate — commission may apply</div>
