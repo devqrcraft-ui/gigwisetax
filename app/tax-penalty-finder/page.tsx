@@ -169,7 +169,7 @@ export default function TaxPenaltyFinder() {
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>What's your annual {platform} income?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>Enter your gross earnings before expenses</p>
-              <input type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45000" style={inp}/>
+              <input type="text" inputMode="numeric" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45000" style={{...inp, color:"#111827", background:"#fff"}}/>
               <div style={{ display:'flex', gap:8, marginTop:12, flexWrap:'wrap' as const }}>
                 {['15000','25000','45000','65000','85000'].map(v => (
                   <button key={v} onClick={() => setIncome(v)} style={{ background:income===v?'#1e2d5a':'#f3f4f6', color:income===v?'#fff':'#374151', border:income===v?'2px solid #B22234':'2px solid #e5e7eb', borderRadius:6, padding:'7px 12px', fontSize:13, fontWeight:600, cursor:'pointer' }}>${parseInt(v)/1000}k</button>
@@ -183,7 +183,7 @@ export default function TaxPenaltyFinder() {
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.70/mile in 2025</strong> — your biggest deduction</p>
-              <input type="number" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={inp}/>
+              <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
               {miles && <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
                 💰 Potential deduction: ${(parseFloat(miles)*0.70).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
               </div>}

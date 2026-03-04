@@ -20,20 +20,29 @@ const BLOG_SLUGS = [
   'etsy-seller-taxes-2026','quarterly-taxes-gig-workers','airbnb-host-taxes-2026',
   'instacart-shopper-taxes-2026','w2-vs-1099-guide-2026',
   'amazon-flex-taxes-2026','mileage-rate-2026','grubhub-vs-doordash-taxes-2026',
+  'grubhub-driver-taxes-2026','lyft-driver-taxes-2026','turo-host-taxes-2026',
+  'walmart-spark-taxes-2026','instacart-tax-guide-2026',
+  'self-employment-tax-deductions-2026','etsy-seller-tax-deductions-2025',
+  'doordash-taxes-2025-guide','w9-mistakes-gig-workers',
+  's-corp-guide-gig-workers','1099-deadlines-2025','home-office-deduction-gig-workers',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://www.gigwisetax.com'
-  const now  = new Date('2026-03-01')
+  const now  = new Date('2026-03-05')
 
   const urls: MetadataRoute.Sitemap = [
-    { url: base,                  lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
-    { url: `${base}/calculators`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/deadlines`,   lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: `${base}/blog`,        lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
-    { url: `${base}/about`,       lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${base}/privacy`,     lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/terms`,       lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: base,                        lastModified: now, changeFrequency: 'weekly',  priority: 1.0 },
+    { url: `${base}/calculators`,       lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/deadlines`,         lastModified: now, changeFrequency: 'weekly',  priority: 0.9 },
+    { url: `${base}/blog`,              lastModified: now, changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${base}/about`,             lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/privacy`,           lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/terms`,             lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/deductions`,        lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/tax-penalty-finder`,lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/s-corp-calculator`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/quarterly-reminder`,lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ]
 
   for (const p of PLATFORM_SLUGS) {
@@ -48,5 +57,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   return urls
-  // Total: 7 core + 11 platforms + 561 state pages + 11 blog = 590 URLs
+  // Total: 11 core + 11 platforms + 561 state pages + 23 blog = 606 URLs
 }

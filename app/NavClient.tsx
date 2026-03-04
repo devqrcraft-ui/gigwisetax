@@ -6,73 +6,67 @@ const NAV = [
   {
     label: 'Calculators',
     items: [
-      { label: '🚗 DoorDash Tax Calculator',       href: '/doordash',      sub: '400K/mo' },
-      { label: '🚕 Uber Driver Tax Calculator',    href: '/uber',          sub: '300K/mo' },
-      { label: '🛍️ Etsy Seller Tax Calculator',    href: '/etsy',          sub: '200K/mo' },
-      { label: '⭐ OnlyFans Tax Calculator',        href: '/onlyfans',      sub: 'USA #1'  },
-      { label: '🛒 Instacart Tax Calculator',      href: '/instacart',     sub: '150K/mo' },
-      { label: '🏠 Airbnb Host Tax Calculator',    href: '/airbnb',        sub: '120K/mo' },
-      { label: '📦 Amazon Flex Tax Calculator',    href: '/amazon-flex',   sub: '80K/mo'  },
-      { label: '🚖 Lyft Driver Tax Calculator',    href: '/lyft',          sub: '70K/mo'  },
-      { label: '🍔 Grubhub Tax Calculator',        href: '/grubhub',       sub: 'NEW'     },
-      { label: '  🌴 California', href: '/grubhub/california' },
-      { label: '  🗽 New York',   href: '/grubhub/new-york'   },
-      { label: '  ⭐ Texas',      href: '/grubhub/texas'       },
-      { label: '🛒 Walmart Spark Tax Calculator',  href: '/walmart-spark', sub: 'NEW'     },
-      { label: '  🌴 California', href: '/walmart-spark/california' },
-      { label: '  🗽 New York',   href: '/walmart-spark/new-york'   },
-      { label: '  ⭐ Texas',      href: '/walmart-spark/texas'       },
-      { label: '🚘 Turo Host Tax Calculator',      href: '/turo',          sub: 'NEW'     },
-      { label: '  🌴 California', href: '/turo/california' },
-      { label: '  🗽 New York',   href: '/turo/new-york'   },
-      { label: '  ⭐ Texas',      href: '/turo/texas'       },
+      { label: '🚗 DoorDash Tax Calculator',      href: '/doordash',      sub: '400K/mo' },
+      { label: '🚕 Uber Driver Tax Calculator',   href: '/uber',          sub: '300K/mo' },
+      { label: '🛍️ Etsy Seller Tax Calculator',   href: '/etsy',          sub: '200K/mo' },
+      { label: '⭐ OnlyFans Tax Calculator',       href: '/onlyfans',      sub: 'USA #1'  },
+      { label: '🛒 Instacart Tax Calculator',     href: '/instacart',     sub: '150K/mo' },
+      { label: '🏠 Airbnb Host Tax Calculator',   href: '/airbnb',        sub: '120K/mo' },
+      { label: '📦 Amazon Flex Tax Calculator',   href: '/amazon-flex',   sub: '80K/mo'  },
+      { label: '🚖 Lyft Driver Tax Calculator',   href: '/lyft',          sub: '70K/mo'  },
+      { label: '🍔 Grubhub Tax Calculator',       href: '/grubhub',       sub: 'NEW'     },
+      { label: '🛒 Walmart Spark Tax Calculator', href: '/walmart-spark', sub: 'NEW'     },
+      { label: '🚘 Turo Host Tax Calculator',     href: '/turo',          sub: 'NEW'     },
     ],
   },
   {
-    label: 'Deadlines 2026',
+    label: 'Tax Tools',
     items: [
-      { label: '⚠️ Q1 — April 15, 2026',     href: '/deadlines#q1', sub: 'URGENT'  },
-      { label: 'Q2 — June 16, 2026',         href: '/deadlines#q2', sub: '107 days' },
-      { label: 'Q3 — September 15, 2026',    href: '/deadlines#q3', sub: '198 days' },
-      { label: 'Q4 — January 15, 2027',      href: '/deadlines#q4', sub: '320 days' },
-      { label: '🗺️ All Deadlines by State',  href: '/deadlines',    sub: '51 states'},
+      { label: '🔍 Tax Penalty Finder',           href: '/tax-penalty-finder',   sub: 'NEW' },
+      { label: '🏢 S-Corp vs Sole Prop',          href: '/s-corp-calculator',    sub: 'NEW' },
+      { label: '✅ Deductions Checklist',          href: '/deductions',           sub: 'NEW' },
+      { label: '📅 Quarterly Reminders',          href: '/quarterly-reminder',   sub: 'FREE'},
+      { label: '⚠️ Q1 — April 15, 2026',         href: '/deadlines#q1',         sub: 'URGENT' },
+      { label: 'Q2 — June 16, 2026',             href: '/deadlines#q2',         sub: '104 days' },
+      { label: 'Q3 — Sept 15, 2026',             href: '/deadlines#q3',         sub: '195 days' },
+      { label: 'Q4 — Jan 15, 2027',              href: '/deadlines#q4',         sub: '317 days' },
     ],
   },
   {
     label: 'By State',
     items: [
-      { label: '🌴 California (9.3%)',   href: '/doordash/california' },
-      { label: '🗽 New York (6.85%)',    href: '/doordash/new-york'   },
-      { label: '⭐ Texas (No Tax)',       href: '/doordash/texas'      },
-      { label: '🌊 Florida (No Tax)',    href: '/doordash/florida'    },
-      { label: '🏙️ Illinois (4.95%)',    href: '/doordash/illinois'   },
-      { label: '→ All 51 States',       href: '/calculators'          },
+      { label: '🌴 California (9.3%)',  href: '/doordash/california' },
+      { label: '🗽 New York (6.85%)',   href: '/doordash/new-york'   },
+      { label: '⭐ Texas (No Tax)',      href: '/doordash/texas'      },
+      { label: '🌊 Florida (No Tax)',   href: '/doordash/florida'    },
+      { label: '🏙️ Illinois (4.95%)',   href: '/doordash/illinois'   },
+      { label: '→ All 51 States',      href: '/calculators'          },
     ],
   },
   {
     label: 'Resources',
     items: [
-      { label: '📦 Amazon Flex Taxes 2026',   href: '/blog/amazon-flex-taxes-2026'            },
-      { label: '🚗 Mileage Rate 2026',        href: '/blog/mileage-rate-2026'                 },
-      { label: '🍔 Grubhub vs DoorDash',      href: '/blog/grubhub-vs-doordash-taxes-2026'    },
-      { label: '📋 W-2 vs 1099 Guide',        href: '/blog/w2-vs-1099-guide-2026'             },
-      { label: '📚 Quarterly Taxes Guide',    href: '/blog/quarterly-taxes-gig-workers'       },
-      { label: '✍️ All Blog Posts',           href: '/blog'                                   },
+      { label: '📦 Amazon Flex Taxes 2026',  href: '/blog/amazon-flex-taxes-2026'         },
+      { label: '🚗 Mileage Rate 2026',       href: '/blog/mileage-rate-2026'              },
+      { label: '🍔 Grubhub vs DoorDash',     href: '/blog/grubhub-vs-doordash-taxes-2026' },
+      { label: '📋 W-2 vs 1099 Guide',       href: '/blog/w2-vs-1099-guide-2026'          },
+      { label: '📚 Quarterly Taxes Guide',   href: '/blog/quarterly-taxes-gig-workers'    },
+      { label: '✍️ All Blog Posts',          href: '/blog'                                },
     ],
   },
   {
     label: 'About',
     items: [
-      { label: 'ℹ️ About GigWiseTax',   href: '/about'   },
-      { label: '🔒 Privacy Policy',     href: '/privacy' },
-      { label: '📋 Terms of Service',   href: '/terms'   },
-      { label: '📧 Contact Us',         href: '/contact' },
+      { label: 'ℹ️ About GigWiseTax', href: '/about'   },
+      { label: '🔒 Privacy Policy',   href: '/privacy' },
+      { label: '📋 Terms of Service', href: '/terms'   },
+      { label: '📧 Contact Us',       href: '/contact' },
     ],
   },
 ]
 
 export default function NavClient() {
-  const [openNav, setOpenNav] = useState<string|null>(null)
+  const [openNav, setOpenNav]     = useState<string|null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
@@ -91,33 +85,37 @@ export default function NavClient() {
             <div style={{ fontWeight:900, fontSize:19, color:'#fff', letterSpacing:'-0.5px', lineHeight:1.1 }}>
               GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:13 }}>.COM</span>
             </div>
-            <div style={{ fontSize:9, color:'rgba(255,255,255,.3)', letterSpacing:'2px', textTransform:'uppercase' }}>Free · Independent · United States</div>
+            <div style={{ fontSize:9, color:'rgba(255,255,255,.3)', letterSpacing:'2px', textTransform:'uppercase' as const }}>Free · Independent · United States</div>
           </div>
         </Link>
 
         <nav style={{ display:'flex', gap:2 }} className="desktop-nav">
           {NAV.map(item => (
-            <div key={item.label} style={{ position:'relative' }}
+            <div key={item.label} style={{ position:'relative' as const }}
               onMouseEnter={() => setOpenNav(item.label)}
               onMouseLeave={() => setOpenNav(null)}
             >
               <div style={{ padding:'8px 14px', cursor:'pointer', fontSize:13.5, fontWeight:500,
                 color: openNav===item.label ? '#fff' : 'rgba(255,255,255,.65)',
                 borderBottom: openNav===item.label ? '2px solid #e8b84b' : '2px solid transparent',
-                whiteSpace:'nowrap', userSelect:'none' }}>
+                whiteSpace:'nowrap' as const, userSelect:'none' as const }}>
                 {item.label} <span style={{ fontSize:9, opacity:.5 }}>▾</span>
               </div>
               {openNav===item.label && (
-                <div style={{ position:'absolute', top:'100%', left:0, background:'#fff', border:'1px solid #e2e5e9',
-                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.15)', overflow:'hidden' }}>
-                  <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase', letterSpacing:'1px' }}>{item.label}</div>
+                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#fff', border:'1px solid #e2e5e9',
+                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.15)', overflow:'hidden' as const }}>
+                  <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>{item.label}</div>
                   {item.items.map(sub => (
                     <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setOpenNav(null)}>
                       <div style={{ padding:'10px 14px', borderBottom:'1px solid #f3f4f6', display:'flex', justifyContent:'space-between', alignItems:'center' }}
                         onMouseEnter={e => (e.currentTarget.style.background='#f0f4ff')}
                         onMouseLeave={e => (e.currentTarget.style.background='transparent')}>
                         <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{sub.label}</span>
-                        {sub.sub && <span style={{ fontSize:11, color: sub.sub==='NEW' ? '#059669' : '#B22234', fontWeight:600, marginLeft:8 }}>{sub.sub}</span>}
+                        {sub.sub && (
+                          <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:600, marginLeft:8 }}>
+                            {sub.sub}
+                          </span>
+                        )}
                       </div>
                     </Link>
                   ))}
@@ -129,8 +127,10 @@ export default function NavClient() {
 
         <div style={{ display:'flex', gap:10, alignItems:'center' }} className="desktop-cta">
           <span style={{ fontSize:12, color:'rgba(255,255,255,.3)' }}>🔒 No data stored</span>
-          <Link href="/" style={{ textDecoration:'none' }}>
-            <div style={{ background:'#B22234', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>Calculate Now →</div>
+          <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }}>
+            <div style={{ background:'#B22234', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
+              Find My Savings →
+            </div>
           </Link>
         </div>
 
@@ -142,23 +142,23 @@ export default function NavClient() {
       </div>
 
       {mobileOpen && (
-        <div style={{ background:'#12122a', borderTop:'1px solid rgba(255,255,255,.08)', maxHeight:'80vh', overflowY:'auto' }}>
+        <div style={{ background:'#12122a', borderTop:'1px solid rgba(255,255,255,.08)', maxHeight:'80vh', overflowY:'auto' as const }}>
           {NAV.map(item => (
             <div key={item.label}>
-              <div style={{ padding:'12px 20px', fontSize:13, fontWeight:700, color:'rgba(255,255,255,.5)', textTransform:'uppercase', letterSpacing:'1px', borderBottom:'1px solid rgba(255,255,255,.06)' }}>{item.label}</div>
+              <div style={{ padding:'12px 20px', fontSize:13, fontWeight:700, color:'rgba(255,255,255,.5)', textTransform:'uppercase' as const, letterSpacing:'1px', borderBottom:'1px solid rgba(255,255,255,.06)' }}>{item.label}</div>
               {item.items.map(sub => (
                 <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
                   <div style={{ padding:'11px 28px', fontSize:14, color:'rgba(255,255,255,.75)', borderBottom:'1px solid rgba(255,255,255,.04)', display:'flex', justifyContent:'space-between' }}>
                     {sub.label}
-                    {sub.sub && <span style={{ fontSize:11, color: sub.sub==='NEW' ? '#059669' : '#B22234', fontWeight:600 }}>{sub.sub}</span>}
+                    {sub.sub && <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:600 }}>{sub.sub}</span>}
                   </div>
                 </Link>
               ))}
             </div>
           ))}
           <div style={{ padding:16 }}>
-            <Link href="/" style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
-              <div style={{ background:'#B22234', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' }}>Calculate Now →</div>
+            <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
+              <div style={{ background:'#B22234', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' as const }}>Find My Tax Savings →</div>
             </Link>
           </div>
         </div>
