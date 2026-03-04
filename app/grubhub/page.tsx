@@ -1,3 +1,16 @@
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Grubhub Driver Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
+  description: 'Free Grubhub driver tax calculator for 2026. Estimate SE tax (15.3%), federal & state income tax, mileage deductions. No signup required.',
+  keywords: 'grubhub tax calculator, grubhub driver taxes 2026, grubhub self employment tax, grubhub quarterly taxes',
+  alternates: { canonical: 'https://www.gigwisetax.com/grubhub' },
+  openGraph: {
+    title: 'Grubhub Driver Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
+    description: 'Free Grubhub driver tax calculator for 2026. Estimate SE tax (15.3%), federal & state income tax, mileage deductions. No signup required.',
+    url: 'https://www.gigwisetax.com/grubhub',
+  },
+}
+
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
