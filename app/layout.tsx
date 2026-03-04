@@ -62,7 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do gig workers pay?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay 15.3% self-employment tax plus federal and state income tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you expect to owe $1,000 or more, the IRS requires quarterly payments."}},{"@type":"Question","name":"What can DoorDash drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Mileage, phone bills, hot bags and other business expenses."}}]}) }} />
       </head>
-      <body style={{ margin:0, fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden' }}>
+      <body style={{ margin:0, padding:0, boxSizing:"border-box", fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden' }}>
 
         <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 20px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8 }}>
