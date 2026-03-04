@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'doordash')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
-    description: `Free ${p.name} tax calculator for 2026. Calculate self-employment tax (15.3%), federal and state income tax for all 51 states. Get your quarterly payment schedule instantly. No signup required.`,
-    keywords: `${p.name} tax calculator, ${p.name} self employment tax 2026, ${p.name} quarterly taxes, ${p.slug} 1099 taxes`,
+    title: `DoorDash Tax Calculator 2026 — Free, Instant, All 51 States | GigWiseTax`,
+    description: `Calculate your DoorDash self-employment taxes in seconds. SE tax (15.3%), federal & state income tax for all 51 states. Free, no signup, no app. Updated for 2026 IRS rules.`,
+    keywords: `doordash tax calculator, doordash self employment tax 2026, doordash quarterly taxes, doordash 1099 taxes, how much taxes do doordash drivers pay`,
     alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,

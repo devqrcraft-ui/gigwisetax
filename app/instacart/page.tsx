@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'instacart')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
-    description: `Free ${p.name} tax calculator for 2026. Calculate self-employment tax (15.3%), federal and state income tax for all 51 states. Get your quarterly payment schedule instantly. No signup required.`,
-    keywords: `${p.name} tax calculator, ${p.name} self employment tax 2026, ${p.name} quarterly taxes, ${p.slug} 1099 taxes`,
+    title: `Instacart Shopper Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
+    description: `Free Instacart shopper tax calculator for 2026. Calculate SE tax, federal & state income tax, mileage deductions and quarterly payments. No signup required.`,
+    keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
     alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,

@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'airbnb')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
-    description: `Free ${p.name} tax calculator for 2026. Calculate self-employment tax (15.3%), federal and state income tax for all 51 states. Get your quarterly payment schedule instantly. No signup required.`,
-    keywords: `${p.name} tax calculator, ${p.name} self employment tax 2026, ${p.name} quarterly taxes, ${p.slug} 1099 taxes`,
+    title: `Airbnb Host Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
+    description: `Free Airbnb host tax calculator for 2026. Calculate self-employment tax, income tax, depreciation deductions for all 51 states. No signup. Quarterly payment schedule included.`,
+    keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,

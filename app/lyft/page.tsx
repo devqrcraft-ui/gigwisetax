@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'lyft')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
-    description: `Free ${p.name} tax calculator for 2026. Calculate self-employment tax (15.3%), federal and state income tax for all 51 states. Get your quarterly payment schedule instantly. No signup required.`,
-    keywords: `${p.name} tax calculator, ${p.name} self employment tax 2026, ${p.name} quarterly taxes, ${p.slug} 1099 taxes`,
+    title: `Lyft Driver Tax Calculator 2026 — Free SE Tax Estimator | GigWiseTax`,
+    description: `Free Lyft driver tax calculator for 2026. Estimate self-employment tax, federal & state income tax, mileage deductions for all 51 states. No signup required.`,
+    keywords: `lyft driver tax calculator, lyft taxes 2026, lyft self employment tax, lyft quarterly taxes, lyft 1099 tax guide`,
     alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,

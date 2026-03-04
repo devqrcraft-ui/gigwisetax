@@ -9,9 +9,9 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'etsy')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — All 51 States | GigWiseTax`,
-    description: `Free ${p.name} tax calculator for 2026. Calculate self-employment tax (15.3%), federal and state income tax for all 51 states. Get your quarterly payment schedule instantly. No signup required.`,
-    keywords: `${p.name} tax calculator, ${p.name} self employment tax 2026, ${p.name} quarterly taxes, ${p.slug} 1099 taxes`,
+    title: `Etsy Seller Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
+    description: `Free Etsy seller tax calculator for 2026. Calculate self-employment tax, income tax, and quarterly payments for all 51 states. Includes Schedule C deductions. No signup needed.`,
+    keywords: `etsy seller tax calculator, etsy self employment tax 2026, etsy quarterly taxes, etsy 1099 taxes, how much tax do etsy sellers pay`,
     alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
