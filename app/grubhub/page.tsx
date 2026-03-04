@@ -71,7 +71,7 @@ export default function GrubhubPage() {
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
-    <div style={{ background:'#eef0f4', minHeight:'100vh' }}>
+    <div style={{ background:'#0d1117', minHeight:'100vh' }}>
 
       {/* HERO */}
       <div style={{ background:'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom:'1px solid rgba(255,255,255,.07)' }}>

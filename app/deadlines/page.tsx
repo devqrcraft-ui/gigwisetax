@@ -33,7 +33,7 @@ export default function DeadlinesPage() {
   const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
   return (
-    <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
+    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>

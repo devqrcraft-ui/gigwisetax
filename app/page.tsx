@@ -71,7 +71,7 @@ export default function HomePage() {
   const btnRed  = (extra = {}) => ({ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', ...extra })
 
   return (
-    <div style={{ background: '#eef0f4', minHeight: '100vh' }}>
+    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
