@@ -44,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-KR8CY8PKT0');
           ` }}
         />
-        {/* JSON-LD: Organization schema for Google trust */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -60,17 +59,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }
           })}}
         />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do gig workers pay?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay 15.3% self-employment tax plus federal and state income tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you expect to owe $1,000 or more, the IRS requires quarterly payments."}},{"@type":"Question","name":"What can DoorDash drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Mileage, phone bills, hot bags and other business expenses."}}]}) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do gig workers pay?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay 15.3% self-employment tax plus federal and state income tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you expect to owe $1,000 or more, the IRS requires quarterly payments."}},{"@type":"Question","name":"What can DoorDash drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Mileage, phone bills, hot bags and other business expenses."}}]}) }} />
       </head>
-      <body style={{ margin:0, padding:0, boxSizing:"border-box", fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden' }}>
+      <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden', minHeight:'100vh' }}>
 
-        <div style={{ background:'#0d1117', overflowX:'hidden', maxWidth:'100vw' }}><div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
-          <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8 }}>
-            <div style={{ display:'flex', alignItems:'center', gap:10 }}>
-              <span style={{ fontSize:20 }}>🇺🇸</span>
-              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
+        {/* Top info bar */}
+        <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
+          <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:10, minWidth:0, overflow:'hidden' }}>
+              <span style={{ fontSize:20, flexShrink:0 }}>🇺🇸</span>
+              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
             </div>
-            <div style={{ display:'flex', gap:12, alignItems:'center' }}>
+            <div style={{ display:'flex', gap:12, alignItems:'center', flexShrink:0 }}>
               <span style={{ color:'rgba(255,255,255,.35)', fontSize:11 }}>Tax Year 2026</span>
               <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:11, fontWeight:700 }}>⚠️ Q1 DUE: APR 15</span>
             </div>
@@ -142,13 +142,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
 
-        {/* Vercel Analytics — tracks page views, no personal data */}
         <Analytics />
-        {/* Vercel Speed Insights — tracks Core Web Vitals */}
         <SpeedInsights />
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}`}</style>
-      </div></body>
+      </body>
     </html>
   )
 }

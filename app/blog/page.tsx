@@ -116,29 +116,31 @@ const posts = [
 
 export default function BlogPage() {
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', width: '100%', background: '#0f1117', minHeight: '100vh', color: '#fff', padding: '48px 24px', color: '#fff' }}>
-      <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
-      <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>
-        Free, no-nonsense tax guides for 1099 workers. Updated for 2026 IRS rules. No signup required.
-      </p>
-      <div style={{ display: 'grid', gap: 16 }}>
-        {posts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-            <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
-                <span style={{ background: post.tagColor + '22', color: post.tagColor, padding: '3px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{post.tag}</span>
-                <span style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>{post.date}</span>
+    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+      <main style={{ maxWidth: 900, margin: '0 auto', width: '100%', color: '#fff', padding: '48px 16px' }}>
+        <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
+        <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>
+          Free, no-nonsense tax guides for 1099 workers. Updated for 2026 IRS rules. No signup required.
+        </p>
+        <div style={{ display: 'grid', gap: 16 }}>
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+              <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: '24px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                  <span style={{ background: post.tagColor + '22', color: post.tagColor, padding: '3px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{post.tag}</span>
+                  <span style={{ color: 'rgba(255,255,255,.3)', fontSize: 13 }}>{post.date}</span>
+                </div>
+                <h2 style={{ fontSize: 19, fontWeight: 800, marginBottom: 8, color: '#fff', lineHeight: 1.3 }}>{post.title}</h2>
+                <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{post.desc}</p>
               </div>
-              <h2 style={{ fontSize: 19, fontWeight: 800, marginBottom: 8, color: '#fff', lineHeight: 1.3 }}>{post.title}</h2>
-              <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.7, margin: 0 }}>{post.desc}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginTop: 40 }}>
-        <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 8 }}>Ready to Calculate Your Taxes?</div>
-        <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Free Calculator</a>
-      </div>
-    </main>
+            </Link>
+          ))}
+        </div>
+        <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginTop: 40 }}>
+          <div style={{ fontSize: 18, fontWeight: 800, marginBottom: 8 }}>Ready to Calculate Your Taxes?</div>
+          <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>Free Calculator</a>
+        </div>
+      </main>
+    </div>
   )
 }
