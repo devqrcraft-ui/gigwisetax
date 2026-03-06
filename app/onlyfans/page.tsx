@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
     title: `OnlyFans Tax Calculator 2026 — USA #1 Free Creator Tax Tool | GigWiseTax`,
     description: `USA's #1 free OnlyFans tax calculator. Estimate SE tax (15.3%), federal & state taxes for all 51 states. Anonymous, no signup, no data stored. Built for OF creators in 2026.`,
     keywords: `onlyfans tax calculator, onlyfans taxes 2026, onlyfans self employment tax, how much tax do onlyfans creators pay, onlyfans 1099 taxes`,
-    alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
-      url: `https://gigwisetax.com/${p.slug}`,
+      url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
 }
@@ -36,7 +36,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
-    url: `https://gigwisetax.com/${platform.slug}`,
+    url: `https://www.gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 

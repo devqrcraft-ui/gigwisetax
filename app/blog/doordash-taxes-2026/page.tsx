@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'DoorDash Taxes 2026 — Complete Guide for Dashers | GigWiseTax',
   description: 'How DoorDash drivers pay taxes in 2026. SE tax 15.3%, mileage rate $0.725/mile, quarterly deadlines, Schedule C deductions, and 1099-NEC filing guide. Free calculator included.',
   keywords: 'DoorDash taxes 2026, DoorDash self employment tax, DoorDash mileage deduction 2026, DoorDash quarterly taxes, Dasher 1099 how to file',
-  alternates: { canonical: 'https://gigwisetax.com/blog/doordash-taxes-2026' },
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
 }
 
 export default function DoorDashTaxGuide() {

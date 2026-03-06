@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
     title: `Instacart Shopper Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
     description: `Free Instacart shopper tax calculator for 2026. Calculate SE tax, federal & state income tax, mileage deductions and quarterly payments. No signup required.`,
     keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
-    alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
-      url: `https://gigwisetax.com/${p.slug}`,
+      url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
 }
@@ -36,7 +36,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
-    url: `https://gigwisetax.com/${platform.slug}`,
+    url: `https://www.gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 

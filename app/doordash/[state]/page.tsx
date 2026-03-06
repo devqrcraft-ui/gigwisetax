@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `${p.name} Tax Calculator ${s.name} 2026 — ${stateStr} | GigWiseTax`,
     description: `Free ${p.name} tax calculator for ${s.name} (${s.abbr}) 2026. ${stateStr}. Calculate self-employment tax, federal tax, and ${s.name} state tax. Quarterly payment schedule included. No signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
-    alternates: { canonical: `https://gigwisetax.com/${p.slug}/${s.slug}` },
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
 }
 

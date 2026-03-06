@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
     title: `Etsy Seller Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
     description: `Free Etsy seller tax calculator for 2026. Calculate self-employment tax, income tax, and quarterly payments for all 51 states. Includes Schedule C deductions. No signup needed.`,
     keywords: `etsy seller tax calculator, etsy self employment tax 2026, etsy quarterly taxes, etsy 1099 taxes, how much tax do etsy sellers pay`,
-    alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
-      url: `https://gigwisetax.com/${p.slug}`,
+      url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
 }
@@ -36,7 +36,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
-    url: `https://gigwisetax.com/${platform.slug}`,
+    url: `https://www.gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 

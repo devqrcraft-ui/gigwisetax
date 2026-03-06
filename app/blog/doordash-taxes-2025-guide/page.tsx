@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'DoorDash Taxes 2025: Complete Guide — How Much You Owe | GigWiseTax',
   description: 'Everything DoorDash drivers need to know about taxes in 2025. SE tax, quarterly payments, top deductions, and how to avoid IRS penalties. Free calculator included.',
   keywords: 'DoorDash taxes 2025, DoorDash tax guide, DoorDash 1099 taxes, DoorDash quarterly taxes, DoorDash self employment tax',
-  alternates: { canonical: 'https://gigwisetax.com/blog/doordash-taxes-2025-guide' },
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2025-guide' },
 }
 
 export default function DoorDashTaxesBlog() {
