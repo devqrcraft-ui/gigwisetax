@@ -125,7 +125,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
               <strong>TurboTax Self-Employed</strong> — File your 1099 taxes online. Finds every deduction for {platform.name} workers automatically.
             </span>
-            <a href="https://turbotax.intuit.com/personal-taxes/self-employment-taxes/?cid=affiliates_gigwisetax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: 'none' }}>
+            <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#B22234', color: '#fff', padding: '7px 18px', borderRadius: 4, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap' }}>Start Free →</div>
             </a>
           </div>
@@ -288,7 +288,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {/* DISCLAIMER */}
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6, textAlign: 'justify' as const }}>
-                  ⚠️ <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer sponsored" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
+                  ⚠️ <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
                 </div>
               </div>
             </div>
@@ -315,35 +315,23 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
           {/* SIDEBAR */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
-            <div style={{ background: '#fff', border: '1px solid #e2e5e9', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 2px 8px rgba(0,0,0,.06)' }}>
-            <div style={{ background: 'linear-gradient(135deg,#0d7a40,#085c30)', padding: '10px 14px', display:'flex', alignItems:'center', gap:8 }}>
-              <span style={{ fontSize:18 }}>📊</span>
-              <span style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,.9)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</span>
-            </div>
-            <div style={{ padding: 16 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:10 }}>
-                <div style={{ background:'#0d7a40', borderRadius:6, width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center', fontSize:20 }}>📊</div>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e' }}>QuickBooks Self-Employed</div>
-                  <div style={{ fontSize: 11, color: '#6b7280' }}>Auto-track Everything</div>
+            {/* AD */}
+            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+              <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored — 300×250</div>
+              <div style={{ padding: 16 }}>
+                <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                  <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
                 </div>
-              </div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>
-                Auto-track <strong>mileage, expenses, and quarterly taxes</strong>. Built for 1099 gig workers.
-              </div>
-              <div style={{ display:'flex', gap:6, flexWrap:'wrap' as const, marginBottom:12 }}>
-                {['✓ Auto Mileage','✓ Expense Track','✓ Quarterly Tax','✓ 30 Day Free'].map(f => (
-                  <span key={f} style={{ background:'#f0faf4', color:'#0d7a40', fontSize:10, fontWeight:700, padding:'2px 7px', borderRadius:20 }}>{f}</span>
-                ))}
-              </div>
-              <a href="https://quickbooks.intuit.com/self-employed/?cid=affiliates_gigwisetax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: 'none', display:'block' }}>
-                <div style={{ background: 'linear-gradient(135deg,#0d7a40,#085c30)', color: '#fff', padding: '11px 0', borderRadius: 6, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
-                  ✓ Try Free for 30 Days →
+                <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>📊 QuickBooks Self-Employed</div>
+                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>
+                  Track mileage, expenses, and quarterly taxes automatically. Built for gig workers and 1099 contractors.
                 </div>
-              </a>
-              <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 6, textAlign: 'center' as const }}>Sponsored · Commission may apply</div>
+                <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                  <div style={{ background: '#0d7a40', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, width: '100%' }}>✓ Try Free for 30 Days</div>
+                </a>
+                <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 6, textAlign: 'center' as const }}>Affiliate — commission may apply</div>
+              </div>
             </div>
-          </div>
 
             {/* STATES LINKS */}
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
@@ -369,33 +357,27 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               ))}
             </div>
 
-            <div style={{ background: '#fff', border: '1px solid #e2e5e9', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 2px 8px rgba(0,0,0,.06)' }}>
-            <div style={{ background: 'linear-gradient(135deg,#165c96,#0d3d63)', padding: '10px 14px', display:'flex', alignItems:'center', gap:8 }}>
-              <span style={{ fontSize:18 }}>🏛️</span>
-              <span style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,.9)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</span>
+            {/* AD 2 */}
+            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+              <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored — 300×200</div>
+              <div style={{ padding: 16 }}>
+                <div style={{ background: '#f0f4f8', borderRadius: 4, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                  <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>🏛️ H&amp;R Block — Tax Filing</div>
+                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>File your 1099-NEC and Schedule C. Expert review available. Starting at $0.</div>
+                <a href="https://hrblock.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                  <div style={{ background: '#165c96', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, width: '100%' }}>🏛️ File Now — Start Free</div>
+                </a>
+              </div>
             </div>
-            <div style={{ padding: 16 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:10 }}>
-                <div style={{ background:'#165c96', borderRadius:6, width:40, height:40, display:'flex', alignItems:'center', justifyContent:'center', fontSize:20 }}>🏛️</div>
-                <div>
-                  <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e' }}>H&amp;R Block — Tax Filing</div>
-                  <div style={{ fontSize: 11, color: '#6b7280' }}>Expert Review Available</div>
-                </div>
+
+            {/* TRUST */}
+            <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>🔒 About This Tool</div>
+              <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, textAlign: 'justify' as const }}>
+                GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. No personal data is stored.
               </div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>
-                File your <strong>1099-NEC and Schedule C</strong> online. Expert review available. Starting at $0.
-              </div>
-              <div style={{ display:'flex', gap:6, flexWrap:'wrap' as const, marginBottom:12 }}>
-                {['✓ 1099-NEC','✓ Schedule C','✓ Expert Help','✓ Start Free'].map(f => (
-                  <span key={f} style={{ background:'#f0f5ff', color:'#165c96', fontSize:10, fontWeight:700, padding:'2px 7px', borderRadius:20 }}>{f}</span>
-                ))}
-              </div>
-              <a href="https://www.hrblock.com/tax-offices/?otpPartnerId=GigWiseTax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration: 'none', display:'block' }}>
-                <div style={{ background: 'linear-gradient(135deg,#165c96,#0d3d63)', color: '#fff', padding: '11px 0', borderRadius: 6, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
-                  🏛️ File Now — Start Free →
-                </div>
-              </a>
-              <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 6, textAlign: 'center' as const }}>Sponsored · Commission may apply</div>
             </div>
           </div>
         </div>

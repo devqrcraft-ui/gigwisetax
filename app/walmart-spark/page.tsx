@@ -1,16 +1,3 @@
-import type { Metadata } from 'next'
-export const metadata: Metadata = {
-  title: 'Walmart Spark Driver Tax Calculator 2026 — Free | GigWiseTax',
-  description: 'Free Walmart Spark driver tax calculator for 2026. Calculate SE tax, federal & state income tax for all 51 states. No signup required.',
-  keywords: 'walmart spark tax calculator, spark driver taxes 2026, walmart spark self employment tax, spark driver 1099',
-  alternates: { canonical: 'https://www.gigwisetax.com/walmart-spark' },
-  openGraph: {
-    title: 'Walmart Spark Driver Tax Calculator 2026 — Free | GigWiseTax',
-    description: 'Free Walmart Spark driver tax calculator for 2026. Calculate SE tax, federal & state income tax for all 51 states. No signup required.',
-    url: 'https://www.gigwisetax.com/walmart-spark',
-  },
-}
-
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'

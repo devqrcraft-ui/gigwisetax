@@ -1,16 +1,3 @@
-import type { Metadata } from 'next'
-export const metadata: Metadata = {
-  title: 'Turo Host Tax Calculator 2026 — Free Car Rental Tax Estimator | GigWiseTax',
-  description: 'Free Turo host tax calculator for 2026. Calculate income tax, depreciation, quarterly payments for all 51 states. No signup required.',
-  keywords: 'turo tax calculator, turo host taxes 2026, turo car rental income tax, turo self employment tax',
-  alternates: { canonical: 'https://www.gigwisetax.com/turo' },
-  openGraph: {
-    title: 'Turo Host Tax Calculator 2026 — Free Car Rental Tax Estimator | GigWiseTax',
-    description: 'Free Turo host tax calculator for 2026. Calculate income tax, depreciation, quarterly payments for all 51 states. No signup required.',
-    url: 'https://www.gigwisetax.com/turo',
-  },
-}
-
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
