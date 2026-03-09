@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Amazon Flex Tax Calculator 2026 — Free Driver Tax Estimator | GigWiseTax`,
-    description: `Free Amazon Flex driver tax calculator for 2026. Estimate SE tax, federal & state income tax, mileage deductions for all 51 states. No signup required.`,
+    description: `Calculate your Amazon Flex taxes in 2026 — self-employment tax, federal & state income tax. Free for all 51 states. Quarterly payment schedule included.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

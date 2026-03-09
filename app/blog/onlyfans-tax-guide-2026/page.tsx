@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'OnlyFans Taxes 2026 — Complete Guide for Creators | GigWiseTax',
-  description: 'How to file OnlyFans taxes in 2026. Self-employment tax, deductions, quarterly payments. Free calculator — no signup required.',
+  title: 'OnlyFans Taxes 2026 — Complete Guide: SE Tax, Deductions & Calculator',
+  description: 'Complete OnlyFans tax guide 2026: self-employment tax, deductions, quarterly payments. Free calculator included. No signup required.',
   keywords: 'onlyfans taxes 2026, onlyfans tax calculator, onlyfans 1099, onlyfans self employment tax',
   openGraph: {
     title: 'OnlyFans Taxes 2026 — Complete Creator Guide',

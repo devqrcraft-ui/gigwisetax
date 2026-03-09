@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'onlyfans')
   if (!p) return {}
   return {
-    title: `OnlyFans Tax Calculator 2026 — USA #1 Free Creator Tax Tool | GigWiseTax`,
-    description: `USA's #1 free OnlyFans tax calculator. Estimate SE tax (15.3%), federal & state taxes for all 51 states. Anonymous, no signup, no data stored. Built for OF creators in 2026.`,
+    title: `OnlyFans Tax Calculator 2026 — Free SE Tax Estimator | GigWiseTax`,
+    description: `Calculate your OnlyFans taxes instantly — self-employment tax (15.3%), federal & state income tax for all 51 states. Free, anonymous, no signup.`,
     keywords: `onlyfans tax calculator, onlyfans taxes 2026, onlyfans self employment tax, how much tax do onlyfans creators pay, onlyfans 1099 taxes`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
