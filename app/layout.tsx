@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import type { Metadata } from 'next'
 import NavClient from './NavClient'
 import { Analytics } from '@vercel/analytics/react'
@@ -146,7 +147,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SpeedInsights />
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}`}</style>
-      </body>
+            <Script src="/ai-chat-widget.js" strategy="lazyOnload" />
+    </body>
     </html>
   )
 }
