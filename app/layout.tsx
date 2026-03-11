@@ -6,8 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'GigWiseTax — Free Gig Worker Tax Calculator 2026',
-  description: 'Free self-employment tax calculator for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb. All 51 states. No signup.',
+  title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+  description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
   metadataBase: new URL('https://www.gigwisetax.com'),
 
   robots: { index: true, follow: true },
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
-    title: 'GigWiseTax — Free Gig Worker Tax Calculator 2026',
-    description: 'Free self-employment tax calculator for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb. All 51 states. No signup.',
+    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+    description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
   },
   twitter: {
     card: 'summary_large_image',
     images: ['https://www.gigwisetax.com/og-image.png'],
-    title: 'GigWiseTax — Free Gig Worker Tax Calculator 2026',
-    description: 'Free SE tax calculator for gig workers. All 51 states. No signup.',
+    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+    description: 'Free SE tax calculator 2026 — 15.3% SE tax, all 51 states, no signup required.',
   },
 }
 
@@ -35,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1a1a2e" />
         <link rel="icon" href="/favicon.ico" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — Gig Worker Tax Calculator","url":"https://www.gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
         {/* Google Analytics G-KR8CY8PKT0 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0"></script>
         <script
