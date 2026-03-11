@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: 'GigWiseTax — Free Gig Worker Tax Calculator 2026',
   description: 'Free self-employment tax calculator for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb. All 51 states. No signup.',
   metadataBase: new URL('https://www.gigwisetax.com'),
-  alternates: { canonical: 'https://www.gigwisetax.com' },
+
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
