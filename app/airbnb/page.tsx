@@ -21,6 +21,19 @@ export async function generateMetadata({ params }: { params: { platform: string 
   }
 }
 
+
+export const metadata: Metadata = {
+  title: 'Airbnb Tax Calculator 2026 — How Much Tax Do Hosts Pay? | GigWiseTax',
+  description: 'Airbnb host tax calculator 2026: estimate SE tax, federal & state income tax on rental income. All 51 states. Free, no signup.',
+  alternates: { canonical: 'https://www.gigwisetax.com/airbnb' },
+  openGraph: {
+    title: 'Airbnb Tax Calculator 2026 — How Much Tax Do Hosts Pay? | GigWiseTax',
+    description: 'Airbnb host tax calculator 2026: estimate SE tax, federal & state income tax on rental income. All 51 states. Free, no signup.',
+    url: 'https://www.gigwisetax.com/airbnb',
+    type: 'website',
+  },
+}
+
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'airbnb')
   if (!platform) return notFound()
