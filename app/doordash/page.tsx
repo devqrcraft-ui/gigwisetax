@@ -22,18 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export const metadata: Metadata = {
-  title: 'DoorDash Tax Calculator 2026 — How Much Do Dashers Owe? | GigWiseTax',
-  description: 'DoorDash tax calculator 2026: estimate SE tax 15.3% + federal & state income tax. Mileage deduction $0.70/mile. All 51 states. Free, no signup.',
-  alternates: { canonical: 'https://www.gigwisetax.com/doordash' },
-  openGraph: {
-    title: 'DoorDash Tax Calculator 2026 — How Much Do Dashers Owe? | GigWiseTax',
-    description: 'DoorDash tax calculator 2026: estimate SE tax 15.3% + federal & state income tax. Mileage deduction $0.70/mile. All 51 states. Free, no signup.',
-    url: 'https://www.gigwisetax.com/doordash',
-    type: 'website',
-  },
-}
-
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'doordash')
   if (!platform) return notFound()

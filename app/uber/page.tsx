@@ -22,18 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export const metadata: Metadata = {
-  title: 'Uber Driver Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-  description: 'Uber driver tax calculator 2026: estimate self-employment tax 15.3%, federal & state income tax. Mileage deduction $0.70/mile. Free, no signup.',
-  alternates: { canonical: 'https://www.gigwisetax.com/uber' },
-  openGraph: {
-    title: 'Uber Driver Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-    description: 'Uber driver tax calculator 2026: estimate self-employment tax 15.3%, federal & state income tax. Mileage deduction $0.70/mile. Free, no signup.',
-    url: 'https://www.gigwisetax.com/uber',
-    type: 'website',
-  },
-}
-
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'uber')
   if (!platform) return notFound()

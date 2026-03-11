@@ -22,18 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export const metadata: Metadata = {
-  title: 'Amazon Flex Tax Calculator 2026 — Driver Tax Estimator | GigWiseTax',
-  description: 'Amazon Flex driver tax calculator 2026: estimate SE tax 15.3% + federal & state income tax. Mileage deduction $0.70/mile. All 51 states. Free.',
-  alternates: { canonical: 'https://www.gigwisetax.com/amazon-flex' },
-  openGraph: {
-    title: 'Amazon Flex Tax Calculator 2026 — Driver Tax Estimator | GigWiseTax',
-    description: 'Amazon Flex driver tax calculator 2026: estimate SE tax 15.3% + federal & state income tax. Mileage deduction $0.70/mile. All 51 states. Free.',
-    url: 'https://www.gigwisetax.com/amazon-flex',
-    type: 'website',
-  },
-}
-
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'amazon-flex')
   if (!platform) return notFound()

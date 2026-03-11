@@ -22,18 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export const metadata: Metadata = {
-  title: 'OnlyFans Tax Calculator 2026 — How Much Tax Do Creators Owe? | GigWiseTax',
-  description: 'OnlyFans tax calculator 2026: estimate SE tax 15.3% + federal & state income tax on creator earnings. All 51 states. Free, no signup.',
-  alternates: { canonical: 'https://www.gigwisetax.com/onlyfans' },
-  openGraph: {
-    title: 'OnlyFans Tax Calculator 2026 — How Much Tax Do Creators Owe? | GigWiseTax',
-    description: 'OnlyFans tax calculator 2026: estimate SE tax 15.3% + federal & state income tax on creator earnings. All 51 states. Free, no signup.',
-    url: 'https://www.gigwisetax.com/onlyfans',
-    type: 'website',
-  },
-}
-
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'onlyfans')
   if (!platform) return notFound()

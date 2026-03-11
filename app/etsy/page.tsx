@@ -22,18 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export const metadata: Metadata = {
-  title: 'Etsy Seller Tax Calculator 2026 — Income & SE Tax Estimator | GigWiseTax',
-  description: 'Etsy seller tax calculator 2026: estimate SE tax 15.3% + federal & state income tax on shop earnings. All 51 states. Free, no signup.',
-  alternates: { canonical: 'https://www.gigwisetax.com/etsy' },
-  openGraph: {
-    title: 'Etsy Seller Tax Calculator 2026 — Income & SE Tax Estimator | GigWiseTax',
-    description: 'Etsy seller tax calculator 2026: estimate SE tax 15.3% + federal & state income tax on shop earnings. All 51 states. Free, no signup.',
-    url: 'https://www.gigwisetax.com/etsy',
-    type: 'website',
-  },
-}
-
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'etsy')
   if (!platform) return notFound()
