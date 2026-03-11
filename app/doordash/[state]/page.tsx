@@ -37,8 +37,21 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
+
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    'name': `DoorDash Tax Calculator 2026 — ${state.name}`,
+    'url': `https://www.gigwisetax.com/doordash/${state.slug}`,
+    'description': `Free DoorDash tax calculator for ${state.name} 2026. Estimate SE tax 15.3% + federal & state income tax.`,
+    'applicationCategory': 'FinanceApplication',
+    'operatingSystem': 'Web',
+    'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <title>{`${platform.name} Tax Calculator ${state.name} 2026`}</title>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>
 
