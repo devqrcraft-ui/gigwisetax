@@ -6,10 +6,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'DoorDash Taxes 2026 — Complete Guide for Dashers | GigWiseTax',
-  description: 'How DoorDash drivers pay taxes in 2026. SE tax 15.3%, mileage rate $0.725/mile, quarterly deadlines, Schedule C deductions, and 1099-NEC filing guide. Free calculator included.',
+  title: 'DoorDash Taxes 2026: How Much Do Dashers Owe? (Free Calculator)',
+  description: 'DoorDash taxes 2026: pay 15.3% SE tax + federal income tax. Mileage deduction $0.70/mile saves $1,400+/yr. See exact quarterly due dates & file Schedule C. Free calculator.',
   keywords: 'DoorDash taxes 2026, DoorDash self employment tax, DoorDash mileage deduction 2026, DoorDash quarterly taxes, Dasher 1099 how to file',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
+  openGraph: {
+    title: 'DoorDash Taxes 2026: How Much Do Dashers Owe?',
+    description: 'DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage $0.70/mile. Free calculator — no signup.',
+    type: 'article',
+    url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
+  },
 }
 
 export default function DoorDashTaxGuide() {

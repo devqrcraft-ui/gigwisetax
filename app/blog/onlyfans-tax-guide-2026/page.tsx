@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'OnlyFans Taxes 2026 — Complete Guide: SE Tax, Deductions & Calculator',
-  description: 'Complete OnlyFans tax guide 2026: self-employment tax, deductions, quarterly payments. Free calculator included. No signup required.',
+  title: 'OnlyFans Taxes 2026: How Much Tax Do Creators Pay? (Free Calculator)',
+  description: 'OnlyFans creators pay 15.3% SE tax + federal income tax on all earnings. See exact deductions (home office, equipment, subscriptions) + quarterly deadlines. Free calculator.',
   keywords: 'onlyfans taxes 2026, onlyfans tax calculator, onlyfans 1099, onlyfans self employment tax',
   openGraph: {
     title: 'OnlyFans Taxes 2026 — Complete Creator Guide',
