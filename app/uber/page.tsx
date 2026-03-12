@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'uber')
   if (!p) return {}
   return {
-    title: `Uber Tax Calculator 2026 — Free Driver Tax Estimator | GigWiseTax`,
-    description: `Calculate your Uber driver taxes in 2026 — SE tax, federal & state income tax, quarterly payments. Free for all 51 states. No signup required.`,
+    title: `Uber Tax Calculator 2026 — How Much Do Drivers Actually Owe?`,
+    description: `Uber drivers pay 15.3% SE tax + income tax. Calculate your exact 2026 tax bill in seconds — includes mileage deduction ($0.67/mile), quarterly dates. Free, all 50 states.`,
     keywords: `uber driver tax calculator, uber self employment tax 2026, uber driver quarterly taxes, uber 1099 taxes, how much tax do uber drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
