@@ -25,6 +25,8 @@ export default function EtsyDeductionsBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Etsy sellers deduct on their 2025 taxes?","acceptedAnswer":{"@type":"Answer","text":"Etsy sellers can deduct materials and supplies, Etsy listing and transaction fees (6.5%), shipping costs, packaging, photography equipment, home studio space, and Etsy Ads spending. Keep receipts for everything."}},{"@type":"Question","name":"How do I calculate my Etsy profit for taxes?","acceptedAnswer":{"@type":"Answer","text":"Gross Etsy sales minus cost of goods sold (materials, supplies) minus Etsy fees minus shipping minus other business expenses equals net profit. Net profit is what you owe self-employment tax and income tax on."}},{"@type":"Question","name":"Do I need to collect sales tax on Etsy?","acceptedAnswer":{"@type":"Answer","text":"Usually no. Etsy automatically collects and remits sales tax in most US states under marketplace facilitator laws. You should check your state rules, but most Etsy sellers do not need to collect sales tax themselves."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>

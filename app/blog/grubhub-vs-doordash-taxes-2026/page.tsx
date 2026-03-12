@@ -13,6 +13,8 @@ export default function GrubhubVsDoorDashPost() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are Grubhub and DoorDash taxes the same?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both Grubhub and DoorDash drivers are 1099 independent contractors who pay SE tax (15.3%) plus income tax. Both issue 1099-NEC forms for earnings over $600. The main difference is earnings per mile, not tax treatment."}},{"@type":"Question","name":"Which platform is better for taxes — Grubhub or DoorDash?","acceptedAnswer":{"@type":"Answer","text":"Tax treatment is identical. Grubhub and DoorDash earnings are both self-employment income taxed the same way. Choose the platform with higher earnings per hour in your market — the tax math is the same."}},{"@type":"Question","name":"Can I drive for both Grubhub and DoorDash and file one tax return?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 1099 gig income goes on one Schedule C (or separate Schedule C per business if you keep separate records). Add all 1099-NEC income together, deduct total business miles and expenses, and report net profit."}}]}' }} />
+
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>

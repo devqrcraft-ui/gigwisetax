@@ -27,6 +27,8 @@ export default function DeadlinesBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When is the 1099 filing deadline for 2026?","acceptedAnswer":{"@type":"Answer","text":"1099-NEC forms must be filed with the IRS and sent to recipients by January 31, 2027 for 2026 earnings. 1099-K forms have the same January 31 deadline. Late filing penalties start at $60 per form."}},{"@type":"Question","name":"What happens if I miss the 1099 deadline?","acceptedAnswer":{"@type":"Answer","text":"Missing the 1099-NEC deadline results in IRS penalties of $60-$310 per form depending on how late it is filed. If the IRS finds intentional disregard, penalties can reach $630 per form with no maximum."}},{"@type":"Question","name":"Do I need to file a 1099 if I paid a contractor less than $600?","acceptedAnswer":{"@type":"Answer","text":"No. The 1099-NEC threshold is $600. If you paid a contractor less than $600 in a tax year, you are not required to issue a 1099. The contractor must still report all income regardless of amount."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>

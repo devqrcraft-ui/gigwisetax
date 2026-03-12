@@ -345,6 +345,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Turo hosts taxed?","acceptedAnswer":{"@type":"Answer","text":"Turo hosts report car-sharing income on Schedule C as self-employment income. You pay self-employment tax (15.3%) plus income tax on net profit after deductions like depreciation, insurance, and Turo fees."}},{"@type":"Question","name":"What can Turo hosts deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"Turo hosts can deduct vehicle depreciation, insurance, Turo service fees (25-35% of revenue), cleaning costs, maintenance, and repairs proportional to rental use. Depreciation is often the largest deduction."}},{"@type":"Question","name":"Does Turo send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turo issues a 1099-K to hosts earning over $600. All rental income must be reported on your tax return. Use Schedule C to report income and deductions as a self-employed host."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}

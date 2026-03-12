@@ -111,6 +111,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Lyft drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers pay 15.3% self-employment tax plus federal income tax on net profit. After the mileage deduction, most full-time Lyft drivers pay $4,000-$10,000 in total federal taxes annually."}},{"@type":"Question","name":"Does Lyft take taxes out of earnings?","acceptedAnswer":{"@type":"Answer","text":"No. Lyft drivers are independent contractors. Lyft does not withhold any taxes and issues a 1099-K or 1099-NEC at year end. Drivers must pay quarterly estimated taxes to avoid underpayment penalties."}},{"@type":"Question","name":"What deductions can Lyft drivers claim?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers can deduct mileage (67 cents/mile in 2026), phone costs, car washes, water/snacks for passengers, and a portion of car insurance. Mileage is almost always the most valuable deduction."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 

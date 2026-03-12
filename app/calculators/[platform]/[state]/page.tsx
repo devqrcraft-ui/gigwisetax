@@ -128,6 +128,8 @@ export default function CalculatorPage({ params }) {
 
   return (
     <div style={S.page}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate gig worker taxes?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross earnings, select your platform and state. The calculator applies self-employment tax (15.3%), federal income tax brackets, standard deduction, and your state tax rate to show your exact tax owed and take-home pay."}},{"@type":"Question","name":"What is self-employment tax for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% on net earnings up to $176,100 (12.4% Social Security + 2.9% Medicare). Above that threshold, only the 2.9% Medicare portion applies. You can deduct half of SE tax on your return."}},{"@type":"Question","name":"How often do gig workers pay taxes?","acceptedAnswer":{"@type":"Answer","text":"Gig workers who expect to owe $1,000 or more must pay quarterly estimated taxes. 2026 due dates: April 15, June 16, September 15, and January 15, 2027. Underpayment results in IRS penalties."}}]}' }} />
       {/* GOV BAR */}
       <div style={{ background: "#0d1b3e", borderBottom: "4px solid #B22234", padding: "7px 0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 10 }}>

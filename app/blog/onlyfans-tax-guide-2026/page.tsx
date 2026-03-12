@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 export default function OnlyFansTaxGuide() {
   return (
     <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do OnlyFans creators owe in 2026?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators owe self-employment tax (15.3%) plus federal income tax on net profit. On $60,000 gross with $10,000 in deductions, net tax is approximately $14,000-$16,000 depending on filing status."}},{"@type":"Question","name":"What business expenses can OnlyFans creators deduct?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators can deduct camera equipment, lighting, props, costumes, home studio space, internet, phone, editing software, and marketing. A dedicated business bank account makes tracking deductions much easier."}},{"@type":"Question","name":"Does OnlyFans report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. OnlyFans reports creator income to the IRS on a 1099-NEC for earnings over $600. All income must be reported on Schedule C of your tax return regardless of whether you receive a 1099."}}]}' }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › OnlyFans Taxes 2026

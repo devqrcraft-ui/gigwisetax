@@ -15,6 +15,8 @@ export default function AmazonFlexTaxesBlogPost() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does Amazon Flex report income for taxes?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex issues a 1099-NEC to drivers earning over $600. Income is reported on Schedule C as self-employment income. Amazon does not withhold taxes — drivers pay quarterly estimated taxes."}},{"@type":"Question","name":"What is the tax rate for Amazon Flex drivers?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex drivers pay 15.3% self-employment tax plus income tax. After mileage deductions, most drivers pay an effective rate of 18-25% on net earnings. Use our calculator for your exact amount."}},{"@type":"Question","name":"Can Amazon Flex drivers deduct car expenses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Amazon Flex drivers can deduct either standard mileage (67 cents/mile in 2026) or actual car expenses. Most drivers get a larger deduction using standard mileage. Keep a mileage log for every delivery block."}}]}' }} />
+
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>

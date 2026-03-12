@@ -17,6 +17,8 @@ export default function HomeOfficeBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can gig workers claim a home office deduction?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gig workers who use part of their home exclusively and regularly for business can deduct home office expenses. The simplified method allows $5 per square foot up to 300 sq ft ($1,500 max). Alternatively, use actual expenses for a larger deduction."}},{"@type":"Question","name":"What is the home office deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The simplified method: $5/sq ft up to 300 sq ft = $1,500 maximum. The regular method: deduct the percentage of home costs equal to the office percentage of total home area — this often yields a larger deduction for gig workers with dedicated studio space."}},{"@type":"Question","name":"Does a home office deduction trigger an audit?","acceptedAnswer":{"@type":"Answer","text":"Not anymore. The home office deduction is routine for self-employed workers. As long as the space is used exclusively and regularly for business and you have documentation, the deduction is entirely legitimate."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>

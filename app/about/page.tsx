@@ -10,6 +10,8 @@ export default function AboutPage() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is GigWiseTax?","acceptedAnswer":{"@type":"Answer","text":"GigWiseTax is a free tax calculator and guide for gig economy workers in all 50 US states. It covers DoorDash, Uber, Lyft, Instacart, Amazon Flex, Grubhub, Turo, Airbnb, Etsy, OnlyFans, and Walmart Spark."}},{"@type":"Question","name":"Is GigWiseTax free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes. All calculators and tax guides on GigWiseTax are completely free. No account or sign-up required. Your income data is never stored or shared — all calculations happen in your browser."}},{"@type":"Question","name":"Is GigWiseTax affiliated with the IRS or any gig platform?","acceptedAnswer":{"@type":"Answer","text":"No. GigWiseTax is an independent tool and is not affiliated with the IRS, DoorDash, Uber, or any other platform or government agency. Always verify tax obligations with a licensed CPA for your specific situation."}}]}' }} />
+
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>

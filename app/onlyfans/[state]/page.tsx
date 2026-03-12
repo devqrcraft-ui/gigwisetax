@@ -111,6 +111,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do OnlyFans creators pay?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators pay self-employment tax (15.3%) on net earnings plus federal income tax. On $50,000 net profit, total federal tax is approximately $14,000-$17,000 depending on filing status and deductions."}},{"@type":"Question","name":"Does OnlyFans send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. OnlyFans issues a 1099-NEC to creators who earn over $600. You must report all OnlyFans income on Schedule C regardless of whether you receive a 1099."}},{"@type":"Question","name":"What can OnlyFans creators deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators can deduct camera and equipment, lighting, costumes, home studio space, internet and phone percentage, editing software, and marketing costs as legitimate business expenses."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 

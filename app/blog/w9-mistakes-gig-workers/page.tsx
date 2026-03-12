@@ -17,6 +17,8 @@ export default function W9MistakesBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a W-9 form used for?","acceptedAnswer":{"@type":"Answer","text":"A W-9 provides your taxpayer identification (SSN or EIN) to clients or platforms who pay you. They use it to file a 1099 with the IRS. As a gig worker, you fill out W-9s for clients paying you $600 or more."}},{"@type":"Question","name":"What are common W-9 mistakes gig workers make?","acceptedAnswer":{"@type":"Answer","text":"Common mistakes: wrong TIN, mismatched name and SSN, leaving backup withholding checkbox blank, using personal name instead of business name (or vice versa), and not updating W-9 when changing business structure."}},{"@type":"Question","name":"What happens if I give the wrong information on a W-9?","acceptedAnswer":{"@type":"Answer","text":"If your W-9 TIN does not match IRS records, the payer must withhold 24% backup withholding from future payments. Correct errors immediately by submitting a new W-9. Intentional false information can result in penalties."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>

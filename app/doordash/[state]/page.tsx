@@ -51,6 +51,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should a DoorDash driver set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers should set aside 25-30% of net earnings for taxes. This covers self-employment tax (15.3%) plus federal income tax. Use quarterly estimated payments to avoid underpayment penalties."}},{"@type":"Question","name":"Does DoorDash withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. DoorDash does not withhold federal or state taxes. Dashers are independent contractors and receive a 1099-NEC. You are responsible for paying self-employment tax and income tax yourself."}},{"@type":"Question","name":"What can DoorDash drivers deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers can deduct mileage (67 cents/mile in 2026), phone bill percentage, insulated bags, car insurance portion, and other business expenses. Mileage is typically the largest deduction."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <title>{`${platform.name} Tax Calculator ${state.name} 2026`}</title>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>

@@ -14,6 +14,8 @@ export const metadata: Metadata = {
 export default function QuarterlyTaxesGuide() {
   return (
     <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 estimated tax due dates: Q1 — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15, 2027. If you expect to owe $1,000 or more for the year, you must make these payments to avoid penalties."}},{"@type":"Question","name":"How much should gig workers pay in quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay either 90% of your 2026 tax liability or 100% of your 2025 tax (110% if 2025 AGI was over $150,000). The safe harbor method using last year\'s tax is the easiest for most gig workers."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (free) or through the IRS2Go app. Use Form 1040-ES to calculate the amount. Most gig workers set aside 25-30% of each paycheck into a dedicated tax savings account."}}]}' }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › Quarterly Taxes Guide

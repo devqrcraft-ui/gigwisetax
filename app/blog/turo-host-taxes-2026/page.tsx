@@ -9,6 +9,8 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   return (
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Turo hosts report taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Turo hosts report car-sharing income on Schedule C as self-employment income. You owe self-employment tax (15.3%) plus income tax on net profit. Depreciation and Turo fees are key deductions."}},{"@type":"Question","name":"What is the biggest tax deduction for Turo hosts?","acceptedAnswer":{"@type":"Answer","text":"Vehicle depreciation is typically the largest deduction for Turo hosts. Under MACRS, a car used 100% for Turo can be depreciated over 5 years. Bonus depreciation may allow full deduction in year one."}},{"@type":"Question","name":"Does Turo report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turo issues a 1099-K to hosts earning over $600 and reports to the IRS. All rental income must be reported on your tax return even if you do not receive a 1099 form."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}

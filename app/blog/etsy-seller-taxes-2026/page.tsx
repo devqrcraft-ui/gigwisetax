@@ -13,6 +13,8 @@ export default function EtsyTaxGuide() {
   const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 28 }
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Etsy report sales to the IRS in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy issues a 1099-K to sellers with over $600 in sales and reports this to the IRS. All Etsy income must be reported on Schedule C regardless of whether you receive a 1099."}},{"@type":"Question","name":"How much can I sell on Etsy before paying taxes?","acceptedAnswer":{"@type":"Answer","text":"There is no threshold — all Etsy income is taxable. However, after deducting supplies, Etsy fees, shipping, and other expenses, your taxable profit may be significantly lower than gross sales."}},{"@type":"Question","name":"Do Etsy sellers pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy sellers who operate as sole proprietors pay self-employment tax of 15.3% on net profit plus income tax. You can deduct half of SE tax on your return, reducing the effective rate."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>

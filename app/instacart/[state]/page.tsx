@@ -111,6 +111,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Instacart shoppers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Instacart full-service shoppers pay self-employment tax (15.3%) plus income tax as independent contractors. In-store shoppers are W-2 employees with taxes withheld. Full-service shoppers should save 25-30% of earnings."}},{"@type":"Question","name":"Does Instacart withhold taxes from shoppers?","acceptedAnswer":{"@type":"Answer","text":"Only for in-store part-time employees. Full-service Instacart shoppers are 1099 contractors — no taxes are withheld. You must make quarterly estimated payments to avoid IRS penalties."}},{"@type":"Question","name":"Can Instacart shoppers deduct mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes. Full-service Instacart shoppers can deduct mileage at 67 cents/mile (2026) from the store to the customer. Mileage from home to the store is not deductible unless you have a home office."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 

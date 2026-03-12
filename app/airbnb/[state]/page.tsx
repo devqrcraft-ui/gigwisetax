@@ -111,6 +111,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Airbnb hosts taxed?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts report rental income on Schedule E (passive) or Schedule C (active/hotel-like). If you rent fewer than 15 days per year, the income is tax-free. Otherwise, you owe income tax on net profit minus allowable deductions."}},{"@type":"Question","name":"What can Airbnb hosts deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts can deduct mortgage interest, property taxes, insurance, cleaning fees, supplies, repairs, depreciation, Airbnb service fees, and utilities proportional to rental use. These deductions can significantly reduce taxable income."}},{"@type":"Question","name":"Does Airbnb report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Airbnb issues a 1099-K to hosts who earn over $600 per year and reports this to the IRS. All rental income must be reported even if you do not receive a 1099."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 

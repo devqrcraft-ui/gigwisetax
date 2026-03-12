@@ -117,6 +117,8 @@ const posts = [
 export default function BlogPage() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What gig platforms does GigWiseTax cover?","acceptedAnswer":{"@type":"Answer","text":"GigWiseTax covers DoorDash, Uber, Lyft, Instacart, Amazon Flex, Grubhub, Turo, Airbnb, Etsy, OnlyFans, Walmart Spark, and more. Each platform has a dedicated tax calculator and guide for all 50 states."}},{"@type":"Question","name":"Are gig worker tax guides free on GigWiseTax?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tax guides, calculators, and blog articles on GigWiseTax are completely free. There is no account required. Your income data never leaves your browser."}},{"@type":"Question","name":"How current is the tax information on GigWiseTax?","acceptedAnswer":{"@type":"Answer","text":"All guides reflect 2026 IRS rules including the current standard mileage rate (67 cents/mile), updated federal tax brackets, and the latest state tax rates. Pages are updated whenever the IRS releases new guidance."}}]}' }} />
       <main style={{ maxWidth: 900, margin: '0 auto', width: '100%', color: '#fff', padding: '48px 16px' }}>
         <h1 style={{ fontSize: 40, fontWeight: 900, marginBottom: 12 }}>Gig Worker Tax Blog</h1>
         <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 17, lineHeight: 1.7, marginBottom: 40 }}>

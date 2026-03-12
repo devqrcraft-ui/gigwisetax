@@ -18,6 +18,8 @@ export default function DoorDashTaxesBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How did DoorDash taxes work in 2025?","acceptedAnswer":{"@type":"Answer","text":"In 2025, DoorDash drivers paid SE tax (15.3%) plus income tax as 1099 contractors. The IRS mileage rate was 67 cents/mile. DoorDash issued 1099-NEC forms for earnings over $600 by January 31, 2026."}},{"@type":"Question","name":"What changed for DoorDash taxes from 2025 to 2026?","acceptedAnswer":{"@type":"Answer","text":"The basic structure remains the same — 1099 income, SE tax, mileage deductions. Check the current federal tax brackets and confirm the mileage rate for 2026 with our calculator for the most accurate estimate."}},{"@type":"Question","name":"Did the 1099 threshold change for DoorDash in 2025?","acceptedAnswer":{"@type":"Answer","text":"The 1099-NEC threshold remained at $600 in 2025. DoorDash issues a 1099-NEC to all drivers earning $600 or more. All income must be reported on Schedule C regardless of whether a 1099 is received."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>

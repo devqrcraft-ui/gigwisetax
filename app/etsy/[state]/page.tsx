@@ -111,6 +111,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   return (
     <>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I have to pay taxes on Etsy sales?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy reports your sales to the IRS on a 1099-K if you earn over $600. You must report all Etsy income on Schedule C and pay self-employment tax (15.3%) plus income tax on net profit."}},{"@type":"Question","name":"What can Etsy sellers deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"Etsy sellers can deduct supplies, shipping costs, Etsy fees, packaging materials, home studio portion, equipment, software subscriptions, and mileage for business trips. Keep all receipts."}},{"@type":"Question","name":"How much should I save for taxes as an Etsy seller?","acceptedAnswer":{"@type":"Answer","text":"Etsy sellers should save 25-30% of net profit for taxes. If you earn $20,000 net on Etsy, set aside $5,000-$6,000 for federal self-employment and income taxes."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 

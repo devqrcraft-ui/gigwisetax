@@ -24,6 +24,8 @@ export default function DoorDashTaxGuide() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $30,000 net DoorDash income, total federal tax is approximately $7,500-$9,000."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 67 cents per mile. A Dasher driving 20,000 miles earns a $13,400 deduction. This is typically the single largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You will receive a 1099-NEC if you earned over $600. Access it via the DoorDash driver portal or Stripe Express dashboard."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>

@@ -17,6 +17,8 @@ export default function SCorpGuideBlog() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should a gig worker form an S-Corp?","acceptedAnswer":{"@type":"Answer","text":"An S-Corp can save on SE tax once net income exceeds $40,000-$50,000/year. You pay yourself a reasonable salary (taxed normally) and take remaining profit as a distribution (not subject to SE tax). CPA setup costs $500-$2,000/year."}},{"@type":"Question","name":"How much does an S-Corp save in taxes for gig workers?","acceptedAnswer":{"@type":"Answer","text":"On $80,000 net gig income, an S-Corp with a $45,000 salary saves roughly $5,355 in SE tax annually (15.3% x $35,000 in distributions). The savings typically exceed the cost of maintaining the S-Corp at this income level."}},{"@type":"Question","name":"What is the downside of an S-Corp for gig workers?","acceptedAnswer":{"@type":"Answer","text":"S-Corps require payroll, quarterly payroll taxes, separate bank accounts, annual state fees, and additional accounting costs. The administrative burden typically is not worth it below $40,000-$50,000 in annual net gig income."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>
