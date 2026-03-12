@@ -148,7 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SpeedInsights />
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}`}</style>
-            <Script src="/ai-chat-widget-v7.js" strategy="lazyOnload" />
+            <Script src="/ai-chat-widget-v8.js" strategy="lazyOnload" />
     </body>
     </html>
   )
