@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
 
         <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
-          <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(180px, 1fr))', gap:28 }}>
+          <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
               <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:12 }}>.COM</span></div>
               <div style={{ fontSize:13, color:'rgba(255,255,255,.4)', lineHeight:1.8, marginBottom:14 }}>Free self-employment tax calculators for gig workers. All 51 states. Tax year 2026.</div>
@@ -147,7 +147,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Analytics />
         <SpeedInsights />
 
-        <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}`}</style>
+        <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}
+@media(max-width:640px){.footer-grid{grid-template-columns:1fr!important}}`}</style>
             <Script src="/ai-chat-widget-final.js" strategy="lazyOnload" />
     </body>
     </html>
