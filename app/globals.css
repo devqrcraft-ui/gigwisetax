@@ -103,3 +103,6 @@ body { overflow-x: hidden; }
   table th, table td { padding: 6px 6px !important; font-size: 11px !important; }
   table { min-width: unset !important; }
 }
+
+html { overflow-x: hidden; }
+body { overflow-x: unset !important; }
