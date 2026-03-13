@@ -131,10 +131,10 @@ export default function HomePage() {
               { id: 'platforms', label: '🚀 All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
-                padding: '10px 18px', fontSize: 14, fontWeight: 600, cursor: 'pointer',
+                padding: '8px 10px', fontSize: 13, fontWeight: 600, cursor: 'pointer',
                 color: tab === t.id ? '#1a1a2e' : '#9ca3af',
                 borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent',
-                marginBottom: -2, transition: 'all .15s', whiteSpace: 'nowrap',
+                marginBottom: -2, transition: 'all .15s', whiteSpace: 'nowrap', flex: 1, textAlign: 'center' as const,
               }}>
                 {t.label}
               </div>
