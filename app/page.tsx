@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const PLATFORMS = [
@@ -39,6 +39,13 @@ const DEADLINES = [
 
 export default function HomePage() {
   const [tab, setTab]         = useState<'calc'|'deadlines'|'platforms'>('calc')
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 900)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
   const [platform, setPlatform] = useState('DoorDash')
   const [income, setIncome]   = useState('')
   const [stateCode, setStateCode] = useState('CA')
@@ -111,7 +118,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ MAIN GRID ━━ */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid resp-grid">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
 
         {/* ── LEFT ── */}
         <div>
