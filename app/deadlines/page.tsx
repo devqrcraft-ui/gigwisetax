@@ -33,7 +33,7 @@ export default function DeadlinesPage() {
   const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#f0f4f8', minHeight: '100vh' }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 2026 tax deadlines for gig workers?","acceptedAnswer":{"@type":"Answer","text":"2026 key dates: Q1 estimated tax — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15 2027. Tax return deadline — April 15 2027 (extension to October 15 2027). 1099-NEC receipt by January 31 2027."}},{"@type":"Question","name":"What is the penalty for missing quarterly estimated tax payments?","acceptedAnswer":{"@type":"Answer","text":"The IRS underpayment penalty for 2026 is based on the federal short-term rate plus 3 percentage points. On a $2,000 underpayment for one quarter, the penalty is roughly $30-$50. Penalties compound quarterly."}},{"@type":"Question","name":"When do I need to file my gig worker tax return for 2026?","acceptedAnswer":{"@type":"Answer","text":"Your 2026 federal tax return is due April 15, 2027. File Form 4868 for an automatic 6-month extension to October 15, 2027. An extension to file is NOT an extension to pay — any taxes owed are still due April 15."}}]}' }} />
       {/* HERO */}
