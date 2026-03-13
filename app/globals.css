@@ -66,3 +66,9 @@ body { overflow-x: hidden; }
   }
   .p-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
+
+@media (max-width: 768px) {
+  .main-grid { padding-right: 60px !important; }
+  .p-grid { grid-template-columns: 1fr 1fr !important; width: 100% !important; }
+  .p-grid > * { min-width: 0 !important; overflow: hidden !important; }
+}
