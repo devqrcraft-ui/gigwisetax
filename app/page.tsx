@@ -124,16 +124,16 @@ export default function HomePage() {
         <div>
 
           {/* TABS */}
-          <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20 }}>
+          <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20, gap: 6, padding: '4px 4px 0' }}>
             {([
               { id: 'calc',      label: '🧮 Tax Calculator'  },
               { id: 'deadlines', label: '📅 2026 Deadlines'  },
               { id: 'platforms', label: '🚀 All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
-                padding: '8px 10px', fontSize: 13, fontWeight: 600, cursor: 'pointer',
-                color: tab === t.id ? '#1a1a2e' : '#9ca3af',
-                borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent',
+                padding: '8px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
+                color: tab === t.id ? '#fff' : '#4b5563', background: tab === t.id ? '#B22234' : '#f0f4f8',
+                borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent', border: tab === t.id ? '1px solid #B22234' : '1px solid #d8dce6',
                 marginBottom: -2, transition: 'all .15s', whiteSpace: 'nowrap', flex: 1, textAlign: 'center' as const,
               }}>
                 {t.label}
