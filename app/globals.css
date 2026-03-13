@@ -82,3 +82,13 @@ body { overflow-x: hidden; }
     grid-template-columns: 1fr !important;
   }
 }
+
+@media (max-width: 900px) {
+  * { box-sizing: border-box !important; }
+  body { overflow-x: hidden !important; }
+  div, p, span, td, th, a {
+    max-width: 100% !important;
+    word-break: break-word !important;
+  }
+  img { max-width: 100% !important; }
+}
