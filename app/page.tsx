@@ -111,7 +111,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ MAIN GRID ━━ */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
 
         {/* ── LEFT ── */}
         <div>
@@ -261,7 +261,7 @@ export default function HomePage() {
                   <span style={{ fontWeight: 700, fontSize: 15 }}>🏆 How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
@@ -289,7 +289,7 @@ export default function HomePage() {
                         </tr>
                       ))}
                     </tbody>
-                  </table>
+                  </table></div>
                 </div>
               </div>
             </>
@@ -303,7 +303,7 @@ export default function HomePage() {
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📅 2026 IRS Estimated Tax Deadlines</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+                <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
                     <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
                       {['Quarter','Period','IRS Due Date','Days Left','Action'].map(h => (
@@ -329,7 +329,7 @@ export default function HomePage() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </table></div>
               </div>
             </div>
           )}
@@ -342,7 +342,7 @@ export default function HomePage() {
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 All Supported Platforms</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 480 }}>
+                <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
                     <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
                       {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
@@ -366,7 +366,7 @@ export default function HomePage() {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </table></div>
               </div>
             </div>
           )}
@@ -451,14 +451,14 @@ export default function HomePage() {
       </div>
 
       <style>{`
-        @media(max-width:960px){
+        @media(max-width:960px){.main-grid{grid-template-columns:1fr!important;}
           .main-grid{grid-template-columns:1fr!important}
           .form-grid{grid-template-columns:1fr!important}
           .results-row{grid-template-columns:1fr 1fr!important}
           .q-grid{grid-template-columns:1fr 1fr!important}
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
         }
-        @media(max-width:540px){
+        @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:16px 12px!important;}
           .results-row{grid-template-columns:1fr!important}
           .q-grid{grid-template-columns:1fr 1fr!important}
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
