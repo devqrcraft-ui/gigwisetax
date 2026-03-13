@@ -106,3 +106,6 @@ body { overflow-x: hidden; }
 
 html { overflow-x: hidden; }
 body { overflow-x: unset !important; }
+
+* { max-width: 100% !important; box-sizing: border-box !important; }
+html, body { overflow-x: hidden !important; width: 100% !important; }
