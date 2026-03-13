@@ -111,7 +111,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ MAIN GRID ━━ */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid resp-grid">
 
         {/* ── LEFT ── */}
         <div>
