@@ -98,3 +98,8 @@ body { overflow-x: hidden; }
   .desktop-cta { display: none !important; }
   .mobile-hamburger { display: block !important; }
 }
+
+@media (max-width: 480px) {
+  table th, table td { padding: 6px 6px !important; font-size: 11px !important; }
+  table { min-width: unset !important; }
+}
