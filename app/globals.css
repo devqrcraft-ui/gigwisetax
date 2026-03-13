@@ -76,3 +76,9 @@ body { overflow-x: hidden; }
 @media (max-width: 900px) {
   .resp-grid { grid-template-columns: 1fr !important; }
 }
+
+@media screen and (max-width: 900px) {
+  div.resp-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
