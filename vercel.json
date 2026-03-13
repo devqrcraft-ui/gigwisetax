@@ -1,0 +1,11 @@
+{
+  "framework": "nextjs",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "gigwisetax.com" }],
+      "destination": "https://www.gigwisetax.com/$1",
+      "permanent": true
+    }
+  ]
+}
