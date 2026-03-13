@@ -174,7 +174,7 @@ export default function CalculatorPage({ params }) {
       </div>
 
       {/* CONTENT */}
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px 64px", display: "grid", gridTemplateColumns: "1fr 280px", gap: 24 }}>
+      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "28px 20px 64px", display: "grid", gridTemplateColumns: "1fr 280px", gap: 24 }} className="blog-grid">
         <div>
           {/* STATE TAX INFO */}
           <div style={{ ...S.card, borderLeft: s.hasTax ? "4px solid #B22234" : "4px solid #0d7a40" }}>
