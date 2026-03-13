@@ -261,7 +261,7 @@ export default function HomePage() {
                   <span style={{ fontWeight: 700, fontSize: 15 }}>🏆 How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
-                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
+                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', minWidth: 420, borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
