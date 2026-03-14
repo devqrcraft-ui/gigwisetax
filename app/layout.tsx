@@ -1,4 +1,4 @@
-import Script from 'next/script'
+﻿import Script from 'next/script'
 import type { Metadata } from 'next'
 import NavClient from './NavClient'
 import { Analytics } from '@vercel/analytics/react'
@@ -6,8 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-  description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
+  title: 'Gig Worker Tax Calculator 2026 вЂ” SE Tax + All 51 States | GigWiseTax',
+  description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb вЂ” all 51 states. No signup.',
   metadataBase: new URL('https://www.gigwisetax.com'),
 
   robots: { index: true, follow: true },
@@ -16,14 +16,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-    description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
+    title: 'Gig Worker Tax Calculator 2026 вЂ” SE Tax + All 51 States | GigWiseTax',
+    description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb вЂ” all 51 states. No signup.',
   },
   twitter: {
     card: 'summary_large_image',
     images: ['https://www.gigwisetax.com/og-image.png'],
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-    description: 'Free SE tax calculator 2026 — 15.3% SE tax, all 51 states, no signup required.',
+    title: 'Gig Worker Tax Calculator 2026 вЂ” SE Tax + All 51 States | GigWiseTax',
+    description: 'Free SE tax calculator 2026 вЂ” 15.3% SE tax, all 51 states, no signup required.',
   },
 }
 
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1a1a2e" />
         <link rel="icon" href="/favicon.ico" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — Gig Worker Tax Calculator","url":"https://www.gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax вЂ” Gig Worker Tax Calculator","url":"https://www.gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
         {/* Google Analytics G-KR8CY8PKT0 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0"></script>
         <script
@@ -68,12 +68,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
             <div style={{ display:'flex', alignItems:'center', gap:10, minWidth:0, overflow:'hidden' }}>
-              <span style={{ fontSize:20, flexShrink:0 }}>🇺🇸</span>
-              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
+              <span style={{ fontSize:20, flexShrink:0 }}>рџ‡єрџ‡ё</span>
+              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>Independent Tax Estimation Tool for U.S. Gig Workers вЂ” Free, No Registration</span>
             </div>
             <div style={{ display:'flex', gap:12, alignItems:'center', flexShrink:0 }}>
               <span style={{ color:'rgba(255,255,255,.35)', fontSize:11 }}>Tax Year 2026</span>
-              <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:11, fontWeight:700 }}>⚠️ Q1 DUE: APR 15</span>
+              <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:11, fontWeight:700 }}>вљ пёЏ Q1 DUE: APR 15</span>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div style={{ fontSize:12, color:'rgba(255,255,255,.25)', lineHeight:1.7 }}>Not tax advice. Estimates only. Consult a CPA.</div>
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>🧮 Calculators</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>рџ§® Calculators</div>
               {[
                 ['/doordash','DoorDash'],
                 ['/uber','Uber'],
@@ -106,26 +106,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>📅 Deadlines</div>
-              {[['Q1 — April 15','/deadlines#q1'],['Q2 — June 16','/deadlines#q2'],['Q3 — Sept 15','/deadlines#q3'],['Q4 — Jan 15','/deadlines#q4']].map(([l,h]) => (
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>рџ“… Deadlines</div>
+              {[['Q1 вЂ” April 15','/deadlines#q1'],['Q2 вЂ” June 16','/deadlines#q2'],['Q3 вЂ” Sept 15','/deadlines#q3'],['Q4 вЂ” Jan 15','/deadlines#q4']].map(([l,h]) => (
                 <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>✍️ Blog</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>вњЌпёЏ Blog</div>
               {[
                 ['/blog/mileage-rate-2026','Mileage Rate 2026'],
                 ['/blog/amazon-flex-taxes-2026','Amazon Flex Taxes'],
                 ['/blog/grubhub-vs-doordash-taxes-2026','Grubhub vs DoorDash'],
                 ['/blog/w2-vs-1099-guide-2026','W-2 vs 1099 Guide'],
                 ['/blog/quarterly-taxes-gig-workers','Quarterly Taxes Guide'],
-                ['/blog','All Articles →'],
+                ['/blog','All Articles в†’'],
               ].map(([h,l]) => (
                 <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>🔒 Legal</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>рџ”’ Legal</div>
               {[
                 ['/about','About Us'],
                 ['/privacy','Privacy Policy'],
@@ -137,8 +137,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div style={{ borderTop:'1px solid rgba(255,255,255,.06)' }}>
             <div style={{ maxWidth:1200, margin:'0 auto', padding:'14px 20px', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:8 }}>
-              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
-              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}>🇺🇸 Made for U.S. Gig Workers · 🔒 No data stored</span>
+<div style="max-width:1200px;margin:0 auto;padding:16px 20px 0"><div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.25);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px">Our Free Tax Tools</div><div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px"><a href="https://www.privatepaycheck.com" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(245,200,66,0.07);border:1px solid rgba(245,200,66,0.2);border-radius:10px;padding:9px 14px;text-decoration:none"><span>??</span><div><div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.75)">PrivatePaycheck.com</div><div style="font-size:10px;color:rgba(255,255,255,.3)">W-2 salary and teacher calculator</div></div></a><a href="https://www.1099deductions.com" target="_blank" style="display:flex;align-items:center;gap:8px;background:rgba(245,200,66,0.07);border:1px solid rgba(245,200,66,0.2);border-radius:10px;padding:9px 14px;text-decoration:none"><span>??</span><div><div style="font-size:12px;font-weight:600;color:rgba(255,255,255,.75)">1099Deductions.com</div><div style="font-size:10px;color:rgba(255,255,255,.3)">Every write-off for your gig</div></div></a></div></div>
+              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}>В© 2026 GigWiseTax.com вЂ” Not affiliated with IRS or any government agency. Not tax advice.</span>
+              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}>рџ‡єрџ‡ё Made for U.S. Gig Workers В· рџ”’ No data stored</span>
             </div>
           </div>
         </footer>
