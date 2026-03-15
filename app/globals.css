@@ -141,3 +141,10 @@ a[style*="0d7a40"]:hover,div[style*="0d7a40"]:hover,a[style*="059669"]:hover{
   box-shadow:0 6px 0 rgba(0,0,0,0.3),0 4px 16px rgba(5,150,105,0.35)!important;
   filter:brightness(1.1)!important;
 }
+
+/* === STRONGER HOVER === */
+a[style*="B22234"]:hover,div[style*="B22234"]:hover{
+  transform:translateY(-5px) scale(1.03)!important;
+  box-shadow:0 10px 0 rgba(0,0,0,0.4),0 6px 24px rgba(178,34,52,0.6)!important;
+  filter:brightness(1.2)!important;
+}
