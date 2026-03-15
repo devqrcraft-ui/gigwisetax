@@ -122,3 +122,22 @@ button:hover{transform:translateY(-3px);box-shadow:0 7px 0 rgba(0,0,0,0.3),0 4px
 button:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,0.3);}
 a{transition:opacity 0.15s,transform 0.15s;}
 a:hover{opacity:0.82;}
+
+/* === BUTTON 3D HOVER — override inline styles === */
+a[style*="B22234"],div[style*="B22234"],span[style*="B22234"]{
+  transition:transform 0.15s,box-shadow 0.15s,filter 0.15s!important;
+}
+a[style*="B22234"]:hover,div[style*="B22234"]:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 6px 0 rgba(0,0,0,0.35),0 4px 16px rgba(178,34,52,0.4)!important;
+  filter:brightness(1.1)!important;
+}
+a[style*="B22234"]:active,div[style*="B22234"]:active{
+  transform:translateY(1px)!important;
+  box-shadow:0 2px 0 rgba(0,0,0,0.3)!important;
+}
+a[style*="0d7a40"]:hover,div[style*="0d7a40"]:hover,a[style*="059669"]:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 6px 0 rgba(0,0,0,0.3),0 4px 16px rgba(5,150,105,0.35)!important;
+  filter:brightness(1.1)!important;
+}
