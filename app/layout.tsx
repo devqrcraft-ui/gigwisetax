@@ -134,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}
 @media(max-width:640px){.footer-grid{grid-template-columns:1fr!important}}`}</style>
-        <Script src="/ai-chat-widget-final.js" strategy="lazyOnload" />
+        <Script src="/ai-chat-widget-final.js?v=3" strategy="lazyOnload" />
       </body>
     </html>
   )
