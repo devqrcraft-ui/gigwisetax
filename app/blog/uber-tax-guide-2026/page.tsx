@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Uber Driver Tax Guide 2026 — How to File Your 1099 | GigWiseTax',
-  description: 'Complete Uber driver tax guide for 2026. SE tax 15.3%, mileage rate $0.725/mile, tip deduction up to $25,000, quarterly deadlines, and Schedule C filing. Free calculator included.',
+  description: 'Complete Uber driver tax guide for 2026. SE tax 15.3%, mileage rate $0.67/mile, tip deduction up to $25,000, quarterly deadlines, and Schedule C filing. Free calculator included.',
   keywords: 'Uber driver taxes 2026, Uber 1099 how to file, Uber mileage deduction 2026, Uber quarterly taxes, rideshare self employment tax 2026',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-tax-guide-2026' },
   openGraph: { title: 'Uber Driver Tax Guide 2026', description: 'How Uber drivers pay taxes in 2026. SE tax, mileage, tips deduction, and quarterly schedule.' },
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
 const faqSchema = {
   '@context': 'https://schema.org', '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'How much tax does an Uber driver pay in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Uber drivers pay 15.3% self-employment tax plus federal income tax. On $45,000 net income after mileage deductions, expect to owe approximately $14,000-$17,000. Set aside 25-30% of each payment. The mileage deduction at $0.725/mile significantly reduces taxable income.' } },
+    { '@type': 'Question', name: 'How much tax does an Uber driver pay in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Uber drivers pay 15.3% self-employment tax plus federal income tax. On $45,000 net income after mileage deductions, expect to owe approximately $14,000-$17,000. Set aside 25-30% of each payment. The mileage deduction at $0.67/mile significantly reduces taxable income.' } },
     { '@type': 'Question', name: 'Can Uber drivers deduct tips in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Yes! A new 2026 tax law allows rideshare drivers to deduct qualified tips up to $25,000 from their income. This is a major new deduction for Uber and Lyft drivers. You still report the tip income, then deduct it separately.' } },
-    { '@type': 'Question', name: 'What is the 2026 mileage rate for Uber drivers?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS standard mileage rate is $0.725 per mile (72.5 cents). On 15,000 business miles, that is a $10,875 tax deduction — significantly reducing your taxable income.' } },
+    { '@type': 'Question', name: 'What is the 2026 mileage rate for Uber drivers?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS standard mileage rate is $0.67 per mile (72.5 cents). On 15,000 business miles, that is a $10,875 tax deduction — significantly reducing your taxable income.' } },
   ],
 }
 
@@ -43,7 +43,7 @@ export default function UberTaxGuide() {
               🚕 Uber Driver Tax Guide 2026 — How to File Your 1099
             </h1>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-              Complete Uber driver tax guide for 2026. Includes the new $0.725/mile mileage rate, the new tips deduction (up to $25,000),
+              Complete Uber driver tax guide for 2026. Includes the new $0.67/mile mileage rate, the new tips deduction (up to $25,000),
               SE tax calculation, quarterly deadlines, and every deduction Uber drivers can claim.
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function UberTaxGuide() {
                 <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: Uber Taxes 2026</div>
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                   <li><strong>Uber does NOT withhold any taxes</strong> — you are an independent contractor</li>
-                  <li><strong>2026 mileage rate: $0.725/mile</strong> — highest in years</li>
+                  <li><strong>2026 mileage rate: $0.67/mile</strong> — highest in years</li>
                   <li><strong>NEW: Tips deduction up to $25,000</strong> for 2026 tax year</li>
                   <li><strong>1099-K</strong> for ride earnings + <strong>1099-NEC</strong> for bonuses/referrals</li>
                   <li><strong>File Schedule C + Schedule SE</strong> with your Form 1040</li>
@@ -96,7 +96,7 @@ export default function UberTaxGuide() {
 
               <h2 style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
               <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}>🚗 $0.725 per mile in 2026</div>
+                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}>🚗 $0.67 per mile in 2026</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[['10,000 mi','$7,250'],['15,000 mi','$10,875'],['20,000 mi','$14,500']].map(([mi, d]) => (
                     <div key={mi} style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
@@ -114,7 +114,7 @@ export default function UberTaxGuide() {
               <h2 style={h2}>Top Deductions for Uber Drivers in 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
-                  { icon: '🚗', name: 'Mileage ($0.725/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
+                  { icon: '🚗', name: 'Mileage ($0.67/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
                   { icon: '💡', name: 'Tips Deduction (NEW)', detail: 'Up to $25,000 in qualified customer tips are deductible in 2026. Game-changer for top earners.' },
                   { icon: '📱', name: 'Phone (business %)', detail: 'Deduct business percentage of monthly plan. Most Uber drivers use phone 70–90% for business.' },
                   { icon: '🚘', name: 'Car Washes', detail: 'Cost of keeping vehicle clean for passengers. 100% deductible as ordinary business expense.' },

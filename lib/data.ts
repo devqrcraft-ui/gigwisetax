@@ -70,17 +70,17 @@ export const DEADLINES_2026 = [
   { q: 'Q4',  period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
 ]
 
-export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile
+export const MILEAGE_RATE_2026 = 0.67 // $0.67 per mile
 
 export const DEDUCTIONS = {
-  doordash:    ['🚗 Mileage ($0.725/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🧊 Insulated bags & equipment', '🅿️ Parking & tolls', '💼 Accounting software'],
-  uber:        ['🚗 Mileage ($0.725/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🚘 Car washes', '🅿️ Parking & tolls', '💺 Car accessories'],
+  doordash:    ['🚗 Mileage ($0.67/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🧊 Insulated bags & equipment', '🅿️ Parking & tolls', '💼 Accounting software'],
+  uber:        ['🚗 Mileage ($0.67/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🚘 Car washes', '🅿️ Parking & tolls', '💺 Car accessories'],
   etsy:        ['📦 Shipping & packaging', '🖥️ Home office', '📸 Photography equipment', '🎨 Art/craft supplies', '💻 Listing fees paid to Etsy', '📦 Inventory costs'],
   onlyfans:    ['💻 Camera & equipment', '🖥️ Home office', '💄 Costumes & props', '📱 Phone & internet', '✂️ Hair, makeup (business use)', '🎬 Editing software'],
-  instacart:   ['🚗 Mileage ($0.725/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🧺 Insulated bags', '🅿️ Parking & tolls', '💼 Accounting software'],
+  instacart:   ['🚗 Mileage ($0.67/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🧺 Insulated bags', '🅿️ Parking & tolls', '💼 Accounting software'],
   airbnb:      ['🏠 Mortgage interest (% of rental)', '🧹 Cleaning services', '🛋️ Furniture & supplies', '🔧 Repairs & maintenance', '📡 Internet & utilities (% of rental)', '💼 Management software'],
-  'amazon-flex': ['🚗 Mileage ($0.725/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🅿️ Parking & tolls', '📦 Equipment', '💼 Accounting software'],
-  lyft:        ['🚗 Mileage ($0.725/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🚘 Car washes', '🅿️ Parking & tolls', '💺 Car accessories'],
+  'amazon-flex': ['🚗 Mileage ($0.67/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🅿️ Parking & tolls', '📦 Equipment', '💼 Accounting software'],
+  lyft:        ['🚗 Mileage ($0.67/mile)', '📱 Phone bill (business %)', '🛡️ Insurance (business %)', '🚘 Car washes', '🅿️ Parking & tolls', '💺 Car accessories'],
 }
 
 export function calcTax(net: number, stateRate: number, filing: 'single'|'married') {

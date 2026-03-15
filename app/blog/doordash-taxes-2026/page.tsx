@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
   openGraph: {
     title: 'DoorDash Taxes 2026: How Much Do Dashers Owe?',
-    description: 'DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage $0.70/mile. Free calculator — no signup.',
+    description: 'DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage $0.67/mile. Free calculator — no signup.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
@@ -37,7 +37,7 @@ export default function DoorDashTaxGuide() {
             🚗 DoorDash Taxes 2026 — Complete Guide for Dashers
           </h1>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-            Everything DoorDash drivers need to know about taxes in 2026. SE tax (15.3%), the new $0.725/mile mileage rate, quarterly payment deadlines, and every deduction Dashers can claim.
+            Everything DoorDash drivers need to know about taxes in 2026. SE tax (15.3%), the new $0.67/mile mileage rate, quarterly payment deadlines, and every deduction Dashers can claim.
           </p>
         </div>
       </div>
@@ -58,7 +58,7 @@ export default function DoorDashTaxGuide() {
               <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: DoorDash Taxes 2026</div>
               <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                 <li><strong>DoorDash does NOT withhold taxes</strong> — you are an independent contractor</li>
-                <li><strong>2026 mileage rate: $0.725 per mile</strong> (up from $0.70 in 2025)</li>
+                <li><strong>2026 mileage rate: $0.67 per mile</strong></li>
                 <li><strong>1099-NEC sent if you earn $600+</strong> — but ALL income is taxable</li>
                 <li><strong>Set aside 25–30%</strong> of every payment for taxes</li>
                 <li><strong>NAICS Code 492000</strong> — Couriers and Messengers (for Schedule C)</li>
@@ -79,9 +79,9 @@ export default function DoorDashTaxGuide() {
 
             <h2 style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
             <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}>🚗 2026 Standard Mileage Rate: $0.725 per mile</div>
+              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}>🚗 2026 Standard Mileage Rate: $0.67 per mile</div>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
-                The IRS standard mileage rate for 2026 is <strong>$0.725 per mile</strong> driven for business.
+                The IRS standard mileage rate for 2026 is <strong>$0.67 per mile</strong> driven for business.
                 This is the highest rate in years. Track every mile you drive for DoorDash using a mileage app.
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10 }}>
@@ -102,7 +102,7 @@ export default function DoorDashTaxGuide() {
             <h2 style={h2}>Top Deductions for DoorDash Drivers</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
               {[
-                { icon: '🚗', name: 'Mileage ($0.725/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
+                { icon: '🚗', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
                 { icon: '📱', name: 'Phone Bill (business %)', detail: 'Deduct the business-use percentage of your monthly phone plan. Most Dashers use 60–80% for business.' },
                 { icon: '🛡️', name: 'Auto Insurance (business %)', detail: 'Deduct the portion used for business deliveries if using actual expense method.' },
                 { icon: '🧊', name: 'Insulated Bags & Equipment', detail: 'Hot bags, drink carriers, any gear specifically purchased for DoorDash deliveries.' },
@@ -150,7 +150,7 @@ export default function DoorDashTaxGuide() {
             {[
               { q: 'How much should I set aside for DoorDash taxes?', a: 'Set aside 25–30% of your net DoorDash income for taxes. In high-tax states like California or New York, set aside 30–35%. This covers the 15.3% SE tax plus federal income tax. The mileage deduction can significantly reduce this amount.' },
               { q: 'Does DoorDash report my income to the IRS?', a: 'Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN if you earn $600+. The IRS matches this against your tax return. Not reporting DoorDash income will result in an IRS notice and penalties.' },
-              { q: 'Can I deduct car payments for DoorDash?', a: "Only if you use the actual expense method (not standard mileage). Under the actual expense method, you can deduct the business percentage of car loan interest and depreciation. You cannot deduct the car payment principal. Most Dashers find the standard mileage method ($0.725/mile) simpler and often yields a larger deduction." },
+              { q: 'Can I deduct car payments for DoorDash?', a: "Only if you use the actual expense method (not standard mileage). Under the actual expense method, you can deduct the business percentage of car loan interest and depreciation. You cannot deduct the car payment principal. Most Dashers find the standard mileage method ($0.67/mile) simpler and often yields a larger deduction." },
             ].map((item, i) => (
               <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
                 <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>

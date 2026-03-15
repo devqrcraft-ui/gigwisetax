@@ -31,7 +31,7 @@ export default function BlogPost() {
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🚗 Mileage ($0.725/mile)</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}>🚗 Mileage ($0.67/mile)</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Track every mile — to restaurant, to customer, between deliveries</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>

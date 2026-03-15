@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = ["🚗 Mileage ($0.725/mile)","📱 Phone & data plan","🌡️ Insulated delivery bags","🔧 Vehicle maintenance","💻 Gig apps & software","🏠 Home office (if applicable)"]
+const DEDUCTIONS = ["🚗 Mileage ($0.67/mile)","📱 Phone & data plan","🌡️ Insulated delivery bags","🔧 Vehicle maintenance","💻 Gig apps & software","🏠 Home office (if applicable)"]
 
 export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
@@ -384,7 +384,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
           { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
-          { label: 'Mileage Deduction', value: '$0.725/mi', note: '2026 IRS Rate' },
+          { label: 'Mileage Deduction', value: '$0.67/mi', note: '2026 IRS Rate' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 6 }}>{c.label}</div>

@@ -66,7 +66,7 @@ export default function QuarterlyTaxesGuide() {
         <div style={{ fontWeight: 700, marginBottom: 8, color: '#a5b4fc' }}>Example: DoorDash driver earning $2,000/quarter</div>
         <div style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 14 }}>
           • Gross earnings: $2,000<br/>
-          • Mileage deduction (500 miles × $0.725): −$363<br/>
+          • Mileage deduction (500 miles × $0.67): −$363<br/>
           • Net income: $1,637<br/>
           • SE tax (15.3%): $250<br/>
           • Federal income tax (~12%): $197<br/>
@@ -85,7 +85,7 @@ export default function QuarterlyTaxesGuide() {
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Deductions to Reduce Your Quarterly Payment</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {[
-          ['🚗 Mileage', '$0.725/mile in 2026'],
+          ['🚗 Mileage', '$0.67/mile in 2026'],
           ['📱 Phone', '50–100% business use'],
           ['🏠 Home Office', 'Dedicated space only'],
           ['🧳 Equipment', 'Camera, insulated bags'],
