@@ -185,7 +185,7 @@ export default function TaxPenaltyFinder() {
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.67/mile in 2025</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
               {miles && <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
-                💰 Potential deduction: ${(parseFloat(miles)*0.67).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
+                💰 Potential deduction: ${(parseFloat(miles)*0.67).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.67*0.28).toLocaleString()} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>

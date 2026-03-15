@@ -56,7 +56,7 @@ export default function GrubhubPage() {
   const calculate = () => {
     const gross = parseFloat(income) || 0
     if (!gross) return
-    const mileDeduction = (parseFloat(miles)||0) * 0.725
+    const mileDeduction = (parseFloat(miles)||0) * 0.67
     const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
