@@ -135,7 +135,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}
 @media(max-width:640px){.footer-grid{grid-template-columns:1fr!important}}`}</style>
         <Script src="/ai-chat-widget-final.js?v=4" strategy="lazyOnload" />
-      </body>
+      <script dangerouslySetInnerHTML={{ __html: `
+document.addEventListener('dragstart',function(e){e.preventDefault();});
+document.addEventListener('selectstart',function(e){if(!['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName))e.preventDefault();});
+document.addEventListener('contextmenu',function(e){e.preventDefault();});
+` }} />
+</body>
     </html>
   )
 }

@@ -112,3 +112,13 @@ body { overflow-x: hidden; }
   .main-grid { grid-template-columns: 1fr 300px !important; }
   .blog-grid { grid-template-columns: 1fr 280px !important; }
 }
+
+/* === COPY PROTECTION + BUTTON 3D + READABILITY === */
+body,p,h1,h2,h3,h4,h5,h6,span,li,td,th{user-select:none;-webkit-user-select:none;-moz-user-select:none;}
+input,textarea,select,[contenteditable=true]{user-select:text!important;-webkit-user-select:text!important;}
+*{-webkit-user-drag:none;}
+button{box-shadow:0 4px 0 rgba(0,0,0,0.3),0 2px 8px rgba(0,0,0,0.2);transition:transform 0.15s,box-shadow 0.15s;}
+button:hover{transform:translateY(-3px);box-shadow:0 7px 0 rgba(0,0,0,0.3),0 4px 16px rgba(0,0,0,0.25);}
+button:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,0.3);}
+a{transition:opacity 0.15s,transform 0.15s;}
+a:hover{opacity:0.82;}
