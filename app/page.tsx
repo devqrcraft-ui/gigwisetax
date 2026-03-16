@@ -457,6 +457,96 @@ export default function HomePage() {
         </div>
       </div>
 
+      {/* ══ GIG WORKER TAX HUB ══ */}
+      <div style={{maxWidth:1200,margin:'0 auto',padding:'48px 20px 0'}}>
+
+        {/* PLATFORM HUB */}
+        <div style={{marginBottom:48}}>
+          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
+            <div style={{width:3,height:20,background:'#B22234',borderRadius:2}}/>
+            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Gig Worker Tax Center 2026</span>
+          </div>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>Tax Calculators by Platform</h2>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:10}}>
+            {[
+              {emoji:'🚗',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
+              {emoji:'🚕',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
+              {emoji:'🛍️',name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
+              {emoji:'⭐',name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
+              {emoji:'🛒',name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
+              {emoji:'🏠',name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
+              {emoji:'📦',name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
+              {emoji:'🚖',name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
+            ].map((p,i)=>(
+              <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:6,padding:'16px',textDecoration:'none',display:'block',transition:'all .2s'}}
+                onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
+                onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.09)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)';}}>
+                <div style={{fontSize:24,marginBottom:8}}>{p.emoji}</div>
+                <div style={{fontSize:14,fontWeight:800,color:'#fff',marginBottom:4}}>{p.name} Tax Calculator</div>
+                <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:8,lineHeight:1.5}}>{p.desc}</div>
+                <div style={{fontSize:12,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* LONG-TAIL EXAMPLES */}
+        <div style={{marginBottom:48}}>
+          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
+            <div style={{width:3,height:20,background:'#B22234',borderRadius:2}}/>
+            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Real Tax Examples</span>
+          </div>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers Actually Pay</h2>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10}}>
+            {[
+              {label:'DoorDash $40,000 — California',se:'$5,651',fed:'$4,200',state:'$2,800',net:'~$27,350',href:'/doordash/california'},
+              {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$5,500',state:'$0',net:'~$37,435',href:'/uber/texas'},
+              {label:'OnlyFans $60,000 — Florida',se:'$8,478',fed:'$7,200',state:'$0',net:'~$44,322',href:'/onlyfans/florida'},
+              {label:'Etsy $30,000 — New York',se:'$4,239',fed:'$2,800',state:'$1,800',net:'~$21,161',href:'/etsy/new-york'},
+              {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
+              {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
+            ].map((ex,i)=>(
+              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'16px',textDecoration:'none',display:'block'}}>
+                <div style={{fontSize:13,fontWeight:800,color:'#e8b84b',marginBottom:10}}>{ex.label}</div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4px 16px',marginBottom:10}}>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>SE Tax</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.se}</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>Federal</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>State</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.state}</div>
+                </div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:8,fontSize:14,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ */}
+        <div style={{marginBottom:48,maxWidth:800}}>
+          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
+            <div style={{width:3,height:20,background:'#B22234',borderRadius:2}}/>
+            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>FAQ</span>
+          </div>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:20,marginLeft:13}}>Gig Worker Tax Questions 2026</h2>
+          <div style={{display:'flex',flexDirection:'column' as const,gap:8}}>
+            {[
+              ['How much tax do gig workers pay?','Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10–22% for most) plus state tax. Total effective rate is typically 25–35%. A DoorDash driver earning $40,000 in California pays roughly $12,000–$14,000 in total taxes.'],
+              ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
+              ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is $0.70 per mile. A driver logging 15,000 business miles saves $10,500 in deductible expenses, which reduces SE tax and income tax.'],
+              ['Do OnlyFans creators pay self-employment tax?','Yes. OnlyFans sends a 1099-NEC for earnings over $600. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses.'],
+              ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 51 states.'],
+              ['Is gig work income taxed differently than W-2?','Yes. W-2 employees split FICA 50/50 with their employer. Gig workers pay both halves (15.3%) but can deduct 50% of SE tax on Form 1040. This makes accurate quarterly payments critical to avoid underpayment penalties.'],
+            ].map(([q,a],i)=>(
+              <details key={i} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'14px 18px'}}>
+                <summary style={{fontSize:14,fontWeight:700,color:'#e8b84b',cursor:'pointer',listStyle:'none'}}>{q}</summary>
+                <p style={{fontSize:13,color:'rgba(255,255,255,0.6)',lineHeight:1.75,marginTop:10,marginBottom:0}}>{a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important;}
           .main-grid{grid-template-columns:1fr!important}
