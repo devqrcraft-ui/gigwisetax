@@ -101,10 +101,10 @@ export default function HomePage() {
   const card    = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
   const cardHd  = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const label   = { display: 'block', fontSize: isMobile ? 13 : 11, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8 }
-  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 6, padding: isMobile ? '13px 14px' : '10px 12px', fontSize: isMobile ? 16 : 14, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
-  const btnDark = { background: '#1a1a2e', color: '#fff', padding: isMobile ? '16px 0' : '13px 0', borderRadius: 6, fontSize: isMobile ? 17 : 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
-  const btnRed  = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: isMobile ? '13px 0' : '10px 0', borderRadius: 6, fontSize: isMobile ? 15 : 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
+  const label   = { display: 'block', fontSize: 13, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8 }
+  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 6, padding: '13px 14px', fontSize: 16, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
+  const btnDark = { background: '#1a1a2e', color: '#fff', padding: '16px 0', borderRadius: 6, fontSize: 17, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
+  const btnRed  = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
