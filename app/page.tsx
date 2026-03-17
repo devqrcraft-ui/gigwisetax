@@ -82,22 +82,26 @@ export default function HomePage() {
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '12px 16px 8px' : '32px 20px 28px' }}>
-          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
-            <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
-            <h1 style={{ fontSize: isMobile ? 18 : 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '14px 16px 10px' : '28px 20px 22px' }}>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10 }}>
+            <div style={{ width: 4, height: isMobile ? 28 : 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
+            <h1 style={{ fontSize: isMobile ? 19 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
               Free Gig Worker Tax Calculator — United States 2026
             </h1>
           </div>
-          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', paddingLeft: 16, maxWidth: 780, marginBottom: 18, display: isMobile ? 'none' : 'block' }}>
-            Estimate self-employment taxes for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more.
-            Includes federal SE tax (15.3%), state income tax for all 51 jurisdictions, and a full quarterly
-            payment schedule with Google Calendar export. No signup, no app, no fees — ever.
-          </p>
-          <div style={{ paddingLeft: 16, display: isMobile ? 'none' : 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-            {['📋 IRS Schedule SE Formula','🗺️ All 51 States','🔒 No Registration','📅 Updated Jan 2026','📆 Google Calendar Export'].map(b => (
-              <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
+          {/* 3 promise bullets — visible on all screens */}
+          <div style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column' as const, gap: 5, marginBottom: 10 }}>
+            {[
+              '✅ Self-employment tax 15.3% + federal + state (all 51 states)',
+              '✅ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
+              '✅ Free, no signup, no app — results in seconds',
+            ].map(b => (
+              <span key={b} style={{ fontSize: isMobile ? 12 : 13, color: 'rgba(255,255,255,.75)', fontWeight: 500 }}>{b}</span>
             ))}
+          </div>
+          {/* gov-style disclaimer */}
+          <div style={{ paddingLeft: 16, fontSize: 11, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
+            Based on IRS Schedule SE and 2026 tax brackets. Not affiliated with the IRS or any government agency. Estimates only — not tax advice.
           </div>
         </div>
       </div>
@@ -152,30 +156,58 @@ export default function HomePage() {
                   <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 11, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
                 </div>
                 <div style={{ padding: 20 }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }} className="form-grid">
 
+                  {/* Section 1 */}
+                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                    1. Your Gig Income
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
                       <label style={label}>🚗 Gig Platform</label>
                       <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
                         {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.emoji} {p.name}{p.badge ? ' — USA #1' : ''}</option>)}
                       </select>
                     </div>
+                    <div>
+                      <label style={label}>💵 Annual Gig Revenue (USD)</label>
+                      <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
+                      </div>
+                    </div>
+                  </div>
 
+                  {/* Section 2 */}
+                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                    2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#9ca3af' }}>(optional)</span>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
+                    <div>
+                      <label style={label}>🚗 Business Miles Driven</label>
+                      <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
+                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>$0.70/mile (IRS 2026 rate)</div>
+                    </div>
+                    <div>
+                      <label style={label}>🧾 Other Business Expenses</label>
+                      <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" placeholder="e.g. 2,000"/>
+                      </div>
+                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>Phone, supplies, equipment…</div>
+                    </div>
+                  </div>
+
+                  {/* Section 3 */}
+                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                    3. Where You Live &amp; File
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
                       <label style={label}>🗺️ State of Residence</label>
                       <select style={inp} value={stateCode} onChange={e => setStateCode(e.target.value)}>
                         {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>
-
-                    <div>
-                      <label style={label}>💵 Annual Net Income (USD)</label>
-                      <div style={{ position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
-                      </div>
-                    </div>
-
                     <div>
                       <label style={label}>📋 Filing Status</label>
                       <select style={inp} value={filing} onChange={e => setFiling(e.target.value)}>
@@ -186,7 +218,7 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div style={btnDark} onClick={calculate}>📊 Calculate My Tax Estimate</div>
+                  <div style={{ ...btnDark, fontSize: 15 }} onClick={calculate}>📊 Calculate My Gig Taxes →</div>
                 </div>
               </div>
 
@@ -235,6 +267,10 @@ export default function HomePage() {
 
                     <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', textAlign: 'justify' as const, lineHeight: 1.6 }}>
                       ⚠️ <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
+                    </div>
+                    <div style={{ marginTop: 10, background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#166534', lineHeight: 1.6 }}>
+                      💡 <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
+                      <a href="/tax-penalty-finder" style={{ color: '#166534', fontWeight: 700 }}>→ Open Penalty Finder</a>
                     </div>
                   </div>
                 </div>
