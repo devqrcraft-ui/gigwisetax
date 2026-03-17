@@ -579,10 +579,10 @@ export default function HomePage() {
               <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:6,padding:'16px',textDecoration:'none',display:'block',transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
                 onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.09)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)';}}>
-                <div style={{fontSize:24,marginBottom:8}}>{p.emoji}</div>
-                <div style={{fontSize:14,fontWeight:800,color:'#fff',marginBottom:4}}>{p.name} Tax Calculator</div>
-                <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:8,lineHeight:1.5}}>{p.desc}</div>
-                <div style={{fontSize:12,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
+                <div style={{fontSize:32,marginBottom:10}}>{p.emoji}</div>
+                <div style={{fontSize:17,fontWeight:800,color:'#fff',marginBottom:6}}>{p.name} Tax Calculator</div>
+                <div style={{fontSize:14,color:'rgba(255,255,255,0.55)',marginBottom:10,lineHeight:1.6}}>{p.desc}</div>
+                <div style={{fontSize:14,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
               </a>
             ))}
           </div>
@@ -605,14 +605,14 @@ export default function HomePage() {
               {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
               {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
             ].map((ex,i)=>(
-              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'16px',textDecoration:'none',display:'block'}}>
-                <div style={{fontSize:13,fontWeight:800,color:'#e8b84b',marginBottom:10}}>{ex.label}</div>
-                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'4px 16px',marginBottom:10}}>
-                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>SE Tax</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.se}</div>
-                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>Federal</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
-                  <div style={{fontSize:12,color:'rgba(255,255,255,0.4)'}}>State</div><div style={{fontSize:12,color:'#f87171',fontWeight:700}}>{ex.state}</div>
+              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'20px',textDecoration:'none',display:'block'}}>
+                <div style={{fontSize:16,fontWeight:800,color:'#e8b84b',marginBottom:12}}>{ex.label}</div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'6px 16px',marginBottom:12}}>
+                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>SE Tax</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.se}</div>
+                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>Federal</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
+                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>State</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.state}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:8,fontSize:14,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:10,fontSize:16,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
               </a>
             ))}
           </div>
