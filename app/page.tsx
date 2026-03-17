@@ -608,13 +608,13 @@ export default function HomePage() {
               {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
             ].map((ex,i)=>(
               <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'20px',textDecoration:'none',display:'block'}}>
-                <div style={{fontSize:16,fontWeight:800,color:'#e8b84b',marginBottom:12}}>{ex.label}</div>
-                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'6px 16px',marginBottom:12}}>
-                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>SE Tax</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.se}</div>
-                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>Federal</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
-                  <div style={{fontSize:14,color:'rgba(255,255,255,0.5)'}}>State</div><div style={{fontSize:14,color:'#f87171',fontWeight:700}}>{ex.state}</div>
+                <div style={{fontSize:18,fontWeight:800,color:'#e8b84b',marginBottom:14}}>{ex.label}</div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px 16px',marginBottom:14}}>
+                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>SE Tax</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.se}</div>
+                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>Federal</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
+                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>State</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.state}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:10,fontSize:16,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:12,fontSize:18,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
               </a>
             ))}
           </div>
