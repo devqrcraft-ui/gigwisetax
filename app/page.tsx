@@ -58,6 +58,7 @@ export default function HomePage() {
   const [stateCode, setStateCode] = useState('CA')
   const [filing, setFiling]   = useState('single')
   const [result, setResult]   = useState<any>(null)
+  const [showAdvanced, setShowAdvanced] = useState(false)
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
 
@@ -148,6 +149,16 @@ export default function HomePage() {
           </a>
         </div>
       </div>
+
+      {/* STICKY RESULT BAR mobile */}
+      {result && isMobile && (
+        <div style={{ position: 'sticky', top: 60, zIndex: 90, background: '#1a1a2e', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', fontWeight: 500 }}>Estimated total tax</span>
+          <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
+            {Math.round(result.total).toLocaleString('en-US'){'}'} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({'{'}result.rate{'}'}%)</span>
+          </span>
+        </div>
+      )}
 
       {/* ━━ MAIN GRID ━━ */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '10px 12px 32px' : '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
