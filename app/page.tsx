@@ -565,7 +565,7 @@ export default function HomePage() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>Tax Calculators by Platform</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(220px,100%),1fr))',gap:10}}>
+          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
             {[
               {emoji:'🚗',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
               {emoji:'🚕',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
@@ -576,13 +576,15 @@ export default function HomePage() {
               {emoji:'📦',name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
               {emoji:'🚖',name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
             ].map((p,i)=>(
-              <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:6,padding:'16px',textDecoration:'none',display:'block',transition:'all .2s'}}
+              <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'20px',textDecoration:'none',display:'flex',alignItems:'center',gap:16,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
                 onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.09)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)';}}>
-                <div style={{fontSize:32,marginBottom:10}}>{p.emoji}</div>
-                <div style={{fontSize:17,fontWeight:800,color:'#fff',marginBottom:6}}>{p.name} Tax Calculator</div>
-                <div style={{fontSize:14,color:'rgba(255,255,255,0.55)',marginBottom:10,lineHeight:1.6}}>{p.desc}</div>
-                <div style={{fontSize:14,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
+                <div style={{fontSize:36,flexShrink:0}}>{p.emoji}</div>
+                <div style={{flex:1}}>
+                  <div style={{fontSize:17,fontWeight:800,color:'#fff',marginBottom:4}}>{p.name} Tax Calculator</div>
+                  <div style={{fontSize:13,color:'rgba(255,255,255,0.5)',marginBottom:6}}>{p.desc}</div>
+                  <div style={{fontSize:15,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
+                </div>
               </a>
             ))}
           </div>
@@ -596,7 +598,7 @@ export default function HomePage() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers Actually Pay</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(260px,100%),1fr))',gap:10}}>
+          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
             {[
               {label:'DoorDash $40,000 — California',se:'$5,651',fed:'$4,200',state:'$2,800',net:'~$27,350',href:'/doordash/california'},
               {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$5,500',state:'$0',net:'~$37,435',href:'/uber/texas'},
