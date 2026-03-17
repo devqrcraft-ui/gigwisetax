@@ -37,6 +37,13 @@ const DEADLINES = [
   { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027',     days: 320, now: false },
 ]
 
+const QUICK_EXAMPLES = [
+  { label: 'Uber driver',          platform: 'Uber',     income: '30000', state: 'CA', filing: 'single',  tag: '$30k · California' },
+  { label: 'DoorDash + Instacart', platform: 'DoorDash', income: '40000', state: 'TX', filing: 'single',  tag: '$40k · Texas'      },
+  { label: 'OnlyFans creator',     platform: 'OnlyFans', income: '60000', state: 'NY', filing: 'single',  tag: '$60k · New York'   },
+  { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k · Florida'    },
+]
+
 export default function HomePage() {
   const [tab, setTab]         = useState<'calc'|'deadlines'|'platforms'>('calc')
   const [isMobile, setIsMobile] = useState(false)
@@ -53,6 +60,27 @@ export default function HomePage() {
   const [result, setResult]   = useState<any>(null)
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
+
+  const loadExample = (ex: typeof QUICK_EXAMPLES[0]) => {
+    setPlatform(ex.platform)
+    setIncome(ex.income)
+    setStateCode(ex.state)
+    setFiling(ex.filing)
+    setResult(null)
+    setTimeout(() => {
+      const net = parseFloat(ex.income) || 0
+      const st = STATES.find(s => s.code === ex.state)
+      const seBase  = net * 0.9235
+      const seTax   = seBase * 0.153
+      const taxable = net - seTax * 0.5
+      const fedRate = ex.filing === 'single' ? 0.22 : 0.12
+      const federal = taxable * fedRate
+      const stateTax = taxable * (st?.rate ?? 0.05)
+      const total   = federal + seTax + stateTax
+      setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / net) * 100).toFixed(1) })
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }, 50)
+  }
 
   const calculate = () => {
     const net = parseFloat(income) || 0
@@ -148,6 +176,28 @@ export default function HomePage() {
           {/* ═══ CALCULATOR ═══ */}
           {tab === 'calc' && (
             <>
+              {/* QUICK EXAMPLES */}
+              <div style={{ marginBottom: 16 }}>
+                <div style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>
+                  ⚡ Quick Examples — tap to load
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4,1fr)', gap: 8 }}>
+                  {QUICK_EXAMPLES.map(ex => (
+                    <div
+                      key={ex.label}
+                      onClick={() => loadExample(ex)}
+                      style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.09)', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', transition: 'all .15s' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
+                    >
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{ex.label}</div>
+                      <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginBottom: 8 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* FORM CARD */}
               <div style={card}>
                 <div style={cardHd}>
