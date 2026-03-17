@@ -110,11 +110,11 @@ export default function HomePage() {
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
       {/* ━━ HERO STRIP ━━ */}
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '14px 16px 10px' : '28px 20px 22px' }}>
-          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10 }}>
-            <div style={{ width: 4, height: isMobile ? 28 : 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
-            <h1 style={{ fontSize: isMobile ? 19 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '14px 16px 10px' : '28px 20px 22px', overflow: 'hidden' }}>
+          <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
+            <div style={{ width: 4, minWidth: 4, height: isMobile ? 28 : 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
+            <h1 style={{ fontSize: isMobile ? 18 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
               Free Gig Worker Tax Calculator — United States 2026
             </h1>
           </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
               '✅ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
               '✅ Free, no signup, no app — results in seconds',
             ].map(b => (
-              <span key={b} style={{ fontSize: isMobile ? 12 : 13, color: 'rgba(255,255,255,.75)', fontWeight: 500 }}>{b}</span>
+              <span key={b} style={{ fontSize: isMobile ? 12 : 13, color: 'rgba(255,255,255,.75)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
           </div>
           {/* gov-style disclaimer */}
