@@ -373,6 +373,23 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               </div>
             </div>
 
+            {/* MULTI-APP BANNER */}
+            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>💡 Drive for multiple apps?</span>
+              </div>
+              <div style={{ padding: '14px 16px' }}>
+                <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, marginBottom: 10 }}>
+                  Working Uber + DoorDash, Instacart + Amazon Flex, or other combinations? Learn how to combine your gig income for taxes.
+                </div>
+                <a href="/multi-app-gig-taxes-2026" style={{ textDecoration: 'none' }}>
+                  <div style={{ background: '#B22234', color: '#fff', padding: '9px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
+                    → Multi-App Gig Tax Guide 2026
+                  </div>
+                </a>
+              </div>
+            </div>
+
             {/* TRUST */}
             <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>🔒 About This Tool</div>
