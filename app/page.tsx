@@ -155,7 +155,7 @@ export default function HomePage() {
         <div style={{ position: 'sticky', top: 60, zIndex: 90, background: '#1a1a2e', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', fontWeight: 500 }}>Estimated total tax</span>
           <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
-            {Math.round(result.total).toLocaleString('en-US'){'}'} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({'{'}result.rate{'}'}%)</span>
+            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
           </span>
         </div>
       )}
