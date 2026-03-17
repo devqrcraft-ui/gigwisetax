@@ -22,10 +22,13 @@ const NAV = [
   {
     label: 'Tax Tools',
     items: [
-      { label: '🔍 Tax Penalty Finder',           href: '/tax-penalty-finder',   sub: 'NEW' },
-      { label: '🏢 S-Corp vs Sole Prop',          href: '/s-corp-calculator',    sub: 'NEW' },
-      { label: '✅ Deductions Checklist',          href: '/deductions',           sub: 'NEW' },
-      { label: '📅 Quarterly Reminders',          href: '/quarterly-reminder',   sub: 'FREE'},
+      { label: '🔍 Tax Penalty Finder',           href: '/tax-penalty-finder',        sub: 'NEW'  },
+      { label: '🏢 S-Corp vs Sole Prop',          href: '/s-corp-calculator',         sub: 'NEW'  },
+      { label: '✅ Deductions Checklist',          href: '/deductions',                sub: 'NEW'  },
+      { label: '📅 Quarterly Reminders',          href: '/quarterly-reminder',        sub: 'FREE' },
+      { label: '🚗 Multi-App Gig Taxes',          href: '/multi-app-gig-taxes-2026',  sub: 'NEW'  },
+      { label: '🛡️ Safe Harbor Guide',            href: '/safe-harbor-quarterly-taxes', sub: 'NEW' },
+      { label: '🔢 How We Calculate',             href: '/how-we-calculate-gig-taxes', sub: 'NEW'  },
       { label: '⚠️ Q1 — April 15, 2026',         href: '/deadlines#q1',         sub: 'URGENT' },
       { label: 'Q2 — June 16, 2026',             href: '/deadlines#q2',         sub: '104 days' },
       { label: 'Q3 — Sept 15, 2026',             href: '/deadlines#q3',         sub: '195 days' },

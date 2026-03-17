@@ -100,7 +100,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:10 }}>
                 Our Free Tax Tools
               </div>
-              <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:16 }}>
+              <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:12 }}>
                 <a href="https://www.privatepaycheck.com" target="_blank" rel="noopener"
                   style={{ display:'flex', alignItems:'center', gap:8, background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'9px 14px', textDecoration:'none' }}>
                   <span style={{ fontSize:16 }}>💰</span>
@@ -117,6 +117,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <div style={{ fontSize:10, color:'rgba(255,255,255,.3)' }}>Every write-off for your gig</div>
                   </div>
                 </a>
+              </div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:8 }}>
+                Guides &amp; Resources
+              </div>
+              <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:16 }}>
+                {[
+                  { label:'🚗 Multi-App Taxes',   href:'/multi-app-gig-taxes-2026'    },
+                  { label:'🛡️ Safe Harbor Guide', href:'/safe-harbor-quarterly-taxes'  },
+                  { label:'🔢 How We Calculate',  href:'/how-we-calculate-gig-taxes'   },
+                  { label:'🔍 Penalty Finder',    href:'/tax-penalty-finder'           },
+                ].map(l => (
+                  <a key={l.href} href={l.href}
+                    style={{ fontSize:12, color:'rgba(255,255,255,.5)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
+                    {l.label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
