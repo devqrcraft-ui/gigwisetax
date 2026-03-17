@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '1099 Tax Deadlines 2025 — Complete Calendar for Gig Workers | GigWiseTax',
+  title: '1099 Tax Deadlines 2026 — Complete Calendar for Gig Workers | GigWiseTax',
   description: 'Every 1099 and quarterly tax deadline for gig workers in 2025. IRS filing dates, state deadlines, penalty amounts. Free reminder signup included.',
   keywords: '1099 tax deadlines 2025, quarterly tax deadlines 2025, gig worker tax calendar, IRS 1040-ES deadlines',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/1099-deadlines-2025' },
