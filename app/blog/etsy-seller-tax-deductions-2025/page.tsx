@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Etsy Seller Tax Deductions 2026 — Complete List | GigWiseTax',
   description: 'Every tax deduction Etsy sellers can claim in 2025. Materials, home studio, shipping, Etsy fees, equipment — complete deduction checklist with dollar amounts.',
   keywords: 'Etsy seller tax deductions 2025, Etsy taxes deductions, Etsy 1099 deductions, Etsy seller write offs',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/etsy-seller-tax-deductions-2025' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/etsy-seller-tax-deductions-2025' },
 }
 
 export default function EtsyDeductionsBlog() {

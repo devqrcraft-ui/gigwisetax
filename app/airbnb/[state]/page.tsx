@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `${p.name} Tax Calculator ${s.name} 2026 — ${stateStr} | GigWiseTax`,
     description: `Free ${p.name} tax calculator for ${s.name} (${s.abbr}) 2026. ${stateStr}. Calculate self-employment tax, federal tax, and ${s.name} state tax. Quarterly payment schedule included. No signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
-    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
+    alternates: { canonical: `https://gigwisetax.com/${p.slug}/${s.slug}` },
   }
 }
 
@@ -104,7 +104,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     name: `${platform.name} Tax Calculator ${state.name} 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} tax calculator for ${state.name} 2026`,
-    url: `https://www.gigwisetax.com/${platform.slug}/${state.slug}`,
+    url: `https://gigwisetax.com/${platform.slug}/${state.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     areaServed: { '@type': 'State', name: state.name, containedIn: { '@type': 'Country', name: 'United States' } },
   }

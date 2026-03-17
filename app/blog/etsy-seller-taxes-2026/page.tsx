@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Etsy Seller Taxes 2026 — Complete 1099 Filing Guide | GigWiseTax',
   description: 'How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 51 states.',
   keywords: 'Etsy seller taxes 2026, Etsy 1099 how to file, Etsy self employment tax, Etsy COGS deduction, Etsy quarterly taxes 2026',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/etsy-seller-taxes-2026' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/etsy-seller-taxes-2026' },
 }
 export default function EtsyTaxGuide() {
   const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }

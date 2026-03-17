@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
     title: `Amazon Flex Tax Calculator 2026 — See Your Exact Tax in 30 Seconds`,
     description: `Amazon Flex drivers: calculate SE tax + state income tax instantly. Mileage deduction at $0.67/mile can save $10,000+/yr. Free for all 50 states. No signup.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
-    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
+    alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
-      url: `https://www.gigwisetax.com/${p.slug}`,
+      url: `https://gigwisetax.com/${p.slug}`,
     },
   }
 }
@@ -37,7 +37,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
-    url: `https://www.gigwisetax.com/${platform.slug}`,
+    url: `https://gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 

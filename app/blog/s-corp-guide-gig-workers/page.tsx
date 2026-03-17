@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'S-Corp Election for Gig Workers 2025 — Save $3,000–$12,000/yr | GigWiseTax',
   description: 'How gig workers earning $60k+ can save thousands per year by electing S-Corp status. Step-by-step guide, IRS Form 2553, reasonable salary rules.',
   keywords: 'S-Corp election gig workers, S-Corp vs sole proprietor, gig worker S-Corp savings, IRS Form 2553 guide',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/s-corp-guide-gig-workers' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/s-corp-guide-gig-workers' },
 }
 
 export default function SCorpGuideBlog() {

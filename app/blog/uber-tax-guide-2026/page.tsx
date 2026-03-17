@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Uber Driver Tax Guide 2026 — How to File Your 1099 | GigWiseTax',
   description: 'Complete Uber driver tax guide for 2026. SE tax 15.3%, mileage rate $0.67/mile, tip deduction up to $25,000, quarterly deadlines, and Schedule C filing. Free calculator included.',
   keywords: 'Uber driver taxes 2026, Uber 1099 how to file, Uber mileage deduction 2026, Uber quarterly taxes, rideshare self employment tax 2026',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-tax-guide-2026' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/uber-tax-guide-2026' },
   openGraph: { title: 'Uber Driver Tax Guide 2026', description: 'How Uber drivers pay taxes in 2026. SE tax, mileage, tips deduction, and quarterly schedule.' },
 }
 

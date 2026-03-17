@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'W-9 Mistakes That Cost Gig Workers Thousands — 2025 Guide | GigWiseTax',
   description: 'The 7 most common W-9 and 1099 mistakes gig workers make — and how each one can trigger IRS penalties. Free guide for DoorDash, Uber, Etsy workers.',
   keywords: 'W-9 mistakes gig workers, 1099 errors, IRS penalties gig economy, W-9 form independent contractor',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/w9-mistakes-gig-workers' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/w9-mistakes-gig-workers' },
 }
 
 export default function W9MistakesBlog() {

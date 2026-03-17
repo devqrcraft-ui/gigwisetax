@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '2026 Quarterly Tax Deadlines — All 51 States | GigWiseTax',
   description: 'Complete 2026 quarterly estimated tax deadlines for gig workers. Q1: April 15 · Q2: June 16 · Q3: Sept 15 · Q4: Jan 15. Federal and all 50 state deadlines. Google Calendar export.',
   keywords: '2026 quarterly tax deadlines, estimated tax deadlines 2026, IRS 1040-ES due dates 2026, gig worker tax deadlines',
-  alternates: { canonical: 'https://www.gigwisetax.com/deadlines' },
+  alternates: { canonical: 'https://gigwisetax.com/deadlines' },
 }
 
 const STATES_DEADLINES = [

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Home Office Deduction for Gig Workers 2025 — Up to $1,500/yr | GigWiseTax',
   description: 'How gig workers claim the home office deduction in 2025. Simplified method vs actual expenses, exclusive use rule, what qualifies. Free calculator included.',
   keywords: 'home office deduction gig workers 2025, home office tax deduction, gig worker home office, IRS home office rules',
-  alternates: { canonical: 'https://www.gigwisetax.com/blog/home-office-deduction-gig-workers' },
+  alternates: { canonical: 'https://gigwisetax.com/blog/home-office-deduction-gig-workers' },
 }
 
 export default function HomeOfficeBlog() {
