@@ -305,7 +305,7 @@ export default function HomePage() {
                         <div style={{ fontSize: 11, color: '#9ca3af' }}>{r.sub}</div>
                       </div>
                     ))}
-                  </div>
+                  </div></div>
 
                   {/* 4 quarterly boxes */}
                   <div style={{ padding: 20 }}>
