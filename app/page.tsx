@@ -107,7 +107,7 @@ export default function HomePage() {
   const btnRed  = (extra = {}) => ({ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', ...extra })
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#0d1117', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
@@ -136,7 +136,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ SPONSORED STRIP ━━ */}
-      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a', display: isMobile ? 'none' : 'block' }}>
+      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a', display: isMobile ? 'none' : 'block', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
           <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const, whiteSpace: 'nowrap' }}>Sponsored</span>
           <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
@@ -292,7 +292,7 @@ export default function HomePage() {
                   </div>
 
                   {/* 4 boxes */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9' }} className="results-row">
+                  <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9', minWidth: 340 }} className="results-row">
                     {[
                       { label: 'SE Tax (15.3%)',    val: fmt(result.seTax),    sub: 'Schedule SE' },
                       { label: 'Federal Tax',       val: fmt(result.federal),  sub: 'Estimated'   },
@@ -314,7 +314,7 @@ export default function HomePage() {
                       <div style={{ ...btnRed(), width: 'auto', padding: '7px 14px', fontSize: 12 }}>+ Add All to Google Calendar</div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
+                    <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, minWidth: 340 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}>⚠️ NEXT</div>}
@@ -324,7 +324,7 @@ export default function HomePage() {
                           <div style={btnRed({ fontSize: 11, padding: '6px 0' })}>+ Calendar</div>
                         </div>
                       ))}
-                    </div>
+                    </div></div>
 
                     <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', textAlign: 'justify' as const, lineHeight: 1.6 }}>
                       ⚠️ <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
