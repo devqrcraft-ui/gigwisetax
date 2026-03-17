@@ -201,9 +201,9 @@ export default function HomePage() {
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 4 }}>{ex.label}</div>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>{ex.tag}</div>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', marginBottom: 6 }}>{ex.label}</div>
+                      <div style={{ fontSize: 15, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
                     </div>
                   ))}
                 </div>
