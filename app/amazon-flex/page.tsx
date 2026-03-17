@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Amazon Flex Tax Calculator 2026 — See Your Exact Tax in 30 Seconds`,
-    description: `Amazon Flex drivers: calculate SE tax + state income tax instantly. Mileage deduction at $0.67/mile can save description: 0,000+/yr. Free for all 50 states. No signup.`,
+    description: `Amazon Flex drivers: calculate SE tax + state income tax instantly. Mileage deduction at $0.67/mile can save $10,000+/yr. Free for all 50 states. No signup.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
