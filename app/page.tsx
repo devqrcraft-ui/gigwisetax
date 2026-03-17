@@ -101,10 +101,10 @@ export default function HomePage() {
   const card    = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
   const cardHd  = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const label   = { display: 'block', fontSize: 11, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 6 }
-  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
-  const btnDark = { background: '#1a1a2e', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
-  const btnRed  = (extra = {}) => ({ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', ...extra })
+  const label   = { display: 'block', fontSize: isMobile ? 13 : 11, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8 }
+  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 6, padding: isMobile ? '13px 14px' : '10px 12px', fontSize: isMobile ? 16 : 14, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
+  const btnDark = { background: '#1a1a2e', color: '#fff', padding: isMobile ? '16px 0' : '13px 0', borderRadius: 6, fontSize: isMobile ? 17 : 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
+  const btnRed  = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: isMobile ? '13px 0' : '10px 0', borderRadius: 6, fontSize: isMobile ? 15 : 13, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
@@ -192,18 +192,18 @@ export default function HomePage() {
                 <div style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>
                   ⚡ Quick Examples — tap to load
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4,1fr)', gap: 8 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4,1fr)', gap: 10 }}>
                   {QUICK_EXAMPLES.map(ex => (
                     <div
                       key={ex.label}
                       onClick={() => loadExample(ex)}
-                      style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.09)', borderRadius: 8, padding: '12px 10px', cursor: 'pointer', transition: 'all .15s' }}
+                      style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.09)', borderRadius: 8, padding: isMobile ? '16px 14px' : '12px 10px', cursor: 'pointer', transition: 'all .15s' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#fff', marginBottom: 3 }}>{ex.label}</div>
-                      <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginBottom: 8 }}>{ex.tag}</div>
-                      <div style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 4 }}>{ex.label}</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
                     </div>
                   ))}
                 </div>
