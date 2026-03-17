@@ -82,19 +82,19 @@ export default function HomePage() {
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '12px 16px 8px' : '32px 20px 28px' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
             <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
-            <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
+            <h1 style={{ fontSize: isMobile ? 18 : 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
               Free Gig Worker Tax Calculator — United States 2026
             </h1>
           </div>
-          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', paddingLeft: 16, maxWidth: 780, marginBottom: 18 }}>
+          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', paddingLeft: 16, maxWidth: 780, marginBottom: 18, display: isMobile ? 'none' : 'block' }}>
             Estimate self-employment taxes for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more.
             Includes federal SE tax (15.3%), state income tax for all 51 jurisdictions, and a full quarterly
             payment schedule with Google Calendar export. No signup, no app, no fees — ever.
           </p>
-          <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
+          <div style={{ paddingLeft: 16, display: isMobile ? 'none' : 'flex', gap: 8, flexWrap: 'wrap' as const }}>
             {['📋 IRS Schedule SE Formula','🗺️ All 51 States','🔒 No Registration','📅 Updated Jan 2026','📆 Google Calendar Export'].map(b => (
               <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
             ))}
@@ -103,7 +103,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ SPONSORED STRIP ━━ */}
-      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a' }}>
+      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a', display: isMobile ? 'none' : 'block' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
           <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const, whiteSpace: 'nowrap' }}>Sponsored</span>
           <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
@@ -118,7 +118,7 @@ export default function HomePage() {
       </div>
 
       {/* ━━ MAIN GRID ━━ */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '10px 12px 32px' : '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
 
         {/* ── LEFT ── */}
         <div>
