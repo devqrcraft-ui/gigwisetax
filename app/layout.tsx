@@ -49,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 16px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
             <div style={{ display:'flex', alignItems:'center', gap:10, minWidth:0, overflow:'hidden' }}>
               <span style={{ fontSize:20, flexShrink:0 }}>🇺🇸</span>
-              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
+              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden', textOverflow:'ellipsis', overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',minWidth:0 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
             </div>
             <div style={{ display:'flex', gap:12, alignItems:'center', flexShrink:0 }}>
               <span style={{ color:'rgba(255,255,255,.35)', fontSize:11 }}>Tax Year 2026</span>
