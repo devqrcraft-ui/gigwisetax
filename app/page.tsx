@@ -555,7 +555,7 @@ export default function HomePage() {
       </div>
 
       {/* ══ GIG WORKER TAX HUB ══ */}
-      <div style={{maxWidth:1200,margin:'0 auto',padding:'48px 20px 0'}}>
+      <div style={{maxWidth:1200,margin:'0 auto',padding:'48px 16px 0',overflowX:'hidden',boxSizing:'border-box'}}>
 
         {/* PLATFORM HUB */}
         <div style={{marginBottom:48}}>
@@ -565,7 +565,7 @@ export default function HomePage() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>Tax Calculators by Platform</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:10}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(220px,100%),1fr))',gap:10}}>
             {[
               {emoji:'🚗',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
               {emoji:'🚕',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
@@ -596,7 +596,7 @@ export default function HomePage() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers Actually Pay</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(min(260px,100%),1fr))',gap:10}}>
             {[
               {label:'DoorDash $40,000 — California',se:'$5,651',fed:'$4,200',state:'$2,800',net:'~$27,350',href:'/doordash/california'},
               {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$5,500',state:'$0',net:'~$37,435',href:'/uber/texas'},
