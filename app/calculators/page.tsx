@@ -32,12 +32,7 @@ export default function CalculatorsIndex() {
     <div style={{ fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "#1a1a2e" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What calculators does GigWiseTax offer?","acceptedAnswer":{"@type":"Answer","text":"GigWiseTax offers free tax calculators for DoorDash, Uber, Lyft, Instacart, Amazon Flex, Grubhub, Turo, Airbnb, Etsy, OnlyFans, and Walmart Spark — for all 50 US states plus DC."}},{"@type":"Question","name":"How accurate are the GigWiseTax calculators?","acceptedAnswer":{"@type":"Answer","text":"Calculators use 2026 IRS federal tax brackets, current standard deduction, SE tax rates, and state income tax rates from official sources. Results are estimates for planning purposes. Consult a CPA for filing."}},{"@type":"Question","name":"Do I need to create an account to use the calculators?","acceptedAnswer":{"@type":"Answer","text":"No account needed. All calculators work instantly with no sign-up. Your income data is never stored or transmitted — calculations run entirely in your browser for complete privacy."}}]}' }} />
-      <div style={{ background: "#0d1b3e", borderBottom: "4px solid #B22234", padding: "7px 0" }}>
-        <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 20 }}>🇺🇸</span>
-          <span style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
-        </div>
-      </div>
+
 
       <header style={{ background: "#1a1a2e", position: "sticky" as const, top: 0, zIndex: 100, boxShadow: "0 2px 16px rgba(0,0,0,0.4)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
