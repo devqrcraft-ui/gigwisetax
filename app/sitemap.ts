@@ -24,6 +24,7 @@ const BLOG_SLUGS = [
   'instacart-tax-guide-2026','self-employment-tax-deductions-2026',
   'etsy-seller-tax-deductions-2025','doordash-taxes-2025-guide','w9-mistakes-gig-workers',
   's-corp-guide-gig-workers','1099-deadlines-2025','home-office-deduction-gig-workers',
+  'gig-worker-tax-deadlines-2026',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -54,7 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const b of BLOG_SLUGS) {
     urls.push({ url: `${base}/blog/${b}`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 })
-    { url: 'https://gigwisetax.com/blog/gig-worker-tax-deadlines-2026', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   }
 
   return urls

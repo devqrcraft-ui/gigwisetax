@@ -6,7 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+  title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
   description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
   metadataBase: new URL('https://gigwisetax.com'),
   robots: { index: true, follow: true },
@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://gigwisetax.com',
     siteName: 'GigWiseTax',
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
     description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
   },
   twitter: {
     card: 'summary_large_image',
     images: ['https://gigwisetax.com/og-image.png'],
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
+    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
     description: 'Free SE tax calculator 2026 — 15.3% SE tax, all 51 states, no signup required.',
   },
 }
