@@ -53,18 +53,6 @@ export default function DeadlinesPage() {
         </div>
       </div>
 
-      {/* SPONSORED */}
-      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
-          <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const }}>Sponsored</span>
-          <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
-            <strong>TurboTax Self-Employed</strong> — Never miss a quarterly deadline. Automatic reminders + pay directly from TurboTax.
-          </span>
-          <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-            <div style={btnRed}>Start Free →</div>
-          </a>
-        </div>
-      </div>
 
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 24 }} className="main-grid">
         <div>

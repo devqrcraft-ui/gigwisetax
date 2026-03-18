@@ -119,18 +119,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           </div>
         </div>
 
-        {/* SPONSORED */}
-        <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
-            <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const }}>Sponsored</span>
-            <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}>
-              <strong>TurboTax Self-Employed</strong> — File your 1099 taxes online. Finds every deduction for {platform.name} workers automatically.
-            </span>
-            <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#B22234', color: '#fff', padding: '7px 18px', borderRadius: 4, fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap' }}>Start Free →</div>
-            </a>
-          </div>
-        </div>
 
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
@@ -318,20 +306,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             {/* AD */}
             <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored — 300×250</div>
-              <div style={{ padding: 16 }}>
-                <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>📊 QuickBooks Self-Employed</div>
-                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>
-                  Track mileage, expenses, and quarterly taxes automatically. Built for gig workers and 1099 contractors.
-                </div>
-                <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                  <div style={{ background: '#0d7a40', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, width: '100%' }}>✓ Try Free for 30 Days</div>
-                </a>
-                <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 6, textAlign: 'center' as const }}>Affiliate — commission may apply</div>
+            {/* OWN BANNER — privatepaycheck.com */}
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
+              <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
               </div>
+              <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
+            </a>
             </div>
 
             {/* STATES LINKS */}
@@ -360,17 +346,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
             {/* AD 2 */}
             <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored — 300×200</div>
-              <div style={{ padding: 16 }}>
-                <div style={{ background: '#f0f4f8', borderRadius: 4, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>🏛️ H&amp;R Block — Tax Filing</div>
-                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>File your 1099-NEC and Schedule C. Expert review available. Starting at $0.</div>
-                <a href="https://hrblock.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                  <div style={{ background: '#165c96', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, width: '100%' }}>🏛️ File Now — Start Free</div>
-                </a>
-              </div>
             </div>
 
             {/* MULTI-APP BANNER */}

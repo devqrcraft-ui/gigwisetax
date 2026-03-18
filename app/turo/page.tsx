@@ -224,17 +224,18 @@ export default function TuroPage() {
 
         <div style={{ display:'flex', flexDirection:'column' as const, gap:16 }}>
           <div style={{ background:'#fff', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
-            <div style={{ background:'#f8fafc', padding:'6px 14px', borderBottom:'1px solid #e2e5e9', fontSize:10, fontWeight:800, color:'#9ca3af', textTransform:'uppercase' as const, letterSpacing:'1px' }}>Sponsored — 300×250</div>
-            <div style={{ padding:16 }}>
-              <div style={{ background:'#f0f4f8', borderRadius:4, height:80, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:12 }}>
-                <span style={{ fontSize:12, color:'#9ca3af', fontStyle:'italic' }}>Ad image / logo here</span>
+            {/* OWN BANNER — privatepaycheck.com */}
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
+              <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
               </div>
-              <div style={{ fontSize:14, fontWeight:800, color:'#1a1a2e', marginBottom:6 }}>📊 QuickBooks Self-Employed</div>
-              <div style={{ fontSize:13, color:'#374151', marginBottom:14, lineHeight:1.6 }}>Track rental income, expenses, and depreciation automatically.</div>
-              <a href="https://quickbooks.intuit.com/self-employed/?cid=affiliates_gigwisetax" target="_blank" rel="noopener noreferrer sponsored" style={{ textDecoration:'none' }}>
-                <div style={{ background:'#0d7a40', color:'#fff', padding:'11px 0', borderRadius:4, fontSize:13, fontWeight:700, textAlign:'center' as const, cursor:'pointer' }}>✓ Try Free for 30 Days</div>
-              </a>
-            </div>
+              <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
+            </a>
           </div>
 
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
