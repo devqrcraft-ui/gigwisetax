@@ -214,7 +214,7 @@ export default function HomePage() {
                 <div style={cardHd}>
                   <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📊 Self-Employment Tax Estimator</span>
-                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 11, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
+                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 10, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
                 </div>
                 <div style={{ padding: 20 }}>
 
@@ -365,11 +365,11 @@ export default function HomePage() {
                   <span style={{ fontWeight: 700, fontSize: 15 }}>🏆 How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
-                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 420, borderCollapse: 'collapse' as const }}>
+                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
-                          <th key={h} style={{ padding: '10px 14px', fontWeight: 700, fontSize: 12, color: i===1 ? '#1a1a2e' : '#6c757d', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? '#fff5f5' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
+                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#1a1a2e' : '#6c757d', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? '#fff5f5' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
@@ -384,9 +384,9 @@ export default function HomePage() {
                         ['📱 No app required',           true,  false, false, true ],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid #f0f1f3' }}>
-                          <td style={{ padding: '10px 14px', fontSize: 13, color: '#374151', fontWeight: 500 }}>{feat as string}</td>
+                          <td style={{ padding: '8px 6px', fontSize: 12, color: '#374151', fontWeight: 500 }}>{feat as string}</td>
                           {(vals as boolean[]).map((v,i) => (
-                            <td key={i} style={{ padding: '10px 14px', textAlign: 'center' as const, background: i===0 ? '#fff9f9' : 'transparent' }}>
+                            <td key={i} style={{ padding: '8px 6px', textAlign: 'center' as const, background: i===0 ? '#fff9f9' : 'transparent' }}>
                               <span style={{ fontSize: 15, fontWeight: 800, color: v ? '#059669' : '#d1d5db' }}>{v ? '✓' : '✗'}</span>
                             </td>
                           ))}
