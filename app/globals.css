@@ -23,25 +23,6 @@ html,body{overflow-x:hidden!important;max-width:100vw;}
 * { box-sizing: border-box; }
 
 
-@media (max-width: 768px) {
-  .form-grid { grid-template-columns: 1fr !important; }
-  .results-row { grid-template-columns: 1fr 1fr !important; }
-  
-  /* Fix text overflow in article sections */
-  p, h1, h2, h3, h4, span, div {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    max-width: 100%;
-  }
-  
-  /* Fix tables */
-  table { width: 100% !important; display: block; overflow-x: auto; }
-  
-  /* Fix deadline cards */
-  [style*="grid"] { 
-    grid-template-columns: 1fr !important; 
-  }
-}
 
 @media(max-width:960px){
   .main-grid{grid-template-columns:1fr!important}
@@ -185,4 +166,33 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   label { font-size: 14px !important; }
   button { font-size: 15px !important; }
   .footer-legal, footer span { font-size: 13px !important; }
+}
+
+@media (max-width: 768px) {
+  /* Force minimum readable font sizes — override all inline styles */
+  * { -webkit-text-size-adjust: 100%; }
+  
+  body { font-size: 15px !important; line-height: 1.65 !important; }
+
+  /* Any element with inline font-size smaller than 13px — bump up */
+  [style*="fontSize: 10"], [style*="fontSize:10"],
+  [style*="font-size: 10px"], [style*="font-size:10px"] { font-size: 12px !important; }
+
+  [style*="fontSize: 11"], [style*="fontSize:11"],
+  [style*="font-size: 11px"], [style*="font-size:11px"] { font-size: 13px !important; }
+
+  [style*="fontSize: 12"], [style*="fontSize:12"],
+  [style*="font-size: 12px"], [style*="font-size:12px"] { font-size: 13px !important; }
+
+  [style*="fontSize: 13"], [style*="fontSize:13"],
+  [style*="font-size: 13px"], [style*="font-size:13px"] { font-size: 14px !important; }
+
+  table th, table td { font-size: 13px !important; padding: 9px 8px !important; }
+  input, select, textarea { font-size: 16px !important; }
+  label { font-size: 14px !important; }
+  button, [role="button"] { font-size: 15px !important; }
+
+  /* Footer */
+  footer, footer * { font-size: 13px !important; }
+  footer span { font-size: 13px !important; }
 }
