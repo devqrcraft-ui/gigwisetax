@@ -101,9 +101,9 @@ export default function HomePage() {
   const card    = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
   const cardHd  = { background: '#1a1a2e', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const label   = { display: 'block', fontSize: 13, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8 }
-  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 6, padding: '13px 14px', fontSize: 16, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
-  const btnDark = { background: '#1a1a2e', color: '#fff', padding: '16px 0', borderRadius: 6, fontSize: 17, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
+  const label   = { display: 'block', fontSize: 14, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
+  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
+  const btnDark = { background: '#1a1a2e', color: '#fff', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
   const btnRed  = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
@@ -114,7 +114,7 @@ export default function HomePage() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '14px 16px 10px' : '28px 20px 22px', overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: isMobile ? 28 : 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
-            <h1 style={{ fontSize: isMobile ? 18 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
+            <h1 style={{ fontSize: isMobile ? 21 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
               Free Gig Worker Tax Calculator — United States 2026
             </h1>
           </div>
@@ -125,7 +125,7 @@ export default function HomePage() {
               '✅ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
               '✅ Free, no signup, no app — results in seconds',
             ].map(b => (
-              <span key={b} style={{ fontSize: isMobile ? 12 : 13, color: 'rgba(255,255,255,.75)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
+              <span key={b} style={{ fontSize: isMobile ? 14 : 14, color: 'rgba(255,255,255,.85)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
           </div>
           {/* gov-style disclaimer */}
@@ -189,7 +189,7 @@ export default function HomePage() {
             <>
               {/* QUICK EXAMPLES */}
               <div style={{ marginBottom: 16 }}>
-                <div style={{ fontSize: 11, fontWeight: 800, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 12 }}>
                   ⚡ Quick Examples — tap to load
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4,1fr)', gap: 10 }}>
@@ -201,9 +201,9 @@ export default function HomePage() {
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 18, fontWeight: 800, color: '#fff', marginBottom: 6 }}>{ex.label}</div>
-                      <div style={{ fontSize: 15, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>{ex.tag}</div>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 20, fontWeight: 800, color: '#fff', marginBottom: 8 }}>{ex.label}</div>
+                      <div style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
                     </div>
                   ))}
                 </div>
@@ -216,10 +216,10 @@ export default function HomePage() {
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📊 Self-Employment Tax Estimator</span>
                   {!isMobile && <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 10, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>}
                 </div>
-                <div style={{ padding: 20 }}>
+                <div style={{ padding: 24 }}>
 
                   {/* Section 1 */}
-                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
                     1. Your Gig Income
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
@@ -239,7 +239,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Section 2 */}
-                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
                     2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#9ca3af' }}>(optional)</span>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
@@ -259,7 +259,7 @@ export default function HomePage() {
                   </div>
 
                   {/* Section 3 */}
-                  <div style={{ fontSize: 11, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10, paddingBottom: 6, borderBottom: '1px solid #e5e7eb' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
                     3. Where You Live &amp; File
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
