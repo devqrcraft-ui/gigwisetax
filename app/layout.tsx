@@ -93,8 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
           </div>
-                Guides &amp; Resources
-              </div>
               <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:16 }}>
                 {[
                   { label:'🚗 Multi-App Taxes',   href:'/multi-app-gig-taxes-2026'    },
