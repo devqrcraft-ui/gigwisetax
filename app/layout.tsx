@@ -93,6 +93,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
           </div>
+          <div style={{ borderTop:'1px solid rgba(255,255,255,.06)', padding:'16px 20px' }}>
+            <div style={{ maxWidth:1200, margin:'0 auto' }}>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:8 }}>Guides &amp; Resources</div>
               <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:16 }}>
                 {[
                   { label:'🚗 Multi-App Taxes',   href:'/multi-app-gig-taxes-2026'    },
