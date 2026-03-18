@@ -169,3 +169,6 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
     grid-template-columns: repeat(2,1fr) !important;
   }
 }
+@media(min-width:900px){
+  .main-grid-outer{grid-template-columns:1fr 300px!important}
+}
