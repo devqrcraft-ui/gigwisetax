@@ -93,32 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
           </div>
-
-          {/* ── Sister Sites ── */}
-          <div style={{ borderTop:'1px solid rgba(255,255,255,.06)', padding:'16px 20px' }}>
-            <div style={{ maxWidth:1200, margin:'0 auto' }}>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:10 }}>
-                Our Free Tax Tools
-              </div>
-              <div style={{ display:'flex', gap:12, flexWrap:'wrap', marginBottom:12 }}>
-                <a href="https://www.privatepaycheck.com" target="_blank" rel="noopener"
-                  style={{ display:'flex', alignItems:'center', gap:8, background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'9px 14px', textDecoration:'none' }}>
-                  <span style={{ fontSize:16 }}>💰</span>
-                  <div>
-                    <div style={{ fontSize:12, fontWeight:600, color:'rgba(255,255,255,.75)' }}>PrivatePaycheck.com</div>
-                    <div style={{ fontSize:10, color:'rgba(255,255,255,.3)' }}>W-2 salary and teacher calculator</div>
-                  </div>
-                </a>
-                <a href="https://www.1099deductions.com" target="_blank" rel="noopener"
-                  style={{ display:'flex', alignItems:'center', gap:8, background:'rgba(245,200,66,0.07)', border:'1px solid rgba(245,200,66,0.2)', borderRadius:10, padding:'9px 14px', textDecoration:'none' }}>
-                  <span style={{ fontSize:16 }}>📋</span>
-                  <div>
-                    <div style={{ fontSize:12, fontWeight:600, color:'rgba(255,255,255,.75)' }}>1099Deductions.com</div>
-                    <div style={{ fontSize:10, color:'rgba(255,255,255,.3)' }}>Every write-off for your gig</div>
-                  </div>
-                </a>
-              </div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:8 }}>
                 Guides &amp; Resources
               </div>
               <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:16 }}>
