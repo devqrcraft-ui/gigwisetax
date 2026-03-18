@@ -148,15 +148,19 @@ export default function NavClient() {
         <div style={{ background:'#12122a', borderTop:'1px solid rgba(255,255,255,.08)', maxHeight:'80vh', overflowY:'auto' as const }}>
           {NAV.map(item => (
             <div key={item.label}>
-              <div style={{ padding:'12px 20px', fontSize:13, fontWeight:700, color:'rgba(255,255,255,.5)', textTransform:'uppercase' as const, letterSpacing:'1px', borderBottom:'1px solid rgba(255,255,255,.06)' }}>{item.label}</div>
+              <div style={{ padding:'10px 16px 6px', fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase' as const, letterSpacing:'1px', borderBottom:'1px solid rgba(255,255,255,.06)' }}>{item.label}</div>
+              <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', padding:'4px 12px 8px' }}>
               {item.items.map(sub => (
                 <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
-                  <div style={{ padding:'11px 28px', fontSize:14, color:'rgba(255,255,255,.75)', borderBottom:'1px solid rgba(255,255,255,.04)', display:'flex', justifyContent:'space-between' }}>
-                    {sub.label}
-                    {sub.sub && <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:600 }}>{sub.sub}</span>}
+                  <div style={{ padding:'8px 10px', fontSize:13, color:'rgba(255,255,255,.8)', display:'flex', flexDirection:'column', gap:2, borderRadius:4, margin:'2px' }}
+                    onTouchStart={e => (e.currentTarget.style.background='rgba(255,255,255,.06)')}
+                    onTouchEnd={e => (e.currentTarget.style.background='transparent')}>
+                    <span style={{ lineHeight:1.3 }}>{sub.label}</span>
+                    {sub.sub && <span style={{ fontSize:10, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:700 }}>{sub.sub}</span>}
                   </div>
                 </Link>
               ))}
+              </div>
             </div>
           ))}
           <div style={{ padding:16 }}>
