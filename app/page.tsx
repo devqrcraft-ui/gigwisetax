@@ -174,10 +174,10 @@ export default function HomePage() {
               { id: 'platforms', label: '🚀 All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
-                padding: '8px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
+                padding: isMobile ? '6px 6px' : '8px 12px', fontSize: isMobile ? 11 : 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
                 color: tab === t.id ? '#fff' : '#4b5563', background: tab === t.id ? '#B22234' : '#f0f4f8',
                 borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent', border: tab === t.id ? '1px solid #B22234' : '1px solid #d8dce6',
-                marginBottom: -2, transition: 'all .15s', whiteSpace: 'nowrap', flex: 1, textAlign: 'center' as const,
+                marginBottom: -2, transition: 'all .15s', whiteSpace: 'normal', flex: 1, textAlign: 'center' as const, wordBreak: 'break-word',
               }}>
                 {t.label}
               </div>
@@ -292,7 +292,7 @@ export default function HomePage() {
                   </div>
 
                   {/* 4 boxes */}
-                  <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9', minWidth: 280 }} className="results-row">
+                  <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9', minWidth: 0 }} className="results-row">
                     {[
                       { label: 'SE Tax (15.3%)',    val: fmt(result.seTax),    sub: 'Schedule SE' },
                       { label: 'Federal Tax',       val: fmt(result.federal),  sub: 'Estimated'   },
@@ -314,7 +314,7 @@ export default function HomePage() {
                       <div style={{ ...btnRed(), width: 'auto', padding: '7px 14px', fontSize: 12 }}>+ Add All to Google Calendar</div>
                     </div>
 
-                    <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10, minWidth: 280 }} className="q-grid">
+                    <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4,1fr)', gap: 10, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}>⚠️ NEXT</div>}
@@ -344,7 +344,7 @@ export default function HomePage() {
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 Select Your Platform</span>
                   <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,.35)' }}>51-state tax included</span>
                 </div>
-                <div style={{ padding: 16, display: 'grid', gap: 10 }} className="p-grid">
+                <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
                   {PLATFORMS.map(p => (
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                       <div style={{ border: platform === p.name ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', background: platform === p.name ? '#fff5f5' : '#fff', transition: 'all .18s', position: 'relative' as const }}>
