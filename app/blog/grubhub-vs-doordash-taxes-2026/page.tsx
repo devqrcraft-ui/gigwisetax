@@ -36,15 +36,7 @@ export default function GrubhubVsDoorDashPost() {
         </div>
       </div>
 
-      <div style={{ background: '#fffbeb', borderBottom: '1px solid #fde68a' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '9px 20px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
-          <span style={{ fontSize: 10, fontWeight: 800, color: '#b45309', letterSpacing: '1px', textTransform: 'uppercase' as const }}>Sponsored</span>
-          <span style={{ fontSize: 13, color: '#78350f', flex: 1 }}><strong>TurboTax Self-Employed</strong> — Works for Grubhub and DoorDash drivers. Finds every deduction automatically.</span>
-          <a href="https://turbotax.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#B22234', color: '#fff', padding: '7px 18px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>Start Free →</div>
-          </a>
-        </div>
-      </div>
+      
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, alignItems: 'start' }} className="blog-grid">
         <article>

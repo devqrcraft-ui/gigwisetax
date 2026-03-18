@@ -107,11 +107,11 @@ export default function TaxPenaltyFinder() {
           </div>
           <div style={{ background:'#1e2d5a', borderRadius:8, padding:20, textAlign:'center' }}>
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:8 }}>READY TO STOP OVERPAYING?</div>
-            <a href="https://turbotax.intuit.com/personal-taxes/self-employed/" target="_blank" rel="noopener"
+            <a href="https://1099deductions.com" target="_blank" rel="noopener"
               style={{ display:'block', background:'#B22234', color:'#fff', borderRadius:6, padding:'14px', fontSize:15, fontWeight:800, textDecoration:'none', marginBottom:10 }}>
               File with TurboTax Self-Employed →
             </a>
-            <a href="https://quickbooks.intuit.com/self-employed/" target="_blank" rel="noopener"
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener"
               style={{ display:'block', background:'#fff', color:'#1a1a2e', borderRadius:6, padding:'12px', fontSize:14, fontWeight:700, textDecoration:'none', border:'1px solid #e5e7eb' }}>
               Track expenses with QuickBooks SE →
             </a>

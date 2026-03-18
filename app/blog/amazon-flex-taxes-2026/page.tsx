@@ -207,7 +207,7 @@ export default function AmazonFlexTaxesBlogPost() {
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>📊 QuickBooks Self-Employed</div>
               <div style={{ fontSize: 12, color: '#374151', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
-              <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>✓ Try Free 30 Days</div>
               </a>
             </div>

@@ -61,7 +61,7 @@ export default function QuarterlyReminder() {
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 20, textAlign: 'center', marginBottom: 16 }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>Q1 DEADLINE IS COMING — APRIL 15, 2026</div>
             <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 14, margin: '0 0 16px', lineHeight: 1.6 }}>File your taxes now and avoid IRS penalties</p>
-            <a href="https://turbotax.intuit.com/personal-taxes/self-employed/" target="_blank" rel="noopener"
+            <a href="https://1099deductions.com" target="_blank" rel="noopener"
               style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none' }}>
               File Now with TurboTax Self-Employed →
             </a>

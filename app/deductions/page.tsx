@@ -89,9 +89,9 @@ export default function DeductionsChecklist() {
           </div>
         </div>
         {checkedCount > 0 && (
-          <a href="https://turbotax.intuit.com/personal-taxes/self-employed/" target="_blank" rel="noopener"
-            style={{ background: '#fff', color: '#16a34a', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>
-            File & Claim These →
+          <a href="https://1099deductions.com" target="_blank" rel="noopener"
+            style={{ background: '#fff', color: '#B8924A', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>
+            Find All Deductions →
           </a>
         )}
       </div>
@@ -140,7 +140,7 @@ export default function DeductionsChecklist() {
       <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, textAlign: 'center', marginBottom: 24 }}>
         <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>DON'T MISS THESE DEDUCTIONS WHEN FILING</div>
         <div style={{ color: '#fff', fontSize: 16, fontWeight: 600, marginBottom: 16 }}>TurboTax Self-Employed finds every deduction automatically</div>
-        <a href="https://turbotax.intuit.com/personal-taxes/self-employed/" target="_blank" rel="noopener"
+        <a href="https://1099deductions.com" target="_blank" rel="noopener"
           style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '14px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
           File with TurboTax Self-Employed →
         </a>

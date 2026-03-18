@@ -167,7 +167,7 @@ export default function SCorpCalculator() {
               </div>
             )}
 
-            <a href="https://turbotax.intuit.com/small-business-taxes/" target="_blank" rel="noopener"
+            <a href="https://1099deductions.com" target="_blank" rel="noopener"
               style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '14px', fontSize: 15, fontWeight: 800, textDecoration: 'none', textAlign: 'center' as const, marginBottom: 10 }}>
               File S-Corp Taxes with TurboTax Business →
             </a>
