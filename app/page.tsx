@@ -135,6 +135,96 @@ export default function HomePage() {
         </div>
       </div>
 
+
+
+      {/* STICKY RESULT BAR mobile */}
+      {result && isMobile && (
+        <div style={{ position: 'sticky', top: 60, zIndex: 90, background: '#1a1a2e', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', fontWeight: 500 }}>Estimated total tax</span>
+          <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
+            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
+          </span>
+        </div>
+      )}
+
+      {/* ━━ MAIN GRID ━━ */}
+      <div className="main-grid-outer" style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '10px 12px 32px' : '24px 16px 48px', display: 'grid', gridTemplateColumns: '1fr', gap: 24 }}>
+
+        {/* ── LEFT ── */}
+        <div>
+
+          {/* TABS */}
+          <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20, gap: 6, padding: '4px 4px 0' }}>
+            {([
+              { id: 'calc',      label: '🧮 Tax Calculator'  },
+              { id: 'deadlines', label: '📅 2026 Deadlines'  },
+              { id: 'platforms', label: '🚀 All Platforms'   },
+            ] as const).map(t => (
+              <div key={t.id} onClick={() => setTab(t.id)} style={{
+                padding: isMobile ? '6px 6px' : '8px 12px', fontSize: isMobile ? 11 : 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
+                color: tab === t.id ? '#fff' : '#4b5563', background: tab === t.id ? '#B22234' : '#f0f4f8',
+                borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent', border: tab === t.id ? '1px solid #B22234' : '1px solid #d8dce6',
+                marginBottom: -2, transition: 'all .15s', whiteSpace: 'normal', flex: 1, textAlign: 'center' as const, wordBreak: 'break-word',
+              }}>
+                {t.label}
+              </div>
+            ))}
+          </div>
+
+          {/* ═══ CALCULATOR ═══ */}
+          {tab === 'calc' && (
+            <>
+              {/* QUICK EXAMPLES */}
+              <div style={{ marginBottom: 16 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 12 }}>
+                  ⚡ Quick Examples — tap to load
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4,1fr)', gap: 10 }}>
+                  {QUICK_EXAMPLES.map(ex => (
+                    <div
+                      key={ex.label}
+                      onClick={() => loadExample(ex)}
+                      style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.09)', borderRadius: 8, padding: isMobile ? '16px 14px' : '12px 10px', cursor: 'pointer', transition: 'all .15s' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
+                    >
+                      <div style={{ fontSize: 20, fontWeight: 800, color: '#fff', marginBottom: 8 }}>{ex.label}</div>
+                      <div style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* FORM CARD */}
+              <div style={card}>
+                <div style={cardHd}>
+                  <div style={accent}/>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📊 Self-Employment Tax Estimator</span>
+                  {!isMobile && <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 10, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>}
+                </div>
+                <div style={{ padding: 24 }}>
+
+                  {/* Section 1 */}
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
+                    1. Your Gig Income
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
+                    <div>
+                      <label style={label}>🚗 Gig Platform</label>
+                      <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
+                        {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.emoji} {p.name}{p.badge ? ' — USA #1' : ''}</option>)}
+                      </select>
+                    </div>
+                    <div>
+                      <label style={label}>💵 Annual Gig Revenue (USD)</label>
+                      <div style={{ position: 'relative' }}>
+                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Section 2 */}
                   <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
                     2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#9ca3af' }}>(optional)</span>
@@ -377,27 +467,18 @@ export default function HomePage() {
         {/* ── SIDEBAR ── */}
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
 
-          {/* AD 1 */}
-          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
-              Sponsored — 300×250
+          {/* OWN BANNER — privatepaycheck.com */}
+          <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
+            <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
+            <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
+              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
+              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
+              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
             </div>
-            <div style={{ padding: 16 }}>
-              <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
-              </div>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>📊 QuickBooks Self-Employed</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>
-                Track mileage, expenses, and quarterly taxes automatically. Built for gig workers and 1099 contractors.
-              </div>
-              <a href="https://quickbooks.intuit.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#0d7a40', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer', width: '100%' }}>
-                  ✓ Try Free for 30 Days
-                </div>
-              </a>
-              <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 6, textAlign: 'center' as const }}>Affiliate — commission may apply</div>
-            </div>
-          </div>
+            <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
+          </a>
 
           {/* QUICK LINKS */}
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
@@ -414,26 +495,18 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* AD 2 */}
-          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>
-              Sponsored — 300×200
+          {/* OWN BANNER — 1099deductions.com */}
+          <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#0E2240,#07111F)', border: '1px solid rgba(184,146,74,0.35)', borderRadius: 10, padding: '20px 16px' }}>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#D4AA66', marginBottom: 8, fontFamily: 'monospace' }}>1099 Deductions Tool</div>
+            <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>1099Deductions<span style={{ color: '#D4AA66' }}>.com</span></div>
+            <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free tax write-off finder. DoorDash, Uber, Airbnb, Etsy, OnlyFans. IRS Schedule C compliant.</div>
+            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
+              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Schedule C</span>
+              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All Gig Jobs</span>
+              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
             </div>
-            <div style={{ padding: 16 }}>
-              <div style={{ background: '#f0f4f8', borderRadius: 4, height: 60, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image / logo here</span>
-              </div>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>🏛️ H&amp;R Block — Tax Filing</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6, textAlign: 'justify' as const }}>
-                File your 1099-NEC and Schedule C online. Expert review available. Starting at $0.
-              </div>
-              <a href="https://hrblock.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#165c96', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer', width: '100%' }}>
-                  🏛️ File Now — Start Free
-                </div>
-              </a>
-            </div>
-          </div>
+            <div style={{ background: '#B8924A', color: '#07111F', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Find My Deductions ›</div>
+          </a>
 
           {/* TRUST */}
           <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
