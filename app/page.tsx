@@ -115,7 +115,7 @@ export default function HomePage() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: isMobile ? 28 : 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
             <h1 style={{ fontSize: isMobile ? 21 : 27, fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
-              Free Gig Worker Tax Calculator — United States 2026
+              Free Gig Worker Tax Calculator 2026 — All Platforms, All 51 States
             </h1>
           </div>
           {/* 3 promise bullets — visible on all screens */}
@@ -128,6 +128,10 @@ export default function HomePage() {
               <span key={b} style={{ fontSize: isMobile ? 14 : 14, color: 'rgba(255,255,255,.85)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
           </div>
+          {/* sub-H1 tagline */}
+          <p style={{ paddingLeft: 16, fontSize: isMobile ? 13 : 14, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 8, lineHeight: 1.55, maxWidth: 680 }}>
+            Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more — no signup, no data stored.
+          </p>
           {/* gov-style disclaimer */}
           <div style={{ paddingLeft: 16, fontSize: 11, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
             Based on IRS Schedule SE and 2026 tax brackets. Not affiliated with the IRS or any government agency. Estimates only — not tax advice.
@@ -369,6 +373,7 @@ export default function HomePage() {
                         ['📆 Google Calendar export',    true,  false, false, false],
                         ['🧮 Interactive tool',          true,  false, false, false],
                         ['📱 No app required',           true,  false, false, true ],
+                        ['🔒 100% private, no data stored', true, false, false, false],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid #f0f1f3' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#374151', fontWeight: 500 }}>{feat as string}</td>

@@ -54,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const b of BLOG_SLUGS) {
     urls.push({ url: `${base}/blog/${b}`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 })
+    { url: 'https://gigwisetax.com/blog/gig-worker-tax-deadlines-2026', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
   }
 
   return urls
