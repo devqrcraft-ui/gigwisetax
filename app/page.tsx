@@ -161,7 +161,7 @@ export default function HomePage() {
       )}
 
       {/* ━━ MAIN GRID ━━ */}
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '10px 8px 32px' : '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: isMobile ? '10px 12px 32px' : '24px 16px 48px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 300px', gap: 24 }}>
 
         {/* ── LEFT ── */}
         <div>
