@@ -632,37 +632,40 @@ export default function HomeClient() {
 
         {/* SISTER SITES */}
         <div style={{marginBottom:48}}>
-          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:16}}>
-            <div style={{width:3,height:20,background:'#e8b84b',borderRadius:2}}/>
-            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase' as const}}>More Free Tools</span>
-          </div>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:12}}>
-            <a href="https://privatepaycheck.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(245,200,66,0.06)',border:'1px solid rgba(245,200,66,0.2)',borderRadius:8,padding:'16px 18px'}}>
-              <div style={{fontSize:11,fontWeight:700,color:'rgba(245,200,66,0.7)',letterSpacing:'0.08em',textTransform:'uppercase' as const,marginBottom:6}}>W-2 Paycheck Tool</div>
-              <div style={{fontSize:16,fontWeight:800,color:'#fff',marginBottom:4}}>PrivatePaycheck.com</div>
-              <div style={{fontSize:12,color:'rgba(255,255,255,0.5)',lineHeight:1.6,marginBottom:10}}>Free paycheck calculator. All 50 states, 2026 IRS brackets. Salary & hourly. 100% private.</div>
-              <div style={{display:'flex',gap:6,flexWrap:'wrap' as const,marginBottom:10}}>
-                {['Salary & Hourly','All 50 States','100% Free'].map((t:string)=><span key={t} style={{fontSize:10,background:'rgba(245,200,66,0.1)',border:'1px solid rgba(245,200,66,0.25)',color:'rgba(255,255,255,0.55)',padding:'2px 7px',borderRadius:3}}>{t}</span>)}
+          <p style={{fontSize:'11px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase' as const,color:'rgba(165,180,252,0.45)',marginBottom:'14px'}}>Free tools from the same team</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(240px,1fr))',gap:'14px'}}>
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:'10px',background:'rgba(245,200,66,0.06)',border:'1px solid rgba(245,200,66,0.28)',borderRadius:'10px',padding:'18px 20px'}}>
+              <div>
+                <div style={{fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase' as const,color:'rgba(245,200,66,0.65)',marginBottom:'5px'}}>W-2 Paycheck Calculator</div>
+                <div style={{fontSize:'20px',fontWeight:900,color:'#fff',lineHeight:1.15}}>PrivatePaycheck<span style={{color:'#F5C842'}}>.com</span></div>
               </div>
-              <div style={{background:'#F5C842',color:'#07111f',padding:'8px 0',borderRadius:4,fontSize:12,fontWeight:700,textAlign:'center' as const}}>Calculate My Paycheck →</div>
+              <div style={{fontSize:'13px',color:'rgba(255,255,255,0.6)',lineHeight:1.65}}>Take-home pay after all taxes. Salary and hourly. All 50 states, 2026 IRS brackets.</div>
+              <div style={{display:'flex',gap:'6px',flexWrap:'wrap' as const}}>
+                {(['Salary & Hourly','All 50 States','100% Free'] as string[]).map((t:string)=>(<span key={t} style={{fontSize:'11px',background:'rgba(245,200,66,0.1)',border:'1px solid rgba(245,200,66,0.28)',color:'rgba(245,200,66,0.85)',padding:'3px 8px',borderRadius:'4px'}}>{t}</span>))}
+              </div>
+              <div style={{background:'#F5C842',color:'#07111f',textAlign:'center' as const,padding:'10px',borderRadius:'6px',fontSize:'13px',fontWeight:800,marginTop:'2px'}}>Calculate My Paycheck →</div>
             </a>
-            <a href="https://1099deductions.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(184,146,74,0.06)',border:'1px solid rgba(184,146,74,0.2)',borderRadius:8,padding:'16px 18px'}}>
-              <div style={{fontSize:11,fontWeight:700,color:'rgba(184,146,74,0.7)',letterSpacing:'0.08em',textTransform:'uppercase' as const,marginBottom:6}}>1099 Deductions Hub</div>
-              <div style={{fontSize:16,fontWeight:800,color:'#fff',marginBottom:4}}>1099Deductions.com</div>
-              <div style={{fontSize:12,color:'rgba(255,255,255,0.5)',lineHeight:1.6,marginBottom:10}}>Free IRS Schedule C write-off checklists. DoorDash, Uber, Airbnb, OnlyFans & more. 17 job types.</div>
-              <div style={{display:'flex',gap:6,flexWrap:'wrap' as const,marginBottom:10}}>
-                {['17 Job Types','Schedule C','100% Free'].map((t:string)=><span key={t} style={{fontSize:10,background:'rgba(184,146,74,0.1)',border:'1px solid rgba(184,146,74,0.25)',color:'rgba(255,255,255,0.55)',padding:'2px 7px',borderRadius:3}}>{t}</span>)}
+            <a href="https://1099deductions.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:'10px',background:'rgba(184,146,74,0.06)',border:'1px solid rgba(184,146,74,0.28)',borderRadius:'10px',padding:'18px 20px'}}>
+              <div>
+                <div style={{fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase' as const,color:'rgba(232,184,75,0.65)',marginBottom:'5px'}}>1099 Deductions Hub</div>
+                <div style={{fontSize:'20px',fontWeight:900,color:'#fff',lineHeight:1.15}}>1099Deductions<span style={{color:'#e8b84b'}}>.com</span></div>
               </div>
-              <div style={{background:'#B8924A',color:'#07111f',padding:'8px 0',borderRadius:4,fontSize:12,fontWeight:700,textAlign:'center' as const}}>View Deductions →</div>
+              <div style={{fontSize:'13px',color:'rgba(255,255,255,0.6)',lineHeight:1.65}}>Free IRS Schedule C checklists for every gig job. DoorDash, Uber, Airbnb and more.</div>
+              <div style={{display:'flex',gap:'6px',flexWrap:'wrap' as const}}>
+                {(['17 Job Types','Schedule C','100% Free'] as string[]).map((t:string)=>(<span key={t} style={{fontSize:'11px',background:'rgba(184,146,74,0.1)',border:'1px solid rgba(184,146,74,0.28)',color:'rgba(232,184,75,0.85)',padding:'3px 8px',borderRadius:'4px'}}>{t}</span>))}
+              </div>
+              <div style={{background:'#B8924A',color:'#07111f',textAlign:'center' as const,padding:'10px',borderRadius:'6px',fontSize:'13px',fontWeight:800,marginTop:'2px'}}>View Deductions →</div>
             </a>
-            <a href="https://compressto20kb.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'block',background:'rgba(129,140,248,0.06)',border:'1px solid rgba(129,140,248,0.2)',borderRadius:8,padding:'16px 18px'}}>
-              <div style={{fontSize:11,fontWeight:700,color:'rgba(129,140,248,0.7)',letterSpacing:'0.08em',textTransform:'uppercase' as const,marginBottom:6}}>Image Compression Tool</div>
-              <div style={{fontSize:16,fontWeight:800,color:'#fff',marginBottom:4}}>CompressTo20KB.com</div>
-              <div style={{fontSize:12,color:'rgba(255,255,255,0.5)',lineHeight:1.6,marginBottom:10}}>Compress images to exact KB in your browser. No upload, no server. WebP, AVIF, JPEG, PNG.</div>
-              <div style={{display:'flex',gap:6,flexWrap:'wrap' as const,marginBottom:10}}>
-                {['No Upload','Batch 50 Images','100% Free'].map((t:string)=><span key={t} style={{fontSize:10,background:'rgba(129,140,248,0.1)',border:'1px solid rgba(129,140,248,0.25)',color:'rgba(255,255,255,0.55)',padding:'2px 7px',borderRadius:3}}>{t}</span>)}
+            <a href="https://compressto20kb.com" target="_blank" rel="noopener" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:'10px',background:'rgba(129,140,248,0.06)',border:'1px solid rgba(129,140,248,0.28)',borderRadius:'10px',padding:'18px 20px'}}>
+              <div>
+                <div style={{fontSize:'10px',fontWeight:700,letterSpacing:'0.1em',textTransform:'uppercase' as const,color:'rgba(165,180,252,0.65)',marginBottom:'5px'}}>Image Compression Tool</div>
+                <div style={{fontSize:'20px',fontWeight:900,color:'#fff',lineHeight:1.15}}>CompressTo20KB<span style={{color:'#a5b4fc'}}>.com</span></div>
               </div>
-              <div style={{background:'#818cf8',color:'#07111f',padding:'8px 0',borderRadius:4,fontSize:12,fontWeight:700,textAlign:'center' as const}}>Compress Images Free →</div>
+              <div style={{fontSize:'13px',color:'rgba(255,255,255,0.6)',lineHeight:1.65}}>Compress images to exact KB in your browser. No upload. WebP, AVIF, JPEG, PNG.</div>
+              <div style={{display:'flex',gap:'6px',flexWrap:'wrap' as const}}>
+                {(['No Upload','Batch 50 Images','100% Free'] as string[]).map((t:string)=>(<span key={t} style={{fontSize:'11px',background:'rgba(129,140,248,0.1)',border:'1px solid rgba(129,140,248,0.28)',color:'rgba(165,180,252,0.85)',padding:'3px 8px',borderRadius:'4px'}}>{t}</span>))}
+              </div>
+              <div style={{background:'#6366f1',color:'#fff',textAlign:'center' as const,padding:'10px',borderRadius:'6px',fontSize:'13px',fontWeight:800,marginTop:'2px'}}>Compress Images Free →</div>
             </a>
           </div>
         </div>
