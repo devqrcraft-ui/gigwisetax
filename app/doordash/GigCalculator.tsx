@@ -42,6 +42,7 @@ export default function GigCalculator({
   const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
   const btnDark = { background: '#1a1a2e', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
+  const btnGray = { background: '#f3f4f6', color: '#374151', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, border: '1px solid #d1d5db', whiteSpace: 'nowrap' as const }
 
   return (
     <>
@@ -121,7 +122,17 @@ export default function GigCalculator({
           <div style={{ padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}>📆 Your 2026 Quarterly Payment Schedule</span>
-              <div style={btnRed}>+ Add All to Google Calendar</div>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <div style={btnRed}>+ Add All to Google Calendar</div>
+                <div style={btnGray} onClick={() => {
+                  const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
+                  const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
+                  navigator.clipboard.writeText(text).then(() => {
+                    const el = document.getElementById('copy-sched-btn')
+                    if (el) { el.textContent = '✅ Copied!'; setTimeout(() => { el.textContent = '📋 Copy schedule' }, 2000) }
+                  })
+                }} id="copy-sched-btn">📋 Copy schedule</div>
+              </div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
               {deadlines.map((d, i) => (
