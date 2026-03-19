@@ -80,6 +80,27 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     ],
   }
 
+
+  const deductionsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Top Tax Deductions for OnlyFans Workers 2026`,
+    numberOfItems: 12,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: "Camera, lighting & recording equipment" },
+      { '@type': 'ListItem', position: 2, name: "Home office" },
+      { '@type': 'ListItem', position: 3, name: "Costumes, props & wardrobe" },
+      { '@type': 'ListItem', position: 4, name: "Phone & internet" },
+      { '@type': 'ListItem', position: 5, name: "Hair, makeup & grooming" },
+      { '@type': 'ListItem', position: 6, name: "Editing software" },
+      { '@type': 'ListItem', position: 7, name: "Self-employed health insurance premiums" },
+      { '@type': 'ListItem', position: 8, name: "Half of self-employment tax" },
+      { '@type': 'ListItem', position: 9, name: "Photography & video props" },
+      { '@type': 'ListItem', position: 10, name: "Cloud storage & platform fees" },
+      { '@type': 'ListItem', position: 11, name: "Accounting & tax software" },
+      { '@type': 'ListItem', position: 12, name: "Business courses & coaching" }
+    ],
+  };
   const card = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)', overflow: 'hidden' as const }
   const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
@@ -88,6 +109,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
 
       <div style={{ background: '#0d1b3e', minHeight: '100vh' }}>
 
