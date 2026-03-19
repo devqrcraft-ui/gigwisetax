@@ -224,17 +224,17 @@ export default function HomeClient() {
                       <label style={label}>💵 Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" 
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
+                      </div>
+
           {/* INCOME PRESETS */}
-          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginBottom:'8px'}}>
+          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
             {['20000','50000','100000','250000','500000'].map(v=>(
-              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background: income===v ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.04)',color: income===v ? '#e8b84b' : 'rgba(255,255,255,0.6)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
-                {v==='20000'?'$20k':v==='50000'?'$50k':v==='100000'?'value={income} onChange00k':v==='250000'?'$250k':'$500k'}
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background:income===v?'rgba(232,184,75,0.2)':'rgba(255,255,255,0.04)',color:income===v?'#e8b84b':'rgba(255,255,255,0.6)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
+                {v==='20000'?'$20k':v==='50000'?'$50k':v==='100000'?'$100k':v==='250000'?'$250k':'$500k'}
               </button>
             ))}
           </div>
-          value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
-                      </div>
                     </div>
                   </div>
 
