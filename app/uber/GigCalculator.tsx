@@ -75,7 +75,13 @@ export default function GigCalculator({
               <label style={lbl}>💵 Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" 
+          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginBottom:'8px'}}>
+            {[['20000','$20k'],['50000','$50k'],['100000','value={income} onChange00k'],['250000','$250k'],['500000','$500k']].map(([v,l])=>(
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(255,255,255,0.04)',color:'rgba(255,255,255,0.65)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
+            ))}
+          </div>
+          value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
               </div>
             </div>
           </div>
