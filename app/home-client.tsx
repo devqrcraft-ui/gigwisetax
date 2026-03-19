@@ -131,9 +131,11 @@ export default function HomeClient() {
               <span key={b} style={{ fontSize: isMobile ? 14 : 14, color: 'rgba(255,255,255,.85)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
           </div>
-          {/* sub-H1 tagline */}
-          <p style={{ paddingLeft: 16, fontSize: isMobile ? 13 : 14, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 8, lineHeight: 1.55, maxWidth: 680 }}>
-            Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more — no signup, no data stored.
+          {/* sub-H1 tagline + mini SEO intro */}
+          <p style={{ paddingLeft: 16, fontSize: isMobile ? 13 : 14, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 6, lineHeight: 1.55, maxWidth: 680 }}>
+            The most accurate <strong style={{ color: '#e8b84b' }}>gig worker tax calculator</strong> for 2026 — covering all 51 states, every major platform, and all income levels.
+            Calculates <strong style={{ color: '#e8b84b' }}>self-employment tax 15.3%</strong>, federal and state tax in seconds.
+            No signup required, no data stored — your numbers never leave your browser.
           </p>
           {/* gov-style disclaimer */}
           <div style={{ paddingLeft: 16, fontSize: 11, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
