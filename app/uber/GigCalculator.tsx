@@ -83,7 +83,6 @@ export default function GigCalculator({
               <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(255,255,255,0.04)',color:'rgba(255,255,255,0.65)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
             ))}
           </div>
-              </div>
             </div>
           </div>
           <div style={btnDark} onClick={calculate}>📊 Calculate {platform.name} Tax Estimate</div>
