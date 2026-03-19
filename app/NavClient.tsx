@@ -96,7 +96,10 @@ export default function NavClient() {
           {NAV.map(item => (
             <div key={item.label} style={{ position:'relative' as const }}
               onMouseEnter={() => setOpenNav(item.label)}
-              onMouseLeave={() => setOpenNav(null)}
+              onMouseLeave={(e) => {
+                const related = e.relatedTarget as Node;
+                if (!e.currentTarget.contains(related)) setOpenNav(null);
+              }}
             >
               <div style={{ padding:'8px 14px', cursor:'pointer', fontSize:13.5, fontWeight:500,
                 color: openNav===item.label ? '#fff' : 'rgba(255,255,255,.65)',
@@ -106,7 +109,7 @@ export default function NavClient() {
               </div>
               {openNav===item.label && (
                 <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#fff', border:'1px solid #e2e5e9',
-                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.15)', overflow:'hidden' as const }}>
+                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.15)', overflow:'hidden' as const, marginTop:0 }}>
                   <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>{item.label}</div>
                   {item.items.map(sub => (
                     <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setOpenNav(null)}>
