@@ -233,6 +233,16 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   ))}
                 </div>
 
+                {/* 1099DEDUCTIONS CROSS-LINK */}
+                <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg,#0E2240,#07111F)', border: '1px solid rgba(184,146,74,0.35)', borderRadius: 8, padding: '14px 18px', marginBottom: 16, textDecoration: 'none' }}>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#D4AA66', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 4 }}>Full Deductions Checklist</div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: '#fff' }}>See complete IRS Schedule C write-offs on <span style={{ color: '#D4AA66' }}>1099Deductions.com</span></div>
+                    <div style={{ fontSize: 12, color: '#7A96B8', marginTop: 2 }}>DoorDash, Uber, Airbnb, Etsy, OnlyFans — 17 job types. 100% free.</div>
+                  </div>
+                  <div style={{ fontSize: 22, color: '#D4AA66', marginLeft: 12 }}>→</div>
+                </a>
+
                 {isPlatformDriver && (
                   <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                     <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>🚗 2026 IRS Mileage Rate: $0.67 per mile</div>
