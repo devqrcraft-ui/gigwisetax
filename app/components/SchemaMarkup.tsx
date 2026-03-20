@@ -15,7 +15,7 @@ export function WebsiteSchema() {
     "description": "Free self-employment tax calculator for gig workers. All 51 states. Tax year 2026.",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://gigwisetax.com/calculators?q={search_term_string}",
+      "target": "https://www.gigwisetax.com/calculators?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }

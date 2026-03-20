@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'DoorDash Taxes 2026: How Much Do Dashers Owe?',
     description: 'DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage $0.67/mile. Free calculator — no signup.',
     type: 'article',
-    url: 'https://gigwisetax.com/blog/doordash-taxes-2026',
+    url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
 }
 

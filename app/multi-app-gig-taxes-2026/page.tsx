@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Multi-App Gig Taxes 2026 — How to File When You Work Multiple Platforms',
     description: 'Complete guide to combining gig income from multiple apps for your 2026 tax return.',
-    url: 'https://gigwisetax.com/multi-app-gig-taxes-2026',
+    url: 'https://www.gigwisetax.com/multi-app-gig-taxes-2026',
   },
 };
 

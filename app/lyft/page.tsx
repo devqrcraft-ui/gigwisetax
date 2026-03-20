@@ -12,11 +12,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
     title: `Lyft Driver Tax Calculator 2026 — Free SE Tax Estimator | GigWiseTax`,
     description: `Free Lyft driver tax calculator for 2026. Estimate self-employment tax, federal & state income tax, mileage deductions for all 51 states. No signup required.`,
     keywords: `lyft driver tax calculator, lyft taxes 2026, lyft self employment tax, lyft quarterly taxes, lyft 1099 tax guide`,
-    alternates: { canonical: `https://gigwisetax.com/${p.slug}` },
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
-      url: `https://gigwisetax.com/${p.slug}`,
+      url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
 }
@@ -37,7 +37,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
-    url: `https://gigwisetax.com/${platform.slug}`,
+    url: `https://www.gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 
