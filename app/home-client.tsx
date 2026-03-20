@@ -341,6 +341,27 @@ export default function HomeClient() {
                 </div>
               )}
 
+              {/* HIGH INCOME BLOCK */}
+              {result && parseFloat(income) >= 150000 && (
+                <div style={{ background: 'linear-gradient(135deg,#1a0a2e,#2d1454)', border: '1px solid rgba(168,85,247,0.4)', borderRadius: 8, padding: '18px 20px', marginBottom: 16 }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#c084fc', letterSpacing: '1px', textTransform: 'uppercase' as const, marginBottom: 10 }}>⚡ High-Income Gig Worker (over $150k)</div>
+                  <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
+                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                      <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
+                    </div>
+                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                      <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
+                    </div>
+                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                      <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* PLATFORM GRID */}
               <div style={card}>
                 <div style={cardHd}>
