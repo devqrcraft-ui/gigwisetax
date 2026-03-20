@@ -82,7 +82,7 @@ export default function GigCalculator({
           {/* INCOME PRESETS */}
           <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
             {[['20000','$20k'],['50000','$50k'],['100000','$100k'],['250000','$250k'],['500000','$500k']].map(([v,l])=>(
-              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(255,255,255,0.04)',color:'rgba(255,255,255,0.65)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(20,35,60,0.9)',color:'#e8b84b',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
             ))}
           </div>
             </div>
