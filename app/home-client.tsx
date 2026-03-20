@@ -233,7 +233,7 @@ export default function HomeClient() {
           {/* INCOME PRESETS */}
           <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
             {['20000','50000','100000','250000','500000'].map(v=>(
-              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background:income===v?'rgba(232,184,75,0.2)':'rgba(255,255,255,0.04)',color:income===v?'#e8b84b':'rgba(255,255,255,0.6)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background:income===v?'#e8b84b':'rgba(30,45,70,0.8)',color:income===v?'#07111f':'rgba(255,255,255,0.85)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
                 {v==='20000'?'$20k':v==='50000'?'$50k':v==='100000'?'$100k':v==='250000'?'$250k':'$500k'}
               </button>
             ))}
@@ -485,18 +485,6 @@ export default function HomeClient() {
         {/* ── SIDEBAR ── */}
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
 
-          {/* OWN BANNER — privatepaycheck.com */}
-          <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
-            <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
-            <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
-              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
-              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
-              <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
-            </div>
-            <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
-          </a>
 
           {/* QUICK LINKS */}
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
@@ -513,18 +501,6 @@ export default function HomeClient() {
             ))}
           </div>
 
-          {/* OWN BANNER — 1099deductions.com */}
-          <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#0E2240,#07111F)', border: '1px solid rgba(184,146,74,0.35)', borderRadius: 10, padding: '20px 16px' }}>
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#D4AA66', marginBottom: 8, fontFamily: 'monospace' }}>1099 Deductions Tool</div>
-            <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>1099Deductions<span style={{ color: '#D4AA66' }}>.com</span></div>
-            <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free tax write-off finder. DoorDash, Uber, Airbnb, Etsy, OnlyFans. IRS Schedule C compliant.</div>
-            <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
-              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Schedule C</span>
-              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All Gig Jobs</span>
-              <span style={{ background: 'rgba(184,146,74,0.1)', border: '1px solid rgba(184,146,74,0.25)', color: '#D4AA66', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
-            </div>
-            <div style={{ background: '#B8924A', color: '#07111F', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Find My Deductions ›</div>
-          </a>
 
           {/* TRUST */}
           <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
@@ -632,6 +608,28 @@ export default function HomeClient() {
           </div>
         </div>
 
+
+      {/* ── PARTNER BANNERS ── */}
+      <div style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 48px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+        <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:12,background:'linear-gradient(135deg,#091526,#102040)',border:'1px solid rgba(245,200,66,0.35)',borderRadius:12,padding:'24px 20px'}}>
+          <div style={{fontSize:10,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase' as const,color:'#F5C842',fontFamily:'monospace'}}>W-2 Paycheck Tool</div>
+          <div style={{fontSize:22,fontWeight:900,color:'#fff',lineHeight:1.1}}>PrivatePaycheck<span style={{color:'#F5C842'}}>.com</span></div>
+          <div style={{fontSize:13,color:'#7A96B8',lineHeight:1.6}}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+          <div style={{display:'flex',gap:6,flexWrap:'wrap' as const}}>
+            {(['Salary & Hourly','All 50 States','100% Free'] as string[]).map((t:string)=><span key={t} style={{fontSize:11,background:'rgba(245,200,66,0.1)',border:'1px solid rgba(245,200,66,0.25)',color:'#F5C842',padding:'3px 8px',borderRadius:4}}>{t}</span>)}
+          </div>
+          <div style={{background:'#F5C842',color:'#091526',fontSize:14,fontWeight:800,padding:'12px 0',borderRadius:8,textAlign:'center' as const}}>Calculate My Paycheck →</div>
+        </a>
+        <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:12,background:'linear-gradient(135deg,#0E2240,#07111F)',border:'1px solid rgba(184,146,74,0.35)',borderRadius:12,padding:'24px 20px'}}>
+          <div style={{fontSize:10,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase' as const,color:'#D4AA66',fontFamily:'monospace'}}>1099 Deductions Tool</div>
+          <div style={{fontSize:22,fontWeight:900,color:'#fff',lineHeight:1.1}}>1099Deductions<span style={{color:'#D4AA66'}}>.com</span></div>
+          <div style={{fontSize:13,color:'#7A96B8',lineHeight:1.6}}>Free tax write-off finder. DoorDash, Uber, Airbnb, Etsy, OnlyFans. IRS Schedule C compliant.</div>
+          <div style={{display:'flex',gap:6,flexWrap:'wrap' as const}}>
+            {(['Schedule C','All Gig Jobs','100% Free'] as string[]).map((t:string)=><span key={t} style={{fontSize:11,background:'rgba(184,146,74,0.1)',border:'1px solid rgba(184,146,74,0.25)',color:'#D4AA66',padding:'3px 8px',borderRadius:4}}>{t}</span>)}
+          </div>
+          <div style={{background:'#B8924A',color:'#07111F',fontSize:14,fontWeight:800,padding:'12px 0',borderRadius:8,textAlign:'center' as const}}>Find My Deductions →</div>
+        </a>
+      </div>
 
       </div>
 
