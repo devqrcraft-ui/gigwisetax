@@ -47,6 +47,12 @@ const NAV = [
     ],
   },
   {
+    label: 'Tax Center',
+    items: [
+      { label: '🏛️ Gig Worker Tax Center 2026', href: '/gig-worker-taxes-2026', sub: 'HUB' },
+    ],
+  },
+  {
     label: 'Resources',
     items: [
       { label: '📦 Amazon Flex Taxes 2026',  href: '/blog/amazon-flex-taxes-2026'         },
