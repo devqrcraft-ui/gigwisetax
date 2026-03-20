@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Multi-App Gig Taxes 2026 — Uber + DoorDash + Instacart Combined | GigWiseTax',
   description: 'Working multiple gig apps? Learn how to combine Uber, DoorDash, Instacart, Amazon Flex income for taxes. One Schedule C or multiple? Quarterly payments, deductions, real examples.',
-  alternates: { canonical: 'https://gigwisetax.com/multi-app-gig-taxes-2026' },
+  alternates: { canonical: 'https://www.gigwisetax.com/multi-app-gig-taxes-2026' },
   openGraph: {
     title: 'Multi-App Gig Taxes 2026 — How to File When You Work Multiple Platforms',
     description: 'Complete guide to combining gig income from multiple apps for your 2026 tax return.',

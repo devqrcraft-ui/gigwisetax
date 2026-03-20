@@ -8,19 +8,19 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
   description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
-  metadataBase: new URL('https://gigwisetax.com'),
+  metadataBase: new URL('https://www.gigwisetax.com'),
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://gigwisetax.com',
+    url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
     title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
     description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['https://gigwisetax.com/og-image.png'],
+    images: ['https://www.gigwisetax.com/og-image.png'],
     title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
     description: 'Free SE tax calculator 2026 — 15.3% SE tax, all 51 states, no signup required.',
   },
@@ -36,13 +36,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do gig workers pay?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10-22% for most) plus state tax. Total effective rate is typically 25-35%. A DoorDash driver earning $40,000 in California pays roughly $12,000-$14,000 in total taxes."}},{"@type":"Question","name":"What is the quarterly tax deadline for 2026?","acceptedAnswer":{"@type":"Answer","text":"Q1: April 15, Q2: June 16, Q3: September 15, Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed."}},{"@type":"Question","name":"Can I deduct mileage as a DoorDash or Uber driver?","acceptedAnswer":{"@type":"Answer","text":"Yes - the 2026 IRS standard mileage rate is $0.70 per mile. A driver logging 15,000 business miles saves $10,500 in deductible expenses, which reduces SE tax and income tax."}},{"@type":"Question","name":"Do OnlyFans creators pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. OnlyFans sends a 1099-NEC for earnings over $600. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses."}},{"@type":"Question","name":"How do I calculate quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 51 states."}},{"@type":"Question","name":"Is gig work income taxed differently than W-2?","acceptedAnswer":{"@type":"Answer","text":"Yes. W-2 employees split FICA 50/50 with their employer. Gig workers pay both halves (15.3%) but can deduct 50% of SE tax on Form 1040. This makes accurate quarterly payments critical to avoid underpayment penalties."}}]}) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — Gig Worker Tax Calculator","url":"https://gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — Gig Worker Tax Calculator","url":"https://www.gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0"></script>
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KR8CY8PKT0');` }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context":"https://schema.org","@type":"WebSite","name":"GigWiseTax","url":"https://gigwisetax.com",
+          "@context":"https://schema.org","@type":"WebSite","name":"GigWiseTax","url":"https://www.gigwisetax.com",
           "description":"Free self-employment tax calculator for U.S. gig workers. All 51 states. No signup required.",
-          "potentialAction":{"@type":"SearchAction","target":"https://gigwisetax.com/calculators?q={search_term_string}","query-input":"required name=search_term_string"}
+          "potentialAction":{"@type":"SearchAction","target":"https://www.gigwisetax.com/calculators?q={search_term_string}","query-input":"required name=search_term_string"}
         })}} />
       </head>
       <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden', minHeight:'100vh' }}>

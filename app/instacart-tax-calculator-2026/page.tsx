@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Instacart Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
   description: 'Free Instacart tax calculator 2026. Estimate self-employment tax 15.3%, federal and state income tax for all 51 states. Quarterly payment schedule included. No signup.',
-  alternates: { canonical: 'https://gigwisetax.com/instacart-tax-calculator-2026' },
+  alternates: { canonical: 'https://www.gigwisetax.com/instacart-tax-calculator-2026' },
 };
 
 const schema = {

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates | GigWiseTax',
   description: 'All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 16, September 15, January 15 2027. Miss one and pay a 7% penalty.',
-  alternates: { canonical: 'https://gigwisetax.com/blog/gig-worker-tax-deadlines-2026' },
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026' },
 }
 
 const DEADLINES = [

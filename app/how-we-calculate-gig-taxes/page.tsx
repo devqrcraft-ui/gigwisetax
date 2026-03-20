@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'How We Calculate Gig Worker Taxes 2026 — Methodology | GigWiseTax',
   description: 'Transparent methodology for GigWiseTax calculations. SE tax formula (IRS Schedule SE), 2026 federal brackets, state tax sources, and quarterly payment math explained.',
-  alternates: { canonical: 'https://gigwisetax.com/how-we-calculate-gig-taxes' },
+  alternates: { canonical: 'https://www.gigwisetax.com/how-we-calculate-gig-taxes' },
 };
 
 const CSS = `

@@ -4,7 +4,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Center 2026 — DoorDash, Uber, OnlyFans, Airbnb & More | GigWiseTax',
   description: 'Complete gig worker tax hub 2026. Free SE tax calculators for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb, Amazon Flex. Quarterly deadlines, deductions, IRS guides.',
-  alternates: { canonical: 'https://gigwisetax.com/gig-worker-taxes-2026' },
+  alternates: { canonical: 'https://www.gigwisetax.com/gig-worker-taxes-2026' },
 };
 
 const schema = {
