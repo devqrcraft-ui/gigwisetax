@@ -132,6 +132,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
               Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 51 jurisdictions.
               Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
+              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 51 states.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {['📋 IRS Schedule SE', '🗺️ All 51 States', '🔒 No Signup', `📅 2026 Tax Rules`, platform.badge ? `⭐ ${platform.badge}` : '⚡ Instant Results'].filter(Boolean).map(b => (
@@ -338,7 +339,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             {/* AD */}
             <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            {/* OWN BANNER — privatepaycheck.com */}
+            {/* OTHER CALCULATORS */}
+          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 16 }}>
+            <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🔗 Other Gig Tax Calculators</span>
+            </div>
+              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🚕 Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/instacart" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🛒 Instacart Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/lyft" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🚖 Lyft Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🛍️ Etsy Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+          </div>
+
+          {/* OWN BANNER — privatepaycheck.com */}
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
               <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
