@@ -610,7 +610,7 @@ export default function HomeClient() {
 
 
       {/* ── PARTNER BANNERS ── */}
-      <div style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 48px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+      <div className="partner-banners" style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 48px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
         <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:12,background:'linear-gradient(135deg,#091526,#102040)',border:'1px solid rgba(245,200,66,0.35)',borderRadius:12,padding:'24px 20px'}}>
           <div style={{fontSize:10,fontWeight:700,letterSpacing:'0.12em',textTransform:'uppercase' as const,color:'#F5C842',fontFamily:'monospace'}}>W-2 Paycheck Tool</div>
           <div style={{fontSize:22,fontWeight:900,color:'#fff',lineHeight:1.1}}>PrivatePaycheck<span style={{color:'#F5C842'}}>.com</span></div>
@@ -642,6 +642,7 @@ export default function HomeClient() {
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
         }
         @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:16px 12px!important;}
+          .partner-banners{grid-template-columns:1fr!important;padding:0 12px 32px!important;}
           .results-row{grid-template-columns:1fr!important}
           .q-grid{grid-template-columns:1fr 1fr!important}
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
