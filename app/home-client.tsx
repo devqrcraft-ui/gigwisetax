@@ -4,14 +4,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const PLATFORMS = [
-  { name: 'DoorDash',    emoji: '🚗', searches: '400K/mo', href: '/doordash'     },
-  { name: 'Uber',        emoji: '🚕', searches: '300K/mo', href: '/uber'         },
-  { name: 'Etsy',        emoji: '🛍️', searches: '200K/mo', href: '/etsy'         },
-  { name: 'OnlyFans',    emoji: '⭐', searches: '150K/mo', href: '/onlyfans', badge: 'USA #1' },
-  { name: 'Instacart',   emoji: '🛒', searches: '150K/mo', href: '/instacart'    },
-  { name: 'Airbnb',      emoji: '🏠', searches: '120K/mo', href: '/airbnb'       },
-  { name: 'Amazon Flex', emoji: '📦', searches: '80K/mo',  href: '/amazon-flex'  },
-  { name: 'Lyft',        emoji: '🚖', searches: '70K/mo',  href: '/lyft'         },
+  { name: 'DoorDash',    emoji: '▸', searches: '400K/mo', href: '/doordash'     },
+  { name: 'Uber',        emoji: '▸', searches: '300K/mo', href: '/uber'         },
+  { name: 'Etsy',        emoji: '▸', searches: '200K/mo', href: '/etsy'         },
+  { name: 'OnlyFans',    emoji: '▸', searches: '150K/mo', href: '/onlyfans', badge: 'USA #1' },
+  { name: 'Instacart',   emoji: '▸', searches: '150K/mo', href: '/instacart'    },
+  { name: 'Airbnb',      emoji: '▸', searches: '120K/mo', href: '/airbnb'       },
+  { name: 'Amazon Flex', emoji: '▸', searches: '80K/mo',  href: '/amazon-flex'  },
+  { name: 'Lyft',        emoji: '▸', searches: '70K/mo',  href: '/lyft'         },
 ]
 
 const STATES = [
@@ -163,9 +163,9 @@ export default function HomeClient() {
           {/* TABS */}
           <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20, gap: 6, padding: '4px 4px 0' }}>
             {([
-              { id: 'calc',      label: '🧮 Tax Calculator'  },
-              { id: 'deadlines', label: '📅 2026 Deadlines'  },
-              { id: 'platforms', label: '🚀 All Platforms'   },
+              { id: 'calc',      label: ' Tax Calculator'  },
+              { id: 'deadlines', label: ' 2026 Deadlines'  },
+              { id: 'platforms', label: ' All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
                 padding: isMobile ? '6px 6px' : '8px 12px', fontSize: isMobile ? 11 : 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
@@ -207,7 +207,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={cardHd}>
                   <div style={accent}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📊 Self-Employment Tax Estimator</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Self-Employment Tax Estimator</span>
                   {!isMobile && <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 10, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>}
                 </div>
                 <div style={{ padding: 24 }}>
@@ -218,13 +218,13 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
-                      <label style={label}>🚗 Gig Platform</label>
+                      <label style={label}>▸ Gig Platform</label>
                       <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
                         {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.emoji} {p.name}{p.badge ? ' — USA #1' : ''}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={label}>💵 Annual Gig Revenue (USD)</label>
+                      <label style={label}> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
@@ -247,12 +247,12 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
-                      <label style={label}>🚗 Business Miles Driven</label>
+                      <label style={label}>▸ Business Miles Driven</label>
                       <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
                       <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>$0.70/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
-                      <label style={label}>🧾 Other Business Expenses</label>
+                      <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" placeholder="e.g. 2,000"/>
@@ -267,13 +267,13 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
-                      <label style={label}>🗺️ State of Residence</label>
+                      <label style={label}> State of Residence</label>
                       <select style={inp} value={stateCode} onChange={e => setStateCode(e.target.value)}>
                         {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={label}>📋 Filing Status</label>
+                      <label style={label}> Filing Status</label>
                       <select style={inp} value={filing} onChange={e => setFiling(e.target.value)}>
                         <option value="single">Single</option>
                         <option value="married">Married Filing Jointly</option>
@@ -282,7 +282,7 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  <div style={{ ...btnDark, fontSize: 15 }} onClick={calculate}>📊 Calculate My Gig Taxes →</div>
+                  <div style={{ ...btnDark, fontSize: 15 }} onClick={calculate}> Calculate My Gig Taxes →</div>
                 </div>
               </div>
 
@@ -291,7 +291,7 @@ export default function HomeClient() {
                 <div style={card}>
                   <div style={cardHd}>
                     <div style={accent}/>
-                    <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📈 Your Tax Estimate</span>
+                    <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Your Tax Estimate</span>
                   </div>
 
                   {/* 4 boxes */}
@@ -313,7 +313,7 @@ export default function HomeClient() {
                   {/* 4 quarterly boxes */}
                   <div style={{ padding: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
-                      <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}>📆 Quarterly Payment Schedule</span>
+                      <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}> Quarterly Payment Schedule</span>
                       <div style={{ ...btnRed(), width: 'auto', padding: '7px 14px', fontSize: 12 }}>+ Add All to Google Calendar</div>
                     </div>
 
@@ -328,13 +328,13 @@ export default function HomeClient() {
                         </div>
                       ))}
                     </div></div>
-                    <button onClick={()=>{const t=[DEADLINES.map(d=>d.q+' — due '+d.due+': '+fmt(result.quarterly)).join('\n')].join('');navigator.clipboard.writeText(t).then(()=>alert('Quarterly schedule copied!'));}} style={{marginTop:'10px',padding:'8px 18px',borderRadius:'8px',border:'1px solid rgba(232,184,75,0.4)',background:'rgba(232,184,75,0.08)',color:'#e8b84b',fontSize:'13px',fontWeight:700,cursor:'pointer',width:'100%'}}>📋 Copy Quarterly Schedule</button>
+                    <button onClick={()=>{const t=[DEADLINES.map(d=>d.q+' — due '+d.due+': '+fmt(result.quarterly)).join('\n')].join('');navigator.clipboard.writeText(t).then(()=>alert('Quarterly schedule copied!'));}} style={{marginTop:'10px',padding:'8px 18px',borderRadius:'8px',border:'1px solid rgba(232,184,75,0.4)',background:'rgba(232,184,75,0.08)',color:'#e8b84b',fontSize:'13px',fontWeight:700,cursor:'pointer',width:'100%'}}> Copy Quarterly Schedule</button>
 
                     <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', textAlign: 'justify' as const, lineHeight: 1.6 }}>
                       ⚠️ <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
                     </div>
                     <div style={{ marginTop: 10, background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#166534', lineHeight: 1.6 }}>
-                      💡 <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
+                       <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
                       <a href="/tax-penalty-finder" style={{ color: '#166534', fontWeight: 700 }}>→ Open Penalty Finder</a>
                     </div>
                   </div>
@@ -366,7 +366,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={cardHd}>
                   <div style={accent}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 Select Your Platform</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Select Your Platform</span>
                   <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,.35)' }}>51-state tax included</span>
                 </div>
                 <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
@@ -387,7 +387,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={{ padding: '13px 20px', borderBottom: '1px solid #e2e5e9', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={accent}/>
-                  <span style={{ fontWeight: 700, fontSize: 15 }}>🏆 How We Compare to Competitors</span>
+                  <span style={{ fontWeight: 700, fontSize: 15 }}> How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
@@ -401,13 +401,13 @@ export default function HomeClient() {
                     <tbody>
                       {[
                         ['🆓 Free to use',               true,  false, false, true ],
-                        ['🔓 No registration required',  true,  false, false, true ],
-                        ['🗺️ All 51 states included',    true,  false, false, false],
-                        ['⭐ OnlyFans tax calculator',    true,  false, false, false],
-                        ['📆 Google Calendar export',    true,  false, false, false],
-                        ['🧮 Interactive tool',          true,  false, false, false],
-                        ['📱 No app required',           true,  false, false, true ],
-                        ['🔒 100% private, no data stored', true, false, false, false],
+                        [' No registration required',  true,  false, false, true ],
+                        [' All 51 states included',    true,  false, false, false],
+                        ['▸ OnlyFans tax calculator',    true,  false, false, false],
+                        [' Google Calendar export',    true,  false, false, false],
+                        [' Interactive tool',          true,  false, false, false],
+                        [' No app required',           true,  false, false, true ],
+                        [' 100% private, no data stored', true, false, false, false],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid #f0f1f3' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#374151', fontWeight: 500 }}>{feat as string}</td>
@@ -430,7 +430,7 @@ export default function HomeClient() {
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📅 2026 IRS Estimated Tax Deadlines</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> 2026 IRS Estimated Tax Deadlines</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
@@ -454,7 +454,7 @@ export default function HomeClient() {
                           <span style={{ background: i===0 ? '#fee2e2' : '#f0f4f8', color: i===0 ? '#B22234' : '#374151', padding: '4px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
                         <td style={{ padding: '14px 16px', width: 150 }}>
-                          <div style={btnRed({ fontSize: 12, padding: '7px 0' })}>📆 + Calendar</div>
+                          <div style={btnRed({ fontSize: 12, padding: '7px 0' })}> + Calendar</div>
                         </td>
                       </tr>
                     ))}
@@ -469,7 +469,7 @@ export default function HomeClient() {
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 All Supported Platforms</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> All Supported Platforms</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
@@ -510,7 +510,7 @@ export default function HomeClient() {
           {/* QUICK LINKS */}
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Popular Calculators</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Popular Calculators</span>
             </div>
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
@@ -525,7 +525,7 @@ export default function HomeClient() {
 
           {/* TRUST */}
           <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>🔒 About This Tool</div>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
             <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, textAlign: 'justify' as const }}>
               GigWiseTax.com is an independent, free estimation tool. Not affiliated with the IRS or any government agency. No personal data is stored. Results are estimates only — not tax advice.
             </div>
@@ -552,14 +552,14 @@ export default function HomeClient() {
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
             {[
-              {emoji:'🚗',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
-              {emoji:'🚕',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
-              {emoji:'🛍️',name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
-              {emoji:'⭐',name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
-              {emoji:'🛒',name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
-              {emoji:'🏠',name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
-              {emoji:'📦',name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
-              {emoji:'🚖',name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
+              {emoji:'▸',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
+              {emoji:'▸',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
+              {emoji:'▸',name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
+              {emoji:'▸',name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
+              {emoji:'▸',name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
+              {emoji:'▸',name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
+              {emoji:'▸',name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
+              {emoji:'▸',name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
             ].map((p,i)=>(
               <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'20px',textDecoration:'none',display:'flex',alignItems:'center',gap:16,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}

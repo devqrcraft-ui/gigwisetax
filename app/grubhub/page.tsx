@@ -21,14 +21,14 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'🚗', label:'Mileage (72.5¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
-  { icon:'📱', label:'Phone & Data Plan', desc:'Portion used for the Grubhub driver app and navigation. Usually 50–80% deductible.' },
+  { icon:'▸', label:'Mileage (72.5¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
+  { icon:'', label:'Phone & Data Plan', desc:'Portion used for the Grubhub driver app and navigation. Usually 50–80% deductible.' },
   { icon:'🧊', label:'Hot/Cold Delivery Bags', desc:'Required equipment for food delivery. 100% deductible as business equipment.' },
   { icon:'🚘', label:'Car Insurance (business %)', desc:'Pro-rata share of auto insurance for business miles driven.' },
   { icon:'🔧', label:'Car Repairs & Maintenance', desc:'Oil changes, tires, brakes — deduct based on your business use percentage.' },
   { icon:'💳', label:'Parking & Tolls', desc:'All parking fees and tolls paid during deliveries are fully deductible.' },
-  { icon:'📦', label:'Delivery Equipment', desc:'Phone mount, power bank, safety vest — any tool used for deliveries.' },
-  { icon:'📋', label:'Tax Prep Fees', desc:'Cost of filing your Schedule C is itself deductible as a business expense.' },
+  { icon:'▸', label:'Delivery Equipment', desc:'Phone mount, power bank, safety vest — any tool used for deliveries.' },
+  { icon:'', label:'Tax Prep Fees', desc:'Cost of filing your Schedule C is itself deductible as a business expense.' },
 ]
 
 const FAQ = [
@@ -86,14 +86,14 @@ export default function GrubhubPage() {
           <div style={{ display:'flex', gap:12, alignItems:'flex-start', marginBottom:14 }}>
             <div style={{ width:4, height:34, background:'#B22234', borderRadius:2, flexShrink:0, marginTop:4 }} />
             <h1 style={{ fontSize:28, fontWeight:900, color:'#fff', lineHeight:1.2, letterSpacing:'-0.5px', margin:0 }}>
-              🍔 Grubhub Driver Tax Calculator 2026 — All 51 States
+              ▸ Grubhub Driver Tax Calculator 2026 — All 51 States
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
             Free self-employment tax calculator for Grubhub delivery drivers. Estimate SE tax (15.3%), federal and state income tax, plus your mileage deduction — for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {['📋 IRS Schedule SE','🗺️ All 51 States','🚗 Mileage Deduction 72.5¢','🔒 No Registration','⚡ Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction 72.5¢',' No Registration','⚡ Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -109,7 +109,7 @@ export default function GrubhubPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>🍔 Grubhub Tax Calculator 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Grubhub Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
             </div>
             <div style={{ padding:24 }}>
@@ -120,12 +120,12 @@ export default function GrubhubPage() {
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
-                  <label style={lbl}>🚗 Business Miles Driven (Optional)</label>
+                  <label style={lbl}>▸ Business Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>72.5¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
-                  <label style={lbl}>🗺️ State of Residence</label>
+                  <label style={lbl}> State of Residence</label>
                   <select style={inp} value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
@@ -146,10 +146,10 @@ export default function GrubhubPage() {
 
             {result && (
               <div style={{ borderTop:'1px solid #e2e5e9', padding:24 }}>
-                <div style={{ fontSize:13, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>📊 Your 2026 Tax Estimate</div>
+                <div style={{ fontSize:13, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}> Your 2026 Tax Estimate</div>
                 {result.mileDeduction > 0 && (
                   <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', marginBottom:16, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                    <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>🚗 Mileage Deduction Applied</span>
+                    <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>▸ Mileage Deduction Applied</span>
                     <span style={{ fontSize:16, fontWeight:800, color:'#166534' }}>−{fmt(result.mileDeduction)}</span>
                   </div>
                 )}
@@ -168,7 +168,7 @@ export default function GrubhubPage() {
                   ))}
                 </div>
                 <div style={{ background:'#1a1a2e', borderRadius:6, padding:'16px 20px', marginBottom:16 }}>
-                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}>💡 QUARTERLY PAYMENT</div>
+                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}> QUARTERLY PAYMENT</div>
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
@@ -238,14 +238,14 @@ export default function GrubhubPage() {
 
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
-              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>📌 More Calculators</span>
+              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { emoji:'🚗', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { emoji:'🚕', name:'Uber', href:'/uber', vol:'300K/mo' },
-              { emoji:'🛒', name:'Instacart', href:'/instacart', vol:'150K/mo' },
-              { emoji:'📦', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
-              { emoji:'🛒', name:'Walmart Spark', href:'/walmart-spark', vol:'NEW' },
+              { emoji:'▸', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
+              { emoji:'▸', name:'Uber', href:'/uber', vol:'300K/mo' },
+              { emoji:'▸', name:'Instacart', href:'/instacart', vol:'150K/mo' },
+              { emoji:'▸', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
+              { emoji:'▸', name:'Walmart Spark', href:'/walmart-spark', vol:'NEW' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
@@ -257,7 +257,7 @@ export default function GrubhubPage() {
           </div>
 
           <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
-            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}>🔒 About This Tool</div>
+            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
             <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Grubhub, IRS, or any agency. No data stored. Estimates only — not tax advice.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l,h]) => (
@@ -277,10 +277,10 @@ export default function GrubhubPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/doordash" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🚗 DoorDash Tax Calculator</a>
-              <a href="/blog/grubhub-vs-doordash-taxes-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🍔 Grubhub vs DoorDash Taxes</a>
-              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🚗 IRS Mileage Rate 2026</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📅 2026 Quarterly Deadlines</a>
+              <a href="/doordash" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ DoorDash Tax Calculator</a>
+              <a href="/blog/grubhub-vs-doordash-taxes-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Grubhub vs DoorDash Taxes</a>
+              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
               <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📚 Quarterly Tax Guide</a>
             </div>
           </div>

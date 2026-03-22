@@ -113,7 +113,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 51 states.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-              {['📋 IRS Schedule SE', '🗺️ All 51 States', '🔒 No Signup', `📅 2026 Tax Rules`, platform.badge ? `⭐ ${platform.badge}` : '⚡ Instant Results'].filter(Boolean).map(b => (
+              {[' IRS Schedule SE', ' All 51 States', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : '⚡ Instant Results'].filter(Boolean).map(b => (
                 <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
               ))}
             </div>
@@ -159,10 +159,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
                   {[
-                    { label: '📋 Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
+                    { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
                     { label: '🏛️ Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#1a1a2e' },
-                    { label: '🗺️ State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#1a1a2e' },
-                    { label: '💡 SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
+                    { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#1a1a2e' },
+                    { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
                   ].map(item => (
                     <div key={item.label} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#6c757d', marginBottom: 4 }}>{item.label}</div>
@@ -224,7 +224,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {isPlatformDriver && (
                   <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>🚗 2026 IRS Mileage Rate: $0.67 per mile</div>
+                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.67 per mile</div>
                     <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                       The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
                       Track every delivery mile using a mileage app. On 10,000 miles, that's a <strong>$6,700 deduction</strong> — reducing your taxable income significantly.
@@ -235,7 +235,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {isRental && (
                   <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>🏠 Airbnb Hosts: 14-Day Rule</div>
+                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
                     <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                       If you rent your property for <strong>14 days or fewer</strong> per year, rental income is tax-free (Section 280A exclusion).
                       Above 14 days, you must report income but can deduct a proportional share of mortgage interest, property taxes, utilities, and depreciation.
@@ -245,7 +245,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {isCreator && (
                   <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#b45309', marginBottom: 8 }}>💡 {platform.name} Creator Tip: Home Office Deduction</div>
+                    <div style={{ fontWeight: 700, color: '#b45309', marginBottom: 8 }}> {platform.name} Creator Tip: Home Office Deduction</div>
                     <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                       If you use a dedicated space at home exclusively for your {platform.name} business, you can deduct home office expenses.
                       The simplified method allows <strong>$5 per square foot</strong> (up to 300 sq ft = $1,500 deduction).
@@ -297,7 +297,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🚀 Other Platform Calculators</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Other Platform Calculators</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
                 {PLATFORMS.filter(p => p.slug !== 'amazon-flex').map(p => (
@@ -322,10 +322,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🔗 Other Gig Tax Calculators</span>
             </div>
-              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🚗 DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/instacart" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🛒 Instacart Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🚕 Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/lyft" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>🚖 Lyft Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/instacart" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Instacart Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/lyft" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Lyft Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
           </div>
 
           {/* OWN BANNER — privatepaycheck.com */}
@@ -345,7 +345,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             {/* STATES LINKS */}
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🗺️ Top States</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Top States</span>
               </div>
               {[
                 { slug: 'california', name: 'California', rate: '9.3%' },
@@ -373,7 +373,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             {/* MULTI-APP BANNER */}
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>💡 Drive for multiple apps?</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Drive for multiple apps?</span>
               </div>
               <div style={{ padding: '14px 16px' }}>
                 <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, marginBottom: 10 }}>
@@ -389,7 +389,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
             {/* TRUST */}
             <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}>🔒 About This Tool</div>
+              <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
               <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, textAlign: 'justify' as const }}>
                 GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. No personal data is stored.
               </div>

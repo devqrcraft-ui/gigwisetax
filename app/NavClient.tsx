@@ -6,16 +6,16 @@ const NAV = [
   {
     label: 'Calculators',
     items: [
-      { label: '🚗 DoorDash Tax Calculator',      href: '/doordash',      sub: '400K/mo' },
-      { label: '🚕 Uber Driver Tax Calculator',   href: '/uber',          sub: '300K/mo' },
-      { label: '🛍️ Etsy Seller Tax Calculator',   href: '/etsy',          sub: '200K/mo' },
-      { label: '⭐ OnlyFans Tax Calculator',       href: '/onlyfans',      sub: 'USA #1'  },
-      { label: '🛒 Instacart Tax Calculator',     href: '/instacart',     sub: '150K/mo' },
-      { label: '🏠 Airbnb Host Tax Calculator',   href: '/airbnb',        sub: '120K/mo' },
-      { label: '📦 Amazon Flex Tax Calculator',   href: '/amazon-flex',   sub: '80K/mo'  },
-      { label: '🚖 Lyft Driver Tax Calculator',   href: '/lyft',          sub: '70K/mo'  },
-      { label: '🍔 Grubhub Tax Calculator',       href: '/grubhub',       sub: 'NEW'     },
-      { label: '🛒 Walmart Spark Tax Calculator', href: '/walmart-spark', sub: 'NEW'     },
+      { label: '▸ DoorDash Tax Calculator',      href: '/doordash',      sub: '400K/mo' },
+      { label: '▸ Uber Driver Tax Calculator',   href: '/uber',          sub: '300K/mo' },
+      { label: '▸ Etsy Seller Tax Calculator',   href: '/etsy',          sub: '200K/mo' },
+      { label: '▸ OnlyFans Tax Calculator',       href: '/onlyfans',      sub: 'USA #1'  },
+      { label: '▸ Instacart Tax Calculator',     href: '/instacart',     sub: '150K/mo' },
+      { label: '▸ Airbnb Host Tax Calculator',   href: '/airbnb',        sub: '120K/mo' },
+      { label: '▸ Amazon Flex Tax Calculator',   href: '/amazon-flex',   sub: '80K/mo'  },
+      { label: '▸ Lyft Driver Tax Calculator',   href: '/lyft',          sub: '70K/mo'  },
+      { label: '▸ Grubhub Tax Calculator',       href: '/grubhub',       sub: 'NEW'     },
+      { label: '▸ Walmart Spark Tax Calculator', href: '/walmart-spark', sub: 'NEW'     },
       { label: '🚘 Turo Host Tax Calculator',     href: '/turo',          sub: 'NEW'     },
     ],
   },
@@ -25,8 +25,8 @@ const NAV = [
       { label: '🔍 Tax Penalty Finder',           href: '/tax-penalty-finder',        sub: 'NEW'  },
       { label: '🏢 S-Corp vs Sole Prop',          href: '/s-corp-calculator',         sub: 'NEW'  },
       { label: '✅ Deductions Checklist',          href: '/deductions',                sub: 'NEW'  },
-      { label: '📅 Quarterly Reminders',          href: '/quarterly-reminder',        sub: 'FREE' },
-      { label: '🚗 Multi-App Gig Taxes',          href: '/multi-app-gig-taxes-2026',  sub: 'NEW'  },
+      { label: ' Quarterly Reminders',          href: '/quarterly-reminder',        sub: 'FREE' },
+      { label: '▸ Multi-App Gig Taxes',          href: '/multi-app-gig-taxes-2026',  sub: 'NEW'  },
       { label: '🛡️ Safe Harbor Guide',            href: '/safe-harbor-quarterly-taxes', sub: 'NEW' },
       { label: '🔢 How We Calculate',             href: '/how-we-calculate-gig-taxes', sub: 'NEW'  },
       { label: '⚠️ Q1 — April 15, 2026',         href: '/deadlines#q1',         sub: 'URGENT' },
@@ -40,7 +40,7 @@ const NAV = [
     items: [
       { label: '🌴 California (9.3%)',  href: '/doordash/california' },
       { label: '🗽 New York (6.85%)',   href: '/doordash/new-york'   },
-      { label: '⭐ Texas (No Tax)',      href: '/doordash/texas'      },
+      { label: '▸ Texas (No Tax)',      href: '/doordash/texas'      },
       { label: '🌊 Florida (No Tax)',   href: '/doordash/florida'    },
       { label: '🏙️ Illinois (4.95%)',   href: '/doordash/illinois'   },
       { label: '→ All 51 States',      href: '/calculators'          },
@@ -55,10 +55,10 @@ const NAV = [
   {
     label: 'Resources',
     items: [
-      { label: '📦 Amazon Flex Taxes 2026',  href: '/blog/amazon-flex-taxes-2026'         },
-      { label: '🚗 Mileage Rate 2026',       href: '/blog/mileage-rate-2026'              },
-      { label: '🍔 Grubhub vs DoorDash',     href: '/blog/grubhub-vs-doordash-taxes-2026' },
-      { label: '📋 W-2 vs 1099 Guide',       href: '/blog/w2-vs-1099-guide-2026'          },
+      { label: '▸ Amazon Flex Taxes 2026',  href: '/blog/amazon-flex-taxes-2026'         },
+      { label: '▸ Mileage Rate 2026',       href: '/blog/mileage-rate-2026'              },
+      { label: '▸ Grubhub vs DoorDash',     href: '/blog/grubhub-vs-doordash-taxes-2026' },
+      { label: ' W-2 vs 1099 Guide',       href: '/blog/w2-vs-1099-guide-2026'          },
       { label: '📚 Quarterly Taxes Guide',   href: '/blog/quarterly-taxes-gig-workers'    },
       { label: '✍️ All Blog Posts',          href: '/blog'                                },
     ],
@@ -67,8 +67,8 @@ const NAV = [
     label: 'About',
     items: [
       { label: 'ℹ️ About GigWiseTax', href: '/about'   },
-      { label: '🔒 Privacy Policy',   href: '/privacy' },
-      { label: '📋 Terms of Service', href: '/terms'   },
+      { label: ' Privacy Policy',   href: '/privacy' },
+      { label: ' Terms of Service', href: '/terms'   },
       { label: '📧 Contact Us',       href: '/contact' },
     ],
   },
@@ -138,7 +138,7 @@ export default function NavClient() {
         </nav>
 
         <div style={{ display:'flex', gap:10, alignItems:'center' }} className="desktop-cta">
-          <span style={{ fontSize:12, color:'rgba(255,255,255,.3)' }}>🔒 No data stored</span>
+          <span style={{ fontSize:12, color:'rgba(255,255,255,.3)' }}> No data stored</span>
           <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }}>
             <div style={{ background:'#B22234', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
               Find My Savings →

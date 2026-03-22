@@ -54,7 +54,7 @@ export default function GigCalculator({
         <div style={{ padding: 20 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }} className="form-grid">
             <div>
-              <label style={lbl}>🗺️ State of Residence</label>
+              <label style={lbl}> State of Residence</label>
               <select style={inp} value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
                 {states.map(s => (
                   <option key={s.slug} value={s.slug}>
@@ -64,7 +64,7 @@ export default function GigCalculator({
               </select>
             </div>
             <div>
-              <label style={lbl}>📋 Filing Status</label>
+              <label style={lbl}> Filing Status</label>
               <select style={inp} value={filing} onChange={e => setFiling(e.target.value as any)}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
@@ -72,14 +72,14 @@ export default function GigCalculator({
               </select>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}>💵 Annual {platform.name} Net Income (USD)</label>
+              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
                 <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
               </div>
             </div>
           </div>
-          <div style={btnDark} onClick={calculate}>📊 Calculate {platform.name} Tax Estimate</div>
+          <div style={btnDark} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export default function GigCalculator({
         <div style={card}>
           <div style={cardHd}>
             <div style={accent}/>
-            <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📈 Your {platform.name} Tax Estimate</span>
+            <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Your {platform.name} Tax Estimate</span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9' }} className="results-row">
@@ -107,13 +107,13 @@ export default function GigCalculator({
 
           <div style={{ background: '#fff5f5', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
-              💡 Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
+               Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
             </span>
           </div>
 
           <div style={{ padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
-              <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}>📆 Your 2026 Quarterly Payment Schedule</span>
+              <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}> Your 2026 Quarterly Payment Schedule</span>
               <div style={btnRed}>+ Add All to Google Calendar</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">

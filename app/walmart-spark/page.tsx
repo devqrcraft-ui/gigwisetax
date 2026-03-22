@@ -21,14 +21,14 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'🚗', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
-  { icon:'📱', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
+  { icon:'▸', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
+  { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
   { icon:'🧊', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
   { icon:'🔋', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
   { icon:'🛡️', label:'Supplemental Insurance', desc:'Rideshare/delivery insurance gaps not covered by Walmart Spark.' },
   { icon:'🧼', label:'Car Cleaning & Supplies', desc:'Keep receipts — partial deduction for business use percentage.' },
   { icon:'💳', label:'Bank Fees & Apps', desc:'Any paid apps or tools used to manage your Spark business.' },
-  { icon:'🏠', label:'Home Office (if applicable)', desc:'If you use a dedicated space for planning deliveries, tracking income, etc.' },
+  { icon:'▸', label:'Home Office (if applicable)', desc:'If you use a dedicated space for planning deliveries, tracking income, etc.' },
 ]
 
 const FAQ = [
@@ -89,7 +89,7 @@ export default function WalmartSparkPage() {
           <div style={{ display:'flex', gap:12, alignItems:'flex-start', marginBottom:14 }}>
             <div style={{ width:4, height:34, background:'#B22234', borderRadius:2, flexShrink:0, marginTop:4 }} />
             <h1 style={{ fontSize:28, fontWeight:900, color:'#fff', lineHeight:1.2, letterSpacing:'-0.5px', margin:0 }}>
-              🛒 Walmart Spark Driver Tax Calculator 2026 — All 51 States
+              ▸ Walmart Spark Driver Tax Calculator 2026 — All 51 States
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
@@ -97,7 +97,7 @@ export default function WalmartSparkPage() {
             federal income tax, state tax, and mileage deduction for all 51 jurisdictions. Instant results — no signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {['📋 IRS Schedule SE','🗺️ All 51 States','🚗 Mileage Deduction','🔒 No Registration','⚡ Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction',' No Registration','⚡ Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function WalmartSparkPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>🛒 Walmart Spark Tax Calculator 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Walmart Spark Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
             </div>
             <div style={{ padding:24 }}>
@@ -126,12 +126,12 @@ export default function WalmartSparkPage() {
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
                 <div>
-                  <label style={lbl}>🚗 Total Miles Driven (Optional)</label>
+                  <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
                 </div>
                 <div>
-                  <label style={lbl}>🗺️ State of Residence</label>
+                  <label style={lbl}> State of Residence</label>
                   <select style={inp} value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
@@ -152,11 +152,11 @@ export default function WalmartSparkPage() {
 
             {result && (
               <div style={{ borderTop:'1px solid #e2e5e9', padding:24 }}>
-                <div style={{ fontSize:13, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>📊 Your 2026 Tax Estimate</div>
+                <div style={{ fontSize:13, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}> Your 2026 Tax Estimate</div>
 
                 {result.mileDeduction > 0 && (
                   <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', marginBottom:16, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                    <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>🚗 Mileage Deduction Applied</span>
+                    <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>▸ Mileage Deduction Applied</span>
                     <span style={{ fontSize:16, fontWeight:800, color:'#166534' }}>−{fmt(result.mileDeduction)}</span>
                   </div>
                 )}
@@ -177,7 +177,7 @@ export default function WalmartSparkPage() {
                 </div>
 
                 <div style={{ background:'#1a1a2e', borderRadius:6, padding:'16px 20px', marginBottom:16 }}>
-                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}>💡 QUARTERLY PAYMENT (set aside each quarter)</div>
+                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}> QUARTERLY PAYMENT (set aside each quarter)</div>
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next deadline: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
@@ -274,15 +274,15 @@ export default function WalmartSparkPage() {
 
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
-              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>📌 More Calculators</span>
+              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { emoji:'🚗', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { emoji:'🛒', name:'Instacart', href:'/instacart', vol:'150K/mo' },
-              { emoji:'📦', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
-              { emoji:'🚕', name:'Uber', href:'/uber', vol:'300K/mo' },
-              { emoji:'🏠', name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
-              { emoji:'🛍️', name:'Etsy', href:'/etsy', vol:'200K/mo' },
+              { emoji:'▸', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
+              { emoji:'▸', name:'Instacart', href:'/instacart', vol:'150K/mo' },
+              { emoji:'▸', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
+              { emoji:'▸', name:'Uber', href:'/uber', vol:'300K/mo' },
+              { emoji:'▸', name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
+              { emoji:'▸', name:'Etsy', href:'/etsy', vol:'200K/mo' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
@@ -294,7 +294,7 @@ export default function WalmartSparkPage() {
           </div>
 
           <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
-            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}>🔒 About This Tool</div>
+            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
             <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>
               GigWiseTax.com is an independent, free estimation tool. Not affiliated with Walmart, IRS, or any government agency. No personal data is stored. Results are estimates only — not tax advice.
             </div>
@@ -316,11 +316,11 @@ export default function WalmartSparkPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/doordash" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🚗 DoorDash Tax Calculator</a>
-              <a href="/instacart" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🛒 Instacart Tax Calculator</a>
-              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🚗 IRS Mileage Rate 2026</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📅 2026 Quarterly Deadlines</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📋 W-2 vs 1099 Guide</a>
+              <a href="/doordash" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ DoorDash Tax Calculator</a>
+              <a href="/instacart" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Instacart Tax Calculator</a>
+              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

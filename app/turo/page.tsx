@@ -28,7 +28,7 @@ const DEDUCTIONS = [
   { icon:'⛽', label:'Gas (if you supply it)', desc:'Some hosts include gas. Keep all receipts — deductible as an ordinary business expense.' },
   { icon:'📷', label:'Photography & Marketing', desc:'Professional photos, subscriptions, and any tools used to improve your listing.' },
   { icon:'🅿️', label:'Parking & Storage', desc:'Dedicated parking or storage used when the vehicle is staged for rental.' },
-  { icon:'📱', label:'Phone & Apps', desc:'Pro-rata portion of phone plan used to manage bookings, communicate with guests, and track income.' },
+  { icon:'', label:'Phone & Apps', desc:'Pro-rata portion of phone plan used to manage bookings, communicate with guests, and track income.' },
 ]
 
 const FAQ = [
@@ -93,7 +93,7 @@ export default function TuroPage() {
             Free tax calculator for Turo car-sharing hosts. Estimate your income tax, self-employment tax, and car depreciation deductions for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {['📋 Schedule C / Schedule E','🗺️ All 51 States','📉 Depreciation Included','🔒 No Registration','⚡ Instant Results'].map(b => (
+            {[' Schedule C / Schedule E',' All 51 States','📉 Depreciation Included',' No Registration','⚡ Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -118,12 +118,12 @@ export default function TuroPage() {
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total payouts from Turo (before deductions)</div>
                 </div>
                 <div>
-                  <label style={lbl}>📅 Rental Days Per Year (Optional)</label>
+                  <label style={lbl}> Rental Days Per Year (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 180" value={rentalDays} onChange={e=>setRentalDays(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Used to calculate business-use % for deductions</div>
                 </div>
                 <div>
-                  <label style={lbl}>🗺️ State of Residence</label>
+                  <label style={lbl}> State of Residence</label>
                   <select style={inp} value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
@@ -146,7 +146,7 @@ export default function TuroPage() {
               <div style={{ borderTop:'1px solid #e2e5e9', padding:24 }}>
                 {result.businessPct && (
                   <div style={{ background:'#eff6ff', border:'1px solid #bfdbfe', borderRadius:6, padding:'12px 16px', marginBottom:16 }}>
-                    <span style={{ fontSize:13, color:'#1e40af', fontWeight:600 }}>📊 Business Use Percentage: <strong>{result.businessPct}%</strong> — apply to all vehicle expenses</span>
+                    <span style={{ fontSize:13, color:'#1e40af', fontWeight:600 }}> Business Use Percentage: <strong>{result.businessPct}%</strong> — apply to all vehicle expenses</span>
                   </div>
                 )}
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }} className="results-row">
@@ -164,7 +164,7 @@ export default function TuroPage() {
                   ))}
                 </div>
                 <div style={{ background:'#1a1a2e', borderRadius:6, padding:'16px 20px', marginBottom:16 }}>
-                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}>💡 QUARTERLY PAYMENT</div>
+                  <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}> QUARTERLY PAYMENT</div>
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
@@ -230,13 +230,13 @@ export default function TuroPage() {
 
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
-              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>📌 More Calculators</span>
+              <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { emoji:'🏠', name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
-              { emoji:'🚕', name:'Uber', href:'/uber', vol:'300K/mo' },
-              { emoji:'🚗', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { emoji:'🛍️', name:'Etsy', href:'/etsy', vol:'200K/mo' },
+              { emoji:'▸', name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
+              { emoji:'▸', name:'Uber', href:'/uber', vol:'300K/mo' },
+              { emoji:'▸', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
+              { emoji:'▸', name:'Etsy', href:'/etsy', vol:'200K/mo' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
@@ -248,7 +248,7 @@ export default function TuroPage() {
           </div>
 
           <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
-            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}>🔒 About This Tool</div>
+            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
             <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. No data stored. Estimates only.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l,h]) => (
@@ -268,11 +268,11 @@ export default function TuroPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🏠 Airbnb Tax Calculator</a>
-              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>🛍️ Etsy Seller Taxes</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📅 2026 Quarterly Deadlines</a>
+              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
+              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
               <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📚 Quarterly Tax Guide</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📋 W-2 vs 1099 Guide</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

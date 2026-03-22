@@ -27,7 +27,7 @@ const schema = {
 
 const CATEGORIES = [
   {
-    title: '🚗 Rideshare Drivers',
+    title: '▸ Rideshare Drivers',
     color: '#3b82f6',
     desc: 'Uber, Lyft — SE tax 15.3% + mileage deductions',
     platforms: [
@@ -36,7 +36,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: '🍔 Delivery Workers',
+    title: '▸ Delivery Workers',
     color: '#ef4444',
     desc: 'DoorDash, Grubhub, Instacart — mileage + SE tax',
     platforms: [
@@ -47,7 +47,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: '⭐ Content Creators',
+    title: '▸ Content Creators',
     color: '#f59e0b',
     desc: 'OnlyFans — 1099-NEC, platform fee deductible',
     platforms: [
@@ -55,7 +55,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: '🏠 Hosts & Rentals',
+    title: '▸ Hosts & Rentals',
     color: '#10b981',
     desc: 'Airbnb, Turo — rental income + depreciation',
     platforms: [
@@ -64,7 +64,7 @@ const CATEGORIES = [
     ],
   },
   {
-    title: '🛍️ Sellers',
+    title: '▸ Sellers',
     color: '#8b5cf6',
     desc: 'Etsy, Amazon Flex — Schedule C, COGS deductions',
     platforms: [
