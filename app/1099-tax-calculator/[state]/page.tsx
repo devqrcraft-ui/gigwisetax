@@ -14,11 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const rateStr = noTax ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
     title: noTax
-      ? `${s.name} 1099 Tax Calculator 2026 — Self-Employment Tax, No State Income Tax`
+      ? `${s.name} 1099 Tax Calculator 2026 — Self-Employed Tax, No State Income Tax`
       : `${s.name} 1099 Tax Calculator 2026 — Self-Employment & State Tax`,
     description: noTax
-      ? `Free 1099 tax calculator for ${s.name} gig workers in 2026. See your self-employment and federal taxes on 1099 income — with no state income tax in ${s.abbr}. Simple, fast and 100% private.`
-      : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax, federal and ${s.name} state income tax on your 1099 income. Designed for gig workers and freelancers, no signup required.`,
+      ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
+      : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
     alternates: { canonical: `https://www.gigwisetax.com/1099-tax-calculator/${stateSlug}` },
   }
 }
@@ -64,11 +64,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {state.abbr} · 1099 & Self-Employed · Tax Year 2026
               </div>
               <h1 style={{ fontSize: 26, fontWeight: 900, color: '#fff', margin: '0 0 8px', lineHeight: 1.25 }}>
-                {state.name} 1099 Tax Calculator 2026<br/>
-                <span style={{ fontSize: 18, fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>Self-Employed & Gig Workers</span>
+                {state.name} 1099 Tax Calculator 2026 —<br/>
+                <span style={{ fontSize: 18, fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>Self-Employment Tax for Gig Workers</span>
               </h1>
               <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
-                Estimate your 1099 self-employment tax in {state.name}. Includes SE tax (15.3%), federal income tax, {stateRateText}, and quarterly payment schedule. Works for DoorDash, Uber, Etsy, OnlyFans, Airbnb and all gig platforms.
+                This free {state.name} 1099 tax calculator helps gig workers, freelancers and independent contractors estimate their 2026 self-employment tax, federal income tax and {noStateTax ? 'no state income tax ('+state.name+' is tax-free)' : state.name+' state income tax'} on 1099 income. Works for DoorDash, Uber, Etsy, OnlyFans, Airbnb and all gig platforms.
               </p>
             </div>
             <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
