@@ -114,7 +114,7 @@ export default function Page() {
         ))}
 
         <div style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid #e2e5e9', fontSize: 13, color: '#9ca3af' }}>
-          ⚠️ Estimates only. Consult a licensed CPA or visit <a href="https://irs.gov" style={{ color: '#6b7280' }}>IRS.gov</a> for official guidance.
+           Estimates only. Consult a licensed CPA or visit <a href="https://irs.gov" style={{ color: '#6b7280' }}>IRS.gov</a> for official guidance.
         </div>
       </article>
     </>

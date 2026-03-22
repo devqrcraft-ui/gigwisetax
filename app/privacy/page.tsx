@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Privacy Policy
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>🔒 Privacy Policy</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}> Privacy Policy</h1>
           <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: January 1, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
         </div>
       </div>
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 
         <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: '#166534', marginBottom: 6 }}>✅ The Short Version</div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#166534', marginBottom: 6 }}> The Short Version</div>
           <div style={{ fontSize: 14, color: '#166534', lineHeight: 1.7 }}>
             GigWiseTax.com does <strong>not</strong> collect, store, or transmit any personal data. All calculations run entirely in your browser. We have no user accounts. We cannot see your income or tax figures — ever.
           </div>

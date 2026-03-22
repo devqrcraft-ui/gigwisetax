@@ -23,7 +23,7 @@ export default function EtsyTaxGuide() {
             <span style={{ color: 'rgba(255,255,255,.7)' }}>Etsy Seller Taxes 2026</span>
           </nav>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-            🛍️ Etsy Seller Taxes 2026 — Complete 1099 Filing Guide
+             Etsy Seller Taxes 2026 — Complete 1099 Filing Guide
           </h1>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
             How Etsy sellers file taxes in 2026. Covers Schedule C, SE tax, cost of goods sold (COGS) deduction, home office, shipping costs, Etsy fees, and quarterly estimated payments.
@@ -34,11 +34,11 @@ export default function EtsyTaxGuide() {
         <div>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
-              <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>🛍️ Calculate Your Etsy Taxes Instantly</div>
+              <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Etsy Taxes Instantly</div>
               <a href="/etsy" style={{ textDecoration: 'none' }}><div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div></a>
             </div>
             <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: Etsy Taxes 2026</div>
+              <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: Etsy Taxes 2026</div>
               <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                 <li><strong>Etsy sends 1099-K if you earn $600+</strong> (threshold lowered starting 2025)</li>
                 <li><strong>COGS (cost of goods sold) is fully deductible</strong> — materials, supplies, inventory</li>
@@ -62,7 +62,7 @@ export default function EtsyTaxGuide() {
             </p>
             <h2 style={h2}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
             <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>💡 COGS Formula for Etsy Sellers</div>
+              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}> COGS Formula for Etsy Sellers</div>
               <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.8, fontFamily: 'monospace' }}>
                 Beginning Inventory<br/>
                 + Purchases/Materials during year<br/>
@@ -73,14 +73,14 @@ export default function EtsyTaxGuide() {
             <h2 style={h2}>Top Tax Deductions for Etsy Sellers in 2026</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
               {[
-                { icon: '🎨', name: 'Materials & Supplies (COGS)', detail: 'Yarn, fabric, clay, paint, wood, beads — all raw materials used to create your products.' },
-                { icon: '📦', name: 'Shipping & Packaging', detail: 'Boxes, tissue paper, bubble wrap, tape, Etsy shipping labels. Fully deductible.' },
-                { icon: '🏠', name: 'Home Office/Studio', detail: 'Dedicated workspace. $5/sq ft (up to 300 sq ft) or actual expense method.' },
+                { icon: '', name: 'Materials & Supplies (COGS)', detail: 'Yarn, fabric, clay, paint, wood, beads — all raw materials used to create your products.' },
+                { icon: '', name: 'Shipping & Packaging', detail: 'Boxes, tissue paper, bubble wrap, tape, Etsy shipping labels. Fully deductible.' },
+                { icon: '', name: 'Home Office/Studio', detail: 'Dedicated workspace. $5/sq ft (up to 300 sq ft) or actual expense method.' },
                 { icon: '📸', name: 'Photography Equipment', detail: 'Camera, backdrop, ring light, props used for product photography. 100% deductible.' },
                 { icon: '💻', name: 'Etsy Fees', detail: 'Listing fees ($0.20), transaction fees (6.5%), payment processing, Etsy Ads. All deductible.' },
-                { icon: '📱', name: 'Phone & Internet (business %)', detail: 'Deduct business-use percentage of your monthly plan.' },
+                { icon: '', name: 'Phone & Internet (business %)', detail: 'Deduct business-use percentage of your monthly plan.' },
                 { icon: '🖨️', name: 'Printer & Office Supplies', detail: 'Printer, ink, labels, stickers, thank-you cards. 100% deductible for business use.' },
-                { icon: '📦', name: 'Software Subscriptions', detail: 'Canva, Adobe, Etsy Pattern, Quickbooks. 100% deductible if for business.' },
+                { icon: '', name: 'Software Subscriptions', detail: 'Canva, Adobe, Etsy Pattern, Quickbooks. 100% deductible if for business.' },
               ].map(d => (
                 <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
@@ -100,14 +100,14 @@ export default function EtsyTaxGuide() {
               </div>
             ))}
             <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-              ⚠️ <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Etsy or the IRS. Consult a licensed CPA for your specific situation.
+               <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Etsy or the IRS. Consult a licensed CPA for your specific situation.
             </div>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/etsy" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-              <div style={{ fontSize: 32, marginBottom: 8 }}>🛍️</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Etsy Tax Calculator</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · COGS included</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>

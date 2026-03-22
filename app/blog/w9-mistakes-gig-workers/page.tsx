@@ -51,24 +51,24 @@ export default function W9MistakesBlog() {
 
           <h2 style={h2}>Mistake #1: Using a Nickname Instead of Your Legal Name</h2>
           <p style={p}>The IRS matches your W-9 name against your Social Security Administration records. If your SSN is registered to "Robert Smith" but you write "Bob Smith" on the W-9, the platform's tax software may flag the mismatch — and begin withholding 24% of your payments.</p>
-          <div style={warn}>⚠️ <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>
+          <div style={warn}> <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>
 
           <h2 style={h2}>Mistake #2: Wrong Tax Classification</h2>
           <p style={p}>Box 3 on the W-9 asks you to select your federal tax classification. Most solo gig workers should check "Individual/sole proprietor." But many workers incorrectly select "LLC" (even when they have no formal LLC), or leave it blank entirely.</p>
-          <div style={warn}>⚠️ <strong>The Fix:</strong> If you're a solo gig worker with no formal business entity, select "Individual/sole proprietor or single-member LLC." If you've formed an actual LLC or S-Corp, select the appropriate box and add your EIN.</div>
+          <div style={warn}> <strong>The Fix:</strong> If you're a solo gig worker with no formal business entity, select "Individual/sole proprietor or single-member LLC." If you've formed an actual LLC or S-Corp, select the appropriate box and add your EIN.</div>
 
           <h2 style={h2}>Mistake #3: Not Reporting Income Under $600</h2>
           <p style={p}>The $600 threshold only determines whether a platform must send you a 1099-NEC form. You must report ALL self-employment income to the IRS — even $50, even $1 — if your total self-employment profit exceeds $400 for the year.</p>
-          <div style={warn}>⚠️ <strong>The Penalty:</strong> Failing to report income = 20% accuracy penalty on understated tax + interest. On $5,000 of unreported income, that's $1,000+ in penalties before interest.</div>
-          <div style={tip}>✅ <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
+          <div style={warn}> <strong>The Penalty:</strong> Failing to report income = 20% accuracy penalty on understated tax + interest. On $5,000 of unreported income, that's $1,000+ in penalties before interest.</div>
+          <div style={tip}> <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
 
           <h2 style={h2}>Mistake #4: Missing the Quarterly Tax Deadline</h2>
           <p style={p}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently 8% annually on the amount owed.</p>
-          <div style={warn}>⚠️ <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
+          <div style={warn}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
 
           <h2 style={h2}>Mistake #5: Using Your SSN When You Should Use an EIN</h2>
           <p style={p}>Many gig workers share their Social Security Number on W-9 forms without realizing they can use an Employer Identification Number (EIN) instead. An EIN is free, takes 5 minutes to get at IRS.gov, and protects your SSN from identity theft.</p>
-          <div style={tip}>✅ <strong>Get your free EIN:</strong> Visit IRS.gov/EIN. It's instant online. Once you have an EIN, use it on all W-9 forms instead of your SSN.</div>
+          <div style={tip}> <strong>Get your free EIN:</strong> Visit IRS.gov/EIN. It's instant online. Once you have an EIN, use it on all W-9 forms instead of your SSN.</div>
 
           <h2 style={h2}>Mistake #6: Not Keeping Copies of W-9 Forms You Submit</h2>
           <p style={p}>Platforms sometimes lose W-9 data or update their systems. If there's ever a dispute about withholding or incorrect 1099 amounts, your copy of the W-9 is your proof. Keep a PDF copy of every W-9 you submit, with the date and platform name.</p>
@@ -80,13 +80,13 @@ export default function W9MistakesBlog() {
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>FREE TAX TOOLS — GIGWISETAX.COM</div>
             <p style={{ color: '#fff', fontSize: 16, fontWeight: 600, margin: '0 0 16px' }}>Calculate your exact tax bill and find every deduction</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-              <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none' }}>🔍 Tax Penalty Finder</Link>
-              <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>✅ Deductions Checklist</Link>
+              <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none' }}> Tax Penalty Finder</Link>
+              <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}> Deductions Checklist</Link>
             </div>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute tax or legal advice. Consult a licensed CPA for personalized guidance. GigWiseTax.com is not affiliated with the IRS.
+             <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute tax or legal advice. Consult a licensed CPA for personalized guidance. GigWiseTax.com is not affiliated with the IRS.
           </div>
         </div>
       </div>

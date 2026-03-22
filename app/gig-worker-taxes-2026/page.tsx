@@ -91,7 +91,7 @@ export default function GigWorkerTaxCenter() {
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
             <Link href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 24px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>→ Open Main Calculator</Link>
-            <Link href="/tax-penalty-finder" style={{ background: 'rgba(255,255,255,.08)', color: '#fff', padding: '12px 24px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,.15)' }}>🔍 Tax Penalty Finder</Link>
+            <Link href="/tax-penalty-finder" style={{ background: 'rgba(255,255,255,.08)', color: '#fff', padding: '12px 24px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: '1px solid rgba(255,255,255,.15)' }}> Tax Penalty Finder</Link>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ export default function GigWorkerTaxCenter() {
 
         {/* QUARTERLY DEADLINES */}
         <div style={{ background: 'rgba(178,34,52,.08)', border: '1px solid rgba(178,34,52,.3)', borderRadius: 12, padding: '24px', marginBottom: 40 }}>
-          <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}>⚠️ 2026 Quarterly Tax Deadlines</div>
+          <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}> 2026 Quarterly Tax Deadlines</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
             {[['Q1','April 15, 2026','URGENT'],['Q2','June 16, 2026',''],['Q3','Sept 15, 2026',''],['Q4','Jan 15, 2027','']].map(([q,d,u])=>(
               <div key={q} style={{ background: 'rgba(255,255,255,.04)', borderRadius: 8, padding: '12px 14px' }}>
@@ -139,10 +139,10 @@ export default function GigWorkerTaxCenter() {
           <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}>🛠️ Tax Tools</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
             {[
-              { name: '🔍 Tax Penalty Finder', href: '/tax-penalty-finder', desc: 'Find IRS underpayment penalties' },
-              { name: '✅ Deductions Checklist', href: '/deductions', desc: 'IRS Schedule C write-offs' },
-              { name: '🏢 S-Corp vs Sole Prop', href: '/s-corp-calculator', desc: 'Which saves more at your income?' },
-              { name: '🛡️ Safe Harbor Guide', href: '/safe-harbor-quarterly-taxes', desc: 'Avoid underpayment penalties' },
+              { name: ' Tax Penalty Finder', href: '/tax-penalty-finder', desc: 'Find IRS underpayment penalties' },
+              { name: ' Deductions Checklist', href: '/deductions', desc: 'IRS Schedule C write-offs' },
+              { name: ' S-Corp vs Sole Prop', href: '/s-corp-calculator', desc: 'Which saves more at your income?' },
+              { name: ' Safe Harbor Guide', href: '/safe-harbor-quarterly-taxes', desc: 'Avoid underpayment penalties' },
             ].map(t=>(
               <Link key={t.href} href={t.href} style={{ textDecoration: 'none', background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: '16px 18px' }}>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>{t.name}</div>

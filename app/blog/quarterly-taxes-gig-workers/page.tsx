@@ -30,7 +30,7 @@ export default function QuarterlyTaxesGuide() {
       </div>
 
       <div style={{ background: '#ff4444', color: '#fff', borderRadius: 8, padding: '16px 20px', marginBottom: 32, fontWeight: 700 }}>
-        ⚠️ Q1 2026 DEADLINE: April 15, 2026 — Don't miss it or face a 7% IRS underpayment penalty
+         Q1 2026 DEADLINE: April 15, 2026 — Don't miss it or face a 7% IRS underpayment penalty
       </div>
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>The 4 Quarterly Deadlines for 2026</h2>
@@ -85,11 +85,11 @@ export default function QuarterlyTaxesGuide() {
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Deductions to Reduce Your Quarterly Payment</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {[
-          ['🚗 Mileage', '$0.67/mile in 2026'],
-          ['📱 Phone', '50–100% business use'],
-          ['🏠 Home Office', 'Dedicated space only'],
+          [' Mileage', '$0.67/mile in 2026'],
+          [' Phone', '50–100% business use'],
+          [' Home Office', 'Dedicated space only'],
           ['🧳 Equipment', 'Camera, insulated bags'],
-          ['📦 Supplies', 'Platform-specific items'],
+          [' Supplies', 'Platform-specific items'],
           ['💻 Software', 'Accounting, delivery apps'],
         ].map(([name, desc]) => (
           <div key={name} style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>

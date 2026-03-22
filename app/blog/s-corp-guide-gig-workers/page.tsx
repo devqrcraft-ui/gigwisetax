@@ -63,7 +63,7 @@ export default function SCorpGuideBlog() {
 
           <h2 style={h2}>Who Should Consider an S-Corp Election?</h2>
           <p style={p}>The S-Corp strategy makes financial sense when your <strong>net self-employment profit consistently exceeds $60,000 per year</strong>. Below that threshold, the compliance costs (~$2,500/year for payroll and tax prep) often exceed the tax savings.</p>
-          <div style={tip}>✅ <strong>Good candidates:</strong> Full-time DoorDash/Uber drivers earning $70k+, Etsy sellers with $80k+ profit, OnlyFans creators with $60k+ net income, multi-platform gig workers with combined income over $60k.</div>
+          <div style={tip}> <strong>Good candidates:</strong> Full-time DoorDash/Uber drivers earning $70k+, Etsy sellers with $80k+ profit, OnlyFans creators with $60k+ net income, multi-platform gig workers with combined income over $60k.</div>
 
           <h2 style={h2}>Step-by-Step: How to Elect S-Corp Status</h2>
           {[
@@ -82,21 +82,21 @@ export default function SCorpGuideBlog() {
             </div>
           ))}
 
-          <div style={warn}>⚠️ <strong>Important deadlines:</strong> To elect S-Corp status for 2025, you must file Form 2553 by March 15, 2025 (for existing entities) or within 75 days of forming a new LLC. Missing the deadline means waiting until 2026.</div>
+          <div style={warn}> <strong>Important deadlines:</strong> To elect S-Corp status for 2025, you must file Form 2553 by March 15, 2025 (for existing entities) or within 75 days of forming a new LLC. Missing the deadline means waiting until 2026.</div>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>CALCULATE YOUR S-CORP SAVINGS</div>
             <p style={{ color: '#fff', fontSize: 15, margin: '0 0 16px' }}>See exactly how much you'd save with an S-Corp election</p>
             <Link href="/s-corp-calculator" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
-              🏢 Open S-Corp Calculator →
+               Open S-Corp Calculator →
             </Link>
             <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-              🔍 Find All My Tax Overpayments →
+               Find All My Tax Overpayments →
             </Link>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute legal or tax advice. S-Corp elections have complex implications. Consult a licensed CPA before making any entity decisions.
+             <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute legal or tax advice. S-Corp elections have complex implications. Consult a licensed CPA before making any entity decisions.
           </div>
         </div>
       </div>

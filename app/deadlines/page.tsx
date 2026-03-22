@@ -42,7 +42,7 @@ export default function DeadlinesPage() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
             <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
             <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
-              📅 2026 Quarterly Estimated Tax Deadlines — All 51 States
+               2026 Quarterly Estimated Tax Deadlines — All 51 States
             </h1>
           </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 760, textAlign: 'justify' }}>
@@ -60,7 +60,7 @@ export default function DeadlinesPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={accent}/>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📋 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9' }} className="results-row">
               {[
@@ -70,12 +70,12 @@ export default function DeadlinesPage() {
                 { q: 'Q4 2026', period: 'Sep 1 – Dec 31', due: 'Jan 15, 2027', days: 320, now: false },
               ].map((d, i) => (
                 <div key={d.q} style={{ padding: '20px 16px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: d.now ? '#fff5f5' : '#fff', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
-                  {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}>⚠️ UPCOMING</div>}
+                  {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
                   <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{d.q}</div>
                   <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 10 }}>{d.period}</div>
                   <div style={{ fontSize: 17, fontWeight: 900, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 8 }}>{d.due}</div>
                   <div style={{ background: d.now ? '#fee2e2' : '#f0f4f8', color: d.now ? '#B22234' : '#374151', padding: '4px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700, display: 'inline-block', marginBottom: 12 }}>{d.days} days</div>
-                  <div style={btnRed}>📆 + Calendar</div>
+                  <div style={btnRed}> + Calendar</div>
                 </div>
               ))}
             </div>
@@ -86,7 +86,7 @@ export default function DeadlinesPage() {
 
           {/* PENALTY WARNING */}
           <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 20, marginBottom: 20 }}>
-            <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10, fontSize: 15 }}>⚠️ Underpayment Penalty Warning</div>
+            <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10, fontSize: 15 }}> Underpayment Penalty Warning</div>
             <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
               you must make quarterly estimated payments or face an <strong>underpayment penalty</strong>.
@@ -101,7 +101,7 @@ export default function DeadlinesPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={accent}/>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ State Quarterly Tax Deadlines 2026</span>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> State Quarterly Tax Deadlines 2026</span>
             </div>
             <div style={{ overflowX: 'auto' as const }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 600 }}>
@@ -134,7 +134,7 @@ export default function DeadlinesPage() {
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-              <div style={{ fontSize: 32, marginBottom: 8 }}>🧮</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Calculate Your Quarterly Payment</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All platforms · All 51 states</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
@@ -154,15 +154,15 @@ export default function DeadlinesPage() {
           </div>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>📌 Tax Calculators</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Tax Calculators</span>
             </div>
             {[
-              { label: '🚗 DoorDash Tax Calculator', href: '/doordash' },
-              { label: '🚕 Uber Tax Calculator', href: '/uber' },
-              { label: '⭐ OnlyFans Tax Calculator', href: '/onlyfans' },
-              { label: '🛍️ Etsy Tax Calculator', href: '/etsy' },
-              { label: '🛒 Instacart Tax Calculator', href: '/instacart' },
-              { label: '🏠 Airbnb Tax Calculator', href: '/airbnb' },
+              { label: ' DoorDash Tax Calculator', href: '/doordash' },
+              { label: ' Uber Tax Calculator', href: '/uber' },
+              { label: ' OnlyFans Tax Calculator', href: '/onlyfans' },
+              { label: ' Etsy Tax Calculator', href: '/etsy' },
+              { label: ' Instacart Tax Calculator', href: '/instacart' },
+              { label: ' Airbnb Tax Calculator', href: '/airbnb' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>

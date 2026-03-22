@@ -34,7 +34,7 @@ export default function DoorDashTaxGuide() {
             <span style={{ color: 'rgba(255,255,255,.7)' }}>DoorDash Taxes 2026</span>
           </nav>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-            🚗 DoorDash Taxes 2026 — Complete Guide for Dashers
+             DoorDash Taxes 2026 — Complete Guide for Dashers
           </h1>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
             Everything DoorDash drivers need to know about taxes in 2026. SE tax (15.3%), the new $0.67/mile mileage rate, quarterly payment deadlines, and every deduction Dashers can claim.
@@ -48,14 +48,14 @@ export default function DoorDashTaxGuide() {
 
             {/* CTA */}
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
-              <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>🚗 Calculate Your DoorDash Taxes Instantly</div>
+              <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your DoorDash Taxes Instantly</div>
               <a href="/doordash" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
               </a>
             </div>
 
             <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: DoorDash Taxes 2026</div>
+              <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: DoorDash Taxes 2026</div>
               <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                 <li><strong>DoorDash does NOT withhold taxes</strong> — you are an independent contractor</li>
                 <li><strong>2026 mileage rate: $0.67 per mile</strong></li>
@@ -79,7 +79,7 @@ export default function DoorDashTaxGuide() {
 
             <h2 style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
             <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}>🚗 2026 Standard Mileage Rate: $0.67 per mile</div>
+              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}> 2026 Standard Mileage Rate: $0.67 per mile</div>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
                 The IRS standard mileage rate for 2026 is <strong>$0.67 per mile</strong> driven for business.
                 This is the highest rate in years. Track every mile you drive for DoorDash using a mileage app.
@@ -102,9 +102,9 @@ export default function DoorDashTaxGuide() {
             <h2 style={h2}>Top Deductions for DoorDash Drivers</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
               {[
-                { icon: '🚗', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
-                { icon: '📱', name: 'Phone Bill (business %)', detail: 'Deduct the business-use percentage of your monthly phone plan. Most Dashers use 60–80% for business.' },
-                { icon: '🛡️', name: 'Auto Insurance (business %)', detail: 'Deduct the portion used for business deliveries if using actual expense method.' },
+                { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
+                { icon: '', name: 'Phone Bill (business %)', detail: 'Deduct the business-use percentage of your monthly phone plan. Most Dashers use 60–80% for business.' },
+                { icon: '', name: 'Auto Insurance (business %)', detail: 'Deduct the portion used for business deliveries if using actual expense method.' },
                 { icon: '🧊', name: 'Insulated Bags & Equipment', detail: 'Hot bags, drink carriers, any gear specifically purchased for DoorDash deliveries.' },
                 { icon: '🅿️', name: 'Parking & Tolls', detail: 'Any parking fees or tolls incurred while on delivery. Keep all receipts.' },
                 { icon: '🔧', name: 'Vehicle Maintenance', detail: 'Oil changes, tires, repairs — deduct business percentage if using actual expense method.' },
@@ -159,7 +159,7 @@ export default function DoorDashTaxGuide() {
             ))}
 
             <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-              ⚠️ <strong>Disclaimer:</strong> Informational purposes only. Consult a licensed CPA for your specific situation. Not affiliated with DoorDash or the IRS.
+               <strong>Disclaimer:</strong> Informational purposes only. Consult a licensed CPA for your specific situation. Not affiliated with DoorDash or the IRS.
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function DoorDashTaxGuide() {
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/doordash" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-              <div style={{ fontSize: 32, marginBottom: 8 }}>🚗</div>
+              <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>DoorDash Tax Calculator</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · Mileage included</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
@@ -188,13 +188,13 @@ export default function DoorDashTaxGuide() {
           </div>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>📌 Related Guides</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related Guides</span>
             </div>
             {[
-              { label: '🚕 Uber Tax Guide 2026', href: '/blog/uber-tax-guide-2026' },
-              { label: '🛒 Instacart Tax Guide', href: '/blog/instacart-shopper-taxes-2026' },
-              { label: '📅 Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
-              { label: '🚗 DoorDash by State', href: '/doordash' },
+              { label: ' Uber Tax Guide 2026', href: '/blog/uber-tax-guide-2026' },
+              { label: ' Instacart Tax Guide', href: '/blog/instacart-shopper-taxes-2026' },
+              { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
+              { label: ' DoorDash by State', href: '/doordash' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>

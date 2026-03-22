@@ -36,7 +36,7 @@ export default function BlogPost() {
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🏠 Mortgage Interest</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Mortgage Interest</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Proportional to rental days — big deduction for hosts</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -52,7 +52,7 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Professional photos for your listing</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>📱 Phone & Internet</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Phone & Internet</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Proportional business use percentage</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -64,7 +64,7 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Depreciated over useful life or Section 179</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🏠 Depreciation</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Depreciation</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Structural depreciation over 27.5 years</div>
         </div>
       </div>

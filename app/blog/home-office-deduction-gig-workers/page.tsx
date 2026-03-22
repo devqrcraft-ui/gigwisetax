@@ -52,13 +52,13 @@ export default function HomeOfficeBlog() {
           <p style={p}>To qualify, you need a space in your home that you use <strong>regularly and exclusively</strong> for your gig work business. This means:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '0 0 20px' }}>
             <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: 14 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 8 }}>✅ QUALIFIES</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 8 }}> QUALIFIES</div>
               {['Dedicated desk in spare bedroom used only for work','Craft room used exclusively for Etsy orders','Recording studio used only for content creation','Home office with door, used only for business'].map(i => (
                 <div key={i} style={{ fontSize: 13, color: '#374151', marginBottom: 5 }}>• {i}</div>
               ))}
             </div>
             <div style={{ background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: 14 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#B22234', marginBottom: 8 }}>❌ DOES NOT QUALIFY</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#B22234', marginBottom: 8 }}> DOES NOT QUALIFY</div>
               {['Kitchen table used for both eating and work','Living room couch where you sometimes check orders','Shared bedroom with a small desk in the corner','Space used for both business and personal storage'].map(i => (
                 <div key={i} style={{ fontSize: 13, color: '#374151', marginBottom: 5 }}>• {i}</div>
               ))}
@@ -68,7 +68,7 @@ export default function HomeOfficeBlog() {
           <h2 style={h2}>Simplified Method: $5 Per Square Foot</h2>
           <p style={p}>The IRS simplified method lets you deduct $5 per square foot of your dedicated workspace, up to a maximum of 300 square feet. This gives a maximum deduction of $1,500 per year with no recordkeeping of actual expenses required.</p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a2e', marginBottom: 12 }}>📐 Calculator Example:</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a2e', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
               <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f3f4f6', fontSize: 14 }}>
                 <span style={{ color: '#374151' }}>{r.sqft} sq ft workspace</span>
@@ -77,7 +77,7 @@ export default function HomeOfficeBlog() {
             ))}
           </div>
 
-          <div style={tip}>✅ <strong>Pro Tip:</strong> Measure your dedicated workspace with a tape measure and take a photo. Keep this documentation in case the IRS ever asks. It takes 5 minutes and protects a $1,500 deduction.</div>
+          <div style={tip}> <strong>Pro Tip:</strong> Measure your dedicated workspace with a tape measure and take a photo. Keep this documentation in case the IRS ever asks. It takes 5 minutes and protects a $1,500 deduction.</div>
 
           <h2 style={h2}>Actual Expense Method: Potentially More Valuable</h2>
           <p style={p}>If your home expenses are high, the actual expense method may save more than the simplified method. You calculate the percentage of your home used for business (workspace sq ft ÷ total home sq ft) and apply that percentage to:</p>
@@ -89,21 +89,21 @@ export default function HomeOfficeBlog() {
             ))}
           </div>
 
-          <div style={warn}>⚠️ <strong>Audit risk:</strong> The actual expense method requires detailed recordkeeping and is more likely to trigger IRS scrutiny. For most gig workers, the simplified method ($5/sq ft) offers the best balance of savings and simplicity.</div>
+          <div style={warn}> <strong>Audit risk:</strong> The actual expense method requires detailed recordkeeping and is more likely to trigger IRS scrutiny. For most gig workers, the simplified method ($5/sq ft) offers the best balance of savings and simplicity.</div>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>CLAIM ALL YOUR DEDUCTIONS</div>
             <p style={{ color: '#fff', fontSize: 15, margin: '0 0 16px' }}>See every deduction you qualify for — including home office</p>
             <Link href="/deductions" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
-              ✅ Open Deductions Checklist →
+               Open Deductions Checklist →
             </Link>
             <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-              🔍 Find My Total Tax Savings →
+               Find My Total Tax Savings →
             </Link>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> This article is for informational purposes only. Home office rules are complex and fact-specific. Consult a licensed CPA before claiming this deduction.
+             <strong>Disclaimer:</strong> This article is for informational purposes only. Home office rules are complex and fact-specific. Consult a licensed CPA before claiming this deduction.
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ export default function DoorDashTaxesBlog() {
 
           <h2 style={h2}>Does DoorDash Withhold Taxes?</h2>
           <p style={p}>No. DoorDash classifies all drivers as independent contractors (1099-NEC). This means DoorDash does not withhold federal income tax, state income tax, Social Security, or Medicare taxes from your earnings. You receive your full pay — and you are responsible for calculating and paying all taxes yourself.</p>
-          <div style={warn}>⚠️ <strong>Critical:</strong> Many new drivers don't realize this until they file their first tax return and owe a large unexpected bill. The solution is to set aside 25-30% of every payment from day one.</div>
+          <div style={warn}> <strong>Critical:</strong> Many new drivers don't realize this until they file their first tax return and owe a large unexpected bill. The solution is to set aside 25-30% of every payment from day one.</div>
 
           <h2 style={h2}>What Taxes Do DoorDash Drivers Pay?</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '16px 0 24px' }}>
@@ -72,7 +72,7 @@ export default function DoorDashTaxesBlog() {
           <h2 style={h2}>Top DoorDash Tax Deductions for 2025</h2>
           <h3 style={h3}>1. Mileage Deduction — $0.67 per mile</h3>
           <p style={p}>The mileage deduction is the single biggest tax break for DoorDash drivers. The 2025 IRS standard mileage rate is $0.67 per mile for business driving. On 15,000 business miles per year, that's a $10,050 deduction — saving approximately $2,940 in taxes (at 28% combined rate).</p>
-          <div style={tip}>✅ <strong>Pro tip:</strong> Track miles from the moment you open the DoorDash app until you complete your last delivery — not just while food is in your car. App opening, waiting at restaurants, and driving between orders all count.</div>
+          <div style={tip}> <strong>Pro tip:</strong> Track miles from the moment you open the DoorDash app until you complete your last delivery — not just while food is in your car. App opening, waiting at restaurants, and driving between orders all count.</div>
 
           <h3 style={h3}>2. Phone & Data Plan</h3>
           <p style={p}>If you use your smartphone for DoorDash, you can deduct the business-use percentage of your monthly bill. Most drivers use their phone 60-80% for work during active hours. On a $100/month phone bill with 70% business use, that's an $840/year deduction.</p>
@@ -112,15 +112,15 @@ export default function DoorDashTaxesBlog() {
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>CALCULATE YOUR DOORDASH TAX BILL</div>
             <p style={{ color: '#fff', fontSize: 15, margin: '0 0 16px' }}>Free calculator — all 51 states, instant results, no signup</p>
             <Link href="/doordash" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
-              🚗 Open DoorDash Tax Calculator →
+               Open DoorDash Tax Calculator →
             </Link>
             <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-              🔍 Find My Tax Overpayment →
+               Find My Tax Overpayment →
             </Link>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> This article is for informational purposes only. Tax laws change. Consult a licensed CPA. GigWiseTax.com is not affiliated with DoorDash or the IRS.
+             <strong>Disclaimer:</strong> This article is for informational purposes only. Tax laws change. Consult a licensed CPA. GigWiseTax.com is not affiliated with DoorDash or the IRS.
           </div>
         </div>
       </div>

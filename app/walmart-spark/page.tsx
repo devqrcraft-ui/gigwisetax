@@ -25,7 +25,7 @@ const DEDUCTIONS = [
   { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
   { icon:'🧊', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
   { icon:'🔋', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
-  { icon:'🛡️', label:'Supplemental Insurance', desc:'Rideshare/delivery insurance gaps not covered by Walmart Spark.' },
+  { icon:'', label:'Supplemental Insurance', desc:'Rideshare/delivery insurance gaps not covered by Walmart Spark.' },
   { icon:'🧼', label:'Car Cleaning & Supplies', desc:'Keep receipts — partial deduction for business use percentage.' },
   { icon:'💳', label:'Bank Fees & Apps', desc:'Any paid apps or tools used to manage your Spark business.' },
   { icon:'▸', label:'Home Office (if applicable)', desc:'If you use a dedicated space for planning deliveries, tracking income, etc.' },
@@ -97,7 +97,7 @@ export default function WalmartSparkPage() {
             federal income tax, state tax, and mileage deduction for all 51 jurisdictions. Instant results — no signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction',' No Registration','⚡ Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -121,7 +121,7 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl}>💰 Annual Spark Net Income (USD)</label>
+                  <label style={lbl}> Annual Spark Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
@@ -146,7 +146,7 @@ export default function WalmartSparkPage() {
                 </div>
               </div>
               <div onClick={calculate} style={{ background:'#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const, letterSpacing:'0.3px' }}>
-                ⚡ Calculate My Spark Taxes
+                 Calculate My Spark Taxes
               </div>
             </div>
 
@@ -183,7 +183,7 @@ export default function WalmartSparkPage() {
                 </div>
 
                 <div style={{ background:'#fffbeb', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
-                  <strong>⚠️ Disclaimer:</strong> These are estimates only. Not tax advice. Consult a CPA or use IRS Form 1040-ES for official calculations. Individual circumstances vary.
+                  <strong> Disclaimer:</strong> These are estimates only. Not tax advice. Consult a CPA or use IRS Form 1040-ES for official calculations. Individual circumstances vary.
                 </div>
               </div>
             )}
@@ -193,7 +193,7 @@ export default function WalmartSparkPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>💰 Top Tax Deductions for Walmart Spark Drivers 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Walmart Spark Drivers 2026</span>
             </div>
             <div style={{ padding:20 }}>
               <p style={{ fontSize:13, color:'#374151', lineHeight:1.7, marginBottom:20 }}>

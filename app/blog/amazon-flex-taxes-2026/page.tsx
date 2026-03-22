@@ -29,12 +29,12 @@ export default function AmazonFlexTaxesBlogPost() {
             ))}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
-            📦 Amazon Flex Taxes 2026: Complete Guide for Drivers
+             Amazon Flex Taxes 2026: Complete Guide for Drivers
           </h1>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>📅 January 15, 2026</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 15, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>⏱ 8 min read</span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>📋 Updated for 2026 IRS rates</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> Updated for 2026 IRS rates</span>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
           {/* TL;DR BOX */}
           <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}>✅ Quick Summary</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Quick Summary</div>
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {[
                 'Amazon Flex drivers are 1099 independent contractors — no taxes withheld',
@@ -83,7 +83,7 @@ export default function AmazonFlexTaxesBlogPost() {
             This covers Social Security (12.4%) and Medicare (2.9%). The SE tax is calculated on <strong>92.35% of your net profit</strong> (after deductions). You can then deduct 50% of the SE tax from your gross income.
           </p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}>📊 Example: $50,000 Amazon Flex Income</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
             {[
               ['Net income (after mileage deduction)', '$50,000'],
               ['SE tax base (× 92.35%)', '$46,175'],
@@ -111,7 +111,7 @@ export default function AmazonFlexTaxesBlogPost() {
             The IRS standard mileage rate for 2026 is <strong>72.5 cents per mile</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
           </p>
           <div style={{ background: '#1a1a2e', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>💡 Mileage Savings Example</div>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
               25,000 miles × $0.67 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$16,750 deduction</strong><br />
               At 30% effective rate → saves you approximately <strong style={{ color: '#e8b84b' }}>$5,438 in taxes</strong>
@@ -127,14 +127,14 @@ export default function AmazonFlexTaxesBlogPost() {
           <h2 style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {[
-              { icon: '🚗', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
-              { icon: '📱', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
-              { icon: '🛒', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
+              { icon: '', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
+              { icon: '', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
+              { icon: '', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
               { icon: '🔦', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },
               { icon: '🅿️', title: 'Parking & Tolls', desc: 'All parking fees and tolls during deliveries.' },
               { icon: '🧤', title: 'Gloves & Work Gear', desc: 'Protective gear worn exclusively for deliveries.' },
               { icon: '💳', title: 'Bank Fees', desc: 'If you open a business account for Flex income.' },
-              { icon: '📋', title: 'Tax Prep Fees', desc: 'CPA or tax software costs — deductible on Schedule C.' },
+              { icon: '', title: 'Tax Prep Fees', desc: 'CPA or tax software costs — deductible on Schedule C.' },
             ].map(d => (
               <div key={d.title} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>
                 <div style={{ fontSize: 18, marginBottom: 4 }}>{d.icon}</div>
@@ -162,7 +162,7 @@ export default function AmazonFlexTaxesBlogPost() {
                   <span style={{ fontSize: 12, color: '#6c757d', marginLeft: 8 }}>{row.period}</span>
                 </div>
                 <span style={{ fontWeight: 700, color: row.urgent ? '#B22234' : '#374151', fontSize: 13 }}>
-                  {row.urgent && '⚠️ '}{row.due}
+                  {row.urgent && ' '}{row.due}
                 </span>
               </div>
             ))}
@@ -180,7 +180,7 @@ export default function AmazonFlexTaxesBlogPost() {
           </p>
 
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}>⚠️ Disclaimer</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
             <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>
               This article is for informational purposes only and does not constitute tax advice. Tax laws change frequently. Consult a licensed CPA or Enrolled Agent for advice specific to your situation.
             </div>
@@ -192,12 +192,12 @@ export default function AmazonFlexTaxesBlogPost() {
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🧮 Try the Calculator</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
             <div style={{ padding: 16 }}>
               <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, marginBottom: 12, marginTop: 0 }}>Estimate your exact Amazon Flex tax bill in 60 seconds.</p>
               <Link href="/amazon-flex" style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#B22234', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>📦 Amazon Flex Calculator →</div>
+                <div style={{ background: '#B22234', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}> Amazon Flex Calculator →</div>
               </Link>
             </div>
           </div>
@@ -205,7 +205,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>📊 QuickBooks Self-Employed</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}> QuickBooks Self-Employed</div>
               <div style={{ fontSize: 12, color: '#374151', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
               <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>✓ Try Free 30 Days</div>
@@ -215,7 +215,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Related Articles</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Articles</span>
             </div>
             {[
               ['Mileage Rate 2026 Guide', '/blog/mileage-rate-2026'],

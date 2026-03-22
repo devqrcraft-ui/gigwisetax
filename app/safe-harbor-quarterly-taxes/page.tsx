@@ -86,7 +86,7 @@ export default function SafeHarborPage() {
         </p>
 
         <div className="alert-box">
-          <div className="alert-icon">⚠️</div>
+          <div className="alert-icon"></div>
           <div>
             <div className="alert-title">The $1,000 Rule — You Must Pay Quarterly</div>
             <div className="alert-desc">
@@ -183,7 +183,7 @@ export default function SafeHarborPage() {
 
             <div className="scenario">
               <div className="scenario-badge">Scenario 1</div>
-              <div className="scenario-title">🚗 DoorDash + 🚕 Uber Driver</div>
+              <div className="scenario-title"> DoorDash +  Uber Driver</div>
               <div className="s-row"><span className="s-label">DoorDash gross</span><span className="s-val">$32,000</span></div>
               <div className="s-row"><span className="s-label">Uber gross</span><span className="s-val">$28,000</span></div>
               <div className="s-row"><span className="s-label">Total gross</span><span className="s-val">$60,000</span></div>
@@ -199,7 +199,7 @@ export default function SafeHarborPage() {
 
             <div className="scenario">
               <div className="scenario-badge">Scenario 2</div>
-              <div className="scenario-title">🛒 Instacart + 📦 Amazon Flex</div>
+              <div className="scenario-title"> Instacart +  Amazon Flex</div>
               <div className="s-row"><span className="s-label">Instacart gross</span><span className="s-val">$24,000</span></div>
               <div className="s-row"><span className="s-label">Amazon Flex gross</span><span className="s-val">$18,000</span></div>
               <div className="s-row"><span className="s-label">Total gross</span><span className="s-val">$42,000</span></div>
@@ -215,7 +215,7 @@ export default function SafeHarborPage() {
 
             <div className="scenario">
               <div className="scenario-badge">Scenario 3</div>
-              <div className="scenario-title">⭐ OnlyFans + 🛍️ Etsy Creator</div>
+              <div className="scenario-title"> OnlyFans +  Etsy Creator</div>
               <div className="s-row"><span className="s-label">OnlyFans gross</span><span className="s-val">$75,000</span></div>
               <div className="s-row"><span className="s-label">Etsy gross</span><span className="s-val">$18,000</span></div>
               <div className="s-row"><span className="s-label">Total gross</span><span className="s-val">$93,000</span></div>
@@ -231,7 +231,7 @@ export default function SafeHarborPage() {
 
             <div className="scenario">
               <div className="scenario-badge">Scenario 4</div>
-              <div className="scenario-title">🏠 Airbnb + 🚙 Turo Host</div>
+              <div className="scenario-title"> Airbnb + 🚙 Turo Host</div>
               <div className="s-row"><span className="s-label">Airbnb gross</span><span className="s-val">$28,000</span></div>
               <div className="s-row"><span className="s-label">Turo gross</span><span className="s-val">$14,000</span></div>
               <div className="s-row"><span className="s-label">Total gross</span><span className="s-val">$42,000</span></div>
@@ -342,14 +342,14 @@ export default function SafeHarborPage() {
         <h2 className="sh-h2" style={{marginBottom:'8px'}}>Calculate Your Quarterly Payment</h2>
         <p style={{fontSize:'14px',color:'#6b7280',marginBottom:'16px'}}>Select your platform for a precise breakdown including deductions and quarterly schedule.</p>
         <div className="tools-row">
-          <Link href="/doordash" className="tool-btn"><div className="tool-emoji">🚗</div><div className="tool-name">DoorDash</div></Link>
-          <Link href="/uber" className="tool-btn"><div className="tool-emoji">🚕</div><div className="tool-name">Uber</div></Link>
-          <Link href="/instacart" className="tool-btn"><div className="tool-emoji">🛒</div><div className="tool-name">Instacart</div></Link>
-          <Link href="/onlyfans" className="tool-btn"><div className="tool-emoji">⭐</div><div className="tool-name">OnlyFans</div></Link>
-          <Link href="/amazon-flex" className="tool-btn"><div className="tool-emoji">📦</div><div className="tool-name">Amazon Flex</div></Link>
-          <Link href="/airbnb" className="tool-btn"><div className="tool-emoji">🏠</div><div className="tool-name">Airbnb</div></Link>
-          <Link href="/etsy" className="tool-btn"><div className="tool-emoji">🛍️</div><div className="tool-name">Etsy</div></Link>
-          <Link href="/tax-penalty-finder" className="tool-btn"><div className="tool-emoji">🔍</div><div className="tool-name">Penalty Finder</div></Link>
+          <Link href="/doordash" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">DoorDash</div></Link>
+          <Link href="/uber" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Uber</div></Link>
+          <Link href="/instacart" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Instacart</div></Link>
+          <Link href="/onlyfans" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">OnlyFans</div></Link>
+          <Link href="/amazon-flex" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Amazon Flex</div></Link>
+          <Link href="/airbnb" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Airbnb</div></Link>
+          <Link href="/etsy" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Etsy</div></Link>
+          <Link href="/tax-penalty-finder" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Penalty Finder</div></Link>
         </div>
 
       </div>

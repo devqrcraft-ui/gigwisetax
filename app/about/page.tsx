@@ -30,9 +30,9 @@ export default function AboutPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '🔒', label: 'No Data Stored', desc: 'Your numbers never leave your browser' },
+            { icon: '', label: 'No Data Stored', desc: 'Your numbers never leave your browser' },
             { icon: '💸', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
-            { icon: '🗺️', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
+            { icon: '', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
             <div key={s.label} style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
@@ -69,18 +69,18 @@ export default function AboutPage() {
           <h2 style={{ fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 16, marginTop: 0 }}>What We Cover</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {[
-              '🚗 DoorDash driver taxes',
-              '🚕 Uber & Lyft driver taxes',
-              '🛍️ Etsy seller taxes',
-              '⭐ OnlyFans creator taxes',
-              '🛒 Instacart & Walmart Spark',
-              '🏠 Airbnb & Turo host taxes',
-              '📦 Amazon Flex taxes',
-              '🍔 Grubhub driver taxes',
-              '🗺️ All 51 U.S. states + D.C.',
-              '📅 2026 quarterly deadlines',
-              '🚗 IRS mileage deduction (72.5¢)',
-              '📋 Schedule SE calculations',
+              ' DoorDash driver taxes',
+              ' Uber & Lyft driver taxes',
+              ' Etsy seller taxes',
+              ' OnlyFans creator taxes',
+              ' Instacart & Walmart Spark',
+              ' Airbnb & Turo host taxes',
+              ' Amazon Flex taxes',
+              ' Grubhub driver taxes',
+              ' All 51 U.S. states + D.C.',
+              ' 2026 quarterly deadlines',
+              ' IRS mileage deduction (72.5¢)',
+              ' Schedule SE calculations',
             ].map(item => (
               <div key={item} style={{ fontSize: 13, color: '#374151', padding: '8px 12px', background: '#f8fafc', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
             ))}
@@ -99,7 +99,7 @@ export default function AboutPage() {
             <div style={{ background: '#B22234', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>📧 Contact Us</div>
           </Link>
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1a2e', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>🧮 Try a Calculator</div>
+            <div style={{ background: '#1a1a2e', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Try a Calculator</div>
           </Link>
           {[['Privacy Policy','/privacy'],['Terms of Service','/terms']].map(([l,h]) => (
             <Link key={l} href={h} style={{ fontSize: 13, color: '#6c757d', textDecoration: 'underline', display: 'flex', alignItems: 'center' }}>{l}</Link>

@@ -84,15 +84,15 @@ export default function DeadlinesBlog() {
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>NEVER MISS A DEADLINE AGAIN</div>
             <p style={{ color: '#fff', fontSize: 15, margin: '0 0 16px' }}>Get free email reminders 14 days before every quarterly deadline</p>
             <Link href="/quarterly-reminder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
-              📅 Sign Up for Free Reminders →
+               Sign Up for Free Reminders →
             </Link>
             <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-              🔍 Calculate My Quarterly Payment →
+               Calculate My Quarterly Payment →
             </Link>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> Deadlines subject to change by the IRS. Always verify at IRS.gov. GigWiseTax.com is not affiliated with the IRS.
+             <strong>Disclaimer:</strong> Deadlines subject to change by the IRS. Always verify at IRS.gov. GigWiseTax.com is not affiliated with the IRS.
           </div>
         </div>
       </div>

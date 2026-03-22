@@ -27,10 +27,10 @@ export default function MileageRate2026Post() {
             ))}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
-            🚗 IRS Mileage Rate 2026: 72.5¢/Mile — What Every Gig Worker Needs to Know
+             IRS Mileage Rate 2026: 72.5¢/Mile — What Every Gig Worker Needs to Know
           </h1>
           <div style={{ display: 'flex', gap: 16 }}>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>📅 January 3, 2026</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 3, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>⏱ 5 min read</span>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function MileageRate2026Post() {
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
             <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}>✅ Standard Mileage (72.5¢)</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Standard Mileage (72.5¢)</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Simple — just track miles','No fuel receipts needed','Good for fuel-efficient cars','Can switch to actual in future years'].map(i => (
                   <li key={i} style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
@@ -108,7 +108,7 @@ export default function MileageRate2026Post() {
               </ul>
             </div>
             <div style={{ background: '#fff8e6', border: '1px solid #fde68a', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#92400e', marginBottom: 8 }}>📊 Actual Expenses</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#92400e', marginBottom: 8 }}> Actual Expenses</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Track gas, repairs, insurance','Depreciation included','Better for gas-guzzlers or luxury cars','More complex recordkeeping'].map(i => (
                   <li key={i} style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
@@ -134,7 +134,7 @@ export default function MileageRate2026Post() {
             ].map(item => <li key={item} style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
           </ul>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}>📱 Best Free Mileage Tracking Apps</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>
             {[
               { name: 'Stride', cost: 'Free', note: 'Best for most gig workers, IRS-compliant logs' },
               { name: 'MileIQ', cost: '$5.99/mo', note: 'Automatic tracking, swipe to categorize' },
@@ -152,7 +152,7 @@ export default function MileageRate2026Post() {
           </div>
 
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}>⚠️ Disclaimer</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
             <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a CPA for your specific situation. Always verify rates at irs.gov.</div>
           </div>
 
@@ -161,14 +161,14 @@ export default function MileageRate2026Post() {
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🧮 Calculate Your Taxes</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Calculate Your Taxes</span>
             </div>
             {[
-              ['🚗 DoorDash Calculator', '/doordash'],
-              ['🚕 Uber Calculator', '/uber'],
-              ['📦 Amazon Flex Calculator', '/amazon-flex'],
-              ['🛒 Instacart Calculator', '/instacart'],
-              ['🍔 Grubhub Calculator', '/grubhub'],
+              [' DoorDash Calculator', '/doordash'],
+              [' Uber Calculator', '/uber'],
+              [' Amazon Flex Calculator', '/amazon-flex'],
+              [' Instacart Calculator', '/instacart'],
+              [' Grubhub Calculator', '/grubhub'],
             ].map(([l, h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>{l as string}</div>
@@ -178,7 +178,7 @@ export default function MileageRate2026Post() {
 
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Related Guides</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Guides</span>
             </div>
             {[
               ['Amazon Flex Taxes 2026', '/blog/amazon-flex-taxes-2026'],

@@ -50,7 +50,7 @@ export default function SCorpCalculator() {
       </div>
 
       <div style={{ background: 'rgba(232,184,75,.1)', border: '1px solid rgba(232,184,75,.4)', borderRadius: 8, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-        <span style={{ fontSize: 22, flexShrink: 0 }}>💡</span>
+        <span style={{ fontSize: 22, flexShrink: 0 }}></span>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.6, margin: 0 }}>
           <strong style={{ color: '#e8b84b' }}>Did you know?</strong> Gig workers earning $60k+ can save $3,000–$12,000/year in self-employment taxes by electing S-Corp status. Most don't know about this strategy.
         </p>
@@ -95,7 +95,7 @@ export default function SCorpCalculator() {
           {income && (
             <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '12px 16px', marginTop: 12 }}>
               <span style={{ fontSize: 13, color: '#16a34a', fontWeight: 600 }}>
-                💰 Estimated S-Corp salary: {fmt(Math.min(parseFloat(income) * 0.5, 80000))} — distributions: {fmt(Math.max(parseFloat(income) - Math.min(parseFloat(income) * 0.5, 80000), 0))}
+                 Estimated S-Corp salary: {fmt(Math.min(parseFloat(income) * 0.5, 80000))} — distributions: {fmt(Math.max(parseFloat(income) - Math.min(parseFloat(income) * 0.5, 80000), 0))}
               </span>
             </div>
           )}
@@ -111,7 +111,7 @@ export default function SCorpCalculator() {
         <div style={{ ...card, border: result.savings > 0 ? '3px solid #22c55e' : '1px solid #e5e7eb' }}>
           <div style={{ background: result.savings > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : '#f9fafb', padding: '28px 24px', textAlign: 'center' }}>
             {result.savings > 0 ? (<>
-              <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.8)', letterSpacing: 1, marginBottom: 8 }}>🎉 ESTIMATED ANNUAL SAVINGS WITH S-CORP</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.8)', letterSpacing: 1, marginBottom: 8 }}> ESTIMATED ANNUAL SAVINGS WITH S-CORP</div>
               <div style={{ fontSize: 60, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{fmt(result.savings)}</div>
               <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', marginTop: 8 }}>per year (after ~$2,500 compliance costs)</div>
               <div style={{ fontSize: 15, color: '#fff', marginTop: 14, fontWeight: 700 }}>
@@ -151,7 +151,7 @@ export default function SCorpCalculator() {
 
             {result.savings > 0 && (
               <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 18, marginBottom: 16 }}>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#e8b84b', marginBottom: 10 }}>📋 HOW TO ELECT S-CORP STATUS — 5 STEPS</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#e8b84b', marginBottom: 10 }}> HOW TO ELECT S-CORP STATUS — 5 STEPS</div>
                 {[
                   'Form an LLC (if not already) — ~$100-500 depending on state',
                   'File IRS Form 2553 within 75 days of tax year start',
@@ -173,7 +173,7 @@ export default function SCorpCalculator() {
             </a>
             <a href="/tax-penalty-finder"
               style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
-              🔍 Get My Full Tax Penalty Report →
+               Get My Full Tax Penalty Report →
             </a>
 
             <button onClick={() => { setResult(null); setIncome(''); setSalary('') }}

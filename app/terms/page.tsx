@@ -20,7 +20,7 @@ export default function TermsPage() {
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Terms of Service
           </div>
-          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>📋 Terms of Service</h1>
+          <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}> Terms of Service</h1>
           <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: January 1, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
         </div>
       </div>
@@ -28,7 +28,7 @@ export default function TermsPage() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 
         <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: '#92400e', marginBottom: 6 }}>⚠️ Important Disclaimer</div>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Important Disclaimer</div>
           <div style={{ fontSize: 14, color: '#92400e', lineHeight: 1.7 }}>
             GigWiseTax.com provides <strong>estimates only</strong>. This is NOT tax advice. Results are for informational purposes only. Always consult a licensed CPA or tax professional before filing. Individual tax situations vary significantly.
           </div>

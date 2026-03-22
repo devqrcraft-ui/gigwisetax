@@ -135,7 +135,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 51 states.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-              {[' IRS Schedule SE', ' All 51 States', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : '⚡ Instant Results'].filter(Boolean).map(b => (
+              {[' IRS Schedule SE', ' All 51 States', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : ' Instant Results'].filter(Boolean).map(b => (
                 <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
               ))}
             </div>
@@ -169,7 +169,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </p>
 
                 <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}>⚠️ Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
                   <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                     Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
                     If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
@@ -182,7 +182,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
                   {[
                     { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
-                    { label: '🏛️ Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#1a1a2e' },
+                    { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#1a1a2e' },
                     { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#1a1a2e' },
                     { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
                   ].map(item => (
@@ -310,7 +310,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {/* DISCLAIMER */}
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6, textAlign: 'justify' as const }}>
-                  ⚠️ <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
+                   <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
                 </div>
               </div>
             </div>
@@ -342,7 +342,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             {/* OTHER CALCULATORS */}
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🔗 Other Gig Tax Calculators</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
             </div>
               <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
               <a href="/lyft" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Lyft Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>

@@ -15,10 +15,10 @@ export default function EtsyDeductionsBlog() {
   const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
 
   const deductions = [
-    { cat: '🎨 Materials & Supplies', items: ['Raw materials (fabric, yarn, wood, resin, etc.)', 'Packaging materials (boxes, tissue paper, ribbon)', 'Shipping supplies (tape, labels, bubble wrap)', 'Tools and equipment used for production'] },
-    { cat: '🏠 Home Studio / Workspace', items: ['Home office deduction: $5/sq ft up to 300 sq ft', 'Dedicated craft room — 100% of space qualifies', 'Utilities proportional to studio space', 'Rent or mortgage interest (proportional)'] },
+    { cat: ' Materials & Supplies', items: ['Raw materials (fabric, yarn, wood, resin, etc.)', 'Packaging materials (boxes, tissue paper, ribbon)', 'Shipping supplies (tape, labels, bubble wrap)', 'Tools and equipment used for production'] },
+    { cat: ' Home Studio / Workspace', items: ['Home office deduction: $5/sq ft up to 300 sq ft', 'Dedicated craft room — 100% of space qualifies', 'Utilities proportional to studio space', 'Rent or mortgage interest (proportional)'] },
     { cat: '💻 Technology & Software', items: ['Computer and tablet used for shop management', 'Design software (Canva Pro, Adobe, etc.)', 'Photography equipment for product photos', 'Phone used for Etsy business (business %)'] },
-    { cat: '📦 Shipping & Postage', items: ['All postage and shipping fees paid by you', 'Shipping insurance', 'PO Box rental for business address', 'Driving to post office (mileage at $0.67/mi)'] },
+    { cat: ' Shipping & Postage', items: ['All postage and shipping fees paid by you', 'Shipping insurance', 'PO Box rental for business address', 'Driving to post office (mileage at $0.67/mi)'] },
     { cat: '🏪 Etsy Platform Fees', items: ['Etsy listing fees ($0.20 per listing)', 'Etsy transaction fees (6.5% of sale price)', 'Etsy Ads / offsite ads fees', 'Etsy Plus subscription ($10/month)'] },
     { cat: '📚 Education & Marketing', items: ['Etsy courses and business books', 'Photography props and backdrops', 'Social media marketing costs', 'Business cards and promotional materials'] },
   ]
@@ -72,7 +72,7 @@ export default function EtsyDeductionsBlog() {
           ))}
 
           <div style={tip}>
-            <strong>💡 Important: Cost of Goods Sold (COGS)</strong><br/>
+            <strong> Important: Cost of Goods Sold (COGS)</strong><br/>
             Materials you use to make your products are deducted as "Cost of Goods Sold" on Schedule C, not as regular expenses. Keep separate records for materials purchased vs. materials used in products sold.
           </div>
 
@@ -83,15 +83,15 @@ export default function EtsyDeductionsBlog() {
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>FREE ETSY TAX CALCULATOR</div>
             <p style={{ color: '#fff', fontSize: 15, margin: '0 0 16px' }}>Calculate your exact Etsy tax bill and quarterly payment amount</p>
             <Link href="/etsy" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
-              🛍️ Open Etsy Tax Calculator →
+               Open Etsy Tax Calculator →
             </Link>
             <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-              ✅ Full Deductions Checklist →
+               Full Deductions Checklist →
             </Link>
           </div>
 
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
-            ⚠️ <strong>Disclaimer:</strong> This article is for informational purposes only. Consult a licensed CPA for personalized tax advice. GigWiseTax.com is not affiliated with Etsy or the IRS.
+             <strong>Disclaimer:</strong> This article is for informational purposes only. Consult a licensed CPA for personalized tax advice. GigWiseTax.com is not affiliated with Etsy or the IRS.
           </div>
         </div>
       </div>

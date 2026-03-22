@@ -128,7 +128,7 @@ export default function GigCalculator({
                   const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
                   navigator.clipboard.writeText(text).then(() => {
                     const el = document.getElementById('copy-sched-btn')
-                    if (el) { el.textContent = '✅ Copied!'; setTimeout(() => { el.textContent = ' Copy schedule' }, 2000) }
+                    if (el) { el.textContent = ' Copied!'; setTimeout(() => { el.textContent = ' Copy schedule' }, 2000) }
                   })
                 }} id="copy-sched-btn"> Copy schedule</div>
               </div>
@@ -136,7 +136,7 @@ export default function GigCalculator({
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
               {deadlines.map((d, i) => (
                 <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
-                  {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}>⚠️ NEXT</div>}
+                  {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                   <div style={{ fontSize: 12, fontWeight: 800, color: '#1a1a2e', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 10, color: '#9ca3af', marginBottom: 6 }}>{d.due}</div>
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 8 }}>{fmt(result.quarterly)}</div>
@@ -145,7 +145,7 @@ export default function GigCalculator({
               ))}
             </div>
             <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', lineHeight: 1.6 }}>
-              ⚠️ <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
+               <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
             </div>
           </div>
         </div>

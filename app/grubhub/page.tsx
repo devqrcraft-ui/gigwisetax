@@ -24,7 +24,7 @@ const DEDUCTIONS = [
   { icon:'▸', label:'Mileage (72.5¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Portion used for the Grubhub driver app and navigation. Usually 50–80% deductible.' },
   { icon:'🧊', label:'Hot/Cold Delivery Bags', desc:'Required equipment for food delivery. 100% deductible as business equipment.' },
-  { icon:'🚘', label:'Car Insurance (business %)', desc:'Pro-rata share of auto insurance for business miles driven.' },
+  { icon:'', label:'Car Insurance (business %)', desc:'Pro-rata share of auto insurance for business miles driven.' },
   { icon:'🔧', label:'Car Repairs & Maintenance', desc:'Oil changes, tires, brakes — deduct based on your business use percentage.' },
   { icon:'💳', label:'Parking & Tolls', desc:'All parking fees and tolls paid during deliveries are fully deductible.' },
   { icon:'▸', label:'Delivery Equipment', desc:'Phone mount, power bank, safety vest — any tool used for deliveries.' },
@@ -93,7 +93,7 @@ export default function GrubhubPage() {
             Free self-employment tax calculator for Grubhub delivery drivers. Estimate SE tax (15.3%), federal and state income tax, plus your mileage deduction — for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction 72.5¢',' No Registration','⚡ Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction 72.5¢',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function GrubhubPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl}>💰 Annual Grubhub Net Income (USD)</label>
+                  <label style={lbl}> Annual Grubhub Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
@@ -140,7 +140,7 @@ export default function GrubhubPage() {
                 </div>
               </div>
               <div onClick={calculate} style={{ background:'#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const }}>
-                ⚡ Calculate My Grubhub Taxes
+                 Calculate My Grubhub Taxes
               </div>
             </div>
 
@@ -173,7 +173,7 @@ export default function GrubhubPage() {
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
                 <div style={{ background:'#fffbeb', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
-                  <strong>⚠️ Disclaimer:</strong> Estimates only. Not tax advice. Consult a CPA or tax professional for your specific situation.
+                  <strong> Disclaimer:</strong> Estimates only. Not tax advice. Consult a CPA or tax professional for your specific situation.
                 </div>
               </div>
             )}
@@ -183,7 +183,7 @@ export default function GrubhubPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>💰 Top Tax Deductions for Grubhub Drivers 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Grubhub Drivers 2026</span>
             </div>
             <div style={{ padding:20 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }} className="ded-grid">

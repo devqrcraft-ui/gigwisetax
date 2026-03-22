@@ -4,16 +4,16 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const PLATFORMS = [
-  { name: 'DoorDash',     emoji: '🚗', mileage: true  },
-  { name: 'Uber',         emoji: '🚕', mileage: true  },
-  { name: 'Lyft',         emoji: '🚖', mileage: true  },
-  { name: 'Instacart',    emoji: '🛒', mileage: true  },
-  { name: 'Etsy',         emoji: '🛍️', mileage: false },
-  { name: 'Airbnb',       emoji: '🏠', mileage: false },
-  { name: 'OnlyFans',     emoji: '⭐', mileage: false },
-  { name: 'Amazon Flex',  emoji: '📦', mileage: true  },
-  { name: 'Grubhub',      emoji: '🍔', mileage: true  },
-  { name: 'Walmart Spark',emoji: '⚡', mileage: true  },
+  { name: 'DoorDash',     emoji: '', mileage: true  },
+  { name: 'Uber',         emoji: '', mileage: true  },
+  { name: 'Lyft',         emoji: '', mileage: true  },
+  { name: 'Instacart',    emoji: '', mileage: true  },
+  { name: 'Etsy',         emoji: '', mileage: false },
+  { name: 'Airbnb',       emoji: '', mileage: false },
+  { name: 'OnlyFans',     emoji: '', mileage: false },
+  { name: 'Amazon Flex',  emoji: '', mileage: true  },
+  { name: 'Grubhub',      emoji: '', mileage: true  },
+  { name: 'Walmart Spark',emoji: '', mileage: true  },
 ]
 
 export default function TaxPenaltyFinder() {
@@ -97,7 +97,7 @@ export default function TaxPenaltyFinder() {
             )}
           </div>
           <div style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:8, padding:16, marginBottom:20 }}>
-            <div style={{ fontSize:13, fontWeight:800, color:'#1a1a2e', marginBottom:12 }}>💡 YOUR PERSONALIZED ACTION PLAN</div>
+            <div style={{ fontSize:13, fontWeight:800, color:'#1a1a2e', marginBottom:12 }}> YOUR PERSONALIZED ACTION PLAN</div>
             {result.tips.map((tip: string, i: number) => (
               <div key={i} style={{ display:'flex', gap:10, marginBottom:8 }}>
                 <span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>
@@ -143,7 +143,7 @@ export default function TaxPenaltyFinder() {
         <div style={body}>
           {step === 0 && (
             <div style={{ textAlign:'center' }}>
-              <div style={{ fontSize:48, marginBottom:16 }}>🔍</div>
+              <div style={{ fontSize:48, marginBottom:16 }}></div>
               <h2 style={{ fontSize:20, fontWeight:800, color:'#1a1a2e', margin:'0 0 10px' }}>Find Your Tax Overpayment</h2>
               <p style={{ color:'#6b7280', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
               <div style={{ background:'#f8fafc', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
@@ -185,7 +185,7 @@ export default function TaxPenaltyFinder() {
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.67/mile in 2025</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
               {miles && <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
-                💰 Potential deduction: ${(parseFloat(miles)*0.67).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.67*0.28).toLocaleString()} in taxes
+                 Potential deduction: ${(parseFloat(miles)*0.67).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.67*0.28).toLocaleString()} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>
@@ -196,8 +196,8 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>Do you have a dedicated home office?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>A room used exclusively for work = up to $1,500/yr deduction</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setHomeOffice(true)} style={opt(homeOffice===true)}>✅ Yes, I do</button>
-                <button onClick={() => setHomeOffice(false)} style={opt(homeOffice===false)}>❌ No</button>
+                <button onClick={() => setHomeOffice(true)} style={opt(homeOffice===true)}> Yes, I do</button>
+                <button onClick={() => setHomeOffice(false)} style={opt(homeOffice===false)}> No</button>
               </div>
               <button onClick={() => homeOffice !== null && setStep(5)} style={{ ...btnR, opacity: homeOffice !== null ? 1 : 0.5 }}>Next →</button>
               <button onClick={() => setStep(hasMileage ? 3 : 2)} style={btnG}>← Back</button>
@@ -208,8 +208,8 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>Do you use your phone/internet for work?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>50–80% of your bill is deductible if used for work</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setPhone(true)} style={opt(phone===true)}>✅ Yes</button>
-                <button onClick={() => setPhone(false)} style={opt(phone===false)}>❌ No</button>
+                <button onClick={() => setPhone(true)} style={opt(phone===true)}> Yes</button>
+                <button onClick={() => setPhone(false)} style={opt(phone===false)}> No</button>
               </div>
               <button onClick={() => phone !== null && setStep(6)} style={{ ...btnR, opacity: phone !== null ? 1 : 0.5 }}>Next →</button>
               <button onClick={() => setStep(4)} style={btnG}>← Back</button>
@@ -220,8 +220,8 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>Are you paying quarterly estimated taxes?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 8% of owed amount</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}>✅ Yes, I pay quarterly</button>
-                <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}>❌ No / Not sure</button>
+                <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}> Yes, I pay quarterly</button>
+                <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}> No / Not sure</button>
               </div>
               <button onClick={() => quarterly !== null && setStep(7)} style={{ ...btnR, opacity: quarterly !== null ? 1 : 0.5 }}>Next →</button>
               <button onClick={() => setStep(5)} style={btnG}>← Back</button>
@@ -239,7 +239,7 @@ export default function TaxPenaltyFinder() {
                   </button>
                 ))}
               </div>
-              <button onClick={() => entity && calculate()} style={{ ...btnR, opacity: entity ? 1 : 0.5 }}>🔍 Calculate My Savings →</button>
+              <button onClick={() => entity && calculate()} style={{ ...btnR, opacity: entity ? 1 : 0.5 }}> Calculate My Savings →</button>
               <button onClick={() => setStep(6)} style={btnG}>← Back</button>
             </div>
           )}

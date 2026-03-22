@@ -40,7 +40,7 @@ export default function UberTaxGuide() {
               <span style={{ background: '#059669', color: '#fff', fontSize: 11, padding: '3px 10px', borderRadius: 3, fontWeight: 700 }}>NEW 2026 Tips Deduction</span>
             </div>
             <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-              🚕 Uber Driver Tax Guide 2026 — How to File Your 1099
+               Uber Driver Tax Guide 2026 — How to File Your 1099
             </h1>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
               Complete Uber driver tax guide for 2026. Includes the new $0.67/mile mileage rate, the new tips deduction (up to $25,000),
@@ -54,7 +54,7 @@ export default function UberTaxGuide() {
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
 
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
-                <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>🚕 Calculate Your Uber Taxes Instantly</div>
+                <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Uber Taxes Instantly</div>
                 <a href="/uber" style={{ textDecoration: 'none' }}>
                   <div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
                 </a>
@@ -74,7 +74,7 @@ export default function UberTaxGuide() {
               </div>
 
               <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}>📌 Key Facts: Uber Taxes 2026</div>
+                <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: Uber Taxes 2026</div>
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                   <li><strong>Uber does NOT withhold any taxes</strong> — you are an independent contractor</li>
                   <li><strong>2026 mileage rate: $0.67/mile</strong> — highest in years</li>
@@ -96,7 +96,7 @@ export default function UberTaxGuide() {
 
               <h2 style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
               <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}>🚗 $0.67 per mile in 2026</div>
+                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}> $0.67 per mile in 2026</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[['10,000 mi','$7,250'],['15,000 mi','$10,875'],['20,000 mi','$14,500']].map(([mi, d]) => (
                     <div key={mi} style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
@@ -114,14 +114,14 @@ export default function UberTaxGuide() {
               <h2 style={h2}>Top Deductions for Uber Drivers in 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
-                  { icon: '🚗', name: 'Mileage ($0.67/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
-                  { icon: '💡', name: 'Tips Deduction (NEW)', detail: 'Up to $25,000 in qualified customer tips are deductible in 2026. Game-changer for top earners.' },
-                  { icon: '📱', name: 'Phone (business %)', detail: 'Deduct business percentage of monthly plan. Most Uber drivers use phone 70–90% for business.' },
-                  { icon: '🚘', name: 'Car Washes', detail: 'Cost of keeping vehicle clean for passengers. 100% deductible as ordinary business expense.' },
+                  { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
+                  { icon: '', name: 'Tips Deduction (NEW)', detail: 'Up to $25,000 in qualified customer tips are deductible in 2026. Game-changer for top earners.' },
+                  { icon: '', name: 'Phone (business %)', detail: 'Deduct business percentage of monthly plan. Most Uber drivers use phone 70–90% for business.' },
+                  { icon: '', name: 'Car Washes', detail: 'Cost of keeping vehicle clean for passengers. 100% deductible as ordinary business expense.' },
                   { icon: '🅿️', name: 'Parking & Tolls', detail: 'All parking fees and road tolls while on active Uber trips. Keep all receipts.' },
                   { icon: '🍬', name: 'Passenger Amenities', detail: 'Mints, water, phone chargers provided to passengers. 100% deductible. Keep grocery receipts.' },
                   { icon: '🔧', name: 'Car Maintenance (actual method)', detail: 'Oil changes, tires, repairs — deductible if using actual expense method instead of mileage.' },
-                  { icon: '💼', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, Stride, or any tax/mileage app subscription. 100% deductible.' },
+                  { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, Stride, or any tax/mileage app subscription. 100% deductible.' },
                 ].map(d => (
                   <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                     <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
@@ -186,7 +186,7 @@ export default function UberTaxGuide() {
               ))}
 
               <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-                ⚠️ <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Uber or the IRS. Consult a licensed CPA for your specific situation.
+                 <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Uber or the IRS. Consult a licensed CPA for your specific situation.
               </div>
             </div>
           </div>
@@ -194,7 +194,7 @@ export default function UberTaxGuide() {
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <a href="/uber" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>🚕</div>
+                <div style={{ fontSize: 32, marginBottom: 8 }}></div>
                 <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Uber Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · Quarterly schedule</div>
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
@@ -214,13 +214,13 @@ export default function UberTaxGuide() {
             </div>
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>📌 Related</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related</span>
               </div>
               {[
-                { label: '🚗 DoorDash Tax Guide', href: '/blog/doordash-taxes-2026' },
-                { label: '📅 Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
-                { label: '🚖 Lyft Tax Calculator', href: '/lyft' },
-                { label: '📋 W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
+                { label: ' DoorDash Tax Guide', href: '/blog/doordash-taxes-2026' },
+                { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
+                { label: ' Lyft Tax Calculator', href: '/lyft' },
+                { label: ' W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>

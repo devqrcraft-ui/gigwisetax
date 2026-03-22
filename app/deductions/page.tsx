@@ -4,29 +4,29 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const DEDUCTIONS = [
-  { id: 1, category: '🚗 Vehicle', title: 'Mileage Deduction', desc: '$0.67 per business mile (2026 IRS rate)', savings: 'Avg $3,500/yr', checked: false },
-  { id: 2, category: '🚗 Vehicle', title: 'Car Insurance (business %)', desc: 'Deduct the % of time used for work', savings: 'Avg $400/yr', checked: false },
-  { id: 3, category: '🏠 Home', title: 'Home Office', desc: '$5 per sq ft, up to 300 sq ft = $1,500 max', savings: 'Up to $1,500/yr', checked: false },
-  { id: 4, category: '🏠 Home', title: 'Internet Bill (business %)', desc: 'Deduct 50-80% if used for work', savings: 'Avg $600/yr', checked: false },
-  { id: 5, category: '📱 Tech', title: 'Phone Bill (business %)', desc: 'Deduct 50-80% of monthly bill', savings: 'Avg $720/yr', checked: false },
-  { id: 6, category: '📱 Tech', title: 'Equipment & Gear', desc: 'Laptop, camera, phone — 100% deductible (Section 179)', savings: 'Avg $800/yr', checked: false },
-  { id: 7, category: '📱 Tech', title: 'Apps & Software', desc: 'Mileage tracker, accounting software, subscriptions', savings: 'Avg $300/yr', checked: false },
-  { id: 8, category: '💼 Business', title: 'Business Bank Fees', desc: 'Monthly fees, wire transfers, payment processing', savings: 'Avg $200/yr', checked: false },
-  { id: 9, category: '💼 Business', title: 'Professional Services', desc: 'CPA, lawyer, tax prep fees', savings: 'Avg $500/yr', checked: false },
-  { id: 10, category: '💼 Business', title: 'Business Meals (50%)', desc: 'Client meetings, business discussions', savings: 'Avg $400/yr', checked: false },
-  { id: 11, category: '💼 Business', title: 'Marketing & Advertising', desc: 'Website, ads, business cards', savings: 'Avg $600/yr', checked: false },
+  { id: 1, category: ' Vehicle', title: 'Mileage Deduction', desc: '$0.67 per business mile (2026 IRS rate)', savings: 'Avg $3,500/yr', checked: false },
+  { id: 2, category: ' Vehicle', title: 'Car Insurance (business %)', desc: 'Deduct the % of time used for work', savings: 'Avg $400/yr', checked: false },
+  { id: 3, category: ' Home', title: 'Home Office', desc: '$5 per sq ft, up to 300 sq ft = $1,500 max', savings: 'Up to $1,500/yr', checked: false },
+  { id: 4, category: ' Home', title: 'Internet Bill (business %)', desc: 'Deduct 50-80% if used for work', savings: 'Avg $600/yr', checked: false },
+  { id: 5, category: ' Tech', title: 'Phone Bill (business %)', desc: 'Deduct 50-80% of monthly bill', savings: 'Avg $720/yr', checked: false },
+  { id: 6, category: ' Tech', title: 'Equipment & Gear', desc: 'Laptop, camera, phone — 100% deductible (Section 179)', savings: 'Avg $800/yr', checked: false },
+  { id: 7, category: ' Tech', title: 'Apps & Software', desc: 'Mileage tracker, accounting software, subscriptions', savings: 'Avg $300/yr', checked: false },
+  { id: 8, category: ' Business', title: 'Business Bank Fees', desc: 'Monthly fees, wire transfers, payment processing', savings: 'Avg $200/yr', checked: false },
+  { id: 9, category: ' Business', title: 'Professional Services', desc: 'CPA, lawyer, tax prep fees', savings: 'Avg $500/yr', checked: false },
+  { id: 10, category: ' Business', title: 'Business Meals (50%)', desc: 'Client meetings, business discussions', savings: 'Avg $400/yr', checked: false },
+  { id: 11, category: ' Business', title: 'Marketing & Advertising', desc: 'Website, ads, business cards', savings: 'Avg $600/yr', checked: false },
   { id: 12, category: '🏥 Health', title: 'Health Insurance Premium', desc: '100% deductible if self-employed and not eligible for employer plan', savings: 'Avg $3,000/yr', checked: false },
   { id: 13, category: '🏥 Health', title: 'HSA Contributions', desc: 'Up to $4,150 single / $8,300 family (2025)', savings: 'Up to $4,150/yr', checked: false },
-  { id: 14, category: '📈 Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $69,000 (2025)', savings: 'Up to $69,000/yr', checked: false },
-  { id: 15, category: '📈 Retirement', title: 'Solo 401(k)', desc: 'Up to $69,000 total contributions (2025)', savings: 'Up to $69,000/yr', checked: false },
+  { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $69,000 (2025)', savings: 'Up to $69,000/yr', checked: false },
+  { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Up to $69,000 total contributions (2025)', savings: 'Up to $69,000/yr', checked: false },
   { id: 16, category: '📚 Education', title: 'Business Education', desc: 'Courses, books, webinars related to your work', savings: 'Avg $300/yr', checked: false },
   { id: 17, category: '📚 Education', title: 'Industry Memberships', desc: 'Professional associations, trade publications', savings: 'Avg $200/yr', checked: false },
-  { id: 18, category: '🧾 Tax', title: 'SE Tax Deduction (50%)', desc: 'Deduct half of self-employment tax from income — automatic', savings: 'Avg $2,000/yr', checked: false },
-  { id: 19, category: '🧾 Tax', title: 'QBI Deduction (20%)', desc: 'Qualified Business Income — up to 20% of net income', savings: 'Avg $3,000/yr', checked: false },
-  { id: 20, category: '🧾 Tax', title: 'State & Local Taxes (SALT)', desc: 'Up to $40,000 deduction (2025 rule)', savings: 'Up to $40,000/yr', checked: false },
+  { id: 18, category: ' Tax', title: 'SE Tax Deduction (50%)', desc: 'Deduct half of self-employment tax from income — automatic', savings: 'Avg $2,000/yr', checked: false },
+  { id: 19, category: ' Tax', title: 'QBI Deduction (20%)', desc: 'Qualified Business Income — up to 20% of net income', savings: 'Avg $3,000/yr', checked: false },
+  { id: 20, category: ' Tax', title: 'State & Local Taxes (SALT)', desc: 'Up to $40,000 deduction (2025 rule)', savings: 'Up to $40,000/yr', checked: false },
 ]
 
-const CATEGORIES = ['All', '🚗 Vehicle', '🏠 Home', '📱 Tech', '💼 Business', '🏥 Health', '📈 Retirement', '📚 Education', '🧾 Tax']
+const CATEGORIES = ['All', ' Vehicle', ' Home', ' Tech', ' Business', '🏥 Health', ' Retirement', '📚 Education', ' Tax']
 
 export default function DeductionsChecklist() {
   const [checked, setChecked]   = useState<Set<number>>(new Set())
@@ -146,7 +146,7 @@ export default function DeductionsChecklist() {
         </a>
         <a href="/tax-penalty-finder"
           style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
-          🔍 Get My Full Tax Penalty Report →
+           Get My Full Tax Penalty Report →
         </a>
       </div>
 

@@ -124,9 +124,9 @@ export default function HomeClient() {
           {/* 3 promise bullets — visible on all screens */}
           <div style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column' as const, gap: 5, marginBottom: 10 }}>
             {[
-              '✅ Self-employment tax 15.3% + federal + state (all 51 states)',
-              '✅ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
-              '✅ Free, no signup, no app — results in seconds',
+              ' Self-employment tax 15.3% + federal + state (all 51 states)',
+              ' Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
+              ' Free, no signup, no app — results in seconds',
             ].map(b => (
               <span key={b} style={{ fontSize: isMobile ? 14 : 14, color: 'rgba(255,255,255,.85)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
@@ -184,7 +184,7 @@ export default function HomeClient() {
               {/* QUICK EXAMPLES */}
               <div style={{ marginBottom: 16 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 12 }}>
-                  ⚡ Quick Examples — tap to load
+                   Quick Examples — tap to load
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4,1fr)', gap: 10 }}>
                   {QUICK_EXAMPLES.map(ex => (
@@ -320,7 +320,7 @@ export default function HomeClient() {
                     <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : 'repeat(4,1fr)', gap: 10, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
-                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}>⚠️ NEXT</div>}
+                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: '#1a1a2e', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
@@ -331,7 +331,7 @@ export default function HomeClient() {
                     <button onClick={()=>{const t=[DEADLINES.map(d=>d.q+' — due '+d.due+': '+fmt(result.quarterly)).join('\n')].join('');navigator.clipboard.writeText(t).then(()=>alert('Quarterly schedule copied!'));}} style={{marginTop:'10px',padding:'8px 18px',borderRadius:'8px',border:'1px solid rgba(232,184,75,0.4)',background:'rgba(232,184,75,0.08)',color:'#e8b84b',fontSize:'13px',fontWeight:700,cursor:'pointer',width:'100%'}}> Copy Quarterly Schedule</button>
 
                     <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', textAlign: 'justify' as const, lineHeight: 1.6 }}>
-                      ⚠️ <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
+                       <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
                     </div>
                     <div style={{ marginTop: 10, background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#166534', lineHeight: 1.6 }}>
                        <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
@@ -344,7 +344,7 @@ export default function HomeClient() {
               {/* HIGH INCOME BLOCK */}
               {result && parseFloat(income) >= 150000 && (
                 <div style={{ background: 'linear-gradient(135deg,#1a0a2e,#2d1454)', border: '1px solid rgba(168,85,247,0.4)', borderRadius: 8, padding: '18px 20px', marginBottom: 16 }}>
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#c084fc', letterSpacing: '1px', textTransform: 'uppercase' as const, marginBottom: 10 }}>⚡ High-Income Gig Worker (over $150k)</div>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#c084fc', letterSpacing: '1px', textTransform: 'uppercase' as const, marginBottom: 10 }}> High-Income Gig Worker (over $150k)</div>
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>

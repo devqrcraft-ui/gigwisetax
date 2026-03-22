@@ -22,7 +22,7 @@ const STATES = [
 
 const DEDUCTIONS = [
   { icon:'📉', label:'Depreciation (MACRS)', desc:'Cars depreciate over 5 years under MACRS. First-year bonus depreciation may allow up to 100% deduction in year one.' },
-  { icon:'🛡️', label:'Insurance Premium', desc:'Turo\'s protection plans and any supplemental commercial coverage are deductible to the extent of business use.' },
+  { icon:'', label:'Insurance Premium', desc:'Turo\'s protection plans and any supplemental commercial coverage are deductible to the extent of business use.' },
   { icon:'🔧', label:'Repairs & Maintenance', desc:'Oil changes, tires, detailing, repairs — all deductible based on your rental vs. personal use ratio.' },
   { icon:'🧼', label:'Cleaning Between Rentals', desc:'Professional cleaning, car washes, and supplies used to prepare the car for guests.' },
   { icon:'⛽', label:'Gas (if you supply it)', desc:'Some hosts include gas. Keep all receipts — deductible as an ordinary business expense.' },
@@ -86,14 +86,14 @@ export default function TuroPage() {
           <div style={{ display:'flex', gap:12, alignItems:'flex-start', marginBottom:14 }}>
             <div style={{ width:4, height:34, background:'#B22234', borderRadius:2, flexShrink:0, marginTop:4 }} />
             <h1 style={{ fontSize:28, fontWeight:900, color:'#fff', lineHeight:1.2, letterSpacing:'-0.5px', margin:0 }}>
-              🚘 Turo Host Tax Calculator 2026 — All 51 States
+               Turo Host Tax Calculator 2026 — All 51 States
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
             Free tax calculator for Turo car-sharing hosts. Estimate your income tax, self-employment tax, and car depreciation deductions for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' Schedule C / Schedule E',' All 51 States','📉 Depreciation Included',' No Registration','⚡ Instant Results'].map(b => (
+            {[' Schedule C / Schedule E',' All 51 States','📉 Depreciation Included',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -107,13 +107,13 @@ export default function TuroPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>🚘 Turo Tax Calculator 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Turo Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>Schedule C / E</span>
             </div>
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl}>💰 Annual Turo Host Income (USD)</label>
+                  <label style={lbl}> Annual Turo Host Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 24000" value={income} onChange={e=>setIncome(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total payouts from Turo (before deductions)</div>
                 </div>
@@ -138,7 +138,7 @@ export default function TuroPage() {
                 </div>
               </div>
               <div onClick={calculate} style={{ background:'#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const }}>
-                ⚡ Calculate My Turo Taxes
+                 Calculate My Turo Taxes
               </div>
             </div>
 
@@ -169,7 +169,7 @@ export default function TuroPage() {
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
                 <div style={{ background:'#fffbeb', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
-                  <strong>⚠️ Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
+                  <strong> Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
                 </div>
               </div>
             )}
@@ -178,7 +178,7 @@ export default function TuroPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>💰 Top Tax Deductions for Turo Hosts 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Turo Hosts 2026</span>
             </div>
             <div style={{ padding:20 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }} className="ded-grid">

@@ -31,7 +31,7 @@ export default function BlogPost() {
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🚗 Mileage ($0.67/mile)</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Mileage ($0.67/mile)</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Every mile driving to Walmart and to customers is deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -39,7 +39,7 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Cold bags and insulated carriers for grocery deliveries</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>📱 Phone & Data</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Phone & Data</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Business percentage of your monthly phone bill</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -107,7 +107,7 @@ export default function BlogPost() {
           { q: 'Q4 — January 15, 2027', urgent: false },
         ].map(d => (
           <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px', fontWeight: 600, color: d.urgent ? '#ff4444' : '#fff' }}>
-            {d.urgent ? '⚠️ ' : ''}{d.q}
+            {d.urgent ? ' ' : ''}{d.q}
           </div>
         ))}
       </div>

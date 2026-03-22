@@ -27,10 +27,10 @@ export default function GrubhubVsDoorDashPost() {
             ))}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
-            🍔 Grubhub vs DoorDash Taxes 2026: Are They Different?
+             Grubhub vs DoorDash Taxes 2026: Are They Different?
           </h1>
           <div style={{ display: 'flex', gap: 16 }}>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>📅 January 20, 2026</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 20, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>⏱ 6 min read</span>
           </div>
         </div>
@@ -42,7 +42,7 @@ export default function GrubhubVsDoorDashPost() {
         <article>
 
           <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}>✅ Short Answer</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Short Answer</div>
             <p style={{ fontSize: 13, color: '#166534', lineHeight: 1.7, margin: 0 }}>
               Grubhub and DoorDash use identical tax rules — both are 1099 independent contractors, both owe 15.3% SE tax, and both get the same IRS mileage deduction. The only difference is how much you earn and how many miles you drive, which affects your total tax bill.
             </p>
@@ -59,8 +59,8 @@ export default function GrubhubVsDoorDashPost() {
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}>🍔 Grubhub</span>
-              <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}>🚗 DoorDash</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> Grubhub</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> DoorDash</span>
             </div>
             {[
               ['Worker Classification', '1099 Contractor', '1099 Contractor'],
@@ -92,7 +92,7 @@ export default function GrubhubVsDoorDashPost() {
             If you drive for both Grubhub and DoorDash, you file a <strong>single Schedule C</strong> combining all self-employment income. You don't file two separate Schedule Cs unless you run them as genuinely separate business activities (rare).
           </p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 10 }}>📊 Multi-App Filing Example</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 10 }}> Multi-App Filing Example</div>
             {[
               ['Grubhub income', '$22,000'],
               ['DoorDash income', '$18,000'],
@@ -115,14 +115,14 @@ export default function GrubhubVsDoorDashPost() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
             <Link href="/grubhub" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: '16px', textAlign: 'center' as const, cursor: 'pointer' }}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>🍔</div>
+                <div style={{ fontSize: 24, marginBottom: 8 }}></div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Grubhub Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)' }}>Calculate your Grubhub taxes →</div>
               </div>
             </Link>
             <Link href="/doordash" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#B22234', borderRadius: 6, padding: '16px', textAlign: 'center' as const, cursor: 'pointer' }}>
-                <div style={{ fontSize: 24, marginBottom: 8 }}>🚗</div>
+                <div style={{ fontSize: 24, marginBottom: 8 }}></div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>DoorDash Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>Calculate your DoorDash taxes →</div>
               </div>
@@ -130,7 +130,7 @@ export default function GrubhubVsDoorDashPost() {
           </div>
 
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px' }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}>⚠️ Disclaimer</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
             <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a licensed CPA for your specific tax situation.</div>
           </div>
 
@@ -139,9 +139,9 @@ export default function GrubhubVsDoorDashPost() {
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>🧮 Use a Calculator</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Use a Calculator</span>
             </div>
-            {[['🍔 Grubhub Calculator','/grubhub'],['🚗 DoorDash Calculator','/doordash'],['🚕 Uber Calculator','/uber'],['📦 Amazon Flex','/amazon-flex']].map(([l,h]) => (
+            {[[' Grubhub Calculator','/grubhub'],[' DoorDash Calculator','/doordash'],[' Uber Calculator','/uber'],[' Amazon Flex','/amazon-flex']].map(([l,h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>{l as string}</div>
               </Link>
@@ -149,7 +149,7 @@ export default function GrubhubVsDoorDashPost() {
           </div>
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
-              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 More Guides</span>
+              <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> More Guides</span>
             </div>
             {[['Mileage Rate 2026','/blog/mileage-rate-2026'],['Amazon Flex Taxes','/blog/amazon-flex-taxes-2026'],['Quarterly Taxes','/blog/quarterly-taxes-gig-workers'],['W-2 vs 1099','/blog/w2-vs-1099-guide-2026']].map(([l,h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>

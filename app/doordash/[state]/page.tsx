@@ -96,7 +96,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📋 {platform.name} Tax Requirements — {state.name} 2026</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax Requirements — {state.name} 2026</span>
               </div>
               <div style={{ padding: 20 }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 12, marginBottom: 20 }} className="three-grid">
@@ -177,7 +177,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 ))}
 
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-                  ⚠️ <strong>Disclaimer:</strong> Estimates only. Verify with your state revenue department or a CPA.
+                   <strong>Disclaimer:</strong> Estimates only. Verify with your state revenue department or a CPA.
                 </div>
               </div>
             </div>
@@ -186,7 +186,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ {platform.name} Tax in Other States</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax in Other States</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
                 {STATES.filter(s => s.slug !== stateSlug).slice(0, 12).map(s => (
@@ -205,7 +205,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Other Platforms in {state.abbr}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>

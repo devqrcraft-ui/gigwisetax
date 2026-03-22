@@ -51,7 +51,7 @@ export default function InstacartTaxGuide() {
               <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>7 min read</span>
             </div>
             <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-              🛒 Instacart Shopper Taxes 2026 — Complete Tax Guide
+               Instacart Shopper Taxes 2026 — Complete Tax Guide
             </h1>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
               How Instacart in-store shoppers and full-service shoppers pay taxes in 2026.
@@ -67,7 +67,7 @@ export default function InstacartTaxGuide() {
 
               {/* CTA */}
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
-                <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}>🛒 Calculate Your Instacart Taxes Instantly</div>
+                <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Instacart Taxes Instantly</div>
                 <a href="/instacart" style={{ textDecoration: 'none' }}>
                   <div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
                 </a>
@@ -75,7 +75,7 @@ export default function InstacartTaxGuide() {
 
               {/* KEY FACTS */}
               <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 24 }}>
-                <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10 }}>📌 Key Facts: Instacart Taxes 2026</div>
+                <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10 }}> Key Facts: Instacart Taxes 2026</div>
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                   <li><strong>In-store shoppers</strong> are W-2 employees — taxes withheld automatically</li>
                   <li><strong>Full-service shoppers</strong> are 1099 contractors — you pay taxes yourself</li>
@@ -88,7 +88,7 @@ export default function InstacartTaxGuide() {
 
               {/* IN-STORE VS FULL-SERVICE */}
               <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}>⚠️ Important: Two Types of Instacart Workers</div>
+                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Important: Two Types of Instacart Workers</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }} className="form-grid">
                   <div style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
                     <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}>🏪 In-Store Shoppers</div>
@@ -100,7 +100,7 @@ export default function InstacartTaxGuide() {
                     </ul>
                   </div>
                   <div style={{ background: '#fff', border: '1px solid #fecaca', borderRadius: 4, padding: 12 }}>
-                    <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 6, fontSize: 13 }}>🚗 Full-Service Shoppers</div>
+                    <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 6, fontSize: 13 }}> Full-Service Shoppers</div>
                     <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: '#374151', lineHeight: 1.8 }}>
                       <li>1099 independent contractor</li>
                       <li>No tax withholding</li>
@@ -124,7 +124,7 @@ export default function InstacartTaxGuide() {
               </p>
 
               <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}>🚗 Mileage Deduction Examples (2026)</div>
+                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Mileage Deduction Examples (2026)</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[
                     { miles: '8,000', deduction: '$5,800', saves: '~$1,276' },
@@ -143,12 +143,12 @@ export default function InstacartTaxGuide() {
               <h2 style={h2}>Top Deductions for Instacart Shoppers 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
-                  { icon: '🚗', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
-                  { icon: '📱', name: 'Phone Bill (business %)', detail: 'If you use your phone 70% for Instacart, deduct 70% of your monthly bill.' },
+                  { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
+                  { icon: '', name: 'Phone Bill (business %)', detail: 'If you use your phone 70% for Instacart, deduct 70% of your monthly bill.' },
                   { icon: '🧺', name: 'Insulated Bags & Coolers', detail: 'Grocery bags, insulated totes, cooler bags purchased specifically for Instacart deliveries.' },
-                  { icon: '🛡️', name: 'Auto Insurance (business %)', detail: 'Deduct the business portion if using actual expense method (not mileage method).' },
+                  { icon: '', name: 'Auto Insurance (business %)', detail: 'Deduct the business portion if using actual expense method (not mileage method).' },
                   { icon: '🅿️', name: 'Parking & Tolls', detail: 'Any parking fees or toll charges while on an active batch. Keep receipts.' },
-                  { icon: '💼', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, FreshBooks — deductible if used for your Instacart business.' },
+                  { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, FreshBooks — deductible if used for your Instacart business.' },
                 ].map(d => (
                   <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                     <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
@@ -210,7 +210,7 @@ export default function InstacartTaxGuide() {
               ))}
 
               <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-                ⚠️ <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Instacart or the IRS. Consult a CPA for your specific situation.
+                 <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Instacart or the IRS. Consult a CPA for your specific situation.
               </div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function InstacartTaxGuide() {
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <a href="/instacart" style={{ textDecoration: 'none' }}>
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-                <div style={{ fontSize: 32, marginBottom: 8 }}>🛒</div>
+                <div style={{ fontSize: 32, marginBottom: 8 }}></div>
                 <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Instacart Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · Instant results</div>
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
@@ -239,12 +239,12 @@ export default function InstacartTaxGuide() {
             </div>
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>📌 Related Guides</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related Guides</span>
               </div>
               {[
-                { label: '🚗 DoorDash Tax Guide', href: '/blog/doordash-taxes-2026' },
-                { label: '🚕 Uber Tax Guide', href: '/blog/uber-tax-guide-2026' },
-                { label: '📅 Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
+                { label: ' DoorDash Tax Guide', href: '/blog/doordash-taxes-2026' },
+                { label: ' Uber Tax Guide', href: '/blog/uber-tax-guide-2026' },
+                { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>

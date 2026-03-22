@@ -68,12 +68,12 @@ export default function OnlyFansTaxGuide() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {[
           ['📸 Camera & Equipment', 'Full cost if used for content'],
-          ['💡 Lighting & Studio', 'Ring lights, backdrops, props'],
-          ['📱 Phone & Internet', '50–100% if used for business'],
+          [' Lighting & Studio', 'Ring lights, backdrops, props'],
+          [' Phone & Internet', '50–100% if used for business'],
           ['💄 Makeup & Costumes', 'If exclusively for content'],
-          ['🏠 Home Office', '$5/sq ft (simplified method)'],
+          [' Home Office', '$5/sq ft (simplified method)'],
           ['✂️ Hair & Beauty', 'Business use only'],
-          ['📦 Subscriptions', 'Editing software, stock music'],
+          [' Subscriptions', 'Editing software, stock music'],
           ['🎵 Music Licensing', 'Royalty-free music services'],
         ].map(([name, desc]) => (
           <div key={name} style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>

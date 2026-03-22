@@ -37,7 +37,7 @@ export default function QuarterlyReminder() {
     <div style={bg}><div style={wrap}>
       <div style={card}>
         <div style={{ background: 'linear-gradient(135deg,#16a34a,#15803d)', padding: '48px 24px', textAlign: 'center' }}>
-          <div style={{ fontSize: 64, marginBottom: 16 }}>✅</div>
+          <div style={{ fontSize: 64, marginBottom: 16 }}></div>
           <h1 style={{ color: '#fff', fontSize: 26, fontWeight: 900, margin: '0 0 10px' }}>You're All Set, {name}!</h1>
           <p style={{ color: 'rgba(255,255,255,.85)', fontSize: 15, margin: 0, lineHeight: 1.6 }}>
             We'll email you at <strong>{email}</strong> before each quarterly tax deadline.<br/>
@@ -46,7 +46,7 @@ export default function QuarterlyReminder() {
         </div>
         <div style={body}>
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 14 }}>📅 You'll receive reminders before:</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 14 }}> You'll receive reminders before:</div>
             {DEADLINES.map((d, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? '#fff5f5' : '#f8fafc', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid #fca5a5' : '1px solid #e5e7eb' }}>
                 <div>
@@ -69,10 +69,10 @@ export default function QuarterlyReminder() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
             <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
-              🔍 Tax Penalty Finder
+               Tax Penalty Finder
             </Link>
             <Link href="/deductions" style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
-              ✅ Deductions Checklist
+               Deductions Checklist
             </Link>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function QuarterlyReminder() {
 
       {/* URGENT BANNER */}
       <div style={{ background: 'linear-gradient(135deg,#B22234,#8b1a27)', borderRadius: 8, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 14, alignItems: 'center' }}>
-        <span style={{ fontSize: 28, flexShrink: 0 }}>⚠️</span>
+        <span style={{ fontSize: 28, flexShrink: 0 }}></span>
         <div>
           <div style={{ color: '#fff', fontSize: 15, fontWeight: 800, marginBottom: 3 }}>Q1 2026 Deadline: April 15, 2026 — 42 days away</div>
           <div style={{ color: 'rgba(255,255,255,.8)', fontSize: 13 }}>Missing this payment = IRS underpayment penalty. Sign up now to get reminded.</div>
@@ -167,11 +167,11 @@ export default function QuarterlyReminder() {
           </div>
 
           <button onClick={handleSubmit} style={{ ...btnR, opacity: name && email ? 1 : 0.5 }}>
-            📅 Send Me Free Tax Reminders →
+             Send Me Free Tax Reminders →
           </button>
 
           <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center' as const, marginTop: 12, lineHeight: 1.6 }}>
-            🔒 No spam. Unsubscribe anytime. We send only 4 emails per year — one before each quarterly deadline.
+             No spam. Unsubscribe anytime. We send only 4 emails per year — one before each quarterly deadline.
           </p>
         </div>
       </div>
@@ -184,8 +184,8 @@ export default function QuarterlyReminder() {
         <div style={body}>
           {[
             { icon: '💸', title: 'Avoid IRS Penalties', desc: 'Missing quarterly payments triggers underpayment penalties — up to 8% of the amount owed. On a $5,000 tax bill, that\'s $400 wasted.' },
-            { icon: '📋', title: 'Required for Gig Workers', desc: 'If you earn $400+ in self-employment income, the IRS requires quarterly payments. DoorDash, Uber, Etsy — all platforms send 1099s, not W-2s.' },
-            { icon: '🧮', title: 'How Much to Pay', desc: 'Use our Tax Penalty Finder to calculate your exact quarterly amount. Generally, set aside 25-30% of net income each quarter.' },
+            { icon: '', title: 'Required for Gig Workers', desc: 'If you earn $400+ in self-employment income, the IRS requires quarterly payments. DoorDash, Uber, Etsy — all platforms send 1099s, not W-2s.' },
+            { icon: '', title: 'How Much to Pay', desc: 'Use our Tax Penalty Finder to calculate your exact quarterly amount. Generally, set aside 25-30% of net income each quarter.' },
           ].map((item, i) => (
             <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: i < 2 ? '1px solid #f3f4f6' : 'none' }}>
               <span style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</span>
@@ -197,7 +197,7 @@ export default function QuarterlyReminder() {
           ))}
           <Link href="/tax-penalty-finder"
             style={{ display: 'block', background: '#1e2d5a', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const }}>
-            🔍 Calculate My Quarterly Tax Amount →
+             Calculate My Quarterly Tax Amount →
           </Link>
         </div>
       </div>

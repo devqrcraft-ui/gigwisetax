@@ -141,11 +141,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {[
-                `🗺️ ${state.abbr}: ${noStateTax ? 'No Tax' : stateRateStr}`,
-                '📋 IRS Schedule SE',
-                '🔒 No Signup',
-                '📅 2026 Tax Rules',
-                '⚡ Instant Results',
+                ` ${state.abbr}: ${noStateTax ? 'No Tax' : stateRateStr}`,
+                ' IRS Schedule SE',
+                ' No Signup',
+                ' 2026 Tax Rules',
+                ' Instant Results',
               ].map(b => (
                 <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
               ))}
@@ -263,7 +263,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 ))}
 
                 <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
-                  ⚠️ <strong>Disclaimer:</strong> State tax rates are for estimation purposes. Verify with your state's department of revenue or a licensed CPA. Not affiliated with the IRS, {platform.name}, or any government agency.
+                   <strong>Disclaimer:</strong> State tax rates are for estimation purposes. Verify with your state's department of revenue or a licensed CPA. Not affiliated with the IRS, {platform.name}, or any government agency.
                 </div>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>🗺️ {platform.name} Tax in Other States</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax in Other States</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
                 {STATES.filter(s => s.slug !== stateSlug).map(s => (
@@ -307,7 +307,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
             <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>📌 Other Platforms in {state.abbr}</span>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>

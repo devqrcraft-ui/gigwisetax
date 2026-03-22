@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 const PLATFORM_SLUG = 'walmart-spark'
 const PLATFORM_NAME = 'Walmart Spark'
-const PLATFORM_EMOJI = '🛒'
+const PLATFORM_EMOJI = ''
 
 const STATES = [
   {
@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = ["🚗 Mileage ($0.67/mile)","📱 Phone & data plan","🌡️ Insulated grocery bags","🔧 Vehicle maintenance","🅿️ Parking & tolls","💻 Delivery apps"]
+const DEDUCTIONS = [" Mileage ($0.67/mile)"," Phone & data plan","🌡️ Insulated grocery bags","🔧 Vehicle maintenance","🅿️ Parking & tolls","💻 Delivery apps"]
 
 export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
@@ -457,7 +457,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             { q: 'Q4', due: 'January 15, 2027', urgent: false },
           ].map(d => (
             <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px' }}>
-              <div style={{ fontWeight: 700, color: d.urgent ? '#ff4444' : '#fff', marginBottom: 4 }}>{d.q} {d.urgent ? '⚠️' : ''}</div>
+              <div style={{ fontWeight: 700, color: d.urgent ? '#ff4444' : '#fff', marginBottom: 4 }}>{d.q} {d.urgent ? '' : ''}</div>
               <div style={{ fontSize: 14, color: 'rgba(255,255,255,.6)' }}>{d.due}</div>
             </div>
           ))}

@@ -30,7 +30,7 @@ export default function Page() {
               ['/uber','\uD83D\uDE95 Uber','SE tax + quarterly estimates'],
               ['/doordash','\uD83D\uDCE6 DoorDash','Delivery driver deductions'],
               ['/airbnb','\uD83C\uDFE0 Airbnb','Host income + expenses'],
-              ['/instacart','🛒 Instacart','Shopper tax guide'],
+              ['/instacart',' Instacart','Shopper tax guide'],
               ['/etsy','\uD83C\uDFEA Etsy','Seller income + deductions'],
               ['/amazon-flex','\uD83D\uDE9A Amazon Flex','Delivery SE tax'],
               ['/onlyfans','\uD83C\uDF1F OnlyFans','Creator tax calculator'],

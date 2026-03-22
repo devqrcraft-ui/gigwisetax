@@ -4,15 +4,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const PLATFORMS = [
-  { slug: "doordash", name: "DoorDash", emoji: "🚗", searches: "400K/mo", type: "delivery" },
-  { slug: "uber", name: "Uber", emoji: "🚕", searches: "300K/mo", type: "rideshare" },
-  { slug: "uber-eats", name: "Uber Eats", emoji: "🍔", searches: "180K/mo", type: "delivery" },
-  { slug: "etsy", name: "Etsy", emoji: "🛍️", searches: "200K/mo", type: "ecommerce" },
-  { slug: "onlyfans", name: "OnlyFans", emoji: "⭐", searches: "150K/mo", type: "creator" },
-  { slug: "instacart", name: "Instacart", emoji: "🛒", searches: "150K/mo", type: "delivery" },
-  { slug: "airbnb", name: "Airbnb", emoji: "🏠", searches: "120K/mo", type: "rental" },
-  { slug: "amazon-flex", name: "Amazon Flex", emoji: "📦", searches: "80K/mo", type: "delivery" },
-  { slug: "lyft", name: "Lyft", emoji: "🚖", searches: "70K/mo", type: "rideshare" },
+  { slug: "doordash", name: "DoorDash", emoji: "", searches: "400K/mo", type: "delivery" },
+  { slug: "uber", name: "Uber", emoji: "", searches: "300K/mo", type: "rideshare" },
+  { slug: "uber-eats", name: "Uber Eats", emoji: "", searches: "180K/mo", type: "delivery" },
+  { slug: "etsy", name: "Etsy", emoji: "", searches: "200K/mo", type: "ecommerce" },
+  { slug: "onlyfans", name: "OnlyFans", emoji: "", searches: "150K/mo", type: "creator" },
+  { slug: "instacart", name: "Instacart", emoji: "", searches: "150K/mo", type: "delivery" },
+  { slug: "airbnb", name: "Airbnb", emoji: "", searches: "120K/mo", type: "rental" },
+  { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "80K/mo", type: "delivery" },
+  { slug: "lyft", name: "Lyft", emoji: "", searches: "70K/mo", type: "rideshare" },
   { slug: "fiverr", name: "Fiverr", emoji: "💻", searches: "60K/mo", type: "freelance" },
   { slug: "upwork", name: "Upwork", emoji: "🖥️", searches: "55K/mo", type: "freelance" },
   { slug: "rover", name: "Rover", emoji: "🐕", searches: "40K/mo", type: "services" },
@@ -133,7 +133,7 @@ export default function CalculatorPage({ params }) {
       {/* GOV BAR */}
       <div style={{ background: "#0d1b3e", borderBottom: "4px solid #B22234", padding: "7px 0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 10 }}>
-          <span style={{ fontSize: 20 }}>🇺🇸</span>
+          <span style={{ fontSize: 20 }}></span>
           <span style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
         </div>
       </div>
@@ -159,7 +159,7 @@ export default function CalculatorPage({ params }) {
         <div style={{ maxWidth: 1000, margin: "0 auto", padding: "36px 20px" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" }}>
             <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>{p.emoji} {p.name}</span>
-            <span style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}>🗺️ {s.name}</span>
+            <span style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
             {!s.hasTax && <span style={{ background: "#0d7a40", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>✓ No State Tax</span>}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
@@ -179,7 +179,7 @@ export default function CalculatorPage({ params }) {
           {/* STATE TAX INFO */}
           <div style={{ ...S.card, borderLeft: s.hasTax ? "4px solid #B22234" : "4px solid #0d7a40" }}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={S.h2}>🗺️ {s.name} State Tax for {p.name} Workers</h2>
+              <h2 style={S.h2}> {s.name} State Tax for {p.name} Workers</h2>
               <p style={S.p}>{s.note}</p>
               <p style={S.p}>
                 {s.hasTax
@@ -193,7 +193,7 @@ export default function CalculatorPage({ params }) {
           <div style={S.card}>
             <div style={{ background: "#1a1a2e", padding: "13px 20px", display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ width: 3, height: 18, background: "#e8b84b", borderRadius: 2 }} />
-              <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}>📊 {p.name} Tax Estimates — {s.name} 2026</span>
+              <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}> {p.name} Tax Estimates — {s.name} 2026</span>
             </div>
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 500 }}>
@@ -230,14 +230,14 @@ export default function CalculatorPage({ params }) {
           {/* DEDUCTIONS */}
           <div style={S.card}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={S.h2}>💰 Top Deductions for {p.name} Workers in {s.name}</h2>
+              <h2 style={S.h2}> Top Deductions for {p.name} Workers in {s.name}</h2>
               <p style={S.p}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
-                  { title: "🚗 Mileage", val: "67¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
-                  { title: "📱 Phone & Data", val: "Business % deductible", desc: "App usage qualifies" },
-                  { title: "🏠 Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
-                  { title: "📋 Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },
+                  { title: " Mileage", val: "67¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
+                  { title: " Phone & Data", val: "Business % deductible", desc: "App usage qualifies" },
+                  { title: " Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
+                  { title: " Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },
                 ].map(d => (
                   <div key={d.title} style={{ background: "#f8fafc", border: "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px" }}>
                     <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{d.title}</div>
@@ -252,7 +252,7 @@ export default function CalculatorPage({ params }) {
           {/* QUARTERLY */}
           <div style={S.card}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={S.h2}>📅 2026 Quarterly Tax Deadlines</h2>
+              <h2 style={S.h2}> 2026 Quarterly Tax Deadlines</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12 }}>
                 {[
                   { q: "Q1", due: "April 15, 2026", urgent: true },
@@ -263,7 +263,7 @@ export default function CalculatorPage({ params }) {
                   <div key={d.q} style={{ border: d.urgent ? "2px solid #B22234" : "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px", background: d.urgent ? "#fff5f5" : "#fff" }}>
                     <div style={{ fontWeight: 800, marginBottom: 4 }}>{d.q} 2026</div>
                     <div style={{ fontWeight: 700, color: d.urgent ? "#B22234" : "#1a1a2e" }}>{d.due}</div>
-                    {d.urgent && <div style={{ fontSize: 11, color: "#B22234", marginTop: 4, fontWeight: 700 }}>⚠️ NEXT DUE</div>}
+                    {d.urgent && <div style={{ fontSize: 11, color: "#B22234", marginTop: 4, fontWeight: 700 }}> NEXT DUE</div>}
                   </div>
                 ))}
               </div>
@@ -287,7 +287,7 @@ export default function CalculatorPage({ params }) {
           {/* STATE INFO */}
           <div style={{ background: s.hasTax ? "#fff9f9" : "#f0fdf4", border: `2px solid ${s.hasTax ? "#B22234" : "#0d7a40"}`, borderRadius: 6, padding: 16, position: "sticky" as const, top: 76 }}>
             <div style={{ fontSize: 13, fontWeight: 800, color: s.hasTax ? "#B22234" : "#0d7a40", marginBottom: 8 }}>
-              🗺️ {s.name} ({s.abbr})
+               {s.name} ({s.abbr})
             </div>
             <div style={{ fontSize: 24, fontWeight: 900, color: "#1a1a2e", marginBottom: 4 }}>
               {s.hasTax ? `${(s.rate * 100).toFixed(1)}%` : "0%"}
@@ -301,7 +301,7 @@ export default function CalculatorPage({ params }) {
           {/* OTHER STATES */}
           <div style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}>🗺️ {p.name} in Other States</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> {p.name} in Other States</span>
             </div>
             {STATES.slice(0, 8).filter(st => st.slug !== s.slug).slice(0, 7).map(st => (
               <Link key={st.slug} href={`/calculators/${p.slug}/${st.slug}`} style={{ padding: "9px 14px", borderBottom: "1px solid #f0f1f3", display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: "#374151", fontSize: 13 }}>
@@ -314,7 +314,7 @@ export default function CalculatorPage({ params }) {
           {/* OTHER PLATFORMS */}
           <div style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}>🚀 Other Platforms in {s.name}</span>
+              <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> Other Platforms in {s.name}</span>
             </div>
             {PLATFORMS.filter(pl => pl.slug !== p.slug).slice(0, 6).map(pl => (
               <Link key={pl.slug} href={`/calculators/${pl.slug}/${s.slug}`} style={{ padding: "9px 14px", borderBottom: "1px solid #f0f1f3", display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: "#374151", fontSize: 13 }}>

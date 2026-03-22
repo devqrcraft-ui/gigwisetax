@@ -176,14 +176,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>
               {[
-                { emoji: '🚗', name: 'DoorDash', href: '/doordash/' + stateSlug },
-                { emoji: '🚕', name: 'Uber', href: '/uber/' + stateSlug },
-                { emoji: '🛒', name: 'Instacart', href: '/instacart/' + stateSlug },
-                { emoji: '🏠', name: 'Airbnb', href: '/airbnb/' + stateSlug },
-                { emoji: '🛍️', name: 'Etsy', href: '/etsy/' + stateSlug },
-                { emoji: '📦', name: 'Amazon Flex', href: '/amazon-flex/' + stateSlug },
-                { emoji: '⭐', name: 'OnlyFans', href: '/onlyfans/' + stateSlug },
-                { emoji: '🚖', name: 'Lyft', href: '/lyft/' + stateSlug },
+                { emoji: '', name: 'DoorDash', href: '/doordash/' + stateSlug },
+                { emoji: '', name: 'Uber', href: '/uber/' + stateSlug },
+                { emoji: '', name: 'Instacart', href: '/instacart/' + stateSlug },
+                { emoji: '', name: 'Airbnb', href: '/airbnb/' + stateSlug },
+                { emoji: '', name: 'Etsy', href: '/etsy/' + stateSlug },
+                { emoji: '', name: 'Amazon Flex', href: '/amazon-flex/' + stateSlug },
+                { emoji: '', name: 'OnlyFans', href: '/onlyfans/' + stateSlug },
+                { emoji: '', name: 'Lyft', href: '/lyft/' + stateSlug },
               ].map(p => (
                 <a key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                   <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px', textAlign: 'center' as const, background: '#f8fafc' }}>

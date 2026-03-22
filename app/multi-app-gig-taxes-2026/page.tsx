@@ -77,7 +77,7 @@ const howToSchema = {
 const COMBOS = [
   {
     apps: ['DoorDash', 'Instacart'],
-    emoji: '🚗🛒',
+    emoji: '',
     income: 55000,
     expenses: 14000,
     state: 'Texas',
@@ -91,7 +91,7 @@ const COMBOS = [
   },
   {
     apps: ['Uber', 'DoorDash'],
-    emoji: '🚕🚗',
+    emoji: '',
     income: 62000,
     expenses: 16000,
     state: 'California',
@@ -105,7 +105,7 @@ const COMBOS = [
   },
   {
     apps: ['Instacart', 'Amazon Flex'],
-    emoji: '🛒📦',
+    emoji: '',
     income: 48000,
     expenses: 11000,
     state: 'Florida',
@@ -119,7 +119,7 @@ const COMBOS = [
   },
   {
     apps: ['Uber', 'Etsy'],
-    emoji: '🚕🛍️',
+    emoji: '',
     income: 70000,
     expenses: 18000,
     state: 'New York',
@@ -207,26 +207,26 @@ export default function MultiAppPage() {
         <div className="section">
           <h2>The #1 Rule: One Business = One Schedule C</h2>
           <div className="rule-box">
-            <div className="rule-title">✅ Same type of work across apps → combine on one Schedule C</div>
+            <div className="rule-title"> Same type of work across apps → combine on one Schedule C</div>
             <div className="rule-desc">
               DoorDash + Instacart + Amazon Flex are all delivery driving. The IRS considers this one trade or business.
               Report all income on one Schedule C. Combine all mileage, phone deductions, and supplies into one total.
             </div>
           </div>
           <div className="rule-box">
-            <div className="rule-title">✅ Rideshare + delivery → usually still one Schedule C</div>
+            <div className="rule-title"> Rideshare + delivery → usually still one Schedule C</div>
             <div className="rule-desc">
               Uber + DoorDash are both transportation/delivery services. Most tax professionals file these together on one Schedule C as &quot;Transportation Services.&quot;
             </div>
           </div>
           <div className="warn-box">
-            <div className="warn-title">⚠️ Completely different business types → may need separate Schedule C</div>
+            <div className="warn-title"> Completely different business types → may need separate Schedule C</div>
             <div className="warn-desc">
               Uber driving + Etsy shop are different businesses. You may need two Schedule C forms — one for transportation services, one for your product business. Ask a CPA if unsure.
             </div>
           </div>
           <div className="note">
-            💡 When in doubt, one Schedule C is simpler and fully legal for most gig workers who do delivery + rideshare combinations.
+             When in doubt, one Schedule C is simpler and fully legal for most gig workers who do delivery + rideshare combinations.
           </div>
         </div>
 
@@ -248,7 +248,7 @@ export default function MultiAppPage() {
                 <div className="row"><span className="rl">State Tax</span><span className="rv red">{c.stateRate === 0 ? '$0' : fmt(c.stateTax)}</span></div>
                 <div className="row"><span className="rl" style={{fontWeight:700,color:'#fff'}}>Total Tax</span><span className="rv red" style={{fontSize:16}}>{fmt(c.total)}</span></div>
                 <div className="row"><span className="rl">Quarterly Payment</span><span className="rv yellow">{fmt(c.quarterly)}</span></div>
-                <div className="combo-note">📌 {c.note}</div>
+                <div className="combo-note"> {c.note}</div>
                 <a href="/" className="combo-cta">→ Calculate Your Own Numbers</a>
               </div>
             ))}
@@ -282,7 +282,7 @@ export default function MultiAppPage() {
         <div className="section">
           <h2>Mileage Deduction Across Multiple Apps</h2>
           <div className="warn-box">
-            <div className="warn-title">⚠️ Track miles per app separately — combine at tax time</div>
+            <div className="warn-title"> Track miles per app separately — combine at tax time</div>
             <div className="warn-desc">
               Use Stride, Everlance, or a simple mileage log. Record which app you were active on per trip.
               At tax time, add all business miles together and enter one total on Schedule C.
@@ -321,14 +321,14 @@ export default function MultiAppPage() {
           <p style={{fontSize:13,color:'#6b7280',marginBottom:16}}>Use our platform calculators — enter your combined income for accurate results.</p>
           <div className="links-grid">
             {[
-              {emoji:'🚗',name:'DoorDash',href:'/doordash'},
-              {emoji:'🚕',name:'Uber',href:'/uber'},
-              {emoji:'🛒',name:'Instacart',href:'/instacart'},
-              {emoji:'📦',name:'Amazon Flex',href:'/amazon-flex'},
-              {emoji:'🚖',name:'Lyft',href:'/lyft'},
-              {emoji:'🛍️',name:'Etsy',href:'/etsy'},
-              {emoji:'🏠',name:'Airbnb',href:'/airbnb'},
-              {emoji:'⭐',name:'OnlyFans',href:'/onlyfans'},
+              {emoji:'',name:'DoorDash',href:'/doordash'},
+              {emoji:'',name:'Uber',href:'/uber'},
+              {emoji:'',name:'Instacart',href:'/instacart'},
+              {emoji:'',name:'Amazon Flex',href:'/amazon-flex'},
+              {emoji:'',name:'Lyft',href:'/lyft'},
+              {emoji:'',name:'Etsy',href:'/etsy'},
+              {emoji:'',name:'Airbnb',href:'/airbnb'},
+              {emoji:'',name:'OnlyFans',href:'/onlyfans'},
             ].map((p,i) => (
               <a key={i} href={p.href} className="link-btn">
                 <div className="link-emoji">{p.emoji}</div>
