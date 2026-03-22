@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: '1099 Tax Calculator 2026 — Free Estimator for Gig Workers & Contractors',
-  description: 'Free 1099 tax calculator for 2026. Calculates self-employment tax (15.3%), federal income tax, QBI deduction, mileage, and quarterly payments. All gig platforms covered.',
+  title: '1099 Tax Calculator 2026 — Self-Employment & SE Tax for All 51 States',
+  description: 'Free 1099 tax calculator for U.S. gig workers and freelancers. Estimate self-employment tax, federal and state income tax for all 51 states in 2026. No signup, no data stored.',
   alternates: { canonical: 'https://www.gigwisetax.com/1099-tax-calculator-2026' },
 };
 
