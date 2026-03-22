@@ -100,6 +100,9 @@ export default function Calculator1099HubPage() {
           </div>
         </div>
 
+        <div style={{background:'rgba(255,255,255,0.04)',borderRadius:10,padding:'16px 20px',marginBottom:24,fontSize:14,color:'#90B4D0',lineHeight:1.7}}>
+          This 1099 tax calculator works for <strong style={{color:'#fff'}}>DoorDash, Uber, Lyft, Etsy, OnlyFans, Airbnb, Amazon Flex, Instacart, Grubhub</strong> and all other self-employed income. Enter your net earnings to see your self-employment tax, federal income tax, and state tax instantly.
+        </div>
         <div className="platforms-section">
           <h2>Calculate by Platform</h2>
           <div className="plat-grid">
