@@ -16,20 +16,20 @@ const NAV = [
       { label: '▸ Lyft Driver Tax Calculator',   href: '/lyft',          sub: '70K/mo'  },
       { label: '▸ Grubhub Tax Calculator',       href: '/grubhub',       sub: 'NEW'     },
       { label: '▸ Walmart Spark Tax Calculator', href: '/walmart-spark', sub: 'NEW'     },
-      { label: '🚘 Turo Host Tax Calculator',     href: '/turo',          sub: 'NEW'     },
+      { label: ' Turo Host Tax Calculator',     href: '/turo',          sub: 'NEW'     },
     ],
   },
   {
     label: 'Tax Tools',
     items: [
-      { label: '🔍 Tax Penalty Finder',           href: '/tax-penalty-finder',        sub: 'NEW'  },
-      { label: '🏢 S-Corp vs Sole Prop',          href: '/s-corp-calculator',         sub: 'NEW'  },
-      { label: '✅ Deductions Checklist',          href: '/deductions',                sub: 'NEW'  },
+      { label: ' Tax Penalty Finder',           href: '/tax-penalty-finder',        sub: 'NEW'  },
+      { label: ' S-Corp vs Sole Prop',          href: '/s-corp-calculator',         sub: 'NEW'  },
+      { label: ' Deductions Checklist',          href: '/deductions',                sub: 'NEW'  },
       { label: ' Quarterly Reminders',          href: '/quarterly-reminder',        sub: 'FREE' },
       { label: '▸ Multi-App Gig Taxes',          href: '/multi-app-gig-taxes-2026',  sub: 'NEW'  },
-      { label: '🛡️ Safe Harbor Guide',            href: '/safe-harbor-quarterly-taxes', sub: 'NEW' },
-      { label: '🔢 How We Calculate',             href: '/how-we-calculate-gig-taxes', sub: 'NEW'  },
-      { label: '⚠️ Q1 — April 15, 2026',         href: '/deadlines#q1',         sub: 'URGENT' },
+      { label: ' Safe Harbor Guide',            href: '/safe-harbor-quarterly-taxes', sub: 'NEW' },
+      { label: ' How We Calculate',             href: '/how-we-calculate-gig-taxes', sub: 'NEW'  },
+      { label: ' Q1 — April 15, 2026',         href: '/deadlines#q1',         sub: 'URGENT' },
       { label: 'Q2 — June 16, 2026',             href: '/deadlines#q2',         sub: '104 days' },
       { label: 'Q3 — Sept 15, 2026',             href: '/deadlines#q3',         sub: '195 days' },
       { label: 'Q4 — Jan 15, 2027',              href: '/deadlines#q4',         sub: '317 days' },
@@ -38,18 +38,18 @@ const NAV = [
   {
     label: 'By State',
     items: [
-      { label: '🌴 California (9.3%)',  href: '/doordash/california' },
-      { label: '🗽 New York (6.85%)',   href: '/doordash/new-york'   },
+      { label: ' California (9.3%)',  href: '/doordash/california' },
+      { label: ' New York (6.85%)',   href: '/doordash/new-york'   },
       { label: '▸ Texas (No Tax)',      href: '/doordash/texas'      },
-      { label: '🌊 Florida (No Tax)',   href: '/doordash/florida'    },
-      { label: '🏙️ Illinois (4.95%)',   href: '/doordash/illinois'   },
-      { label: '→ All 51 States',      href: '/calculators'          },
+      { label: ' Florida (No Tax)',   href: '/doordash/florida'    },
+      { label: ' Illinois (4.95%)',   href: '/doordash/illinois'   },
+      { label: ' All 51 States',      href: '/calculators'          },
     ],
   },
   {
     label: 'Tax Center',
     items: [
-      { label: '🏛️ Gig Worker Tax Center 2026', href: '/gig-worker-taxes-2026', sub: 'HUB' },
+      { label: ' Gig Worker Tax Center 2026', href: '/gig-worker-taxes-2026', sub: 'HUB' },
     ],
   },
   {
@@ -141,7 +141,7 @@ export default function NavClient() {
           <span style={{ fontSize:12, color:'rgba(255,255,255,.3)' }}> No data stored</span>
           <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }}>
             <div style={{ background:'#B22234', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
-              Find My Savings →
+              Find My Savings 
             </div>
           </Link>
         </div>
@@ -174,7 +174,7 @@ export default function NavClient() {
           ))}
           <div style={{ padding:16 }}>
             <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
-              <div style={{ background:'#B22234', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' as const }}>Find My Tax Savings →</div>
+              <div style={{ background:'#B22234', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' as const }}>Find My Tax Savings </div>
             </Link>
           </div>
         </div>
