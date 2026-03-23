@@ -59,17 +59,17 @@ const NAV = [
       { label: '▸ Mileage Rate 2026',       href: '/blog/mileage-rate-2026'              },
       { label: '▸ Grubhub vs DoorDash',     href: '/blog/grubhub-vs-doordash-taxes-2026' },
       { label: ' W-2 vs 1099 Guide',       href: '/blog/w2-vs-1099-guide-2026'          },
-      { label: '📚 Quarterly Taxes Guide',   href: '/blog/quarterly-taxes-gig-workers'    },
-      { label: '✍️ All Blog Posts',          href: '/blog'                                },
+      { label: ' Quarterly Taxes Guide',   href: '/blog/quarterly-taxes-gig-workers'    },
+      { label: ' All Blog Posts',          href: '/blog'                                },
     ],
   },
   {
     label: 'About',
     items: [
-      { label: 'ℹ️ About GigWiseTax', href: '/about'   },
+      { label: 'ℹ About GigWiseTax', href: '/about'   },
       { label: ' Privacy Policy',   href: '/privacy' },
       { label: ' Terms of Service', href: '/terms'   },
-      { label: '📧 Contact Us',       href: '/contact' },
+      { label: ' Contact Us',       href: '/contact' },
     ],
   },
 ]
@@ -149,7 +149,7 @@ export default function NavClient() {
         <button onClick={() => setMobileOpen(!mobileOpen)}
           style={{ display:'none', background:'none', border:'none', color:'#fff', fontSize:24, cursor:'pointer', padding:'4px 8px' }}
           className="mobile-hamburger" aria-label="Menu">
-          {mobileOpen ? '✕' : '☰'}
+          {mobileOpen ? '✕' : ''}
         </button>
       </div>
 

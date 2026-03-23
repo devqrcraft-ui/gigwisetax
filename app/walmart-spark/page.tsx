@@ -23,11 +23,11 @@ const STATES = [
 const DEDUCTIONS = [
   { icon:'▸', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
-  { icon:'🧊', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
-  { icon:'🔋', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
+  { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
+  { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
   { icon:'', label:'Supplemental Insurance', desc:'Rideshare/delivery insurance gaps not covered by Walmart Spark.' },
-  { icon:'🧼', label:'Car Cleaning & Supplies', desc:'Keep receipts — partial deduction for business use percentage.' },
-  { icon:'💳', label:'Bank Fees & Apps', desc:'Any paid apps or tools used to manage your Spark business.' },
+  { icon:'', label:'Car Cleaning & Supplies', desc:'Keep receipts — partial deduction for business use percentage.' },
+  { icon:'', label:'Bank Fees & Apps', desc:'Any paid apps or tools used to manage your Spark business.' },
   { icon:'▸', label:'Home Office (if applicable)', desc:'If you use a dedicated space for planning deliveries, tracking income, etc.' },
 ]
 
@@ -137,7 +137,7 @@ export default function WalmartSparkPage() {
                   </select>
                 </div>
                 <div>
-                  <label style={lbl}>👤 Filing Status</label>
+                  <label style={lbl}> Filing Status</label>
                   <select style={inp} value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
@@ -218,7 +218,7 @@ export default function WalmartSparkPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>❓ Walmart Spark Taxes FAQ 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Walmart Spark Taxes FAQ 2026</span>
             </div>
             <div style={{ padding:0 }}>
               {FAQ.map((f, i) => (
@@ -312,7 +312,7 @@ export default function WalmartSparkPage() {
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>📚 Related Guides & Calculators</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               

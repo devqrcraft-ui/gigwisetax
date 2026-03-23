@@ -40,15 +40,15 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Proportional to rental days — big deduction for hosts</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🧹 Cleaning Services</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Cleaning Services</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>100% deductible for cleaning between guests</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🔧 Repairs & Maintenance</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Repairs & Maintenance</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Plumbing, electrical, HVAC — all deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>📷 Photography</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Photography</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Professional photos for your listing</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -56,11 +56,11 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Proportional business use percentage</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>💻 Airbnb Platform Fees</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Airbnb Platform Fees</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>The 3% host fee is fully deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🛏️ Furnishings</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Furnishings</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Depreciated over useful life or Section 179</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>

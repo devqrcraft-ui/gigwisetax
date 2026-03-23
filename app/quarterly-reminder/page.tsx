@@ -183,7 +183,7 @@ export default function QuarterlyReminder() {
         </div>
         <div style={body}>
           {[
-            { icon: '💸', title: 'Avoid IRS Penalties', desc: 'Missing quarterly payments triggers underpayment penalties — up to 8% of the amount owed. On a $5,000 tax bill, that\'s $400 wasted.' },
+            { icon: '', title: 'Avoid IRS Penalties', desc: 'Missing quarterly payments triggers underpayment penalties — up to 8% of the amount owed. On a $5,000 tax bill, that\'s $400 wasted.' },
             { icon: '', title: 'Required for Gig Workers', desc: 'If you earn $400+ in self-employment income, the IRS requires quarterly payments. DoorDash, Uber, Etsy — all platforms send 1099s, not W-2s.' },
             { icon: '', title: 'How Much to Pay', desc: 'Use our Tax Penalty Finder to calculate your exact quarterly amount. Generally, set aside 25-30% of net income each quarter.' },
           ].map((item, i) => (

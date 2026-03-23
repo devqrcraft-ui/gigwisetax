@@ -135,8 +135,8 @@ export default function SECalculatorPage() {
             <Link href="/etsy" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">Etsy</div><div className="plat-type">E-commerce</div></Link>
             <Link href="/onlyfans" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">OnlyFans</div><div className="plat-type">Content</div></Link>
             <Link href="/airbnb" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">Airbnb</div><div className="plat-type">Rental</div></Link>
-            <Link href="/turo" className="plat-card"><div className="plat-emoji">🚙</div><div className="plat-name">Turo</div><div className="plat-type">Car rental</div></Link>
-            <Link href="/walmart-spark" className="plat-card"><div className="plat-emoji">🏪</div><div className="plat-name">Walmart Spark</div><div className="plat-type">Delivery</div></Link>
+            <Link href="/turo" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">Turo</div><div className="plat-type">Car rental</div></Link>
+            <Link href="/walmart-spark" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">Walmart Spark</div><div className="plat-type">Delivery</div></Link>
             <Link href="/1099-tax-calculator-2026" className="plat-card"><div className="plat-emoji"></div><div className="plat-name">All 1099</div><div className="plat-type">General calculator</div></Link>
           </div>
         </div>

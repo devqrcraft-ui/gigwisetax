@@ -163,7 +163,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📚 {platform.name} Taxes in {state.name} — 2026 Guide</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Taxes in {state.name} — 2026 Guide</span>
               </div>
               <div style={{ padding: 24 }}>
                 <h2 style={{ fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>

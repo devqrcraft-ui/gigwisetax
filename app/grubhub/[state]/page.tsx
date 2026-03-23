@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = [" Mileage ($0.67/mile)"," Phone & data plan","🌡️ Insulated delivery bags","🔧 Vehicle maintenance","💻 Gig apps & software"," Home office (if applicable)"]
+const DEDUCTIONS = [" Mileage ($0.67/mile)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
 
 export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))

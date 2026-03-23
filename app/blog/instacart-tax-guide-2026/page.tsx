@@ -38,7 +38,7 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>$0.67/mile — track every trip to the store and delivery</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🌡️ Insulated Bags</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Insulated Bags</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Hot/cold bags used for deliveries are deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -46,15 +46,15 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>50–100% of your phone bill if used for the app</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🔧 Vehicle Maintenance</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Vehicle Maintenance</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Oil changes, tires, repairs proportional to business use</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🅿️ Parking & Tolls</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Parking & Tolls</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>100% deductible when on delivery runs</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>💻 Instacart App Costs</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Instacart App Costs</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Any subscription or equipment costs for the platform</div>
         </div>
       </div>

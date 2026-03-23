@@ -17,10 +17,10 @@ export default function EtsyDeductionsBlog() {
   const deductions = [
     { cat: ' Materials & Supplies', items: ['Raw materials (fabric, yarn, wood, resin, etc.)', 'Packaging materials (boxes, tissue paper, ribbon)', 'Shipping supplies (tape, labels, bubble wrap)', 'Tools and equipment used for production'] },
     { cat: ' Home Studio / Workspace', items: ['Home office deduction: $5/sq ft up to 300 sq ft', 'Dedicated craft room — 100% of space qualifies', 'Utilities proportional to studio space', 'Rent or mortgage interest (proportional)'] },
-    { cat: '💻 Technology & Software', items: ['Computer and tablet used for shop management', 'Design software (Canva Pro, Adobe, etc.)', 'Photography equipment for product photos', 'Phone used for Etsy business (business %)'] },
+    { cat: ' Technology & Software', items: ['Computer and tablet used for shop management', 'Design software (Canva Pro, Adobe, etc.)', 'Photography equipment for product photos', 'Phone used for Etsy business (business %)'] },
     { cat: ' Shipping & Postage', items: ['All postage and shipping fees paid by you', 'Shipping insurance', 'PO Box rental for business address', 'Driving to post office (mileage at $0.67/mi)'] },
-    { cat: '🏪 Etsy Platform Fees', items: ['Etsy listing fees ($0.20 per listing)', 'Etsy transaction fees (6.5% of sale price)', 'Etsy Ads / offsite ads fees', 'Etsy Plus subscription ($10/month)'] },
-    { cat: '📚 Education & Marketing', items: ['Etsy courses and business books', 'Photography props and backdrops', 'Social media marketing costs', 'Business cards and promotional materials'] },
+    { cat: ' Etsy Platform Fees', items: ['Etsy listing fees ($0.20 per listing)', 'Etsy transaction fees (6.5% of sale price)', 'Etsy Ads / offsite ads fees', 'Etsy Plus subscription ($10/month)'] },
+    { cat: ' Education & Marketing', items: ['Etsy courses and business books', 'Photography props and backdrops', 'Social media marketing costs', 'Business cards and promotional materials'] },
   ]
 
   return (

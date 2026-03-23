@@ -39,19 +39,19 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>50-100% of your phone bill used for the app and navigation</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🌡️ Insulated Delivery Bags</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Insulated Delivery Bags</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Hot bags, cold bags — all fully deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🔧 Vehicle Maintenance</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Vehicle Maintenance</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Oil changes, tires, repairs — deduct business-use percentage</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🅿️ Parking & Tolls</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Parking & Tolls</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>100% deductible when on active deliveries</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>💻 Gig Apps & Subscriptions</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Gig Apps & Subscriptions</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Any apps used to manage your delivery business</div>
         </div>
       </div>

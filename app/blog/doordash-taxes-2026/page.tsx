@@ -105,9 +105,9 @@ export default function DoorDashTaxGuide() {
                 { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
                 { icon: '', name: 'Phone Bill (business %)', detail: 'Deduct the business-use percentage of your monthly phone plan. Most Dashers use 60–80% for business.' },
                 { icon: '', name: 'Auto Insurance (business %)', detail: 'Deduct the portion used for business deliveries if using actual expense method.' },
-                { icon: '🧊', name: 'Insulated Bags & Equipment', detail: 'Hot bags, drink carriers, any gear specifically purchased for DoorDash deliveries.' },
-                { icon: '🅿️', name: 'Parking & Tolls', detail: 'Any parking fees or tolls incurred while on delivery. Keep all receipts.' },
-                { icon: '🔧', name: 'Vehicle Maintenance', detail: 'Oil changes, tires, repairs — deduct business percentage if using actual expense method.' },
+                { icon: '', name: 'Insulated Bags & Equipment', detail: 'Hot bags, drink carriers, any gear specifically purchased for DoorDash deliveries.' },
+                { icon: '', name: 'Parking & Tolls', detail: 'Any parking fees or tolls incurred while on delivery. Keep all receipts.' },
+                { icon: '', name: 'Vehicle Maintenance', detail: 'Oil changes, tires, repairs — deduct business percentage if using actual expense method.' },
               ].map(d => (
                 <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>

@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}>✍️ Blog</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Blog</div>
               {[['/blog/mileage-rate-2026','Mileage Rate 2026'],['/blog/amazon-flex-taxes-2026','Amazon Flex Taxes'],['/blog/grubhub-vs-doordash-taxes-2026','Grubhub vs DoorDash'],['/blog/w2-vs-1099-guide-2026','W-2 vs 1099 Guide'],['/blog/quarterly-taxes-gig-workers','Quarterly Taxes Guide'],['/blog','All Articles →']].map(([h,l]) => (
                 <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
               ))}

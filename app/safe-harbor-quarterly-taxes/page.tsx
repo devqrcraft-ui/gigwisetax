@@ -231,7 +231,7 @@ export default function SafeHarborPage() {
 
             <div className="scenario">
               <div className="scenario-badge">Scenario 4</div>
-              <div className="scenario-title"> Airbnb + 🚙 Turo Host</div>
+              <div className="scenario-title"> Airbnb +  Turo Host</div>
               <div className="s-row"><span className="s-label">Airbnb gross</span><span className="s-val">$28,000</span></div>
               <div className="s-row"><span className="s-label">Turo gross</span><span className="s-val">$14,000</span></div>
               <div className="s-row"><span className="s-label">Total gross</span><span className="s-val">$42,000</span></div>

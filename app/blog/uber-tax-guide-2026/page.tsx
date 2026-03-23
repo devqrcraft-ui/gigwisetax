@@ -62,7 +62,7 @@ export default function UberTaxGuide() {
 
               {/* NEW 2026 TIP DEDUCTION */}
               <div style={{ background: '#f0fdf4', border: '2px solid #059669', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 800, color: '#059669', marginBottom: 8, fontSize: 15 }}>🆕 NEW 2026 LAW: Uber Drivers Can Deduct Tips Up to $25,000</div>
+                <div style={{ fontWeight: 800, color: '#059669', marginBottom: 8, fontSize: 15 }}> NEW 2026 LAW: Uber Drivers Can Deduct Tips Up to $25,000</div>
                 <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
                   Starting in tax year 2026 (returns filed in 2027), a new federal tax law allows rideshare and delivery drivers
                   to deduct <strong>qualified tips up to $25,000</strong> from their taxable income.
@@ -118,9 +118,9 @@ export default function UberTaxGuide() {
                   { icon: '', name: 'Tips Deduction (NEW)', detail: 'Up to $25,000 in qualified customer tips are deductible in 2026. Game-changer for top earners.' },
                   { icon: '', name: 'Phone (business %)', detail: 'Deduct business percentage of monthly plan. Most Uber drivers use phone 70–90% for business.' },
                   { icon: '', name: 'Car Washes', detail: 'Cost of keeping vehicle clean for passengers. 100% deductible as ordinary business expense.' },
-                  { icon: '🅿️', name: 'Parking & Tolls', detail: 'All parking fees and road tolls while on active Uber trips. Keep all receipts.' },
-                  { icon: '🍬', name: 'Passenger Amenities', detail: 'Mints, water, phone chargers provided to passengers. 100% deductible. Keep grocery receipts.' },
-                  { icon: '🔧', name: 'Car Maintenance (actual method)', detail: 'Oil changes, tires, repairs — deductible if using actual expense method instead of mileage.' },
+                  { icon: '', name: 'Parking & Tolls', detail: 'All parking fees and road tolls while on active Uber trips. Keep all receipts.' },
+                  { icon: '', name: 'Passenger Amenities', detail: 'Mints, water, phone chargers provided to passengers. 100% deductible. Keep grocery receipts.' },
+                  { icon: '', name: 'Car Maintenance (actual method)', detail: 'Oil changes, tires, repairs — deductible if using actual expense method instead of mileage.' },
                   { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, Stride, or any tax/mileage app subscription. 100% deductible.' },
                 ].map(d => (
                   <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>

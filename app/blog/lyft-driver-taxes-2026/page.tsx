@@ -50,11 +50,11 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Proportional business-use percentage</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🧴 Car Supplies</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Car Supplies</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Phone mount, charger, air freshener for passengers</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>💻 Lyft App & Accessories</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Lyft App & Accessories</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Any equipment for your Lyft business</div>
         </div>
       </div>

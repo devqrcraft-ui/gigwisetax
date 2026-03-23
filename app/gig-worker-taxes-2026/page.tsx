@@ -136,7 +136,7 @@ export default function GigWorkerTaxCenter() {
 
         {/* TOOLS */}
         <div style={{ marginBottom: 40 }}>
-          <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}>🛠️ Tax Tools</div>
+          <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}> Tax Tools</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: 12 }}>
             {[
               { name: ' Tax Penalty Finder', href: '/tax-penalty-finder', desc: 'Find IRS underpayment penalties' },

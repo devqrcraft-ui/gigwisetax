@@ -21,13 +21,13 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'📉', label:'Depreciation (MACRS)', desc:'Cars depreciate over 5 years under MACRS. First-year bonus depreciation may allow up to 100% deduction in year one.' },
+  { icon:'', label:'Depreciation (MACRS)', desc:'Cars depreciate over 5 years under MACRS. First-year bonus depreciation may allow up to 100% deduction in year one.' },
   { icon:'', label:'Insurance Premium', desc:'Turo\'s protection plans and any supplemental commercial coverage are deductible to the extent of business use.' },
-  { icon:'🔧', label:'Repairs & Maintenance', desc:'Oil changes, tires, detailing, repairs — all deductible based on your rental vs. personal use ratio.' },
-  { icon:'🧼', label:'Cleaning Between Rentals', desc:'Professional cleaning, car washes, and supplies used to prepare the car for guests.' },
-  { icon:'⛽', label:'Gas (if you supply it)', desc:'Some hosts include gas. Keep all receipts — deductible as an ordinary business expense.' },
-  { icon:'📷', label:'Photography & Marketing', desc:'Professional photos, subscriptions, and any tools used to improve your listing.' },
-  { icon:'🅿️', label:'Parking & Storage', desc:'Dedicated parking or storage used when the vehicle is staged for rental.' },
+  { icon:'', label:'Repairs & Maintenance', desc:'Oil changes, tires, detailing, repairs — all deductible based on your rental vs. personal use ratio.' },
+  { icon:'', label:'Cleaning Between Rentals', desc:'Professional cleaning, car washes, and supplies used to prepare the car for guests.' },
+  { icon:'', label:'Gas (if you supply it)', desc:'Some hosts include gas. Keep all receipts — deductible as an ordinary business expense.' },
+  { icon:'', label:'Photography & Marketing', desc:'Professional photos, subscriptions, and any tools used to improve your listing.' },
+  { icon:'', label:'Parking & Storage', desc:'Dedicated parking or storage used when the vehicle is staged for rental.' },
   { icon:'', label:'Phone & Apps', desc:'Pro-rata portion of phone plan used to manage bookings, communicate with guests, and track income.' },
 ]
 
@@ -93,7 +93,7 @@ export default function TuroPage() {
             Free tax calculator for Turo car-sharing hosts. Estimate your income tax, self-employment tax, and car depreciation deductions for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' Schedule C / Schedule E',' All 51 States','📉 Depreciation Included',' No Registration',' Instant Results'].map(b => (
+            {[' Schedule C / Schedule E',' All 51 States',' Depreciation Included',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -129,7 +129,7 @@ export default function TuroPage() {
                   </select>
                 </div>
                 <div>
-                  <label style={lbl}>👤 Filing Status</label>
+                  <label style={lbl}> Filing Status</label>
                   <select style={inp} value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
@@ -196,7 +196,7 @@ export default function TuroPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>❓ Turo Host Taxes FAQ 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Turo Host Taxes FAQ 2026</span>
             </div>
             <div>
               {FAQ.map((f, i) => (
@@ -264,14 +264,14 @@ export default function TuroPage() {
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>📚 Related Guides & Calculators</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
               <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
               <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
               <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📚 Quarterly Tax Guide</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> Quarterly Tax Guide</a>
               <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>

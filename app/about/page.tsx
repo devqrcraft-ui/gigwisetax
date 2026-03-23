@@ -31,7 +31,7 @@ export default function AboutPage() {
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
             { icon: '', label: 'No Data Stored', desc: 'Your numbers never leave your browser' },
-            { icon: '💸', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
+            { icon: '', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
             { icon: '', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
             <div key={s.label} style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
@@ -96,7 +96,7 @@ export default function AboutPage() {
 
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
           <Link href="/contact" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#B22234', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>📧 Contact Us</div>
+            <div style={{ background: '#B22234', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Contact Us</div>
           </Link>
           <Link href="/" style={{ textDecoration: 'none' }}>
             <div style={{ background: '#1a1a2e', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Try a Calculator</div>

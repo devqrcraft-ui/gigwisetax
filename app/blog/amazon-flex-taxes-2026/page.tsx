@@ -33,7 +33,7 @@ export default function AmazonFlexTaxesBlogPost() {
           </h1>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 15, 2026</span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>⏱ 8 min read</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 8 min read</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> Updated for 2026 IRS rates</span>
           </div>
         </div>
@@ -130,10 +130,10 @@ export default function AmazonFlexTaxesBlogPost() {
               { icon: '', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
               { icon: '', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
               { icon: '', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
-              { icon: '🔦', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },
-              { icon: '🅿️', title: 'Parking & Tolls', desc: 'All parking fees and tolls during deliveries.' },
-              { icon: '🧤', title: 'Gloves & Work Gear', desc: 'Protective gear worn exclusively for deliveries.' },
-              { icon: '💳', title: 'Bank Fees', desc: 'If you open a business account for Flex income.' },
+              { icon: '', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },
+              { icon: '', title: 'Parking & Tolls', desc: 'All parking fees and tolls during deliveries.' },
+              { icon: '', title: 'Gloves & Work Gear', desc: 'Protective gear worn exclusively for deliveries.' },
+              { icon: '', title: 'Bank Fees', desc: 'If you open a business account for Flex income.' },
               { icon: '', title: 'Tax Prep Fees', desc: 'CPA or tax software costs — deductible on Schedule C.' },
             ].map(d => (
               <div key={d.title} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>

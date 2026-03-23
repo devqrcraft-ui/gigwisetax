@@ -424,7 +424,7 @@ export default function HomeClient() {
                     </thead>
                     <tbody>
                       {[
-                        ['🆓 Free to use',               true,  false, false, true ],
+                        [' Free to use',               true,  false, false, true ],
                         [' No registration required',  true,  false, false, true ],
                         [' All 51 states included',    true,  false, false, false],
                         ['▸ OnlyFans tax calculator',    true,  false, false, false],

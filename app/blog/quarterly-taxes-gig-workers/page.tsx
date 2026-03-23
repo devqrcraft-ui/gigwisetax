@@ -88,9 +88,9 @@ export default function QuarterlyTaxesGuide() {
           [' Mileage', '$0.67/mile in 2026'],
           [' Phone', '50–100% business use'],
           [' Home Office', 'Dedicated space only'],
-          ['🧳 Equipment', 'Camera, insulated bags'],
+          [' Equipment', 'Camera, insulated bags'],
           [' Supplies', 'Platform-specific items'],
-          ['💻 Software', 'Accounting, delivery apps'],
+          [' Software', 'Accounting, delivery apps'],
         ].map(([name, desc]) => (
           <div key={name} style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
             <div style={{ fontWeight: 700, marginBottom: 4 }}>{name}</div>

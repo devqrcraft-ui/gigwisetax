@@ -91,7 +91,7 @@ export default function InstacartTaxGuide() {
                 <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Important: Two Types of Instacart Workers</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }} className="form-grid">
                   <div style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
-                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}>🏪 In-Store Shoppers</div>
+                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}> In-Store Shoppers</div>
                     <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: '#374151', lineHeight: 1.8 }}>
                       <li>W-2 employee status</li>
                       <li>Taxes withheld by Instacart</li>
@@ -145,9 +145,9 @@ export default function InstacartTaxGuide() {
                 {[
                   { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
                   { icon: '', name: 'Phone Bill (business %)', detail: 'If you use your phone 70% for Instacart, deduct 70% of your monthly bill.' },
-                  { icon: '🧺', name: 'Insulated Bags & Coolers', detail: 'Grocery bags, insulated totes, cooler bags purchased specifically for Instacart deliveries.' },
+                  { icon: '', name: 'Insulated Bags & Coolers', detail: 'Grocery bags, insulated totes, cooler bags purchased specifically for Instacart deliveries.' },
                   { icon: '', name: 'Auto Insurance (business %)', detail: 'Deduct the business portion if using actual expense method (not mileage method).' },
-                  { icon: '🅿️', name: 'Parking & Tolls', detail: 'Any parking fees or toll charges while on an active batch. Keep receipts.' },
+                  { icon: '', name: 'Parking & Tolls', detail: 'Any parking fees or toll charges while on an active batch. Keep receipts.' },
                   { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, FreshBooks — deductible if used for your Instacart business.' },
                 ].map(d => (
                   <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>

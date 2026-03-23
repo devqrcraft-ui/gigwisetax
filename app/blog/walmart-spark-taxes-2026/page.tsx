@@ -35,7 +35,7 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Every mile driving to Walmart and to customers is deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🌡️ Insulated Grocery Bags</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Insulated Grocery Bags</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Cold bags and insulated carriers for grocery deliveries</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
@@ -43,15 +43,15 @@ export default function BlogPost() {
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Business percentage of your monthly phone bill</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🔧 Vehicle Maintenance</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Vehicle Maintenance</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Gas, oil changes, tires — proportional to business miles</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>🅿️ Parking & Tolls</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Parking & Tolls</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>All parking and toll costs while delivering</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}>💳 Spark Card Fees</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Spark Card Fees</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Any fees associated with the Spark Driver Card</div>
         </div>
       </div>

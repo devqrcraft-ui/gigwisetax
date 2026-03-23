@@ -13,9 +13,9 @@ const PLATFORMS = [
   { slug: "airbnb", name: "Airbnb", emoji: "", searches: "120K/mo", type: "rental" },
   { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "80K/mo", type: "delivery" },
   { slug: "lyft", name: "Lyft", emoji: "", searches: "70K/mo", type: "rideshare" },
-  { slug: "fiverr", name: "Fiverr", emoji: "💻", searches: "60K/mo", type: "freelance" },
-  { slug: "upwork", name: "Upwork", emoji: "🖥️", searches: "55K/mo", type: "freelance" },
-  { slug: "rover", name: "Rover", emoji: "🐕", searches: "40K/mo", type: "services" },
+  { slug: "fiverr", name: "Fiverr", emoji: "", searches: "60K/mo", type: "freelance" },
+  { slug: "upwork", name: "Upwork", emoji: "", searches: "55K/mo", type: "freelance" },
+  { slug: "rover", name: "Rover", emoji: "", searches: "40K/mo", type: "services" },
 ];
 
 const STATES = [

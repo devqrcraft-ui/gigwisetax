@@ -23,10 +23,10 @@ const STATES = [
 const DEDUCTIONS = [
   { icon:'▸', label:'Mileage (72.5¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Portion used for the Grubhub driver app and navigation. Usually 50–80% deductible.' },
-  { icon:'🧊', label:'Hot/Cold Delivery Bags', desc:'Required equipment for food delivery. 100% deductible as business equipment.' },
+  { icon:'', label:'Hot/Cold Delivery Bags', desc:'Required equipment for food delivery. 100% deductible as business equipment.' },
   { icon:'', label:'Car Insurance (business %)', desc:'Pro-rata share of auto insurance for business miles driven.' },
-  { icon:'🔧', label:'Car Repairs & Maintenance', desc:'Oil changes, tires, brakes — deduct based on your business use percentage.' },
-  { icon:'💳', label:'Parking & Tolls', desc:'All parking fees and tolls paid during deliveries are fully deductible.' },
+  { icon:'', label:'Car Repairs & Maintenance', desc:'Oil changes, tires, brakes — deduct based on your business use percentage.' },
+  { icon:'', label:'Parking & Tolls', desc:'All parking fees and tolls paid during deliveries are fully deductible.' },
   { icon:'▸', label:'Delivery Equipment', desc:'Phone mount, power bank, safety vest — any tool used for deliveries.' },
   { icon:'', label:'Tax Prep Fees', desc:'Cost of filing your Schedule C is itself deductible as a business expense.' },
 ]
@@ -131,7 +131,7 @@ export default function GrubhubPage() {
                   </select>
                 </div>
                 <div>
-                  <label style={lbl}>👤 Filing Status</label>
+                  <label style={lbl}> Filing Status</label>
                   <select style={inp} value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
@@ -202,7 +202,7 @@ export default function GrubhubPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>❓ Grubhub Taxes FAQ 2026</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Grubhub Taxes FAQ 2026</span>
             </div>
             <div>
               {FAQ.map((f, i) => (
@@ -273,7 +273,7 @@ export default function GrubhubPage() {
           <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
-              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>📚 Related Guides & Calculators</span>
+              <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
@@ -281,7 +281,7 @@ export default function GrubhubPage() {
               <a href="/blog/grubhub-vs-doordash-taxes-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Grubhub vs DoorDash Taxes</a>
               <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
               <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>📚 Quarterly Tax Guide</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> Quarterly Tax Guide</a>
             </div>
           </div>
 

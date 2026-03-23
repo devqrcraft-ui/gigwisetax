@@ -76,10 +76,10 @@ export default function EtsyTaxGuide() {
                 { icon: '', name: 'Materials & Supplies (COGS)', detail: 'Yarn, fabric, clay, paint, wood, beads — all raw materials used to create your products.' },
                 { icon: '', name: 'Shipping & Packaging', detail: 'Boxes, tissue paper, bubble wrap, tape, Etsy shipping labels. Fully deductible.' },
                 { icon: '', name: 'Home Office/Studio', detail: 'Dedicated workspace. $5/sq ft (up to 300 sq ft) or actual expense method.' },
-                { icon: '📸', name: 'Photography Equipment', detail: 'Camera, backdrop, ring light, props used for product photography. 100% deductible.' },
-                { icon: '💻', name: 'Etsy Fees', detail: 'Listing fees ($0.20), transaction fees (6.5%), payment processing, Etsy Ads. All deductible.' },
+                { icon: '', name: 'Photography Equipment', detail: 'Camera, backdrop, ring light, props used for product photography. 100% deductible.' },
+                { icon: '', name: 'Etsy Fees', detail: 'Listing fees ($0.20), transaction fees (6.5%), payment processing, Etsy Ads. All deductible.' },
                 { icon: '', name: 'Phone & Internet (business %)', detail: 'Deduct business-use percentage of your monthly plan.' },
-                { icon: '🖨️', name: 'Printer & Office Supplies', detail: 'Printer, ink, labels, stickers, thank-you cards. 100% deductible for business use.' },
+                { icon: '', name: 'Printer & Office Supplies', detail: 'Printer, ink, labels, stickers, thank-you cards. 100% deductible for business use.' },
                 { icon: '', name: 'Software Subscriptions', detail: 'Canva, Adobe, Etsy Pattern, Quickbooks. 100% deductible if for business.' },
               ].map(d => (
                 <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>

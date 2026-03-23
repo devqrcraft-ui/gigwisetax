@@ -15,18 +15,18 @@ const DEDUCTIONS = [
   { id: 9, category: ' Business', title: 'Professional Services', desc: 'CPA, lawyer, tax prep fees', savings: 'Avg $500/yr', checked: false },
   { id: 10, category: ' Business', title: 'Business Meals (50%)', desc: 'Client meetings, business discussions', savings: 'Avg $400/yr', checked: false },
   { id: 11, category: ' Business', title: 'Marketing & Advertising', desc: 'Website, ads, business cards', savings: 'Avg $600/yr', checked: false },
-  { id: 12, category: '🏥 Health', title: 'Health Insurance Premium', desc: '100% deductible if self-employed and not eligible for employer plan', savings: 'Avg $3,000/yr', checked: false },
-  { id: 13, category: '🏥 Health', title: 'HSA Contributions', desc: 'Up to $4,150 single / $8,300 family (2025)', savings: 'Up to $4,150/yr', checked: false },
+  { id: 12, category: ' Health', title: 'Health Insurance Premium', desc: '100% deductible if self-employed and not eligible for employer plan', savings: 'Avg $3,000/yr', checked: false },
+  { id: 13, category: ' Health', title: 'HSA Contributions', desc: 'Up to $4,150 single / $8,300 family (2025)', savings: 'Up to $4,150/yr', checked: false },
   { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $69,000 (2025)', savings: 'Up to $69,000/yr', checked: false },
   { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Up to $69,000 total contributions (2025)', savings: 'Up to $69,000/yr', checked: false },
-  { id: 16, category: '📚 Education', title: 'Business Education', desc: 'Courses, books, webinars related to your work', savings: 'Avg $300/yr', checked: false },
-  { id: 17, category: '📚 Education', title: 'Industry Memberships', desc: 'Professional associations, trade publications', savings: 'Avg $200/yr', checked: false },
+  { id: 16, category: ' Education', title: 'Business Education', desc: 'Courses, books, webinars related to your work', savings: 'Avg $300/yr', checked: false },
+  { id: 17, category: ' Education', title: 'Industry Memberships', desc: 'Professional associations, trade publications', savings: 'Avg $200/yr', checked: false },
   { id: 18, category: ' Tax', title: 'SE Tax Deduction (50%)', desc: 'Deduct half of self-employment tax from income — automatic', savings: 'Avg $2,000/yr', checked: false },
   { id: 19, category: ' Tax', title: 'QBI Deduction (20%)', desc: 'Qualified Business Income — up to 20% of net income', savings: 'Avg $3,000/yr', checked: false },
   { id: 20, category: ' Tax', title: 'State & Local Taxes (SALT)', desc: 'Up to $40,000 deduction (2025 rule)', savings: 'Up to $40,000/yr', checked: false },
 ]
 
-const CATEGORIES = ['All', ' Vehicle', ' Home', ' Tech', ' Business', '🏥 Health', ' Retirement', '📚 Education', ' Tax']
+const CATEGORIES = ['All', ' Vehicle', ' Home', ' Tech', ' Business', ' Health', ' Retirement', ' Education', ' Tax']
 
 export default function DeductionsChecklist() {
   const [checked, setChecked]   = useState<Set<number>>(new Set())

@@ -31,7 +31,7 @@ export default function MileageRate2026Post() {
           </h1>
           <div style={{ display: 'flex', gap: 16 }}>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 3, 2026</span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}>⏱ 5 min read</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 5 min read</span>
           </div>
         </div>
       </div>

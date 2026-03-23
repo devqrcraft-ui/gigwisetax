@@ -157,7 +157,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>📚 {platform.name} Tax Guide 2026</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax Guide 2026</span>
               </div>
               <div style={{ padding: 24 }}>
 
