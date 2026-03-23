@@ -395,11 +395,12 @@ export default function HomeClient() {
                 <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
                   {PLATFORMS.map(p => (
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
-                      <div style={{ border: platform === p.name ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', background: platform === p.name ? '#fff5f5' : '#fff', transition: 'all .18s', position: 'relative' as const }}>
+                      <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', transition: 'all .18s', position: 'relative' as const }}>
                         {p.badge && <div style={{ position: 'absolute', top: 5, right: 5, background: '#1a1a2e', color: '#e8b84b', fontSize: 8, padding: '1px 4px', borderRadius: 2, fontWeight: 800 }}>USA #1</div>}
-                        <div style={{ fontSize: 26, marginBottom: 6 }}>{p.emoji}</div>
+                        <div style={{ fontSize: 22, marginBottom: 4 }}>{p.emoji}</div>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
-                        <div style={{ fontSize: 11, color: '#B22234', fontWeight: 600 }}>{p.searches}</div>
+                        <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
+                        <div className="plat-btn">Open →</div>
                       </div>
                     </Link>
                   ))}

@@ -211,3 +211,35 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
 .hub-card:active {
   transform: translateY(0px);
 }
+
+/* Platform selector cards */
+.plat-card {
+  border: 1px solid #e2e5e9;
+  background: #fff;
+}
+.plat-card:hover {
+  border-color: #B22234 !important;
+  background: #fff5f5 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(178,34,52,0.12);
+}
+.plat-card--active {
+  border: 2px solid #B22234 !important;
+  background: #fff5f5 !important;
+}
+.plat-btn {
+  display: none;
+  background: #B22234;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 0;
+  border-radius: 4px;
+  text-align: center;
+}
+.plat-card:hover .plat-btn {
+  display: block;
+}
+.plat-card--active .plat-btn {
+  display: block;
+}
