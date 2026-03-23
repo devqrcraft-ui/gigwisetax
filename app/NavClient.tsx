@@ -149,7 +149,7 @@ export default function NavClient() {
         <button onClick={() => setMobileOpen(!mobileOpen)}
           style={{ display:'none', background:'none', border:'none', color:'#fff', fontSize:24, cursor:'pointer', padding:'4px 8px' }}
           className="mobile-hamburger" aria-label="Menu">
-          {mobileOpen ? '✕' : ''}
+          {mobileOpen ? 'Close' : 'Menu'}
         </button>
       </div>
 
