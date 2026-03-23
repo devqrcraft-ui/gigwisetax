@@ -241,10 +241,8 @@
     <div id="ai-chat-header">
       <div id="ai-chat-header-left">
         <div id="ai-online-dot"></div>
-        <div>
-          <div id="ai-chat-name">${config.name}</div>
-          <div id="ai-chat-sub">Online · Fast replies</div>
-        </div>
+        <div id="ai-chat-name">${config.name}</div>
+        <div id="ai-chat-sub">Online · Fast replies</div>
       </div>
       <button id="ai-chat-close">−</button>
     </div>
@@ -347,6 +345,6 @@
   input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMessage(); });
 
   // Auto-open after 6s
-  setTimeout(() => { if (!isOpen) openChat(); }, 6000);
+  setTimeout(() => { if (!isOpen) openChat(); }, 20000);
 
 })();
