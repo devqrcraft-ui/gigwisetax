@@ -400,7 +400,7 @@ export default function HomeClient() {
                         <div style={{ fontSize: 22, marginBottom: 4 }}>{p.emoji}</div>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
                         <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
-                        <div className="plat-btn">Open →</div>
+                        <div className="plat-btn" style={{background:'#B22234',color:'#fff',fontSize:11,fontWeight:700,padding:'5px 10px',borderRadius:4,marginTop:4}}>Open Calculator</div>
                       </div>
                     </Link>
                   ))}
@@ -588,12 +588,13 @@ export default function HomeClient() {
               <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'20px',textDecoration:'none',display:'flex',alignItems:'center',gap:16,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
                 onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.09)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)';}}>
-                <div style={{fontSize:36,flexShrink:0}}>{p.emoji}</div>
+                
                 <div style={{flex:1}}>
                   <div style={{fontSize:17,fontWeight:800,color:'#fff',marginBottom:4}}>{p.name} Tax Calculator</div>
                   <div style={{fontSize:13,color:'rgba(255,255,255,0.5)',marginBottom:6}}>{p.desc}</div>
                   <div style={{fontSize:15,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
                 </div>
+                <div style={{flexShrink:0,background:'#B22234',color:'#fff',fontSize:12,fontWeight:700,padding:'8px 16px',borderRadius:6,whiteSpace:'nowrap'}}>Open Calculator</div>
               </a>
             ))}
           </div>
