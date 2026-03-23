@@ -27,22 +27,23 @@ export default function Page() {
           <p style={{fontSize:'14px',opacity:0.6,marginBottom:'24px'}}>Every major platform. Every tax question. Free calculators for all 51 states.</p>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'12px'}}>
             {[
-              ['/uber','\uD83D\uDE95 Uber','SE tax + quarterly estimates'],
-              ['/doordash','\uD83D\uDCE6 DoorDash','Delivery driver deductions'],
-              ['/airbnb','\uD83C\uDFE0 Airbnb','Host income + expenses'],
-              ['/instacart',' Instacart','Shopper tax guide'],
-              ['/etsy','\uD83C\uDFEA Etsy','Seller income + deductions'],
-              ['/amazon-flex','\uD83D\uDE9A Amazon Flex','Delivery SE tax'],
-              ['/onlyfans','\uD83C\uDF1F OnlyFans','Creator tax calculator'],
-              ['/lyft','\uD83D\uDE97 Lyft','Rideshare tax guide'],
-              ['/grubhub','\uD83C\uDF54 Grubhub','Delivery tax estimates'],
-              ['/walmart-spark','\u26A1 Walmart Spark','Spark driver taxes'],
-              ['/fiverr','\uD83D\uDCBB Fiverr','Freelancer SE tax'],
-              ['/upwork','\uD83D\uDCBC Upwork','Contractor tax guide'],
-            ].map(([href, label, desc]) => (
-              <a key={href} href={href} style={{display:'block',padding:'16px 14px',borderRadius:'12px',background:'rgba(99,102,241,0.07)',border:'1px solid rgba(99,102,241,0.18)',color:'#e2e8f0',textDecoration:'none'}}>
-                <div style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'4px'}}>{label}</div>
-                <div style={{fontSize:'12px',opacity:0.6,lineHeight:1.4}}>{desc}</div>
+              {href:'/uber',       label:'Uber',         desc:'SE tax + quarterly estimates',   cta:'Open Uber Tax Calculator'},
+              {href:'/doordash',   label:'DoorDash',     desc:'Delivery driver deductions',     cta:'Open DoorDash Tax Calculator'},
+              {href:'/airbnb',     label:'Airbnb',       desc:'Host income + expenses',         cta:'Open Airbnb Tax Calculator'},
+              {href:'/instacart',  label:'Instacart',    desc:'Shopper tax guide',              cta:'Open Instacart Tax Calculator'},
+              {href:'/etsy',       label:'Etsy',         desc:'Seller income + deductions',     cta:'Open Etsy Tax Calculator'},
+              {href:'/amazon-flex',label:'Amazon Flex',  desc:'Delivery SE tax',                cta:'Open Amazon Flex Calculator'},
+              {href:'/onlyfans',   label:'OnlyFans',     desc:'Creator tax calculator',         cta:'Open OnlyFans Tax Calculator'},
+              {href:'/lyft',       label:'Lyft',         desc:'Rideshare tax guide',            cta:'Open Lyft Tax Calculator'},
+              {href:'/grubhub',    label:'Grubhub',      desc:'Delivery tax estimates',         cta:'Open Grubhub Tax Calculator'},
+              {href:'/walmart-spark',label:'Walmart Spark',desc:'Spark driver taxes',           cta:'Open Walmart Spark Calculator'},
+            ].map(p => (
+              <a key={p.href} href={p.href} style={{display:'block',padding:'16px 14px',borderRadius:'12px',background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.12)',color:'#e2e8f0',textDecoration:'none',transition:'all .18s'}}
+                onMouseEnter={e=>{(e.currentTarget as HTMLAnchorElement).style.background='rgba(232,184,75,0.08)';(e.currentTarget as HTMLAnchorElement).style.borderColor='rgba(232,184,75,0.45)';}}
+                onMouseLeave={e=>{(e.currentTarget as HTMLAnchorElement).style.background='rgba(255,255,255,0.04)';(e.currentTarget as HTMLAnchorElement).style.borderColor='rgba(255,255,255,0.12)';}}>
+                <div style={{fontSize:'15px',fontWeight:800,color:'#fff',marginBottom:'4px'}}>{p.label} Tax Calculator</div>
+                <div style={{fontSize:'12px',color:'rgba(255,255,255,0.5)',lineHeight:1.4,marginBottom:'10px'}}>{p.desc}</div>
+                <div style={{background:'#B22234',color:'#fff',fontSize:'12px',fontWeight:700,padding:'8px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta} →</div>
               </a>
             ))}
           </div>
@@ -67,7 +68,7 @@ export default function Page() {
         </section>
 
         <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 20px 52px'}}>
-          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'16px'}}>Frequently Asked Questions</h2>
+          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'16px'}}>Frequently Asked Questions — Gig Worker Taxes 2026</h2>
           <div style={{display:'flex',flexDirection:'column',gap:'20px'}}>
             <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much self-employment tax do gig workers pay in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Gig workers pay 15.3% SE tax on 92.35% of net earnings — 12.4% Social Security and 2.9% Medicare. You can deduct half of SE tax from your federal taxable income, which reduces your overall tax bill.</p></div>
             <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>Do I need to pay quarterly taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. 2026 deadlines: April 15, June 16, September 15, and January 15, 2027.</p></div>

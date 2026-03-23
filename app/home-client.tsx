@@ -163,9 +163,9 @@ export default function HomeClient() {
           {/* TABS */}
           <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20, gap: 6, padding: '4px 4px 0' }}>
             {([
-              { id: 'calc',      label: ' Tax Calculator'  },
-              { id: 'deadlines', label: ' 2026 Deadlines'  },
-              { id: 'platforms', label: ' All Platforms'   },
+              { id: 'calc',      label: 'Tax Calculator'  },
+              { id: 'deadlines', label: '2026 Deadlines'  },
+              { id: 'platforms', label: 'All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
                 padding: isMobile ? '6px 6px' : '8px 12px', fontSize: isMobile ? 11 : 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
@@ -340,6 +340,29 @@ export default function HomeClient() {
                   </div>
                 </div>
               )}
+
+              {/* HOW THIS CALCULATOR WORKS */}
+              <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginTop: 20 }}>
+                <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }}/>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How This Calculator Works</span>
+                </div>
+                <div style={{ padding: '16px 20px', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr', gap: 14 }} className="form-grid">
+                  {[
+                    { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
+                    { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($15,000 single / $30,000 married). Rates from 10% to 37%.' },
+                    { label: 'State income tax', detail: '2026 state rates for all 51 jurisdictions — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
+                  ].map(item => (
+                    <div key={item.label} style={{ borderLeft: '3px solid #B22234', paddingLeft: 12 }}>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: '#1a1a2e', marginBottom: 4 }}>{item.label}</div>
+                      <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>{item.detail}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ padding: '0 20px 14px' }}>
+                  <a href="/how-we-calculate-gig-taxes" style={{ fontSize: 12, color: '#B22234', fontWeight: 700, textDecoration: 'none' }}>See full methodology: how we calculate 2026 gig taxes →</a>
+                </div>
+              </div>
 
               {/* HIGH INCOME BLOCK */}
               {result && parseFloat(income) >= 150000 && (

@@ -9,8 +9,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'instacart')
   if (!p) return {}
   return {
-    title: `Instacart Shopper Tax Calculator 2026 — Free, All 51 States | GigWiseTax`,
-    description: `Free Instacart shopper tax calculator for 2026. Calculate SE tax, federal & state income tax, mileage deductions and quarterly payments. No signup required.`,
+    title: `Instacart Tax Calculator 2026 — Shopper Self-Employment Tax | GigWiseTax`,
+    description: `Calculate Instacart shopper self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Mileage deduction, quarterly payment schedule. Free, 2026 IRS rules.`,
     keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
@@ -80,6 +80,29 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     ],
   }
 
+
+
+  const deductionsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Top Tax Deductions for Instacart Workers 2026`,
+    numberOfItems: 12,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: "Mileage deduction ($0.70/mile)" },
+      { '@type': 'ListItem', position: 2, name: "Phone bill" },
+      { '@type': 'ListItem', position: 3, name: "Auto insurance" },
+      { '@type': 'ListItem', position: 4, name: "Insulated grocery bags" },
+      { '@type': 'ListItem', position: 5, name: "Car washes" },
+      { '@type': 'ListItem', position: 6, name: "Parking fees & tolls" },
+      { '@type': 'ListItem', position: 7, name: "Car accessories" },
+      { '@type': 'ListItem', position: 8, name: "Half of self-employment tax" },
+      { '@type': 'ListItem', position: 9, name: "Accounting & tax software" },
+      { '@type': 'ListItem', position: 10, name: "Business bank account fees" },
+      { '@type': 'ListItem', position: 11, name: "EV charging costs" },
+      { '@type': 'ListItem', position: 12, name: "Health insurance premiums" }
+    ],
+  };
+
   const card = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)', overflow: 'hidden' as const }
   const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
@@ -88,6 +111,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
 
       <div style={{ background: '#0d1b3e', minHeight: '100vh' }}>
 
