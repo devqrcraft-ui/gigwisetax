@@ -196,3 +196,18 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   footer, footer * { font-size: 13px !important; }
   footer span { font-size: 13px !important; }
 }
+
+/* Hub platform cards */
+.hub-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+}
+.hub-card:hover {
+  background: rgba(232,184,75,0.10) !important;
+  border-color: rgba(232,184,75,0.5) !important;
+  transform: translateY(-2px);
+}
+.hub-card:active {
+  transform: translateY(0px);
+}

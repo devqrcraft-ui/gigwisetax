@@ -44,10 +44,7 @@ export default function Page() {
                 <div style={{background:'#B22234',color:'#fff',fontSize:'12px',fontWeight:700,padding:'8px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta} →</div>
               </a>
             ))}
-            <style>{`
-              .hub-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.12);transition:all .18s;}
-              .hub-card:hover{background:rgba(232,184,75,0.08)!important;border-color:rgba(232,184,75,0.45)!important;}
-            `}</style>
+
           </div>
         </section>
 
