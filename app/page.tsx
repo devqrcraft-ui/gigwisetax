@@ -41,7 +41,7 @@ export default function Page() {
               <a key={p.href} href={p.href} className="hub-card" style={{display:'block',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none'}}>
                 <div style={{fontSize:'15px',fontWeight:800,color:'#fff',marginBottom:'4px'}}>{p.label} Tax Calculator</div>
                 <div style={{fontSize:'12px',color:'rgba(255,255,255,0.5)',lineHeight:1.4,marginBottom:'10px'}}>{p.desc}</div>
-                <div style={{background:'#B22234',color:'#fff',fontSize:'12px',fontWeight:700,padding:'8px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta} →</div>
+                <div style={{background:'#B22234',color:'#fff',fontSize:'12px',fontWeight:700,padding:'8px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta} </div>
               </a>
             ))}
 
@@ -53,8 +53,8 @@ export default function Page() {
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:'10px'}}>
             {[
               ['/1099-tax-calculator-2026','1099 Tax Calculator 2026','Self-employment income'],
-              ['/deadlines','\uD83D\uDCC5 Tax Deadlines 2026','Quarterly payment dates'],
-              ['/deductions','\uD83D\uDCDD Top Deductions','Write-offs for gig workers'],
+              ['/deadlines','Tax Deadlines 2026','Quarterly payment dates'],
+              ['/deductions','Top Deductions','Write-offs for gig workers'],
               ['/gig-worker-taxes-2026','Gig Tax Guide 2026','Complete 2026 overview'],
               ['/calculators','All Calculators','Browse every tool'],
             ].map(([href, label, desc]) => (
