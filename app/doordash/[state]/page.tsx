@@ -69,7 +69,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap' as const, gap: 16 }}>
             <div>
               <div style={{ fontSize: 12, color: '#e8b84b', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
-                {platform.emoji} {platform.name} · {state.abbr} · Tax Year 2026
+                {platform.name} · {state.abbr} · Tax Year 2026
               </div>
               <h1 style={{ fontSize: 26, fontWeight: 900, color: '#fff', margin: '0 0 8px', lineHeight: 1.25 }}>
                 {platform.name} Tax Calculator<br/>{state.name} 2026
@@ -210,7 +210,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
-                    <span style={{ fontSize: 13, fontWeight: 500 }}>{p.emoji} {p.name} in {state.abbr}</span>
+                    <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} in {state.abbr}</span>
                     <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                   </div>
                 </a>

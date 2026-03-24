@@ -220,7 +220,7 @@ export default function HomeClient() {
                     <div>
                       <label style={label}>▸ Gig Platform</label>
                       <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
-                        {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.emoji} {p.name}{p.badge ? ' — USA #1' : ''}</option>)}
+                        {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}{p.badge ? ' — USA #1' : ''}</option>)}
                       </select>
                     </div>
                     <div>
@@ -397,7 +397,7 @@ export default function HomeClient() {
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                       <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', transition: 'all .18s', position: 'relative' as const }}>
                         {p.badge && <div style={{ position: 'absolute', top: 5, right: 5, background: '#1a1a2e', color: '#e8b84b', fontSize: 8, padding: '1px 4px', borderRadius: 2, fontWeight: 800 }}>USA #1</div>}
-                        <div style={{ fontSize: 22, marginBottom: 4 }}>{p.emoji}</div>
+                        <div style={{ fontSize: 22, marginBottom: 4 }}></div>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
                         <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
                         <div className="plat-btn" style={{background:'#B22234',color:'#fff',fontSize:11,fontWeight:700,padding:'5px 10px',borderRadius:4,marginTop:4}}>Open Calculator</div>
@@ -508,7 +508,7 @@ export default function HomeClient() {
                     {PLATFORMS.map((p,i) => (
                       <tr key={p.name} style={{ borderBottom: '1px solid #f0f1f3', background: i%2===0 ? '#fff' : '#fafafa' }}>
                         <td style={{ padding: '12px 16px', fontWeight: 700, fontSize: 14 }}>
-                          <span style={{ fontSize: 18, marginRight: 10 }}>{p.emoji}</span>{p.name}
+                          <span style={{ fontSize: 18, marginRight: 10 }}></span>{p.name}
                           {p.badge && <span style={{ background: '#1a1a2e', color: '#e8b84b', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginLeft: 8, fontWeight: 800 }}>USA #1</span>}
                         </td>
                         <td style={{ padding: '12px 16px', fontWeight: 700, color: '#1a1a2e' }}>{p.searches}</td>
@@ -539,7 +539,7 @@ export default function HomeClient() {
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#374151' }}>
-                  <span style={{ fontSize: 13, fontWeight: 500 }}>{p.emoji} {p.name} Tax Calculator</span>
+                  <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                 </div>
               </Link>
@@ -576,14 +576,14 @@ export default function HomeClient() {
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
             {[
-              {emoji:'▸',name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
-              {emoji:'▸',name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
-              {emoji:'▸',name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
-              {emoji:'▸',name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
-              {emoji:'▸',name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
-              {emoji:'▸',name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
-              {emoji:'▸',name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
-              {emoji:'▸',name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
+              { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
+              { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
+              { name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
+              { name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
+              { name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
+              { name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
+              { name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
+              { name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
             ].map((p,i)=>(
               <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'20px',textDecoration:'none',display:'flex',alignItems:'center',gap:16,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}

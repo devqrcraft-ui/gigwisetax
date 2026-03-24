@@ -241,15 +241,15 @@ export default function GrubhubPage() {
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { emoji:'▸', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { emoji:'▸', name:'Uber', href:'/uber', vol:'300K/mo' },
-              { emoji:'▸', name:'Instacart', href:'/instacart', vol:'150K/mo' },
-              { emoji:'▸', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
-              { emoji:'▸', name:'Walmart Spark', href:'/walmart-spark', vol:'NEW' },
+              { name:'DoorDash', href:'/doordash', vol:'400K/mo' },
+              { name:'Uber', href:'/uber', vol:'300K/mo' },
+              { name:'Instacart', href:'/instacart', vol:'150K/mo' },
+              { name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
+              { name:'Walmart Spark', href:'/walmart-spark', vol:'NEW' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
-                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.emoji} {p.name}</span>
+                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.name}</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>
               </Link>

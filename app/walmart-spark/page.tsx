@@ -277,16 +277,16 @@ export default function WalmartSparkPage() {
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { emoji:'▸', name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { emoji:'▸', name:'Instacart', href:'/instacart', vol:'150K/mo' },
-              { emoji:'▸', name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
-              { emoji:'▸', name:'Uber', href:'/uber', vol:'300K/mo' },
-              { emoji:'▸', name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
-              { emoji:'▸', name:'Etsy', href:'/etsy', vol:'200K/mo' },
+              { name:'DoorDash', href:'/doordash', vol:'400K/mo' },
+              { name:'Instacart', href:'/instacart', vol:'150K/mo' },
+              { name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
+              { name:'Uber', href:'/uber', vol:'300K/mo' },
+              { name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
+              { name:'Etsy', href:'/etsy', vol:'200K/mo' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
-                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.emoji} {p.name} Tax Calculator</span>
+                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>
               </Link>

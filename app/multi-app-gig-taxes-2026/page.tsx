@@ -321,17 +321,17 @@ export default function MultiAppPage() {
           <p style={{fontSize:13,color:'#6b7280',marginBottom:16}}>Use our platform calculators — enter your combined income for accurate results.</p>
           <div className="links-grid">
             {[
-              {emoji:'',name:'DoorDash',href:'/doordash'},
-              {emoji:'',name:'Uber',href:'/uber'},
-              {emoji:'',name:'Instacart',href:'/instacart'},
-              {emoji:'',name:'Amazon Flex',href:'/amazon-flex'},
-              {emoji:'',name:'Lyft',href:'/lyft'},
-              {emoji:'',name:'Etsy',href:'/etsy'},
-              {emoji:'',name:'Airbnb',href:'/airbnb'},
-              {emoji:'',name:'OnlyFans',href:'/onlyfans'},
+              { name:'DoorDash',href:'/doordash'},
+              { name:'Uber',href:'/uber'},
+              { name:'Instacart',href:'/instacart'},
+              { name:'Amazon Flex',href:'/amazon-flex'},
+              { name:'Lyft',href:'/lyft'},
+              { name:'Etsy',href:'/etsy'},
+              { name:'Airbnb',href:'/airbnb'},
+              { name:'OnlyFans',href:'/onlyfans'},
             ].map((p,i) => (
               <a key={i} href={p.href} className="link-btn">
-                <div className="link-emoji">{p.emoji}</div>
+                <div className="link-emoji"></div>
                 <div className="link-name">{p.name}</div>
               </a>
             ))}

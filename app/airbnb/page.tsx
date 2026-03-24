@@ -128,7 +128,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
               <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
               <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
-                {platform.emoji} {platform.name} Tax Calculator 2026 — All 51 States
+                {platform.name} Tax Calculator 2026 — All 51 States
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
@@ -327,7 +327,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {PLATFORMS.filter(p => p.slug !== 'airbnb').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#fff', position: 'relative' as const }}>
-                      <div style={{ fontSize: 24, marginBottom: 5 }}>{p.emoji}</div>
+                      <div style={{ fontSize: 24, marginBottom: 5 }}></div>
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
                       <div style={{ fontSize: 11, color: '#B22234', fontWeight: 600 }}>{p.searches}</div>
                     </div>
@@ -383,7 +383,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               ].map(s => (
                 <a key={s.slug} href={`/${'airbnb'}/${s.slug}`} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
-                    <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.emoji} {platform.name} in {s.name}</span>
+                    <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.name} in {s.name}</span>
                     <span style={{ fontSize: 11, color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700 }}>{s.rate}</span>
                   </div>
                 </a>

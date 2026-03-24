@@ -48,7 +48,7 @@ export default function GigCalculator({
       <div style={card}>
         <div style={cardHd}>
           <div style={accent}/>
-          <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>{platform.emoji} {platform.name} Tax Calculator 2026</span>
+          <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>{platform.name} Tax Calculator 2026</span>
           <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 11, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
         </div>
         <div style={{ padding: 20 }}>

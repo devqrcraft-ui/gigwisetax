@@ -62,7 +62,7 @@ export default function CalculatorsIndex() {
           <div key={platform.slug} style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
             <div style={{ background: "#1a1a2e", padding: "13px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ fontSize: 22 }}>{platform.emoji}</span>
+                <span style={{ fontSize: 22 }}></span>
                 <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}>{platform.name} Tax Calculator</span>
               </div>
               <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "2px 8px", borderRadius: 3, fontWeight: 700 }}>{platform.searches}</span>

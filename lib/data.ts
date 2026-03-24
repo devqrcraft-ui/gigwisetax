@@ -1,12 +1,12 @@
 export const PLATFORMS = [
-  { slug: 'doordash',    name: 'DoorDash',    emoji: '🚗', searches: '400K/mo', naics: '492000', badge: null },
-  { slug: 'uber',        name: 'Uber',        emoji: '🚕', searches: '300K/mo', naics: '485300', badge: null },
-  { slug: 'etsy',        name: 'Etsy',        emoji: '🛍️', searches: '200K/mo', naics: '454110', badge: null },
-  { slug: 'onlyfans',    name: 'OnlyFans',    emoji: '⭐', searches: '150K/mo', naics: '711510', badge: 'USA #1' },
-  { slug: 'instacart',   name: 'Instacart',   emoji: '🛒', searches: '150K/mo', naics: '492000', badge: null },
-  { slug: 'airbnb',      name: 'Airbnb',      emoji: '🏠', searches: '120K/mo', naics: '721199', badge: null },
-  { slug: 'amazon-flex', name: 'Amazon Flex', emoji: '📦', searches: '80K/mo',  naics: '492000', badge: null },
-  { slug: 'lyft',        name: 'Lyft',        emoji: '🚖', searches: '70K/mo',  naics: '485300', badge: null },
+  { slug: 'doordash',    name: 'DoorDash',    emoji: '', searches: '400K/mo', naics: '492000', badge: null },
+  { slug: 'uber',        name: 'Uber',        emoji: '', searches: '300K/mo', naics: '485300', badge: null },
+  { slug: 'etsy',        name: 'Etsy',        emoji: '', searches: '200K/mo', naics: '454110', badge: null },
+  { slug: 'onlyfans',    name: 'OnlyFans',    emoji: '', searches: '150K/mo', naics: '711510', badge: 'USA #1' },
+  { slug: 'instacart',   name: 'Instacart',   emoji: '', searches: '150K/mo', naics: '492000', badge: null },
+  { slug: 'airbnb',      name: 'Airbnb',      emoji: '', searches: '120K/mo', naics: '721199', badge: null },
+  { slug: 'amazon-flex', name: 'Amazon Flex', emoji: '', searches: '80K/mo',  naics: '492000', badge: null },
+  { slug: 'lyft',        name: 'Lyft',        emoji: '', searches: '70K/mo',  naics: '485300', badge: null },
 ]
 
 export const STATES = [
