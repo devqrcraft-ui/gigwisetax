@@ -24,6 +24,6 @@ const gigSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
-export default function Layout({ children }: { children: React.ReactNode }) { children: React.ReactNode }) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
