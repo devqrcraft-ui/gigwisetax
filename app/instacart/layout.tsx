@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const gigSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Instacart Shopper Tax Calculator 2026',
+  description: 'Calculate Instacart shopper taxes, mileage deductions, and quarterly payments for 2026.',
+  url: 'https://www.gigwisetax.com/instacart',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) { children: React.ReactNode }) {
   return <>{children}</>
 }

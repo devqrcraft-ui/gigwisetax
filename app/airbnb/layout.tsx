@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const gigSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Airbnb Host Tax Calculator 2026',
+  description: 'Calculate Airbnb rental income taxes, deductions, and quarterly estimated payments for 2026.',
+  url: 'https://www.gigwisetax.com/airbnb',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) { children: React.ReactNode }) {
   return <>{children}</>
 }

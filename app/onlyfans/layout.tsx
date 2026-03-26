@@ -13,6 +13,17 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+const gigSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'OnlyFans Tax Calculator 2026',
+  description: 'Calculate OnlyFans creator taxes, self-employment tax, and deductions for 2026.',
+  url: 'https://www.gigwisetax.com/onlyfans',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'All',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+};
+
+export default function Layout({ children }: { children: React.ReactNode }) { children: React.ReactNode }) {
   return <>{children}</>
 }
