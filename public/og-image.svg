@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630"><defs>
+<linearGradient id="gbg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#0D0A14"/><stop offset="100%" stop-color="#1A1030"/></linearGradient>
+<linearGradient id="gg" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5A0A14"/><stop offset="35%" stop-color="#E83050"/><stop offset="65%" stop-color="#E83050"/><stop offset="100%" stop-color="#5A0A14"/></linearGradient></defs><rect width="1200" height="630" fill="url(#gbg)"/>
+<path d="M0 0 L160 0 L0 160 Z" fill="#B22234" opacity="0.07"/>
+<path d="M1200 630 L1040 630 L1200 470 Z" fill="#B22234" opacity="0.07"/>
+<rect x="0" y="0" width="1200" height="6" fill="url(#gg)"/>
+<rect x="0" y="624" width="1200" height="6" fill="url(#gg)"/>
+<rect x="0" y="0" width="6" height="630" fill="url(#gg)"/>
+<rect x="1194" y="0" width="6" height="630" fill="url(#gg)"/>
+<rect x="22" y="22" width="1156" height="586" rx="2" fill="none" stroke="#B22234" stroke-width="0.6" stroke-opacity="0.2"/><circle cx="100" cy="108" r="50" fill="#B22234" opacity="0.18"/>
+         <circle cx="100" cy="108" r="49" fill="none" stroke="#E83050" stroke-width="1.2" stroke-opacity="0.4"/>
+         <text x="100" y="128" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="900" fill="#E8B84B">GW</text>
+         <text x="172" y="90" font-family="Arial,sans-serif" font-size="60" font-weight="900" fill="#FFFFFF">GigWise</text>
+         <text x="514" y="90" font-family="Arial,sans-serif" font-size="60" font-weight="900" fill="#E8B84B">TAX</text>
+         <text x="672" y="90" font-family="Georgia,serif" font-size="38" font-weight="400" fill="#2A1A4A">.com</text>
+         <rect x="50" y="108" width="680" height="2" fill="url(#gg)" opacity="0.5"/>
+         <text x="50" y="150" font-family="Arial,sans-serif" font-size="26" fill="#9080B0">Free Gig Worker Tax Calculator - SE Tax + All 51 States</text><circle cx="80" cy="210" r="18" fill="#14532d" opacity="0.65"/>
+<path d="M70 210 L77 219 L92 198" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="114" y="220" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">SE tax 15.3% - full self-employment calculation</text>
+<circle cx="80" cy="274" r="18" fill="#14532d" opacity="0.65"/>
+<path d="M70 274 L77 283 L92 262" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="114" y="284" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">DoorDash, Uber, Etsy, OnlyFans, Airbnb and more</text>
+<circle cx="80" cy="338" r="18" fill="#14532d" opacity="0.65"/>
+<path d="M70 338 L77 347 L92 326" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="114" y="348" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">Quarterly tax deadlines with Google Calendar export</text>
+<circle cx="80" cy="402" r="18" fill="#14532d" opacity="0.65"/>
+<path d="M70 402 L77 411 L92 390" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="114" y="412" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">Mileage deduction at $0.70/mile - auto calculated</text>
+<circle cx="80" cy="466" r="18" fill="#14532d" opacity="0.65"/>
+<path d="M70 466 L77 475 L92 454" fill="none" stroke="#4ade80" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="114" y="476" font-family="Arial,sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">No registration - No data stored - 100% free</text>
+<rect x="50" y="510" width="700" height="1" fill="#E8B84B" opacity="0.22"/>
+<rect x="50" y="530" width="400" height="54" rx="10" fill="none" stroke="#E8B84B" stroke-width="1.4" stroke-opacity="0.5"/>
+<text x="250" y="564" text-anchor="middle" font-family="Georgia,serif" font-size="24" font-weight="700" fill="#E8B84B">gigwisetax.com</text>
+<rect x="466" y="530" width="140" height="54" rx="10" fill="#14532d" opacity="0.55"/>
+<text x="536" y="564" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#4ade80">FREE</text>
+<circle cx="990" cy="340" r="170" fill="none" stroke="#E8B84B" stroke-width="1.5" stroke-opacity="0.28"/>
+<circle cx="990" cy="340" r="160" fill="#E8B84B" opacity="0.05"/>
+<circle cx="990" cy="340" r="148" fill="none" stroke="#E8B84B" stroke-width="0.8" stroke-dasharray="5 6" stroke-opacity="0.22"/>
+<text x="990" y="196" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#E8B84B" letter-spacing="6">51 STATES - IRS 2026</text>
+<text x="990" y="310" text-anchor="middle" font-family="Georgia,serif" font-size="76" font-weight="700" fill="#E8B84B">15.3%</text>
+<text x="990" y="352" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="#E8B84B" letter-spacing="4">SE TAX RATE</text>
+<text x="990" y="406" text-anchor="middle" font-family="Georgia,serif" font-size="44" font-weight="700" fill="#E8B84B">$0.70</text>
+<text x="990" y="440" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#E8B84B" opacity="0.55">per mile deduction</text>
+<text x="990" y="472" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#E8B84B" letter-spacing="4">FREE · PRIVATE · INSTANT</text>
+<text x="830" y="346" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#E8B84B" opacity="0.45">*</text>
+<text x="1150" y="346" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#E8B84B" opacity="0.45">*</text></svg>
