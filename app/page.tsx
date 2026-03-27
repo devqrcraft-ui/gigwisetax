@@ -76,6 +76,53 @@ export default function Page() {
           </div>
         </section>
 
+      {/* Popular Calculators by State — SEO internal links */}
+      <section className="w-full max-w-5xl mx-auto px-4 py-10">
+        <h2 className="text-2xl font-semibold text-center mb-2">Popular Calculators by State</h2>
+        <p className="text-center text-sm text-gray-500 mb-6">
+          Free tax calculator for every platform and state — SE tax 15.3% + federal + state.
+        </p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-sm">
+          {[
+            ["/doordash/california","DoorDash Tax — California"],
+            ["/doordash/texas","DoorDash Tax — Texas"],
+            ["/doordash/florida","DoorDash Tax — Florida"],
+            ["/doordash/new-york","DoorDash Tax — New York"],
+            ["/doordash/illinois","DoorDash Tax — Illinois"],
+            ["/uber/california","Uber Tax — California"],
+            ["/uber/texas","Uber Tax — Texas"],
+            ["/uber/florida","Uber Tax — Florida"],
+            ["/uber/new-york","Uber Tax — New York"],
+            ["/uber/washington","Uber Tax — Washington"],
+            ["/onlyfans/california","OnlyFans Tax — California"],
+            ["/onlyfans/florida","OnlyFans Tax — Florida"],
+            ["/onlyfans/new-york","OnlyFans Tax — New York"],
+            ["/onlyfans/nevada","OnlyFans Tax — Nevada"],
+            ["/onlyfans/texas","OnlyFans Tax — Texas"],
+            ["/instacart/california","Instacart Tax — California"],
+            ["/instacart/texas","Instacart Tax — Texas"],
+            ["/instacart/illinois","Instacart Tax — Illinois"],
+            ["/instacart/new-york","Instacart Tax — New York"],
+            ["/instacart/georgia","Instacart Tax — Georgia"],
+            ["/airbnb/california","Airbnb Tax — California"],
+            ["/airbnb/florida","Airbnb Tax — Florida"],
+            ["/airbnb/new-york","Airbnb Tax — New York"],
+            ["/airbnb/washington","Airbnb Tax — Washington"],
+            ["/airbnb/colorado","Airbnb Tax — Colorado"],
+            ["/amazon-flex/california","Amazon Flex Tax — California"],
+            ["/amazon-flex/texas","Amazon Flex Tax — Texas"],
+            ["/amazon-flex/florida","Amazon Flex Tax — Florida"],
+            ["/amazon-flex/new-york","Amazon Flex Tax — New York"],
+            ["/amazon-flex/ohio","Amazon Flex Tax — Ohio"],
+          ].map(([href, label]) => (
+            <a key={href} href={href}
+              className="block px-3 py-2 rounded border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors text-center text-xs leading-tight">
+              {label}
+            </a>
+          ))}
+        </div>
+      </section>
+
       </div>
     </>
   );

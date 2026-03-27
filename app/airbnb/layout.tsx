@@ -24,6 +24,30 @@ const gigSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
+
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Airbnb Tax Calculator 2026",
+        "url": "https://www.gigwisetax.com/airbnb",
+        "description": "Free Airbnb host tax calculator 2026. SE tax + federal + state for all 51 states. No signup.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gigwisetax.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://www.gigwisetax.com/calculators" },
+          { "@type": "ListItem", "position": 3, "name": "Airbnb Tax Calculator", "item": "https://www.gigwisetax.com/airbnb" }
+        ]
+      }
+    ]
+  };
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }

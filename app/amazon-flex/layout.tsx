@@ -24,6 +24,30 @@ const gigSchema = {
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
 };
 
+
+  const schemaJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "Amazon Flex Tax Calculator 2026",
+        "url": "https://www.gigwisetax.com/amazon-flex",
+        "description": "Free Amazon Flex driver tax calculator 2026. SE tax 15.3% + federal + state. All 51 states.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gigwisetax.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://www.gigwisetax.com/calculators" },
+          { "@type": "ListItem", "position": 3, "name": "Amazon Flex Tax Calculator", "item": "https://www.gigwisetax.com/amazon-flex" }
+        ]
+      }
+    ]
+  };
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 }
