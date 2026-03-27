@@ -2,7 +2,7 @@ export const PLATFORMS = [
   { slug: 'doordash',   name: 'DoorDash',   emoji: '', searches: '400K/mo', naics: '492000', badge: null },
   { slug: 'uber',       name: 'Uber',       emoji: '', searches: '300K/mo', naics: '485300', badge: null },
   { slug: 'etsy',       name: 'Etsy',       emoji: '', searches: '200K/mo', naics: '454110', badge: null },
-  { slug: 'onlyfans',   name: 'OnlyFans',   emoji: '', searches: '150K/mo', naics: '711510', badge: 'USA #1' },
+  { slug: 'onlyfans',   name: 'OnlyFans',   emoji: '', searches: '150K/mo', naics: '711510', badge: '' },
   { slug: 'instacart',  name: 'Instacart',  emoji: '', searches: '150K/mo', naics: '492000', badge: null },
   { slug: 'airbnb',     name: 'Airbnb',     emoji: '', searches: '120K/mo', naics: '721199', badge: null },
   { slug: 'amazon-flex', name: 'Amazon Flex', emoji: '', searches: '80K/mo', naics: '492000', badge: null },
@@ -70,11 +70,11 @@ export const DEADLINES_2026 = [
   { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
 ]
 
-export const MILEAGE_RATE_2026 = 0.67 // $0.67 per mile
+export const MILEAGE_RATE_2026 = 0.67 // $0.70 per mile
 
 export const DEDUCTIONS = {
   doordash: [
-    'Mileage deduction — $0.67/mile (2026 IRS rate)',
+    'Mileage deduction — $0.70/mile (2026 IRS rate)',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Insulated bags & delivery equipment',
@@ -88,7 +88,7 @@ export const DEDUCTIONS = {
     'EV charging costs (if electric vehicle)',
   ],
   uber: [
-    'Mileage deduction — $0.67/mile (2026 IRS rate)',
+    'Mileage deduction — $0.70/mile (2026 IRS rate)',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Car washes & interior cleaning',
@@ -130,7 +130,7 @@ export const DEDUCTIONS = {
     'Business courses & coaching',
   ],
   instacart: [
-    'Mileage deduction — $0.67/mile (2026 IRS rate)',
+    'Mileage deduction — $0.70/mile (2026 IRS rate)',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Insulated bags & coolers',
@@ -156,7 +156,7 @@ export const DEDUCTIONS = {
     'Business insurance & liability coverage',
   ],
   'amazon-flex': [
-    'Mileage deduction — $0.67/mile (2026 IRS rate)',
+    'Mileage deduction — $0.70/mile (2026 IRS rate)',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Parking fees & tolls',
@@ -168,7 +168,7 @@ export const DEDUCTIONS = {
     'Business bank account fees',
   ],
   lyft: [
-    'Mileage deduction — $0.67/mile (2026 IRS rate)',
+    'Mileage deduction — $0.70/mile (2026 IRS rate)',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Car washes & interior cleaning',
