@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'IRS Mileage Rate 2026: 70 Cents Per Mile — Complete Guide for Gig Workers',
-  description: 'The IRS standard mileage rate for 2026 is 70 cents per mile. Learn how to use it, track miles, and maximize your deduction as a DoorDash, Uber, or Amazon Flex driver.',
+  description: 'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Learn how to use it, track miles, and maximize your deduction as a DoorDash, Uber, or Amazon Flex driver.',
 }
 
 export default function MileageRate2026Post() {
@@ -13,7 +13,7 @@ export default function MileageRate2026Post() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the IRS mileage rate for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 70 cents per mile for business driving. This rate applies to gig workers, self-employed individuals, and employees who drive for work and are not reimbursed."}},{"@type":"Question","name":"How do I calculate my mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"Multiply total business miles driven by 0.70. Example: 20,000 miles x $0.70 = $13,400 deduction. You must keep a contemporaneous mileage log showing date, destination, and business purpose for each trip."}},{"@type":"Question","name":"Should I use standard mileage or actual expenses for 2026?","acceptedAnswer":{"@type":"Answer","text":"Most gig workers benefit more from standard mileage (70 cents/mile). Actual expenses work better for newer, expensive vehicles. You must choose standard mileage in the first year the car is used for business."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the IRS mileage rate for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile for business driving. This rate applies to gig workers, self-employed individuals, and employees who drive for work and are not reimbursed."}},{"@type":"Question","name":"How do I calculate my mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"Multiply total business miles driven by 0.725. Example: 20,000 miles x $0.725 = $13,400 deduction. You must keep a contemporaneous mileage log showing date, destination, and business purpose for each trip."}},{"@type":"Question","name":"Should I use standard mileage or actual expenses for 2026?","acceptedAnswer":{"@type":"Answer","text":"Most gig workers benefit more from standard mileage (70 cents/mile). Actual expenses work better for newer, expensive vehicles. You must choose standard mileage in the first year the car is used for business."}}]}' }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -50,7 +50,7 @@ export default function MileageRate2026Post() {
           </div>
 
           <p style={p}>
-            The IRS announced the standard mileage rate for 2026 is <strong>70 cents per mile</strong> for business use. This is the rate delivery drivers, rideshare drivers, and other gig workers use to calculate their vehicle expense deduction — without tracking actual gas, maintenance, or insurance costs.
+            The IRS announced the standard mileage rate for 2026 is <strong>72.5 cents per mile</strong> for business use. This is the rate delivery drivers, rideshare drivers, and other gig workers use to calculate their vehicle expense deduction — without tracking actual gas, maintenance, or insurance costs.
           </p>
 
           <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>

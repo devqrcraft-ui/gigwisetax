@@ -248,7 +248,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {isPlatformDriver && (
                   <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.70 per mile</div>
+                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.725 per mile</div>
                     <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                       The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
                       Track every delivery mile using a mileage app. On 10,000 miles, that's a <strong>$10,500 deduction</strong> — reducing your taxable income significantly.

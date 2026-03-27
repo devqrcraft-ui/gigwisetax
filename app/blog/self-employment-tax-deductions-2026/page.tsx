@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function DeductionsGuide() {
   const deductions = [
-    { name: 'Standard Mileage Rate', amount: '$0.70 per mile', desc: 'Track every business mile. At 10,000 miles/year = $7,000 deduction. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
+    { name: 'Standard Mileage Rate', amount: '$0.725 per mile', desc: 'Track every business mile. At 10,000 miles/year = $7,000 deduction. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
     { name: 'Home Office Deduction', amount: 'Up to $1,500/year', desc: 'Simplified: $5/sq ft (max 300 sq ft). Regular method: % of rent, utilities, internet. Must be used exclusively for business.', tag: '' },
     { name: 'Phone & Internet', amount: '50-100% of bill', desc: 'If your phone is used for gig work (DoorDash app, messaging, navigation), deduct the business-use percentage.', tag: '' },
     { name: 'Health Insurance Premiums', amount: '100% deductible', desc: "If you're self-employed and not eligible for employer coverage, deduct 100% of health, dental, and vision premiums paid for yourself and family.", tag: 'Big Savings' },

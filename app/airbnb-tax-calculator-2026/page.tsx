@@ -19,7 +19,7 @@ const schema = {
     {
       "@type": "Question",
       "name": "What deductions can Airbnb workers claim?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Airbnb workers can deduct mileage ($0.70/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Airbnb workers can deduct mileage ($0.725/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
     },
     {
       "@type": "Question",

@@ -41,7 +41,7 @@ const FAQ = [
 
 
 const _webAppSchema_grubhub = {"@context":"https://schema.org","@type":"WebApplication","name":"Grubhub Tax Calculator 2026","description":"Calculate taxes for Grubhub drivers. Covers self-employment tax, mileage deduction, and quarterly estimated payments.","url":"https://www.gigwisetax.com/grubhub","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}};
-const _faqSchema_grubhub = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Grubhub drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. After the standard mileage deduction ($0.70/mile in 2026), most drivers reduce their effective rate to 18-25% of gross earnings."}},{"@type":"Question","name":"Does Grubhub send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Grubhub sends a 1099-NEC to drivers who earn $600 or more in a calendar year. All earnings are taxable regardless of whether you receive a 1099."}},{"@type":"Question","name":"Can Grubhub drivers deduct mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct business miles at the IRS standard mileage rate ($0.70/mile for 2026) for miles driven while on active deliveries. Keep a mileage log for accurate records."}},{"@type":"Question","name":"Do Grubhub drivers need to pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes for the year, the IRS requires quarterly estimated payments due April 15, June 16, September 15, and January 15."}}]};
+const _faqSchema_grubhub = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Grubhub drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. After the standard mileage deduction ($0.725/mile in 2026), most drivers reduce their effective rate to 18-25% of gross earnings."}},{"@type":"Question","name":"Does Grubhub send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Grubhub sends a 1099-NEC to drivers who earn $600 or more in a calendar year. All earnings are taxable regardless of whether you receive a 1099."}},{"@type":"Question","name":"Can Grubhub drivers deduct mileage?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct business miles at the IRS standard mileage rate ($0.725/mile for 2026) for miles driven while on active deliveries. Keep a mileage log for accurate records."}},{"@type":"Question","name":"Do Grubhub drivers need to pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes for the year, the IRS requires quarterly estimated payments due April 15, June 16, September 15, and January 15."}}]};
 
 export default function GrubhubPage() {
   const [income, setIncome]   = useState('')
@@ -56,7 +56,7 @@ export default function GrubhubPage() {
   const calculate = () => {
     const gross = parseFloat(income) || 0
     if (!gross) return
-    const mileDeduction = (parseFloat(miles)||0) * 0.70
+    const mileDeduction = (parseFloat(miles)||0) * 0.725
     const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235

@@ -19,7 +19,7 @@ const schema = {
     {
       "@type": "Question",
       "name": "What deductions can Amazon Flex workers claim?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Amazon Flex workers can deduct mileage ($0.70/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Amazon Flex workers can deduct mileage ($0.725/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
     },
     {
       "@type": "Question",
@@ -71,7 +71,7 @@ export default function Page() {
             These deductions reduce your taxable income and SE tax. Track them throughout the year using a spreadsheet or app.
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-            <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Mileage — $0.70/mile for all delivery driving</li>
+            <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Mileage — $0.725/mile for all delivery driving</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Phone mount, chargers, and accessories</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Data plan (business use portion)</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Delivery bags and equipment</li>

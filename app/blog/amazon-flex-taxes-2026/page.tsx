@@ -52,7 +52,7 @@ export default function AmazonFlexTaxesBlogPost() {
               {[
                 'Amazon Flex drivers are 1099 independent contractors — no taxes withheld',
                 'Self-employment tax: 15.3% on 92.35% of net income',
-                'Mileage deduction: 70 cents per mile in 2026',
+                'Mileage deduction: 72.5 cents per mile in 2026',
                 'Must pay quarterly taxes if you expect to owe $1,000+',
                 'Top deductions: mileage, phone, dolly/equipment, parking, tolls',
               ].map(item => <li key={item} style={{ fontSize: 13, color: '#166534', lineHeight: 1.7, marginBottom: 4 }}>{item}</li>)}
@@ -108,12 +108,12 @@ export default function AmazonFlexTaxesBlogPost() {
 
           <h2 style={h2}>The Mileage Deduction: Your Biggest Tax Break</h2>
           <p style={p}>
-            The IRS standard mileage rate for 2026 is <strong>70 cents per mile</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
+            The IRS standard mileage rate for 2026 is <strong>72.5 cents per mile</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
           </p>
           <div style={{ background: '#1a1a2e', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
-              25,000 miles × $0.70 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$17,500 deduction</strong><br />
+              25,000 miles × $0.725 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$17,500 deduction</strong><br />
               At 30% effective rate → saves you approximately <strong style={{ color: '#e8b84b' }}>$5,438 in taxes</strong>
             </div>
           </div>

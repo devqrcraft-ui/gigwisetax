@@ -19,7 +19,7 @@ const schema = {
     {
       "@type": "Question",
       "name": "What deductions can DoorDash workers claim?",
-      "acceptedAnswer": { "@type": "Answer", "text": "DoorDash workers can deduct mileage ($0.70/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
+      "acceptedAnswer": { "@type": "Answer", "text": "DoorDash workers can deduct mileage ($0.725/mile in 2026), phone and data plan, equipment, and 50% of self-employment tax. These deductions directly reduce taxable income and SE tax." }
     },
     {
       "@type": "Question",
@@ -71,7 +71,7 @@ export default function Page() {
             These deductions reduce your taxable income and SE tax. Track them throughout the year using a spreadsheet or app.
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-            <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Mileage deduction — $0.70/mile (IRS 2026 rate) for every delivery mile</li>
+            <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Mileage deduction — $0.725/mile (IRS 2026 rate) for every delivery mile</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Insulated delivery bags and equipment</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Phone and data plan (business use percentage)</li>
             <li style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingBottom: 4 }}>Hot bags, backpacks, and other gear</li>

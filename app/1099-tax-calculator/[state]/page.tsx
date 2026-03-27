@@ -94,7 +94,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               }
             </p>
             <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
-              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage ($0.70/mile in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
+              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage ($0.725/mile in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
             </p>
           </div>
         </div>

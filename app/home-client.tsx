@@ -249,7 +249,7 @@ export default function HomeClient() {
                     <div>
                       <label style={label}>▸ Business Miles Driven</label>
                       <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
-                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>$0.70/mile (IRS 2026 rate)</div>
+                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
@@ -641,7 +641,7 @@ export default function HomeClient() {
             {[
               ['How much tax do gig workers pay?','Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10–22% for most) plus state tax. Total effective rate is typically 25–35%. A DoorDash driver earning $40,000 in California pays roughly $12,000–$14,000 in total taxes.'],
               ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
-              ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is $0.70 per mile. A driver logging 15,000 business miles saves $10,500 in deductible expenses, which reduces SE tax and income tax.'],
+              ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is $0.725 per mile. A driver logging 15,000 business miles saves $10,500 in deductible expenses, which reduces SE tax and income tax.'],
               ['Do OnlyFans creators pay self-employment tax?','Yes. OnlyFans sends a 1099-NEC for earnings over $600. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses.'],
               ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 51 states.'],
               ['Is gig work income taxed differently than W-2?','Yes. W-2 employees split FICA 50/50 with their employer. Gig workers pay both halves (15.3%) but can deduct 50% of SE tax on Form 1040. This makes accurate quarterly payments critical to avoid underpayment penalties.'],
