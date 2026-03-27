@@ -33,7 +33,7 @@ export default function TaxPenaltyFinder() {
   const calculate = () => {
     const inc = parseFloat(income) || 0
     const mi  = parseFloat(miles)  || 0
-    const mileageDed   = hasMileage ? mi * 0.67 : 0
+    const mileageDed   = hasMileage ? mi * 0.70 : 0
     const homeOfficeDed = homeOffice ? 1200 : 0
     const phoneDed     = phone ? inc * 0.04 : 0
     const totalMissed  = mileageDed + homeOfficeDed + phoneDed + 800
@@ -182,10 +182,10 @@ export default function TaxPenaltyFinder() {
           {step === 3 && hasMileage && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.67/mile in 2025</strong> — your biggest deduction</p>
+              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.70/mile in 2025</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
               {miles && <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
-                 Potential deduction: ${(parseFloat(miles)*0.67).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.67*0.28).toLocaleString()} in taxes
+                 Potential deduction: ${(parseFloat(miles)*0.70).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>

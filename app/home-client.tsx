@@ -7,7 +7,7 @@ const PLATFORMS = [
   { name: 'DoorDash',    emoji: '▸', searches: '400K/mo', href: '/doordash'     },
   { name: 'Uber',        emoji: '▸', searches: '300K/mo', href: '/uber'         },
   { name: 'Etsy',        emoji: '▸', searches: '200K/mo', href: '/etsy'         },
-  { name: 'OnlyFans',    emoji: '▸', searches: '150K/mo', href: '/onlyfans', badge: 'USA #1' },
+  { name: 'OnlyFans',    emoji: '▸', searches: '150K/mo', href: '/onlyfans' },
   { name: 'Instacart',   emoji: '▸', searches: '150K/mo', href: '/instacart'    },
   { name: 'Airbnb',      emoji: '▸', searches: '120K/mo', href: '/airbnb'       },
   { name: 'Amazon Flex', emoji: '▸', searches: '80K/mo',  href: '/amazon-flex'  },
@@ -220,7 +220,7 @@ export default function HomeClient() {
                     <div>
                       <label style={label}>▸ Gig Platform</label>
                       <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
-                        {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}{p.badge ? ' — USA #1' : ''}</option>)}
+                        {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
                       </select>
                     </div>
                     <div>
@@ -396,7 +396,7 @@ export default function HomeClient() {
                   {PLATFORMS.map(p => (
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                       <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', transition: 'all .18s', position: 'relative' as const }}>
-                        {p.badge && <div style={{ position: 'absolute', top: 5, right: 5, background: '#1a1a2e', color: '#e8b84b', fontSize: 8, padding: '1px 4px', borderRadius: 2, fontWeight: 800 }}>USA #1</div>}
+                        
                         <div style={{ fontSize: 22, marginBottom: 4 }}></div>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
                         <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
@@ -509,7 +509,7 @@ export default function HomeClient() {
                       <tr key={p.name} style={{ borderBottom: '1px solid #f0f1f3', background: i%2===0 ? '#fff' : '#fafafa' }}>
                         <td style={{ padding: '12px 16px', fontWeight: 700, fontSize: 14 }}>
                           <span style={{ fontSize: 18, marginRight: 10 }}></span>{p.name}
-                          {p.badge && <span style={{ background: '#1a1a2e', color: '#e8b84b', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginLeft: 8, fontWeight: 800 }}>USA #1</span>}
+                          
                         </td>
                         <td style={{ padding: '12px 16px', fontWeight: 700, color: '#1a1a2e' }}>{p.searches}</td>
                         <td style={{ padding: '12px 16px', color: '#374151' }}>15.3%</td>

@@ -9,7 +9,7 @@ const NAV = [
       { label: '▸ DoorDash Tax Calculator',      href: '/doordash',      sub: '400K/mo' },
       { label: '▸ Uber Driver Tax Calculator',   href: '/uber',          sub: '300K/mo' },
       { label: '▸ Etsy Seller Tax Calculator',   href: '/etsy',          sub: '200K/mo' },
-      { label: '▸ OnlyFans Tax Calculator',       href: '/onlyfans',      sub: 'USA #1'  },
+      { label: '▸ OnlyFans Tax Calculator',       href: '/onlyfans'  },
       { label: '▸ Instacart Tax Calculator',     href: '/instacart',     sub: '150K/mo' },
       { label: '▸ Airbnb Host Tax Calculator',   href: '/airbnb',        sub: '120K/mo' },
       { label: '▸ Amazon Flex Tax Calculator',   href: '/amazon-flex',   sub: '80K/mo'  },
