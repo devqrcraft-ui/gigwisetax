@@ -35,7 +35,7 @@ export default function BlogPost() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Mileage</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>$0.67/mile — includes deadhead miles between rides</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>$0.70/mile — includes deadhead miles between rides</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Phone & Data</div>

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Instacart Shopper Taxes 2026 — Gig Worker Tax Guide | GigWiseTax',
-  description: 'How Instacart shoppers and delivery workers pay taxes in 2026. SE tax 15.3%, mileage deduction $0.67/mile, quarterly estimated taxes, Schedule C, and 1099-NEC filing guide.',
+  description: 'How Instacart shoppers and delivery workers pay taxes in 2026. SE tax 15.3%, mileage deduction $0.70/mile, quarterly estimated taxes, Schedule C, and 1099-NEC filing guide.',
   keywords: 'Instacart taxes 2026, Instacart self employment tax, Instacart shopper 1099, Instacart mileage deduction 2026, Instacart quarterly taxes',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
@@ -26,7 +26,7 @@ const faqSchema = {
     {
       '@type': 'Question',
       name: 'Can Instacart shoppers deduct mileage in 2026?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Instacart shoppers can deduct $0.67 per mile driven for business in 2026. This includes driving to the store, during shopping (parking lot counts), and delivering to customers. Track every mile using a mileage app. On 10,000 miles, this is a $6,700 deduction.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Yes. Instacart shoppers can deduct $0.70 per mile driven for business in 2026. This includes driving to the store, during shopping (parking lot counts), and delivering to customers. Track every mile using a mileage app. On 10,000 miles, this is a $6,700 deduction.' },
     },
   ],
 }
@@ -55,7 +55,7 @@ export default function InstacartTaxGuide() {
             </h1>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
               How Instacart in-store shoppers and full-service shoppers pay taxes in 2026.
-              Covers self-employment tax, the $0.67/mile mileage deduction, quarterly estimated payments,
+              Covers self-employment tax, the $0.70/mile mileage deduction, quarterly estimated payments,
               and every deduction available to Instacart workers.
             </p>
           </div>
@@ -79,7 +79,7 @@ export default function InstacartTaxGuide() {
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
                   <li><strong>In-store shoppers</strong> are W-2 employees — taxes withheld automatically</li>
                   <li><strong>Full-service shoppers</strong> are 1099 contractors — you pay taxes yourself</li>
-                  <li><strong>2026 mileage rate: $0.67/mile</strong> for all delivery miles</li>
+                  <li><strong>2026 mileage rate: $0.70/mile</strong> for all delivery miles</li>
                   <li><strong>1099-NEC sent at $600+</strong> but all income is taxable regardless</li>
                   <li><strong>Set aside 25–30%</strong> of every Instacart payment for taxes</li>
                   <li><strong>NAICS Code 492000</strong> — Couriers and Messengers</li>
@@ -111,10 +111,10 @@ export default function InstacartTaxGuide() {
                 </div>
               </div>
 
-              <h2 style={h2}>Instacart 2026 Mileage Deduction ($0.67/mile)</h2>
+              <h2 style={h2}>Instacart 2026 Mileage Deduction ($0.70/mile)</h2>
               <p style={prose}>
                 The mileage deduction is the most valuable tax deduction for Instacart full-service shoppers.
-                The 2026 IRS standard mileage rate is <strong>$0.67 per mile</strong> — the highest in recent years.
+                The 2026 IRS standard mileage rate is <strong>$0.70 per mile</strong> — the highest in recent years.
                 You can deduct mileage driven from the moment you accept a batch until you complete the last delivery.
               </p>
               <p style={prose}>
@@ -143,7 +143,7 @@ export default function InstacartTaxGuide() {
               <h2 style={h2}>Top Deductions for Instacart Shoppers 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
-                  { icon: '', name: 'Mileage ($0.67/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
+                  { icon: '', name: 'Mileage ($0.70/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
                   { icon: '', name: 'Phone Bill (business %)', detail: 'If you use your phone 70% for Instacart, deduct 70% of your monthly bill.' },
                   { icon: '', name: 'Insulated Bags & Coolers', detail: 'Grocery bags, insulated totes, cooler bags purchased specifically for Instacart deliveries.' },
                   { icon: '', name: 'Auto Insurance (business %)', detail: 'Deduct the business portion if using actual expense method (not mileage method).' },
@@ -200,7 +200,7 @@ export default function InstacartTaxGuide() {
                 },
                 {
                   q: 'Should I track miles or use actual expenses for Instacart?',
-                  a: "Most Instacart shoppers benefit more from the standard mileage method ($0.67/mile) because it's simpler and often yields a larger deduction than actual vehicle expenses. You cannot switch back to the actual expense method after using the standard mileage rate in the first year of vehicle use.",
+                  a: "Most Instacart shoppers benefit more from the standard mileage method ($0.70/mile) because it's simpler and often yields a larger deduction than actual vehicle expenses. You cannot switch back to the actual expense method after using the standard mileage rate in the first year of vehicle use.",
                 },
               ].map((item, i) => (
                 <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>

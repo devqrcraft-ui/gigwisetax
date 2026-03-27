@@ -44,7 +44,7 @@ export default function DoorDashTaxesBlog() {
       <div style={{ background: '#fff' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
-            <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.67/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
+            <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.70/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
           </div>
 
           <p style={p}>There are over 7 million active DoorDash drivers in the United States. Most of them overpay taxes by $1,000–$4,000 per year — simply because they don't know the rules. This guide covers everything you need to know about DoorDash taxes in 2025.</p>
@@ -70,8 +70,8 @@ export default function DoorDashTaxesBlog() {
           </div>
 
           <h2 style={h2}>Top DoorDash Tax Deductions for 2025</h2>
-          <h3 style={h3}>1. Mileage Deduction — $0.67 per mile</h3>
-          <p style={p}>The mileage deduction is the single biggest tax break for DoorDash drivers. The 2025 IRS standard mileage rate is $0.67 per mile for business driving. On 15,000 business miles per year, that's a $10,050 deduction — saving approximately $2,940 in taxes (at 28% combined rate).</p>
+          <h3 style={h3}>1. Mileage Deduction — $0.70 per mile</h3>
+          <p style={p}>The mileage deduction is the single biggest tax break for DoorDash drivers. The 2025 IRS standard mileage rate is $0.70 per mile for business driving. On 15,000 business miles per year, that's a $10,050 deduction — saving approximately $2,940 in taxes (at 28% combined rate).</p>
           <div style={tip}> <strong>Pro tip:</strong> Track miles from the moment you open the DoorDash app until you complete your last delivery — not just while food is in your car. App opening, waiting at restaurants, and driving between orders all count.</div>
 
           <h3 style={h3}>2. Phone & Data Plan</h3>

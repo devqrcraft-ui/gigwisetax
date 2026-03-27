@@ -90,7 +90,7 @@ const posts = [
   },
   {
     "slug": "mileage-rate-2026",
-    "title": "IRS Mileage Rate 2026 — $0.67/Mile",
+    "title": "IRS Mileage Rate 2026 — $0.70/Mile",
     "desc": "How to track and deduct mileage for maximum savings.",
     "tag": "Mileage",
     "tagColor": "#e8b84b",
