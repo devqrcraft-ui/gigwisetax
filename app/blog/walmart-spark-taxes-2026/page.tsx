@@ -10,7 +10,7 @@ export default function BlogPost() {
   return (
     <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors. They pay SE tax (15.3%) plus income tax on net profit. Spark sends a 1099-NEC for earnings over $600. Set aside 25-30% of each payment for taxes."}},{"@type":"Question","name":"What mileage can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers deduct miles driven from the Walmart store to the customer at 67 cents/mile (2026 IRS rate). Keep a daily mileage log. On 12,000 delivery miles, the deduction is $8,040 — saving roughly $2,000-$2,500 in taxes."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes from drivers?","acceptedAnswer":{"@type":"Answer","text":"No. Spark does not withhold any federal, state, or FICA taxes from contractor payments. Drivers are responsible for quarterly estimated payments to the IRS to avoid underpayment penalties."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors. They pay SE tax (15.3%) plus income tax on net profit. Spark sends a 1099-NEC for earnings over $600. Set aside 25-30% of each payment for taxes."}},{"@type":"Question","name":"What mileage can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers deduct miles driven from the Walmart store to the customer at 70 cents/mile (2026 IRS rate). Keep a daily mileage log. On 12,000 delivery miles, the deduction is $8,040 — saving roughly $2,000-$2,500 in taxes."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes from drivers?","acceptedAnswer":{"@type":"Answer","text":"No. Spark does not withhold any federal, state, or FICA taxes from contractor payments. Drivers are responsible for quarterly estimated payments to the IRS to avoid underpayment penalties."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}
@@ -31,7 +31,7 @@ export default function BlogPost() {
       </h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-          <div style={{ fontWeight: 700, marginBottom: 4 }}> Mileage ($0.67/mile)</div>
+          <div style={{ fontWeight: 700, marginBottom: 4 }}> Mileage ($0.70/mile)</div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Every mile driving to Walmart and to customers is deductible</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>

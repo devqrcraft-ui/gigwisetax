@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = [" Mileage ($0.67/mile)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
+const DEDUCTIONS = [" Mileage ($0.70/mile)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
 
 export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
@@ -346,7 +346,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Grubhub drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers are 1099 independent contractors. They pay self-employment tax (15.3%) plus income tax on net profit. Grubhub sends a 1099-NEC for earnings over $600."}},{"@type":"Question","name":"What can Grubhub drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers can deduct mileage (67 cents/mile in 2026), insulated bags, phone bill, and other direct delivery expenses. Track every mile — it is the biggest deduction available."}},{"@type":"Question","name":"Does Grubhub withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Grubhub does not withhold taxes from driver earnings. Drivers are responsible for paying quarterly estimated taxes to avoid penalties."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Grubhub drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers are 1099 independent contractors. They pay self-employment tax (15.3%) plus income tax on net profit. Grubhub sends a 1099-NEC for earnings over $600."}},{"@type":"Question","name":"What can Grubhub drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers can deduct mileage (70 cents/mile in 2026), insulated bags, phone bill, and other direct delivery expenses. Track every mile — it is the biggest deduction available."}},{"@type":"Question","name":"Does Grubhub withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Grubhub does not withhold taxes from driver earnings. Drivers are responsible for paying quarterly estimated taxes to avoid penalties."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}
@@ -384,7 +384,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
           { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
-          { label: 'Mileage Deduction', value: '$0.67/mi', note: '2026 IRS Rate' },
+          { label: 'Mileage Deduction', value: '$0.70/mi', note: '2026 IRS Rate' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 6 }}>{c.label}</div>

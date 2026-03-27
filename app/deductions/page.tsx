@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 
 const DEDUCTIONS = [
-  { id: 1, category: ' Vehicle', title: 'Mileage Deduction', desc: '$0.67 per business mile (2026 IRS rate)', savings: 'Avg $3,500/yr', checked: false },
+  { id: 1, category: ' Vehicle', title: 'Mileage Deduction', desc: '$0.70 per business mile (2026 IRS rate)', savings: 'Avg $3,500/yr', checked: false },
   { id: 2, category: ' Vehicle', title: 'Car Insurance (business %)', desc: 'Deduct the % of time used for work', savings: 'Avg $400/yr', checked: false },
   { id: 3, category: ' Home', title: 'Home Office', desc: '$5 per sq ft, up to 300 sq ft = $1,500 max', savings: 'Up to $1,500/yr', checked: false },
   { id: 4, category: ' Home', title: 'Internet Bill (business %)', desc: 'Deduct 50-80% if used for work', savings: 'Avg $600/yr', checked: false },

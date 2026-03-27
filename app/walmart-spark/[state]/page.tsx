@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = [" Mileage ($0.67/mile)"," Phone & data plan"," Insulated grocery bags"," Vehicle maintenance"," Parking & tolls"," Delivery apps"]
+const DEDUCTIONS = [" Mileage ($0.70/mile)"," Phone & data plan"," Insulated grocery bags"," Vehicle maintenance"," Parking & tolls"," Delivery apps"]
 
 export async function generateStaticParams() {
   return STATES.map(s => ({ state: s.slug }))
@@ -346,7 +346,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors who pay self-employment tax (15.3%) plus income tax. Spark sends a 1099-NEC for earnings over $600. Set aside 25-30% of earnings for taxes."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers can deduct mileage (67 cents/mile in 2026), insulated bags, phone costs, and any direct delivery expenses. The mileage deduction typically saves $3,000-$8,000 per year."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Spark drivers are independent contractors. No taxes are withheld from earnings. You must make quarterly IRS estimated payments to avoid underpayment penalties."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors who pay self-employment tax (15.3%) plus income tax. Spark sends a 1099-NEC for earnings over $600. Set aside 25-30% of earnings for taxes."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers can deduct mileage (70 cents/mile in 2026), insulated bags, phone costs, and any direct delivery expenses. The mileage deduction typically saves $3,000-$8,000 per year."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Spark drivers are independent contractors. No taxes are withheld from earnings. You must make quarterly IRS estimated payments to avoid underpayment penalties."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}
@@ -384,7 +384,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
           { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
-          { label: 'Mileage Deduction', value: '$0.67/mi', note: '2026 IRS Rate' },
+          { label: 'Mileage Deduction', value: '$0.70/mi', note: '2026 IRS Rate' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 6 }}>{c.label}</div>
