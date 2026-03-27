@@ -21,7 +21,7 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (72.5¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
+  { icon:'▸', label:'Mileage (70¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Portion used for the Grubhub driver app and navigation. Usually 50–80% deductible.' },
   { icon:'', label:'Hot/Cold Delivery Bags', desc:'Required equipment for food delivery. 100% deductible as business equipment.' },
   { icon:'', label:'Car Insurance (business %)', desc:'Pro-rata share of auto insurance for business miles driven.' },
@@ -93,7 +93,7 @@ export default function GrubhubPage() {
             Free self-employment tax calculator for Grubhub delivery drivers. Estimate SE tax (15.3%), federal and state income tax, plus your mileage deduction — for all 51 states. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction 72.5¢',' No Registration',' Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction 70¢',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -122,7 +122,7 @@ export default function GrubhubPage() {
                 <div>
                   <label style={lbl}>▸ Business Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>72.5¢/mile IRS standard rate 2026</div>
+                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>70¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>

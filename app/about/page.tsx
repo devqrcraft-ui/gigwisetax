@@ -79,7 +79,7 @@ export default function AboutPage() {
               ' Grubhub driver taxes',
               ' All 51 U.S. states + D.C.',
               ' 2026 quarterly deadlines',
-              ' IRS mileage deduction (72.5¢)',
+              ' IRS mileage deduction (70¢)',
               ' Schedule SE calculations',
             ].map(item => (
               <div key={item} style={{ fontSize: 13, color: '#374151', padding: '8px 12px', background: '#f8fafc', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>

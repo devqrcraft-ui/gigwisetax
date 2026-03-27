@@ -65,7 +65,7 @@ export default function GrubhubVsDoorDashPost() {
             {[
               ['Worker Classification', '1099 Contractor', '1099 Contractor'],
               ['SE Tax Rate', '15.3%', '15.3%'],
-              ['Mileage Deduction 2026', '72.5¢/mile', '72.5¢/mile'],
+              ['Mileage Deduction 2026', '70¢/mile', '70¢/mile'],
               ['1099 Form Type', '1099-NEC', '1099-NEC'],
               ['1099 Threshold', '$600+', '$600+'],
               ['Quarterly Tax Req.', 'If owe $1,000+', 'If owe $1,000+'],

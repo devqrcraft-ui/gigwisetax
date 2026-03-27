@@ -21,7 +21,7 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
+  { icon:'▸', label:'Mileage (70¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
   { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
   { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
@@ -35,7 +35,7 @@ const FAQ = [
   { q:'Does Walmart Spark send a 1099?', a:'Yes. If you earn $600 or more in a calendar year, Walmart Spark (via DDX/branch) issues a 1099-NEC. You must report all income even if no 1099 is received.' },
   { q:'What is the self-employment tax rate for Spark drivers?', a:'15.3% on 92.35% of your net earnings. This covers Social Security (12.4%) and Medicare (2.9%). You can deduct half of this SE tax from your gross income.' },
   { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. Deadlines: Q1 Apr 15, Q2 Jun 16, Q3 Sep 15, Q4 Jan 15.' },
-  { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Track every mile from the moment you accept an order until you return home after the last delivery.' },
+  { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS standard mileage rate for 2026 is 70 cents per mile. Track every mile from the moment you accept an order until you return home after the last delivery.' },
   { q:'Can I deduct my car payment as a Spark driver?', a:'Not directly. You can use either the standard mileage rate OR actual expenses (depreciation, gas, insurance) — but not both. Most drivers find standard mileage simpler and more beneficial.' },
 ]
 
@@ -128,7 +128,7 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
+                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>IRS rate: 70¢/mile for 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
@@ -209,7 +209,7 @@ export default function WalmartSparkPage() {
                 ))}
               </div>
               <div style={{ marginTop:16, background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', fontSize:13, color:'#166534' }}>
-                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢/mile often saves more than actual expenses.
+                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 70¢/mile often saves more than actual expenses.
               </div>
             </div>
           </div>
