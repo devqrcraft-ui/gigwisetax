@@ -162,7 +162,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 <h2 style={{ fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
                   How {platform.name} Taxes Work in 2026
                 </h2>
-                <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
                   As a {platform.name} worker, you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
                   This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from your payments.
                   You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
@@ -170,7 +170,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                   <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
-                  <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                     Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
                     If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
                   </p>
@@ -186,8 +186,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                     { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#1a1a2e' },
                     { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
                   ].map(item => (
-                    <div key={item.label} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#6c757d', marginBottom: 4 }}>{item.label}</div>
+                    <div key={item.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
                       <div style={{ fontSize: 22, fontWeight: 900, color: item.color, marginBottom: 4 }}>{item.value}</div>
                       <div style={{ fontSize: 11, color: '#9ca3af' }}>{item.detail}</div>
                     </div>
@@ -212,7 +212,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                           {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 6, fontWeight: 800 }}>NOW</span>}
                           {d.q} 2026
                         </td>
-                        <td style={{ padding: '12px 14px', color: '#374151', fontSize: 13 }}>{d.period}</td>
+                        <td style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{d.period}</td>
                         <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>{d.due}</td>
                         <td style={{ padding: '12px 14px' }}>
                           <span style={{ background: i === 0 ? 'rgba(178,34,52,0.25)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#fca5a5' : 'rgba(255,255,255,0.7)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
@@ -247,7 +247,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {isPlatformDriver && (
                   <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                     <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.725 per mile</div>
-                    <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
                       Track every delivery mile using a mileage app. On 10,000 miles, that's a <strong>$10,500 deduction</strong> — reducing your taxable income significantly.
                       Use the actual expense method if your vehicle costs exceed the standard rate.
@@ -258,7 +258,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {isRental && (
                   <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                     <div style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
-                    <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       If you rent your property for <strong>14 days or fewer</strong> per year, rental income is tax-free (Section 280A exclusion).
                       Above 14 days, you must report income but can deduct a proportional share of mortgage interest, property taxes, utilities, and depreciation.
                     </p>
@@ -266,9 +266,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 )}
 
                 {isCreator && (
-                  <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                  <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                     <div style={{ fontWeight: 700, color: '#b45309', marginBottom: 8 }}> {platform.name} Creator Tip: Home Office Deduction</div>
-                    <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       If you use a dedicated space at home exclusively for your {platform.name} business, you can deduct home office expenses.
                       The simplified method allows <strong>$5 per square foot</strong> (up to 300 sq ft = $1,500 deduction).
                       Equipment, camera gear, and software are fully deductible in the year of purchase under Section 179.
@@ -304,12 +304,12 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>
                     <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
-                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                   </div>
                 ))}
 
                 {/* DISCLAIMER */}
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6, textAlign: 'justify' as const }}>
+                <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' as const }}>
                    <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
                 </div>
               </div>
@@ -324,7 +324,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
                 {PLATFORMS.filter(p => p.slug !== 'onlyfans').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#fff', position: 'relative' as const }}>
+                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#0d1b3e', position: 'relative' as const }}>
                       <div style={{ fontSize: 24, marginBottom: 5 }}></div>
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
                       <div style={{ fontSize: 11, color: '#B22234', fontWeight: 600 }}>{p.searches}</div>
@@ -338,16 +338,16 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           {/* SIDEBAR */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             {/* AD */}
-            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             {/* OTHER CALCULATORS */}
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
             </div>
-              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Etsy Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/airbnb" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Airbnb Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Etsy Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/airbnb" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Airbnb Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
           </div>
 
           {/* OWN BANNER — privatepaycheck.com */}
@@ -365,7 +365,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* STATES LINKS */}
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Top States</span>
               </div>
@@ -380,7 +380,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 { slug: 'georgia', name: 'Georgia', rate: '5.5%' },
               ].map(s => (
                 <a key={s.slug} href={`/${'onlyfans'}/${s.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'rgba(255,255,255,0.8)' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.name} in {s.name}</span>
                     <span style={{ fontSize: 11, color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700 }}>{s.rate}</span>
                   </div>
@@ -389,16 +389,16 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* AD 2 */}
-            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             </div>
 
             {/* MULTI-APP BANNER */}
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Drive for multiple apps?</span>
               </div>
               <div style={{ padding: '14px 16px' }}>
-                <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, marginBottom: 10 }}>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, marginBottom: 10 }}>
                   Working Uber + DoorDash, Instacart + Amazon Flex, or other combinations? Learn how to combine your gig income for taxes.
                 </div>
                 <a href="/multi-app-gig-taxes-2026" style={{ textDecoration: 'none' }}>
@@ -410,9 +410,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* TRUST */}
-            <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
-              <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, textAlign: 'justify' as const }}>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' as const }}>
                 GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. No personal data is stored.
               </div>
             </div>
