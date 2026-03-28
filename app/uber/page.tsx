@@ -309,7 +309,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 ))}
 
                 {/* DISCLAIMER */}
-                <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' as const }}>
+                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' as const }}>
                    <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
                 </div>
               </div>
@@ -325,8 +325,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {PLATFORMS.filter(p => p.slug !== 'uber').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#0d1b3e', position: 'relative' as const }}>
-                      <div style={{ fontSize: 24, marginBottom: 5 }}></div>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
+                      
+                      <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{p.name}</div>
                       <div style={{ fontSize: 11, color: '#B22234', fontWeight: 600 }}>{p.searches}</div>
                     </div>
                   </a>
