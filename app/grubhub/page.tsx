@@ -145,8 +145,8 @@ export default function GrubhubPage() {
             </div>
 
             {result && (
-              <div style={{ borderTop:'1px solid #e2e5e9', padding:24 }}>
-                <div style={{ fontSize:13, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}> Your 2026 Tax Estimate</div>
+              <div style={{ borderTop:'1px solid rgba(255,255,255,0.08)', padding:24 }}>
+                <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,0.55)', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}> Your 2026 Tax Estimate</div>
                 {result.mileDeduction > 0 && (
                   <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', marginBottom:16, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                     <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>▸ Mileage Deduction Applied</span>
@@ -161,7 +161,7 @@ export default function GrubhubPage() {
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
                     <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
-                      <div style={{ fontSize:11, color:'#6c757d', fontWeight:600, marginBottom:6 }}>{r.label}</div>
+                      <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)', fontWeight:600, marginBottom:6 }}>{r.label}</div>
                       <div style={{ fontSize:20, fontWeight:900, color:r.color }}>{r.val}</div>
                       <div style={{ fontSize:10, color:'#9ca3af', marginTop:4 }}>{r.sub}</div>
                     </div>
@@ -172,7 +172,7 @@ export default function GrubhubPage() {
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
-                <div style={{ background:'#fffbeb', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
+                <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid rgba(232,184,75,0.35)', borderRadius:6, padding:'12px 16px', fontSize:12, color:'rgba(232,184,75,0.9)' }}>
                   <strong> Disclaimer:</strong> Estimates only. Not tax advice. Consult a CPA or tax professional for your specific situation.
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function GrubhubPage() {
                   <div key={d.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 16px' }}>
                     <div style={{ fontSize:20, marginBottom:6 }}>{d.icon}</div>
                     <div style={{ fontSize:13, fontWeight:700, color:'#1a1a2e', marginBottom:4 }}>{d.label}</div>
-                    <div style={{ fontSize:12, color:'#6c757d', lineHeight:1.6 }}>{d.desc}</div>
+                    <div style={{ fontSize:12, color:'rgba(255,255,255,0.55)', lineHeight:1.6 }}>{d.desc}</div>
                   </div>
                 ))}
               </div>
@@ -211,7 +211,7 @@ export default function GrubhubPage() {
                     <span style={{ fontSize:14, fontWeight:600, color:'#1a1a2e' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
                   </div>
-                  {openFaq===i && <div style={{ padding:'0 20px 16px', fontSize:13, color:'#374151', lineHeight:1.7 }}>{f.a}</div>}
+                  {openFaq===i && <div style={{ padding:'0 20px 16px', fontSize:13, color:'rgba(255,255,255,0.8)', lineHeight:1.7 }}>{f.a}</div>}
                 </div>
               ))}
             </div>
@@ -257,11 +257,11 @@ export default function GrubhubPage() {
           </div>
 
           <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:16 }}>
-            <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
-            <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Grubhub, IRS, or any agency. No data stored. Estimates only — not tax advice.</div>
+            <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,0.55)', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
+            <div style={{ fontSize:12, color:'rgba(255,255,255,0.8)', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Grubhub, IRS, or any agency. No data stored. Estimates only — not tax advice.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l,h]) => (
-                <Link key={l} href={h} style={{ fontSize:11, color:'#6c757d', textDecoration:'underline' }}>{l}</Link>
+                <Link key={l} href={h} style={{ fontSize:11, color:'rgba(255,255,255,0.5)', textDecoration:'underline' }}>{l}</Link>
               ))}
             </div>
           </div>
@@ -270,18 +270,18 @@ export default function GrubhubPage() {
 
 
           {/* INTERNAL LINKS */}
-          <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
+          <div style={{ background:'#0d1b3e', border:'1px solid rgba(255,255,255,0.12)', borderRadius:10, overflow:'hidden', marginBottom:20, boxShadow:'0 2px 12px rgba(0,0,0,.3)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/doordash" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ DoorDash Tax Calculator</a>
-              <a href="/blog/grubhub-vs-doordash-taxes-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Grubhub vs DoorDash Taxes</a>
-              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> Quarterly Tax Guide</a>
+              <a href="/doordash" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}>▸ DoorDash Tax Calculator</a>
+              <a href="/blog/grubhub-vs-doordash-taxes-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}>▸ Grubhub vs DoorDash Taxes</a>
+              <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}> Quarterly Tax Guide</a>
             </div>
           </div>
 
