@@ -164,7 +164,7 @@ export default function WalmartSparkPage() {
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }} className="results-row">
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
-                    { label:'Federal Income Tax',  val:fmt(result.federal), color:'#1a1a2e', sub:'After SE deduction' },
+                    { label:'Federal Income Tax',  val:fmt(result.federal), color:'rgba(255,255,255,0.8)', sub:'After SE deduction' },
                     { label:'State Income Tax',    val:fmt(result.stateTax), color:'rgba(255,255,255,0.8)', sub:STATES.find(s=>s.code===stateCode)?.name },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
@@ -203,7 +203,7 @@ export default function WalmartSparkPage() {
                 {DEDUCTIONS.map(d => (
                   <div key={d.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 16px' }}>
                     <div style={{ fontSize:20, marginBottom:6 }}>{d.icon}</div>
-                    <div style={{ fontSize:13, fontWeight:700, color:'#1a1a2e', marginBottom:4 }}>{d.label}</div>
+                    <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,0.9)', marginBottom:4 }}>{d.label}</div>
                     <div style={{ fontSize:12, color:'rgba(255,255,255,0.55)', lineHeight:1.6 }}>{d.desc}</div>
                   </div>
                 ))}
@@ -224,7 +224,7 @@ export default function WalmartSparkPage() {
               {FAQ.map((f, i) => (
                 <div key={i} style={{ borderBottom:'1px solid #f0f1f3' }}>
                   <div onClick={() => setOpenFaq(openFaq===i ? null : i)} style={{ padding:'16px 20px', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                    <span style={{ fontSize:14, fontWeight:600, color:'#1a1a2e' }}>{f.q}</span>
+                    <span style={{ fontSize:14, fontWeight:600, color:'rgba(255,255,255,0.9)' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
                   </div>
                   {openFaq===i && (
@@ -286,7 +286,7 @@ export default function WalmartSparkPage() {
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
-                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.name} Tax Calculator</span>
+                  <span style={{ fontSize:13, color:'rgba(255,255,255,0.85)', fontWeight:500 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>
               </Link>
