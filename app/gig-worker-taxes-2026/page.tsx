@@ -56,7 +56,7 @@ const CATEGORIES = [
   },
   {
     title: '▸ Hosts & Rentals',
-    color: '#10b981',
+    color: '#4ade80',
     desc: 'Airbnb, Turo — rental income + depreciation',
     platforms: [
       { name: 'Airbnb Tax Calculator', href: '/airbnb', sub: '$45k → ~$32k after tax' },

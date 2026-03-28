@@ -52,7 +52,7 @@ export default function HomeOfficeBlog() {
           <p style={p}>To qualify, you need a space in your home that you use <strong>regularly and exclusively</strong> for your gig work business. This means:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '0 0 20px' }}>
             <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: 14 }}>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 8 }}> QUALIFIES</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80', marginBottom: 8 }}> QUALIFIES</div>
               {['Dedicated desk in spare bedroom used only for work','Craft room used exclusively for Etsy orders','Recording studio used only for content creation','Home office with door, used only for business'].map(i => (
                 <div key={i} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 5 }}>• {i}</div>
               ))}
@@ -72,7 +72,7 @@ export default function HomeOfficeBlog() {
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
               <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.07)', fontSize: 14 }}>
                 <span style={{ color: 'rgba(255,255,255,0.85)' }}>{r.sqft} sq ft workspace</span>
-                <span style={{ fontWeight: 700, color: '#16a34a' }}>{r.ded} deduction</span>
+                <span style={{ fontWeight: 700, color: '#4ade80' }}>{r.ded} deduction</span>
               </div>
             ))}
           </div>

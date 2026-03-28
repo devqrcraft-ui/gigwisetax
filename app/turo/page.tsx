@@ -145,8 +145,8 @@ export default function TuroPage() {
             {result && (
               <div style={{ borderTop:'1px solid #e2e5e9', padding:24 }}>
                 {result.businessPct && (
-                  <div style={{ background:'#eff6ff', border:'1px solid #bfdbfe', borderRadius:6, padding:'12px 16px', marginBottom:16 }}>
-                    <span style={{ fontSize:13, color:'#1e40af', fontWeight:600 }}> Business Use Percentage: <strong>{result.businessPct}%</strong> — apply to all vehicle expenses</span>
+                  <div style={{ background:'rgba(3,105,161,0.12)', border:'1px solid rgba(125,211,252,0.25)', borderRadius:6, padding:'12px 16px', marginBottom:16 }}>
+                    <span style={{ fontSize:13, color:'#7dd3fc', fontWeight:600 }}> Business Use Percentage: <strong>{result.businessPct}%</strong> — apply to all vehicle expenses</span>
                   </div>
                 )}
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }} className="results-row">

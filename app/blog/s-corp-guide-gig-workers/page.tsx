@@ -56,7 +56,7 @@ export default function SCorpGuideBlog() {
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6 }}>$80,000 profit<br/>× 15.3% SE tax<br/>= <strong>$12,240 in SE tax</strong></p>
             </div>
             <div style={{ background: 'rgba(5,150,105,0.12)', border: '2px solid #86efac', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontSize: 13, fontWeight: 800, color: '#16a34a', marginBottom: 8 }}>S-CORPORATION</div>
+              <div style={{ fontSize: 13, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}>S-CORPORATION</div>
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.6 }}>$40k salary × 15.3% = $6,120<br/>$40k distributions × 0% = $0<br/>= <strong>$6,120 total</strong> (save $6,120)</p>
             </div>
           </div>

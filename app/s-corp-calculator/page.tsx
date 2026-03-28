@@ -94,7 +94,7 @@ export default function SCorpCalculator() {
 
           {income && (
             <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '12px 16px', marginTop: 12 }}>
-              <span style={{ fontSize: 13, color: '#16a34a', fontWeight: 600 }}>
+              <span style={{ fontSize: 13, color: '#4ade80', fontWeight: 600 }}>
                  Estimated S-Corp salary: {fmt(Math.min(parseFloat(income) * 0.5, 80000))} — distributions: {fmt(Math.max(parseFloat(income) - Math.min(parseFloat(income) * 0.5, 80000), 0))}
               </span>
             </div>
@@ -141,7 +141,7 @@ export default function SCorpCalculator() {
                 <Row l="TOTAL TAX" v={fmt(result.soleTotal)} b />
               </div>
               <div style={{ background: 'rgba(5,150,105,0.12)', border: '2px solid #86efac', borderRadius: 8, padding: 16 }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: '#16a34a', marginBottom: 12, textAlign: 'center' as const }}>S-CORPORATION</div>
+                <div style={{ fontSize: 13, fontWeight: 800, color: '#4ade80', marginBottom: 12, textAlign: 'center' as const }}>S-CORPORATION</div>
                 <Row l={`Payroll Tax on ${fmt(result.sal)}`} v={fmt(result.scorpPayroll)} />
                 <Row l="Federal Income Tax" v={fmt(result.scorpFed)} />
                 <Row l="Est. Compliance" v={fmt(result.scorpCost)} />

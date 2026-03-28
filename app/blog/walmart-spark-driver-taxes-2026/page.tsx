@@ -46,7 +46,7 @@ export default function BlogPost() {
       </table>
       <div style={{ background: 'rgba(165,180,252,.08)', borderRadius: 8, padding: 20, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontWeight: 700, marginBottom: 8 }}>Calculate your exact Spark driver tax bill</div>
-        <a href="/calculators" style={{ background: '#a5b4fc', color: '#0d1117', fontWeight: 800, padding: '10px 22px', borderRadius: 6, textDecoration: 'none', display: 'inline-block' }}>Free Tax Calculator</a>
+        <a href="/calculators" style={{ background: '#6366f1', color: '#ffffff', fontWeight: 800, padding: '10px 22px', borderRadius: 6, textDecoration: 'none', display: 'inline-block' }}>Free Tax Calculator</a>
       </div>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>FAQ — Walmart Spark Taxes 2026</h2>
       <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>When does Walmart Spark send the 1099?</h3>
