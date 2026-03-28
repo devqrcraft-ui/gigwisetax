@@ -119,7 +119,7 @@ export default function Page() {
             ["/amazon-flex/new-york","Amazon Flex — New York"],
             ["/amazon-flex/ohio","Amazon Flex — Ohio"],
           ].map(([href, label]) => (
-            <a key={href} href={href} style={{
+            <a key={href} href={href} className="state-calc-link" style={{
               display:'block',
               padding:'16px 16px',
               borderRadius:8,
@@ -134,8 +134,7 @@ export default function Page() {
               transition:'all .15s ease',
               boxSizing:'border-box',
             }}
-            onMouseEnter={e=>{const el=e.currentTarget;el.style.borderColor='rgba(232,184,75,0.5)';el.style.background='rgba(232,184,75,0.08)';el.style.color='#e8b84b';}}
-            onMouseLeave={e=>{const el=e.currentTarget;el.style.borderColor='rgba(255,255,255,0.1)';el.style.background='rgba(255,255,255,0.04)';el.style.color='#c8d8ec';}}>
+>
               {label}
             </a>
           ))}

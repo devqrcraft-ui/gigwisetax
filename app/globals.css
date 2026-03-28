@@ -252,3 +252,9 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
 }
 
 @media(min-width:961px){.plat-grid{grid-template-columns:repeat(5,1fr)!important;}}
+
+.state-calc-link:hover {
+  border-color: rgba(232,184,75,0.5) !important;
+  background: rgba(232,184,75,0.08) !important;
+  color: #e8b84b !important;
+}
