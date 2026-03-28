@@ -172,7 +172,7 @@ export default function SCorpCalculator() {
               File S-Corp Taxes with TurboTax Business →
             </a>
             <a href="/tax-penalty-finder"
-              style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
+              style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
                Get My Full Tax Penalty Report →
             </a>
 

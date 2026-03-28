@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 }
 
 export default function AmazonFlexTaxesBlogPost() {
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid #f0f1f3' }
-  const h3 = { fontSize: 16, fontWeight: 700, color: '#1a1a2e', margin: '20px 0 8px' }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
+  const h3 = { fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.9)', margin: '20px 0 8px' }
   const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
   const li = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 8 }
 
@@ -83,7 +83,7 @@ export default function AmazonFlexTaxesBlogPost() {
             This covers Social Security (12.4%) and Medicare (2.9%). The SE tax is calculated on <strong>92.35% of your net profit</strong> (after deductions). You can then deduct 50% of the SE tax from your gross income.
           </p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
             {[
               ['Net income (after mileage deduction)', '$50,000'],
               ['SE tax base (× 92.35%)', '$46,175'],
@@ -94,9 +94,9 @@ export default function AmazonFlexTaxesBlogPost() {
               ['State tax (CA 9.3% example)', '$4,321'],
               ['TOTAL estimated taxes', '$21,609'],
             ].map(([l, v]) => (
-              <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', borderBottom: '1px solid #f0f1f3', fontSize: 13 }}>
+              <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}>
                 <span style={{ color: '#374151' }}>{l}</span>
-                <strong style={{ color: '#1a1a2e' }}>{v}</strong>
+                <strong style={{ color: 'rgba(255,255,255,0.9)' }}>{v}</strong>
               </div>
             ))}
           </div>
@@ -138,7 +138,7 @@ export default function AmazonFlexTaxesBlogPost() {
             ].map(d => (
               <div key={d.title} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>
                 <div style={{ fontSize: 18, marginBottom: 4 }}>{d.icon}</div>
-                <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 3 }}>{d.title}</div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.title}</div>
                 <div style={{ fontSize: 11, color: '#6c757d', lineHeight: 1.5 }}>{d.desc}</div>
               </div>
             ))}
@@ -156,9 +156,9 @@ export default function AmazonFlexTaxesBlogPost() {
               { q: 'Q3 2026', period: 'Jun – Aug income', due: 'September 15, 2026', urgent: false },
               { q: 'Q4 2026', period: 'Sep – Dec income', due: 'January 15, 2027', urgent: false },
             ].map(row => (
-              <div key={row.q} style={{ padding: '12px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div key={row.q} style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
-                  <span style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14 }}>{row.q}</span>
+                  <span style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14 }}>{row.q}</span>
                   <span style={{ fontSize: 12, color: '#6c757d', marginLeft: 8 }}>{row.period}</span>
                 </div>
                 <span style={{ fontWeight: 700, color: row.urgent ? '#B22234' : '#374151', fontSize: 13 }}>
@@ -205,7 +205,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}> QuickBooks Self-Employed</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
               <div style={{ fontSize: 12, color: '#374151', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
               <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>✓ Try Free 30 Days</div>
@@ -224,7 +224,7 @@ export default function AmazonFlexTaxesBlogPost() {
               ['DoorDash vs Grubhub Taxes', '/blog/grubhub-vs-doordash-taxes-2026'],
             ].map(([l, h]) => (
               <Link key={l} href={h} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>→ {l}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>→ {l}</div>
               </Link>
             ))}
           </div>

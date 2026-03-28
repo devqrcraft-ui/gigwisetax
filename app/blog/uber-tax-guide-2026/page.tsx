@@ -21,7 +21,7 @@ const faqSchema = {
 
 export default function UberTaxGuide() {
   const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 28 }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
     <>
@@ -125,7 +125,7 @@ export default function UberTaxGuide() {
                 ].map(d => (
                   <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                     <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
-                    <div style={{ fontWeight: 700, color: '#1a1a2e', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                     <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
                   </div>
                 ))}
@@ -137,7 +137,7 @@ export default function UberTaxGuide() {
                   {['Method','Best For','Pros','Cons'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
                 </tr></thead>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid #f0f1f3', background: '#f0fdf4' }}>
+                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: '#f0fdf4' }}>
                     <td style={{ padding: '11px 14px', fontWeight: 700 }}>Standard Mileage</td>
                     <td style={{ padding: '11px 14px' }}>Most drivers</td>
                     <td style={{ padding: '11px 14px', color: '#059669' }}>Simple, no receipts needed</td>
@@ -159,7 +159,7 @@ export default function UberTaxGuide() {
                 </tr></thead>
                 <tbody>
                   {[['Q1 2026','April 15, 2026','45',true],['Q2 2026','June 16, 2026','107',false],['Q3 2026','Sept 15, 2026','198',false],['Q4 2026','Jan 15, 2027','320',false]].map(([q,due,d,now],i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid #f0f1f3', background: now ? '#fff9f9' : '#fff' }}>
+                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: now ? '#fff9f9' : '#fff' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 800, color: now ? '#B22234' : '#1a1a2e' }}>
                         {now && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                         {q}
@@ -179,8 +179,8 @@ export default function UberTaxGuide() {
                 { q: 'How do I track mileage for Uber taxes?', a: 'Use a mileage tracking app like Stride (free), MileIQ ($7.50/month), or Everlance. Track all business miles including: driving to first pickup, trips between rides, driving back after last trip. Uber also provides an annual mileage summary in your Tax Summary document.' },
                 { q: 'What if I drove for both Uber and DoorDash in 2026?', a: 'Report all income combined on one Schedule C (if same business activity) or on separate Schedule Cs. You can only claim mileage once per mile — not double. Track total business miles across all platforms and claim them once on Schedule C Part IV.' },
               ].map((item, i) => (
-                <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
-                  <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
+                <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
+                  <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
                   <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
                 </div>
               ))}
@@ -206,7 +206,7 @@ export default function UberTaxGuide() {
                 <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                   <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
                 </div>
-                <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>TurboTax Self-Employed</div>
+                <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
                 <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Handles 1099-K, 1099-NEC, mileage, and the new 2026 tips deduction automatically.</div>
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
                 <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
@@ -223,7 +223,7 @@ export default function UberTaxGuide() {
                 { label: ' W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
                 </a>
               ))}
             </div>

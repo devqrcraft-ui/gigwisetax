@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 export default function EtsyTaxGuide() {
   const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 28 }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
@@ -84,7 +84,7 @@ export default function EtsyTaxGuide() {
               ].map(d => (
                 <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
-                  <div style={{ fontWeight: 700, color: '#1a1a2e', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
+                  <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                   <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
                 </div>
               ))}
@@ -94,8 +94,8 @@ export default function EtsyTaxGuide() {
               { q: 'Do I pay self-employment tax on Etsy income?', a: 'Yes. If your Etsy net profit exceeds $400, you pay 15.3% self-employment tax plus federal income tax. If you sell on Etsy as a hobby (not primarily for profit), different rules may apply — consult a CPA if your Etsy activity is borderline hobby vs. business.' },
               { q: 'What records should Etsy sellers keep?', a: 'Keep receipts for all materials, supplies, shipping costs, equipment, and software. Track inventory (beginning and ending). Save all Etsy statements and monthly billing summaries. The IRS recommends keeping records for at least 3 years after filing.' },
             ].map((item, i) => (
-              <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
+              <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
+                <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
                 <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
               </div>
             ))}
@@ -117,7 +117,7 @@ export default function EtsyTaxGuide() {
             <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span></div>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>QuickBooks Self-Employed</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
               <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Tracks Etsy inventory, COGS, and expenses automatically.</div>
               <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>

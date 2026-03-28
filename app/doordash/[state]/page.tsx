@@ -114,7 +114,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </div>
 
                 {/* Quarterly table */}
-                <h3 style={{ fontSize: 15, fontWeight: 800, color: '#1a1a2e', marginBottom: 10 }}>2026 Quarterly Tax Deadlines</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}>2026 Quarterly Tax Deadlines</h3>
                 <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13, marginBottom: 20 }}>
                   <thead>
                     <tr style={{ background: '#1a1a2e' }}>
@@ -125,7 +125,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   </thead>
                   <tbody>
                     {DEADLINES_2026.map((d, i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid #f0f1f3', background: i === 0 ? '#fff9f9' : '#fff' }}>
+                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? '#fff9f9' : '#fff' }}>
                         <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
                           {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                           {d.q} 2026
@@ -143,7 +143,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </table>
 
                 {/* Deductions */}
-                <h3 style={{ fontSize: 15, fontWeight: 800, color: '#1a1a2e', marginBottom: 10 }}>Top Tax Deductions for {platform.name} Workers in {state.name}</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}>Top Tax Deductions for {platform.name} Workers in {state.name}</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }} className="form-grid">
                   {deductions.map((d: string) => (
                     <div key={d} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: '#374151', fontWeight: 500 }}>{d}</div>
@@ -151,7 +151,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </div>
 
                 {/* FAQ */}
-                <h3 style={{ fontSize: 15, fontWeight: 800, color: '#1a1a2e', marginBottom: 14 }}>FAQ — {platform.name} Taxes in {state.name} 2026</h3>
+                <h3 style={{ fontSize: 15, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 14 }}>FAQ — {platform.name} Taxes in {state.name} 2026</h3>
                 {[
                   {
                     q: `How much is ${platform.name} tax in ${state.name}?`,
@@ -170,8 +170,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     a: `Federal SE tax is 15.3% regardless of state. In ${state.name} you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
                   },
                 ].map((item, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
-                    <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
+                  <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
                     <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
                   </div>
                 ))}
@@ -192,7 +192,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {STATES.filter(s => s.slug !== stateSlug).slice(0, 12).map(s => (
                   <a key={s.slug} href={`/${PLATFORM_SLUG}/${s.slug}`} style={{ textDecoration: 'none' }}>
                     <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: '#fff' }}>
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{s.abbr}</div>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{s.abbr}</div>
                       <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
                     </div>
                   </a>
@@ -209,7 +209,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} in {state.abbr}</span>
                     <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                   </div>

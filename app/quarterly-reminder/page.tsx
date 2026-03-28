@@ -46,7 +46,7 @@ export default function QuarterlyReminder() {
         </div>
         <div style={body}>
           <div style={{ marginBottom: 20 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 14 }}> You'll receive reminders before:</div>
+            <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 14 }}> You'll receive reminders before:</div>
             {DEADLINES.map((d, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? '#fff5f5' : '#f8fafc', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid #fca5a5' : '1px solid #e5e7eb' }}>
                 <div>
@@ -68,10 +68,10 @@ export default function QuarterlyReminder() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-            <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
                Tax Penalty Finder
             </Link>
-            <Link href="/deductions" style={{ display: 'block', background: '#f3f4f6', color: '#1a1a2e', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/deductions" style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
                Deductions Checklist
             </Link>
           </div>
@@ -190,7 +190,7 @@ export default function QuarterlyReminder() {
             <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: i < 2 ? '1px solid #f3f4f6' : 'none' }}>
               <span style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</span>
               <div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#1a1a2e', marginBottom: 5 }}>{item.title}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 5 }}>{item.title}</div>
                 <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>{item.desc}</div>
               </div>
             </div>

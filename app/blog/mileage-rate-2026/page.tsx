@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 export default function MileageRate2026Post() {
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid #f0f1f3' }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
   const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
 
   return (
@@ -66,7 +66,7 @@ export default function MileageRate2026Post() {
               ['2021', '56.0¢/mile', false],
               ['2020', '57.5¢/mile', false],
             ].map(([year, rate, current]) => (
-              <div key={year as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid #f0f1f3', background: current ? '#fff8e6' : 'transparent' }}>
+              <div key={year as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: current ? '#fff8e6' : 'transparent' }}>
                 <span style={{ fontSize: 14, fontWeight: current ? 800 : 500, color: current ? '#1a1a2e' : '#374151' }}>{year as string} {current && '← Current'}</span>
                 <span style={{ fontSize: 14, fontWeight: 700, color: current ? '#B22234' : '#6c757d' }}>{rate as string}</span>
               </div>
@@ -85,9 +85,9 @@ export default function MileageRate2026Post() {
               ['30,000 miles', '$21,750', '$6,525'],
               ['40,000 miles', '$29,000', '$8,700'],
             ].map(([miles, deduction, savings]) => (
-              <div key={miles} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '10px 16px', borderBottom: '1px solid #f0f1f3' }}>
+              <div key={miles} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                 <span style={{ fontSize: 13, color: '#374151', fontWeight: 600 }}>{miles}</span>
-                <span style={{ fontSize: 13, color: '#1a1a2e', fontWeight: 700 }}>{deduction} deduction</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>{deduction} deduction</span>
                 <span style={{ fontSize: 13, color: '#166534', fontWeight: 700 }}>{savings} saved*</span>
               </div>
             ))}
@@ -134,16 +134,16 @@ export default function MileageRate2026Post() {
             ].map(item => <li key={item} style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
           </ul>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>
             {[
               { name: 'Stride', cost: 'Free', note: 'Best for most gig workers, IRS-compliant logs' },
               { name: 'MileIQ', cost: '$5.99/mo', note: 'Automatic tracking, swipe to categorize' },
               { name: 'Hurdlr', cost: 'Free / $8.34/mo', note: 'Mileage + income + expense tracking combined' },
               { name: 'Everlance', cost: 'Free / $9.99/mo', note: 'Automatic + manual tracking, good reporting' },
             ].map(app => (
-              <div key={app.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f0f1f3' }}>
+              <div key={app.name} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                 <div>
-                  <span style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e' }}>{app.name}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{app.name}</span>
                   <span style={{ fontSize: 11, color: '#6c757d', marginLeft: 8 }}>{app.note}</span>
                 </div>
                 <span style={{ fontSize: 12, color: '#059669', fontWeight: 700 }}>{app.cost}</span>
@@ -171,7 +171,7 @@ export default function MileageRate2026Post() {
               [' Grubhub Calculator', '/grubhub'],
             ].map(([l, h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>{l as string}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>{l as string}</div>
               </Link>
             ))}
           </div>
@@ -186,7 +186,7 @@ export default function MileageRate2026Post() {
               ['W-2 vs 1099 Guide', '/blog/w2-vs-1099-guide-2026'],
             ].map(([l, h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>→ {l as string}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>→ {l as string}</div>
               </Link>
             ))}
           </div>

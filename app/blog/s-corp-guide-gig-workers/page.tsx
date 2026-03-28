@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function SCorpGuideBlog() {
   const s  = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
-  const h2 = { fontSize: 22, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px' }
+  const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
   const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
   const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
@@ -76,7 +76,7 @@ export default function SCorpGuideBlog() {
             <div key={step.n} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid #f3f4f6' }}>
               <div style={{ width: 32, height: 32, background: '#B22234', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 14, flexShrink: 0 }}>{step.n}</div>
               <div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#1a1a2e', marginBottom: 6 }}>{step.title}</div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>{step.title}</div>
                 <p style={{ ...p, margin: 0 }}>{step.body}</p>
               </div>
             </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   const section = { marginBottom: 32 }
-  const h2 = { fontSize: 18, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 0 }
+  const h2 = { fontSize: 18, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 0 }
   const p  = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 12 }
   const li = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 8 }
 

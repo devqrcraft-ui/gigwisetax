@@ -161,7 +161,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               </div>
               <div style={{ padding: 24 }}>
 
-                <h2 style={{ fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
+                <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   How {platform.name} Taxes Work in 2026
                 </h2>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
@@ -178,14 +178,14 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   </p>
                 </div>
 
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   What Taxes Do {platform.name} Workers Pay?
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
                   {[
                     { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
-                    { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#1a1a2e' },
-                    { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#1a1a2e' },
+                    { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: 'rgba(255,255,255,0.9)' },
+                    { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: 'rgba(255,255,255,0.9)' },
                     { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
                   ].map(item => (
                     <div key={item.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
@@ -196,7 +196,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   ))}
                 </div>
 
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   2026 Quarterly Tax Deadlines for {platform.name} Workers
                 </h3>
                 <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
@@ -225,7 +225,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </table>
 
                 {/* DEDUCTIONS */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 12 }}>
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   Top Tax Deductions for {platform.name} Workers in 2026
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
@@ -279,7 +279,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 )}
 
                 {/* FAQ */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#1a1a2e', marginBottom: 16 }}>
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16 }}>
                   Frequently Asked Questions — {platform.name} Taxes 2026
                 </h3>
                 {[

@@ -120,9 +120,9 @@ export default function CalculatorPage({ params }) {
   const examples = [30000, 50000, 75000, 100000];
 
   const S = {
-    page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "#1a1a2e" },
+    page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
     card: { background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
-    h2: { fontSize: 20, fontWeight: 800, color: "#1a1a2e", margin: "0 0 14px", lineHeight: 1.3 },
+    h2: { fontSize: 20, fontWeight: 800, color: "rgba(255,255,255,0.9)", margin: "0 0 14px", lineHeight: 1.3 },
     p: { fontSize: 15, color: "#374151", lineHeight: 1.8, marginBottom: 14 },
   };
 
@@ -289,7 +289,7 @@ export default function CalculatorPage({ params }) {
             <div style={{ fontSize: 13, fontWeight: 800, color: s.hasTax ? "#B22234" : "#0d7a40", marginBottom: 8 }}>
                {s.name} ({s.abbr})
             </div>
-            <div style={{ fontSize: 24, fontWeight: 900, color: "#1a1a2e", marginBottom: 4 }}>
+            <div style={{ fontSize: 24, fontWeight: 900, color: "rgba(255,255,255,0.9)", marginBottom: 4 }}>
               {s.hasTax ? `${(s.rate * 100).toFixed(1)}%` : "0%"}
             </div>
             <div style={{ fontSize: 12, color: "#6c757d", marginBottom: 12 }}>State income tax rate</div>

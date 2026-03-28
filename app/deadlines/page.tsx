@@ -114,7 +114,7 @@ export default function DeadlinesPage() {
                 </thead>
                 <tbody>
                   {STATES_DEADLINES.map((s, i) => (
-                    <tr key={s.abbr} style={{ borderBottom: '1px solid #f0f1f3', background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
+                    <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 700, fontSize: 13 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '11px 14px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 13 }}>{s.rate}</td>
                       <td style={{ padding: '11px 14px', color: s.q1 === '—' ? '#d1d5db' : '#374151', fontSize: 12 }}>{s.q1}</td>
@@ -146,7 +146,7 @@ export default function DeadlinesPage() {
               <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>QuickBooks Self-Employed</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
               <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Automatically calculates and reminds you of quarterly tax deadlines. Built for gig workers.</div>
               <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
@@ -165,7 +165,7 @@ export default function DeadlinesPage() {
               { label: ' Airbnb Tax Calculator', href: '/airbnb' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
               </a>
             ))}
           </div>

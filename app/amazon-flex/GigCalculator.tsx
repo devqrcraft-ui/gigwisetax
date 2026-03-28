@@ -39,7 +39,7 @@ export default function GigCalculator({
   const cardHd  = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const lbl     = { display: 'block', fontSize: 11, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 6 }
-  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
+  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: '#fff', boxSizing: 'border-box' as const }
   const btnDark = { background: '#1a1a2e', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
 
@@ -113,14 +113,14 @@ export default function GigCalculator({
 
           <div style={{ padding: 20 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
-              <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}> Your 2026 Quarterly Payment Schedule</span>
+              <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
               <div style={btnRed}>+ Add All to Google Calendar</div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
               {deadlines.map((d, i) => (
                 <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
                   {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
-                  <div style={{ fontSize: 12, fontWeight: 800, color: '#1a1a2e', marginBottom: 2 }}>{d.q} 2026</div>
+                  <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 10, color: '#9ca3af', marginBottom: 6 }}>{d.due}</div>
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 8 }}>{fmt(result.quarterly)}</div>
                   <div style={btnRed}>+ Calendar</div>

@@ -70,7 +70,7 @@ export default function TuroPage() {
     setResult({ gross, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1), businessPct: (businessPct*100).toFixed(0) })
   }
 
-  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color:'#1a1a2e', background:'#fff', boxSizing:'border-box' as const }
+  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background:'#fff', boxSizing:'border-box' as const }
   const lbl = { display:'block', fontSize:11, fontWeight:700, color:'#374151', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
   const card= { background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
@@ -152,7 +152,7 @@ export default function TuroPage() {
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }} className="results-row">
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
-                    { label:'Federal Income Tax',  val:fmt(result.federal), color:'#1a1a2e', sub:'After SE deduction' },
+                    { label:'Federal Income Tax',  val:fmt(result.federal), color: 'rgba(255,255,255,0.9)', sub:'After SE deduction' },
                     { label:'State Income Tax',    val:fmt(result.stateTax), color:'#374151', sub:STATES.find(s=>s.code===stateCode)?.name },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
@@ -185,7 +185,7 @@ export default function TuroPage() {
                 {DEDUCTIONS.map(d => (
                   <div key={d.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 16px' }}>
                     <div style={{ fontSize:20, marginBottom:6 }}>{d.icon}</div>
-                    <div style={{ fontSize:13, fontWeight:700, color:'#1a1a2e', marginBottom:4 }}>{d.label}</div>
+                    <div style={{ fontSize:13, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:4 }}>{d.label}</div>
                     <div style={{ fontSize:12, color:'#6c757d', lineHeight:1.6 }}>{d.desc}</div>
                   </div>
                 ))}
@@ -200,9 +200,9 @@ export default function TuroPage() {
             </div>
             <div>
               {FAQ.map((f, i) => (
-                <div key={i} style={{ borderBottom:'1px solid #f0f1f3' }}>
+                <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div onClick={() => setOpenFaq(openFaq===i ? null : i)} style={{ padding:'16px 20px', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                    <span style={{ fontSize:14, fontWeight:600, color:'#1a1a2e' }}>{f.q}</span>
+                    <span style={{ fontSize:14, fontWeight:600, color: 'rgba(255,255,255,0.9)' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
                   </div>
                   {openFaq===i && <div style={{ padding:'0 20px 16px', fontSize:13, color:'#374151', lineHeight:1.7 }}>{f.a}</div>}
@@ -239,8 +239,8 @@ export default function TuroPage() {
               { name:'Etsy', href:'/etsy', vol:'200K/mo' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
-                <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                  <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{p.name}</span>
+                <div style={{ padding:'10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                  <span style={{ fontSize:13, color: 'rgba(255,255,255,0.9)', fontWeight:500 }}>{p.name}</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>
               </Link>
@@ -268,11 +268,11 @@ export default function TuroPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
-              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> Quarterly Tax Guide</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"#1a1a2e", fontWeight:600 }}> W-2 vs 1099 Guide</a>
+              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
+              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function EtsyDeductionsBlog() {
   const s = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
-  const h2 = { fontSize: 22, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px' }
+  const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
   const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
 

@@ -39,7 +39,7 @@ export default function Page() {
         ],
       })}} />
 
-      <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 20px 64px', fontFamily: 'system-ui,sans-serif', color: '#1a1a2e' }}>
+      <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 20px 64px', fontFamily: 'system-ui,sans-serif', color: 'rgba(255,255,255,0.9)' }}>
 
         <div style={{ marginBottom: 8 }}>
           <Link href="/blog" style={{ fontSize: 13, color: '#B22234', textDecoration: 'none', fontWeight: 600 }}>← Blog</Link>
@@ -108,7 +108,7 @@ export default function Page() {
           ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 51 states.'],
         ].map(([q, a]) => (
           <details key={q as string} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>
-            <summary style={{ fontWeight: 700, fontSize: 15, cursor: 'pointer', color: '#1a1a2e' }}>{q as string}</summary>
+            <summary style={{ fontWeight: 700, fontSize: 15, cursor: 'pointer', color: 'rgba(255,255,255,0.9)' }}>{q as string}</summary>
             <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>{a as string}</p>
           </details>
         ))}

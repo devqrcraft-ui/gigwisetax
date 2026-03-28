@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function HomeOfficeBlog() {
   const s  = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
-  const h2 = { fontSize: 22, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px' }
+  const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
   const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
   const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
@@ -68,7 +68,7 @@ export default function HomeOfficeBlog() {
           <h2 style={h2}>Simplified Method: $5 Per Square Foot</h2>
           <p style={p}>The IRS simplified method lets you deduct $5 per square foot of your dedicated workspace, up to a maximum of 300 square feet. This gives a maximum deduction of $1,500 per year with no recordkeeping of actual expenses required.</p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
-            <div style={{ fontSize: 14, fontWeight: 700, color: '#1a1a2e', marginBottom: 12 }}> Calculator Example:</div>
+            <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
               <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f3f4f6', fontSize: 14 }}>
                 <span style={{ color: '#374151' }}>{r.sqft} sq ft workspace</span>

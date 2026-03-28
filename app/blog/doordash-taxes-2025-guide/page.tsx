@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function DoorDashTaxesBlog() {
   const s = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
-  const h2 = { fontSize: 22, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px' }
-  const h3 = { fontSize: 17, fontWeight: 700, color: '#1a1a2e', margin: '24px 0 10px' }
+  const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
+  const h3 = { fontSize: 17, fontWeight: 700, color: 'rgba(255,255,255,0.9)', margin: '24px 0 10px' }
   const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
   const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
   const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
@@ -99,8 +99,8 @@ export default function DoorDashTaxesBlog() {
                 { q: 'Q3 2025', p: 'June – August',   d: 'September 15, 2025' },
                 { q: 'Q4 2025', p: 'September – Dec', d: 'January 15, 2026' },
               ].map((r, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid #f0f1f3', background: i===0 ? '#fff9f9' : '#fff' }}>
-                  <td style={{ padding: '12px 14px', fontWeight: 700, color: '#1a1a2e' }}>{r.q}</td>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? '#fff9f9' : '#fff' }}>
+                  <td style={{ padding: '12px 14px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{r.q}</td>
                   <td style={{ padding: '12px 14px', color: '#374151' }}>{r.p}</td>
                   <td style={{ padding: '12px 14px', fontWeight: 700, color: i===0 ? '#B22234' : '#1a1a2e' }}>{r.d}</td>
                 </tr>

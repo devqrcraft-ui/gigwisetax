@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function DoorDashTaxGuide() {
   const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', marginBottom: 12, marginTop: 28 }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -111,7 +111,7 @@ export default function DoorDashTaxGuide() {
               ].map(d => (
                 <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
-                  <div style={{ fontWeight: 700, color: '#1a1a2e', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
+                  <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                   <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
                 </div>
               ))}
@@ -130,7 +130,7 @@ export default function DoorDashTaxGuide() {
                   { q: 'Q3 2026', due: 'Sept 15, 2026', now: false },
                   { q: 'Q4 2026', due: 'Jan 15, 2027', now: false },
                 ].map((d, i) => (
-                  <tr key={d.q} style={{ borderBottom: '1px solid #f0f1f3', background: i === 0 ? '#fff9f9' : '#fff' }}>
+                  <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? '#fff9f9' : '#fff' }}>
                     <td style={{ padding: '11px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
                       {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                       {d.q}
@@ -152,8 +152,8 @@ export default function DoorDashTaxGuide() {
               { q: 'Does DoorDash report my income to the IRS?', a: 'Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN if you earn $600+. The IRS matches this against your tax return. Not reporting DoorDash income will result in an IRS notice and penalties.' },
               { q: 'Can I deduct car payments for DoorDash?', a: "Only if you use the actual expense method (not standard mileage). Under the actual expense method, you can deduct the business percentage of car loan interest and depreciation. You cannot deduct the car payment principal. Most Dashers find the standard mileage method ($0.725/mile) simpler and often yields a larger deduction." },
             ].map((item, i) => (
-              <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 14, marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
+              <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
+                <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
                 <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
               </div>
             ))}
@@ -180,7 +180,7 @@ export default function DoorDashTaxGuide() {
               <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
               </div>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#1a1a2e', marginBottom: 6 }}>TurboTax Self-Employed</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
               <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Handles Schedule C and 1099-NEC for DoorDash workers. Mileage tracking included.</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
@@ -197,7 +197,7 @@ export default function DoorDashTaxGuide() {
               { label: ' DoorDash by State', href: '/doordash' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
               </a>
             ))}
           </div>

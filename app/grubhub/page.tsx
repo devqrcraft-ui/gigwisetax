@@ -206,7 +206,7 @@ export default function GrubhubPage() {
             </div>
             <div>
               {FAQ.map((f, i) => (
-                <div key={i} style={{ borderBottom:'1px solid #f0f1f3' }}>
+                <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div onClick={() => setOpenFaq(openFaq===i ? null : i)} style={{ padding:'16px 20px', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                     <span style={{ fontSize:14, fontWeight:600, color:'rgba(255,255,255,0.9)' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
@@ -248,7 +248,7 @@ export default function GrubhubPage() {
               { name:'Walmart Spark', href:'/walmart-spark', vol:'NEW' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
-                <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
+                <div style={{ padding:'10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
                   <span style={{ fontSize:13, color:'rgba(255,255,255,0.85)', fontWeight:500 }}>{p.name}</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>

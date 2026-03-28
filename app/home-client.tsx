@@ -315,7 +315,7 @@ export default function HomeClient() {
                   {/* 4 quarterly boxes */}
                   <div style={{ padding: 20 }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
-                      <span style={{ fontWeight: 700, fontSize: 14, color: '#1a1a2e' }}> Quarterly Payment Schedule</span>
+                      <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Quarterly Payment Schedule</span>
                       <div style={{ ...btnRed(), width: 'auto', padding: '7px 14px', fontSize: 12 }}>+ Add All to Google Calendar</div>
                     </div>
 
@@ -323,7 +323,7 @@ export default function HomeClient() {
                       {DEADLINES.map((d, i) => (
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
-                          <div style={{ fontSize: 12, fontWeight: 800, color: '#1a1a2e', marginBottom: 3 }}>{d.q}</div>
+                          <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
                           <div style={btnRed({ fontSize: 11, padding: '6px 0' })}>+ Calendar</div>
@@ -356,7 +356,7 @@ export default function HomeClient() {
                     { label: 'State income tax', detail: '2026 state rates for all 51 jurisdictions — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
                   ].map(item => (
                     <div key={item.label} style={{ borderLeft: '3px solid #B22234', paddingLeft: 12 }}>
-                      <div style={{ fontSize: 13, fontWeight: 800, color: '#1a1a2e', marginBottom: 4 }}>{item.label}</div>
+                      <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 4 }}>{item.label}</div>
                       <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>{item.detail}</div>
                     </div>
                   ))}
@@ -512,7 +512,7 @@ export default function HomeClient() {
                           <span style={{ fontSize: 18, marginRight: 10 }}></span>{p.name}
                           
                         </td>
-                        <td style={{ padding: '12px 16px', fontWeight: 700, color: '#1a1a2e' }}>{p.searches}</td>
+                        <td style={{ padding: '12px 16px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{p.searches}</td>
                         <td style={{ padding: '12px 16px', color: '#c8d8ec' }}>15.3%</td>
                         <td style={{ padding: '12px 16px', color: '#059669', fontWeight: 600 }}>Included ✓</td>
                         <td style={{ padding: '12px 16px' }}>

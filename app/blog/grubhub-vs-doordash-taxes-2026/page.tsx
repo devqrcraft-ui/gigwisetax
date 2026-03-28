@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 }
 
 export default function GrubhubVsDoorDashPost() {
-  const h2 = { fontSize: 20, fontWeight: 800, color: '#1a1a2e', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid #f0f1f3' }
+  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
   const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
 
   return (
@@ -74,10 +74,10 @@ export default function GrubhubVsDoorDashPost() {
               ['State Tax', 'Depends on state', 'Depends on state'],
               ['Avg. Miles per Year', '20,000–30,000', '15,000–25,000'],
             ].map(([factor, grubhub, doordash], i) => (
-              <div key={factor} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '11px 16px', borderBottom: '1px solid #f0f1f3', background: i%2===0 ? '#fff' : '#fafafa' }}>
+              <div key={factor} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '11px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? '#fff' : '#fafafa' }}>
                 <span style={{ fontSize: 13, color: '#374151', fontWeight: 500 }}>{factor}</span>
-                <span style={{ fontSize: 13, color: '#1a1a2e', fontWeight: 600, textAlign: 'center' as const }}>{grubhub}</span>
-                <span style={{ fontSize: 13, color: '#1a1a2e', fontWeight: 600, textAlign: 'center' as const }}>{doordash}</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{grubhub}</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{doordash}</span>
               </div>
             ))}
           </div>
@@ -92,7 +92,7 @@ export default function GrubhubVsDoorDashPost() {
             If you drive for both Grubhub and DoorDash, you file a <strong>single Schedule C</strong> combining all self-employment income. You don't file two separate Schedule Cs unless you run them as genuinely separate business activities (rare).
           </p>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#1a1a2e', marginBottom: 10 }}> Multi-App Filing Example</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}> Multi-App Filing Example</div>
             {[
               ['Grubhub income', '$22,000'],
               ['DoorDash income', '$18,000'],
@@ -100,9 +100,9 @@ export default function GrubhubVsDoorDashPost() {
               ['Combined mileage deduction (28,000 mi)', '−$20,300'],
               ['Net profit on Schedule C', '$19,700'],
             ].map(([l, v]) => (
-              <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid #f0f1f3', fontSize: 13 }}>
+              <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}>
                 <span style={{ color: '#374151' }}>{l}</span>
-                <strong style={{ color: '#1a1a2e' }}>{v}</strong>
+                <strong style={{ color: 'rgba(255,255,255,0.9)' }}>{v}</strong>
               </div>
             ))}
           </div>
@@ -143,7 +143,7 @@ export default function GrubhubVsDoorDashPost() {
             </div>
             {[[' Grubhub Calculator','/grubhub'],[' DoorDash Calculator','/doordash'],[' Uber Calculator','/uber'],[' Amazon Flex','/amazon-flex']].map(([l,h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>{l as string}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>{l as string}</div>
               </Link>
             ))}
           </div>
@@ -153,7 +153,7 @@ export default function GrubhubVsDoorDashPost() {
             </div>
             {[['Mileage Rate 2026','/blog/mileage-rate-2026'],['Amazon Flex Taxes','/blog/amazon-flex-taxes-2026'],['Quarterly Taxes','/blog/quarterly-taxes-gig-workers'],['W-2 vs 1099','/blog/w2-vs-1099-guide-2026']].map(([l,h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', fontSize: 13, color: '#1a1a2e', fontWeight: 500 }}>→ {l as string}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>→ {l as string}</div>
               </Link>
             ))}
           </div>

@@ -222,7 +222,7 @@ export default function WalmartSparkPage() {
             </div>
             <div style={{ padding:0 }}>
               {FAQ.map((f, i) => (
-                <div key={i} style={{ borderBottom:'1px solid #f0f1f3' }}>
+                <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                   <div onClick={() => setOpenFaq(openFaq===i ? null : i)} style={{ padding:'16px 20px', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center' }}>
                     <span style={{ fontSize:14, fontWeight:600, color:'rgba(255,255,255,0.9)' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
@@ -238,15 +238,15 @@ export default function WalmartSparkPage() {
           {/* SEO TEXT */}
           <div style={card}>
             <div style={{ padding:24 }}>
-              <h2 style={{ fontSize:18, fontWeight:800, color:'#1a1a2e', marginBottom:12 }}>Walmart Spark Driver Taxes: Complete 2026 Guide</h2>
+              <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}>Walmart Spark Driver Taxes: Complete 2026 Guide</h2>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>
                 Walmart Spark is one of the fastest-growing grocery and general merchandise delivery platforms in the United States, with drivers operating across 40+ states. As a Spark driver, you're classified as an <strong>independent contractor</strong>, which means Walmart does not withhold taxes from your earnings. You are responsible for paying self-employment tax (SE tax) and estimated quarterly taxes to the IRS.
               </p>
-              <h3 style={{ fontSize:15, fontWeight:700, color:'#1a1a2e', marginBottom:8 }}>How SE Tax Works for Spark Drivers</h3>
+              <h3 style={{ fontSize:15, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:8 }}>How SE Tax Works for Spark Drivers</h3>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>
                 The self-employment tax rate is <strong>15.3%</strong>, applied to 92.35% of your net profit. This includes 12.4% for Social Security and 2.9% for Medicare. Unlike W-2 employees where the employer pays half, Spark drivers pay both halves — but you can deduct 50% of SE tax from your adjusted gross income.
               </p>
-              <h3 style={{ fontSize:15, fontWeight:700, color:'#1a1a2e', marginBottom:8 }}>Quarterly Tax Deadlines for 2026</h3>
+              <h3 style={{ fontSize:15, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:8 }}>Quarterly Tax Deadlines for 2026</h3>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.8)', lineHeight:1.8 }}>
                 If you expect to owe $1,000 or more, pay quarterly: <strong>Q1 April 15 → Q2 June 16 → Q3 September 15 → Q4 January 15, 2027</strong>. Missing deadlines triggers IRS underpayment penalties. Most Spark drivers should set aside 25–30% of every payment received.
               </p>
@@ -285,7 +285,7 @@ export default function WalmartSparkPage() {
               { name:'Etsy', href:'/etsy', vol:'200K/mo' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
-                <div style={{ padding:'10px 16px', borderBottom:'1px solid #f0f1f3', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
+                <div style={{ padding:'10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
                   <span style={{ fontSize:13, color:'rgba(255,255,255,0.85)', fontWeight:500 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize:11, color:'#B22234', fontWeight:700 }}>{p.vol}</span>
                 </div>
