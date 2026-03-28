@@ -309,3 +309,22 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
     color: #fff !important; 
   }
 }
+
+/* === SELECT DARK THEME — all breakpoints === */
+select {
+  color: #C8D8EC !important;
+  background-color: #07111F !important;
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  border-radius: 6px !important;
+  min-height: 44px !important;
+  padding: 10px 12px !important;
+  font-size: 16px !important;
+  width: 100% !important;
+  appearance: auto !important;
+  -webkit-appearance: auto !important;
+  color-scheme: dark !important;
+}
+select option {
+  background: #07111F !important;
+  color: #C8D8EC !important;
+}

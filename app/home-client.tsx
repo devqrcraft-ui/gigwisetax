@@ -507,8 +507,8 @@ export default function HomeClient() {
                   </thead>
                   <tbody>
                     {PLATFORMS.map((p,i) => (
-                      <tr key={p.name} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? '#fff' : '#fafafa' }}>
-                        <td style={{ padding: '12px 16px', fontWeight: 700, fontSize: 14 }}>
+                      <tr key={p.name} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
+                        <td style={{ padding: '12px 16px', fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}>
                           <span style={{ fontSize: 18, marginRight: 10 }}></span>{p.name}
                           
                         </td>
