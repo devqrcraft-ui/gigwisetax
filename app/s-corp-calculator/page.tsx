@@ -31,7 +31,7 @@ export default function SCorpCalculator() {
   const body = { padding: '24px' }
   const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 18, fontWeight: 700, color: '#111827', background: '#ffffff', boxSizing: 'border-box' as const, marginTop: 8, outline: 'none' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
-  const lbl  = { fontSize: 14, fontWeight: 700, color: '#374151', display: 'block', marginTop: 20 } as const
+  const lbl  = { fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.85)', display: 'block', marginTop: 20 } as const
 
   const Row = ({ l, v, b }: { l: string; v: string; b?: boolean }) => (
     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f3f4f6' }}>
@@ -93,7 +93,7 @@ export default function SCorpCalculator() {
           </p>
 
           {income && (
-            <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '12px 16px', marginTop: 12 }}>
+            <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '12px 16px', marginTop: 12 }}>
               <span style={{ fontSize: 13, color: '#16a34a', fontWeight: 600 }}>
                  Estimated S-Corp salary: {fmt(Math.min(parseFloat(income) * 0.5, 80000))} — distributions: {fmt(Math.max(parseFloat(income) - Math.min(parseFloat(income) * 0.5, 80000), 0))}
               </span>
@@ -119,7 +119,7 @@ export default function SCorpCalculator() {
               </div>
             </>) : (<>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#6b7280', letterSpacing: 1, marginBottom: 8 }}>S-CORP MAY NOT BE WORTH IT YET</div>
-              <div style={{ fontSize: 24, fontWeight: 800, color: '#374151' }}>Stick with Sole Prop for now</div>
+              <div style={{ fontSize: 24, fontWeight: 800, color: 'rgba(255,255,255,0.85)' }}>Stick with Sole Prop for now</div>
               <div style={{ fontSize: 14, color: '#6b7280', marginTop: 8 }}>S-Corp makes financial sense when annual profit consistently exceeds $60,000</div>
             </>)}
           </div>
@@ -140,7 +140,7 @@ export default function SCorpCalculator() {
                 <Row l="Compliance Cost" v="$0" />
                 <Row l="TOTAL TAX" v={fmt(result.soleTotal)} b />
               </div>
-              <div style={{ background: '#f0fdf4', border: '2px solid #86efac', borderRadius: 8, padding: 16 }}>
+              <div style={{ background: 'rgba(5,150,105,0.12)', border: '2px solid #86efac', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: '#16a34a', marginBottom: 12, textAlign: 'center' as const }}>S-CORPORATION</div>
                 <Row l={`Payroll Tax on ${fmt(result.sal)}`} v={fmt(result.scorpPayroll)} />
                 <Row l="Federal Income Tax" v={fmt(result.scorpFed)} />

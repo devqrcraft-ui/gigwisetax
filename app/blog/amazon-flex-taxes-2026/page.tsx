@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function AmazonFlexTaxesBlogPost() {
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
   const h3 = { fontSize: 16, fontWeight: 700, color: 'rgba(255,255,255,0.9)', margin: '20px 0 8px' }
-  const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
-  const li = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 8 }
+  const p  = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }
+  const li = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 8 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -46,8 +46,8 @@ export default function AmazonFlexTaxesBlogPost() {
         <article>
 
           {/* TL;DR BOX */}
-          <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Quick Summary</div>
+          <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
+            <div style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}> Quick Summary</div>
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {[
                 'Amazon Flex drivers are 1099 independent contractors — no taxes withheld',
@@ -55,7 +55,7 @@ export default function AmazonFlexTaxesBlogPost() {
                 'Mileage deduction: 72.5 cents per mile in 2026',
                 'Must pay quarterly taxes if you expect to owe $1,000+',
                 'Top deductions: mileage, phone, dolly/equipment, parking, tolls',
-              ].map(item => <li key={item} style={{ fontSize: 13, color: '#166534', lineHeight: 1.7, marginBottom: 4 }}>{item}</li>)}
+              ].map(item => <li key={item} style={{ fontSize: 13, color: '#4ade80', lineHeight: 1.7, marginBottom: 4 }}>{item}</li>)}
             </ul>
           </div>
 
@@ -95,7 +95,7 @@ export default function AmazonFlexTaxesBlogPost() {
               ['TOTAL estimated taxes', '$21,609'],
             ].map(([l, v]) => (
               <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}>
-                <span style={{ color: '#374151' }}>{l}</span>
+                <span style={{ color: 'rgba(255,255,255,0.85)' }}>{l}</span>
                 <strong style={{ color: 'rgba(255,255,255,0.9)' }}>{v}</strong>
               </div>
             ))}
@@ -195,7 +195,7 @@ export default function AmazonFlexTaxesBlogPost() {
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
             <div style={{ padding: 16 }}>
-              <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.6, marginBottom: 12, marginTop: 0 }}>Estimate your exact Amazon Flex tax bill in 60 seconds.</p>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, marginBottom: 12, marginTop: 0 }}>Estimate your exact Amazon Flex tax bill in 60 seconds.</p>
               <Link href="/amazon-flex" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#B22234', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}> Amazon Flex Calculator →</div>
               </Link>
@@ -206,7 +206,7 @@ export default function AmazonFlexTaxesBlogPost() {
             <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
-              <div style={{ fontSize: 12, color: '#374151', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
               <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>✓ Try Free 30 Days</div>
               </a>

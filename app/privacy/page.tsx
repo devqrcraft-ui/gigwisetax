@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   const section = { marginBottom: 32 }
   const h2 = { fontSize: 18, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 0 }
-  const p  = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 12 }
-  const li = { fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 8 }
+  const p  = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 12 }
+  const li = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 8 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -27,9 +27,9 @@ export default function PrivacyPage() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 
-        <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: '#166534', marginBottom: 6 }}> The Short Version</div>
-          <div style={{ fontSize: 14, color: '#166534', lineHeight: 1.7 }}>
+        <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', marginBottom: 6 }}> The Short Version</div>
+          <div style={{ fontSize: 14, color: '#4ade80', lineHeight: 1.7 }}>
             GigWiseTax.com does <strong>not</strong> collect, store, or transmit any personal data. All calculations run entirely in your browser. We have no user accounts. We cannot see your income or tax figures — ever.
           </div>
         </div>

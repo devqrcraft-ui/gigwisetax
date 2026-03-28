@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/etsy-seller-taxes-2026' },
 }
 export default function EtsyTaxGuide() {
-  const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -39,7 +39,7 @@ export default function EtsyTaxGuide() {
             </div>
             <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: Etsy Taxes 2026</div>
-              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
+              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
                 <li><strong>Etsy sends 1099-K if you earn $600+</strong> (threshold lowered starting 2025)</li>
                 <li><strong>COGS (cost of goods sold) is fully deductible</strong> — materials, supplies, inventory</li>
                 <li><strong>Etsy fees are deductible</strong> — listing fees, transaction fees, ads</li>
@@ -63,7 +63,7 @@ export default function EtsyTaxGuide() {
             <h2 style={h2}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
             <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}> COGS Formula for Etsy Sellers</div>
-              <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.8, fontFamily: 'monospace' }}>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, fontFamily: 'monospace' }}>
                 Beginning Inventory<br/>
                 + Purchases/Materials during year<br/>
                 − Ending Inventory<br/>
@@ -96,7 +96,7 @@ export default function EtsyTaxGuide() {
             ].map((item, i) => (
               <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
                 <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
               </div>
             ))}
             <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
@@ -118,7 +118,7 @@ export default function EtsyTaxGuide() {
             <div style={{ padding: 16 }}>
               <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span></div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Tracks Etsy inventory, COGS, and expenses automatically.</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Tracks Etsy inventory, COGS, and expenses automatically.</div>
               <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
             </div>

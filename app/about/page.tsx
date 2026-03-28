@@ -44,23 +44,23 @@ export default function AboutPage() {
 
         <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>Why We Built This</h2>
-          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
             Millions of Americans drive for DoorDash, deliver for Instacart, sell on Etsy, or host on Airbnb — and most of them are surprised every April when they owe thousands in unexpected taxes. As independent contractors, gig workers receive no tax withholding, no employer match, and no guidance on quarterly payments.
           </p>
-          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
             Most free tax tools either require account registration, sell your data, or stop at the federal level without covering all 51 state jurisdictions. Paid tools like FlyFin or Keeper Tax charge $100–$400/year — a significant cost for someone making $35,000 delivering groceries.
           </p>
-          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 0 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 0 }}>
             We built GigWiseTax.com to fill that gap: a completely free, private, no-signup tool that helps every gig worker quickly estimate what they owe and when to pay it. We believe financial clarity shouldn't have a paywall.
           </p>
         </div>
 
         <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>How We Stay Free</h2>
-          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
             GigWiseTax.com is supported by clearly labeled <strong>affiliate partnerships</strong> with tax software companies like TurboTax, QuickBooks, and H&R Block. When you click a sponsored link and make a purchase, we may earn a commission — at no extra cost to you.
           </p>
-          <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 0 }}>
+          <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 0 }}>
             Our calculators, content, and tools are completely independent and not influenced by these partnerships. We recommend products we believe are genuinely useful for gig workers.
           </p>
         </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
               ' IRS mileage deduction (70¢)',
               ' Schedule SE calculations',
             ].map(item => (
-              <div key={item} style={{ fontSize: 13, color: '#374151', padding: '8px 12px', background: '#f8fafc', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
+              <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', padding: '8px 12px', background: '#f8fafc', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
             ))}
           </div>
         </div>

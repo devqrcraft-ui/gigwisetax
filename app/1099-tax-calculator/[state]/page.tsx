@@ -86,14 +86,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How 1099 Taxes Work in {state.name}</span>
           </div>
           <div style={{ padding: 20 }}>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, marginBottom: 12 }}>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, marginBottom: 12 }}>
               As a 1099 worker in {state.name}, you pay <strong>self-employment tax of 15.3%</strong> on 92.35% of your net earnings (this covers Social Security 12.4% and Medicare 2.9%). On top of that, you owe <strong>federal income tax</strong> at your bracket rate (10%–37%).{' '}
               {noStateTax
                 ? <><strong>{state.name} has no state income tax</strong>, which means you keep more of every dollar compared to high-tax states.</>
                 : <>{state.name} additionally charges <strong>up to {rateStr} state income tax</strong> on your 1099 income.</>
               }
             </p>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.75, margin: 0 }}>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, margin: 0 }}>
               You can deduct 50% of your SE tax from gross income, plus business expenses like mileage ($0.725/mile in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
             </p>
           </div>
@@ -155,7 +155,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     <td style={{ padding: '12px 14px' }}>
                       {noStateTax
                         ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
-                        : <span style={{ color: '#374151' }}>Required</span>}
+                        : <span style={{ color: 'rgba(255,255,255,0.85)' }}>Required</span>}
                     </td>
                   </tr>
                 ))}
@@ -171,7 +171,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>1099 Platforms in {state.name}</span>
           </div>
           <div style={{ padding: 16 }}>
-            <p style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>
               This {state.name} 1099 tax calculator works for all gig platforms:
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }}>

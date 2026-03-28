@@ -32,7 +32,7 @@ const faqSchema = {
 }
 
 export default function InstacartTaxGuide() {
-  const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
@@ -76,7 +76,7 @@ export default function InstacartTaxGuide() {
               {/* KEY FACTS */}
               <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 24 }}>
                 <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10 }}> Key Facts: Instacart Taxes 2026</div>
-                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
+                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
                   <li><strong>In-store shoppers</strong> are W-2 employees — taxes withheld automatically</li>
                   <li><strong>Full-service shoppers</strong> are 1099 contractors — you pay taxes yourself</li>
                   <li><strong>2026 mileage rate: $0.725/mile</strong> for all delivery miles</li>
@@ -92,7 +92,7 @@ export default function InstacartTaxGuide() {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }} className="form-grid">
                   <div style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
                     <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}> In-Store Shoppers</div>
-                    <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: '#374151', lineHeight: 1.8 }}>
+                    <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}>
                       <li>W-2 employee status</li>
                       <li>Taxes withheld by Instacart</li>
                       <li>No quarterly payments needed</li>
@@ -101,7 +101,7 @@ export default function InstacartTaxGuide() {
                   </div>
                   <div style={{ background: '#fff', border: '1px solid #fecaca', borderRadius: 4, padding: 12 }}>
                     <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 6, fontSize: 13 }}> Full-Service Shoppers</div>
-                    <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: '#374151', lineHeight: 1.8 }}>
+                    <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}>
                       <li>1099 independent contractor</li>
                       <li>No tax withholding</li>
                       <li>Must pay quarterly</li>
@@ -205,7 +205,7 @@ export default function InstacartTaxGuide() {
               ].map((item, i) => (
                 <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
                   <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                 </div>
               ))}
 
@@ -232,7 +232,7 @@ export default function InstacartTaxGuide() {
                   <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
-                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Auto-tracks Instacart mileage and separates business from personal expenses.</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Auto-tracks Instacart mileage and separates business from personal expenses.</div>
                 <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
                 <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
               </div>
@@ -247,7 +247,7 @@ export default function InstacartTaxGuide() {
                 { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
                 </a>
               ))}
             </div>

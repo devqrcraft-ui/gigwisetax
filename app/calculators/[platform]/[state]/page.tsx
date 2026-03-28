@@ -123,7 +123,7 @@ export default function CalculatorPage({ params }) {
     page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
     card: { background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
     h2: { fontSize: 20, fontWeight: 800, color: "rgba(255,255,255,0.9)", margin: "0 0 14px", lineHeight: 1.3 },
-    p: { fontSize: 15, color: "#374151", lineHeight: 1.8, marginBottom: 14 },
+    p: { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 14 },
   };
 
   return (
@@ -208,7 +208,7 @@ export default function CalculatorPage({ params }) {
                   {examples.map((income, i) => {
                     const t = calcTax(income, s.rate, "single");
                     return (
-                      <tr key={income} style={{ borderBottom: "1px solid #f0f1f3", background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
+                      <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
                         <td style={{ padding: "12px 14px", fontWeight: 800, fontSize: 15 }}>{fmt(income)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.seTax)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.federal)}</td>
@@ -304,7 +304,7 @@ export default function CalculatorPage({ params }) {
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> {p.name} in Other States</span>
             </div>
             {STATES.slice(0, 8).filter(st => st.slug !== s.slug).slice(0, 7).map(st => (
-              <Link key={st.slug} href={`/calculators/${p.slug}/${st.slug}`} style={{ padding: "9px 14px", borderBottom: "1px solid #f0f1f3", display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: "#374151", fontSize: 13 }}>
+              <Link key={st.slug} href={`/calculators/${p.slug}/${st.slug}`} style={{ padding: "9px 14px", borderBottom: '1px solid rgba(255,255,255,0.07)', display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13 }}>
                 <span>{st.name}</span>
                 <span style={{ color: st.hasTax ? "#B22234" : "#059669", fontWeight: 700, fontSize: 12 }}>{st.hasTax ? `${(st.rate * 100).toFixed(1)}%` : "No Tax"}</span>
               </Link>
@@ -317,7 +317,7 @@ export default function CalculatorPage({ params }) {
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> Other Platforms in {s.name}</span>
             </div>
             {PLATFORMS.filter(pl => pl.slug !== p.slug).slice(0, 6).map(pl => (
-              <Link key={pl.slug} href={`/calculators/${pl.slug}/${s.slug}`} style={{ padding: "9px 14px", borderBottom: "1px solid #f0f1f3", display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: "#374151", fontSize: 13 }}>
+              <Link key={pl.slug} href={`/calculators/${pl.slug}/${s.slug}`} style={{ padding: "9px 14px", borderBottom: '1px solid rgba(255,255,255,0.07)', display: "flex", justifyContent: "space-between", alignItems: "center", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13 }}>
                 <span>{pl.emoji} {pl.name}</span>
                 <span style={{ color: "#B22234" }}>›</span>
               </Link>

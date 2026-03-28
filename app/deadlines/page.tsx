@@ -79,7 +79,7 @@ export default function DeadlinesPage() {
                 </div>
               ))}
             </div>
-            <div style={{ padding: '16px 20px', background: '#f8fafc', fontSize: 13, color: '#374151', lineHeight: 1.7 }}>
+            <div style={{ padding: '16px 20px', background: '#f8fafc', fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
               <strong>How to pay:</strong> Use <a href="https://directpay.irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS Direct Pay</a> (free, no registration) or the IRS2Go app. Pay to "1040-ES" for estimated taxes. Same-day processing available.
             </div>
           </div>
@@ -87,12 +87,12 @@ export default function DeadlinesPage() {
           {/* PENALTY WARNING */}
           <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 20, marginBottom: 20 }}>
             <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10, fontSize: 15 }}> Underpayment Penalty Warning</div>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
               you must make quarterly estimated payments or face an <strong>underpayment penalty</strong>.
               For 2026, the underpayment rate is approximately <strong>7–8% annualized</strong> on the amount owed.
             </p>
-            <div style={{ fontSize: 13, color: '#374151', fontWeight: 600 }}>
+            <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>
               Safe Harbor: Pay at least 100% of your 2025 tax liability (110% if 2025 AGI exceeded $150,000) and avoid penalties entirely — even if you owe more in April.
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function DeadlinesPage() {
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
               </div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Automatically calculates and reminds you of quarterly tax deadlines. Built for gig workers.</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Automatically calculates and reminds you of quarterly tax deadlines. Built for gig workers.</div>
               <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
             </div>
@@ -165,7 +165,7 @@ export default function DeadlinesPage() {
               { label: ' Airbnb Tax Calculator', href: '/airbnb' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
               </a>
             ))}
           </div>

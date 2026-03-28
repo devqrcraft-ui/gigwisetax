@@ -20,7 +20,7 @@ const faqSchema = {
 }
 
 export default function UberTaxGuide() {
-  const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
@@ -61,21 +61,21 @@ export default function UberTaxGuide() {
               </div>
 
               {/* NEW 2026 TIP DEDUCTION */}
-              <div style={{ background: '#f0fdf4', border: '2px solid #059669', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+              <div style={{ background: 'rgba(5,150,105,0.12)', border: '2px solid #059669', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                 <div style={{ fontWeight: 800, color: '#059669', marginBottom: 8, fontSize: 15 }}> NEW 2026 LAW: Uber Drivers Can Deduct Tips Up to $25,000</div>
-                <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
+                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px' }}>
                   Starting in tax year 2026 (returns filed in 2027), a new federal tax law allows rideshare and delivery drivers
                   to deduct <strong>qualified tips up to $25,000</strong> from their taxable income.
                   You still report the tip income on Schedule C, then take a separate deduction on Schedule 1 to exempt it from tax.
                 </p>
-                <div style={{ fontSize: 13, color: '#166534', fontWeight: 600 }}>
+                <div style={{ fontSize: 13, color: '#4ade80', fontWeight: 600 }}>
                   Example: $8,000 in Uber tips + $25,000 cap = entire $8,000 is deductible. Saves approx. $2,400 in taxes.
                 </div>
               </div>
 
               <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                 <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: Uber Taxes 2026</div>
-                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
+                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
                   <li><strong>Uber does NOT withhold any taxes</strong> — you are an independent contractor</li>
                   <li><strong>2026 mileage rate: $0.725/mile</strong> — highest in years</li>
                   <li><strong>NEW: Tips deduction up to $25,000</strong> for 2026 tax year</li>
@@ -106,7 +106,7 @@ export default function UberTaxGuide() {
                     </div>
                   ))}
                 </div>
-                <p style={{ fontSize: 12, color: '#374151', marginTop: 10, marginBottom: 0 }}>
+                <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginTop: 10, marginBottom: 0 }}>
                   Uber provides your online miles in the Tax Summary. Track ALL miles — including driving to first pickup and between trips — using MileIQ, Stride, or Everlance apps.
                 </p>
               </div>
@@ -137,7 +137,7 @@ export default function UberTaxGuide() {
                   {['Method','Best For','Pros','Cons'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
                 </tr></thead>
                 <tbody>
-                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: '#f0fdf4' }}>
+                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(5,150,105,0.12)' }}>
                     <td style={{ padding: '11px 14px', fontWeight: 700 }}>Standard Mileage</td>
                     <td style={{ padding: '11px 14px' }}>Most drivers</td>
                     <td style={{ padding: '11px 14px', color: '#059669' }}>Simple, no receipts needed</td>
@@ -181,7 +181,7 @@ export default function UberTaxGuide() {
               ].map((item, i) => (
                 <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
                   <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                  <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
+                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
                 </div>
               ))}
 
@@ -207,7 +207,7 @@ export default function UberTaxGuide() {
                   <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
-                <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Handles 1099-K, 1099-NEC, mileage, and the new 2026 tips deduction automatically.</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Handles 1099-K, 1099-NEC, mileage, and the new 2026 tips deduction automatically.</div>
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
                 <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
               </div>
@@ -223,7 +223,7 @@ export default function UberTaxGuide() {
                 { label: ' W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
               ].map(l => (
                 <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
                 </a>
               ))}
             </div>

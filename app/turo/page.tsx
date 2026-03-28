@@ -71,7 +71,7 @@ export default function TuroPage() {
   }
 
   const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background:'#fff', boxSizing:'border-box' as const }
-  const lbl = { display:'block', fontSize:11, fontWeight:700, color:'#374151', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
+  const lbl = { display:'block', fontSize:11, fontWeight:700, color: 'rgba(255,255,255,0.85)', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
   const card= { background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
@@ -153,7 +153,7 @@ export default function TuroPage() {
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
                     { label:'Federal Income Tax',  val:fmt(result.federal), color: 'rgba(255,255,255,0.9)', sub:'After SE deduction' },
-                    { label:'State Income Tax',    val:fmt(result.stateTax), color:'#374151', sub:STATES.find(s=>s.code===stateCode)?.name },
+                    { label:'State Income Tax',    val:fmt(result.stateTax), color: 'rgba(255,255,255,0.85)', sub:STATES.find(s=>s.code===stateCode)?.name },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
                     <div key={r.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
@@ -205,7 +205,7 @@ export default function TuroPage() {
                     <span style={{ fontSize:14, fontWeight:600, color: 'rgba(255,255,255,0.9)' }}>{f.q}</span>
                     <span style={{ fontSize:16, color:'#B22234', fontWeight:700, marginLeft:12 }}>{openFaq===i ? '−' : '+'}</span>
                   </div>
-                  {openFaq===i && <div style={{ padding:'0 20px 16px', fontSize:13, color:'#374151', lineHeight:1.7 }}>{f.a}</div>}
+                  {openFaq===i && <div style={{ padding:'0 20px 16px', fontSize:13, color: 'rgba(255,255,255,0.85)', lineHeight:1.7 }}>{f.a}</div>}
                 </div>
               ))}
             </div>
@@ -249,7 +249,7 @@ export default function TuroPage() {
 
           <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
             <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
-            <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. No data stored. Estimates only.</div>
+            <div style={{ fontSize:12, color: 'rgba(255,255,255,0.85)', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. No data stored. Estimates only.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l,h]) => (
                 <Link key={l} href={h} style={{ fontSize:11, color:'#6c757d', textDecoration:'underline' }}>{l}</Link>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function GrubhubVsDoorDashPost() {
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
-  const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
+  const p  = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -41,9 +41,9 @@ export default function GrubhubVsDoorDashPost() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 32, alignItems: 'start' }} className="blog-grid">
         <article>
 
-          <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-            <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Short Answer</div>
-            <p style={{ fontSize: 13, color: '#166534', lineHeight: 1.7, margin: 0 }}>
+          <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
+            <div style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}> Short Answer</div>
+            <p style={{ fontSize: 13, color: '#4ade80', lineHeight: 1.7, margin: 0 }}>
               Grubhub and DoorDash use identical tax rules — both are 1099 independent contractors, both owe 15.3% SE tax, and both get the same IRS mileage deduction. The only difference is how much you earn and how many miles you drive, which affects your total tax bill.
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function GrubhubVsDoorDashPost() {
               ['Avg. Miles per Year', '20,000–30,000', '15,000–25,000'],
             ].map(([factor, grubhub, doordash], i) => (
               <div key={factor} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '11px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? '#fff' : '#fafafa' }}>
-                <span style={{ fontSize: 13, color: '#374151', fontWeight: 500 }}>{factor}</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{factor}</span>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{grubhub}</span>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{doordash}</span>
               </div>
@@ -101,7 +101,7 @@ export default function GrubhubVsDoorDashPost() {
               ['Net profit on Schedule C', '$19,700'],
             ].map(([l, v]) => (
               <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}>
-                <span style={{ color: '#374151' }}>{l}</span>
+                <span style={{ color: 'rgba(255,255,255,0.85)' }}>{l}</span>
                 <strong style={{ color: 'rgba(255,255,255,0.9)' }}>{v}</strong>
               </div>
             ))}

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function MileageRate2026Post() {
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px', paddingTop: 8, borderTop: '2px solid rgba(255,255,255,0.1)' }
-  const p  = { fontSize: 14, color: '#374151', lineHeight: 1.9, marginBottom: 14 }
+  const p  = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -86,9 +86,9 @@ export default function MileageRate2026Post() {
               ['40,000 miles', '$29,000', '$8,700'],
             ].map(([miles, deduction, savings]) => (
               <div key={miles} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
-                <span style={{ fontSize: 13, color: '#374151', fontWeight: 600 }}>{miles}</span>
+                <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>{miles}</span>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>{deduction} deduction</span>
-                <span style={{ fontSize: 13, color: '#166534', fontWeight: 700 }}>{savings} saved*</span>
+                <span style={{ fontSize: 13, color: '#4ade80', fontWeight: 700 }}>{savings} saved*</span>
               </div>
             ))}
             <div style={{ padding: '8px 16px', background: '#f8fafc', fontSize: 11, color: '#9ca3af' }}>*Tax savings estimated at 30% combined rate. Actual savings depend on your tax bracket and state.</div>
@@ -99,11 +99,11 @@ export default function MileageRate2026Post() {
             You can only choose one method per vehicle per year. Once you use actual expenses in the first year, you cannot switch to standard mileage later. If you use standard mileage first, you can switch to actual expenses in future years.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
-            <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#166534', marginBottom: 8 }}> Standard Mileage (70¢)</div>
+            <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 6, padding: 16 }}>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}> Standard Mileage (70¢)</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Simple — just track miles','No fuel receipts needed','Good for fuel-efficient cars','Can switch to actual in future years'].map(i => (
-                  <li key={i} style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
+                  <li key={i} style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
                 ))}
               </ul>
             </div>
@@ -111,7 +111,7 @@ export default function MileageRate2026Post() {
               <div style={{ fontSize: 14, fontWeight: 800, color: '#92400e', marginBottom: 8 }}> Actual Expenses</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Track gas, repairs, insurance','Depreciation included','Better for gas-guzzlers or luxury cars','More complex recordkeeping'].map(i => (
-                  <li key={i} style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
+                  <li key={i} style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
                 ))}
               </ul>
             </div>
@@ -131,7 +131,7 @@ export default function MileageRate2026Post() {
               'Business purpose (e.g., "DoorDash delivery — order #12345")',
               'Odometer reading OR total miles for the trip',
               'Total business miles for the year',
-            ].map(item => <li key={item} style={{ fontSize: 14, color: '#374151', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
+            ].map(item => <li key={item} style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
           </ul>
           <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>

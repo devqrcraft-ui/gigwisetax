@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 }
 
 export default function DoorDashTaxGuide() {
-  const prose = { fontSize: 14, color: '#374151', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
@@ -56,7 +56,7 @@ export default function DoorDashTaxGuide() {
 
             <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: DoorDash Taxes 2026</div>
-              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: '#374151', lineHeight: 2 }}>
+              <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
                 <li><strong>DoorDash does NOT withhold taxes</strong> — you are an independent contractor</li>
                 <li><strong>2026 mileage rate: $0.725 per mile</strong></li>
                 <li><strong>1099-NEC sent if you earn $600+</strong> — but ALL income is taxable</li>
@@ -80,7 +80,7 @@ export default function DoorDashTaxGuide() {
             <h2 style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
             <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}> 2026 Standard Mileage Rate: $0.725 per mile</div>
-              <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: '0 0 10px' }}>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px' }}>
                 The IRS standard mileage rate for 2026 is <strong>$0.725 per mile</strong> driven for business.
                 This is the highest rate in years. Track every mile you drive for DoorDash using a mileage app.
               </p>
@@ -154,7 +154,7 @@ export default function DoorDashTaxGuide() {
             ].map((item, i) => (
               <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
                 <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
               </div>
             ))}
 
@@ -181,7 +181,7 @@ export default function DoorDashTaxGuide() {
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
               </div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 14, lineHeight: 1.6 }}>Handles Schedule C and 1099-NEC for DoorDash workers. Mileage tracking included.</div>
+              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Handles Schedule C and 1099-NEC for DoorDash workers. Mileage tracking included.</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
             </div>
@@ -197,7 +197,7 @@ export default function DoorDashTaxGuide() {
               { label: ' DoorDash by State', href: '/doordash' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: '#374151', fontWeight: 500 }}>{l.label}</div>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
               </a>
             ))}
           </div>

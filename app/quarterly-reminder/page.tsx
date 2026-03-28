@@ -30,7 +30,7 @@ export default function QuarterlyReminder() {
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
   const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 16, fontWeight: 600, color: '#111827', background: '#fff', boxSizing: 'border-box' as const, marginTop: 8 }
-  const lbl  = { fontSize: 13, fontWeight: 700, color: '#374151', display: 'block', marginTop: 16 } as const
+  const lbl  = { fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.85)', display: 'block', marginTop: 16 } as const
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 20 } as const
 
   if (step === 'success') return (

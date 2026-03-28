@@ -155,9 +155,9 @@ export default function WalmartSparkPage() {
                 <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,0.55)', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}> Your 2026 Tax Estimate</div>
 
                 {result.mileDeduction > 0 && (
-                  <div style={{ background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', marginBottom:16, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
-                    <span style={{ fontSize:13, color:'#166534', fontWeight:600 }}>▸ Mileage Deduction Applied</span>
-                    <span style={{ fontSize:16, fontWeight:800, color:'#166534' }}>−{fmt(result.mileDeduction)}</span>
+                  <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', marginBottom:16, display:'flex', justifyContent:'space-between', alignItems:'center' }}>
+                    <span style={{ fontSize:13, color: '#4ade80', fontWeight:600 }}>▸ Mileage Deduction Applied</span>
+                    <span style={{ fontSize:16, fontWeight:800, color: '#4ade80' }}>−{fmt(result.mileDeduction)}</span>
                   </div>
                 )}
 
@@ -208,7 +208,7 @@ export default function WalmartSparkPage() {
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop:16, background:'#f0fdf4', border:'1px solid #bbf7d0', borderRadius:6, padding:'12px 16px', fontSize:13, color:'#166534' }}>
+              <div style={{ marginTop:16, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', fontSize:13, color: '#4ade80' }}>
                 <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 70¢/mile often saves more than actual expenses.
               </div>
             </div>

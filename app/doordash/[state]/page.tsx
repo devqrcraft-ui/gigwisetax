@@ -135,7 +135,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                         <td style={{ padding: '12px 14px', fontSize: 13 }}>
                           {noStateTax
                             ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
-                            : <span style={{ color: '#374151' }}>Required</span>}
+                            : <span style={{ color: 'rgba(255,255,255,0.85)' }}>Required</span>}
                         </td>
                       </tr>
                     ))}
@@ -146,7 +146,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 15, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}>Top Tax Deductions for {platform.name} Workers in {state.name}</h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 20 }} className="form-grid">
                   {deductions.map((d: string) => (
-                    <div key={d} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: '#374151', fontWeight: 500 }}>{d}</div>
+                    <div key={d} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{d}</div>
                   ))}
                 </div>
 
@@ -172,7 +172,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
                     <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
-                    <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7 }}>{item.a}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
                   </div>
                 ))}
 
@@ -209,7 +209,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'rgba(255,255,255,0.85)' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} in {state.abbr}</span>
                     <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                   </div>

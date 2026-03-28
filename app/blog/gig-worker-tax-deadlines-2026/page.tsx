@@ -70,7 +70,7 @@ export default function Page() {
               {DEADLINES.map((d, i) => (
                 <tr key={d.q} style={{ background: i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e5e9' }}>
                   <td style={{ padding: '14px 16px', fontWeight: 800 }}>{d.q}</td>
-                  <td style={{ padding: '14px 16px', color: '#374151' }}>{d.period}</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.85)' }}>{d.period}</td>
                   <td style={{ padding: '14px 16px', fontWeight: 700, color: '#B22234' }}>{d.due}</td>
                   <td style={{ padding: '14px 16px', color: '#6b7280' }}>{d.form}</td>
                 </tr>
@@ -109,7 +109,7 @@ export default function Page() {
         ].map(([q, a]) => (
           <details key={q as string} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>
             <summary style={{ fontWeight: 700, fontSize: 15, cursor: 'pointer', color: 'rgba(255,255,255,0.9)' }}>{q as string}</summary>
-            <p style={{ fontSize: 14, color: '#374151', lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>{a as string}</p>
+            <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>{a as string}</p>
           </details>
         ))}
 

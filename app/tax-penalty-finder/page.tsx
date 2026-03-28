@@ -58,7 +58,7 @@ export default function TaxPenaltyFinder() {
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '14px 32px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
-  const btnG = { background: '#f3f4f6', color: '#374151', border: '1px solid #d1d5db', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
+  const btnG = { background: '#f3f4f6', color: 'rgba(255,255,255,0.85)', border: '1px solid #d1d5db', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
   const opt  = (a: boolean) => ({ background: a?'#1e2d5a':'#f9fafb', color: a?'#fff':'#374151', border: a?'2px solid #B22234':'2px solid #e5e7eb', borderRadius: 8, padding: '14px 16px', fontSize: 14, fontWeight: 700, cursor: 'pointer', flex: 1, textAlign: 'center' as const })
   const inp  = { width: '100%', border: '2px solid #e5e7eb', borderRadius: 6, padding: '12px 14px', fontSize: 16, boxSizing: 'border-box' as const, marginTop: 8 }
 
@@ -83,7 +83,7 @@ export default function TaxPenaltyFinder() {
               <div style={{ fontSize:11, color:'#6b7280' }}>you could deduct</div>
             </div>
             {result.sCorpSavings > 0 ? (
-              <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:8, padding:16, textAlign:'center' }}>
+              <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:8, padding:16, textAlign:'center' }}>
                 <div style={{ fontSize:11, fontWeight:700, color:'#16a34a', letterSpacing:1 }}>S-CORP SAVINGS</div>
                 <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.sCorpSavings)}</div>
                 <div style={{ fontSize:11, color:'#6b7280' }}>per year if you switch</div>
@@ -101,7 +101,7 @@ export default function TaxPenaltyFinder() {
             {result.tips.map((tip: string, i: number) => (
               <div key={i} style={{ display:'flex', gap:10, marginBottom:8 }}>
                 <span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>
-                <span style={{ fontSize:13, color:'#374151' }}>{tip}</span>
+                <span style={{ fontSize:13, color: 'rgba(255,255,255,0.85)' }}>{tip}</span>
               </div>
             ))}
           </div>
@@ -148,7 +148,7 @@ export default function TaxPenaltyFinder() {
               <p style={{ color:'#6b7280', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
               <div style={{ background:'#f8fafc', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
                 {['Takes only 60 seconds','Personalized to your platform','Shows exact dollar savings','100% free — no signup needed'].map((t,i) => (
-                  <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color:'#374151' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
+                  <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
                 ))}
               </div>
               <button onClick={() => setStep(1)} style={btnR}>Find My Tax Savings →</button>
@@ -184,7 +184,7 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2025</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
-              {miles && <div style={{ background:'#f0fdf4', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
+              {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
                  Potential deduction: ${(parseFloat(miles)*0.70).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>

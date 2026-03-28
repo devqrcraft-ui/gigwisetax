@@ -335,9 +335,9 @@ export default function HomeClient() {
                     <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', textAlign: 'justify' as const, lineHeight: 1.6 }}>
                        <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
                     </div>
-                    <div style={{ marginTop: 10, background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#166534', lineHeight: 1.6 }}>
+                    <div style={{ marginTop: 10, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#4ade80', lineHeight: 1.6 }}>
                        <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
-                      <a href="/tax-penalty-finder" style={{ color: '#166534', fontWeight: 700 }}>→ Open Penalty Finder</a>
+                      <a href="/tax-penalty-finder" style={{ color: '#4ade80', fontWeight: 700 }}>→ Open Penalty Finder</a>
                     </div>
                   </div>
                 </div>

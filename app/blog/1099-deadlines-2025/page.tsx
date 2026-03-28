@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function DeadlinesBlog() {
   const s  = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
-  const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
+  const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
   const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
 
   const deadlines = [
@@ -66,7 +66,7 @@ export default function DeadlinesBlog() {
                   {d.urgent && <span style={{ display: 'block', background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '1px 5px', borderRadius: 2, marginBottom: 3, width: 'fit-content' }}>UPCOMING</span>}
                   {d.date}
                 </div>
-                <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.5 }}>{d.event}</div>
+                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>{d.event}</div>
               </div>
             ))}
           </div>

@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function HomeOfficeBlog() {
   const s  = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
-  const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
-  const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
+  const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
+  const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
   const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
 
   return (
@@ -51,16 +51,16 @@ export default function HomeOfficeBlog() {
           <h2 style={h2}>Who Qualifies for the Home Office Deduction?</h2>
           <p style={p}>To qualify, you need a space in your home that you use <strong>regularly and exclusively</strong> for your gig work business. This means:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '0 0 20px' }}>
-            <div style={{ background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: 14 }}>
+            <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 8 }}> QUALIFIES</div>
               {['Dedicated desk in spare bedroom used only for work','Craft room used exclusively for Etsy orders','Recording studio used only for content creation','Home office with door, used only for business'].map(i => (
-                <div key={i} style={{ fontSize: 13, color: '#374151', marginBottom: 5 }}>• {i}</div>
+                <div key={i} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 5 }}>• {i}</div>
               ))}
             </div>
             <div style={{ background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#B22234', marginBottom: 8 }}> DOES NOT QUALIFY</div>
               {['Kitchen table used for both eating and work','Living room couch where you sometimes check orders','Shared bedroom with a small desk in the corner','Space used for both business and personal storage'].map(i => (
-                <div key={i} style={{ fontSize: 13, color: '#374151', marginBottom: 5 }}>• {i}</div>
+                <div key={i} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 5 }}>• {i}</div>
               ))}
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function HomeOfficeBlog() {
             <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
               <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f3f4f6', fontSize: 14 }}>
-                <span style={{ color: '#374151' }}>{r.sqft} sq ft workspace</span>
+                <span style={{ color: 'rgba(255,255,255,0.85)' }}>{r.sqft} sq ft workspace</span>
                 <span style={{ fontWeight: 700, color: '#16a34a' }}>{r.ded} deduction</span>
               </div>
             ))}
@@ -83,7 +83,7 @@ export default function HomeOfficeBlog() {
           <p style={p}>If your home expenses are high, the actual expense method may save more than the simplified method. You calculate the percentage of your home used for business (workspace sq ft ÷ total home sq ft) and apply that percentage to:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, margin: '0 0 20px' }}>
             {['Rent or mortgage interest','Utilities (electric, gas, water)','Home insurance','Internet (business portion)','Home repairs and maintenance','Property taxes'].map(item => (
-              <div key={item} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: '#374151', display: 'flex', gap: 8 }}>
+              <div key={item} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
                 <span style={{ color: '#22c55e', fontWeight: 800 }}>✓</span>{item}
               </div>
             ))}

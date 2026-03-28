@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 export default function EtsyDeductionsBlog() {
   const s = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
-  const p  = { fontSize: 15, color: '#374151', lineHeight: 1.8, margin: '0 0 16px' }
-  const tip  = { background: '#f0fdf4', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
+  const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
+  const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
 
   const deductions = [
     { cat: ' Materials & Supplies', items: ['Raw materials (fabric, yarn, wood, resin, etc.)', 'Packaging materials (boxes, tissue paper, ribbon)', 'Shipping supplies (tape, labels, bubble wrap)', 'Tools and equipment used for production'] },
@@ -62,7 +62,7 @@ export default function EtsyDeductionsBlog() {
               <h2 style={h2}>{cat.cat}</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 {cat.items.map((item, j) => (
-                  <div key={j} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: '#374151', display: 'flex', gap: 8 }}>
+                  <div key={j} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
                     <span style={{ color: '#22c55e', fontWeight: 800, flexShrink: 0 }}>✓</span>
                     {item}
                   </div>
