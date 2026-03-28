@@ -38,10 +38,10 @@ export default function Page() {
               {href:'/grubhub',    label:'Grubhub',      desc:'Delivery tax estimates',         cta:'Open Grubhub Tax Calculator'},
               {href:'/walmart-spark',label:'Walmart Spark',desc:'Spark driver taxes',           cta:'Open Walmart Spark Calculator'},
             ].map(p => (
-              <a key={p.href} href={p.href} className="hub-card" style={{display:'block',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none'}}>
+              <a key={p.href} href={p.href} className="hub-card" style={{display:'flex',flexDirection:'column',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none',background:'#0d1b3e',border:'1px solid rgba(255,255,255,0.1)'}}>
                 <div style={{fontSize:'15px',fontWeight:800,color:'#fff',marginBottom:'4px'}}>{p.label} Tax Calculator</div>
-                <div style={{fontSize:'12px',color:'rgba(255,255,255,0.5)',lineHeight:1.4,marginBottom:'10px'}}>{p.desc}</div>
-                <div style={{background:'#B22234',color:'#fff',fontSize:'12px',fontWeight:700,padding:'8px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta} </div>
+                <div style={{fontSize:'13px',color:'rgba(255,255,255,0.55)',lineHeight:1.5,marginBottom:'12px',flexGrow:1}}>{p.desc}</div>
+                <div style={{background:'#B22234',color:'#fff',fontSize:'13px',fontWeight:700,padding:'10px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta}</div>
               </a>
             ))}
 

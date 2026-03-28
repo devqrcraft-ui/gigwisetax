@@ -102,7 +102,7 @@ export default function HomeClient() {
   }
 
   /* ── shared style tokens ── */
-  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
+  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
   const cardHd   = { background: '#1a1a2e', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent   = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#a8b8d0', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
@@ -535,7 +535,7 @@ export default function HomeClient() {
           {/* QUICK LINKS */}
           <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Popular Calculators</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.75)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Popular Calculators</span>
             </div>
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
