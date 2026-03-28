@@ -80,7 +80,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
 
         {/* How 1099 taxes work */}
-        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
           <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How 1099 Taxes Work in {state.name}</span>
@@ -111,7 +111,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 { gross: 40000, net: net40k, label: '$40,000 gross 1099 income' },
                 { gross: 80000, net: net80k, label: '$80,000 gross 1099 income' },
               ].map(ex => (
-                <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16 }}>
+                <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
                   <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>{ex.label}</div>
                   <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.7 }}>
                     SE tax (15.3%): ~${Math.round(ex.gross * 0.9235 * 0.153).toLocaleString()}<br/>
@@ -146,11 +146,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <tbody>
                 {DEADLINES_2026.map((d, i) => (
                   <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                    <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
-                      {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
+                    <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
+                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                       {d.q} 2026
                     </td>
-                    <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e' }}>{d.due}</td>
+                    <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
                     <td style={{ padding: '12px 14px', color: '#059669', fontWeight: 600 }}>✓ Required</td>
                     <td style={{ padding: '12px 14px' }}>
                       {noStateTax

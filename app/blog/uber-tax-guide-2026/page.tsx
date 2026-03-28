@@ -51,7 +51,7 @@ export default function UberTaxGuide() {
 
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
           <div>
-            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
                 <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Uber Taxes Instantly</div>
@@ -123,7 +123,7 @@ export default function UberTaxGuide() {
                   { icon: '', name: 'Car Maintenance (actual method)', detail: 'Oil changes, tires, repairs — deductible if using actual expense method instead of mileage.' },
                   { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, Stride, or any tax/mileage app subscription. 100% deductible.' },
                 ].map(d => (
-                  <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
+                  <div key={d.name} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 12 }}>
                     <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
                     <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                     <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>

@@ -54,7 +54,7 @@ export default function MileageRate2026Post() {
           </p>
 
           <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
               ['2026', '70¢/mile', true],
@@ -133,7 +133,7 @@ export default function MileageRate2026Post() {
               'Total business miles for the year',
             ].map(item => <li key={item} style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
           </ul>
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>
             {[
               { name: 'Stride', cost: 'Free', note: 'Best for most gig workers, IRS-compliant logs' },

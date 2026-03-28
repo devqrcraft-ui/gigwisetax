@@ -56,7 +56,7 @@ export default function GrubhubVsDoorDashPost() {
           </p>
 
           <h2 style={h2}>Side-by-Side Tax Comparison</h2>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> Grubhub</span>
@@ -91,7 +91,7 @@ export default function GrubhubVsDoorDashPost() {
           <p style={p}>
             If you drive for both Grubhub and DoorDash, you file a <strong>single Schedule C</strong> combining all self-employment income. You don't file two separate Schedule Cs unless you run them as genuinely separate business activities (rare).
           </p>
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16, marginBottom: 16 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}> Multi-App Filing Example</div>
             {[
               ['Grubhub income', '$22,000'],

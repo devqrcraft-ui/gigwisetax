@@ -34,7 +34,7 @@ export default function TermsPage() {
           </div>
         </div>
 
-        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
           <div style={section}>
             <h2 style={h2}>1. Acceptance of Terms</h2>

@@ -82,7 +82,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             This covers Social Security (12.4%) and Medicare (2.9%). The SE tax is calculated on <strong>92.35% of your net profit</strong> (after deductions). You can then deduct 50% of the SE tax from your gross income.
           </p>
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16, marginBottom: 16 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
             {[
               ['Net income (after mileage deduction)', '$50,000'],
@@ -148,7 +148,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
           </p>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
             {[
               { q: 'Q1 2026', period: 'Jan – Mar income', due: 'April 15, 2026', urgent: true },

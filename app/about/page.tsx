@@ -34,7 +34,7 @@ export default function AboutPage() {
             { icon: '', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
             { icon: '', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
+            <div key={s.label} style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 4 }}>{s.label}</div>
               <div style={{ fontSize: 12, color: '#6c757d' }}>{s.desc}</div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
               ' IRS mileage deduction (70¢)',
               ' Schedule SE calculations',
             ].map(item => (
-              <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', padding: '8px 12px', background: 'rgba(255,255,255,0.05)', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
+              <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', padding: '8px 12px', background: 'rgba(255,255,255,0.05)', borderRadius: 4, border: '1px solid rgba(255,255,255,0.1)' }}>{item}</div>
             ))}
           </div>
         </div>

@@ -44,7 +44,7 @@ export default function DoorDashTaxGuide() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
         <div>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
             {/* CTA */}
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
@@ -109,7 +109,7 @@ export default function DoorDashTaxGuide() {
                 { icon: '', name: 'Parking & Tolls', detail: 'Any parking fees or tolls incurred while on delivery. Keep all receipts.' },
                 { icon: '', name: 'Vehicle Maintenance', detail: 'Oil changes, tires, repairs — deduct business percentage if using actual expense method.' },
               ].map(d => (
-                <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
+                <div key={d.name} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
                   <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                   <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
@@ -131,11 +131,11 @@ export default function DoorDashTaxGuide() {
                   { q: 'Q4 2026', due: 'Jan 15, 2027', now: false },
                 ].map((d, i) => (
                   <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                    <td style={{ padding: '11px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
-                      {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
+                    <td style={{ padding: '11px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
+                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                       {d.q}
                     </td>
-                    <td style={{ padding: '11px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e' }}>{d.due}</td>
+                    <td style={{ padding: '11px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
                     <td style={{ padding: '11px 14px' }}>
                       <a href="/doordash" style={{ textDecoration: 'none' }}>
                         <span style={{ background: '#1a1a2e', color: '#fff', padding: '4px 10px', borderRadius: 3, fontSize: 11, fontWeight: 600 }}>+ Calendar</span>

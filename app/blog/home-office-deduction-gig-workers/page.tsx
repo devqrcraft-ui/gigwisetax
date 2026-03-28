@@ -102,7 +102,7 @@ export default function HomeOfficeBlog() {
             </Link>
           </div>
 
-          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> This article is for informational purposes only. Home office rules are complex and fact-specific. Consult a licensed CPA before claiming this deduction.
           </div>
         </div>

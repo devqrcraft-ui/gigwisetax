@@ -107,7 +107,7 @@ export default function Page() {
           ['What happens if I miss a quarterly estimated tax deadline?', 'The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed.'],
           ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 51 states.'],
         ].map(([q, a]) => (
-          <details key={q as string} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>
+          <details key={q as string} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>
             <summary style={{ fontWeight: 700, fontSize: 15, cursor: 'pointer', color: 'rgba(255,255,255,0.9)' }}>{q as string}</summary>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginTop: 10, marginBottom: 0 }}>{a as string}</p>
           </details>

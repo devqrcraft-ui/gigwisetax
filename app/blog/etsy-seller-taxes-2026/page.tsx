@@ -32,7 +32,7 @@ export default function EtsyTaxGuide() {
       </div>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
         <div>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
               <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Etsy Taxes Instantly</div>
               <a href="/etsy" style={{ textDecoration: 'none' }}><div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div></a>
@@ -82,7 +82,7 @@ export default function EtsyTaxGuide() {
                 { icon: '', name: 'Printer & Office Supplies', detail: 'Printer, ink, labels, stickers, thank-you cards. 100% deductible for business use.' },
                 { icon: '', name: 'Software Subscriptions', detail: 'Canva, Adobe, Etsy Pattern, Quickbooks. 100% deductible if for business.' },
               ].map(d => (
-                <div key={d.name} style={{ border: '1px solid #e2e5e9', borderRadius: 6, padding: 12 }}>
+                <div key={d.name} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
                   <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
                   <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
