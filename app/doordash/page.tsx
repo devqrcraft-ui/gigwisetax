@@ -245,8 +245,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </a>
 
                 {isPlatformDriver && (
-                  <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.725 per mile</div>
+                  <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid rgba(3,105,161,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: $0.725 per mile</div>
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
                       Track every delivery mile using a mileage app. On 10,000 miles, that's a <strong>$10,500 deduction</strong> — reducing your taxable income significantly.
@@ -256,8 +256,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 )}
 
                 {isRental && (
-                  <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#166534', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
+                  <div style={{ background: 'rgba(22,101,52,0.12)', border: '1px solid rgba(22,101,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                    <div style={{ fontWeight: 700, color: '#86efac', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       If you rent your property for <strong>14 days or fewer</strong> per year, rental income is tax-free (Section 280A exclusion).
                       Above 14 days, you must report income but can deduct a proportional share of mortgage interest, property taxes, utilities, and depreciation.
@@ -303,7 +303,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>
-                    <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.95)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
                     <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                   </div>
                 ))}
