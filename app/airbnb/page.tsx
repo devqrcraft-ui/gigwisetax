@@ -305,7 +305,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>
-                    <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.95)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
                     <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                   </div>
                 ))}
@@ -340,7 +340,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           {/* SIDEBAR */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             {/* AD */}
-            <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             {/* OTHER CALCULATORS */}
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
