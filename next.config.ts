@@ -1,6 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: '/doordash-tax-calculator-2026', destination: '/doordash', permanent: true },
+      { source: '/uber-tax-calculator-2026', destination: '/uber', permanent: true },
+      { source: '/airbnb-tax-calculator-2026', destination: '/airbnb', permanent: true },
+      { source: '/etsy-tax-calculator-2026', destination: '/etsy', permanent: true },
+      { source: '/instacart-tax-calculator-2026', destination: '/instacart', permanent: true },
+      { source: '/lyft-tax-calculator-2026', destination: '/lyft', permanent: true },
+      { source: '/onlyfans-tax-calculator-2026', destination: '/onlyfans', permanent: true },
+      { source: '/amazon-flex-tax-calculator-2026', destination: '/amazon-flex', permanent: true },
+      { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
+    ];
+  },
   compress: true,
   experimental: {
     optimizeCss: true,
