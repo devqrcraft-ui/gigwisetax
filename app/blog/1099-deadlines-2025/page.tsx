@@ -61,7 +61,7 @@ export default function DeadlinesBlog() {
           <h2 style={h2}>Complete 2025 Tax Deadline Calendar</h2>
           <div style={{ border: '1px solid #e2e8f0', borderRadius: 8, overflow: 'hidden', marginBottom: 24 }}>
             {deadlines.map((d, i) => (
-              <div key={i} style={{ display: 'flex', gap: 16, padding: '14px 18px', borderBottom: i < deadlines.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', background: d.urgent ? 'rgba(178,34,52,0.12)' : i%2===0 ? '#fff' : '#fafafa', alignItems: 'flex-start' }}>
+              <div key={i} style={{ display: 'flex', gap: 16, padding: '14px 18px', borderBottom: i < deadlines.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', background: d.urgent ? 'rgba(178,34,52,0.12)' : i%2===0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)', alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 160, fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)', flexShrink: 0 }}>
                   {d.urgent && <span style={{ display: 'block', background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '1px 5px', borderRadius: 2, marginBottom: 3, width: 'fit-content' }}>UPCOMING</span>}
                   {d.date}

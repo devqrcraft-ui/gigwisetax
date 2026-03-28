@@ -114,7 +114,7 @@ export default function DeadlinesPage() {
                 </thead>
                 <tbody>
                   {STATES_DEADLINES.map((s, i) => (
-                    <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
+                    <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 700, fontSize: 13 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '11px 14px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 13 }}>{s.rate}</td>
                       <td style={{ padding: '11px 14px', color: s.q1 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>

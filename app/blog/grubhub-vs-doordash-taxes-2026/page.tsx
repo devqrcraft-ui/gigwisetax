@@ -74,7 +74,7 @@ export default function GrubhubVsDoorDashPost() {
               ['State Tax', 'Depends on state', 'Depends on state'],
               ['Avg. Miles per Year', '20,000–30,000', '15,000–25,000'],
             ].map(([factor, grubhub, doordash], i) => (
-              <div key={factor} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '11px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? '#fff' : '#fafafa' }}>
+              <div key={factor} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', padding: '11px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{factor}</span>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{grubhub}</span>
                 <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 600, textAlign: 'center' as const }}>{doordash}</span>
