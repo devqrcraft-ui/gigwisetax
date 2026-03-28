@@ -156,15 +156,15 @@ const CSS = `
   .combo { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 20px; }
   .combo-apps { font-size: 20px; margin-bottom: 8px; }
   .combo-title { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-  .combo-state { font-size: 12px; color: #6b7280; margin-bottom: 14px; }
+  .combo-state { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
   .row { display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
   .row:last-of-type { border-bottom: none; }
-  .rl { color: #6b7280; }
+  .rl { color: rgba(255,255,255,0.5); }
   .rv { font-weight: 600; color: #d1d5db; }
   .rv.red { color: #f87171; }
   .rv.green { color: #4ade80; }
   .rv.yellow { color: #e8b84b; }
-  .combo-note { font-size: 12px; color: #6b7280; margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
+  .combo-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
   .combo-cta { display: block; margin-top: 12px; background: #B22234; color: #fff; text-align: center; padding: 9px 0; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; }
   .steps { counter-reset: step; margin-bottom: 24px; }
   .step { display: flex; gap: 16px; margin-bottom: 16px; }
@@ -233,7 +233,7 @@ export default function MultiAppPage() {
         {/* REAL EXAMPLES */}
         <div className="section">
           <h2>Real Tax Estimates: Popular App Combinations</h2>
-          <p style={{fontSize:13,color:'#6b7280',marginBottom:20}}>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.5)',marginBottom:20}}>
             Based on 2026 IRS brackets. SE tax 15.3% + federal + state. Net income after expenses shown.
           </p>
           <div className="combo-grid">
@@ -318,7 +318,7 @@ export default function MultiAppPage() {
         {/* CTA LINKS */}
         <div className="section">
           <h2>Calculate Your Multi-App Taxes</h2>
-          <p style={{fontSize:13,color:'#6b7280',marginBottom:16}}>Use our platform calculators — enter your combined income for accurate results.</p>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.5)',marginBottom:16}}>Use our platform calculators — enter your combined income for accurate results.</p>
           <div className="links-grid">
             {[
               { name:'DoorDash',href:'/doordash'},

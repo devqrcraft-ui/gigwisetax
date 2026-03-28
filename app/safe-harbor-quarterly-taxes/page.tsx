@@ -26,7 +26,7 @@ const CSS = `
   .rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
   .rule-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
   .rule-card.active{border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.05);}
-  .rule-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;color:#6b7280;}
+  .rule-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;color:rgba(255,255,255,0.5);}
   .rule-card.active .rule-label{color:#4ade80;}
   .rule-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:6px;}
   .rule-desc{font-size:13px;color:#9ca3af;line-height:1.6;}
@@ -43,7 +43,7 @@ const CSS = `
   .scenario-title{font-size:15px;font-weight:800;color:#fff;margin-bottom:14px;}
   .s-row{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);}
   .s-row:last-child{border-bottom:none;}
-  .s-label{color:#6b7280;}
+  .s-label{color:rgba(255,255,255,0.5);}
   .s-val{color:#d1d5db;font-weight:500;}
   .s-val.red{color:#f87171;}
   .s-val.green{color:#4ade80;}
@@ -54,7 +54,7 @@ const CSS = `
   .tl-dot.urgent{background:rgba(178,34,52,.2);border-color:rgba(178,34,52,.5);color:#fca5a5;}
   .tl-content{padding-top:4px;}
   .tl-date{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
-  .tl-desc{font-size:12px;color:#6b7280;line-height:1.5;}
+  .tl-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5;}
   .tl-penalty{font-size:12px;color:#f87171;font-weight:600;margin-top:3px;}
   .strategy-box{background:rgba(232,184,75,.06);border:1px solid rgba(232,184,75,.2);border-radius:12px;padding:22px;margin-bottom:16px;}
   .strategy-title{font-size:15px;font-weight:700;color:#e8b84b;margin-bottom:10px;}
@@ -100,7 +100,7 @@ export default function SafeHarborPage() {
         {/* SAFE HARBOR RULES */}
         <div className="section">
           <h2 className="sh-h2">The Two Safe Harbor Rules</h2>
-          <p style={{fontSize:'14px',color:'#6b7280',marginBottom:'20px',lineHeight:'1.6'}}>
+          <p style={{fontSize:'14px',color:'rgba(255,255,255,0.5)',marginBottom:'20px',lineHeight:'1.6'}}>
             Pay at least one of these amounts and the IRS cannot charge an underpayment penalty — even if you end up owing more at filing.
           </p>
           <div className="rule-grid">
@@ -126,7 +126,7 @@ export default function SafeHarborPage() {
         {/* PENALTY CALCULATION */}
         <div className="section">
           <h2 className="sh-h2">How the Underpayment Penalty Is Calculated</h2>
-          <p style={{fontSize:'14px',color:'#6b7280',marginBottom:'20px',lineHeight:'1.6'}}>
+          <p style={{fontSize:'14px',color:'rgba(255,255,255,0.5)',marginBottom:'20px',lineHeight:'1.6'}}>
             The penalty is not a flat fee — it accrues per quarter at the current IRS short-term rate plus 3%.
             In 2026 this is approximately <strong style={{color:'#fca5a5'}}>7–8% annually</strong> on the underpaid amount.
           </p>
@@ -175,7 +175,7 @@ export default function SafeHarborPage() {
         {/* MULTI-APP SCENARIOS */}
         <div className="section">
           <h2 className="sh-h2">Multi-App Gig Worker Scenarios</h2>
-          <p style={{fontSize:'14px',color:'#6b7280',marginBottom:'20px',lineHeight:'1.6'}}>
+          <p style={{fontSize:'14px',color:'rgba(255,255,255,0.5)',marginBottom:'20px',lineHeight:'1.6'}}>
             Working multiple platforms is common — but taxes are calculated on <strong>combined net income</strong>, not per platform.
             Here are real scenarios with safe harbor calculations.
           </p>
@@ -340,7 +340,7 @@ export default function SafeHarborPage() {
         </div>
 
         <h2 className="sh-h2" style={{marginBottom:'8px'}}>Calculate Your Quarterly Payment</h2>
-        <p style={{fontSize:'14px',color:'#6b7280',marginBottom:'16px'}}>Select your platform for a precise breakdown including deductions and quarterly schedule.</p>
+        <p style={{fontSize:'14px',color:'rgba(255,255,255,0.5)',marginBottom:'16px'}}>Select your platform for a precise breakdown including deductions and quarterly schedule.</p>
         <div className="tools-row">
           <Link href="/doordash" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">DoorDash</div></Link>
           <Link href="/uber" className="tool-btn"><div className="tool-emoji"></div><div className="tool-name">Uber</div></Link>

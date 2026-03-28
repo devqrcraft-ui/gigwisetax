@@ -35,7 +35,7 @@ export default function SCorpCalculator() {
 
   const Row = ({ l, v, b }: { l: string; v: string; b?: boolean }) => (
     <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-      <span style={{ fontSize: 14, color: b ? '#ffffff' : '#6b7280', fontWeight: b ? 700 : 400 }}>{l}</span>
+      <span style={{ fontSize: 14, color: b ? '#ffffff' : 'rgba(255,255,255,0.5)', fontWeight: b ? 700 : 400 }}>{l}</span>
       <span style={{ fontSize: 14, fontWeight: b ? 800 : 600, color: b ? '#ffffff' : 'rgba(255,255,255,0.75)' }}>{v}</span>
     </div>
   )

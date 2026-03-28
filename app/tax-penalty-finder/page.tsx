@@ -74,25 +74,25 @@ export default function TaxPenaltyFinder() {
           <div style={{ background:'rgba(178,34,52,0.12)', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#B22234', letterSpacing:1, marginBottom:4 }}>YOU ARE CURRENTLY OVERPAYING THE IRS</div>
             <div style={{ fontSize:52, fontWeight:900, color:'#B22234', lineHeight:1 }}>{fmt(result.overpaying)}</div>
-            <div style={{ fontSize:13, color:'#6b7280', marginTop:6 }}>per year in avoidable taxes & penalties</div>
+            <div style={{ fontSize:13, color:'rgba(255,255,255,0.5)', marginTop:6 }}>per year in avoidable taxes & penalties</div>
           </div>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:20 }}>
             <div style={{ background:'#fef9e7', border:'1px solid #f39c12', borderRadius:8, padding:16, textAlign:'center' }}>
               <div style={{ fontSize:11, fontWeight:700, color:'#f39c12', letterSpacing:1 }}>MISSED DEDUCTIONS</div>
               <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.missedDeductions)}</div>
-              <div style={{ fontSize:11, color:'#6b7280' }}>you could deduct</div>
+              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>you could deduct</div>
             </div>
             {result.sCorpSavings > 0 ? (
               <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:8, padding:16, textAlign:'center' }}>
                 <div style={{ fontSize:11, fontWeight:700, color:'#16a34a', letterSpacing:1 }}>S-CORP SAVINGS</div>
                 <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.sCorpSavings)}</div>
-                <div style={{ fontSize:11, color:'#6b7280' }}>per year if you switch</div>
+                <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>per year if you switch</div>
               </div>
             ) : (
               <div style={{ background:'#eff6ff', border:'1px solid #3b82f6', borderRadius:8, padding:16, textAlign:'center' }}>
                 <div style={{ fontSize:11, fontWeight:700, color:'#2563eb', letterSpacing:1 }}>QUARTERLY PAYMENT</div>
                 <div style={{ fontSize:20, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.quarterlyOwed)}</div>
-                <div style={{ fontSize:11, color:'#6b7280' }}>due Apr 15, 2026</div>
+                <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>due Apr 15, 2026</div>
               </div>
             )}
           </div>
@@ -145,7 +145,7 @@ export default function TaxPenaltyFinder() {
             <div style={{ textAlign:'center' }}>
               <div style={{ fontSize:48, marginBottom:16 }}></div>
               <h2 style={{ fontSize:20, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 10px' }}>Find Your Tax Overpayment</h2>
-              <p style={{ color:'#6b7280', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
               <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
                 {['Takes only 60 seconds','Personalized to your platform','Shows exact dollar savings','100% free — no signup needed'].map((t,i) => (
                   <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
@@ -168,7 +168,7 @@ export default function TaxPenaltyFinder() {
           {step === 2 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>What's your annual {platform} income?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>Enter your gross earnings before expenses</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Enter your gross earnings before expenses</p>
               <input type="text" inputMode="numeric" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45000" style={{...inp, color:"#ffffff", background:"#fff"}}/>
               <div style={{ display:'flex', gap:8, marginTop:12, flexWrap:'wrap' as const }}>
                 {['15000','25000','45000','65000','85000'].map(v => (
@@ -182,7 +182,7 @@ export default function TaxPenaltyFinder() {
           {step === 3 && hasMileage && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2025</strong> — your biggest deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2025</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background:"#fff"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
                  Potential deduction: ${(parseFloat(miles)*0.70).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
@@ -194,7 +194,7 @@ export default function TaxPenaltyFinder() {
           {step === 4 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you have a dedicated home office?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>A room used exclusively for work = up to $1,500/yr deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>A room used exclusively for work = up to $1,500/yr deduction</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setHomeOffice(true)} style={opt(homeOffice===true)}> Yes, I do</button>
                 <button onClick={() => setHomeOffice(false)} style={opt(homeOffice===false)}> No</button>
@@ -206,7 +206,7 @@ export default function TaxPenaltyFinder() {
           {step === 5 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you use your phone/internet for work?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>50–80% of your bill is deductible if used for work</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>50–80% of your bill is deductible if used for work</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setPhone(true)} style={opt(phone===true)}> Yes</button>
                 <button onClick={() => setPhone(false)} style={opt(phone===false)}> No</button>
@@ -218,7 +218,7 @@ export default function TaxPenaltyFinder() {
           {step === 6 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Are you paying quarterly estimated taxes?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 8% of owed amount</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 8% of owed amount</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}> Yes, I pay quarterly</button>
                 <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}> No / Not sure</button>
@@ -230,7 +230,7 @@ export default function TaxPenaltyFinder() {
           {step === 7 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>What's your business structure?</h2>
-              <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>This determines how much self-employment tax you pay</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>This determines how much self-employment tax you pay</p>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
                 {[{val:'sole-prop',label:'Sole Proprietor',sub:'Most common'},{val:'llc',label:'LLC',sub:'Single-member'},{val:'s-corp',label:'S-Corporation',sub:'Already optimized'},{val:'unsure',label:"I'm not sure",sub:"We'll explain"}].map(o => (
                   <button key={o.val} onClick={() => setEntity(o.val)} style={{ ...opt(entity===o.val), padding:'14px 10px' }}>

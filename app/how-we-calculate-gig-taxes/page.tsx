@@ -20,9 +20,9 @@ const CSS = `
   .formula-title { font-size: 11px; font-weight: 800; color: #e8b84b; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Segoe UI', sans-serif; }
   .formula-line { font-size: 14px; color: #fff; margin-bottom: 6px; line-height: 1.7; }
   .formula-line span { color: #e8b84b; }
-  .formula-note { font-size: 12px; color: #6b7280; margin-top: 10px; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+  .formula-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 10px; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
   .source-box { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
-  .source-label { font-size: 11px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .source-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
   .source-text { font-size: 13px; color: #9ca3af; line-height: 1.65; }
   .source-link { color: #e8b84b; text-decoration: none; font-weight: 600; }
   .bracket-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
@@ -33,7 +33,7 @@ const CSS = `
   .example-box { background: rgba(34,197,94,.04); border: 1px solid rgba(34,197,94,.15); border-radius: 10px; padding: 18px 22px; margin-bottom: 16px; }
   .example-title { font-size: 13px; font-weight: 700; color: #4ade80; margin-bottom: 12px; }
   .ex-row { display: flex; justify-content: space-between; font-size: 13px; padding: 4px 0; }
-  .ex-label { color: #6b7280; }
+  .ex-label { color: rgba(255,255,255,0.5); }
   .ex-val { color: #d1d5db; font-weight: 600; }
   .ex-val.total { color: #f87171; font-size: 15px; font-weight: 800; }
   .disclaimer { background: rgba(178,34,52,.06); border: 1px solid rgba(178,34,52,.2); border-radius: 8px; padding: 16px 20px; font-size: 13px; color: #9ca3af; line-height: 1.7; margin-top: 32px; }
@@ -116,7 +116,7 @@ export default function HowWeCalculatePage() {
               Standard deduction 2026: $15,000 (single), $30,000 (married filing jointly).
             </div>
           </div>
-          <p style={{fontSize:12,color:'#6b7280',marginTop:8,lineHeight:1.6}}>
+          <p style={{fontSize:12,color:'rgba(255,255,255,0.5)',marginTop:8,lineHeight:1.6}}>
             Note: Our calculator uses a simplified effective rate based on the most common bracket for the entered income level.
             Actual federal tax depends on additional deductions, credits, and other income.
           </p>
