@@ -50,7 +50,7 @@ export default function QuarterlyTaxesGuide() {
             ['Q4', 'Sep 1 – Dec 31', 'January 15, 2027'],
           ].map(([q, period, due], i) => (
             <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-              <td style={{ padding: '12px 16px', fontWeight: 700, color: i === 0 ? '#ff4444' : 'rgba(255,255,255,0.03)' }}>{q}</td>
+              <td style={{ padding: '12px 16px', fontWeight: 700, color: i === 0 ? '#ff4444' : 'rgba(255,255,255,0.85)' }}>{q}</td>
               <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>{period}</td>
               <td style={{ padding: '12px 16px', fontWeight: 600, color: i === 0 ? '#ff4444' : '#e8b84b' }}>{due}</td>
             </tr>

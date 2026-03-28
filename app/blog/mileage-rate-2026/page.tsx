@@ -66,7 +66,7 @@ export default function MileageRate2026Post() {
               ['2021', '56.0¢/mile', false],
               ['2020', '57.5¢/mile', false],
             ].map(([year, rate, current]) => (
-              <div key={year as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: current ? '#fff8e6' : 'transparent' }}>
+              <div key={year as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: current ? 'rgba(232,184,75,0.1)' : 'transparent' }}>
                 <span style={{ fontSize: 14, fontWeight: current ? 800 : 500, color: current ? '#1a1a2e' : 'rgba(255,255,255,0.75)' }}>{year as string} {current && '← Current'}</span>
                 <span style={{ fontSize: 14, fontWeight: 700, color: current ? '#B22234' : '#6c757d' }}>{rate as string}</span>
               </div>
@@ -107,7 +107,7 @@ export default function MileageRate2026Post() {
                 ))}
               </ul>
             </div>
-            <div style={{ background: '#fff8e6', border: '1px solid #fde68a', borderRadius: 6, padding: 16 }}>
+            <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: '#fcd34d', marginBottom: 8 }}> Actual Expenses</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Track gas, repairs, insurance','Depreciation included','Better for gas-guzzlers or luxury cars','More complex recordkeeping'].map(i => (

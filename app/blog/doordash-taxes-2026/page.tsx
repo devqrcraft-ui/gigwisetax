@@ -78,8 +78,8 @@ export default function DoorDashTaxGuide() {
             </p>
 
             <h2 style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
-            <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8, fontSize: 15 }}> 2026 Standard Mileage Rate: $0.725 per mile</div>
+            <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+              <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8, fontSize: 15 }}> 2026 Standard Mileage Rate: $0.725 per mile</div>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px' }}>
                 The IRS standard mileage rate for 2026 is <strong>$0.725 per mile</strong> driven for business.
                 This is the highest rate in years. Track every mile you drive for DoorDash using a mileage app.
@@ -92,7 +92,7 @@ export default function DoorDashTaxGuide() {
                 ].map(r => (
                   <div key={r.miles} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                     <div style={{ fontSize: 11, color: '#6c757d', marginBottom: 4 }}>{r.miles} miles</div>
-                    <div style={{ fontSize: 18, fontWeight: 900, color: '#0369a1' }}>{r.deduction}</div>
+                    <div style={{ fontSize: 18, fontWeight: 900, color: '#7dd3fc' }}>{r.deduction}</div>
                     <div style={{ fontSize: 10, color: '#9ca3af' }}>tax deduction</div>
                   </div>
                 ))}

@@ -95,13 +95,13 @@ export default function UberTaxGuide() {
               </p>
 
               <h2 style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
-              <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}> $0.725 per mile in 2026</div>
+              <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 12 }}> $0.725 per mile in 2026</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[['10,000 mi','$7,250'],['15,000 mi','$10,875'],['20,000 mi','$14,500']].map(([mi, d]) => (
                     <div key={mi} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 11, color: '#6c757d', marginBottom: 3 }}>{mi}/year</div>
-                      <div style={{ fontSize: 20, fontWeight: 900, color: '#0369a1' }}>{d}</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: '#7dd3fc' }}>{d}</div>
                       <div style={{ fontSize: 10, color: '#9ca3af' }}>deduction</div>
                     </div>
                   ))}

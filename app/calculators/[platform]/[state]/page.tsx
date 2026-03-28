@@ -120,7 +120,7 @@ export default function CalculatorPage({ params }) {
   const examples = [30000, 50000, 75000, 100000];
 
   const S = {
-    page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
+    page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#07111F", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
     card: { background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
     h2: { fontSize: 20, fontWeight: 800, color: "rgba(255,255,255,0.9)", margin: "0 0 14px", lineHeight: 1.3 },
     p: { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 14 },
@@ -208,7 +208,7 @@ export default function CalculatorPage({ params }) {
                   {examples.map((income, i) => {
                     const t = calcTax(income, s.rate, "single");
                     return (
-                      <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i % 2 === 0 ? "#fff" : "#fafafa" }}>
+                      <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i % 2 === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.01)" }}>
                         <td style={{ padding: "12px 14px", fontWeight: 800, fontSize: 15 }}>{fmt(income)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.seTax)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.federal)}</td>

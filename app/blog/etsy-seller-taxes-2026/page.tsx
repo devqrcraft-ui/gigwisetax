@@ -61,8 +61,8 @@ export default function EtsyTaxGuide() {
               Your taxable income is only the portion you receive as the seller.
             </p>
             <h2 style={h2}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
-            <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-              <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 8 }}> COGS Formula for Etsy Sellers</div>
+            <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+              <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}> COGS Formula for Etsy Sellers</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, fontFamily: 'monospace' }}>
                 Beginning Inventory<br/>
                 + Purchases/Materials during year<br/>

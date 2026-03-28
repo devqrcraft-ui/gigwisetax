@@ -106,7 +106,7 @@ export default function BlogPost() {
           { q: 'Q3 — September 15, 2026', urgent: false },
           { q: 'Q4 — January 15, 2027', urgent: false },
         ].map(d => (
-          <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px', fontWeight: 600, color: d.urgent ? '#ff4444' : 'rgba(255,255,255,0.03)' }}>
+          <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px', fontWeight: 600, color: d.urgent ? '#ff4444' : 'rgba(255,255,255,0.85)' }}>
             {d.urgent ? ' ' : ''}{d.q}
           </div>
         ))}

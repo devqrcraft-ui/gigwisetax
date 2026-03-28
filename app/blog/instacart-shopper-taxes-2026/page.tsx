@@ -87,11 +87,11 @@ export default function InstacartTaxGuide() {
               </div>
 
               {/* IN-STORE VS FULL-SERVICE */}
-              <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Important: Two Types of Instacart Workers</div>
+              <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 10 }}> Important: Two Types of Instacart Workers</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }} className="form-grid">
                   <div style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
-                    <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}> In-Store Shoppers</div>
+                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 6, fontSize: 13 }}> In-Store Shoppers</div>
                     <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}>
                       <li>W-2 employee status</li>
                       <li>Taxes withheld by Instacart</li>
@@ -123,8 +123,8 @@ export default function InstacartTaxGuide() {
                 Driving from home to the first store without an active batch generally does not count.
               </p>
 
-              <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Mileage Deduction Examples (2026)</div>
+              <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 10 }}> Mileage Deduction Examples (2026)</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[
                     { miles: '8,000', deduction: '$5,800', saves: '~$1,276' },
@@ -133,7 +133,7 @@ export default function InstacartTaxGuide() {
                   ].map(r => (
                     <div key={r.miles} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 11, color: '#6c757d', marginBottom: 4 }}>{r.miles} miles</div>
-                      <div style={{ fontSize: 16, fontWeight: 900, color: '#0369a1' }}>{r.deduction}</div>
+                      <div style={{ fontSize: 16, fontWeight: 900, color: '#7dd3fc' }}>{r.deduction}</div>
                       <div style={{ fontSize: 10, color: '#059669', fontWeight: 600 }}>saves {r.saves} in tax</div>
                     </div>
                   ))}
