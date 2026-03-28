@@ -344,7 +344,7 @@ export default function HomeClient() {
               )}
 
               {/* HOW THIS CALCULATOR WORKS */}
-              <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginTop: 20 }}>
+              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, overflow: 'hidden' as const, marginTop: 20 }}>
                 <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How This Calculator Works</span>
@@ -539,9 +539,9 @@ export default function HomeClient() {
             </div>
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#c8d8ec' }}>
-                  <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} Tax Calculator</span>
-                  <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
+                <div style={{ padding: '14px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#c8d8ec' }}>
+                  <span style={{ fontSize: 15, fontWeight: 600 }}>{p.name} Tax Calculator</span>
+                  <span style={{ fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>{p.searches}</span>
                 </div>
               </Link>
             ))}

@@ -121,15 +121,15 @@ export default function Page() {
           ].map(([href, label]) => (
             <a key={href} href={href} style={{
               display:'block',
-              padding:'14px 16px',
+              padding:'16px 16px',
               borderRadius:8,
               border:'1px solid rgba(255,255,255,0.1)',
               background:'rgba(255,255,255,0.04)',
               color:'#c8d8ec',
               textDecoration:'none',
               textAlign:'center',
-              fontSize:14,
-              fontWeight:600,
+              fontSize:15,
+              fontWeight:700,
               lineHeight:1.3,
               transition:'all .15s ease',
               boxSizing:'border-box',
