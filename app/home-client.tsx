@@ -4,14 +4,16 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 const PLATFORMS = [
-  { name: 'DoorDash',    emoji: '▸', searches: '400K/mo', href: '/doordash'     },
-  { name: 'Uber',        emoji: '▸', searches: '300K/mo', href: '/uber'         },
-  { name: 'Etsy',        emoji: '▸', searches: '200K/mo', href: '/etsy'         },
-  { name: 'OnlyFans',    emoji: '▸', searches: '150K/mo', href: '/onlyfans' },
-  { name: 'Instacart',   emoji: '▸', searches: '150K/mo', href: '/instacart'    },
-  { name: 'Airbnb',      emoji: '▸', searches: '120K/mo', href: '/airbnb'       },
-  { name: 'Amazon Flex', emoji: '▸', searches: '80K/mo',  href: '/amazon-flex'  },
-  { name: 'Lyft',        emoji: '▸', searches: '70K/mo',  href: '/lyft'         },
+  { name: 'DoorDash',    searches: '400K/mo', href: '/doordash'     },
+  { name: 'Uber',        searches: '300K/mo', href: '/uber'         },
+  { name: 'Etsy',        searches: '200K/mo', href: '/etsy'         },
+  { name: 'OnlyFans',    searches: '150K/mo', href: '/onlyfans'     },
+  { name: 'Instacart',   searches: '150K/mo', href: '/instacart'    },
+  { name: 'Airbnb',      searches: '120K/mo', href: '/airbnb'       },
+  { name: 'Amazon Flex', searches: '80K/mo',  href: '/amazon-flex'  },
+  { name: 'Lyft',        searches: '70K/mo',  href: '/lyft'         },
+  { name: 'Grubhub',     searches: '60K/mo',  href: '/grubhub'      },
+  { name: 'Walmart Spark',searches: '55K/mo', href: '/walmart-spark' },
 ]
 
 const STATES = [

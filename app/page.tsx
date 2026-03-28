@@ -77,50 +77,70 @@ export default function Page() {
         </section>
 
       {/* Popular Calculators by State — SEO internal links */}
-      <section className="w-full max-w-5xl mx-auto px-4 py-10">
-        <h2 className="text-2xl font-semibold text-center mb-2">Popular Calculators by State</h2>
-        <p className="text-center text-sm text-gray-500 mb-6">
+      <section style={{width:'100%',maxWidth:1100,margin:'0 auto',padding:'48px 16px 32px',boxSizing:'border-box'}}>
+        <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8,justifyContent:'center'}}>
+          <div style={{width:3,height:20,background:'#B22234',borderRadius:2}}/>
+          <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>All Platforms · All States</span>
+        </div>
+        <h2 style={{fontSize:24,fontWeight:900,color:'#fff',textAlign:'center',marginBottom:6}}>Popular Calculators by State</h2>
+        <p style={{textAlign:'center',fontSize:14,color:'rgba(255,255,255,0.5)',marginBottom:28}}>
           Free tax calculator for every platform and state — SE tax 15.3% + federal + state.
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 text-sm">
+        <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:10}} className="state-calc-grid">
           {[
-            ["/doordash/california","DoorDash Tax — California"],
-            ["/doordash/texas","DoorDash Tax — Texas"],
-            ["/doordash/florida","DoorDash Tax — Florida"],
-            ["/doordash/new-york","DoorDash Tax — New York"],
-            ["/doordash/illinois","DoorDash Tax — Illinois"],
-            ["/uber/california","Uber Tax — California"],
-            ["/uber/texas","Uber Tax — Texas"],
-            ["/uber/florida","Uber Tax — Florida"],
-            ["/uber/new-york","Uber Tax — New York"],
-            ["/uber/washington","Uber Tax — Washington"],
-            ["/onlyfans/california","OnlyFans Tax — California"],
-            ["/onlyfans/florida","OnlyFans Tax — Florida"],
-            ["/onlyfans/new-york","OnlyFans Tax — New York"],
-            ["/onlyfans/nevada","OnlyFans Tax — Nevada"],
-            ["/onlyfans/texas","OnlyFans Tax — Texas"],
-            ["/instacart/california","Instacart Tax — California"],
-            ["/instacart/texas","Instacart Tax — Texas"],
-            ["/instacart/illinois","Instacart Tax — Illinois"],
-            ["/instacart/new-york","Instacart Tax — New York"],
-            ["/instacart/georgia","Instacart Tax — Georgia"],
-            ["/airbnb/california","Airbnb Tax — California"],
-            ["/airbnb/florida","Airbnb Tax — Florida"],
-            ["/airbnb/new-york","Airbnb Tax — New York"],
-            ["/airbnb/washington","Airbnb Tax — Washington"],
-            ["/airbnb/colorado","Airbnb Tax — Colorado"],
-            ["/amazon-flex/california","Amazon Flex Tax — California"],
-            ["/amazon-flex/texas","Amazon Flex Tax — Texas"],
-            ["/amazon-flex/florida","Amazon Flex Tax — Florida"],
-            ["/amazon-flex/new-york","Amazon Flex Tax — New York"],
-            ["/amazon-flex/ohio","Amazon Flex Tax — Ohio"],
+            ["/doordash/california","DoorDash — California"],
+            ["/doordash/texas","DoorDash — Texas"],
+            ["/doordash/florida","DoorDash — Florida"],
+            ["/doordash/new-york","DoorDash — New York"],
+            ["/doordash/illinois","DoorDash — Illinois"],
+            ["/uber/california","Uber — California"],
+            ["/uber/texas","Uber — Texas"],
+            ["/uber/florida","Uber — Florida"],
+            ["/uber/new-york","Uber — New York"],
+            ["/uber/washington","Uber — Washington"],
+            ["/onlyfans/california","OnlyFans — California"],
+            ["/onlyfans/florida","OnlyFans — Florida"],
+            ["/onlyfans/new-york","OnlyFans — New York"],
+            ["/onlyfans/nevada","OnlyFans — Nevada"],
+            ["/onlyfans/texas","OnlyFans — Texas"],
+            ["/instacart/california","Instacart — California"],
+            ["/instacart/texas","Instacart — Texas"],
+            ["/instacart/illinois","Instacart — Illinois"],
+            ["/instacart/new-york","Instacart — New York"],
+            ["/instacart/georgia","Instacart — Georgia"],
+            ["/airbnb/california","Airbnb — California"],
+            ["/airbnb/florida","Airbnb — Florida"],
+            ["/airbnb/new-york","Airbnb — New York"],
+            ["/airbnb/washington","Airbnb — Washington"],
+            ["/airbnb/colorado","Airbnb — Colorado"],
+            ["/amazon-flex/california","Amazon Flex — California"],
+            ["/amazon-flex/texas","Amazon Flex — Texas"],
+            ["/amazon-flex/florida","Amazon Flex — Florida"],
+            ["/amazon-flex/new-york","Amazon Flex — New York"],
+            ["/amazon-flex/ohio","Amazon Flex — Ohio"],
           ].map(([href, label]) => (
-            <a key={href} href={href}
-              className="block px-3 py-2 rounded border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors text-center text-xs leading-tight">
+            <a key={href} href={href} style={{
+              display:'block',
+              padding:'14px 16px',
+              borderRadius:8,
+              border:'1px solid rgba(255,255,255,0.1)',
+              background:'rgba(255,255,255,0.04)',
+              color:'#c8d8ec',
+              textDecoration:'none',
+              textAlign:'center',
+              fontSize:14,
+              fontWeight:600,
+              lineHeight:1.3,
+              transition:'all .15s ease',
+              boxSizing:'border-box',
+            }}
+            onMouseEnter={e=>{const el=e.currentTarget;el.style.borderColor='rgba(232,184,75,0.5)';el.style.background='rgba(232,184,75,0.08)';el.style.color='#e8b84b';}}
+            onMouseLeave={e=>{const el=e.currentTarget;el.style.borderColor='rgba(255,255,255,0.1)';el.style.background='rgba(255,255,255,0.04)';el.style.color='#c8d8ec';}}>
               {label}
             </a>
           ))}
         </div>
+        <style>{'.state-calc-grid{} @media(min-width:640px){.state-calc-grid{grid-template-columns:repeat(3,1fr)!important;}} @media(min-width:960px){.state-calc-grid{grid-template-columns:repeat(5,1fr)!important;}}'}</style>
       </section>
 
       </div>
