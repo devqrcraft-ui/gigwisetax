@@ -58,7 +58,7 @@ export default function TaxPenaltyFinder() {
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '14px 32px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
-  const btnG = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', border: '1px solid #d1d5db', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
+  const btnG = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
   const opt  = (a: boolean) => ({ background: a?'#1e2d5a':'rgba(255,255,255,0.06)', color: a?'#fff':'rgba(255,255,255,0.75)', border: a?'2px solid #B22234':'2px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 14, fontWeight: 700, cursor: 'pointer', flex: 1, textAlign: 'center' as const })
   const inp  = { width: '100%', border: '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 14px', fontSize: 16, boxSizing: 'border-box' as const, marginTop: 8 }
 

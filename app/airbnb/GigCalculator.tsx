@@ -35,11 +35,11 @@ export default function GigCalculator({
     setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
   }
 
-  const card    = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)', overflow: 'hidden' as const }
+  const card    = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd  = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const lbl     = { display: 'block', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 6 }
-  const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: '#fff', boxSizing: 'border-box' as const }
+  const inp     = { width: '100%', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.07)', boxSizing: 'border-box' as const }
   const btnDark = { background: '#1a1a2e', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
 
@@ -118,7 +118,7 @@ export default function GigCalculator({
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
               {deadlines.map((d, i) => (
-                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : '#fff', position: 'relative' as const }}>
+                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
                   {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                   <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 10, color: '#9ca3af', marginBottom: 6 }}>{d.due}</div>
@@ -127,7 +127,7 @@ export default function GigCalculator({
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 14, background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#92400e', lineHeight: 1.6 }}>
+            <div style={{ marginTop: 14, background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#fcd34d', lineHeight: 1.6 }}>
                <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
             </div>
           </div>
