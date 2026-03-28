@@ -114,17 +114,17 @@ export default function NavClient() {
                 {item.label} <span style={{ fontSize:9, opacity:.5 }}>▾</span>
               </div>
               {openNav===item.label && (
-                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#fff', border:'1px solid #e2e5e9',
-                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.15)', overflow:'hidden' as const, marginTop:0 }}>
+                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#0d1b3e', border:'1px solid rgba(255,255,255,0.12)',
+                  borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.5)', overflow:'hidden' as const, marginTop:0 }}>
                   <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>{item.label}</div>
                   {item.items.map(sub => (
                     <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setOpenNav(null)}>
-                      <div style={{ padding:'10px 14px', borderBottom:'1px solid #f3f4f6', display:'flex', justifyContent:'space-between', alignItems:'center' }}
-                        onMouseEnter={e => (e.currentTarget.style.background='#f0f4ff')}
+                      <div style={{ padding:'12px 14px', borderBottom:'1px solid rgba(255,255,255,0.07)', display:'flex', justifyContent:'space-between', alignItems:'center' }}
+                        onMouseEnter={e => (e.currentTarget.style.background='rgba(232,184,75,0.1)')}
                         onMouseLeave={e => (e.currentTarget.style.background='transparent')}>
-                        <span style={{ fontSize:13, color:'#1a1a2e', fontWeight:500 }}>{sub.label}</span>
+                        <span style={{ fontSize:13, color:'#c8d8ec', fontWeight:500 }}>{sub.label}</span>
                         {sub.sub && (
-                          <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:600, marginLeft:8 }}>
+                          <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#ff8080' : '#8fa8c8', fontWeight:600, marginLeft:8 }}>
                             {sub.sub}
                           </span>
                         )}
@@ -161,11 +161,11 @@ export default function NavClient() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', padding:'4px 12px 8px' }}>
               {item.items.map(sub => (
                 <Link key={sub.href} href={sub.href} style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
-                  <div style={{ padding:'8px 10px', fontSize:13, color:'rgba(255,255,255,.8)', display:'flex', flexDirection:'column', gap:2, borderRadius:4, margin:'2px' }}
+                  <div style={{ padding:'12px 10px', fontSize:15, color:'rgba(255,255,255,.95)', display:'flex', flexDirection:'column', gap:3, borderRadius:6, margin:'3px' }}
                     onTouchStart={e => (e.currentTarget.style.background='rgba(255,255,255,.06)')}
                     onTouchEnd={e => (e.currentTarget.style.background='transparent')}>
                     <span style={{ lineHeight:1.3 }}>{sub.label}</span>
-                    {sub.sub && <span style={{ fontSize:10, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#059669' : sub.sub==='URGENT' ? '#B22234' : '#6b7280', fontWeight:700 }}>{sub.sub}</span>}
+                    {sub.sub && <span style={{ fontSize:11, color: sub.sub==='NEW'||sub.sub==='FREE' ? '#4ade80' : sub.sub==='URGENT' ? '#ff8080' : '#8fa8c8', fontWeight:700 }}>{sub.sub}</span>}
                   </div>
                 </Link>
               ))}
