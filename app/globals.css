@@ -214,32 +214,39 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
 
 /* Platform selector cards */
 .plat-card {
-  border: 1px solid #e2e5e9;
-  background: #fff;
+  border: 1.5px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 10px;
+  box-sizing: border-box;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
 }
 .plat-card:hover {
-  border-color: #B22234 !important;
-  background: #fff5f5 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(178,34,52,0.12);
+  border-color: rgba(232,184,75,0.55) !important;
+  background: rgba(232,184,75,0.08) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35) !important;
 }
 .plat-card--active {
-  border: 2px solid #B22234 !important;
-  background: #fff5f5 !important;
+  border: 1.5px solid rgba(232,184,75,0.6) !important;
+  background: rgba(232,184,75,0.12) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(232,184,75,0.2) !important;
 }
 .plat-btn {
-  display: none;
+  display: block;
   background: #B22234;
   color: #fff;
   font-size: 11px;
   font-weight: 700;
-  padding: 5px 0;
+  padding: 6px 0;
   border-radius: 4px;
   text-align: center;
-}
-.plat-card:hover .plat-btn {
-  display: block;
-}
-.plat-card--active .plat-btn {
-  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }

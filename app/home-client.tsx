@@ -395,10 +395,9 @@ export default function HomeClient() {
                 <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
                   {PLATFORMS.map(p => (
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
-                      <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ borderRadius: 6, padding: '14px 8px', textAlign: 'center' as const, cursor: 'pointer', transition: 'all .18s', position: 'relative' as const }}>
+                      <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ cursor: 'pointer', position: 'relative' as const }}>
                         
-                        <div style={{ fontSize: 22, marginBottom: 4 }}></div>
-                        <div style={{ fontSize: 12, fontWeight: 700, color: '#1a1a2e', marginBottom: 2 }}>{p.name}</div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: '#e8eef8', marginBottom: 4 }}>{p.name}</div>
                         <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
                         <div className="plat-btn" style={{background:'#B22234',color:'#fff',fontSize:11,fontWeight:700,padding:'5px 10px',borderRadius:4,marginTop:4}}>Open Calculator</div>
                       </div>
