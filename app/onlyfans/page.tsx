@@ -101,7 +101,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       { '@type': 'ListItem', position: 12, name: "Business courses & coaching" }
     ],
   };
-  const card = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)', overflow: 'hidden' as const }
+  const card = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
@@ -168,7 +168,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
                 </p>
 
-                <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                   <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
                   <p style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, margin: 0 }}>
                     Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
@@ -207,7 +207,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   </thead>
                   <tbody>
                     {DEADLINES_2026.map((d, i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid #f0f1f3', background: i === 0 ? '#fff9f9' : '#fff' }}>
+                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
                         <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>
                           {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 6, fontWeight: 800 }}>NOW</span>}
                           {d.q} 2026
@@ -215,7 +215,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                         <td style={{ padding: '12px 14px', color: '#374151', fontSize: 13 }}>{d.period}</td>
                         <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>{d.due}</td>
                         <td style={{ padding: '12px 14px' }}>
-                          <span style={{ background: i === 0 ? '#fee2e2' : '#f0f4f8', color: i === 0 ? '#B22234' : '#374151', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
+                          <span style={{ background: i === 0 ? 'rgba(178,34,52,0.25)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#fca5a5' : 'rgba(255,255,255,0.7)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
                       </tr>
                     ))}
@@ -228,7 +228,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                   {deductions.map((d: string) => (
-                    <div key={d} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: '#374151', fontWeight: 500 }}>
+                    <div key={d} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
                       {d}
                     </div>
                   ))}
@@ -302,7 +302,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                     a: `Yes. The $600 threshold only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
                   },
                 ].map((item, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid #f0f1f3', paddingBottom: 16, marginBottom: 16 }}>
+                  <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>
                     <div style={{ fontWeight: 700, color: '#1a1a2e', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
                     <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
                   </div>
@@ -344,10 +344,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
             </div>
-              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Etsy Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/airbnb" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Airbnb Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
-              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid #f0f1f3', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Etsy Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/airbnb" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Airbnb Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/doordash" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ DoorDash Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
+              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: '#374151' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
           </div>
 
           {/* OWN BANNER — privatepaycheck.com */}
@@ -380,7 +380,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 { slug: 'georgia', name: 'Georgia', rate: '5.5%' },
               ].map(s => (
                 <a key={s.slug} href={`/${'onlyfans'}/${s.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
+                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: '#374151' }}>
                     <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.name} in {s.name}</span>
                     <span style={{ fontSize: 11, color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700 }}>{s.rate}</span>
                   </div>
