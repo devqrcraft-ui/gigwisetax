@@ -513,10 +513,10 @@ export default function HomeClient() {
                           
                         </td>
                         <td style={{ padding: '12px 16px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{p.searches}</td>
-                        <td style={{ padding: '12px 16px', color: '#c8d8ec' }}>15.3%</td>
+                        <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>15.3%</td>
                         <td style={{ padding: '12px 16px', color: '#059669', fontWeight: 600 }}>Included ✓</td>
                         <td style={{ padding: '12px 16px' }}>
-                          <span style={{ background: '#dcfce7', color: '#166534', padding: '3px 10px', borderRadius: 12, fontSize: 11, fontWeight: 700 }}>Low ✓</span>
+                          <span style={{ background: 'rgba(5,150,105,0.2)', color: '#4ade80', padding: '3px 10px', borderRadius: 12, fontSize: 11, fontWeight: 700, border: '1px solid rgba(74,222,128,0.3)' }}>Low ✓</span>
                         </td>
                       </tr>
                     ))}
