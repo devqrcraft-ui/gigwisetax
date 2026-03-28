@@ -121,7 +121,7 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl}> Annual Spark Net Income (USD)</label>
+                  <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
@@ -132,13 +132,13 @@ export default function WalmartSparkPage() {
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
-                  <select style={inp} value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <select style={inp}  id="annual-spark-net-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={lbl}> Filing Status</label>
-                  <select style={inp} value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>

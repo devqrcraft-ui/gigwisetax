@@ -115,7 +115,7 @@ export default function GrubhubPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl}> Annual Grubhub Net Income (USD)</label>
+                  <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(e.target.value)} />
                   <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
@@ -126,13 +126,13 @@ export default function GrubhubPage() {
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
-                  <select style={inp} value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <select style={inp}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={lbl}> Filing Status</label>
-                  <select style={inp} value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>

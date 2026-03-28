@@ -100,11 +100,11 @@ export default function HomeClient() {
   }
 
   /* ── shared style tokens ── */
-  const card     = { background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
+  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }
   const cardHd   = { background: '#1a1a2e', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent   = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#374151', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
-  const inp      = { width: '100%', border: '1px solid #d1d5db', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#1a1a2e', background: '#fff', boxSizing: 'border-box' as const }
+  const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#a8b8d0', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
+  const inp      = { width: '100%', border: '1px solid #d1d5db', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1628', boxSizing: 'border-box' as const }
   const btnDark  = { background: '#1a1a2e', color: '#fff', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
   const formGrid = { display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? 20 : 14, marginBottom: 20 }
   const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
@@ -169,7 +169,7 @@ export default function HomeClient() {
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
                 padding: isMobile ? '6px 6px' : '8px 12px', fontSize: isMobile ? 11 : 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
-                color: tab === t.id ? '#fff' : '#4b5563', background: tab === t.id ? '#B22234' : '#f0f4f8',
+                color: tab === t.id ? '#fff' : '#c8d8ec', background: tab === t.id ? '#B22234' : '#1a2a4a',
                 borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent', border: tab === t.id ? '1px solid #B22234' : '1px solid #d8dce6',
                 marginBottom: -2, transition: 'all .15s', whiteSpace: 'normal', flex: 1, textAlign: 'center' as const, wordBreak: 'break-word',
               }}>
@@ -213,20 +213,20 @@ export default function HomeClient() {
                 <div style={{ padding: 24 }}>
 
                   {/* Section 1 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     1. Your Gig Income
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
-                      <label style={label}>▸ Gig Platform</label>
-                      <select style={inp} value={platform} onChange={e => setPlatform(e.target.value)}>
+                      <label style={label} htmlFor="gig-platform-0">▸ Gig Platform</label>
+                      <select style={inp}  id="gig-platform-0" value={platform} onChange={e => setPlatform(e.target.value)}>
                         {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={label}> Annual Gig Revenue (USD)</label>
+                      <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
                       </div>
 
@@ -242,39 +242,39 @@ export default function HomeClient() {
                   </div>
 
                   {/* Section 2 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
-                    2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#9ca3af' }}>(optional)</span>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                    2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#7a9abf' }}>(optional)</span>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
                       <label style={label}>▸ Business Miles Driven</label>
                       <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
-                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
+                      <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
-                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                        <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" placeholder="e.g. 2,000"/>
                       </div>
-                      <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>Phone, supplies, equipment…</div>
+                      <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
                     </div>
                   </div>
 
                   {/* Section 3 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#6b7280', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid #e5e7eb' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     3. Where You Live &amp; File
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
                     <div>
                       <label style={label}> State of Residence</label>
-                      <select style={inp} value={stateCode} onChange={e => setStateCode(e.target.value)}>
+                      <select style={inp}  id="annual-gig-revenue-usd-setinco-1" value={stateCode} onChange={e => setStateCode(e.target.value)}>
                         {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={label}> Filing Status</label>
-                      <select style={inp} value={filing} onChange={e => setFiling(e.target.value)}>
+                      <label style={label} htmlFor="filing-status-2"> Filing Status</label>
+                      <select style={inp}  id="filing-status-2" value={filing} onChange={e => setFiling(e.target.value)}>
                         <option value="single">Single</option>
                         <option value="married">Married Filing Jointly</option>
                         <option value="hoh">Head of Household</option>
@@ -302,10 +302,10 @@ export default function HomeClient() {
                       { label: `${stateCode} State`,val: fmt(result.stateTax), sub: 'Estimated'   },
                       { label: 'Total Annual Tax',  val: fmt(result.total),    sub: `${result.rate}% effective`, hi: true },
                     ].map((r, i) => (
-                      <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: r.hi ? '#fff5f5' : '#f8fafc', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
-                        <div style={{ fontSize: 22, fontWeight: 900, color: r.hi ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{r.val}</div>
-                        <div style={{ fontSize: 11, color: '#9ca3af' }}>{r.sub}</div>
+                      <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.15)' : 'rgba(13,27,62,0.6)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
+                        <div style={{ fontSize: 10, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
+                        <div style={{ fontSize: 22, fontWeight: 900, color: r.hi ? '#ff6b6b' : '#e8eef8', marginBottom: 4 }}>{r.val}</div>
+                        <div style={{ fontSize: 11, color: '#7a9abf' }}>{r.sub}</div>
                       </div>
                     ))}
                   </div></div>
@@ -322,7 +322,7 @@ export default function HomeClient() {
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: '#1a1a2e', marginBottom: 3 }}>{d.q}</div>
-                          <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 8 }}>{d.due}</div>
+                          <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
                           <div style={btnRed({ fontSize: 11, padding: '6px 0' })}>+ Calendar</div>
                         </div>
@@ -355,7 +355,7 @@ export default function HomeClient() {
                   ].map(item => (
                     <div key={item.label} style={{ borderLeft: '3px solid #B22234', paddingLeft: 12 }}>
                       <div style={{ fontSize: 13, fontWeight: 800, color: '#1a1a2e', marginBottom: 4 }}>{item.label}</div>
-                      <div style={{ fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>{item.detail}</div>
+                      <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>{item.detail}</div>
                     </div>
                   ))}
                 </div>
@@ -416,9 +416,9 @@ export default function HomeClient() {
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
                     <thead>
-                      <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
+                      <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
-                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#1a1a2e' : '#6c757d', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? '#fff5f5' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
+                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? '#fff5f5' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
@@ -433,8 +433,8 @@ export default function HomeClient() {
                         [' No app required',           true,  false, false, true ],
                         [' 100% private, no data stored', true, false, false, false],
                       ].map(([feat,...vals]) => (
-                        <tr key={feat as string} style={{ borderBottom: '1px solid #f0f1f3' }}>
-                          <td style={{ padding: '8px 6px', fontSize: 12, color: '#374151', fontWeight: 500 }}>{feat as string}</td>
+                        <tr key={feat as string} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
+                          <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
                           {(vals as boolean[]).map((v,i) => (
                             <td key={i} style={{ padding: '8px 6px', textAlign: 'center' as const, background: i===0 ? '#fff9f9' : 'transparent' }}>
                               <span style={{ fontSize: 15, fontWeight: 800, color: v ? '#059669' : '#d1d5db' }}>{v ? '✓' : '✗'}</span>
@@ -459,23 +459,23 @@ export default function HomeClient() {
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
-                    <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
+                    <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Quarter','Period','IRS Due Date','Days Left','Action'].map(h => (
-                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
+                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {DEADLINES.map((d,i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid #f0f1f3', background: i===0 ? '#fff9f9' : '#fff' }}>
+                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? '#fff9f9' : '#fff' }}>
                         <td style={{ padding: '14px 16px', fontWeight: 800, fontSize: 14 }}>
                           {i===0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NOW</span>}
                           {d.q}
                         </td>
-                        <td style={{ padding: '14px 16px', color: '#374151', fontSize: 13 }}>{d.period}</td>
+                        <td style={{ padding: '14px 16px', color: '#c8d8ec', fontSize: 13 }}>{d.period}</td>
                         <td style={{ padding: '14px 16px', fontWeight: 700, color: i===0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>{d.due}</td>
                         <td style={{ padding: '14px 16px' }}>
-                          <span style={{ background: i===0 ? '#fee2e2' : '#f0f4f8', color: i===0 ? '#B22234' : '#374151', padding: '4px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
+                          <span style={{ background: i===0 ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '4px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
                         <td style={{ padding: '14px 16px', width: 150 }}>
                           <div style={btnRed({ fontSize: 12, padding: '7px 0' })}> + Calendar</div>
@@ -498,21 +498,21 @@ export default function HomeClient() {
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
-                    <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
+                    <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
-                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
+                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {PLATFORMS.map((p,i) => (
-                      <tr key={p.name} style={{ borderBottom: '1px solid #f0f1f3', background: i%2===0 ? '#fff' : '#fafafa' }}>
+                      <tr key={p.name} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i%2===0 ? '#fff' : '#fafafa' }}>
                         <td style={{ padding: '12px 16px', fontWeight: 700, fontSize: 14 }}>
                           <span style={{ fontSize: 18, marginRight: 10 }}></span>{p.name}
                           
                         </td>
                         <td style={{ padding: '12px 16px', fontWeight: 700, color: '#1a1a2e' }}>{p.searches}</td>
-                        <td style={{ padding: '12px 16px', color: '#374151' }}>15.3%</td>
+                        <td style={{ padding: '12px 16px', color: '#c8d8ec' }}>15.3%</td>
                         <td style={{ padding: '12px 16px', color: '#059669', fontWeight: 600 }}>Included ✓</td>
                         <td style={{ padding: '12px 16px' }}>
                           <span style={{ background: '#dcfce7', color: '#166534', padding: '3px 10px', borderRadius: 12, fontSize: 11, fontWeight: 700 }}>Low ✓</span>
@@ -538,7 +538,7 @@ export default function HomeClient() {
             </div>
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid #f0f1f3', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#374151' }}>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#c8d8ec' }}>
                   <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                 </div>
@@ -548,14 +548,14 @@ export default function HomeClient() {
 
 
           {/* TRUST */}
-          <div style={{ background: '#f8fafc', border: '1px solid #d8dce6', borderRadius: 6, padding: 16 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
-            <div style={{ fontSize: 12, color: '#374151', lineHeight: 1.7, textAlign: 'justify' as const }}>
+          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
+            <div style={{ fontSize: 12, color: '#c8d8ec', lineHeight: 1.7, textAlign: 'justify' as const }}>
               GigWiseTax.com is an independent, free estimation tool. Not affiliated with the IRS or any government agency. No personal data is stored. Results are estimates only — not tax advice.
             </div>
             <div style={{ marginTop: 12, display: 'flex', gap: 12 }}>
               {['Privacy','Terms','Contact'].map(l => (
-                <span key={l} style={{ fontSize: 11, color: '#6c757d', cursor: 'pointer', textDecoration: 'underline' }}>{l}</span>
+                <span key={l} style={{ fontSize: 11, color: '#8fa8c8', cursor: 'pointer', textDecoration: 'underline' }}>{l}</span>
               ))}
             </div>
           </div>

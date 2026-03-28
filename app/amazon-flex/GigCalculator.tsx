@@ -54,8 +54,8 @@ export default function GigCalculator({
         <div style={{ padding: 20 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 16 }} className="form-grid">
             <div>
-              <label style={lbl}> State of Residence</label>
-              <select style={inp} value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
+              <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
+              <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
                 {states.map(s => (
                   <option key={s.slug} value={s.slug}>
                     {s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}
@@ -64,8 +64,8 @@ export default function GigCalculator({
               </select>
             </div>
             <div>
-              <label style={lbl}> Filing Status</label>
-              <select style={inp} value={filing} onChange={e => setFiling(e.target.value as any)}>
+              <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+              <select style={inp}  id="filing-status-1" value={filing} onChange={e => setFiling(e.target.value as any)}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
