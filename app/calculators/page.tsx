@@ -59,7 +59,7 @@ export default function CalculatorsIndex() {
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "32px 20px 64px" }}>
         {PLATFORMS.map(platform => (
-          <div key={platform.slug} style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+          <div key={platform.slug} style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
             <div style={{ background: "#1a1a2e", padding: "13px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 22 }}></span>

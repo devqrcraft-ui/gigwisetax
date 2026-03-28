@@ -32,7 +32,7 @@ export default function EtsyTaxGuide() {
       </div>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
         <div>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
             <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
               <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Etsy Taxes Instantly</div>
               <a href="/etsy" style={{ textDecoration: 'none' }}><div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div></a>
@@ -113,7 +113,7 @@ export default function EtsyTaxGuide() {
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
             </div>
           </a>
-          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+          <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span></div>

@@ -51,7 +51,7 @@ export default function UberTaxGuide() {
 
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
           <div>
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
                 <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Uber Taxes Instantly</div>
@@ -99,7 +99,7 @@ export default function UberTaxGuide() {
                 <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 12 }}> $0.725 per mile in 2026</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
                   {[['10,000 mi','$7,250'],['15,000 mi','$10,875'],['20,000 mi','$14,500']].map(([mi, d]) => (
-                    <div key={mi} style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
+                    <div key={mi} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 11, color: '#6c757d', marginBottom: 3 }}>{mi}/year</div>
                       <div style={{ fontSize: 20, fontWeight: 900, color: '#0369a1' }}>{d}</div>
                       <div style={{ fontSize: 10, color: '#9ca3af' }}>deduction</div>
@@ -200,7 +200,7 @@ export default function UberTaxGuide() {
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
               </div>
             </a>
-            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
               <div style={{ padding: 16 }}>
                 <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
@@ -212,7 +212,7 @@ export default function UberTaxGuide() {
                 <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
               </div>
             </div>
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related</span>
               </div>

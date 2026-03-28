@@ -42,7 +42,7 @@ export default function W9MistakesBlog() {
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Most gig workers fill out W-9 forms wrong — or skip them entirely. These 7 mistakes trigger IRS penalties, withholding problems, and lost deductions worth thousands per year.
           </div>
 

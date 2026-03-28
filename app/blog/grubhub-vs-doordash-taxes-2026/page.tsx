@@ -56,7 +56,7 @@ export default function GrubhubVsDoorDashPost() {
           </p>
 
           <h2 style={h2}>Side-by-Side Tax Comparison</h2>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> Grubhub</span>
@@ -129,15 +129,15 @@ export default function GrubhubVsDoorDashPost() {
             </Link>
           </div>
 
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px' }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
-            <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a licensed CPA for your specific tax situation.</div>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px' }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#fcd34d', marginBottom: 6 }}> Disclaimer</div>
+            <div style={{ fontSize: 13, color: '#fcd34d', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a licensed CPA for your specific tax situation.</div>
           </div>
 
         </article>
 
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Use a Calculator</span>
             </div>
@@ -147,7 +147,7 @@ export default function GrubhubVsDoorDashPost() {
               </Link>
             ))}
           </div>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> More Guides</span>
             </div>

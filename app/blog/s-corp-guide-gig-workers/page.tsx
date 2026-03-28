@@ -42,7 +42,7 @@ export default function SCorpGuideBlog() {
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Gig workers earning $60,000+ in net profit can save $3,000–$12,000/year by electing S-Corp status. The strategy reduces self-employment tax (15.3%) on income above a "reasonable salary." Most gig workers never hear about this until it's too late.
           </div>
 

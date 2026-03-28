@@ -117,10 +117,10 @@ export default function DeadlinesPage() {
                     <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 700, fontSize: 13 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '11px 14px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 13 }}>{s.rate}</td>
-                      <td style={{ padding: '11px 14px', color: s.q1 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
-                      <td style={{ padding: '11px 14px', color: s.q2 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
-                      <td style={{ padding: '11px 14px', color: s.q3 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
-                      <td style={{ padding: '11px 14px', color: s.q4 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
+                      <td style={{ padding: '11px 14px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
+                      <td style={{ padding: '11px 14px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
+                      <td style={{ padding: '11px 14px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
+                      <td style={{ padding: '11px 14px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
                       <td style={{ padding: '11px 14px', fontSize: 11, color: '#6c757d' }}>{s.portal}</td>
                     </tr>
                   ))}
@@ -140,7 +140,7 @@ export default function DeadlinesPage() {
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
             </div>
           </a>
-          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+          <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
@@ -152,7 +152,7 @@ export default function DeadlinesPage() {
               <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
             </div>
           </div>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Tax Calculators</span>
             </div>

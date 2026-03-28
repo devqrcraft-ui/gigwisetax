@@ -121,7 +121,7 @@ export default function CalculatorPage({ params }) {
 
   const S = {
     page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#eef0f4", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
-    card: { background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
+    card: { background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
     h2: { fontSize: 20, fontWeight: 800, color: "rgba(255,255,255,0.9)", margin: "0 0 14px", lineHeight: 1.3 },
     p: { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 14 },
   };
@@ -299,7 +299,7 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* OTHER STATES */}
-          <div style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> {p.name} in Other States</span>
             </div>
@@ -312,7 +312,7 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* OTHER PLATFORMS */}
-          <div style={{ background: "#fff", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> Other Platforms in {s.name}</span>
             </div>

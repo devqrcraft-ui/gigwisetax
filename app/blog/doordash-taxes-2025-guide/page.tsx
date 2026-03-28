@@ -43,7 +43,7 @@ export default function DoorDashTaxesBlog() {
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.725/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
           </div>
 

@@ -27,14 +27,14 @@ export default function TermsPage() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 
-        <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-          <div style={{ fontSize: 15, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Important Disclaimer</div>
-          <div style={{ fontSize: 14, color: '#92400e', lineHeight: 1.7 }}>
+        <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
+          <div style={{ fontSize: 15, fontWeight: 700, color: '#fcd34d', marginBottom: 6 }}> Important Disclaimer</div>
+          <div style={{ fontSize: 14, color: '#fcd34d', lineHeight: 1.7 }}>
             GigWiseTax.com provides <strong>estimates only</strong>. This is NOT tax advice. Results are for informational purposes only. Always consult a licensed CPA or tax professional before filing. Individual tax situations vary significantly.
           </div>
         </div>
 
-        <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
           <div style={section}>
             <h2 style={h2}>1. Acceptance of Terms</h2>

@@ -203,7 +203,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
           {/* Sidebar */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>

@@ -34,7 +34,7 @@ export default function AboutPage() {
             { icon: '', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
             { icon: '', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
-            <div key={s.label} style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
+            <div key={s.label} style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 4 }}>{s.label}</div>
               <div style={{ fontSize: 12, color: '#6c757d' }}>{s.desc}</div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)', marginBottom: 24 }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>Why We Built This</h2>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
             Millions of Americans drive for DoorDash, deliver for Instacart, sell on Etsy, or host on Airbnb — and most of them are surprised every April when they owe thousands in unexpected taxes. As independent contractors, gig workers receive no tax withholding, no employer match, and no guidance on quarterly payments.
@@ -55,7 +55,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)', marginBottom: 24 }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>How We Stay Free</h2>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
             GigWiseTax.com is supported by clearly labeled <strong>affiliate partnerships</strong> with tax software companies like TurboTax, QuickBooks, and H&R Block. When you click a sponsored link and make a purchase, we may earn a commission — at no extra cost to you.
@@ -65,7 +65,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 1px 6px rgba(0,0,0,.05)', marginBottom: 24 }}>
+        <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>What We Cover</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8 }}>
             {[

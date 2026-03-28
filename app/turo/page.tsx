@@ -70,9 +70,9 @@ export default function TuroPage() {
     setResult({ gross, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1), businessPct: (businessPct*100).toFixed(0) })
   }
 
-  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background:'#fff', boxSizing:'border-box' as const }
+  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background: '#0d1b3e', boxSizing:'border-box' as const }
   const lbl = { display:'block', fontSize:11, fontWeight:700, color: 'rgba(255,255,255,0.85)', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
-  const card= { background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }
+  const card= { background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
@@ -168,7 +168,7 @@ export default function TuroPage() {
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
                 </div>
-                <div style={{ background:'#fffbeb', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
+                <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
                   <strong> Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function TuroPage() {
         </div>
 
         <div style={{ display:'flex', flexDirection:'column' as const, gap:16 }}>
-          <div style={{ background:'#fff', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background: '#0d1b3e', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             {/* OWN BANNER — privatepaycheck.com */}
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
@@ -228,7 +228,7 @@ export default function TuroPage() {
             </a>
           </div>
 
-          <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
@@ -261,7 +261,7 @@ export default function TuroPage() {
 
 
           {/* INTERNAL LINKS */}
-          <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }}>
+          <div style={{ background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>

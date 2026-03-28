@@ -54,7 +54,7 @@ export default function MileageRate2026Post() {
           </p>
 
           <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
               ['2026', '70¢/mile', true],
@@ -74,7 +74,7 @@ export default function MileageRate2026Post() {
           </div>
 
           <h2 style={h2}>How Much Can You Save? (By Miles Driven)</h2>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (70¢/mile, 2026)</div>
             {[
               ['5,000 miles', '$3,625', '$1,087'],
@@ -108,7 +108,7 @@ export default function MileageRate2026Post() {
               </ul>
             </div>
             <div style={{ background: '#fff8e6', border: '1px solid #fde68a', borderRadius: 6, padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: '#92400e', marginBottom: 8 }}> Actual Expenses</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: '#fcd34d', marginBottom: 8 }}> Actual Expenses</div>
               <ul style={{ margin: 0, paddingLeft: 18 }}>
                 {['Track gas, repairs, insurance','Depreciation included','Better for gas-guzzlers or luxury cars','More complex recordkeeping'].map(i => (
                   <li key={i} style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, marginBottom: 4 }}>{i}</li>
@@ -151,15 +151,15 @@ export default function MileageRate2026Post() {
             ))}
           </div>
 
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
-            <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a CPA for your specific situation. Always verify rates at irs.gov.</div>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#fcd34d', marginBottom: 6 }}> Disclaimer</div>
+            <div style={{ fontSize: 13, color: '#fcd34d', lineHeight: 1.7 }}>Informational purposes only. Not tax advice. Consult a CPA for your specific situation. Always verify rates at irs.gov.</div>
           </div>
 
         </article>
 
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Calculate Your Taxes</span>
             </div>
@@ -176,7 +176,7 @@ export default function MileageRate2026Post() {
             ))}
           </div>
 
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Guides</span>
             </div>

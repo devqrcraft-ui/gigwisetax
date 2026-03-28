@@ -50,7 +50,7 @@ export default function EtsyDeductionsBlog() {
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> The average Etsy seller qualifies for $4,000–$9,000 in tax deductions they don't claim. Materials, home studio, shipping, Etsy fees, equipment — all deductible. This guide covers every category.
           </div>
 

@@ -52,7 +52,7 @@ export default function DeadlinesBlog() {
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Gig workers have 4 quarterly tax payment deadlines per year plus an annual filing deadline. Missing any quarterly payment triggers IRS underpayment penalties. Here's the complete 2025 tax calendar.
           </div>
 

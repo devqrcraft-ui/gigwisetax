@@ -148,7 +148,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
           </p>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
             {[
               { q: 'Q1 2026', period: 'Jan – Mar income', due: 'April 15, 2026', urgent: true },
@@ -179,9 +179,9 @@ export default function AmazonFlexTaxesBlogPost() {
             Use our free <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> to get your personalized estimate.
           </p>
 
-          <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
-            <div style={{ fontSize: 13, fontWeight: 700, color: '#92400e', marginBottom: 6 }}> Disclaimer</div>
-            <div style={{ fontSize: 13, color: '#92400e', lineHeight: 1.7 }}>
+          <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#fcd34d', marginBottom: 6 }}> Disclaimer</div>
+            <div style={{ fontSize: 13, color: '#fcd34d', lineHeight: 1.7 }}>
               This article is for informational purposes only and does not constitute tax advice. Tax laws change frequently. Consult a licensed CPA or Enrolled Agent for advice specific to your situation.
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
         {/* SIDEBAR */}
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
@@ -202,7 +202,7 @@ export default function AmazonFlexTaxesBlogPost() {
             </div>
           </div>
 
-          <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
@@ -213,7 +213,7 @@ export default function AmazonFlexTaxesBlogPost() {
             </div>
           </div>
 
-          <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Articles</span>
             </div>

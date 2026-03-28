@@ -63,7 +63,7 @@ export default function InstacartTaxGuide() {
 
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
           <div>
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 1px 6px rgba(0,0,0,.05)' }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
               {/* CTA */}
               <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
@@ -90,7 +90,7 @@ export default function InstacartTaxGuide() {
               <div style={{ background: '#f0f9ff', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                 <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 10 }}> Important: Two Types of Instacart Workers</div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }} className="form-grid">
-                  <div style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
+                  <div style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12 }}>
                     <div style={{ fontWeight: 700, color: '#0369a1', marginBottom: 6, fontSize: 13 }}> In-Store Shoppers</div>
                     <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}>
                       <li>W-2 employee status</li>
@@ -99,7 +99,7 @@ export default function InstacartTaxGuide() {
                       <li>No SE tax</li>
                     </ul>
                   </div>
-                  <div style={{ background: '#fff', border: '1px solid #fecaca', borderRadius: 4, padding: 12 }}>
+                  <div style={{ background: '#0d1b3e', border: '1px solid #fecaca', borderRadius: 4, padding: 12 }}>
                     <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 6, fontSize: 13 }}> Full-Service Shoppers</div>
                     <ul style={{ margin: 0, paddingLeft: 14, fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8 }}>
                       <li>1099 independent contractor</li>
@@ -131,7 +131,7 @@ export default function InstacartTaxGuide() {
                     { miles: '15,000', deduction: '$10,875', saves: '~$2,393' },
                     { miles: '25,000', deduction: '$16,750', saves: '~$3,988' },
                   ].map(r => (
-                    <div key={r.miles} style={{ background: '#fff', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
+                    <div key={r.miles} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 11, color: '#6c757d', marginBottom: 4 }}>{r.miles} miles</div>
                       <div style={{ fontSize: 16, fontWeight: 900, color: '#0369a1' }}>{r.deduction}</div>
                       <div style={{ fontSize: 10, color: '#059669', fontWeight: 600 }}>saves {r.saves} in tax</div>
@@ -225,7 +225,7 @@ export default function InstacartTaxGuide() {
                 <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
               </div>
             </a>
-            <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
               <div style={{ padding: 16 }}>
                 <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
@@ -237,7 +237,7 @@ export default function InstacartTaxGuide() {
                 <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
               </div>
             </div>
-            <div style={{ background: '#fff', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related Guides</span>
               </div>
