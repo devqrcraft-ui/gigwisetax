@@ -69,9 +69,9 @@ export default function GrubhubPage() {
     setResult({ gross, net, mileDeduction, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1) })
   }
 
-  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color:'#1a1a2e', background:'#fff', boxSizing:'border-box' as const }
-  const lbl = { display:'block', fontSize:11, fontWeight:700, color:'#374151', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
-  const card= { background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow:'0 1px 6px rgba(0,0,0,.05)' }
+  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color:'#e2e8f0', background:'#0d1b3e', boxSizing:'border-box' as const }
+  const lbl = { display:'block', fontSize:11, fontWeight:700, color:'rgba(255,255,255,0.6)', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
+  const card= { background:'#0d1b3e', border:'1px solid rgba(255,255,255,0.12)', borderRadius:10, overflow:'hidden' as const, marginBottom:20, boxShadow:'0 2px 12px rgba(0,0,0,.3)' }
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
@@ -157,10 +157,10 @@ export default function GrubhubPage() {
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
                     { label:'Federal Income Tax',  val:fmt(result.federal), color:'#1a1a2e', sub:'After SE deduction' },
-                    { label:'State Income Tax',    val:fmt(result.stateTax), color:'#374151', sub:STATES.find(s=>s.code===stateCode)?.name },
+                    { label:'State Income Tax',    val:fmt(result.stateTax), color:'rgba(255,255,255,0.8)', sub:STATES.find(s=>s.code===stateCode)?.name },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
-                    <div key={r.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
+                    <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
                       <div style={{ fontSize:11, color:'#6c757d', fontWeight:600, marginBottom:6 }}>{r.label}</div>
                       <div style={{ fontSize:20, fontWeight:900, color:r.color }}>{r.val}</div>
                       <div style={{ fontSize:10, color:'#9ca3af', marginTop:4 }}>{r.sub}</div>
@@ -188,7 +188,7 @@ export default function GrubhubPage() {
             <div style={{ padding:20 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }} className="ded-grid">
                 {DEDUCTIONS.map(d => (
-                  <div key={d.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 16px' }}>
+                  <div key={d.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 16px' }}>
                     <div style={{ fontSize:20, marginBottom:6 }}>{d.icon}</div>
                     <div style={{ fontSize:13, fontWeight:700, color:'#1a1a2e', marginBottom:4 }}>{d.label}</div>
                     <div style={{ fontSize:12, color:'#6c757d', lineHeight:1.6 }}>{d.desc}</div>
@@ -221,7 +221,7 @@ export default function GrubhubPage() {
 
         {/* SIDEBAR */}
         <div style={{ display:'flex', flexDirection:'column' as const, gap:16 }}>
-          <div style={{ background:'#fff', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background:'#0d1b3e', border:'2px dashed rgba(255,255,255,0.15)', borderRadius:10, overflow:'hidden' as const }}>
             {/* OWN BANNER — privatepaycheck.com */}
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
@@ -236,7 +236,7 @@ export default function GrubhubPage() {
             </a>
           </div>
 
-          <div style={{ background:'#fff', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background:'#0d1b3e', border:'1px solid rgba(255,255,255,0.12)', borderRadius:10, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
@@ -256,7 +256,7 @@ export default function GrubhubPage() {
             ))}
           </div>
 
-          <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
+          <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:16 }}>
             <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
             <div style={{ fontSize:12, color:'#374151', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Grubhub, IRS, or any agency. No data stored. Estimates only — not tax advice.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
