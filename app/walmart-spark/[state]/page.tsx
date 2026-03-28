@@ -329,6 +329,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: `${PLATFORM_NAME} Tax Calculator — ${s.name} 2026 | GigWiseTax`,
     description: `Free ${PLATFORM_NAME} tax calculator for ${s.name} (${rateStr}). Calculate self-employment tax (15.3%), federal income tax, and quarterly payments for 2026. No signup.`,
+    alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
 }
