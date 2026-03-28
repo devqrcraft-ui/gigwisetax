@@ -70,7 +70,7 @@ export default function HomeOfficeBlog() {
           <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
-              <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f3f4f6', fontSize: 14 }}>
+              <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.07)', fontSize: 14 }}>
                 <span style={{ color: 'rgba(255,255,255,0.85)' }}>{r.sqft} sq ft workspace</span>
                 <span style={{ fontWeight: 700, color: '#16a34a' }}>{r.ded} deduction</span>
               </div>

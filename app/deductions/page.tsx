@@ -117,7 +117,7 @@ export default function DeductionsChecklist() {
         <div>
           {filtered.map((d, i) => (
             <div key={d.id} onClick={() => toggle(d.id)}
-              style={{ display: 'flex', gap: 16, padding: '16px 20px', borderBottom: i < filtered.length-1 ? '1px solid #f3f4f6' : 'none', cursor: 'pointer', background: checked.has(d.id) ? '#f0fdf4' : '#fff', transition: 'background .2s', alignItems: 'flex-start' }}>
+              style={{ display: 'flex', gap: 16, padding: '16px 20px', borderBottom: i < filtered.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', cursor: 'pointer', background: checked.has(d.id) ? 'rgba(5,150,105,0.12)' : 'transparent', transition: 'background .2s', alignItems: 'flex-start' }}>
               {/* CHECKBOX */}
               <div style={{ width: 24, height: 24, borderRadius: 6, border: checked.has(d.id) ? '2px solid #16a34a' : '2px solid #d1d5db', background: checked.has(d.id) ? '#16a34a' : '#fff', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 2, transition: 'all .2s' }}>
                 {checked.has(d.id) && <span style={{ color: '#fff', fontSize: 14, fontWeight: 900 }}>✓</span>}

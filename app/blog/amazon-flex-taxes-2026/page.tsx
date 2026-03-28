@@ -161,7 +161,7 @@ export default function AmazonFlexTaxesBlogPost() {
                   <span style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14 }}>{row.q}</span>
                   <span style={{ fontSize: 12, color: '#6c757d', marginLeft: 8 }}>{row.period}</span>
                 </div>
-                <span style={{ fontWeight: 700, color: row.urgent ? '#B22234' : '#374151', fontSize: 13 }}>
+                <span style={{ fontWeight: 700, color: row.urgent ? '#B22234' : 'rgba(255,255,255,0.75)', fontSize: 13 }}>
                   {row.urgent && ' '}{row.due}
                 </span>
               </div>

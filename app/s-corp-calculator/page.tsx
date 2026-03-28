@@ -29,14 +29,14 @@ export default function SCorpCalculator() {
   const card = { background: '#fff', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 4px 24px rgba(0,0,0,.3)', marginBottom: 24 }
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
-  const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 18, fontWeight: 700, color: '#111827', background: '#ffffff', boxSizing: 'border-box' as const, marginTop: 8, outline: 'none' }
+  const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 18, fontWeight: 700, color: '#ffffff', background: '#ffffff', boxSizing: 'border-box' as const, marginTop: 8, outline: 'none' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
   const lbl  = { fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.85)', display: 'block', marginTop: 20 } as const
 
   const Row = ({ l, v, b }: { l: string; v: string; b?: boolean }) => (
-    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid #f3f4f6' }}>
-      <span style={{ fontSize: 14, color: b ? '#111827' : '#6b7280', fontWeight: b ? 700 : 400 }}>{l}</span>
-      <span style={{ fontSize: 14, fontWeight: b ? 800 : 600, color: b ? '#111827' : '#374151' }}>{v}</span>
+    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+      <span style={{ fontSize: 14, color: b ? '#ffffff' : '#6b7280', fontWeight: b ? 700 : 400 }}>{l}</span>
+      <span style={{ fontSize: 14, fontWeight: b ? 800 : 600, color: b ? '#ffffff' : 'rgba(255,255,255,0.75)' }}>{v}</span>
     </div>
   )
 
@@ -74,7 +74,7 @@ export default function SCorpCalculator() {
           <div style={{ display: 'flex', gap: 8, marginTop: 10, flexWrap: 'wrap' as const }}>
             {['40000','60000','80000','100000','120000','150000'].map(v => (
               <button key={v} onClick={() => setIncome(v)}
-                style={{ background: income === v ? '#1e2d5a' : '#f3f4f6', color: income === v ? '#fff' : '#374151', border: income === v ? '2px solid #B22234' : '2px solid #e5e7eb', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+                style={{ background: income === v ? '#1e2d5a' : 'rgba(255,255,255,0.08)', color: income === v ? '#fff' : 'rgba(255,255,255,0.75)', border: income === v ? '2px solid #B22234' : '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
                 ${parseInt(v)/1000}k
               </button>
             ))}
@@ -109,7 +109,7 @@ export default function SCorpCalculator() {
       {result && (<>
         {/* SAVINGS BANNER */}
         <div style={{ ...card, border: result.savings > 0 ? '3px solid #22c55e' : '1px solid #e5e7eb' }}>
-          <div style={{ background: result.savings > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : '#f9fafb', padding: '28px 24px', textAlign: 'center' }}>
+          <div style={{ background: result.savings > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : 'rgba(255,255,255,0.06)', padding: '28px 24px', textAlign: 'center' }}>
             {result.savings > 0 ? (<>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.8)', letterSpacing: 1, marginBottom: 8 }}> ESTIMATED ANNUAL SAVINGS WITH S-CORP</div>
               <div style={{ fontSize: 60, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{fmt(result.savings)}</div>
@@ -172,7 +172,7 @@ export default function SCorpCalculator() {
               File S-Corp Taxes with TurboTax Business →
             </a>
             <a href="/tax-penalty-finder"
-              style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
+              style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
                Get My Full Tax Penalty Report →
             </a>
 

@@ -73,7 +73,7 @@ export default function SCorpGuideBlog() {
             { n: 4, title: 'Determine Your Reasonable Salary', body: 'The IRS requires S-Corp owners to pay themselves a "reasonable salary" — what you\'d pay someone else to do your work. Most gig workers use 40–60% of net profit. Too low a salary is an audit red flag.' },
             { n: 5, title: 'File Form 1120-S Annually', body: 'S-Corps file their own tax return (Form 1120-S) each year. You\'ll also receive a K-1 showing your share of profits. Hire a CPA for this — cost is typically $1,500–$2,500/year, but the tax savings far exceed this.' },
           ].map(step => (
-            <div key={step.n} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid #f3f4f6' }}>
+            <div key={step.n} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
               <div style={{ width: 32, height: 32, background: '#B22234', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontWeight: 900, fontSize: 14, flexShrink: 0 }}>{step.n}</div>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>{step.title}</div>

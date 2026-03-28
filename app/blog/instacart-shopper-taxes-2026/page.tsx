@@ -181,7 +181,7 @@ export default function InstacartTaxGuide() {
                       </td>
                       <td style={{ padding: '11px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e' }}>{d.due}</td>
                       <td style={{ padding: '11px 14px' }}>
-                        <span style={{ background: i === 0 ? '#fee2e2' : '#f0f4f8', color: i === 0 ? '#B22234' : '#374151', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.d} days</span>
+                        <span style={{ background: i === 0 ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.d} days</span>
                       </td>
                     </tr>
                   ))}
@@ -228,7 +228,7 @@ export default function InstacartTaxGuide() {
             <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
               <div style={{ padding: 16 }}>
-                <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+                <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                   <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>

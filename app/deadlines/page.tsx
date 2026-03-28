@@ -33,7 +33,7 @@ export default function DeadlinesPage() {
   const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
   return (
-    <div style={{ background: '#f0f4f8', minHeight: '100vh' }}>
+    <div style={{ background: 'rgba(255,255,255,0.08)', minHeight: '100vh' }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 2026 tax deadlines for gig workers?","acceptedAnswer":{"@type":"Answer","text":"2026 key dates: Q1 estimated tax — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15 2027. Tax return deadline — April 15 2027 (extension to October 15 2027). 1099-NEC receipt by January 31 2027."}},{"@type":"Question","name":"What is the penalty for missing quarterly estimated tax payments?","acceptedAnswer":{"@type":"Answer","text":"The IRS underpayment penalty for 2026 is based on the federal short-term rate plus 3 percentage points. On a $2,000 underpayment for one quarter, the penalty is roughly $30-$50. Penalties compound quarterly."}},{"@type":"Question","name":"When do I need to file my gig worker tax return for 2026?","acceptedAnswer":{"@type":"Answer","text":"Your 2026 federal tax return is due April 15, 2027. File Form 4868 for an automatic 6-month extension to October 15, 2027. An extension to file is NOT an extension to pay — any taxes owed are still due April 15."}}]}' }} />
       {/* HERO */}
@@ -74,7 +74,7 @@ export default function DeadlinesPage() {
                   <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{d.q}</div>
                   <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 10 }}>{d.period}</div>
                   <div style={{ fontSize: 17, fontWeight: 900, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 8 }}>{d.due}</div>
-                  <div style={{ background: d.now ? '#fee2e2' : '#f0f4f8', color: d.now ? '#B22234' : '#374151', padding: '4px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700, display: 'inline-block', marginBottom: 12 }}>{d.days} days</div>
+                  <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700, display: 'inline-block', marginBottom: 12 }}>{d.days} days</div>
                   <div style={btnRed}> + Calendar</div>
                 </div>
               ))}
@@ -117,10 +117,10 @@ export default function DeadlinesPage() {
                     <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? '#fff' : '#fafafa' }}>
                       <td style={{ padding: '11px 14px', fontWeight: 700, fontSize: 13 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '11px 14px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 13 }}>{s.rate}</td>
-                      <td style={{ padding: '11px 14px', color: s.q1 === '—' ? '#d1d5db' : '#374151', fontSize: 12 }}>{s.q1}</td>
-                      <td style={{ padding: '11px 14px', color: s.q2 === '—' ? '#d1d5db' : '#374151', fontSize: 12 }}>{s.q2}</td>
-                      <td style={{ padding: '11px 14px', color: s.q3 === '—' ? '#d1d5db' : '#374151', fontSize: 12 }}>{s.q3}</td>
-                      <td style={{ padding: '11px 14px', color: s.q4 === '—' ? '#d1d5db' : '#374151', fontSize: 12 }}>{s.q4}</td>
+                      <td style={{ padding: '11px 14px', color: s.q1 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
+                      <td style={{ padding: '11px 14px', color: s.q2 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
+                      <td style={{ padding: '11px 14px', color: s.q3 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
+                      <td style={{ padding: '11px 14px', color: s.q4 === '—' ? '#d1d5db' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
                       <td style={{ padding: '11px 14px', fontSize: 11, color: '#6c757d' }}>{s.portal}</td>
                     </tr>
                   ))}
@@ -143,7 +143,7 @@ export default function DeadlinesPage() {
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
             <div style={{ padding: 16 }}>
-              <div style={{ background: '#f0f4f8', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
+              <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>
               </div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>

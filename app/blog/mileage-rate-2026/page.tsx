@@ -67,7 +67,7 @@ export default function MileageRate2026Post() {
               ['2020', '57.5¢/mile', false],
             ].map(([year, rate, current]) => (
               <div key={year as string} style={{ display: 'flex', justifyContent: 'space-between', padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', background: current ? '#fff8e6' : 'transparent' }}>
-                <span style={{ fontSize: 14, fontWeight: current ? 800 : 500, color: current ? '#1a1a2e' : '#374151' }}>{year as string} {current && '← Current'}</span>
+                <span style={{ fontSize: 14, fontWeight: current ? 800 : 500, color: current ? '#1a1a2e' : 'rgba(255,255,255,0.75)' }}>{year as string} {current && '← Current'}</span>
                 <span style={{ fontSize: 14, fontWeight: 700, color: current ? '#B22234' : '#6c757d' }}>{rate as string}</span>
               </div>
             ))}

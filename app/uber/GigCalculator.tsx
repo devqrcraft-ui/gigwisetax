@@ -42,7 +42,7 @@ export default function GigCalculator({
   const inp     = { width: '100%', border: '1px solid #d1d5db', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: '#fff', boxSizing: 'border-box' as const }
   const btnDark = { background: '#1a1a2e', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
-  const btnGray = { background: '#f3f4f6', color: 'rgba(255,255,255,0.85)', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, border: '1px solid #d1d5db', whiteSpace: 'nowrap' as const }
+  const btnGray = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, border: '1px solid #d1d5db', whiteSpace: 'nowrap' as const }
 
   return (
     <>

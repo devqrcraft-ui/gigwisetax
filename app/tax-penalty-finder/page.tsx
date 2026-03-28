@@ -58,9 +58,9 @@ export default function TaxPenaltyFinder() {
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '14px 32px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
-  const btnG = { background: '#f3f4f6', color: 'rgba(255,255,255,0.85)', border: '1px solid #d1d5db', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
-  const opt  = (a: boolean) => ({ background: a?'#1e2d5a':'#f9fafb', color: a?'#fff':'#374151', border: a?'2px solid #B22234':'2px solid #e5e7eb', borderRadius: 8, padding: '14px 16px', fontSize: 14, fontWeight: 700, cursor: 'pointer', flex: 1, textAlign: 'center' as const })
-  const inp  = { width: '100%', border: '2px solid #e5e7eb', borderRadius: 6, padding: '12px 14px', fontSize: 16, boxSizing: 'border-box' as const, marginTop: 8 }
+  const btnG = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', border: '1px solid #d1d5db', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 8 } as const
+  const opt  = (a: boolean) => ({ background: a?'#1e2d5a':'rgba(255,255,255,0.06)', color: a?'#fff':'rgba(255,255,255,0.75)', border: a?'2px solid #B22234':'2px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 14, fontWeight: 700, cursor: 'pointer', flex: 1, textAlign: 'center' as const })
+  const inp  = { width: '100%', border: '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 14px', fontSize: 16, boxSizing: 'border-box' as const, marginTop: 8 }
 
   if (result) return (
     <div style={bg}><div style={wrap}>
@@ -169,10 +169,10 @@ export default function TaxPenaltyFinder() {
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>What's your annual {platform} income?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 20px' }}>Enter your gross earnings before expenses</p>
-              <input type="text" inputMode="numeric" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45000" style={{...inp, color:"#111827", background:"#fff"}}/>
+              <input type="text" inputMode="numeric" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45000" style={{...inp, color:"#ffffff", background:"#fff"}}/>
               <div style={{ display:'flex', gap:8, marginTop:12, flexWrap:'wrap' as const }}>
                 {['15000','25000','45000','65000','85000'].map(v => (
-                  <button key={v} onClick={() => setIncome(v)} style={{ background:income===v?'#1e2d5a':'#f3f4f6', color:income===v?'#fff':'#374151', border:income===v?'2px solid #B22234':'2px solid #e5e7eb', borderRadius:6, padding:'7px 12px', fontSize:13, fontWeight:600, cursor:'pointer' }}>${parseInt(v)/1000}k</button>
+                  <button key={v} onClick={() => setIncome(v)} style={{ background:income===v?'#1e2d5a':'rgba(255,255,255,0.08)', color:income===v?'#fff':'rgba(255,255,255,0.75)', border:income===v?'2px solid #B22234':'2px solid rgba(255,255,255,0.15)', borderRadius:6, padding:'7px 12px', fontSize:13, fontWeight:600, cursor:'pointer' }}>${parseInt(v)/1000}k</button>
                 ))}
               </div>
               <button onClick={() => income && setStep(hasMileage ? 3 : 4)} style={{ ...btnR, opacity: income ? 1 : 0.5 }}>Next →</button>
@@ -183,7 +183,7 @@ export default function TaxPenaltyFinder() {
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
               <p style={{ color:'#6b7280', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2025</strong> — your biggest deduction</p>
-              <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#111827", background:"#fff"}}/>
+              <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background:"#fff"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#16a34a', fontWeight:600 }}>
                  Potential deduction: ${(parseFloat(miles)*0.70).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.70*0.28).toLocaleString()} in taxes
               </div>}

@@ -212,11 +212,11 @@ export default function CalculatorPage({ params }) {
                         <td style={{ padding: "12px 14px", fontWeight: 800, fontSize: 15 }}>{fmt(income)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.seTax)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.federal)}</td>
-                        <td style={{ padding: "12px 14px", fontSize: 14, color: !s.hasTax ? "#059669" : "#374151" }}>{!s.hasTax ? "$0 ✓" : fmt(t.stateTax)}</td>
+                        <td style={{ padding: "12px 14px", fontSize: 14, color: !s.hasTax ? "#059669" : "rgba(255,255,255,0.75)" }}>{!s.hasTax ? "$0 ✓" : fmt(t.stateTax)}</td>
                         <td style={{ padding: "12px 14px", fontWeight: 800, color: "#B22234", fontSize: 15 }}>{fmt(t.total)}</td>
                         <td style={{ padding: "12px 14px", fontWeight: 700, fontSize: 14 }}>{fmt(t.quarterly)}</td>
                         <td style={{ padding: "12px 14px" }}>
-                          <span style={{ background: "#fee2e2", color: "#B22234", padding: "3px 8px", borderRadius: 10, fontSize: 12, fontWeight: 700 }}>{t.rate}%</span>
+                          <span style={{ background: "rgba(178,34,52,0.2)", color: "#B22234", padding: "3px 8px", borderRadius: 10, fontSize: 12, fontWeight: 700 }}>{t.rate}%</span>
                         </td>
                       </tr>
                     );
@@ -285,7 +285,7 @@ export default function CalculatorPage({ params }) {
         {/* SIDEBAR */}
         <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
           {/* STATE INFO */}
-          <div style={{ background: s.hasTax ? "#fff9f9" : "#f0fdf4", border: `2px solid ${s.hasTax ? "#B22234" : "#0d7a40"}`, borderRadius: 6, padding: 16, position: "sticky" as const, top: 76 }}>
+          <div style={{ background: s.hasTax ? "rgba(178,34,52,0.1)" : "rgba(5,150,105,0.1)", border: `2px solid ${s.hasTax ? "#B22234" : "#0d7a40"}`, borderRadius: 6, padding: 16, position: "sticky" as const, top: 76 }}>
             <div style={{ fontSize: 13, fontWeight: 800, color: s.hasTax ? "#B22234" : "#0d7a40", marginBottom: 8 }}>
                {s.name} ({s.abbr})
             </div>

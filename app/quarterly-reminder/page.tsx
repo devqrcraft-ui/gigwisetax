@@ -29,7 +29,7 @@ export default function QuarterlyReminder() {
   const card = { background: '#fff', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 4px 24px rgba(0,0,0,.3)', marginBottom: 24 }
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
-  const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 16, fontWeight: 600, color: '#111827', background: '#fff', boxSizing: 'border-box' as const, marginTop: 8 }
+  const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 16, fontWeight: 600, color: '#ffffff', background: '#fff', boxSizing: 'border-box' as const, marginTop: 8 }
   const lbl  = { fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.85)', display: 'block', marginTop: 16 } as const
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 20 } as const
 
@@ -53,7 +53,7 @@ export default function QuarterlyReminder() {
                   <span style={{ fontSize: 14, fontWeight: 700, color: d.urgent ? '#B22234' : '#1a1a2e' }}>{d.q}</span>
                   <span style={{ fontSize: 12, color: '#6b7280', marginLeft: 8 }}>{d.period}</span>
                 </div>
-                <span style={{ fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : '#374151' }}>{d.due}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</span>
               </div>
             ))}
           </div>
@@ -68,10 +68,10 @@ export default function QuarterlyReminder() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-            <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
                Tax Penalty Finder
             </Link>
-            <Link href="/deductions" style={{ display: 'block', background: '#f3f4f6', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
                Deductions Checklist
             </Link>
           </div>
@@ -119,7 +119,7 @@ export default function QuarterlyReminder() {
                 <div style={{ fontSize: 12, color: '#6b7280' }}>Income period: {d.period}</div>
               </div>
               <div style={{ textAlign: 'right' as const }}>
-                <div style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : '#374151' }}>{d.due}</div>
+                <div style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</div>
                 <div style={{ fontSize: 12, color: d.urgent ? '#B22234' : '#9ca3af', fontWeight: 600 }}>{d.daysLeft} days left</div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function QuarterlyReminder() {
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const, marginTop: 8 }}>
             {PLATFORMS.map(p => (
               <button key={p} onClick={() => setPlatform(p)}
-                style={{ background: platform===p?'#1e2d5a':'#f3f4f6', color: platform===p?'#fff':'#374151', border: platform===p?'2px solid #B22234':'2px solid #e5e7eb', borderRadius: 6, padding: '7px 12px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: platform===p?'#1e2d5a':'rgba(255,255,255,0.08)', color: platform===p?'#fff':'rgba(255,255,255,0.75)', border: platform===p?'2px solid #B22234':'2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '7px 12px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
                 {p}
               </button>
             ))}
@@ -160,7 +160,7 @@ export default function QuarterlyReminder() {
           <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' as const }}>
             {['Under $20k','$20k–$50k','$50k–$100k','Over $100k'].map(v => (
               <button key={v} onClick={() => setIncome(v)}
-                style={{ background: income===v?'#1e2d5a':'#f3f4f6', color: income===v?'#fff':'#374151', border: income===v?'2px solid #B22234':'2px solid #e5e7eb', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+                style={{ background: income===v?'#1e2d5a':'rgba(255,255,255,0.08)', color: income===v?'#fff':'rgba(255,255,255,0.75)', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
                 {v}
               </button>
             ))}
@@ -187,7 +187,7 @@ export default function QuarterlyReminder() {
             { icon: '', title: 'Required for Gig Workers', desc: 'If you earn $400+ in self-employment income, the IRS requires quarterly payments. DoorDash, Uber, Etsy — all platforms send 1099s, not W-2s.' },
             { icon: '', title: 'How Much to Pay', desc: 'Use our Tax Penalty Finder to calculate your exact quarterly amount. Generally, set aside 25-30% of net income each quarter.' },
           ].map((item, i) => (
-            <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: i < 2 ? '1px solid #f3f4f6' : 'none' }}>
+            <div key={i} style={{ display: 'flex', gap: 16, marginBottom: 20, paddingBottom: 20, borderBottom: i < 2 ? '1px solid rgba(255,255,255,0.07)' : 'none' }}>
               <span style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</span>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 5 }}>{item.title}</div>
