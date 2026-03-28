@@ -104,7 +104,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
   };
 
   const card = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const cardHd = { background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
   return (
@@ -201,7 +201,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </h3>
                 <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
                   <thead>
-                    <tr style={{ background: '#1a1a2e' }}>
+                    <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                       {['Quarter','Income Period','Due Date','Days Left'].map(h => (
                         <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
@@ -210,12 +210,12 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   <tbody>
                     {DEADLINES_2026.map((d, i) => (
                       <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                        <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>
+                        <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', fontSize: 14 }}>
                           {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 6, fontWeight: 800 }}>NOW</span>}
                           {d.q} 2026
                         </td>
                         <td data-label="Period" style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{d.period}</td>
-                        <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>{d.due}</td>
+                        <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', fontSize: 14 }}>{d.due}</td>
                         <td data-label="Days Left" style={{ padding: '12px 14px' }}>
                           <span style={{ background: i === 0 ? 'rgba(178,34,52,0.25)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#fca5a5' : 'rgba(255,255,255,0.7)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
@@ -343,7 +343,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             {/* OTHER CALCULATORS */}
 <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
-            <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
             </div>
               <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>→</span></a>
@@ -368,7 +368,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
             {/* STATES LINKS */}
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
-              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Top States</span>
               </div>
               {[
@@ -396,7 +396,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
             {/* MULTI-APP BANNER */}
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
-              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Drive for multiple apps?</span>
               </div>
               <div style={{ padding: '14px 16px' }}>

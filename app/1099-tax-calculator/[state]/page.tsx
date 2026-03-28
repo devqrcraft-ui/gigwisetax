@@ -81,7 +81,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* How 1099 taxes work */}
         <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How 1099 Taxes Work in {state.name}</span>
           </div>
@@ -101,7 +101,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Examples */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>Example 1099 Income in {state.name}</span>
           </div>
@@ -130,14 +130,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Quarterly deadlines */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>2026 Quarterly Tax Deadlines — {state.name}</span>
           </div>
           <div style={{ padding: 20 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
-                <tr style={{ background: '#1a1a2e' }}>
+                <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                   {['Quarter','Due Date','Federal','State'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700, fontSize: 11, textTransform: 'uppercase' as const, letterSpacing: '0.5px', textAlign: 'left' as const }}>{h}</th>
                   ))}
@@ -166,7 +166,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Platforms */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>1099 Platforms in {state.name}</span>
           </div>
@@ -198,7 +198,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Other states */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>1099 Tax Calculator — Other States</span>
           </div>

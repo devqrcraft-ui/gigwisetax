@@ -87,7 +87,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div style={{ background: '#1a1a2e', borderRadius: 8, padding: 32, marginBottom: 24 }}>
+        <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 8, padding: 32, marginBottom: 24 }}>
           <h2 style={{ fontSize: 18, fontWeight: 800, color: '#fff', marginBottom: 12, marginTop: 0 }}>Important Disclaimer</h2>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,.6)', lineHeight: 1.8, marginBottom: 0 }}>
             GigWiseTax.com provides estimates for informational purposes only. We are not a licensed CPA, tax attorney, or Enrolled Agent. Our calculators do not constitute tax advice. Always consult a qualified tax professional for your specific situation. Tax laws change frequently — verify all figures with the IRS at <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b' }}>irs.gov</a>.
@@ -99,7 +99,7 @@ export default function AboutPage() {
             <div style={{ background: '#B22234', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Contact Us</div>
           </Link>
           <Link href="/" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1a2e', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Try a Calculator</div>
+            <div style={{ background: 'rgba(255,255,255,0.85)', color: '#fff', padding: '10px 20px', borderRadius: 4, fontSize: 13, fontWeight: 700, cursor: 'pointer' }}> Try a Calculator</div>
           </Link>
           {[['Privacy Policy','/privacy'],['Terms of Service','/terms']].map(([l,h]) => (
             <Link key={l} href={h} style={{ fontSize: 13, color: '#6c757d', textDecoration: 'underline', display: 'flex', alignItems: 'center' }}>{l}</Link>

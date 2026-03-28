@@ -42,7 +42,7 @@ export default function MileageRate2026Post() {
         <article>
 
           {/* BIG RATE CALLOUT */}
-          <div style={{ background: '#1a1a2e', borderRadius: 8, padding: '24px 28px', marginBottom: 32, textAlign: 'center' as const }}>
+          <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 8, padding: '24px 28px', marginBottom: 32, textAlign: 'center' as const }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' as const, letterSpacing: '2px', marginBottom: 8 }}>IRS STANDARD MILEAGE RATE</div>
             <div style={{ fontSize: 56, fontWeight: 900, color: '#e8b84b', lineHeight: 1 }}>70¢</div>
             <div style={{ fontSize: 18, color: 'rgba(255,255,255,.7)', marginTop: 4 }}>per mile · Tax Year 2026</div>
@@ -55,7 +55,7 @@ export default function MileageRate2026Post() {
 
           <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
-            <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
               ['2026', '70¢/mile', true],
               ['2025', '70.0¢/mile', false],
@@ -75,7 +75,7 @@ export default function MileageRate2026Post() {
 
           <h2 style={h2}>How Much Can You Save? (By Miles Driven)</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
-            <div style={{ background: '#1a1a2e', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (70¢/mile, 2026)</div>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (70¢/mile, 2026)</div>
             {[
               ['5,000 miles', '$3,625', '$1,087'],
               ['10,000 miles', '$7,250', '$2,175'],
@@ -160,7 +160,7 @@ export default function MileageRate2026Post() {
 
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Calculate Your Taxes</span>
             </div>
             {[
@@ -177,7 +177,7 @@ export default function MileageRate2026Post() {
           </div>
 
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
-            <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Guides</span>
             </div>
             {[

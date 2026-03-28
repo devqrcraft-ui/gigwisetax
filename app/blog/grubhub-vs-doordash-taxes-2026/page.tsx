@@ -57,7 +57,7 @@ export default function GrubhubVsDoorDashPost() {
 
           <h2 style={h2}>Side-by-Side Tax Comparison</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: '#1a1a2e', padding: '12px 16px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> Grubhub</span>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> DoorDash</span>
@@ -114,7 +114,7 @@ export default function GrubhubVsDoorDashPost() {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
             <Link href="/grubhub" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#1a1a2e', borderRadius: 6, padding: '16px', textAlign: 'center' as const, cursor: 'pointer' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: '16px', textAlign: 'center' as const, cursor: 'pointer' }}>
                 <div style={{ fontSize: 24, marginBottom: 8 }}></div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Grubhub Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)' }}>Calculate your Grubhub taxes →</div>
@@ -138,7 +138,7 @@ export default function GrubhubVsDoorDashPost() {
 
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Use a Calculator</span>
             </div>
             {[[' Grubhub Calculator','/grubhub'],[' DoorDash Calculator','/doordash'],[' Uber Calculator','/uber'],[' Amazon Flex','/amazon-flex']].map(([l,h]) => (
@@ -148,7 +148,7 @@ export default function GrubhubVsDoorDashPost() {
             ))}
           </div>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
-            <div style={{ background: '#1a1a2e', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> More Guides</span>
             </div>
             {[['Mileage Rate 2026','/blog/mileage-rate-2026'],['Amazon Flex Taxes','/blog/amazon-flex-taxes-2026'],['Quarterly Taxes','/blog/quarterly-taxes-gig-workers'],['W-2 vs 1099','/blog/w2-vs-1099-guide-2026']].map(([l,h]) => (

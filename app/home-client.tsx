@@ -103,11 +103,11 @@ export default function HomeClient() {
 
   /* ── shared style tokens ── */
   const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
-  const cardHd   = { background: '#1a1a2e', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
+  const cardHd   = { background: 'rgba(255,255,255,0.85)', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent   = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#a8b8d0', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
   const inp      = { width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1628', boxSizing: 'border-box' as const }
-  const btnDark  = { background: '#1a1a2e', color: '#fff', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
+  const btnDark  = { background: 'rgba(255,255,255,0.85)', color: '#fff', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
   const formGrid = { display: 'grid', gridTemplateColumns: '1fr', gap: 20, marginBottom: 20 }
   const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
@@ -148,7 +148,7 @@ export default function HomeClient() {
 
       {/* STICKY RESULT BAR mobile */}
       {result && isMobile && (
-        <div style={{ position: 'sticky', top: 60, zIndex: 90, background: '#1a1a2e', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div style={{ position: 'sticky', top: 60, zIndex: 90, background: 'rgba(255,255,255,0.85)', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', fontWeight: 500 }}>Estimated total tax</span>
           <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
             {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
@@ -325,7 +325,7 @@ export default function HomeClient() {
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
-                          <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : '#1a1a2e', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
+                          <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
                           <div style={btnRed({ fontSize: 11, padding: '6px 0' })}>+ Calendar</div>
                         </div>
                       ))}
@@ -345,7 +345,7 @@ export default function HomeClient() {
 
               {/* HOW THIS CALCULATOR WORKS */}
               <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, overflow: 'hidden' as const, marginTop: 20 }}>
-                <div style={{ background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How This Calculator Works</span>
                 </div>
@@ -534,7 +534,7 @@ export default function HomeClient() {
 
           {/* QUICK LINKS */}
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
               <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.75)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Popular Calculators</span>
             </div>
             {PLATFORMS.map(p => (

@@ -34,7 +34,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const cardHd = { background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
 
@@ -117,7 +117,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 15, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}>2026 Quarterly Tax Deadlines</h3>
                 <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13, marginBottom: 20 }}>
                   <thead>
-                    <tr style={{ background: '#1a1a2e' }}>
+                    <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                       {['Quarter','Due Date','Federal','State'].map(h => (
                         <th key={h} style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700, fontSize: 11, textTransform: 'uppercase' as const, letterSpacing: '0.5px', textAlign: 'left' as const }}>{h}</th>
                       ))}
@@ -204,7 +204,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           {/* Sidebar */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (

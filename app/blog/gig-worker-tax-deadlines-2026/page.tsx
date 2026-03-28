@@ -60,7 +60,7 @@ export default function Page() {
         <div style={{ overflowX: 'auto', marginBottom: 32 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
             <thead>
-              <tr style={{ background: '#1a1a2e', color: 'rgba(255,255,255,0.03)' }}>
+              <tr style={{ background: 'rgba(255,255,255,0.85)', color: 'rgba(255,255,255,0.03)' }}>
                 {['Quarter','Income Period','IRS Due Date','Form'].map(h => (
                   <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, fontSize: 13 }}>{h}</th>
                 ))}

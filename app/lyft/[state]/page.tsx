@@ -95,7 +95,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
 
   const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const cardHd = { background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
   const schemaJson = {
@@ -178,7 +178,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {[
                     { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
                     { label: 'Federal Tax', val: '10–37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
-                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : '#1a1a2e' },
+                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, marginBottom: 6 }}>{r.label}</div>
@@ -194,7 +194,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </h3>
                 <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
                   <thead>
-                    <tr style={{ background: '#1a1a2e' }}>
+                    <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                       {['Quarter', 'Due Date', 'Federal (1040-ES)', `${state.abbr} State`].map(h => (
                         <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
                       ))}
@@ -306,7 +306,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
 
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (

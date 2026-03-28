@@ -50,7 +50,7 @@ export default function QuarterlyReminder() {
             {DEADLINES.map((d, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid rgba(178,34,52,0.5)' : '1px solid rgba(255,255,255,0.12)' }}>
                 <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: d.urgent ? '#B22234' : '#1a1a2e' }}>{d.q}</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q}</span>
                   <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginLeft: 8 }}>{d.period}</span>
                 </div>
                 <span style={{ fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</span>
@@ -114,7 +114,7 @@ export default function QuarterlyReminder() {
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
                   {d.urgent && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '2px 6px', borderRadius: 3 }}>URGENT</span>}
-                  <span style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : '#1a1a2e' }}>{d.q}</span>
+                  <span style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q}</span>
                 </div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>Income period: {d.period}</div>
               </div>

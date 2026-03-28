@@ -53,7 +53,7 @@ export default function UberTaxGuide() {
           <div>
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
-              <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
                 <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Uber Taxes Instantly</div>
                 <a href="/uber" style={{ textDecoration: 'none' }}>
                   <div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
@@ -133,7 +133,7 @@ export default function UberTaxGuide() {
 
               <h2 style={h2}>Standard Mileage vs Actual Expense Method</h2>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
-                <thead><tr style={{ background: '#1a1a2e' }}>
+                <thead><tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                   {['Method','Best For','Pros','Cons'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
                 </tr></thead>
                 <tbody>
@@ -154,17 +154,17 @@ export default function UberTaxGuide() {
 
               <h2 style={h2}>2026 Quarterly Tax Deadlines for Uber Drivers</h2>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
-                <thead><tr style={{ background: '#1a1a2e' }}>
+                <thead><tr style={{ background: 'rgba(255,255,255,0.85)' }}>
                   {['Quarter','Due Date','Days Left'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
                 </tr></thead>
                 <tbody>
                   {[['Q1 2026','April 15, 2026','45',true],['Q2 2026','June 16, 2026','107',false],['Q3 2026','Sept 15, 2026','198',false],['Q4 2026','Jan 15, 2027','320',false]].map(([q,due,d,now],i) => (
                     <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: now ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                      <td style={{ padding: '11px 14px', fontWeight: 800, color: now ? '#B22234' : '#1a1a2e' }}>
+                      <td style={{ padding: '11px 14px', fontWeight: 800, color: now ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
                         {now && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                         {q}
                       </td>
-                      <td style={{ padding: '11px 14px', fontWeight: 700, color: now ? '#B22234' : '#1a1a2e' }}>{due}</td>
+                      <td style={{ padding: '11px 14px', fontWeight: 700, color: now ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{due}</td>
                       <td style={{ padding: '11px 14px' }}>
                         <span style={{ background: now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d} days</span>
                       </td>
@@ -193,7 +193,7 @@ export default function UberTaxGuide() {
 
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             <a href="/uber" style={{ textDecoration: 'none' }}>
-              <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
                 <div style={{ fontSize: 32, marginBottom: 8 }}></div>
                 <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Uber Tax Calculator</div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · Quarterly schedule</div>
@@ -213,7 +213,7 @@ export default function UberTaxGuide() {
               </div>
             </div>
             <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+              <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related</span>
               </div>
               {[

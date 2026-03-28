@@ -125,7 +125,7 @@ export default function DeductionsChecklist() {
               {/* CONTENT */}
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap' as const, gap: 4 }}>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: checked.has(d.id) ? '#16a34a' : '#1a1a2e' }}>{d.title}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: checked.has(d.id) ? '#16a34a' : 'rgba(255,255,255,0.85)' }}>{d.title}</div>
                   <div style={{ fontSize: 12, fontWeight: 700, color: '#16a34a', background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 4, padding: '2px 8px', whiteSpace: 'nowrap' as const }}>{d.savings}</div>
                 </div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 3 }}>{d.desc}</div>

@@ -28,7 +28,7 @@ const STATES_DEADLINES = [
 
 export default function DeadlinesPage() {
   const card = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd = { background: '#1a1a2e', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const cardHd = { background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
@@ -71,9 +71,9 @@ export default function DeadlinesPage() {
               ].map((d, i) => (
                 <div key={d.q} style={{ padding: '20px 16px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: d.now ? 'rgba(178,34,52,0.12)' : '#fff', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
                   {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
-                  <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{d.q}</div>
+                  <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{d.q}</div>
                   <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 10 }}>{d.period}</div>
-                  <div style={{ fontSize: 17, fontWeight: 900, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 8 }}>{d.due}</div>
+                  <div style={{ fontSize: 17, fontWeight: 900, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 8 }}>{d.due}</div>
                   <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700, display: 'inline-block', marginBottom: 12 }}>{d.days} days</div>
                   <div style={btnRed}> + Calendar</div>
                 </div>
@@ -133,7 +133,7 @@ export default function DeadlinesPage() {
         {/* SIDEBAR */}
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/" style={{ textDecoration: 'none' }}>
-            <div style={{ background: '#1a1a2e', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Calculate Your Quarterly Payment</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All platforms · All 51 states</div>
@@ -153,7 +153,7 @@ export default function DeadlinesPage() {
             </div>
           </div>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#1a1a2e', padding: '10px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Tax Calculators</span>
             </div>
             {[
