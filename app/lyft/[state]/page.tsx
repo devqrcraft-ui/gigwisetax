@@ -192,7 +192,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   2026 Quarterly Tax Deadlines for {state.name}
                 </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
+                <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
                   <thead>
                     <tr style={{ background: '#1a1a2e' }}>
                       {['Quarter', 'Due Date', 'Federal (1040-ES)', `${state.abbr} State`].map(h => (

@@ -197,7 +197,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   2026 Quarterly Tax Deadlines for {platform.name} Workers
                 </h3>
-                <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
+                <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
                   <thead>
                     <tr style={{ background: '#1a1a2e' }}>
                       {['Quarter','Income Period','Due Date','Days Left'].map(h => (
@@ -212,9 +212,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                           {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 6, fontWeight: 800 }}>NOW</span>}
                           {d.q} 2026
                         </td>
-                        <td style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{d.period}</td>
+                        <td data-label="Period" style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{d.period}</td>
                         <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : '#1a1a2e', fontSize: 14 }}>{d.due}</td>
-                        <td style={{ padding: '12px 14px' }}>
+                        <td data-label="Days Left" style={{ padding: '12px 14px' }}>
                           <span style={{ background: i === 0 ? 'rgba(178,34,52,0.25)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#fca5a5' : 'rgba(255,255,255,0.7)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
                       </tr>
