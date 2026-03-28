@@ -82,7 +82,7 @@ export default function AboutPage() {
               ' IRS mileage deduction (70¢)',
               ' Schedule SE calculations',
             ].map(item => (
-              <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', padding: '8px 12px', background: '#f8fafc', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
+              <div key={item} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', padding: '8px 12px', background: 'rgba(255,255,255,0.05)', borderRadius: 4, border: '1px solid #e2e5e9' }}>{item}</div>
             ))}
           </div>
         </div>

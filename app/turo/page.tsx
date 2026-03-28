@@ -156,7 +156,7 @@ export default function TuroPage() {
                     { label:'State Income Tax',    val:fmt(result.stateTax), color: 'rgba(255,255,255,0.85)', sub:STATES.find(s=>s.code===stateCode)?.name },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
-                    <div key={r.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
+                    <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
                       <div style={{ fontSize:11, color:'#6c757d', fontWeight:600, marginBottom:6 }}>{r.label}</div>
                       <div style={{ fontSize:20, fontWeight:900, color:r.color }}>{r.val}</div>
                       <div style={{ fontSize:10, color:'#9ca3af', marginTop:4 }}>{r.sub}</div>
@@ -183,7 +183,7 @@ export default function TuroPage() {
             <div style={{ padding:20 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12 }} className="ded-grid">
                 {DEDUCTIONS.map(d => (
-                  <div key={d.label} style={{ background:'#f8fafc', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 16px' }}>
+                  <div key={d.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #e2e5e9', borderRadius:6, padding:'14px 16px' }}>
                     <div style={{ fontSize:20, marginBottom:6 }}>{d.icon}</div>
                     <div style={{ fontSize:13, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:4 }}>{d.label}</div>
                     <div style={{ fontSize:12, color:'#6c757d', lineHeight:1.6 }}>{d.desc}</div>
@@ -247,7 +247,7 @@ export default function TuroPage() {
             ))}
           </div>
 
-          <div style={{ background:'#f8fafc', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
+          <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
             <div style={{ fontSize:11, fontWeight:700, color:'#6c757d', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
             <div style={{ fontSize:12, color: 'rgba(255,255,255,0.85)', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. No data stored. Estimates only.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
@@ -268,11 +268,11 @@ export default function TuroPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/airbnb" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
-              <a href="/etsy" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"#f8fafc", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
+              <a href="/airbnb" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
+              <a href="/etsy" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid #e2e5e9", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

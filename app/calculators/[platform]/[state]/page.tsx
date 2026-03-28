@@ -142,7 +142,7 @@ export default function CalculatorPage({ params }) {
       <header style={{ background: "#1a1a2e", position: "sticky" as const, top: 0, zIndex: 100, boxShadow: "0 2px 16px rgba(0,0,0,0.4)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
           <Link href="/" style={{ textDecoration: "none" }}>
-            <div style={{ fontWeight: 900, fontSize: 19, color: "#fff" }}>
+            <div style={{ fontWeight: 900, fontSize: 19, color: "rgba(255,255,255,0.03)" }}>
               GIGWISE<span style={{ color: "#e8b84b" }}>TAX</span>
               <span style={{ color: "rgba(255,255,255,.2)", fontWeight: 300, fontSize: 14 }}>.COM</span>
             </div>
@@ -198,7 +198,7 @@ export default function CalculatorPage({ params }) {
             <div style={{ overflowX: "auto" }}>
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 500 }}>
                 <thead>
-                  <tr style={{ background: "#f8fafc", borderBottom: "2px solid #e2e5e9" }}>
+                  <tr style={{ background: "rgba(255,255,255,0.05)", borderBottom: "2px solid #e2e5e9" }}>
                     {["Annual Income", "SE Tax (15.3%)", "Federal Tax", s.hasTax ? `${s.abbr} State Tax` : "State Tax", "Total Tax", "Quarterly", "Rate"].map(h => (
                       <th key={h} style={{ padding: "10px 14px", fontSize: 11, fontWeight: 700, color: "#6c757d", textTransform: "uppercase" as const, letterSpacing: "0.7px", textAlign: "left" }}>{h}</th>
                     ))}
@@ -239,7 +239,7 @@ export default function CalculatorPage({ params }) {
                   { title: " Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
                   { title: " Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },
                 ].map(d => (
-                  <div key={d.title} style={{ background: "#f8fafc", border: "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px" }}>
+                  <div key={d.title} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px" }}>
                     <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{d.title}</div>
                     <div style={{ fontSize: 13, color: "#B22234", fontWeight: 600, marginBottom: 4 }}>{d.val}</div>
                     <div style={{ fontSize: 12, color: "#9ca3af" }}>{d.desc}</div>
@@ -260,7 +260,7 @@ export default function CalculatorPage({ params }) {
                   { q: "Q3", due: "Sept 15, 2026", urgent: false },
                   { q: "Q4", due: "Jan 15, 2027", urgent: false },
                 ].map(d => (
-                  <div key={d.q} style={{ border: d.urgent ? "2px solid #B22234" : "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px", background: d.urgent ? "#fff5f5" : "#fff" }}>
+                  <div key={d.q} style={{ border: d.urgent ? "2px solid #B22234" : "1px solid #e2e5e9", borderRadius: 6, padding: "14px 16px", background: d.urgent ? "rgba(178,34,52,0.12)" : "rgba(255,255,255,0.03)" }}>
                     <div style={{ fontWeight: 800, marginBottom: 4 }}>{d.q} 2026</div>
                     <div style={{ fontWeight: 700, color: d.urgent ? "#B22234" : "#1a1a2e" }}>{d.due}</div>
                     {d.urgent && <div style={{ fontSize: 11, color: "#B22234", marginTop: 4, fontWeight: 700 }}> NEXT DUE</div>}

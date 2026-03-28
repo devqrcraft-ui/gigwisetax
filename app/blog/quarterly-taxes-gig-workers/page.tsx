@@ -16,7 +16,7 @@ export default function QuarterlyTaxesGuide() {
     <div style={{ background: "#0d1117", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 estimated tax due dates: Q1 — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15, 2027. If you expect to owe $1,000 or more for the year, you must make these payments to avoid penalties."}},{"@type":"Question","name":"How much should gig workers pay in quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay either 90% of your 2026 tax liability or 100% of your 2025 tax (110% if 2025 AGI was over $150,000). The safe harbor method using last year\'s tax is the easiest for most gig workers."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (free) or through the IRS2Go app. Use Form 1040-ES to calculate the amount. Most gig workers set aside 25-30% of each paycheck into a dedicated tax savings account."}}]}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › Quarterly Taxes Guide
       </nav>
@@ -50,7 +50,7 @@ export default function QuarterlyTaxesGuide() {
             ['Q4', 'Sep 1 – Dec 31', 'January 15, 2027'],
           ].map(([q, period, due], i) => (
             <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-              <td style={{ padding: '12px 16px', fontWeight: 700, color: i === 0 ? '#ff4444' : '#fff' }}>{q}</td>
+              <td style={{ padding: '12px 16px', fontWeight: 700, color: i === 0 ? '#ff4444' : 'rgba(255,255,255,0.03)' }}>{q}</td>
               <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>{period}</td>
               <td style={{ padding: '12px 16px', fontWeight: 600, color: i === 0 ? '#ff4444' : '#e8b84b' }}>{due}</td>
             </tr>
@@ -60,7 +60,7 @@ export default function QuarterlyTaxesGuide() {
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>How Much to Pay Each Quarter</h2>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 16 }}>
-        The simplest method: pay <strong style={{ color: '#fff' }}>25–30% of your net gig income</strong> each quarter. Net income = gross earnings minus deductible expenses (mileage, phone, equipment).
+        The simplest method: pay <strong style={{ color: 'rgba(255,255,255,0.03)' }}>25–30% of your net gig income</strong> each quarter. Net income = gross earnings minus deductible expenses (mileage, phone, equipment).
       </p>
       <div style={{ background: 'rgba(165,180,252,.08)', border: '1px solid rgba(165,180,252,.2)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
         <div style={{ fontWeight: 700, marginBottom: 8, color: '#a5b4fc' }}>Example: DoorDash driver earning $2,000/quarter</div>
@@ -76,10 +76,10 @@ export default function QuarterlyTaxesGuide() {
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>How to Actually Pay</h2>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 12 }}>
-        Pay online at <strong style={{ color: '#fff' }}>IRS Direct Pay</strong> (free, no account needed) at irs.gov/payments. Select "Estimated Tax" and tax year 2026.
+        Pay online at <strong style={{ color: 'rgba(255,255,255,0.03)' }}>IRS Direct Pay</strong> (free, no account needed) at irs.gov/payments. Select "Estimated Tax" and tax year 2026.
       </p>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 32 }}>
-        Also file <strong style={{ color: '#fff' }}>Form 1040-ES</strong> if mailing a check, or use EFTPS for automatic scheduling.
+        Also file <strong style={{ color: 'rgba(255,255,255,0.03)' }}>Form 1040-ES</strong> if mailing a check, or use EFTPS for automatic scheduling.
       </p>
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Deductions to Reduce Your Quarterly Payment</h2>

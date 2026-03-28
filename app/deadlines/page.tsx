@@ -69,7 +69,7 @@ export default function DeadlinesPage() {
                 { q: 'Q3 2026', period: 'Jun 1 – Aug 31', due: 'Sept 15, 2026', days: 198, now: false },
                 { q: 'Q4 2026', period: 'Sep 1 – Dec 31', due: 'Jan 15, 2027', days: 320, now: false },
               ].map((d, i) => (
-                <div key={d.q} style={{ padding: '20px 16px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: d.now ? '#fff5f5' : '#fff', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
+                <div key={d.q} style={{ padding: '20px 16px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: d.now ? 'rgba(178,34,52,0.12)' : '#fff', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
                   {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
                   <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{d.q}</div>
                   <div style={{ fontSize: 11, color: '#9ca3af', marginBottom: 10 }}>{d.period}</div>
@@ -79,13 +79,13 @@ export default function DeadlinesPage() {
                 </div>
               ))}
             </div>
-            <div style={{ padding: '16px 20px', background: '#f8fafc', fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
+            <div style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.05)', fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
               <strong>How to pay:</strong> Use <a href="https://directpay.irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS Direct Pay</a> (free, no registration) or the IRS2Go app. Pay to "1040-ES" for estimated taxes. Same-day processing available.
             </div>
           </div>
 
           {/* PENALTY WARNING */}
-          <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 20, marginBottom: 20 }}>
+          <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid #fecaca', borderRadius: 6, padding: 20, marginBottom: 20 }}>
             <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10, fontSize: 15 }}> Underpayment Penalty Warning</div>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
@@ -106,7 +106,7 @@ export default function DeadlinesPage() {
             <div style={{ overflowX: 'auto' as const }}>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 600 }}>
                 <thead>
-                  <tr style={{ background: '#f8fafc', borderBottom: '2px solid #e2e5e9' }}>
+                  <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: '2px solid #e2e5e9' }}>
                     {['State', 'Rate', 'Q1', 'Q2', 'Q3', 'Q4', 'Portal'].map(h => (
                       <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
                     ))}
@@ -141,7 +141,7 @@ export default function DeadlinesPage() {
             </div>
           </a>
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>

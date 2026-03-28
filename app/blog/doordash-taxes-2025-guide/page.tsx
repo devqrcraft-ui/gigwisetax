@@ -13,7 +13,7 @@ export default function DoorDashTaxesBlog() {
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const h3 = { fontSize: 17, fontWeight: 700, color: 'rgba(255,255,255,0.9)', margin: '24px 0 10px' }
   const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
-  const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
+  const warn = { background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
   const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
 
   return (
@@ -41,7 +41,7 @@ export default function DoorDashTaxesBlog() {
         </div>
       </div>
 
-      <div style={{ background: '#fff' }}>
+      <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
             <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.725/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
@@ -61,8 +61,8 @@ export default function DoorDashTaxesBlog() {
               { label: 'SE Tax Deduction', value: '-50%', detail: 'Deduct half of SE tax from taxable income' },
               { label: 'State Income Tax', value: '0–9.3%', detail: 'No tax in TX, FL, NV. Up to 9.3% in CA' },
             ].map(item => (
-              <div key={item.label} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 6, padding: '14px' }}>
-                <div style={{ fontSize: 12, fontWeight: 700, color: '#6b7280', marginBottom: 4 }}>{item.label}</div>
+              <div key={item.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 6, padding: '14px' }}>
+                <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
                 <div style={{ fontSize: 24, fontWeight: 900, color: '#B22234', marginBottom: 4 }}>{item.value}</div>
                 <div style={{ fontSize: 12, color: '#9ca3af' }}>{item.detail}</div>
               </div>
@@ -99,7 +99,7 @@ export default function DoorDashTaxesBlog() {
                 { q: 'Q3 2025', p: 'June – August',   d: 'September 15, 2025' },
                 { q: 'Q4 2025', p: 'September – Dec', d: 'January 15, 2026' },
               ].map((r, i) => (
-                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? '#fff9f9' : '#fff' }}>
+                <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
                   <td style={{ padding: '12px 14px', fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{r.q}</td>
                   <td style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.85)' }}>{r.p}</td>
                   <td style={{ padding: '12px 14px', fontWeight: 700, color: i===0 ? '#B22234' : '#1a1a2e' }}>{r.d}</td>
@@ -119,7 +119,7 @@ export default function DoorDashTaxesBlog() {
             </Link>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> This article is for informational purposes only. Tax laws change. Consult a licensed CPA. GigWiseTax.com is not affiliated with DoorDash or the IRS.
           </div>
         </div>

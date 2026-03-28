@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   const card: React.CSSProperties = { background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Turo hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends on activity level. Casual Turo hosts (fewer than 3 cars, passive rental) report income on Schedule E — no SE tax. Active hosts who manage fleets report on Schedule C and owe 15.3% SE tax."}},{"@type":"Question","name":"Does Turo send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turo sends a 1099-K to hosts who process over $5,000 in gross payments in 2026. Even without a 1099-K you must report all rental income."}},{"@type":"Question","name":"What is the best tax deduction for Turo hosts?","acceptedAnswer":{"@type":"Answer","text":"Depreciation is the largest deduction. Under MACRS, a car used for Turo depreciates over 5 years. Bonus depreciation may allow up to 40% in year one for 2026."}}]}) }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' > '}

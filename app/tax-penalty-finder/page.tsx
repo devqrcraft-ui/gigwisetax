@@ -71,7 +71,7 @@ export default function TaxPenaltyFinder() {
           <div style={{ color:'rgba(255,255,255,.6)', fontSize:13, marginTop:4 }}>{platform} • ${parseFloat(income).toLocaleString()} income</div>
         </div>
         <div style={body}>
-          <div style={{ background:'#fff5f5', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
+          <div style={{ background:'rgba(178,34,52,0.12)', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#B22234', letterSpacing:1, marginBottom:4 }}>YOU ARE CURRENTLY OVERPAYING THE IRS</div>
             <div style={{ fontSize:52, fontWeight:900, color:'#B22234', lineHeight:1 }}>{fmt(result.overpaying)}</div>
             <div style={{ fontSize:13, color:'#6b7280', marginTop:6 }}>per year in avoidable taxes & penalties</div>
@@ -96,7 +96,7 @@ export default function TaxPenaltyFinder() {
               </div>
             )}
           </div>
-          <div style={{ background:'#f8fafc', border:'1px solid #e2e8f0', borderRadius:8, padding:16, marginBottom:20 }}>
+          <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #e2e8f0', borderRadius:8, padding:16, marginBottom:20 }}>
             <div style={{ fontSize:13, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}> YOUR PERSONALIZED ACTION PLAN</div>
             {result.tips.map((tip: string, i: number) => (
               <div key={i} style={{ display:'flex', gap:10, marginBottom:8 }}>
@@ -112,7 +112,7 @@ export default function TaxPenaltyFinder() {
               File with TurboTax Self-Employed →
             </a>
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener"
-              style={{ display:'block', background:'#fff', color: 'rgba(255,255,255,0.9)', borderRadius:6, padding:'12px', fontSize:14, fontWeight:700, textDecoration:'none', border:'1px solid #e5e7eb' }}>
+              style={{ display:'block', background:'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius:6, padding:'12px', fontSize:14, fontWeight:700, textDecoration:'none', border:'1px solid rgba(255,255,255,0.12)' }}>
               Track expenses with QuickBooks SE →
             </a>
           </div>
@@ -138,7 +138,7 @@ export default function TaxPenaltyFinder() {
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1 }}>{step === 0 ? 'START' : `STEP ${step} OF 7`}</div>
             <div style={{ color:'rgba(255,255,255,.5)', fontSize:12 }}>GigWiseTax</div>
           </div>
-          {step > 0 && <div style={{ height:4, background:'#e5e7eb', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
+          {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
         </div>
         <div style={body}>
           {step === 0 && (
@@ -146,7 +146,7 @@ export default function TaxPenaltyFinder() {
               <div style={{ fontSize:48, marginBottom:16 }}></div>
               <h2 style={{ fontSize:20, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 10px' }}>Find Your Tax Overpayment</h2>
               <p style={{ color:'#6b7280', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
-              <div style={{ background:'#f8fafc', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
+              <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
                 {['Takes only 60 seconds','Personalized to your platform','Shows exact dollar savings','100% free — no signup needed'].map((t,i) => (
                   <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
                 ))}

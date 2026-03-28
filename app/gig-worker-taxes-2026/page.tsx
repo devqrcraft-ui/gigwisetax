@@ -76,7 +76,7 @@ const CATEGORIES = [
 
 export default function GigWorkerTaxCenter() {
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh', color: '#fff' }}>
+    <div style={{ background: '#0d1117', minHeight: '100vh', color: 'rgba(255,255,255,0.03)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* HERO */}
@@ -103,7 +103,7 @@ export default function GigWorkerTaxCenter() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
               <div style={{ width: 4, height: 24, background: cat.color, borderRadius: 2 }} />
               <div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: '#fff' }}>{cat.title}</div>
+                <div style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.03)' }}>{cat.title}</div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{cat.desc}</div>
               </div>
             </div>

@@ -12,7 +12,7 @@ export default function W9MistakesBlog() {
   const s = { maxWidth: 780, margin: '0 auto', padding: '40px 20px', fontFamily: 'system-ui, sans-serif' }
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
-  const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
+  const warn = { background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
   const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
 
   return (
@@ -40,7 +40,7 @@ export default function W9MistakesBlog() {
         </div>
       </div>
 
-      <div style={{ background: '#fff' }}>
+      <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
             <strong>Quick Summary:</strong> Most gig workers fill out W-9 forms wrong — or skip them entirely. These 7 mistakes trigger IRS penalties, withholding problems, and lost deductions worth thousands per year.
@@ -85,7 +85,7 @@ export default function W9MistakesBlog() {
             </div>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute tax or legal advice. Consult a licensed CPA for personalized guidance. GigWiseTax.com is not affiliated with the IRS.
           </div>
         </div>

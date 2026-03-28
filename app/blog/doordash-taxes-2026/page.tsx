@@ -54,7 +54,7 @@ export default function DoorDashTaxGuide() {
               </a>
             </div>
 
-            <div style={{ background: '#fff5f5', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+            <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: DoorDash Taxes 2026</div>
               <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
                 <li><strong>DoorDash does NOT withhold taxes</strong> — you are an independent contractor</li>
@@ -130,7 +130,7 @@ export default function DoorDashTaxGuide() {
                   { q: 'Q3 2026', due: 'Sept 15, 2026', now: false },
                   { q: 'Q4 2026', due: 'Jan 15, 2027', now: false },
                 ].map((d, i) => (
-                  <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? '#fff9f9' : '#fff' }}>
+                  <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
                     <td style={{ padding: '11px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : '#1a1a2e' }}>
                       {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                       {d.q}
@@ -158,7 +158,7 @@ export default function DoorDashTaxGuide() {
               </div>
             ))}
 
-            <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
                <strong>Disclaimer:</strong> Informational purposes only. Consult a licensed CPA for your specific situation. Not affiliated with DoorDash or the IRS.
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function DoorDashTaxGuide() {
             </div>
           </a>
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span>

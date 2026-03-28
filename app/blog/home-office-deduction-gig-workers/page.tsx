@@ -13,7 +13,7 @@ export default function HomeOfficeBlog() {
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
   const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#14532d', lineHeight: 1.7 }
-  const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
+  const warn = { background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
@@ -40,7 +40,7 @@ export default function HomeOfficeBlog() {
         </div>
       </div>
 
-      <div style={{ background: '#fff' }}>
+      <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
             <strong>Quick Summary:</strong> Gig workers with a dedicated home workspace can deduct $5/sq ft up to 300 sq ft ($1,500 max) using the simplified method — or more using actual expenses. The key rule: the space must be used regularly and exclusively for business.
@@ -57,7 +57,7 @@ export default function HomeOfficeBlog() {
                 <div key={i} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 5 }}>• {i}</div>
               ))}
             </div>
-            <div style={{ background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: 14 }}>
+            <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#B22234', marginBottom: 8 }}> DOES NOT QUALIFY</div>
               {['Kitchen table used for both eating and work','Living room couch where you sometimes check orders','Shared bedroom with a small desk in the corner','Space used for both business and personal storage'].map(i => (
                 <div key={i} style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 5 }}>• {i}</div>
@@ -67,7 +67,7 @@ export default function HomeOfficeBlog() {
 
           <h2 style={h2}>Simplified Method: $5 Per Square Foot</h2>
           <p style={p}>The IRS simplified method lets you deduct $5 per square foot of your dedicated workspace, up to a maximum of 300 square feet. This gives a maximum deduction of $1,500 per year with no recordkeeping of actual expenses required.</p>
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
               <div key={r.sqft} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid rgba(255,255,255,0.07)', fontSize: 14 }}>
@@ -83,7 +83,7 @@ export default function HomeOfficeBlog() {
           <p style={p}>If your home expenses are high, the actual expense method may save more than the simplified method. You calculate the percentage of your home used for business (workspace sq ft ÷ total home sq ft) and apply that percentage to:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, margin: '0 0 20px' }}>
             {['Rent or mortgage interest','Utilities (electric, gas, water)','Home insurance','Internet (business portion)','Home repairs and maintenance','Property taxes'].map(item => (
-              <div key={item} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
+              <div key={item} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
                 <span style={{ color: '#22c55e', fontWeight: 800 }}>✓</span>{item}
               </div>
             ))}
@@ -102,7 +102,7 @@ export default function HomeOfficeBlog() {
             </Link>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> This article is for informational purposes only. Home office rules are complex and fact-specific. Consult a licensed CPA before claiming this deduction.
           </div>
         </div>

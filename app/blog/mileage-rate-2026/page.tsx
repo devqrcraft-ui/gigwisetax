@@ -91,7 +91,7 @@ export default function MileageRate2026Post() {
                 <span style={{ fontSize: 13, color: '#4ade80', fontWeight: 700 }}>{savings} saved*</span>
               </div>
             ))}
-            <div style={{ padding: '8px 16px', background: '#f8fafc', fontSize: 11, color: '#9ca3af' }}>*Tax savings estimated at 30% combined rate. Actual savings depend on your tax bracket and state.</div>
+            <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', fontSize: 11, color: '#9ca3af' }}>*Tax savings estimated at 30% combined rate. Actual savings depend on your tax bracket and state.</div>
           </div>
 
           <h2 style={h2}>Standard Mileage vs. Actual Expenses: Which Is Better?</h2>
@@ -133,7 +133,7 @@ export default function MileageRate2026Post() {
               'Total business miles for the year',
             ].map(item => <li key={item} style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 6 }}>{item}</li>)}
           </ul>
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 20 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Best Free Mileage Tracking Apps</div>
             {[
               { name: 'Stride', cost: 'Free', note: 'Best for most gig workers, IRS-compliant logs' },

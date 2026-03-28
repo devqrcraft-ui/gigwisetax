@@ -48,10 +48,10 @@ export default function QuarterlyReminder() {
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 14 }}> You'll receive reminders before:</div>
             {DEADLINES.map((d, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? '#fff5f5' : '#f8fafc', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid #fca5a5' : '1px solid #e5e7eb' }}>
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid rgba(178,34,52,0.5)' : '1px solid rgba(255,255,255,0.12)' }}>
                 <div>
                   <span style={{ fontSize: 14, fontWeight: 700, color: d.urgent ? '#B22234' : '#1a1a2e' }}>{d.q}</span>
-                  <span style={{ fontSize: 12, color: '#6b7280', marginLeft: 8 }}>{d.period}</span>
+                  <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginLeft: 8 }}>{d.period}</span>
                 </div>
                 <span style={{ fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</span>
               </div>
@@ -68,10 +68,10 @@ export default function QuarterlyReminder() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-            <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid rgba(255,255,255,0.12)' }}>
                Tax Penalty Finder
             </Link>
-            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid #e5e7eb' }}>
+            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 13, fontWeight: 700, textDecoration: 'none', textAlign: 'center', border: '1px solid rgba(255,255,255,0.12)' }}>
                Deductions Checklist
             </Link>
           </div>
@@ -110,13 +110,13 @@ export default function QuarterlyReminder() {
         </div>
         <div style={body}>
           {DEADLINES.map((d, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', background: d.urgent ? '#fff5f5' : '#f8fafc', borderRadius: 8, marginBottom: 10, border: d.urgent ? '2px solid #B22234' : '1px solid #e5e7eb' }}>
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 8, marginBottom: 10, border: d.urgent ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.12)' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
                   {d.urgent && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '2px 6px', borderRadius: 3 }}>URGENT</span>}
                   <span style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : '#1a1a2e' }}>{d.q}</span>
                 </div>
-                <div style={{ fontSize: 12, color: '#6b7280' }}>Income period: {d.period}</div>
+                <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>Income period: {d.period}</div>
               </div>
               <div style={{ textAlign: 'right' as const }}>
                 <div style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</div>
@@ -191,7 +191,7 @@ export default function QuarterlyReminder() {
               <span style={{ fontSize: 28, flexShrink: 0 }}>{item.icon}</span>
               <div>
                 <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 5 }}>{item.title}</div>
-                <div style={{ fontSize: 13, color: '#6b7280', lineHeight: 1.6 }}>{item.desc}</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{item.desc}</div>
               </div>
             </div>
           ))}

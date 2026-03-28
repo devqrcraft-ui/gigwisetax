@@ -82,7 +82,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             This covers Social Security (12.4%) and Medicare (2.9%). The SE tax is calculated on <strong>92.35% of your net profit</strong> (after deductions). You can then deduct 50% of the SE tax from your gross income.
           </p>
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: 16, marginBottom: 16 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
             {[
               ['Net income (after mileage deduction)', '$50,000'],
@@ -136,7 +136,7 @@ export default function AmazonFlexTaxesBlogPost() {
               { icon: '', title: 'Bank Fees', desc: 'If you open a business account for Flex income.' },
               { icon: '', title: 'Tax Prep Fees', desc: 'CPA or tax software costs — deductible on Schedule C.' },
             ].map(d => (
-              <div key={d.title} style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>
+              <div key={d.title} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>
                 <div style={{ fontSize: 18, marginBottom: 4 }}>{d.icon}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.title}</div>
                 <div style={{ fontSize: 11, color: '#6c757d', lineHeight: 1.5 }}>{d.desc}</div>
@@ -203,7 +203,7 @@ export default function AmazonFlexTaxesBlogPost() {
           </div>
 
           <div style={{ background: '#fff', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: '#f8fafc', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>

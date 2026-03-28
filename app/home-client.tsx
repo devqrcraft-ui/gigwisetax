@@ -321,7 +321,7 @@ export default function HomeClient() {
 
                     <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
-                        <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
+                        <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : '#fff', position: 'relative' as const }}>
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
@@ -373,15 +373,15 @@ export default function HomeClient() {
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
                     </div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
                     </div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: '#fff' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
                     </div>
                   </div>
                 </div>
@@ -419,7 +419,7 @@ export default function HomeClient() {
                     <thead>
                       <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
-                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? '#fff5f5' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
+                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(178,34,52,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
@@ -437,7 +437,7 @@ export default function HomeClient() {
                         <tr key={feat as string} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
                           {(vals as boolean[]).map((v,i) => (
-                            <td key={i} style={{ padding: '8px 6px', textAlign: 'center' as const, background: i===0 ? '#fff9f9' : 'transparent' }}>
+                            <td key={i} style={{ padding: '8px 6px', textAlign: 'center' as const, background: i===0 ? 'rgba(178,34,52,0.12)' : 'transparent' }}>
                               <span style={{ fontSize: 15, fontWeight: 800, color: v ? '#059669' : '#d1d5db' }}>{v ? '✓' : '✗'}</span>
                             </td>
                           ))}
@@ -468,7 +468,7 @@ export default function HomeClient() {
                   </thead>
                   <tbody>
                     {DEADLINES.map((d,i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? '#fff9f9' : '#fff' }}>
+                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
                         <td style={{ padding: '14px 16px', fontWeight: 800, fontSize: 14 }}>
                           {i===0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NOW</span>}
                           {d.q}

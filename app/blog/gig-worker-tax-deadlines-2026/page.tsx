@@ -48,7 +48,7 @@ export default function Page() {
         <h1 style={{ fontSize: 32, fontWeight: 900, lineHeight: 1.2, marginBottom: 12 }}>
           Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates
         </h1>
-        <p style={{ fontSize: 14, color: '#6b7280', marginBottom: 32 }}>
+        <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 32 }}>
           Updated January 2026 · 4 min read
         </p>
 
@@ -60,7 +60,7 @@ export default function Page() {
         <div style={{ overflowX: 'auto', marginBottom: 32 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
             <thead>
-              <tr style={{ background: '#1a1a2e', color: '#fff' }}>
+              <tr style={{ background: '#1a1a2e', color: 'rgba(255,255,255,0.03)' }}>
                 {['Quarter','Income Period','IRS Due Date','Form'].map(h => (
                   <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, fontSize: 13 }}>{h}</th>
                 ))}
@@ -68,11 +68,11 @@ export default function Page() {
             </thead>
             <tbody>
               {DEADLINES.map((d, i) => (
-                <tr key={d.q} style={{ background: i % 2 === 0 ? '#f8fafc' : '#fff', borderBottom: '1px solid #e2e5e9' }}>
+                <tr key={d.q} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.05)' : '#fff', borderBottom: '1px solid #e2e5e9' }}>
                   <td style={{ padding: '14px 16px', fontWeight: 800 }}>{d.q}</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.85)' }}>{d.period}</td>
                   <td style={{ padding: '14px 16px', fontWeight: 700, color: '#B22234' }}>{d.due}</td>
-                  <td style={{ padding: '14px 16px', color: '#6b7280' }}>{d.form}</td>
+                  <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.55)' }}>{d.form}</td>
                 </tr>
               ))}
             </tbody>
@@ -114,7 +114,7 @@ export default function Page() {
         ))}
 
         <div style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid #e2e5e9', fontSize: 13, color: '#9ca3af' }}>
-           Estimates only. Consult a licensed CPA or visit <a href="https://irs.gov" style={{ color: '#6b7280' }}>IRS.gov</a> for official guidance.
+           Estimates only. Consult a licensed CPA or visit <a href="https://irs.gov" style={{ color: 'rgba(255,255,255,0.55)' }}>IRS.gov</a> for official guidance.
         </div>
       </article>
     </>

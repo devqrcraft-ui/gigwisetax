@@ -48,7 +48,7 @@ export default function EtsyDeductionsBlog() {
         </div>
       </div>
 
-      <div style={{ background: '#fff' }}>
+      <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
             <strong>Quick Summary:</strong> The average Etsy seller qualifies for $4,000–$9,000 in tax deductions they don't claim. Materials, home studio, shipping, Etsy fees, equipment — all deductible. This guide covers every category.
@@ -62,7 +62,7 @@ export default function EtsyDeductionsBlog() {
               <h2 style={h2}>{cat.cat}</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 {cat.items.map((item, j) => (
-                  <div key={j} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
+                  <div key={j} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
                     <span style={{ color: '#22c55e', fontWeight: 800, flexShrink: 0 }}>✓</span>
                     {item}
                   </div>
@@ -90,7 +90,7 @@ export default function EtsyDeductionsBlog() {
             </Link>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> This article is for informational purposes only. Consult a licensed CPA for personalized tax advice. GigWiseTax.com is not affiliated with Etsy or the IRS.
           </div>
         </div>

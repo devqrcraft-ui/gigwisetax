@@ -12,7 +12,7 @@ export default function DeadlinesBlog() {
   const s  = { maxWidth: 780, margin: '0 auto', padding: '40px 20px' }
   const h2 = { fontSize: 22, fontWeight: 800, color: 'rgba(255,255,255,0.9)', margin: '32px 0 12px' }
   const p  = { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, margin: '0 0 16px' }
-  const warn = { background: '#fff5f5', border: '1px solid #fca5a5', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
+  const warn = { background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
 
   const deadlines = [
     { date: 'January 15, 2025',    event: 'Q4 2024 Estimated Tax Payment Due',     urgent: false },
@@ -50,7 +50,7 @@ export default function DeadlinesBlog() {
         </div>
       </div>
 
-      <div style={{ background: '#fff' }}>
+      <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: '#fffbeb', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#92400e' }}>
             <strong>Quick Summary:</strong> Gig workers have 4 quarterly tax payment deadlines per year plus an annual filing deadline. Missing any quarterly payment triggers IRS underpayment penalties. Here's the complete 2025 tax calendar.
@@ -61,7 +61,7 @@ export default function DeadlinesBlog() {
           <h2 style={h2}>Complete 2025 Tax Deadline Calendar</h2>
           <div style={{ border: '1px solid #e2e8f0', borderRadius: 8, overflow: 'hidden', marginBottom: 24 }}>
             {deadlines.map((d, i) => (
-              <div key={i} style={{ display: 'flex', gap: 16, padding: '14px 18px', borderBottom: i < deadlines.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', background: d.urgent ? '#fff5f5' : i%2===0 ? '#fff' : '#fafafa', alignItems: 'flex-start' }}>
+              <div key={i} style={{ display: 'flex', gap: 16, padding: '14px 18px', borderBottom: i < deadlines.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', background: d.urgent ? 'rgba(178,34,52,0.12)' : i%2===0 ? '#fff' : '#fafafa', alignItems: 'flex-start' }}>
                 <div style={{ minWidth: 160, fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)', flexShrink: 0 }}>
                   {d.urgent && <span style={{ display: 'block', background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '1px 5px', borderRadius: 2, marginBottom: 3, width: 'fit-content' }}>UPCOMING</span>}
                   {d.date}
@@ -91,7 +91,7 @@ export default function DeadlinesBlog() {
             </Link>
           </div>
 
-          <div style={{ background: '#f8fafc', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6b7280', lineHeight: 1.6 }}>
+          <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
              <strong>Disclaimer:</strong> Deadlines subject to change by the IRS. Always verify at IRS.gov. GigWiseTax.com is not affiliated with the IRS.
           </div>
         </div>

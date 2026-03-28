@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   const card: React.CSSProperties = { background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Walmart Spark drivers owe in 2026?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers owe self-employment tax (15.3%) plus federal and state income tax. After mileage deductions, most part-time Spark drivers owe $1,200-$3,500 annually."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn over $600. Available by January 31 in your Spark Driver app under Tax Documents."}},{"@type":"Question","name":"What mileage rate can Walmart Spark drivers use in 2026?","acceptedAnswer":{"@type":"Answer","text":"$0.725 per mile in 2026. Covers miles to the store, to customers, and between stops."}}]}) }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' > '}

@@ -74,7 +74,7 @@ export default function GigCalculator({
             <div style={{ gridColumn: '1 / -1' }}>
               <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#6b7280', fontWeight: 700 }}>$</span>
+                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
                 <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function GigCalculator({
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
             ].map((r, i) => (
-              <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: r.hi ? '#fff5f5' : '#f8fafc', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
+              <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
                 <div style={{ fontSize: 10, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
                 <div style={{ fontSize: 22, fontWeight: 900, color: r.hi ? '#B22234' : '#1a1a2e', marginBottom: 4 }}>{r.val}</div>
                 <div style={{ fontSize: 11, color: '#9ca3af' }}>{r.sub}</div>
@@ -105,7 +105,7 @@ export default function GigCalculator({
             ))}
           </div>
 
-          <div style={{ background: '#fff5f5', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
                Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
             </span>
@@ -118,7 +118,7 @@ export default function GigCalculator({
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="q-grid">
               {deadlines.map((d, i) => (
-                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? '#fff5f5' : '#fff', position: 'relative' as const }}>
+                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid #e2e5e9', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : '#fff', position: 'relative' as const }}>
                   {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                   <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 10, color: '#9ca3af', marginBottom: 6 }}>{d.due}</div>

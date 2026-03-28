@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function BlogPost() {
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: '#fff' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed in 2026?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors. They pay SE tax (15.3%) plus income tax on net profit. Spark sends a 1099-NEC for earnings over $600. Set aside 25-30% of each payment for taxes."}},{"@type":"Question","name":"What mileage can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers deduct miles driven from the Walmart store to the customer at 70 cents/mile (2026 IRS rate). Keep a daily mileage log. On 12,000 delivery miles, the deduction is $8,040 — saving roughly $2,000-$2,500 in taxes."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes from drivers?","acceptedAnswer":{"@type":"Answer","text":"No. Spark does not withhold any federal, state, or FICA taxes from contractor payments. Drivers are responsible for quarterly estimated payments to the IRS to avoid underpayment penalties."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
@@ -106,7 +106,7 @@ export default function BlogPost() {
           { q: 'Q3 — September 15, 2026', urgent: false },
           { q: 'Q4 — January 15, 2027', urgent: false },
         ].map(d => (
-          <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px', fontWeight: 600, color: d.urgent ? '#ff4444' : '#fff' }}>
+          <div key={d.q} style={{ background: d.urgent ? 'rgba(255,68,68,.1)' : 'rgba(255,255,255,.04)', border: d.urgent ? '1px solid rgba(255,68,68,.3)' : '1px solid rgba(255,255,255,.08)', borderRadius: 8, padding: '12px 16px', fontWeight: 600, color: d.urgent ? '#ff4444' : 'rgba(255,255,255,0.03)' }}>
             {d.urgent ? ' ' : ''}{d.q}
           </div>
         ))}

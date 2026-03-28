@@ -88,7 +88,7 @@ export default function SCorpCalculator() {
             placeholder="e.g. 50000"
             style={inp}
           />
-          <p style={{ fontSize: 12, color: '#6b7280', marginTop: 8, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 8, lineHeight: 1.6 }}>
             IRS requires S-Corp owners to pay themselves a "reasonable salary" — typically 40–60% of profit. The rest is taken as distributions (not subject to 15.3% SE tax).
           </p>
 
@@ -108,7 +108,7 @@ export default function SCorpCalculator() {
 
       {result && (<>
         {/* SAVINGS BANNER */}
-        <div style={{ ...card, border: result.savings > 0 ? '3px solid #22c55e' : '1px solid #e5e7eb' }}>
+        <div style={{ ...card, border: result.savings > 0 ? '3px solid #22c55e' : '1px solid rgba(255,255,255,0.12)' }}>
           <div style={{ background: result.savings > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : 'rgba(255,255,255,0.06)', padding: '28px 24px', textAlign: 'center' }}>
             {result.savings > 0 ? (<>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.8)', letterSpacing: 1, marginBottom: 8 }}> ESTIMATED ANNUAL SAVINGS WITH S-CORP</div>
@@ -118,9 +118,9 @@ export default function SCorpCalculator() {
                 Over 5 years: <span style={{ background: 'rgba(255,255,255,.2)', padding: '2px 10px', borderRadius: 4 }}>{fmt(result.savings * 5)}</span> in tax savings
               </div>
             </>) : (<>
-              <div style={{ fontSize: 13, fontWeight: 700, color: '#6b7280', letterSpacing: 1, marginBottom: 8 }}>S-CORP MAY NOT BE WORTH IT YET</div>
+              <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.55)', letterSpacing: 1, marginBottom: 8 }}>S-CORP MAY NOT BE WORTH IT YET</div>
               <div style={{ fontSize: 24, fontWeight: 800, color: 'rgba(255,255,255,0.85)' }}>Stick with Sole Prop for now</div>
-              <div style={{ fontSize: 14, color: '#6b7280', marginTop: 8 }}>S-Corp makes financial sense when annual profit consistently exceeds $60,000</div>
+              <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginTop: 8 }}>S-Corp makes financial sense when annual profit consistently exceeds $60,000</div>
             </>)}
           </div>
         </div>
@@ -133,7 +133,7 @@ export default function SCorpCalculator() {
           </div>
           <div style={body}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
-              <div style={{ background: '#fff5f5', border: '2px solid #fca5a5', borderRadius: 8, padding: 16 }}>
+              <div style={{ background: 'rgba(178,34,52,0.12)', border: '2px solid #fca5a5', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: '#B22234', marginBottom: 12, textAlign: 'center' as const }}>SOLE PROPRIETOR</div>
                 <Row l="SE Tax (15.3%)" v={fmt(result.soleSE)} />
                 <Row l="Federal Income Tax" v={fmt(result.soleFed)} />
@@ -172,12 +172,12 @@ export default function SCorpCalculator() {
               File S-Corp Taxes with TurboTax Business →
             </a>
             <a href="/tax-penalty-finder"
-              style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid #e5e7eb' }}>
+              style={{ display: 'block', background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', textAlign: 'center' as const, border: '1px solid rgba(255,255,255,0.12)' }}>
                Get My Full Tax Penalty Report →
             </a>
 
             <button onClick={() => { setResult(null); setIncome(''); setSalary('') }}
-              style={{ background: 'transparent', color: '#6b7280', border: '1px solid #e5e7eb', borderRadius: 6, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 10 }}>
+              style={{ background: 'transparent', color: 'rgba(255,255,255,0.55)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: '11px', fontSize: 14, fontWeight: 600, cursor: 'pointer', width: '100%', marginTop: 10 }}>
               ← Recalculate
             </button>
           </div>
