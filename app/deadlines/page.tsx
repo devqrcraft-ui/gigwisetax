@@ -127,6 +127,7 @@ export default function DeadlinesPage() {
                 </tbody>
               </table>
             </div>
+            </div>
           </div>
         </div>
 
@@ -170,18 +171,8 @@ export default function DeadlinesPage() {
             ))}
           </div>
         </div>
-      <style>{`
-          @media(max-width:540px){
-            .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
-            .state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-          }
-          @media(max-width:960px){
-            .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
-          }
-          @media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}
-          .results-row{grid-template-columns:1fr 1fr}
-          .main-grid{width:100%!important}
-        `}</style>
+      </div>
+      <style dangerouslySetInnerHTML={{__html:"@media(max-width:540px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}.state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(max-width:960px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}}@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}"}} />
     </div>
   )
 }
