@@ -109,7 +109,7 @@ export default function HomeClient() {
   const inp      = { width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1628', boxSizing: 'border-box' as const }
   const btnDark  = { background: '#e8b84b', color: '#07111F', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
   const formGrid = { display: 'grid', gridTemplateColumns: '1fr', gap: 14, marginBottom: 14 }
-  const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
+  const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 16, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
@@ -209,7 +209,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={cardHd}>
                   <div style={accent}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Self-Employment Tax Estimator</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Self-Employment Tax Estimator</span>
                   <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
                 </div>
                 <div style={{ padding: 16 }}>
@@ -284,7 +284,7 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  <div style={{ ...btnDark, fontSize: 15 }} onClick={calculate}> Calculate My Gig Taxes →</div>
+                  <div style={{ ...btnDark, fontSize: 16 }} onClick={calculate}> Calculate My Gig Taxes →</div>
                 </div>
               </div>
 
@@ -293,7 +293,7 @@ export default function HomeClient() {
                 <div style={card}>
                   <div style={cardHd}>
                     <div style={accent}/>
-                    <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Your Tax Estimate</span>
+                    <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your Tax Estimate</span>
                   </div>
 
                   {/* 4 boxes */}
@@ -322,7 +322,7 @@ export default function HomeClient() {
                     <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
                         <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
-                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 11, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
+                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 13, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.07)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
@@ -347,7 +347,7 @@ export default function HomeClient() {
               <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, overflow: 'hidden' as const, marginTop: 12 }}>
                 <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How This Calculator Works</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>How This Calculator Works</span>
                 </div>
                 <div style={{ padding: '12px 16px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }} className="form-grid">
                   {[
@@ -391,7 +391,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={cardHd}>
                   <div style={accent}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Select Your Platform</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Select Your Platform</span>
                   <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,.35)' }}>51-state tax included</span>
                 </div>
                 <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="p-grid">
@@ -412,7 +412,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={accent}/>
-                  <span style={{ fontWeight: 700, fontSize: 15 }}> How We Compare to Competitors</span>
+                  <span style={{ fontWeight: 700, fontSize: 16 }}> How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
@@ -438,7 +438,7 @@ export default function HomeClient() {
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
                           {(vals as boolean[]).map((v,i) => (
                             <td key={i} style={{ padding: '8px 6px', textAlign: 'center' as const, background: i===0 ? 'rgba(178,34,52,0.12)' : 'transparent' }}>
-                              <span style={{ fontSize: 15, fontWeight: 800, color: v ? '#059669' : 'rgba(255,255,255,0.15)' }}>{v ? '✓' : '✗'}</span>
+                              <span style={{ fontSize: 16, fontWeight: 800, color: v ? '#059669' : 'rgba(255,255,255,0.15)' }}>{v ? '✓' : '✗'}</span>
                             </td>
                           ))}
                         </tr>
@@ -455,7 +455,7 @@ export default function HomeClient() {
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> 2026 IRS Estimated Tax Deadlines</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 IRS Estimated Tax Deadlines</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
@@ -494,7 +494,7 @@ export default function HomeClient() {
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> All Supported Platforms</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> All Supported Platforms</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
@@ -540,7 +540,7 @@ export default function HomeClient() {
             {PLATFORMS.map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '14px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#c8d8ec' }}>
-                  <span style={{ fontSize: 15, fontWeight: 600 }}>{p.name} Tax Calculator</span>
+                  <span style={{ fontSize: 16, fontWeight: 600 }}>{p.name} Tax Calculator</span>
                   <span style={{ fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>{p.searches}</span>
                 </div>
               </Link>
