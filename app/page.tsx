@@ -40,7 +40,7 @@ export default function Page() {
             ].map(p => (
               <a key={p.href} href={p.href} className="hub-card" style={{display:'flex',flexDirection:'column',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none',background:'#0d1b3e',border:'1px solid rgba(255,255,255,0.1)'}}>
                 <div style={{fontSize:'16px',fontWeight:800,color:'#fff',marginBottom:'3px'}}>{p.label} Tax Calculator</div>
-                <div style={{fontSize:'13px',color:'rgba(255,255,255,0.55)',lineHeight:1.5,marginBottom:'6px',flexGrow:1}}>{p.desc}</div>
+                <div style={{fontSize:'14px',color:'rgba(255,255,255,0.7)',lineHeight:1.5,marginBottom:'6px',flexGrow:1}}>{p.desc}</div>
                 <div style={{background:'#B22234',color:'#fff',fontSize:'13px',fontWeight:700,padding:'7px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta}</div>
               </a>
             ))}
@@ -60,7 +60,7 @@ export default function Page() {
             ].map(([href, label, desc]) => (
               <a key={href} href={href} style={{display:'block',padding:'10px 12px',borderRadius:'10px',background:'rgba(99,102,241,0.05)',border:'1px solid rgba(99,102,241,0.15)',color:'#e2e8f0',textDecoration:'none'}}>
                 <div style={{fontSize:'14px',fontWeight:700,color:'#a5b4fc',marginBottom:'3px'}}>{label}</div>
-                <div style={{fontSize:'12px',opacity:0.55}}>{desc}</div>
+                <div style={{fontSize:'14px',opacity:0.75}}>{desc}</div>
               </a>
             ))}
           </div>
