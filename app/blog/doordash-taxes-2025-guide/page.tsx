@@ -64,7 +64,7 @@ export default function DoorDashTaxesBlog() {
               <div key={item.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 6, padding: '14px' }}>
                 <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
                 <div style={{ fontSize: 24, fontWeight: 900, color: '#B22234', marginBottom: 4 }}>{item.value}</div>
-                <div style={{ fontSize: 12, color: '#9ca3af' }}>{item.detail}</div>
+                <div style={{ fontSize: 12, color: '#7a9abf' }}>{item.detail}</div>
               </div>
             ))}
           </div>
@@ -86,7 +86,7 @@ export default function DoorDashTaxesBlog() {
           <h2 style={h2}>DoorDash Quarterly Tax Deadlines 2025</h2>
           <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 24 }}>
             <thead>
-              <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
+              <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
                 {['Quarter','Income Period','IRS Deadline'].map(h => (
                   <th key={h} style={{ padding: '10px 14px', fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.6)', textAlign: 'left' as const }}>{h}</th>
                 ))}

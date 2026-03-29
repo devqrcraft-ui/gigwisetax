@@ -114,7 +114,7 @@ export default function SafeHarborPage() {
               <div className="rule-label">Rule 2 — Current Year</div>
               <div className="rule-title">90% of This Year's Tax</div>
               <div className="rule-desc">Pay 90% of what you'll actually owe this year. Requires estimating current income — can be tricky if income fluctuates.</div>
-              <div className="rule-note" style={{color:'#9ca3af'}}>Best if income dropped significantly</div>
+              <div className="rule-note" style={{color: '#7a9abf'}}>Best if income dropped significantly</div>
             </div>
           </div>
           <div className="note">

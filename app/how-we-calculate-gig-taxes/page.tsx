@@ -56,7 +56,7 @@ export default function HowWeCalculatePage() {
         {/* SE TAX */}
         <div className="section">
           <h2>Step 1 — Self-Employment Tax (IRS Schedule SE)</h2>
-          <p style={{fontSize:13,color:'#9ca3af',lineHeight:1.7,marginBottom:16}}>
+          <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
             Self-employment tax covers Social Security (12.4%) and Medicare (2.9%) — the same taxes
             W-2 employees split with their employer. As a gig worker, you pay both halves: 15.3% total.
             The IRS allows a small adjustment before applying the rate.
@@ -83,7 +83,7 @@ export default function HowWeCalculatePage() {
         {/* FEDERAL */}
         <div className="section">
           <h2>Step 2 — Federal Income Tax (2026 Brackets)</h2>
-          <p style={{fontSize:13,color:'#9ca3af',lineHeight:1.7,marginBottom:16}}>
+          <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
             Federal income tax is calculated on adjusted gross income (AGI), which is net profit minus
             the SE deduction (half of SE tax). We apply the standard deduction before estimating the bracket.
           </p>
@@ -125,7 +125,7 @@ export default function HowWeCalculatePage() {
         {/* STATE */}
         <div className="section">
           <h2>Step 3 — State Income Tax</h2>
-          <p style={{fontSize:13,color:'#9ca3af',lineHeight:1.7,marginBottom:16}}>
+          <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
             We include state income tax for all 51 jurisdictions (50 states + D.C.).
             Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire,
             South Dakota, Tennessee, Texas, Washington, and Wyoming.
@@ -151,7 +151,7 @@ export default function HowWeCalculatePage() {
         {/* QUARTERLY */}
         <div className="section">
           <h2>Step 4 — Quarterly Payment Estimate</h2>
-          <p style={{fontSize:13,color:'#9ca3af',lineHeight:1.7,marginBottom:16}}>
+          <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
             Gig workers who expect to owe $1,000 or more must pay estimated taxes quarterly.
             We divide the total annual tax estimate by 4 for equal quarterly payments.
           </p>
@@ -179,7 +179,7 @@ export default function HowWeCalculatePage() {
               • Multiple income sources (W-2 + gig) interactions — simplified
             </div>
           </div>
-          <p style={{fontSize:13,color:'#9ca3af',lineHeight:1.7,marginTop:12}}>
+          <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginTop:12}}>
             For a complete and accurate tax return, use tax filing software (TurboTax, H&amp;R Block, TaxAct)
             or consult a licensed CPA or Enrolled Agent.
           </p>

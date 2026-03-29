@@ -373,15 +373,15 @@ export default function HomeClient() {
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
                     </div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
                     </div>
                     <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.03)' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
                     </div>
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export default function HomeClient() {
 
               {/* COMPARE TABLE */}
               <div style={card}>
-                <div style={{ padding: '13px 20px', borderBottom: '1px solid #e2e5e9', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ padding: '13px 20px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={accent}/>
                   <span style={{ fontWeight: 700, fontSize: 15 }}> How We Compare to Competitors</span>
                 </div>

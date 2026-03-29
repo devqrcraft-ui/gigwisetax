@@ -37,7 +37,7 @@ export default function CalculatorsIndex() {
       <header style={{ background: "#1a1a2e", position: "sticky" as const, top: 0, zIndex: 100, boxShadow: "0 2px 16px rgba(0,0,0,0.4)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", justifyContent: "space-between", height: 60 }}>
           <Link href="/" style={{ textDecoration: "none" }}>
-            <div style={{ fontWeight: 900, fontSize: 19, color: "rgba(255,255,255,0.03)" }}>
+            <div style={{ fontWeight: 900, fontSize: 19, color: "rgba(255,255,255,0.9)" }}>
               GIGWISE<span style={{ color: "#e8b84b" }}>TAX</span>
               <span style={{ color: "rgba(255,255,255,.2)", fontWeight: 300, fontSize: 14 }}>.COM</span>
             </div>
@@ -69,7 +69,7 @@ export default function CalculatorsIndex() {
             </div>
             <div style={{ padding: "14px 20px", display: "flex", gap: 10, flexWrap: "wrap" }}>
               {TOP_STATES.map(state => (
-                <Link key={state.slug} href={`/${platform.slug}/${state.slug}`} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid #e2e5e9", borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
+                <Link key={state.slug} href={`/${platform.slug}/${state.slug}`} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
                   {state.name}
                   <span style={{ color: state.rate === "No Tax" ? "#059669" : "#B22234", fontWeight: 700, fontSize: 11 }}>{state.rate}</span>
                 </Link>

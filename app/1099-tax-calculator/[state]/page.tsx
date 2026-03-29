@@ -50,7 +50,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 16px 48px', fontFamily: 'system-ui,sans-serif' }}>
 
         {/* Breadcrumb */}
-        <div style={{ fontSize: 12, color: '#6c757d', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
+        <div style={{ fontSize: 12, color: '#8fa8c8', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
           <a href="/" style={{ color: '#B22234', textDecoration: 'none' }}>Home</a> /
           <a href="/1099-tax-calculator-2026" style={{ color: '#B22234', textDecoration: 'none' }}>1099 Tax Calculator</a> /
           <span>{state.name}</span>
@@ -81,7 +81,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* How 1099 taxes work */}
         <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How 1099 Taxes Work in {state.name}</span>
           </div>
@@ -101,7 +101,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Examples */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>Example 1099 Income in {state.name}</span>
           </div>
@@ -113,7 +113,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               ].map(ex => (
                 <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
                   <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>{ex.label}</div>
-                  <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.7 }}>
+                  <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.7 }}>
                     SE tax (15.3%): ~${Math.round(ex.gross * 0.9235 * 0.153).toLocaleString()}<br/>
                     Federal tax: ~${Math.round(ex.gross * (ex.gross > 44000 ? 0.22 : 0.12)).toLocaleString()}<br/>
                     {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${Math.round(ex.gross * state.rate).toLocaleString()}`}<br/>
@@ -122,7 +122,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: 12, color: '#9ca3af', marginTop: 12, margin: '12px 0 0' }}>
+            <p style={{ fontSize: 12, color: '#7a9abf', marginTop: 12, margin: '12px 0 0' }}>
               * Estimates based on standard deduction, single filer, after 50% SE deduction. Use the full calculator above for your exact situation.
             </p>
           </div>
@@ -130,14 +130,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Quarterly deadlines */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>2026 Quarterly Tax Deadlines — {state.name}</span>
           </div>
           <div style={{ padding: 20 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
-                <tr style={{ background: 'rgba(255,255,255,0.85)' }}>
+                <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
                   {['Quarter','Due Date','Federal','State'].map(h => (
                     <th key={h} style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700, fontSize: 11, textTransform: 'uppercase' as const, letterSpacing: '0.5px', textAlign: 'left' as const }}>{h}</th>
                   ))}
@@ -166,7 +166,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Platforms */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>1099 Platforms in {state.name}</span>
           </div>
@@ -186,7 +186,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 { name: 'Lyft', href: '/lyft/' + stateSlug },
               ].map(p => (
                 <a key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '10px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.05)' }}>
+                  <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '10px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.05)' }}>
                     <div style={{ fontSize: 18, marginBottom: 4 }}></div>
                     <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{p.name}</div>
                   </div>
@@ -198,14 +198,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Other states */}
         <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, marginBottom: 20, overflow: 'hidden' as const }}>
-          <div style={{ background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2 }}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>1099 Tax Calculator — Other States</span>
           </div>
           <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 8 }}>
             {STATES.filter(s => s.slug !== stateSlug).slice(0, 15).map(s => (
               <a key={s.slug} href={`/1099-tax-calculator/${s.slug}`} style={{ textDecoration: 'none' }}>
-                <div style={{ border: '1px solid #e2e5e9', borderRadius: 4, padding: '8px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.03)' }}>
+                <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '8px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.03)' }}>
                   <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>{s.abbr}</div>
                   <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
                 </div>

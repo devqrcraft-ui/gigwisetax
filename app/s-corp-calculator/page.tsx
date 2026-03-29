@@ -80,7 +80,7 @@ export default function SCorpCalculator() {
             ))}
           </div>
 
-          <label style={lbl}>Your Reasonable Salary as S-Corp Owner <span style={{ color: '#9ca3af', fontWeight: 400 }}>(optional — we'll estimate if blank)</span></label>
+          <label style={lbl}>Your Reasonable Salary as S-Corp Owner <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — we'll estimate if blank)</span></label>
           <input
             type="number"
             value={salary}

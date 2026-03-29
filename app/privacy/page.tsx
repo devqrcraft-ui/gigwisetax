@@ -104,7 +104,7 @@ export default function PrivacyPage() {
 
         <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
           {[['Terms of Service','/terms'],['Contact','/contact'],['About','/about'],['← Home','/']].map(([l,h]) => (
-            <Link key={l} href={h} style={{ fontSize: 13, color: '#6c757d', textDecoration: 'underline' }}>{l}</Link>
+            <Link key={l} href={h} style={{ fontSize: 13, color: '#8fa8c8', textDecoration: 'underline' }}>{l}</Link>
           ))}
         </div>
       </div>

@@ -11,7 +11,7 @@ export default function BlogPost() {
     <div style={{ background: "#0d1117", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Airbnb hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends. Hosts who provide hotel-like services (daily cleaning, concierge) may owe SE tax on Schedule C. Most Airbnb hosts report on Schedule E as passive rental income and do not owe SE tax."}},{"@type":"Question","name":"What is the 14-day rule for Airbnb taxes?","acceptedAnswer":{"@type":"Answer","text":"If you rent your property for 14 days or fewer per year, rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case."}},{"@type":"Question","name":"How do I report Airbnb income on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Most Airbnb hosts report on Schedule E (Supplemental Income). If you provide substantial services, use Schedule C. Airbnb issues a 1099-K for earnings over $600 and reports this to the IRS."}}]}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}

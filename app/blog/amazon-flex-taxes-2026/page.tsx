@@ -110,7 +110,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             The IRS standard mileage rate for 2026 is <strong>72.5 cents per mile</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
           </p>
-          <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
               25,000 miles × $0.725 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$17,500 deduction</strong><br />
@@ -136,10 +136,10 @@ export default function AmazonFlexTaxesBlogPost() {
               { icon: '', title: 'Bank Fees', desc: 'If you open a business account for Flex income.' },
               { icon: '', title: 'Tax Prep Fees', desc: 'CPA or tax software costs — deductible on Schedule C.' },
             ].map(d => (
-              <div key={d.title} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 6, padding: '12px 14px' }}>
+              <div key={d.title} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: '12px 14px' }}>
                 <div style={{ fontSize: 18, marginBottom: 4 }}>{d.icon}</div>
                 <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.title}</div>
-                <div style={{ fontSize: 11, color: '#6c757d', lineHeight: 1.5 }}>{d.desc}</div>
+                <div style={{ fontSize: 11, color: '#8fa8c8', lineHeight: 1.5 }}>{d.desc}</div>
               </div>
             ))}
           </div>
@@ -149,7 +149,7 @@ export default function AmazonFlexTaxesBlogPost() {
             If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
           </p>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
+            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
             {[
               { q: 'Q1 2026', period: 'Jan – Mar income', due: 'April 15, 2026', urgent: true },
               { q: 'Q2 2026', period: 'Apr – May income', due: 'June 16, 2026', urgent: false },
@@ -159,7 +159,7 @@ export default function AmazonFlexTaxesBlogPost() {
               <div key={row.q} style={{ padding: '12px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                   <span style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14 }}>{row.q}</span>
-                  <span style={{ fontSize: 12, color: '#6c757d', marginLeft: 8 }}>{row.period}</span>
+                  <span style={{ fontSize: 12, color: '#8fa8c8', marginLeft: 8 }}>{row.period}</span>
                 </div>
                 <span style={{ fontWeight: 700, color: row.urgent ? '#B22234' : 'rgba(255,255,255,0.75)', fontSize: 13 }}>
                   {row.urgent && ' '}{row.due}
@@ -191,7 +191,7 @@ export default function AmazonFlexTaxesBlogPost() {
         {/* SIDEBAR */}
         <aside style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
             <div style={{ padding: 16 }}>
@@ -203,7 +203,7 @@ export default function AmazonFlexTaxesBlogPost() {
           </div>
 
           <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 10, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
@@ -214,7 +214,7 @@ export default function AmazonFlexTaxesBlogPost() {
           </div>
 
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
-            <div style={{ background: 'rgba(255,255,255,0.85)', padding: '12px 16px' }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Articles</span>
             </div>
             {[

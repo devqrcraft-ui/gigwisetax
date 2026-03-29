@@ -129,7 +129,7 @@ export default function DeductionsChecklist() {
                   <div style={{ fontSize: 12, fontWeight: 700, color: '#16a34a', background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 4, padding: '2px 8px', whiteSpace: 'nowrap' as const }}>{d.savings}</div>
                 </div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 3 }}>{d.desc}</div>
-                <div style={{ fontSize: 11, color: '#9ca3af', marginTop: 4 }}>{d.category}</div>
+                <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>{d.category}</div>
               </div>
             </div>
           ))}

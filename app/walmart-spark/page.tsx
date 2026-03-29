@@ -123,12 +123,12 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>Total earnings after Spark's service fees</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>IRS rate: 70¢/mile for 2026</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 70¢/mile for 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
@@ -171,7 +171,7 @@ export default function WalmartSparkPage() {
                     <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
                       <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)', fontWeight:600, marginBottom:6 }}>{r.label}</div>
                       <div style={{ fontSize:20, fontWeight:900, color:r.color }}>{r.val}</div>
-                      <div style={{ fontSize:10, color:'#9ca3af', marginTop:4 }}>{r.sub}</div>
+                      <div style={{ fontSize:10, color: '#7a9abf', marginTop:4 }}>{r.sub}</div>
                     </div>
                   ))}
                 </div>

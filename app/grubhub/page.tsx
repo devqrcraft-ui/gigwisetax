@@ -117,12 +117,12 @@ export default function GrubhubPage() {
                 <div>
                   <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
                   <label style={lbl}>▸ Business Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(e.target.value)} />
-                  <div style={{ fontSize:11, color:'#9ca3af', marginTop:4 }}>70¢/mile IRS standard rate 2026</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>70¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
@@ -163,7 +163,7 @@ export default function GrubhubPage() {
                     <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
                       <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)', fontWeight:600, marginBottom:6 }}>{r.label}</div>
                       <div style={{ fontSize:20, fontWeight:900, color:r.color }}>{r.val}</div>
-                      <div style={{ fontSize:10, color:'#9ca3af', marginTop:4 }}>{r.sub}</div>
+                      <div style={{ fontSize:10, color: '#7a9abf', marginTop:4 }}>{r.sub}</div>
                     </div>
                   ))}
                 </div>

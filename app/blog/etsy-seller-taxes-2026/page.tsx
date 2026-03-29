@@ -33,7 +33,7 @@ export default function EtsyTaxGuide() {
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
         <div>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
-            <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
               <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Etsy Taxes Instantly</div>
               <a href="/etsy" style={{ textDecoration: 'none' }}><div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div></a>
             </div>
@@ -85,7 +85,7 @@ export default function EtsyTaxGuide() {
                 <div key={d.name} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 12 }}>
                   <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
                   <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
-                  <div style={{ fontSize: 12, color: '#6c757d', lineHeight: 1.5 }}>{d.detail}</div>
+                  <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.5 }}>{d.detail}</div>
                 </div>
               ))}
             </div>
@@ -99,14 +99,14 @@ export default function EtsyTaxGuide() {
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
               </div>
             ))}
-            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e5e9', borderRadius: 4, padding: 14, fontSize: 12, color: '#6c757d', lineHeight: 1.6 }}>
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>
                <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Etsy or the IRS. Consult a licensed CPA for your specific situation.
             </div>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/etsy" style={{ textDecoration: 'none' }}>
-            <div style={{ background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Etsy Tax Calculator</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · COGS included</div>
@@ -114,9 +114,9 @@ export default function EtsyTaxGuide() {
             </div>
           </a>
           <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid #e2e5e9', fontSize: 10, fontWeight: 800, color: '#9ca3af', textTransform: 'uppercase' as const }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 10, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const }}>Sponsored</div>
             <div style={{ padding: 16 }}>
-              <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#9ca3af', fontStyle: 'italic' }}>Ad image here</span></div>
+              <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}><span style={{ fontSize: 12, color: '#7a9abf', fontStyle: 'italic' }}>Ad image here</span></div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Tracks Etsy inventory, COGS, and expenses automatically.</div>
               <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Try Free 30 Days →</div>

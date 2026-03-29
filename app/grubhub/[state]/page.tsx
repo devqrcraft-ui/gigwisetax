@@ -345,7 +345,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const seRate = 0.153
 
   return (
-    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.03)' }}>
+    <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Grubhub drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers are 1099 independent contractors. They pay self-employment tax (15.3%) plus income tax on net profit. Grubhub sends a 1099-NEC for earnings over $600."}},{"@type":"Question","name":"What can Grubhub drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Grubhub drivers can deduct mileage (70 cents/mile in 2026), insulated bags, phone bill, and other direct delivery expenses. Track every mile — it is the biggest deduction available."}},{"@type":"Question","name":"Does Grubhub withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Grubhub does not withhold taxes from driver earnings. Drivers are responsible for paying quarterly estimated taxes to avoid penalties."}}]}' }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>

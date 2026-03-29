@@ -146,7 +146,7 @@ export default function QuarterlyReminder() {
             </div>
           </div>
 
-          <label style={lbl}>Your Platform <span style={{ color: '#9ca3af', fontWeight: 400 }}>(optional)</span></label>
+          <label style={lbl}>Your Platform <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional)</span></label>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const, marginTop: 8 }}>
             {PLATFORMS.map(p => (
               <button key={p} onClick={() => setPlatform(p)}
@@ -156,7 +156,7 @@ export default function QuarterlyReminder() {
             ))}
           </div>
 
-          <label style={lbl}>Estimated Annual Income <span style={{ color: '#9ca3af', fontWeight: 400 }}>(optional — helps us personalize reminders)</span></label>
+          <label style={lbl}>Estimated Annual Income <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — helps us personalize reminders)</span></label>
           <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' as const }}>
             {['Under $20k','$20k–$50k','$50k–$100k','Over $100k'].map(v => (
               <button key={v} onClick={() => setIncome(v)}
@@ -170,7 +170,7 @@ export default function QuarterlyReminder() {
              Send Me Free Tax Reminders →
           </button>
 
-          <p style={{ fontSize: 11, color: '#9ca3af', textAlign: 'center' as const, marginTop: 12, lineHeight: 1.6 }}>
+          <p style={{ fontSize: 11, color: '#7a9abf', textAlign: 'center' as const, marginTop: 12, lineHeight: 1.6 }}>
              No spam. Unsubscribe anytime. We send only 4 emails per year — one before each quarterly deadline.
           </p>
         </div>

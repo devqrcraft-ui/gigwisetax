@@ -36,11 +36,11 @@ export default function GigCalculator({
   }
 
   const card    = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd  = { background: 'rgba(255,255,255,0.85)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const cardHd  = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const lbl     = { display: 'block', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 6 }
   const inp     = { width: '100%', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.07)', boxSizing: 'border-box' as const }
-  const btnDark = { background: 'rgba(255,255,255,0.85)', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
+  const btnDark = { background: 'rgba(255,255,255,0.07)', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '8px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
 
   return (
@@ -90,17 +90,17 @@ export default function GigCalculator({
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Your {platform.name} Tax Estimate</span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid #e2e5e9' }} className="results-row">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
             ].map((r, i) => (
-              <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid #e2e5e9' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
-                <div style={{ fontSize: 10, fontWeight: 700, color: '#6c757d', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
+              <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
+                <div style={{ fontSize: 10, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
                 <div style={{ fontSize: 22, fontWeight: 900, color: r.hi ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{r.val}</div>
-                <div style={{ fontSize: 11, color: '#9ca3af' }}>{r.sub}</div>
+                <div style={{ fontSize: 11, color: '#7a9abf' }}>{r.sub}</div>
               </div>
             ))}
           </div>
@@ -121,7 +121,7 @@ export default function GigCalculator({
                 <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
                   {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                   <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
-                  <div style={{ fontSize: 10, color: '#9ca3af', marginBottom: 6 }}>{d.due}</div>
+                  <div style={{ fontSize: 10, color: '#7a9abf', marginBottom: 6 }}>{d.due}</div>
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 8 }}>{fmt(result.quarterly)}</div>
                   <div style={btnRed}>+ Calendar</div>
                 </div>
