@@ -68,7 +68,7 @@ export default function Page() {
             </thead>
             <tbody>
               {DEADLINES.map((d, i) => (
-                <tr key={d.q} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.05)' : '#fff', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                <tr key={d.q} style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.02)', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                   <td style={{ padding: '14px 16px', fontWeight: 800 }}>{d.q}</td>
                   <td style={{ padding: '14px 16px', color: 'rgba(255,255,255,0.85)' }}>{d.period}</td>
                   <td style={{ padding: '14px 16px', fontWeight: 700, color: '#B22234' }}>{d.due}</td>
