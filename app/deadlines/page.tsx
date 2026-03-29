@@ -170,7 +170,6 @@ export default function DeadlinesPage() {
             ))}
           </div>
         </div>
-      </div>
       <style>{`
           @media(max-width:540px){
             .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
