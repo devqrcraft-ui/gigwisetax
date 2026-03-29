@@ -94,8 +94,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.`
         : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
 
-  const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
-  const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
   const schemaJson = {
@@ -118,8 +118,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* HERO */}
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
-            <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
+            <nav style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>
               <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
               <span style={{ margin: '0 8px' }}>›</span>
               <a href={`/${platform.slug}`} style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>{platform.name} Calculator</a>
@@ -147,7 +147,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 ' 2026 Tax Rules',
                 ' Instant Results',
               ].map(b => (
-                <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
+                <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 13, color: 'rgba(255,255,255,.7)', fontWeight: 500 }}>{b}</span>
               ))}
             </div>
           </div>
@@ -155,7 +155,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
 
         {/* MAIN GRID */}
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
           <div>
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} />
 
@@ -163,9 +163,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Taxes in {state.name} — 2026 Guide</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> {platform.name} Taxes in {state.name} — 2026 Guide</span>
               </div>
-              <div style={{ padding: 24 }}>
+              <div style={{ padding: 14 }}>
                 <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   How {platform.name} Taxes Work in {state.name}
                 </h2>
@@ -174,16 +174,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </p>
 
                 {/* TAX BREAKDOWN */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 12, marginBottom: 20 }} className="three-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 12 }} className="three-grid">
                   {[
                     { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
                     { label: 'Federal Tax', val: '10–37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
                     { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
-                    <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
-                      <div style={{ fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 6 }}>{r.label}</div>
-                      <div style={{ fontSize: 24, fontWeight: 900, color: r.color }}>{r.val}</div>
-                      <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>{r.sub}</div>
+                    <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>
+                      <div style={{ fontSize: 20, fontWeight: 900, color: r.color }}>{r.val}</div>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 2 }}>{r.sub}</div>
                     </div>
                   ))}
                 </div>
@@ -192,24 +192,24 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   2026 Quarterly Tax Deadlines for {state.name}
                 </h3>
-                <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
+                <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 12 }}>
                   <thead>
                     <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
                       {['Quarter', 'Due Date', 'Federal (1040-ES)', `${state.abbr} State`].map(h => (
-                        <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
+                        <th key={h} style={{ padding: '7px 10px', fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {DEADLINES_2026.map((d, i) => (
                       <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                        <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
-                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
+                        <td style={{ padding: '8px 10px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
+                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
                           {d.q} 2026
                         </td>
-                        <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
-                        <td style={{ padding: '12px 14px', color: '#059669', fontWeight: 600, fontSize: 13 }}>✓ Required</td>
-                        <td style={{ padding: '12px 14px', fontSize: 13 }}>
+                        <td style={{ padding: '8px 10px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
+                        <td style={{ padding: '8px 10px', color: '#059669', fontWeight: 600, fontSize: 14 }}>✓ Required</td>
+                        <td style={{ padding: '8px 10px', fontSize: 14 }}>
                           {noStateTax
                             ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
                             : <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Required</span>
@@ -224,14 +224,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   Top Tax Deductions for {platform.name} Workers in {state.name}
                 </h3>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginBottom: 12 }} className="form-grid">
                   {deductions.map((d: string) => (
-                    <div key={d} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{d}</div>
+                    <div key={d} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '8px 10px', fontSize: 14, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{d}</div>
                   ))}
                 </div>
 
                 {/* FAQ */}
-                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16 }}>
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>
                   FAQ — {platform.name} Taxes in {state.name} 2026
                 </h3>
                 {[
@@ -256,13 +256,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for paying all federal SE tax, federal income tax${noStateTax ? '' : `, and ${state.name} state income tax`} yourself, typically through quarterly estimated payments.`,
                   },
                 ].map((item, i) => (
-                  <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
-                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
-                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, textAlign: 'justify' as const }}>{item.a}</div>
+                  <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 16, marginBottom: 6 }}>Q: {item.q}</div>
+                    <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, textAlign: 'justify' as const }}>{item.a}</div>
                   </div>
                 ))}
 
-                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>
+                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 12, fontSize: 14, color: '#8fa8c8', lineHeight: 1.6 }}>
                    <strong>Disclaimer:</strong> State tax rates are for estimation purposes. Verify with your state's department of revenue or a licensed CPA. Not affiliated with the IRS, {platform.name}, or any government agency.
                 </div>
               </div>
@@ -272,15 +272,15 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent}/>
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax in Other States</span>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> {platform.name} Tax in Other States</span>
               </div>
-              <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 8 }} className="p-grid">
+              <div style={{ padding: 12, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6 }} className="p-grid">
                 {STATES.filter(s => s.slug !== stateSlug).map(s => (
                   <a key={s.slug} href={`/${PLATFORM_SLUG}/${s.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '8px 10px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.03)' }}
+                    <div style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '6px 8px', textAlign: 'center' as const, background: 'rgba(255,255,255,0.03)' }}
                     >
-                      <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{s.abbr}</div>
-                      <div style={{ fontSize: 10, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 1 }}>{s.abbr}</div>
+                      <div style={{ fontSize: 13, color: s.rate === 0 ? '#059669' : '#B22234', fontWeight: 600 }}>{s.rate === 0 ? 'No Tax' : `${(s.rate*100).toFixed(1)}%`}</div>
                     </div>
                   </a>
                 ))}
@@ -295,25 +295,25 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
               <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
-              <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+              <div style={{ fontSize: 14, color: '#7A96B8', marginBottom: 8, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
-                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
-                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
-                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 13, padding: '3px 8px', borderRadius: 3 }}>Salary &amp; Hourly</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 13, padding: '3px 8px', borderRadius: 3 }}>All 50 States</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 13, padding: '3px 8px', borderRadius: 3 }}>100% Free</span>
               </div>
-              <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
+              <div style={{ background: '#F5C842', color: '#091526', fontSize: 15, fontWeight: 700, padding: '10px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
             </a>
             </div>
 
             <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.7)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
               {PLATFORMS.filter(p => p.slug !== PLATFORM_SLUG).map(p => (
                 <a key={p.slug} href={`/${p.slug}/${state.slug}`} style={{ textDecoration: 'none' }}>
                   <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'rgba(255,255,255,0.85)' }}>
-                    <span style={{ fontSize: 13, fontWeight: 500 }}>{p.name} in {state.abbr}</span>
-                    <span style={{ fontSize: 11, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
+                    <span style={{ fontSize: 15, fontWeight: 500 }}>{p.name} in {state.abbr}</span>
+                    <span style={{ fontSize: 13, color: '#B22234', fontWeight: 700 }}>{p.searches}</span>
                   </div>
                 </a>
               ))}

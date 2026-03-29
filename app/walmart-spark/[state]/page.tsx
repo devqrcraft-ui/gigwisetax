@@ -395,7 +395,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         ))}
       </div>
 
-      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 24, marginBottom: 32 }}>
+      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 14, marginBottom: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Interactive Tax Calculator</h2>
         <GigCalculator platform={{ slug: PLATFORM_SLUG, name: PLATFORM_NAME, emoji: PLATFORM_EMOJI, }} states={STATES} deadlines={[
           { q: 'Q1', due: 'April 15, 2026', period: 'Jan 1 – Mar 31', days: 45 },
@@ -405,7 +405,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         ]} />
       </div>
 
-      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 24, marginBottom: 32 }}>
+      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 14, marginBottom: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Quick Tax Estimate — {state.name}</h2>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
@@ -437,7 +437,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </table>
       </div>
 
-      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 24, marginBottom: 32 }}>
+      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 14, marginBottom: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Top {PLATFORM_NAME} Deductions in {state.name}</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
           {DEDUCTIONS.map((d: string) => (
@@ -448,7 +448,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
       </div>
 
-      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 24, marginBottom: 32 }}>
+      <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 14, marginBottom: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 12 }}>2026 Quarterly Deadlines</h2>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
           {[
@@ -465,7 +465,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
       </div>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginBottom: 32 }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 14, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginBottom: 32 }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your Exact {PLATFORM_NAME} Taxes in {state.name}</div>
         <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free · No signup · Instant results</p>
         <a href={`/${PLATFORM_SLUG}`} style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>
