@@ -38,7 +38,7 @@ export default function DeadlinesPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 2026 tax deadlines for gig workers?","acceptedAnswer":{"@type":"Answer","text":"2026 key dates: Q1 estimated tax — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15 2027. Tax return deadline — April 15 2027 (extension to October 15 2027). 1099-NEC receipt by January 31 2027."}},{"@type":"Question","name":"What is the penalty for missing quarterly estimated tax payments?","acceptedAnswer":{"@type":"Answer","text":"The IRS underpayment penalty for 2026 is based on the federal short-term rate plus 3 percentage points. On a $2,000 underpayment for one quarter, the penalty is roughly $30-$50. Penalties compound quarterly."}},{"@type":"Question","name":"When do I need to file my gig worker tax return for 2026?","acceptedAnswer":{"@type":"Answer","text":"Your 2026 federal tax return is due April 15, 2027. File Form 4868 for an automatic 6-month extension to October 15, 2027. An extension to file is NOT an extension to pay — any taxes owed are still due April 15."}}]}' }} />
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
             <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
             <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
@@ -54,13 +54,13 @@ export default function DeadlinesPage() {
       </div>
 
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 24 }} className="main-grid">
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 24 }} className="main-grid">
         <div>
           {/* 2026 FEDERAL DEADLINES */}
           <div style={card}>
             <div style={cardHd}>
               <div style={accent}/>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
               {[
@@ -69,24 +69,24 @@ export default function DeadlinesPage() {
                 { q: 'Q3 2026', period: 'Jun 1 – Aug 31', due: 'Sept 15, 2026', days: 198, now: false },
                 { q: 'Q4 2026', period: 'Sep 1 – Dec 31', due: 'Jan 15, 2027', days: 320, now: false },
               ].map((d, i) => (
-                <div key={d.q} style={{ padding: '20px 16px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.now ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
-                  {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
-                  <div style={{ marginTop: d.now ? 16 : 0, fontSize: 13, fontWeight: 800, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{d.q}</div>
-                  <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 10 }}>{d.period}</div>
-                  <div style={{ fontSize: 17, fontWeight: 900, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 8 }}>{d.due}</div>
-                  <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700, display: 'inline-block', marginBottom: 12 }}>{d.days} days</div>
+                <div key={d.q} style={{ padding: '12px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.now ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
+                  {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
+                  <div style={{ marginTop: d.now ? 16 : 0, fontSize: 16, fontWeight: 800, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 3 }}>{d.q}</div>
+                  <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
+                  <div style={{ fontSize: 18, fontWeight: 900, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
+                  <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.days} days</div>
                   <div style={btnRed}> + Calendar</div>
                 </div>
               ))}
             </div>
-            <div style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.05)', fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
+            <div style={{ padding: '12px 16px', background: 'rgba(255,255,255,0.05)', fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>
               <strong>How to pay:</strong> Use <a href="https://directpay.irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS Direct Pay</a> (free, no registration) or the IRS2Go app. Pay to "1040-ES" for estimated taxes. Same-day processing available.
             </div>
           </div>
 
           {/* PENALTY WARNING */}
-          <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid #fecaca', borderRadius: 6, padding: 20, marginBottom: 20 }}>
-            <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 10, fontSize: 15 }}> Underpayment Penalty Warning</div>
+          <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid #fecaca', borderRadius: 6, padding: 14, marginBottom: 14 }}>
+            <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8, fontSize: 16 }}> Underpayment Penalty Warning</div>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
               you must make quarterly estimated payments or face an <strong>underpayment penalty</strong>.
@@ -101,27 +101,27 @@ export default function DeadlinesPage() {
           <div style={card}>
             <div style={cardHd}>
               <div style={accent}/>
-              <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> State Quarterly Tax Deadlines 2026</span>
+              <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> State Quarterly Tax Deadlines 2026</span>
             </div>
             <div style={{ overflowX: 'auto' as const }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 600 }}>
+              <div className="state-table-wrap"><table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 500, fontSize: 14 }}>
                 <thead>
                   <tr style={{ background: 'rgba(255,255,255,0.05)', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                     {['State', 'Rate', 'Q1', 'Q2', 'Q3', 'Q4', 'Portal'].map(h => (
-                      <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
+                      <th key={h} style={{ padding: '7px 8px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, textAlign: 'left' as const }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {STATES_DEADLINES.map((s, i) => (
                     <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
-                      <td style={{ padding: '11px 14px', fontWeight: 700, fontSize: 13 }}>{s.abbr} — {s.state}</td>
-                      <td style={{ padding: '11px 14px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 13 }}>{s.rate}</td>
-                      <td style={{ padding: '11px 14px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
-                      <td style={{ padding: '11px 14px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
-                      <td style={{ padding: '11px 14px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
-                      <td style={{ padding: '11px 14px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
-                      <td style={{ padding: '11px 14px', fontSize: 11, color: '#8fa8c8' }}>{s.portal}</td>
+                      <td style={{ padding: '7px 8px', fontWeight: 700, fontSize: 14 }}>{s.abbr} — {s.state}</td>
+                      <td style={{ padding: '7px 8px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 14 }}>{s.rate}</td>
+                      <td style={{ padding: '6px 6px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
+                      <td style={{ padding: '6px 6px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
+                      <td style={{ padding: '6px 6px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
+                      <td style={{ padding: '6px 6px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
+                      <td style={{ padding: '6px 6px', fontSize: 13, color: '#8fa8c8' }}>{s.portal}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -133,11 +133,11 @@ export default function DeadlinesPage() {
         {/* SIDEBAR */}
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
           <a href="/" style={{ textDecoration: 'none' }}>
-            <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 12, textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Calculate Your Quarterly Payment</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All platforms · All 51 states</div>
-              <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
+              <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 10 }}>All platforms · All 51 states</div>
+              <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 15, fontWeight: 700 }}>Open Calculator →</div>
             </div>
           </a>
           <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
@@ -171,7 +171,14 @@ export default function DeadlinesPage() {
           </div>
         </div>
       </div>
-      <style>{`@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}`}</style>
+      <style>{`
+          @media(max-width:540px){
+            .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
+            .state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+          }
+          @media(max-width:960px){
+            .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
+          }@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}`}</style>
     </div>
   )
 }
