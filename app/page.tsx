@@ -22,10 +22,10 @@ export default function Page() {
 
       <div style={{background:'#0a0f1e',color:'#e2e8f0',fontFamily:'system-ui,sans-serif'}}>
 
-        <section style={{maxWidth:'960px',margin:'0 auto',padding:'48px 20px 28px'}}>
+        <section style={{maxWidth:'960px',margin:'0 auto',padding:'20px 16px 16px'}}>
           <h2 style={{fontSize:'clamp(20px,3vw,28px)',fontWeight:800,color:'#ffffff',marginBottom:'8px'}}>Gig Worker Tax Center 2026</h2>
-          <p style={{fontSize:'14px',opacity:0.6,marginBottom:'24px'}}>Every major platform. Every tax question. Free calculators for all 51 states.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'12px'}}>
+          <p style={{fontSize:'14px',opacity:0.75,marginBottom:'12px'}}>Every major platform. Every tax question. Free calculators for all 51 states.</p>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'10px'}}>
             {[
               {href:'/uber',       label:'Uber',         desc:'SE tax + quarterly estimates',   cta:'Open Uber Tax Calculator'},
               {href:'/doordash',   label:'DoorDash',     desc:'Delivery driver deductions',     cta:'Open DoorDash Tax Calculator'},
@@ -39,17 +39,17 @@ export default function Page() {
               {href:'/walmart-spark',label:'Walmart Spark',desc:'Spark driver taxes',           cta:'Open Walmart Spark Calculator'},
             ].map(p => (
               <a key={p.href} href={p.href} className="hub-card" style={{display:'flex',flexDirection:'column',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none',background:'#0d1b3e',border:'1px solid rgba(255,255,255,0.1)'}}>
-                <div style={{fontSize:'15px',fontWeight:800,color:'#fff',marginBottom:'4px'}}>{p.label} Tax Calculator</div>
-                <div style={{fontSize:'13px',color:'rgba(255,255,255,0.55)',lineHeight:1.5,marginBottom:'12px',flexGrow:1}}>{p.desc}</div>
-                <div style={{background:'#B22234',color:'#fff',fontSize:'13px',fontWeight:700,padding:'10px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta}</div>
+                <div style={{fontSize:'16px',fontWeight:800,color:'#fff',marginBottom:'3px'}}>{p.label} Tax Calculator</div>
+                <div style={{fontSize:'13px',color:'rgba(255,255,255,0.55)',lineHeight:1.5,marginBottom:'6px',flexGrow:1}}>{p.desc}</div>
+                <div style={{background:'#B22234',color:'#fff',fontSize:'13px',fontWeight:700,padding:'7px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta}</div>
               </a>
             ))}
 
           </div>
         </section>
 
-        <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 20px 28px'}}>
-          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'16px'}}>Tax Calculators by Category</h2>
+        <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 16px 16px'}}>
+          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'8px'}}>Tax Calculators by Category</h2>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:'10px'}}>
             {[
               ['/1099-tax-calculator-2026','1099 Tax Calculator 2026','Self-employment income'],
@@ -58,7 +58,7 @@ export default function Page() {
               ['/gig-worker-taxes-2026','Gig Tax Guide 2026','Complete 2026 overview'],
               ['/calculators','All Calculators','Browse every tool'],
             ].map(([href, label, desc]) => (
-              <a key={href} href={href} style={{display:'block',padding:'14px 12px',borderRadius:'10px',background:'rgba(99,102,241,0.05)',border:'1px solid rgba(99,102,241,0.15)',color:'#e2e8f0',textDecoration:'none'}}>
+              <a key={href} href={href} style={{display:'block',padding:'10px 12px',borderRadius:'10px',background:'rgba(99,102,241,0.05)',border:'1px solid rgba(99,102,241,0.15)',color:'#e2e8f0',textDecoration:'none'}}>
                 <div style={{fontSize:'14px',fontWeight:700,color:'#a5b4fc',marginBottom:'3px'}}>{label}</div>
                 <div style={{fontSize:'12px',opacity:0.55}}>{desc}</div>
               </a>
@@ -66,27 +66,27 @@ export default function Page() {
           </div>
         </section>
 
-        <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 20px 52px'}}>
-          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'16px'}}>Frequently Asked Questions — Gig Worker Taxes 2026</h2>
-          <div style={{display:'flex',flexDirection:'column',gap:'20px'}}>
-            <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much self-employment tax do gig workers pay in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Gig workers pay 15.3% SE tax on 92.35% of net earnings — 12.4% Social Security and 2.9% Medicare. You can deduct half of SE tax from your federal taxable income, which reduces your overall tax bill.</p></div>
-            <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>Do I need to pay quarterly taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. 2026 deadlines: April 15, June 16, September 15, and January 15, 2027.</p></div>
-            <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>What is the 1099 threshold for gig work in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Platforms must issue a 1099-NEC if you earn $600 or more. However, you must report all income to the IRS even without receiving a 1099 form.</p></div>
-            <div><h3 style={{fontSize:'15px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much should I set aside for taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Set aside 25–30% of net gig income for taxes. Higher earners in high-tax states like California or New York should set aside 35–40% to cover SE tax, federal, and state income tax.</p></div>
+        <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 16px 20px'}}>
+          <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'8px'}}>Frequently Asked Questions — Gig Worker Taxes 2026</h2>
+          <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much self-employment tax do gig workers pay in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Gig workers pay 15.3% SE tax on 92.35% of net earnings — 12.4% Social Security and 2.9% Medicare. You can deduct half of SE tax from your federal taxable income, which reduces your overall tax bill.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>Do I need to pay quarterly taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. 2026 deadlines: April 15, June 16, September 15, and January 15, 2027.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>What is the 1099 threshold for gig work in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Platforms must issue a 1099-NEC if you earn $600 or more. However, you must report all income to the IRS even without receiving a 1099 form.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much should I set aside for taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Set aside 25–30% of net gig income for taxes. Higher earners in high-tax states like California or New York should set aside 35–40% to cover SE tax, federal, and state income tax.</p></div>
           </div>
         </section>
 
       {/* Popular Calculators by State — SEO internal links */}
-      <section style={{width:'100%',maxWidth:1100,margin:'0 auto',padding:'48px 16px 32px',boxSizing:'border-box'}}>
+      <section style={{width:'100%',maxWidth:1100,margin:'0 auto',padding:'20px 16px 16px',boxSizing:'border-box'}}>
         <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8,justifyContent:'center'}}>
           <div style={{width:3,height:20,background:'#B22234',borderRadius:2}}/>
-          <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>All Platforms · All States</span>
+          <span style={{fontSize:13,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>All Platforms · All States</span>
         </div>
-        <h2 style={{fontSize:24,fontWeight:900,color:'#fff',textAlign:'center',marginBottom:6}}>Popular Calculators by State</h2>
-        <p style={{textAlign:'center',fontSize:14,color:'rgba(255,255,255,0.5)',marginBottom:28}}>
+        <h2 style={{fontSize:24,fontWeight:900,color:'#fff',textAlign:'center',marginBottom:4}}>Popular Calculators by State</h2>
+        <p style={{textAlign:'center',fontSize:14,color:'rgba(255,255,255,0.5)',marginBottom:12}}>
           Free tax calculator for every platform and state — SE tax 15.3% + federal + state.
         </p>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:10}} className="state-calc-grid">
+        <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:8}} className="state-calc-grid">
           {[
             ["/doordash/california","DoorDash — California"],
             ["/doordash/texas","DoorDash — Texas"],
@@ -121,14 +121,14 @@ export default function Page() {
           ].map(([href, label]) => (
             <a key={href} href={href} className="state-calc-link" style={{
               display:'block',
-              padding:'16px 16px',
+              padding:'10px 12px',
               borderRadius:8,
               border:'1px solid rgba(255,255,255,0.1)',
               background:'rgba(255,255,255,0.04)',
               color:'#c8d8ec',
               textDecoration:'none',
               textAlign:'center',
-              fontSize:15,
+              fontSize:16,
               fontWeight:700,
               lineHeight:1.3,
               transition:'all .15s ease',

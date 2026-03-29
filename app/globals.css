@@ -242,7 +242,7 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   display: block;
   background: #B22234;
   color: #fff;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
   padding: 6px 0;
   border-radius: 4px;
@@ -282,7 +282,7 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   }
   table.deadline-table tbody td::before {
     content: attr(data-label) !important;
-    font-size: 11px !important;
+    font-size: 13px !important;
     font-weight: 700 !important;
     color: rgba(255,255,255,0.45) !important;
     text-transform: uppercase !important;
