@@ -102,13 +102,13 @@ export default function HomeClient() {
   }
 
   /* ── shared style tokens ── */
-  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
-  const cardHd   = { background: 'rgba(255,255,255,0.07)', padding: '13px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
+  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
+  const cardHd   = { background: 'rgba(255,255,255,0.07)', padding: '10px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent   = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#a8b8d0', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
   const inp      = { width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1628', boxSizing: 'border-box' as const }
   const btnDark  = { background: '#e8b84b', color: '#07111F', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
-  const formGrid = { display: 'grid', gridTemplateColumns: '1fr', gap: 20, marginBottom: 20 }
+  const formGrid = { display: 'grid', gridTemplateColumns: '1fr', gap: 14, marginBottom: 14 }
   const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 15, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
@@ -116,7 +116,7 @@ export default function HomeClient() {
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(14px,3vw,28px) 16px clamp(10px,2vw,22px)', overflow: 'hidden' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(10px,2vw,18px) 16px clamp(8px,1.5vw,14px)', overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: 28, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
             <h1 style={{ fontSize: 'clamp(21px,4vw,27px)', fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
@@ -134,11 +134,11 @@ export default function HomeClient() {
             ))}
           </div>
           {/* sub-H1 tagline */}
-          <p style={{ paddingLeft: 16, fontSize: 13, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 8, lineHeight: 1.55, maxWidth: 680 }}>
+          <p style={{ paddingLeft: 16, fontSize: 14, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 6, lineHeight: 1.55, maxWidth: 680 }}>
             Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more — no signup, no data stored.
           </p>
           {/* gov-style disclaimer */}
-          <div style={{ paddingLeft: 16, fontSize: 11, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
+          <div style={{ paddingLeft: 16, fontSize: 13, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
             Based on IRS Schedule SE and 2026 tax brackets. Not affiliated with the IRS or any government agency. Estimates only — not tax advice.
           </div>
         </div>
@@ -151,26 +151,26 @@ export default function HomeClient() {
         <div style={{ position: 'sticky', top: 60, zIndex: 90, background: 'rgba(7,17,31,0.95)', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: 12, color: '#C8D8EC', fontWeight: 500 }}>Estimated total tax</span>
           <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
-            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
+            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
           </span>
         </div>
       )}
 
       {/* ━━ MAIN GRID ━━ */}
-      <div className="main-grid-outer" style={{ maxWidth: 1200, margin: '0 auto', padding: '10px 12px 32px', display: 'grid', gridTemplateColumns: '1fr', gap: 24 }}>
+      <div className="main-grid-outer" style={{ maxWidth: 1200, margin: '0 auto', padding: '8px 12px 20px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }}>
 
         {/* ── LEFT ── */}
         <div>
 
           {/* TABS */}
-          <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 20, gap: 6, padding: '4px 4px 0' }}>
+          <div style={{ display: 'flex', borderBottom: '2px solid #d8dce6', marginBottom: 12, gap: 6, padding: '4px 4px 0' }}>
             {([
               { id: 'calc',      label: 'Tax Calculator'  },
               { id: 'deadlines', label: '2026 Deadlines'  },
               { id: 'platforms', label: 'All Platforms'   },
             ] as const).map(t => (
               <div key={t.id} onClick={() => setTab(t.id)} style={{
-                padding: '6px 6px', fontSize: 11, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
+                padding: '6px 6px', fontSize: 13, fontWeight: 600, cursor: 'pointer', borderRadius: '6px 6px 0 0',
                 color: tab === t.id ? '#fff' : '#c8d8ec', background: tab === t.id ? '#B22234' : '#1a2a4a',
                 borderBottom: tab === t.id ? '2px solid #B22234' : '2px solid transparent', border: tab === t.id ? '1px solid #B22234' : '1px solid #d8dce6',
                 marginBottom: -2, transition: 'all .15s', whiteSpace: 'normal', flex: 1, textAlign: 'center' as const, wordBreak: 'break-word',
@@ -184,11 +184,11 @@ export default function HomeClient() {
           {tab === 'calc' && (
             <>
               {/* QUICK EXAMPLES */}
-              <div style={{ marginBottom: 16 }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 12 }}>
+              <div style={{ marginBottom: 10 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
                    Quick Examples — tap to load
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 10 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
                   {QUICK_EXAMPLES.map(ex => (
                     <div
                       key={ex.label}
@@ -197,8 +197,8 @@ export default function HomeClient() {
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 20, fontWeight: 800, color: '#fff', marginBottom: 8 }}>{ex.label}</div>
-                      <div style={{ fontSize: 16, color: 'rgba(255,255,255,.55)', marginBottom: 10 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 5 }}>{ex.label}</div>
+                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,.55)', marginBottom: 6 }}>{ex.tag}</div>
                       <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
                     </div>
                   ))}
@@ -210,15 +210,15 @@ export default function HomeClient() {
                 <div style={cardHd}>
                   <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Self-Employment Tax Estimator</span>
-                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 10, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
+                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
                 </div>
-                <div style={{ padding: 24 }}>
+                <div style={{ padding: 16 }}>
 
                   {/* Section 1 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8, paddingBottom: 6, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     1. Your Gig Income
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label} htmlFor="gig-platform-0">▸ Gig Platform</label>
                       <select style={inp}  id="gig-platform-0" value={platform} onChange={e => setPlatform(e.target.value)}>
@@ -244,14 +244,14 @@ export default function HomeClient() {
                   </div>
 
                   {/* Section 2 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                    2. Business Expenses <span style={{ fontWeight: 400, fontSize: 10, color: '#7a9abf' }}>(optional)</span>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8, paddingBottom: 6, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                    2. Business Expenses <span style={{ fontWeight: 400, fontSize: 12, color: '#7a9abf' }}>(optional)</span>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label}>▸ Business Miles Driven</label>
                       <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
-                      <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
@@ -259,15 +259,15 @@ export default function HomeClient() {
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" placeholder="e.g. 2,000"/>
                       </div>
-                      <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
                     </div>
                   </div>
 
                   {/* Section 3 */}
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 12, paddingBottom: 8, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8, paddingBottom: 6, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     3. Where You Live &amp; File
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }} className="form-grid">
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label}> State of Residence</label>
                       <select style={inp}  id="annual-gig-revenue-usd-setinco-1" value={stateCode} onChange={e => setStateCode(e.target.value)}>
@@ -305,9 +305,9 @@ export default function HomeClient() {
                       { label: 'Total Annual Tax',  val: fmt(result.total),    sub: `${result.rate}% effective`, hi: true },
                     ].map((r, i) => (
                       <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.15)' : 'rgba(13,27,62,0.6)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
-                        <div style={{ fontSize: 10, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
-                        <div style={{ fontSize: 22, fontWeight: 900, color: r.hi ? '#ff6b6b' : '#e8eef8', marginBottom: 4 }}>{r.val}</div>
-                        <div style={{ fontSize: 11, color: '#7a9abf' }}>{r.sub}</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
+                        <div style={{ fontSize: 18, fontWeight: 900, color: r.hi ? '#ff6b6b' : '#e8eef8', marginBottom: 3 }}>{r.val}</div>
+                        <div style={{ fontSize: 13, color: '#7a9abf' }}>{r.sub}</div>
                       </div>
                     ))}
                   </div></div>
@@ -319,20 +319,20 @@ export default function HomeClient() {
                       <div style={{ ...btnRed(), width: 'auto', padding: '7px 14px', fontSize: 12 }}>+ Add All to Google Calendar</div>
                     </div>
 
-                    <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, minWidth: 0 }} className="q-grid">
+                    <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
-                        <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
-                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
+                        <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
+                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 11, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
-                          <div style={{ fontSize: 11, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
+                          <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.07)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
-                          <div style={btnRed({ fontSize: 11, padding: '6px 0' })}>+ Calendar</div>
+                          <div style={btnRed({ fontSize: 13, padding: '6px 0' })}>+ Calendar</div>
                         </div>
                       ))}
                     </div></div>
                     <button onClick={()=>{const t=[DEADLINES.map(d=>d.q+' — due '+d.due+': '+fmt(result.quarterly)).join('\n')].join('');navigator.clipboard.writeText(t).then(()=>alert('Quarterly schedule copied!'));}} style={{marginTop:'10px',padding:'8px 18px',borderRadius:'8px',border:'1px solid rgba(232,184,75,0.4)',background:'rgba(232,184,75,0.08)',color:'#e8b84b',fontSize:'13px',fontWeight:700,cursor:'pointer',width:'100%'}}> Copy Quarterly Schedule</button>
 
-                    <div style={{ marginTop: 14, background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#fcd34d', textAlign: 'justify' as const, lineHeight: 1.6 }}>
+                    <div style={{ marginTop: 10, background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#fcd34d', textAlign: 'justify' as const, lineHeight: 1.6 }}>
                        <strong>Disclaimer:</strong> Estimates for planning purposes only. Consult a licensed CPA or visit IRS.gov for official guidance. Not tax advice.
                     </div>
                     <div style={{ marginTop: 10, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 4, padding: '10px 14px', fontSize: 12, color: '#4ade80', lineHeight: 1.6 }}>
@@ -344,12 +344,12 @@ export default function HomeClient() {
               )}
 
               {/* HOW THIS CALCULATOR WORKS */}
-              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, overflow: 'hidden' as const, marginTop: 20 }}>
-                <div style={{ background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, overflow: 'hidden' as const, marginTop: 12 }}>
+                <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={{ width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}>How This Calculator Works</span>
                 </div>
-                <div style={{ padding: '16px 20px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }} className="form-grid">
+                <div style={{ padding: '12px 16px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }} className="form-grid">
                   {[
                     { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
                     { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($15,000 single / $30,000 married). Rates from 10% to 37%.' },
@@ -361,25 +361,25 @@ export default function HomeClient() {
                     </div>
                   ))}
                 </div>
-                <div style={{ padding: '0 20px 14px' }}>
+                <div style={{ padding: '0 16px 10px' }}>
                   <a href="/how-we-calculate-gig-taxes" style={{ fontSize: 12, color: '#B22234', fontWeight: 700, textDecoration: 'none' }}>See full methodology: how we calculate 2026 gig taxes →</a>
                 </div>
               </div>
 
               {/* HIGH INCOME BLOCK */}
               {result && parseFloat(income) >= 150000 && (
-                <div style={{ background: 'linear-gradient(135deg,#1a0a2e,#2d1454)', border: '1px solid rgba(168,85,247,0.4)', borderRadius: 8, padding: '18px 20px', marginBottom: 16 }}>
+                <div style={{ background: 'linear-gradient(135deg,#1a0a2e,#2d1454)', border: '1px solid rgba(168,85,247,0.4)', borderRadius: 8, padding: '18px 20px', marginBottom: 10 }}>
                   <div style={{ fontSize: 13, fontWeight: 800, color: '#c084fc', letterSpacing: '1px', textTransform: 'uppercase' as const, marginBottom: 10 }}> High-Income Gig Worker (over $150k)</div>
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
-                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
                       <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>Additional Medicare Surtax (0.9%)</strong> — applies to net self-employment income above $200,000 (single) or $250,000 (married). This calculator includes standard SE tax; consult a CPA for the surtax.</div>
                     </div>
-                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
                       <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>State Top Brackets</strong> — California (13.3%), New York (10.9%), New Jersey (10.75%) apply at high incomes and significantly increase your effective rate.</div>
                     </div>
-                    <div style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <span style={{ color: '#c084fc', fontSize: 16, marginTop: 1 }}>▸</span>
                       <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}><strong style={{ color: 'rgba(255,255,255,0.9)' }}>Quarterly Precision is Critical</strong> — at this income level, underpayment penalties can exceed $2,000/year. Consider paying monthly instead of quarterly.</div>
                     </div>
@@ -394,13 +394,13 @@ export default function HomeClient() {
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Select Your Platform</span>
                   <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,.35)' }}>51-state tax included</span>
                 </div>
-                <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
+                <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="p-grid">
                   {PLATFORMS.map(p => (
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                       <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ cursor: 'pointer', position: 'relative' as const }}>
                         
                         <div style={{ fontSize: 13, fontWeight: 700, color: '#e8eef8', marginBottom: 4 }}>{p.name}</div>
-                        <div style={{ fontSize: 10, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
+                        <div style={{ fontSize: 12, color: '#B22234', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
                         <div className="plat-btn" style={{background:'#B22234',color:'#fff',fontSize:11,fontWeight:700,padding:'5px 10px',borderRadius:4,marginTop:4}}>Open Calculator</div>
                       </div>
                     </Link>
@@ -410,7 +410,7 @@ export default function HomeClient() {
 
               {/* COMPARE TABLE */}
               <div style={card}>
-                <div style={{ padding: '13px 20px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={accent}/>
                   <span style={{ fontWeight: 700, fontSize: 15 }}> How We Compare to Competitors</span>
                 </div>
@@ -419,7 +419,7 @@ export default function HomeClient() {
                     <thead>
                       <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
-                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 11, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(178,34,52,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
+                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(178,34,52,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
@@ -462,7 +462,7 @@ export default function HomeClient() {
                   <thead>
                     <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Quarter','Period','IRS Due Date','Days Left','Action'].map(h => (
-                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
+                        <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -501,7 +501,7 @@ export default function HomeClient() {
                   <thead>
                     <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
-                        <th key={h} style={{ padding: '11px 16px', fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
+                        <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
                   </thead>
@@ -516,7 +516,7 @@ export default function HomeClient() {
                         <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,0.07)', fontWeight: 600 }}>15.3%</td>
                         <td style={{ padding: '12px 16px', color: '#059669', fontWeight: 600 }}>Included ✓</td>
                         <td style={{ padding: '12px 16px' }}>
-                          <span style={{ background: 'rgba(5,150,105,0.2)', color: '#4ade80', padding: '3px 10px', borderRadius: 12, fontSize: 11, fontWeight: 700, border: '1px solid rgba(74,222,128,0.3)' }}>Low ✓</span>
+                          <span style={{ background: 'rgba(5,150,105,0.2)', color: '#4ade80', padding: '3px 10px', borderRadius: 12, fontSize: 13, fontWeight: 700, border: '1px solid rgba(74,222,128,0.3)' }}>Low ✓</span>
                         </td>
                       </tr>
                     ))}
@@ -550,13 +550,13 @@ export default function HomeClient() {
 
           {/* TRUST */}
           <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
+            <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
             <div style={{ fontSize: 12, color: '#c8d8ec', lineHeight: 1.7, textAlign: 'justify' as const }}>
               GigWiseTax.com is an independent, free estimation tool. Not affiliated with the IRS or any government agency. No personal data is stored. Results are estimates only — not tax advice.
             </div>
             <div style={{ marginTop: 12, display: 'flex', gap: 12 }}>
               {['Privacy','Terms','Contact'].map(l => (
-                <span key={l} style={{ fontSize: 11, color: '#8fa8c8', cursor: 'pointer', textDecoration: 'underline' }}>{l}</span>
+                <span key={l} style={{ fontSize: 13, color: '#8fa8c8', cursor: 'pointer', textDecoration: 'underline' }}>{l}</span>
               ))}
             </div>
           </div>
