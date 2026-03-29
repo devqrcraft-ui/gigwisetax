@@ -178,8 +178,11 @@ export default function DeadlinesPage() {
           }
           @media(max-width:960px){
             .deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}
-          }`}</style>
-        <style>{`@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}`}</style>
+          }
+          @media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}
+          .results-row{grid-template-columns:1fr 1fr}
+          .main-grid{width:100%!important}
+        `}</style>
     </div>
   )
 }
