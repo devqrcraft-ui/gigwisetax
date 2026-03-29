@@ -117,10 +117,10 @@ export default function DeadlinesPage() {
                     <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
                       <td style={{ padding: '7px 8px', fontWeight: 700, fontSize: 14 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '7px 8px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 14 }}>{s.rate}</td>
-                      <td style={{ padding: '6px 6px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
-                      <td style={{ padding: '6px 6px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
-                      <td style={{ padding: '6px 6px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
-                      <td style={{ padding: '6px 6px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
+                      <td style={{ padding: '6px 6px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{s.q1}</td>
+                      <td style={{ padding: '6px 6px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{s.q2}</td>
+                      <td style={{ padding: '6px 6px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{s.q3}</td>
+                      <td style={{ padding: '6px 6px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{s.q4}</td>
                       <td style={{ padding: '6px 6px', fontSize: 13, color: '#8fa8c8' }}>{s.portal}</td>
                     </tr>
                   ))}
