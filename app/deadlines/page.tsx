@@ -30,7 +30,7 @@ export default function DeadlinesPage() {
   const card = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
+  const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 14, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
@@ -117,10 +117,10 @@ export default function DeadlinesPage() {
                     <tr key={s.abbr} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i % 2 === 0 ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.01)' }}>
                       <td style={{ padding: '7px 8px', fontWeight: 700, fontSize: 14 }}>{s.abbr} — {s.state}</td>
                       <td style={{ padding: '7px 8px', color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700, fontSize: 14 }}>{s.rate}</td>
-                      <td style={{ padding: '6px 6px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q1}</td>
-                      <td style={{ padding: '6px 6px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q2}</td>
-                      <td style={{ padding: '6px 6px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q3}</td>
-                      <td style={{ padding: '6px 6px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', fontSize: 12 }}>{s.q4}</td>
+                      <td style={{ padding: '6px 6px', color: s.q1 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
+                      <td style={{ padding: '6px 6px', color: s.q2 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
+                      <td style={{ padding: '6px 6px', color: s.q3 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
+                      <td style={{ padding: '6px 6px', color: s.q4 === '—' ? 'rgba(255,255,255,0.15)' : 'rgba(255,255,255,0.75)', ffontSize: 14 }}>}</td>
                       <td style={{ padding: '6px 6px', fontSize: 13, color: '#8fa8c8' }}>{s.portal}</td>
                     </tr>
                   ))}
@@ -154,7 +154,7 @@ export default function DeadlinesPage() {
           </div>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Tax Calculators</span>
+              <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.7)', textTransform: 'uppercase' as const }}> Tax Calculators</span>
             </div>
             {[
               { label: ' DoorDash Tax Calculator', href: '/doordash' },
