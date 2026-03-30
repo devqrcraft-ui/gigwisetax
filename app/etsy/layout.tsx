@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Etsy Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
     description: 'Calculate your Etsy seller self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Includes Schedule C deductions for materials, shipping, fees. Free, 2026.',
-    url: 'https://www.gigwisetax.com/etsy',
     siteName: 'GigWiseTax',
     type: 'website',
   },

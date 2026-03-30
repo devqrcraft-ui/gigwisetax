@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OnlyFans Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
     description: 'Calculate your OnlyFans self-employment taxes. SE tax 15.3% + federal + state for all 51 states. Includes creator deductions for equipment, home office, subscriptions. Free 2026.',
-    url: 'https://www.gigwisetax.com/onlyfans',
     siteName: 'GigWiseTax',
     type: 'website',
   },

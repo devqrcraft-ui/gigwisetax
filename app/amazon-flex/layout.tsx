@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Amazon Flex Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
     description: 'Calculate Amazon Flex driver self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Mileage deduction, quarterly taxes. Free Amazon Flex tax calculator 2026.',
-    url: 'https://www.gigwisetax.com/amazon-flex',
     siteName: 'GigWiseTax',
     type: 'website',
   },
