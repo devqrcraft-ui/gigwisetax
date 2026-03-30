@@ -12,22 +12,11 @@ export const metadata: Metadata = {
   },
 }
 
-const gigSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Amazon Flex Tax Calculator 2026',
-  description: 'Calculate Amazon Flex driver taxes, mileage deductions, and self-employment tax for 2026.',
-  url: 'https://www.gigwisetax.com/amazon-flex',
-  applicationCategory: 'FinanceApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-};
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(gigSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [

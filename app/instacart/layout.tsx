@@ -12,22 +12,11 @@ export const metadata: Metadata = {
   },
 }
 
-const gigSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebApplication',
-  name: 'Instacart Shopper Tax Calculator 2026',
-  description: 'Calculate Instacart shopper taxes, mileage deductions, and quarterly payments for 2026.',
-  url: 'https://www.gigwisetax.com/instacart',
-  applicationCategory: 'FinanceApplication',
-  operatingSystem: 'All',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-};
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(gigSchema)}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
+            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
