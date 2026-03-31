@@ -3,9 +3,25 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "gigwisetax.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "gigwisetax.com"
+        }
+      ],
       "destination": "https://www.gigwisetax.com/$1",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/ai-chat-widget-final.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
     }
   ]
 }
