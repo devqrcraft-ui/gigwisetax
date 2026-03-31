@@ -51,8 +51,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
         {/* Breadcrumb */}
         <div style={{ fontSize: 12, color: '#8fa8c8', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#B22234', textDecoration: 'none' }}>Home</a> /
-          <a href="/1099-tax-calculator-2026" style={{ color: '#B22234', textDecoration: 'none' }}>1099 Tax Calculator</a> /
+          <a href="/" style={{ color: '#e8b84b', textDecoration: 'none' }}>Home</a> /
+          <a href="/1099-tax-calculator-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>1099 Tax Calculator</a> /
           <span>{state.name}</span>
         </div>
 
