@@ -151,7 +151,7 @@ export default function HomeClient() {
         <div style={{ position: 'sticky', top: 60, zIndex: 90, background: 'rgba(7,17,31,0.95)', borderBottom: '2px solid #B22234', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span style={{ fontSize: 12, color: '#C8D8EC', fontWeight: 500 }}>Estimated total tax</span>
           <span style={{ fontSize: 16, fontWeight: 900, color: '#B22234' }}>
-            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', fontWeight: 400 }}>({result.rate}%)</span>
+            {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 13, color:'rgba(255,255,255,.75)', fontWeight:400 }}>({result.rate}%)</span>
           </span>
         </div>
       )}
@@ -185,7 +185,7 @@ export default function HomeClient() {
             <>
               {/* QUICK EXAMPLES */}
               <div style={{ marginBottom: 10 }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
+                <div style={{ fontSize: 13, fontWeight: 800, color:'rgba(255,255,255,.75)', textTransform:'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
                    Quick Examples — tap to load
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
@@ -198,7 +198,7 @@ export default function HomeClient() {
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
                       <div style={{ fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 5 }}>{ex.label}</div>
-                      <div style={{ fontSize: 14, color: 'rgba(255,255,255,.55)', marginBottom: 6 }}>{ex.tag}</div>
+                      <div style={{ fontSize: 14, color:'rgba(255,255,255,.75)', marginBottom:6 }}>{ex.tag}</div>
                       <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
                     </div>
                   ))}
