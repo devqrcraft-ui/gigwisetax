@@ -11,7 +11,7 @@ export default function ContactPage() {
       <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 16 }}>Contact Us</h1>
       <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7 }}>
         Have a question or feedback? Email us at{' '}
-        <a href="mailto:hello@gigwisetax.com" style={{ color: '#a5b4fc' }}>hello@gigwisetax.com</a>
+        <a href="mailto:kalkulator018@gmail.com" style={{ color: '#a5b4fc' }}>kalkulator018@gmail.com</a>
       </p>
     </main>
   )
