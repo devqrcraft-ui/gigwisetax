@@ -210,7 +210,7 @@ export default function HomeClient() {
                 <div style={cardHd}>
                   <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Self-Employment Tax Estimator</span>
-                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.45)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
+                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color:'rgba(255,255,255,.8)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
                 </div>
                 <div style={{ padding: 16 }}>
 

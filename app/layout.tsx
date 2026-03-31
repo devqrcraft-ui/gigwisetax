@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   { label:' Penalty Finder',    href:'/tax-penalty-finder'           },
                 ].map(l => (
                   <a key={l.href} href={l.href}
-                    style={{ fontSize:14, color:'rgba(255,255,255,.5)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
+                    style={{ fontSize:14, color:'rgba(255,255,255,.85)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
                     {l.label}
                   </a>
                 ))}
@@ -114,8 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <div style={{ borderTop:'1px solid rgba(255,255,255,.06)' }}>
             <div style={{ maxWidth:1200, margin:'0 auto', padding:'14px 20px', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:8 }}>
-              <span style={{ fontSize:14, color:'rgba(255,255,255,.18)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
-              <span style={{ fontSize:14, color:'rgba(255,255,255,.18)' }}> Made for U.S. Gig Workers ·  No data stored</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.55)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.55)' }}> Made for U.S. Gig Workers ·  No data stored</span>
             </div>
           </div>
         </footer>
