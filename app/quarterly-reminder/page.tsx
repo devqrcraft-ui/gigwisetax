@@ -178,7 +178,7 @@ export default function QuarterlyReminder() {
 
       {/* WHY */}
       <div style={card}>
-        <div style={{ ...hdr, borderBottom: '1px solid rgba(255,255,255,.1)' }}>
+        <div style={{ ...hdr, borderBottom: '1px solid rgba(255,255,255,.82)' }}>
           <div style={{ color: '#fff', fontSize: 16, fontWeight: 800 }}>Why Quarterly Taxes Matter</div>
         </div>
         <div style={body}>
@@ -205,7 +205,7 @@ export default function QuarterlyReminder() {
       <div style={{ textAlign: 'center' }}>
         <Link href="/" style={{ color: 'rgba(255,255,255,.4)', fontSize: 13, textDecoration: 'none' }}>← Back to GigWiseTax Home</Link>
       </div>
-      <p style={{ color: 'rgba(255,255,255,.2)', fontSize: 11, textAlign: 'center', marginTop: 16 }}>
+      <p style={{ color: 'rgba(255,255,255,.82)', fontSize: 11, textAlign: 'center', marginTop: 16 }}>
         GigWiseTax.com — Free tax tools for gig workers. Not affiliated with the IRS.
       </p>
     </div></div>

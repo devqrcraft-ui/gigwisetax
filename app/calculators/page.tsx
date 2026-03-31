@@ -39,7 +39,7 @@ export default function CalculatorsIndex() {
           <Link href="/" style={{ textDecoration: "none" }}>
             <div style={{ fontWeight: 900, fontSize: 19, color: "rgba(255,255,255,0.9)" }}>
               GIGWISE<span style={{ color: "#e8b84b" }}>TAX</span>
-              <span style={{ color: "rgba(255,255,255,.2)", fontWeight: 300, fontSize: 14 }}>.COM</span>
+              <span style={{ color: "rgba(255,255,255,.82)", fontWeight: 300, fontSize: 14 }}>.COM</span>
             </div>
           </Link>
           <Link href="/" style={{ background: "#B22234", color: "#fff", padding: "8px 18px", borderRadius: 4, fontSize: 13, fontWeight: 700, textDecoration: "none" }}>Calculator →</Link>

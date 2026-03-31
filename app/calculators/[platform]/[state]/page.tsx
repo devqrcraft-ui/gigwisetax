@@ -144,7 +144,7 @@ export default function CalculatorPage({ params }) {
           <Link href="/" style={{ textDecoration: "none" }}>
             <div style={{ fontWeight: 900, fontSize: 19, color: "rgba(255,255,255,0.9)" }}>
               GIGWISE<span style={{ color: "#e8b84b" }}>TAX</span>
-              <span style={{ color: "rgba(255,255,255,.2)", fontWeight: 300, fontSize: 14 }}>.COM</span>
+              <span style={{ color: "rgba(255,255,255,.82)", fontWeight: 300, fontSize: 14 }}>.COM</span>
             </div>
           </Link>
           <div style={{ display: "flex", gap: 10 }}>
@@ -159,7 +159,7 @@ export default function CalculatorPage({ params }) {
         <div style={{ maxWidth: 1000, margin: "0 auto", padding: "36px 20px" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" }}>
             <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>{p.name}</span>
-            <span style={{ background: "rgba(255,255,255,.08)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
+            <span style={{ background: "rgba(255,255,255,.82)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
             {!s.hasTax && <span style={{ background: "#0d7a40", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>✓ No State Tax</span>}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>

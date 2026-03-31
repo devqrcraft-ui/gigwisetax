@@ -115,7 +115,7 @@ export default function SCorpCalculator() {
               <div style={{ fontSize: 60, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{fmt(result.savings)}</div>
               <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', marginTop: 8 }}>per year (after ~$2,500 compliance costs)</div>
               <div style={{ fontSize: 15, color: '#fff', marginTop: 14, fontWeight: 700 }}>
-                Over 5 years: <span style={{ background: 'rgba(255,255,255,.2)', padding: '2px 10px', borderRadius: 4 }}>{fmt(result.savings * 5)}</span> in tax savings
+                Over 5 years: <span style={{ background: 'rgba(255,255,255,.82)', padding: '2px 10px', borderRadius: 4 }}>{fmt(result.savings * 5)}</span> in tax savings
               </div>
             </>) : (<>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.55)', letterSpacing: 1, marginBottom: 8 }}>S-CORP MAY NOT BE WORTH IT YET</div>
@@ -186,10 +186,10 @@ export default function SCorpCalculator() {
 
       <div style={{ textAlign: 'center', marginBottom: 16 }}>
         <Link href="/" style={{ color: 'rgba(255,255,255,.4)', fontSize: 13, textDecoration: 'none' }}>← Back to GigWiseTax Home</Link>
-        <span style={{ color: 'rgba(255,255,255,.2)', margin: '0 12px' }}>|</span>
+        <span style={{ color: 'rgba(255,255,255,.82)', margin: '0 12px' }}>|</span>
         <Link href="/deductions" style={{ color: 'rgba(255,255,255,.4)', fontSize: 13, textDecoration: 'none' }}>Deductions Checklist →</Link>
       </div>
-      <p style={{ color: 'rgba(255,255,255,.2)', fontSize: 11, textAlign: 'center', marginTop: 8 }}>
+      <p style={{ color: 'rgba(255,255,255,.82)', fontSize: 11, textAlign: 'center', marginTop: 8 }}>
         For informational purposes only. Consult a licensed CPA before making entity decisions. GigWiseTax.com
       </p>
     </div></div>

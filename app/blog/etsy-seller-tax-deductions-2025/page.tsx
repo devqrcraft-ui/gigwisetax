@@ -38,7 +38,7 @@ export default function EtsyDeductionsBlog() {
           </nav>
           <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' as const }}>
             {['Etsy','Tax Deductions','1099-K','Seller Guide'].map(t => (
-              <span key={t} style={{ background: 'rgba(255,255,255,.08)', border: '1px solid rgba(255,255,255,.15)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
+              <span key={t} style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
             ))}
           </div>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
@@ -85,7 +85,7 @@ export default function EtsyDeductionsBlog() {
             <Link href="/etsy" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
                Open Etsy Tax Calculator →
             </Link>
-            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
+            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
                Full Deductions Checklist →
             </Link>
           </div>

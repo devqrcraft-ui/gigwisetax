@@ -66,12 +66,12 @@ export default function DeductionsChecklist() {
       </div>
 
       {/* INCOME INPUT */}
-      <div style={{ background: 'rgba(255,255,255,.05)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' as const }}>
+      <div style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' as const }}>
         <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, fontWeight: 600 }}>Your annual income:</span>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
           {['20000','35000','50000','75000','100000'].map(v => (
             <button key={v} onClick={() => setIncome(v)}
-              style={{ background: income===v?'#B22234':'rgba(255,255,255,.1)', color: '#fff', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,.2)', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              style={{ background: income===v?'#B22234':'rgba(255,255,255,.82)', color: '#fff', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
               ${parseInt(v)/1000}k
             </button>
           ))}
@@ -79,7 +79,7 @@ export default function DeductionsChecklist() {
       </div>
 
       {/* SAVINGS COUNTER */}
-      <div style={{ background: checkedCount > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : 'rgba(255,255,255,.05)', border: checkedCount > 0 ? 'none' : '1px solid rgba(255,255,255,.1)', borderRadius: 8, padding: '20px 24px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' as const, gap: 12, transition: 'all .3s' }}>
+      <div style={{ background: checkedCount > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : 'rgba(255,255,255,.82)', border: checkedCount > 0 ? 'none' : '1px solid rgba(255,255,255,.82)', borderRadius: 8, padding: '20px 24px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' as const, gap: 12, transition: 'all .3s' }}>
         <div>
           <div style={{ color: checkedCount > 0 ? 'rgba(255,255,255,.8)' : 'rgba(255,255,255,.4)', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
             {checkedCount > 0 ? `${checkedCount} DEDUCTIONS SELECTED` : 'CHECK DEDUCTIONS BELOW'}
@@ -100,7 +100,7 @@ export default function DeductionsChecklist() {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const, marginBottom: 20 }}>
         {CATEGORIES.map(cat => (
           <button key={cat} onClick={() => setCategory(cat)}
-            style={{ background: category===cat?'#B22234':'rgba(255,255,255,.08)', color: '#fff', border: category===cat?'2px solid #B22234':'2px solid rgba(255,255,255,.15)', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+            style={{ background: category===cat?'#B22234':'rgba(255,255,255,.82)', color: '#fff', border: category===cat?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
             {cat}
           </button>
         ))}
@@ -145,18 +145,18 @@ export default function DeductionsChecklist() {
           File with TurboTax Self-Employed →
         </a>
         <a href="/tax-penalty-finder"
-          style={{ display: 'block', background: 'rgba(255,255,255,.1)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.2)' }}>
+          style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
            Get My Full Tax Penalty Report →
         </a>
       </div>
 
       <div style={{ textAlign: 'center' }}>
         <Link href="/" style={{ color: 'rgba(255,255,255,.4)', fontSize: 13, textDecoration: 'none' }}>← Back to GigWiseTax Home</Link>
-        <span style={{ color: 'rgba(255,255,255,.2)', margin: '0 12px' }}>|</span>
+        <span style={{ color: 'rgba(255,255,255,.82)', margin: '0 12px' }}>|</span>
         <Link href="/s-corp-calculator" style={{ color: 'rgba(255,255,255,.4)', fontSize: 13, textDecoration: 'none' }}>S-Corp Calculator →</Link>
       </div>
 
-      <p style={{ color: 'rgba(255,255,255,.2)', fontSize: 11, textAlign: 'center', marginTop: 16 }}>
+      <p style={{ color: 'rgba(255,255,255,.82)', fontSize: 11, textAlign: 'center', marginTop: 16 }}>
         For informational purposes only. Consult a licensed CPA. GigWiseTax.com
       </p>
     </div></div>

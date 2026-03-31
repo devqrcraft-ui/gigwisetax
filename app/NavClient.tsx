@@ -92,9 +92,9 @@ export default function NavClient() {
           </div>
           <div>
             <div style={{ fontWeight:900, fontSize:19, color:'#fff', letterSpacing:'-0.5px', lineHeight:1.1 }}>
-              GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:13 }}>.COM</span>
+              GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.82)', fontWeight:300, fontSize:13 }}>.COM</span>
             </div>
-            <div style={{ fontSize:9, color:'rgba(255,255,255,.3)', letterSpacing:'2px', textTransform:'uppercase' as const }}>Free · Independent · United States</div>
+            <div style={{ fontSize:12, color:'rgba(255,255,255,.3)', letterSpacing:'2px', textTransform:'uppercase' as const }}>Free · Independent · United States</div>
           </div>
         </Link>
 
@@ -111,10 +111,10 @@ export default function NavClient() {
                 color: openNav===item.label ? '#fff' : 'rgba(255,255,255,.65)',
                 borderBottom: openNav===item.label ? '2px solid #e8b84b' : '2px solid transparent',
                 whiteSpace:'nowrap' as const, userSelect:'none' as const }}>
-                {item.label} <span style={{ fontSize:9, opacity:.5 }}>▾</span>
+                {item.label} <span style={{ fontSize:12, opacity:.5 }}>▾</span>
               </div>
               {openNav===item.label && (
-                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#0d1b3e', border:'1px solid rgba(255,255,255,0.12)',
+                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#0d1b3e', border:'1px solid rgba(255,255,255,.82)',
                   borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.5)', overflow:'hidden' as const, marginTop:0 }}>
                   <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>{item.label}</div>
                   {item.items.map(sub => (

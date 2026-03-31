@@ -52,7 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span style={{ color:'rgba(255,255,255,.85)', fontSize:14, overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',minWidth:0 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
             </div>
             <div style={{ display:'flex', gap:12, alignItems:'center', flexShrink:0 }}>
-              <span style={{ color:'rgba(255,255,255,.35)', fontSize:13 }}>Tax Year 2026</span>
+              <span style={{ color:'rgba(255,255,255,.8)', fontSize:13 }}>Tax Year 2026</span>
               <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:13, fontWeight:700 }}> Q1 DUE: APR 15</span>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
-              <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:14 }}>.COM</span></div>
+              <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.7)', fontWeight:300, fontSize:14 }}>.COM</span></div>
               <div style={{ fontSize:13, color:'rgba(255,255,255,.75)', lineHeight:1.8, marginBottom:14 }}>Free self-employment tax calculators for gig workers. All 51 states. Tax year 2026.</div>
               <div style={{ fontSize:14, color:'rgba(255,255,255,.65)', lineHeight:1.7 }}>Not tax advice. Estimates only. Consult a CPA.</div>
             </div>

@@ -138,7 +138,7 @@ export default function HomeClient() {
             Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more — no signup, no data stored.
           </p>
           {/* gov-style disclaimer */}
-          <div style={{ paddingLeft: 16, fontSize: 13, color: 'rgba(255,255,255,.35)', lineHeight: 1.5 }}>
+          <div style={{ paddingLeft: 16, fontSize: 13, color:'rgba(255,255,255,.8)', lineHeight: 1.5 }}>
             Based on IRS Schedule SE and 2026 tax brackets. Not affiliated with the IRS or any government agency. Estimates only — not tax advice.
           </div>
         </div>
@@ -392,7 +392,7 @@ export default function HomeClient() {
                 <div style={cardHd}>
                   <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Select Your Platform</span>
-                  <span style={{ marginLeft: 'auto', fontSize: 12, color: 'rgba(255,255,255,.35)' }}>51-state tax included</span>
+                  <span style={{ marginLeft: 'auto', fontSize: 12, color:'rgba(255,255,255,.8)' }}>51-state tax included</span>
                 </div>
                 <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="p-grid">
                   {PLATFORMS.map(p => (
