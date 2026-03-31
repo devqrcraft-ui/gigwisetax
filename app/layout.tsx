@@ -49,11 +49,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 12px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
             <div style={{ display:'flex', alignItems:'center', gap:10, minWidth:0, overflow:'hidden' }}>
               <span style={{ fontSize:20, flexShrink:0 }}></span>
-              <span style={{ color:'rgba(255,255,255,.6)', fontSize:12, overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',minWidth:0 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
+              <span style={{ color:'rgba(255,255,255,.85)', fontSize:14, overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap',minWidth:0 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
             </div>
             <div style={{ display:'flex', gap:12, alignItems:'center', flexShrink:0 }}>
-              <span style={{ color:'rgba(255,255,255,.35)', fontSize:11 }}>Tax Year 2026</span>
-              <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:11, fontWeight:700 }}> Q1 DUE: APR 15</span>
+              <span style={{ color:'rgba(255,255,255,.35)', fontSize:13 }}>Tax Year 2026</span>
+              <span style={{ background:'#B22234', color:'#fff', padding:'3px 10px', borderRadius:3, fontSize:13, fontWeight:700 }}> Q1 DUE: APR 15</span>
             </div>
           </div>
         </div>
@@ -64,38 +64,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
-              <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:12 }}>.COM</span></div>
-              <div style={{ fontSize:13, color:'rgba(255,255,255,.4)', lineHeight:1.8, marginBottom:14 }}>Free self-employment tax calculators for gig workers. All 51 states. Tax year 2026.</div>
-              <div style={{ fontSize:12, color:'rgba(255,255,255,.25)', lineHeight:1.7 }}>Not tax advice. Estimates only. Consult a CPA.</div>
+              <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.2)', fontWeight:300, fontSize:14 }}>.COM</span></div>
+              <div style={{ fontSize:13, color:'rgba(255,255,255,.75)', lineHeight:1.8, marginBottom:14 }}>Free self-employment tax calculators for gig workers. All 51 states. Tax year 2026.</div>
+              <div style={{ fontSize:14, color:'rgba(255,255,255,.65)', lineHeight:1.7 }}>Not tax advice. Estimates only. Consult a CPA.</div>
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Calculators</div>
+              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Calculators</div>
               {[['/doordash','DoorDash'],['/uber','Uber'],['/etsy','Etsy'],['/onlyfans','OnlyFans'],['/instacart','Instacart'],['/airbnb','Airbnb'],['/grubhub','Grubhub'],['/walmart-spark','Walmart Spark'],['/turo','Turo']].map(([h,l]) => (
-                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
+                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Deadlines</div>
+              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Deadlines</div>
               {[['Q1 — April 15','/deadlines#q1'],['Q2 — June 16','/deadlines#q2'],['Q3 — Sept 15','/deadlines#q3'],['Q4 — Jan 15','/deadlines#q4']].map(([l,h]) => (
-                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
+                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Blog</div>
+              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Blog</div>
               {[['/blog/mileage-rate-2026','Mileage Rate 2026'],['/blog/amazon-flex-taxes-2026','Amazon Flex Taxes'],['/blog/grubhub-vs-doordash-taxes-2026','Grubhub vs DoorDash'],['/blog/w2-vs-1099-guide-2026','W-2 vs 1099 Guide'],['/blog/quarterly-taxes-gig-workers','Quarterly Taxes Guide'],['/blog','All Articles →']].map(([h,l]) => (
-                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
+                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.4)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Legal</div>
+              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Legal</div>
               {[['/about','About Us'],['/privacy','Privacy Policy'],['/terms','Terms of Service']].map(([h,l]) => (
-                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:13, color:'rgba(255,255,255,.3)', marginBottom:8 }}>{l}</a>
+                <a key={h} href={h} style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
           </div>
           <div style={{ borderTop:'1px solid rgba(255,255,255,.06)', padding:'16px 20px' }}>
             <div style={{ maxWidth:1200, margin:'0 auto' }}>
-              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.3)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:8 }}>Guides &amp; Resources</div>
+              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:8 }}>Guides &amp; Resources</div>
               <div style={{ display:'flex', gap:10, flexWrap:'wrap', marginBottom:16 }}>
                 {[
                   { label:' Multi-App Taxes',   href:'/multi-app-gig-taxes-2026'    },
@@ -104,7 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   { label:' Penalty Finder',    href:'/tax-penalty-finder'           },
                 ].map(l => (
                   <a key={l.href} href={l.href}
-                    style={{ fontSize:12, color:'rgba(255,255,255,.5)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
+                    style={{ fontSize:14, color:'rgba(255,255,255,.5)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
                     {l.label}
                   </a>
                 ))}
@@ -114,8 +114,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <div style={{ borderTop:'1px solid rgba(255,255,255,.06)' }}>
             <div style={{ maxWidth:1200, margin:'0 auto', padding:'14px 20px', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:8 }}>
-              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
-              <span style={{ fontSize:12, color:'rgba(255,255,255,.18)' }}> Made for U.S. Gig Workers ·  No data stored</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.18)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.18)' }}> Made for U.S. Gig Workers ·  No data stored</span>
             </div>
           </div>
         </footer>
