@@ -59,7 +59,7 @@ export default function CalculatorsIndex() {
             </div>
             <div style={{ padding: "14px 20px", display: "flex", gap: 10, flexWrap: "wrap" }}>
               {TOP_STATES.map(state => (
-                <Link key={state.slug} href={`/${platform.slug}/${state.slug}`} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
+                <Link key={state.slug} href={`/${platform.slug}/${state.slug}`} style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 4, padding: "8px 14px", textDecoration: "none", color: 'rgba(255,255,255,0.85)', fontSize: 13, fontWeight: 500, display: "flex", alignItems: "center", gap: 6 }}>
                   {state.name}
                   <span style={{ color: state.rate === "No Tax" ? "#059669" : "#B22234", fontWeight: 700, fontSize: 11 }}>{state.rate}</span>
                 </Link>

@@ -40,7 +40,7 @@ export default function DeadlinesBlog() {
           </nav>
           <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' as const }}>
             {['1099','Tax Deadlines','Quarterly Taxes','2025'].map(t => (
-              <span key={t} style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
+              <span key={t} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
             ))}
           </div>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
@@ -86,7 +86,7 @@ export default function DeadlinesBlog() {
             <Link href="/quarterly-reminder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
                Sign Up for Free Reminders →
             </Link>
-            <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
+            <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#0d2340', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid #2a6496' }}>
                Calculate My Quarterly Payment →
             </Link>
           </div>

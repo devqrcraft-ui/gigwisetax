@@ -159,7 +159,7 @@ export default function CalculatorPage({ params }) {
         <div style={{ maxWidth: 1000, margin: "0 auto", padding: "36px 20px" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" }}>
             <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>{p.name}</span>
-            <span style={{ background: "rgba(255,255,255,.82)", color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
+            <span style={{ background: '#0d2340', color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
             {!s.hasTax && <span style={{ background: "#0d7a40", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>✓ No State Tax</span>}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
@@ -239,7 +239,7 @@ export default function CalculatorPage({ params }) {
                   { title: " Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
                   { title: " Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },
                 ].map(d => (
-                  <div key={d.title} style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 6, padding: "14px 16px" }}>
+                  <div key={d.title} style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 6, padding: "14px 16px" }}>
                     <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 4 }}>{d.title}</div>
                     <div style={{ fontSize: 13, color: "#B22234", fontWeight: 600, marginBottom: 4 }}>{d.val}</div>
                     <div style={{ fontSize: 12, color: "#7a9abf" }}>{d.desc}</div>

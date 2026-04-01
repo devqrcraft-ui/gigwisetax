@@ -30,7 +30,7 @@ export default function W9MistakesBlog() {
           </nav>
           <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' as const }}>
             {['W-9 Form','1099','IRS Penalties','Gig Workers'].map(t => (
-              <span key={t} style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
+              <span key={t} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
             ))}
           </div>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
@@ -81,7 +81,7 @@ export default function W9MistakesBlog() {
             <p style={{ color: '#fff', fontSize: 16, fontWeight: 600, margin: '0 0 16px' }}>Calculate your exact tax bill and find every deduction</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none' }}> Tax Penalty Finder</Link>
-              <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}> Deductions Checklist</Link>
+              <Link href="/deductions" style={{ display: 'block', background: '#0d2340', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', border: '1px solid #2a6496' }}> Deductions Checklist</Link>
             </div>
           </div>
 

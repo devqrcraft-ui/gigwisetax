@@ -38,7 +38,7 @@ export default function EtsyDeductionsBlog() {
           </nav>
           <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' as const }}>
             {['Etsy','Tax Deductions','1099-K','Seller Guide'].map(t => (
-              <span key={t} style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
+              <span key={t} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
             ))}
           </div>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
@@ -62,7 +62,7 @@ export default function EtsyDeductionsBlog() {
               <h2 style={h2}>{cat.cat}</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
                 {cat.items.map((item, j) => (
-                  <div key={j} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
+                  <div key={j} style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 6, padding: '12px 14px', fontSize: 14, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
                     <span style={{ color: '#22c55e', fontWeight: 800, flexShrink: 0 }}>✓</span>
                     {item}
                   </div>
@@ -85,7 +85,7 @@ export default function EtsyDeductionsBlog() {
             <Link href="/etsy" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
                Open Etsy Tax Calculator →
             </Link>
-            <Link href="/deductions" style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
+            <Link href="/deductions" style={{ display: 'block', background: '#0d2340', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid #2a6496' }}>
                Full Deductions Checklist →
             </Link>
           </div>

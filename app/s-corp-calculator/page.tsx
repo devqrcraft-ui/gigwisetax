@@ -115,7 +115,7 @@ export default function SCorpCalculator() {
               <div style={{ fontSize: 60, fontWeight: 900, color: '#fff', lineHeight: 1 }}>{fmt(result.savings)}</div>
               <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', marginTop: 8 }}>per year (after ~$2,500 compliance costs)</div>
               <div style={{ fontSize: 15, color: '#fff', marginTop: 14, fontWeight: 700 }}>
-                Over 5 years: <span style={{ background: 'rgba(255,255,255,.82)', padding: '2px 10px', borderRadius: 4 }}>{fmt(result.savings * 5)}</span> in tax savings
+                Over 5 years: <span style={{ background: '#0d2340', padding: '2px 10px', borderRadius: 4 }}>{fmt(result.savings * 5)}</span> in tax savings
               </div>
             </>) : (<>
               <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.55)', letterSpacing: 1, marginBottom: 8 }}>S-CORP MAY NOT BE WORTH IT YET</div>

@@ -66,7 +66,7 @@ export default function DeductionsChecklist() {
       </div>
 
       {/* INCOME INPUT */}
-      <div style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' as const }}>
+      <div style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' as const }}>
         <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, fontWeight: 600 }}>Your annual income:</span>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
           {['20000','35000','50000','75000','100000'].map(v => (
@@ -145,7 +145,7 @@ export default function DeductionsChecklist() {
           File with TurboTax Self-Employed →
         </a>
         <a href="/tax-penalty-finder"
-          style={{ display: 'block', background: '#0d2340', color: '#C8D8EC', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
+          style={{ display: 'block', background: '#0d2340', color: '#C8D8EC', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid #2a6496' }}>
            Get My Full Tax Penalty Report →
         </a>
       </div>

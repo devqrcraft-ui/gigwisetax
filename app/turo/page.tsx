@@ -268,11 +268,11 @@ export default function TuroPage() {
             </div>
             <div style={{ padding:'16px 20px', display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
               
-              <a href="/airbnb" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
-              <a href="/etsy" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
-              <a href="/deadlines" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.1)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
+              <a href="/airbnb" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Airbnb Tax Calculator</a>
+              <a href="/etsy" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
+              <a href="/deadlines" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
+              <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
+              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

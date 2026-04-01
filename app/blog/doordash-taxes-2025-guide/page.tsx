@@ -31,7 +31,7 @@ export default function DoorDashTaxesBlog() {
           </nav>
           <div style={{ display: 'flex', gap: 8, marginBottom: 14, flexWrap: 'wrap' as const }}>
             {['DoorDash','Taxes 2025','1099','Delivery Driver'].map(t => (
-              <span key={t} style={{ background: 'rgba(255,255,255,.82)', border: '1px solid rgba(255,255,255,.82)', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
+              <span key={t} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 3, padding: '3px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)' }}>{t}</span>
             ))}
           </div>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
@@ -61,7 +61,7 @@ export default function DoorDashTaxesBlog() {
               { label: 'SE Tax Deduction', value: '-50%', detail: 'Deduct half of SE tax from taxable income' },
               { label: 'State Income Tax', value: '0–9.3%', detail: 'No tax in TX, FL, NV. Up to 9.3% in CA' },
             ].map(item => (
-              <div key={item.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid #e2e8f0', borderRadius: 6, padding: '14px' }}>
+              <div key={item.label} style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 6, padding: '14px' }}>
                 <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
                 <div style={{ fontSize: 24, fontWeight: 900, color: '#B22234', marginBottom: 4 }}>{item.value}</div>
                 <div style={{ fontSize: 12, color: '#7a9abf' }}>{item.detail}</div>
@@ -114,7 +114,7 @@ export default function DoorDashTaxesBlog() {
             <Link href="/doordash" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none', marginBottom: 10 }}>
                Open DoorDash Tax Calculator →
             </Link>
-            <Link href="/tax-penalty-finder" style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
+            <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#0d2340', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid #2a6496' }}>
                Find My Tax Overpayment →
             </Link>
           </div>
