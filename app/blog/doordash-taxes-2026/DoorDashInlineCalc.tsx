@@ -4,7 +4,10 @@ import { useState } from 'react';
 export default function DoorDashInlineCalc() {
   const [income, setIncome] = useState('');
   const [miles, setMiles] = useState('');
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<{
+    gross:number; netIncome:number; mileDeduct:number;
+    seTax:number; fed:number; total:number; quarterly:number; pct:string;
+  }|null>(null);
 
   function calc() {
     const gross = parseFloat(income.replace(/,/g,'')) || 0;
@@ -24,7 +27,7 @@ export default function DoorDashInlineCalc() {
     setResult({ gross, netIncome, mileDeduct, seTax, fed, total, quarterly, pct: gross > 0 ? (total/gross*100).toFixed(1) : '0' });
   }
 
-  const fmt = n => Math.round(n||0).toLocaleString('en-US', { style:'currency', currency:'USD', maximumFractionDigits:0 });
+  const fmt = (n: number) => Math.round(n||0).toLocaleString('en-US', { style:'currency', currency:'USD', maximumFractionDigits:0 });
 
   return (
     <div style={{ background:'#0d1b2e', border:'2px solid #e8b84b', borderRadius:12, padding:24, margin:'32px 0', maxWidth:500 }}>
