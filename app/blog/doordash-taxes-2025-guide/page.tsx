@@ -19,7 +19,7 @@ export default function DoorDashTaxesBlog() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How did DoorDash taxes work in 2025?","acceptedAnswer":{"@type":"Answer","text":"In 2025, DoorDash drivers paid SE tax (15.3%) plus income tax as 1099 contractors. The IRS mileage rate was 67 cents/mile. DoorDash issued 1099-NEC forms for earnings over $600 by January 31, 2026."}},{"@type":"Question","name":"What changed for DoorDash taxes from 2025 to 2026?","acceptedAnswer":{"@type":"Answer","text":"The basic structure remains the same — 1099 income, SE tax, mileage deductions. Check the current federal tax brackets and confirm the mileage rate for 2026 with our calculator for the most accurate estimate."}},{"@type":"Question","name":"Did the 1099 threshold change for DoorDash in 2025?","acceptedAnswer":{"@type":"Answer","text":"The 1099-NEC threshold remained at $600 in 2025. DoorDash issues a 1099-NEC to all drivers earning $600 or more. All income must be reported on Schedule C regardless of whether a 1099 is received."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How did DoorDash taxes work in 2025?","acceptedAnswer":{"@type":"Answer","text":"In 2025, DoorDash drivers paid SE tax (15.3%) plus income tax as 1099 contractors. The IRS mileage rate was 70 cents/mile. DoorDash issued 1099-NEC forms for earnings over $600 by January 31, 2026."}},{"@type":"Question","name":"What changed for DoorDash taxes from 2025 to 2026?","acceptedAnswer":{"@type":"Answer","text":"The basic structure remains the same — 1099 income, SE tax, mileage deductions. Check the current federal tax brackets and confirm the mileage rate for 2026 with our calculator for the most accurate estimate."}},{"@type":"Question","name":"Did the 1099 threshold change for DoorDash in 2025?","acceptedAnswer":{"@type":"Answer","text":"The 1099-NEC threshold remained at $600 in 2025. DoorDash issues a 1099-NEC to all drivers earning $600 or more. All income must be reported on Schedule C regardless of whether a 1099 is received."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '3px solid #B22234', padding: '40px 20px 32px' }}>
         <div style={{ maxWidth: 780, margin: '0 auto' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 16 }}>
@@ -44,7 +44,7 @@ export default function DoorDashTaxesBlog() {
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
         <div style={s}>
           <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
-            <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.725/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
+            <strong>Quick Summary:</strong> DoorDash drivers pay 15.3% SE tax + federal income tax + state tax. Set aside 25-30% of net income. Top deductions: mileage ($0.70/mile), phone, insulated bags. Quarterly deadlines: Apr 15, Jun 16, Sep 15, Jan 15.
           </div>
 
           <p style={p}>There are over 7 million active DoorDash drivers in the United States. Most of them overpay taxes by $1,000–$4,000 per year — simply because they don't know the rules. This guide covers everything you need to know about DoorDash taxes in 2025.</p>
@@ -70,8 +70,8 @@ export default function DoorDashTaxesBlog() {
           </div>
 
           <h2 style={h2}>Top DoorDash Tax Deductions for 2025</h2>
-          <h3 style={h3}>1. Mileage Deduction — $0.725 per mile</h3>
-          <p style={p}>The mileage deduction is the single biggest tax break for DoorDash drivers. The 2025 IRS standard mileage rate is $0.725 per mile for business driving. On 15,000 business miles per year, that's a $10,050 deduction — saving approximately $2,940 in taxes (at 28% combined rate).</p>
+          <h3 style={h3}>1. Mileage Deduction — $0.70 per mile</h3>
+          <p style={p}>The mileage deduction is the single biggest tax break for DoorDash drivers. The 2025 IRS standard mileage rate is $0.70 per mile for business driving. On 15,000 business miles per year, that's a $10,500 deduction — saving approximately $2,940 in taxes (at 28% combined rate).</p>
           <div style={tip}> <strong>Pro tip:</strong> Track miles from the moment you open the DoorDash app until you complete your last delivery — not just while food is in your car. App opening, waiting at restaurants, and driving between orders all count.</div>
 
           <h3 style={h3}>2. Phone & Data Plan</h3>
