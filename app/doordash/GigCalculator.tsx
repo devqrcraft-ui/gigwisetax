@@ -14,6 +14,7 @@ export default function GigCalculator({
   deadlines: Deadline[]
 }) {
   const [income, setIncome]     = useState('')
+  const [miles, setMiles]       = useState('')
   const [stateSlug, setStateSlug] = useState('california')
   const [filing, setFiling]     = useState<'single'|'married'>('single')
   const [result, setResult]     = useState<any>(null)
@@ -21,18 +22,39 @@ export default function GigCalculator({
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
 
   const calculate = () => {
-    const net = parseFloat(income) || 0
-    if (!net) return
+    const gross = parseFloat(income) || 0
+    if (!gross) return
+    const mi = parseFloat(miles) || 0
+    const mileDeduct = mi * 0.725
+    const net = Math.max(0, gross - mileDeduct)
     const st = states.find(s => s.slug === stateSlug)
     const seBase   = net * 0.9235
     const seTax    = seBase * 0.153
-    const taxable  = net - seTax * 0.5
-    const fedRate  = filing === 'single' ? 0.22 : 0.12
-    const federal  = taxable * fedRate
+    const seDeduct = seTax * 0.5
+    const std = filing === 'married' ? 30000 : 15000
+    const taxable  = Math.max(0, net - seDeduct - std)
+    let federal = 0
+    if (filing === 'married') {
+      if (taxable > 768700) federal = 174238.25 + (taxable - 768700) * 0.37
+      else if (taxable > 512450) federal = 79087.25 + (taxable - 512450) * 0.35
+      else if (taxable > 403350) federal = 40426.75 + (taxable - 403350) * 0.32
+      else if (taxable > 201550) federal = 23200.75 + (taxable - 201550) * 0.24
+      else if (taxable > 100525) federal = 9328.75 + (taxable - 100525) * 0.22
+      else if (taxable > 23200) federal = 2320.00 + (taxable - 23200) * 0.12
+      else federal = taxable * 0.10
+    } else {
+      if (taxable > 626350) federal = 186601.50 + (taxable - 626350) * 0.37
+      else if (taxable > 250525) federal = 55374.00 + (taxable - 250525) * 0.35
+      else if (taxable > 197300) federal = 37104.00 + (taxable - 197300) * 0.32
+      else if (taxable > 100525) federal = 17168.50 + (taxable - 100525) * 0.24
+      else if (taxable > 48475) federal = 5426.50 + (taxable - 48475) * 0.22
+      else if (taxable > 11925) federal = 1192.50 + (taxable - 11925) * 0.12
+      else federal = taxable * 0.10
+    }
     const stateTax = taxable * (st?.rate ?? 0.05)
     const total    = federal + seTax + stateTax
-    const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)
-    setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
+    setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
   }
 
   const card    = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -100,11 +122,12 @@ export default function GigCalculator({
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
+              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: '$0.725/mile', hi: false } : null,
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
-            ].map((r, i) => (
+            ].filter(Boolean).map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: r.hi ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{r.val}</div>
