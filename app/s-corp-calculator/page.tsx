@@ -29,7 +29,7 @@ export default function SCorpCalculator() {
   const card = { background: '#0d1b3e', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 4px 24px rgba(0,0,0,.3)', marginBottom: 24 }
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
   const body = { padding: '24px' }
-  const inp  = { width: '100%', border: '2px solid #d1d5db', borderRadius: 6, padding: '13px 16px', fontSize: 18, fontWeight: 700, color: '#ffffff', background: '#ffffff', boxSizing: 'border-box' as const, marginTop: 8, outline: 'none' }
+  const inp  = { width: '100%', border: '2px solid #2a6496', borderRadius: 6, padding: '13px 16px', fontSize: 18, fontWeight: 700, color: '#ffffff', background: '#0d2340', boxSizing: 'border-box' as const, marginTop: 8, outline: 'none' }
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 16 } as const
   const lbl  = { fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.85)', display: 'block', marginTop: 20 } as const
 
