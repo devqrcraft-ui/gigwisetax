@@ -194,9 +194,9 @@ export default function HomeClient() {
                     <div
                       key={ex.label}
                       onClick={() => loadExample(ex)}
-                      style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.09)', borderRadius: 8, padding: '16px 14px', cursor: 'pointer', transition: 'all .15s' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
+                      style={{ background: '#102e52', border: '1px solid #2a6496', borderRadius: 10, padding: '20px 16px', cursor: 'pointer', transition: 'all .15s', textAlign: 'center' as const }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8b84b'; (e.currentTarget as HTMLElement).style.background = '#1a3f6a' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2a6496'; (e.currentTarget as HTMLElement).style.background = '#102e52' }}
                     >
                       <div style={{ fontSize: 'clamp(16px,3.5vw,18px)', fontWeight: 800, color: '#ffffff', marginBottom: 6, textAlign: 'center', textShadow: '0 1px 3px rgba(0,0,0,.4)' }}>{ex.label}</div>
                       <div style={{ fontSize: 'clamp(13px,3vw,14px)', color: '#a8c8e8', marginBottom: 10, textAlign: 'center' }}>{ex.tag}</div>
