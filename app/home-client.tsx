@@ -188,7 +188,8 @@ export default function HomeClient() {
                 <div style={{ fontSize: 13, fontWeight: 800, color:'rgba(255,255,255,.75)', textTransform:'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
                    Quick Examples — tap to load
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 8 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
+                  {/* 2-col desktop, 1-col mobile via inline media */}
                   {QUICK_EXAMPLES.map(ex => (
                     <div
                       key={ex.label}
@@ -197,9 +198,9 @@ export default function HomeClient() {
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 17, fontWeight: 800, color: '#fff', marginBottom: 5 }}>{ex.label}</div>
-                      <div style={{ fontSize: 14, color:'rgba(255,255,255,.75)', marginBottom:6 }}>{ex.tag}</div>
-                      <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 'clamp(15px,3.5vw,17px)', fontWeight: 800, color: '#fff', marginBottom: 4, textAlign: 'center' }}>{ex.label}</div>
+                      <div style={{ fontSize: 'clamp(13px,3vw,14px)', color:'rgba(200,216,236,.8)', marginBottom: 8, textAlign: 'center' }}>{ex.tag}</div>
+                      <div style={{ fontSize: 'clamp(13px,3vw,15px)', fontWeight: 700, color: '#e8b84b', textAlign: 'center' }}>→ Load into calculator</div>
                     </div>
                   ))}
                 </div>
