@@ -74,7 +74,7 @@ export default function SCorpCalculator() {
           <div style={{ display: 'flex', gap: 8, marginTop: 10, flexWrap: 'wrap' as const }}>
             {['40000','60000','80000','100000','120000','150000'].map(v => (
               <button key={v} onClick={() => setIncome(v)}
-                style={{ background: income === v ? '#1e2d5a' : 'rgba(255,255,255,0.08)', color: income === v ? '#fff' : 'rgba(255,255,255,0.75)', border: income === v ? '2px solid #B22234' : '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
+                style={{ background: income === v ? '#1e2d5a' : '#0d2340', color: income === v ? '#fff' : 'rgba(255,255,255,0.75)', border: income === v ? '2px solid #B22234' : '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '8px 14px', fontSize: 13, fontWeight: 700, cursor: 'pointer' }}>
                 ${parseInt(v)/1000}k
               </button>
             ))}

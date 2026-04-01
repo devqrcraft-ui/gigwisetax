@@ -71,7 +71,7 @@ export default function DeductionsChecklist() {
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
           {['20000','35000','50000','75000','100000'].map(v => (
             <button key={v} onClick={() => setIncome(v)}
-              style={{ background: income===v?'#B22234':'rgba(255,255,255,.82)', color: '#fff', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
+              style={{ background: income===v?'#B22234':'#0d2340', color: '#fff', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
               ${parseInt(v)/1000}k
             </button>
           ))}
@@ -100,7 +100,7 @@ export default function DeductionsChecklist() {
       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const, marginBottom: 20 }}>
         {CATEGORIES.map(cat => (
           <button key={cat} onClick={() => setCategory(cat)}
-            style={{ background: category===cat?'#B22234':'rgba(255,255,255,.82)', color: '#fff', border: category===cat?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+            style={{ background: category===cat?'#B22234':'#0d2340', color: '#fff', border: category===cat?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 20, padding: '6px 14px', fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
             {cat}
           </button>
         ))}
@@ -119,7 +119,7 @@ export default function DeductionsChecklist() {
             <div key={d.id} onClick={() => toggle(d.id)}
               style={{ display: 'flex', gap: 16, padding: '16px 20px', borderBottom: i < filtered.length-1 ? '1px solid rgba(255,255,255,0.07)' : 'none', cursor: 'pointer', background: checked.has(d.id) ? 'rgba(5,150,105,0.12)' : 'transparent', transition: 'background .2s', alignItems: 'flex-start' }}>
               {/* CHECKBOX */}
-              <div style={{ width: 24, height: 24, borderRadius: 6, border: checked.has(d.id) ? '2px solid #16a34a' : '2px solid #d1d5db', background: checked.has(d.id) ? '#16a34a' : '#fff', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 2, transition: 'all .2s' }}>
+              <div style={{ width: 24, height: 24, borderRadius: 6, border: checked.has(d.id) ? '2px solid #16a34a' : '2px solid #3a6496db', background: checked.has(d.id) ? '#16a34a' : '#fff', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 2, transition: 'all .2s' }}>
                 {checked.has(d.id) && <span style={{ color: '#fff', fontSize: 14, fontWeight: 900 }}>✓</span>}
               </div>
               {/* CONTENT */}
@@ -145,7 +145,7 @@ export default function DeductionsChecklist() {
           File with TurboTax Self-Employed →
         </a>
         <a href="/tax-penalty-finder"
-          style={{ display: 'block', background: 'rgba(255,255,255,.82)', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
+          style={{ display: 'block', background: '#0d2340', color: '#C8D8EC', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 600, textDecoration: 'none', border: '1px solid rgba(255,255,255,.82)' }}>
            Get My Full Tax Penalty Report →
         </a>
       </div>
