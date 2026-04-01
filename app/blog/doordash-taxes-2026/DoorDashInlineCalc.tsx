@@ -74,7 +74,7 @@ export default function DoorDashInlineCalc() {
               ['Self-employment tax (15.3%)', fmt(result.seTax)],
               ['Federal income tax (est.)', fmt(result.fed)],
             ].map(([label, val]) => (
-              <div key={label} style={{ display:'flex', justifyContent:'space-between', padding:'6px 0', borderBottom:'1px solid #e8b84b11' }}>
+              <div key={String(label)} style={{ display:'flex', justifyContent:'space-between', padding:'6px 0', borderBottom:'1px solid #e8b84b11' }}>
                 <span style={{ color:'#7a9abf', fontSize:13 }}>{label}</span>
                 <span style={{ color:'#C8D8EC', fontSize:13, fontWeight:700 }}>{val}</span>
               </div>
