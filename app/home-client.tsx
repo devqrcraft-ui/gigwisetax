@@ -198,9 +198,9 @@ export default function HomeClient() {
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(232,184,75,.5)'; (e.currentTarget as HTMLElement).style.background = 'rgba(232,184,75,.07)' }}
                       onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,.09)'; (e.currentTarget as HTMLElement).style.background = 'rgba(255,255,255,.04)' }}
                     >
-                      <div style={{ fontSize: 'clamp(15px,3.5vw,17px)', fontWeight: 800, color: '#fff', marginBottom: 4, textAlign: 'center' }}>{ex.label}</div>
-                      <div style={{ fontSize: 'clamp(13px,3vw,14px)', color:'rgba(200,216,236,.8)', marginBottom: 8, textAlign: 'center' }}>{ex.tag}</div>
-                      <div style={{ fontSize: 'clamp(13px,3vw,15px)', fontWeight: 700, color: '#e8b84b', textAlign: 'center' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 'clamp(16px,3.5vw,18px)', fontWeight: 800, color: '#ffffff', marginBottom: 6, textAlign: 'center', textShadow: '0 1px 3px rgba(0,0,0,.4)' }}>{ex.label}</div>
+                      <div style={{ fontSize: 'clamp(13px,3vw,14px)', color: '#a8c8e8', marginBottom: 10, textAlign: 'center' }}>{ex.tag}</div>
+                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}>→ Load into calculator</div>
                     </div>
                   ))}
                 </div>
