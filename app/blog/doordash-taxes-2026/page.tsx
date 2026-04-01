@@ -10,10 +10,9 @@ export const metadata = {
   title: "DoorDash Taxes 2026: How Much to Set Aside? Free Calculator",
   description: "DoorDash drivers pay 15.3% self-employment tax + federal income tax. See exactly how much to set aside for 2026 quarterly payments. Free calculator, instant results.",
   alternates: { canonical: "https://gigwisetax.com/blog/doordash-taxes-2026" },
-},
   openGraph: {
-    title: 'DoorDash Taxes 2026: How Much Do Dashers Owe?',
-    description: 'DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage $0.725/mile. Free calculator — no signup.',
+    title: 'DoorDash Taxes 2026: How Much to Set Aside? Free Calculator',
+    description: 'DoorDash drivers pay 15.3% SE tax + federal income tax. Free calculator, instant results.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
