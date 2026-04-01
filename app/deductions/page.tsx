@@ -79,9 +79,9 @@ export default function DeductionsChecklist() {
       </div>
 
       {/* SAVINGS COUNTER */}
-      <div style={{ background: checkedCount > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : 'rgba(255,255,255,.82)', border: checkedCount > 0 ? 'none' : '1px solid rgba(255,255,255,.82)', borderRadius: 8, padding: '20px 24px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' as const, gap: 12, transition: 'all .3s' }}>
+      <div style={{ background: checkedCount > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : '#0d2340', border: checkedCount > 0 ? 'none' : '1px solid #2a6496', borderRadius: 8, padding: '20px 24px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' as const, gap: 12, transition: 'all .3s' }}>
         <div>
-          <div style={{ color: checkedCount > 0 ? 'rgba(255,255,255,.8)' : 'rgba(255,255,255,.4)', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
+          <div style={{ color: checkedCount > 0 ? 'rgba(255,255,255,.8)' : 'rgba(200,216,236,.7)', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
             {checkedCount > 0 ? `${checkedCount} DEDUCTIONS SELECTED` : 'CHECK DEDUCTIONS BELOW'}
           </div>
           <div style={{ color: '#fff', fontSize: 28, fontWeight: 900 }}>
