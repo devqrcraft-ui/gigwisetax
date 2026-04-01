@@ -7,12 +7,12 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: "DoorDash Taxes 2026: How Much to Set Aside? Free Calculator",
-  description: "DoorDash drivers pay 15.3% self-employment tax + federal income tax. See exactly how much to set aside for 2026 quarterly payments. Free calculator, instant results.",
+  title: "DoorDash Taxes 2026: How Much Do You Owe? Free Calculator",
+  description: "How much does DoorDash take out for taxes? Zero — you owe it yourself. DoorDash drivers pay 15.3% SE tax + income tax. Free 2026 calculator, instant results, all 50 states.",
   alternates: { canonical: "https://gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
-    title: 'DoorDash Taxes 2026: How Much to Set Aside? Free Calculator',
-    description: 'DoorDash drivers pay 15.3% SE tax + federal income tax. Free calculator, instant results.',
+    title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
+    description: 'How much does DoorDash take out for taxes? Zero — you owe it. Free 2026 calculator: SE tax, federal, state, quarterly payments.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
