@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/lyft-driver-taxes-2026' },
   title: 'Lyft Driver Taxes 2026 — Complete Tax Guide | GigWiseTax',
   description: 'How to file Lyft driver taxes in 2026. Mileage deduction, 1099-NEC, quarterly payments. Free calculator.',
   keywords: 'lyft driver taxes 2026, lyft tax calculator, lyft 1099, lyft driver deductions',

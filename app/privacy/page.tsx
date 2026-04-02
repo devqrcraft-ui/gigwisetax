@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/privacy' },
   title: 'Privacy Policy — GigWiseTax.com',
   description: 'Privacy policy for GigWiseTax.com. We store no personal data. No registration required. Learn how we handle your information.',
 }

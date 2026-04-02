@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/airbnb-host-taxes-2026' },
   title: 'Airbnb Host Taxes 2026 — Complete Guide | GigWiseTax',
   description: 'How Airbnb hosts file taxes in 2026. Schedule E vs Schedule C, deductions, occupancy tax. Free calculator.',
   keywords: 'airbnb host taxes 2026, airbnb tax calculator, airbnb 1099-K, airbnb schedule E',

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
   title: 'Quarterly Taxes for Gig Workers 2026 — Complete Guide | GigWiseTax',
   description: 'How to pay quarterly estimated taxes as a gig worker in 2026. Deadlines, amounts, and step-by-step instructions for DoorDash, Uber, Etsy, and more.',
   keywords: 'quarterly taxes gig workers, estimated tax payments 2026, 1040-ES, self-employment quarterly taxes',

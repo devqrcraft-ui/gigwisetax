@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog' },
   title: 'Gig Worker Tax Guides 2026 — DoorDash, Uber, Etsy, OnlyFans & More',
   description: 'Free 2026 tax guides for every gig platform: DoorDash, Uber, Lyft, Instacart, Amazon Flex, Airbnb, Etsy, OnlyFans. Deductions, quarterly taxes, Schedule C explained.',
   keywords: 'gig worker tax blog 2026, 1099 tax guides, self employment tax tips, delivery driver taxes',

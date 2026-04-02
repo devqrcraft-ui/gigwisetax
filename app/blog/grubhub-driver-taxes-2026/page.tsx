@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/grubhub-driver-taxes-2026' },
   title: 'Grubhub Driver Taxes 2026 — Complete Tax Guide | GigWiseTax',
   description: 'How to file Grubhub driver taxes in 2026. Mileage deduction, 1099-NEC, quarterly payments. Free calculator — no signup.',
   keywords: 'grubhub taxes 2026, grubhub driver tax calculator, grubhub 1099, grubhub mileage deduction',

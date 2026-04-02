@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-tax-guide-2026' },
   title: 'Instacart Shopper Taxes 2026 — Complete Guide | GigWiseTax',
   description: 'How to file Instacart taxes in 2026. 1099-NEC form, mileage deduction, quarterly payments. Free calculator.',
   keywords: 'instacart taxes 2026, instacart shopper tax calculator, instacart 1099',

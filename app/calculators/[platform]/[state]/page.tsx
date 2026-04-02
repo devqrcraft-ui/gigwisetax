@@ -85,7 +85,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === params.platform);
   const s = STATES.find(x => x.slug === params.state);
-  if (!p || !s) return { title: "Not Found" };
+  if (!p || !s) return {
+    alternates: { canonical: `https://www.gigwisetax.com/calculators/${params.platform}/${params.state}` },
+     title: "Not Found" };
 
   const noTax = !s.hasTax;
   const title = `${p.name} Tax Calculator ${s.name} 2026 — ${noTax ? "No State Tax" : `${(s.rate * 100).toFixed(1)}% State Rate`} | GigWiseTax`;

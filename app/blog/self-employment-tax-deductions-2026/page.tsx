@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026' },
   title: 'Self-Employment Tax Deductions 2026 — Complete List | GigWiseTax',
   description: 'Every tax deduction available to gig workers and self-employed in 2026. Mileage, home office, health insurance, QBI deduction, and more.',
   keywords: 'self employment tax deductions 2026, gig worker deductions, 1099 deductions, schedule C deductions',

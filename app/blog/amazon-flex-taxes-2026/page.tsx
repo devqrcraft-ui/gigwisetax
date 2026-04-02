@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' },
   title: 'Amazon Flex Taxes 2026: Complete Guide for Drivers',
   description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (70¢/mile), quarterly payments, and top deductions.',
 }

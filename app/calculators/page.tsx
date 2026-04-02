@@ -2,7 +2,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/calculators' },
   title: "Gig Worker Tax Calculators by Platform & State 2026 | GigWiseTax",
   description: "Free self-employment tax calculators for every gig platform in all 50 states. DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more. Updated for 2026.",
 };

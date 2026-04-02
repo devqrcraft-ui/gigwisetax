@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/mileage-rate-2026' },
   title: 'IRS Mileage Rate 2026: 70 Cents Per Mile — Complete Guide for Gig Workers',
   description: 'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Learn how to use it, track miles, and maximize your deduction as a DoorDash, Uber, or Amazon Flex driver.',
 }

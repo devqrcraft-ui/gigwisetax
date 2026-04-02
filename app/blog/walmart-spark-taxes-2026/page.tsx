@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/walmart-spark-taxes-2026' },
   title: 'Walmart Spark Driver Taxes 2026 — Complete Guide | GigWiseTax',
   description: 'How Walmart Spark drivers file taxes in 2026. 1099-NEC, mileage deduction, quarterly estimated payments. Free calculator.',
   keywords: 'walmart spark taxes 2026, walmart spark tax calculator, walmart spark 1099, spark driver taxes',

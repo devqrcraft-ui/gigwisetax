@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/contact' },
   title: 'Contact — GigWiseTax',
   description: 'Contact the GigWiseTax team.',
 }

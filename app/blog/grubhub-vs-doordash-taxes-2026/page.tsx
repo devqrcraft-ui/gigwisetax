@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/grubhub-vs-doordash-taxes-2026' },
   title: 'Grubhub vs DoorDash Taxes 2026: What\'s the Difference?',
   description: 'Both Grubhub and DoorDash classify drivers as 1099 contractors. But your deductions, income patterns, and strategies differ. Full comparison for 2026.',
 }

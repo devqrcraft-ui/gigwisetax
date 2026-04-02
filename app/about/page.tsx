@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/about' },
   title: 'About GigWiseTax — Free Tax Calculator for U.S. Gig Workers',
   description: 'GigWiseTax.com is a free, independent tax estimation tool for U.S. gig economy workers. No signup. No data stored. Built by gig workers, for gig workers.',
 }

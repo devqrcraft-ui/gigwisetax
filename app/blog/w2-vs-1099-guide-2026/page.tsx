@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
+export const metadata = {
+  alternates: { canonical: 'https://www.gigwisetax.com/blog/w2-vs-1099-guide-2026' },
   title: 'W-2 vs 1099 Tax Differences 2026 — Gig Worker Guide | GigWiseTax',
   description: 'W-2 vs 1099: tax differences, pros and cons, and what it means for gig workers in 2026. Free calculator included.',
   keywords: 'w2 vs 1099 taxes, 1099 employee taxes, gig worker w2 1099, self employment vs employee taxes 2026',
