@@ -11,12 +11,6 @@ const DEADLINES = [
 ]
 
 const PLATFORMS = ['DoorDash','Uber','Lyft','Etsy','Airbnb','OnlyFans','Instacart','Amazon Flex','Grubhub','Walmart Spark','Other']
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.gigwisetax.com/quarterly-reminder' },
-};
-
 export default function QuarterlyReminder() {
   const [step, setStep]         = useState<'form'|'success'>('form')
   const [name, setName]         = useState('')

@@ -15,12 +15,6 @@ const PLATFORMS = [
   { name: 'Grubhub',      emoji: '', mileage: true  },
   { name: 'Walmart Spark',emoji: '', mileage: true  },
 ]
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.gigwisetax.com/tax-penalty-finder' },
-};
-
 export default function TaxPenaltyFinder() {
   const [step, setStep]           = useState(0)
   const [platform, setPlatform]   = useState('')

@@ -2,12 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.gigwisetax.com/s-corp-calculator' },
-};
-
 export default function SCorpCalculator() {
   const [income, setIncome] = useState('')
   const [salary, setSalary] = useState('')

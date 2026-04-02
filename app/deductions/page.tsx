@@ -27,12 +27,6 @@ const DEDUCTIONS = [
 ]
 
 const CATEGORIES = ['All', ' Vehicle', ' Home', ' Tech', ' Business', ' Health', ' Retirement', ' Education', ' Tax']
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.gigwisetax.com/deductions' },
-};
-
 export default function DeductionsChecklist() {
   const [checked, setChecked]   = useState<Set<number>>(new Set())
   const [category, setCategory] = useState('All')

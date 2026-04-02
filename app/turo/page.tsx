@@ -42,12 +42,6 @@ const FAQ = [
 
 const _webAppSchema_turo = {"@context":"https://schema.org","@type":"WebApplication","name":"Turo Tax Calculator 2026","description":"Tax calculator for Turo car hosts. Rental income, depreciation, insurance, and expense deductions for 2026.","url":"https://www.gigwisetax.com/turo","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}};
 const _faqSchema_turo = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is Turo income taxed?","acceptedAnswer":{"@type":"Answer","text":"Turo rental income is generally reported on Schedule C as self-employment income if you actively manage your fleet, or Schedule E as rental income for passive hosting. Self-employment tax (15.3%) applies if reported on Schedule C."}},{"@type":"Question","name":"What can Turo hosts deduct?","acceptedAnswer":{"@type":"Answer","text":"Vehicle depreciation, insurance premiums (business portion), cleaning and detailing, maintenance and repairs, Turo platform fees (25-35%), mileage for vehicle pickup/dropoff, and a portion of registration fees."}},{"@type":"Question","name":"Does Turo send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Turo sends a 1099-K to hosts who receive $5,000 or more in payments in 2026. All rental income must be reported regardless of whether you receive a 1099."}},{"@type":"Question","name":"Can I depreciate my car as a Turo host?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you report on Schedule C, you can depreciate the business-use portion of your vehicle using MACRS (5-year property) or Section 179. Keep records of total miles vs. Turo rental days to calculate business-use percentage."}}]};
-
-
-export const metadata = {
-  alternates: { canonical: 'https://www.gigwisetax.com/turo' },
-};
-
 export default function TuroPage() {
   const [income, setIncome]   = useState('')
   const [rentalDays, setRentalDays] = useState('')
