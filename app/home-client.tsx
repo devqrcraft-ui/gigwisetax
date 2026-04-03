@@ -200,7 +200,7 @@ export default function HomeClient() {
                     >
                       <div style={{ fontSize: 'clamp(16px,3.5vw,18px)', fontWeight: 800, color: '#ffffff', marginBottom: 6, textAlign: 'center', textShadow: '0 1px 3px rgba(0,0,0,.4)' }}>{ex.label}</div>
                       <div style={{ fontSize: 'clamp(13px,3vw,14px)', color: '#a8c8e8', marginBottom: 10, textAlign: 'center' }}>{ex.tag}</div>
-                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}>→ Load into calculator</div>
+                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}><span class="btn-arrow">Load into calculator</span></div>
                     </div>
                   ))}
                 </div>
