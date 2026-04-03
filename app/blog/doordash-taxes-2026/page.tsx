@@ -192,10 +192,12 @@ export default function DoorDashTaxGuide() {
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related Guides</span>
             </div>
             {[
-              { label: ' Uber Tax Guide 2026', href: '/blog/uber-tax-guide-2026' },
-              { label: ' Instacart Tax Guide', href: '/blog/instacart-shopper-taxes-2026' },
-              { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
-              { label: ' DoorDash by State', href: '/doordash' },
+              { label: '🧮 DoorDash Tax Calculator', href: '/doordash' },
+              { label: '📋 1099 Tax Calculator', href: '/1099-tax-calculator' },
+              { label: '✅ Deductions Checklist', href: '/deductions' },
+              { label: '📅 Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
+              { label: '🚗 Uber Tax Guide 2026', href: '/blog/uber-tax-guide-2026' },
+              { label: '🛒 Instacart Tax Guide', href: '/blog/instacart-shopper-taxes-2026' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
