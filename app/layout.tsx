@@ -60,6 +60,28 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         <NavClient />
+        <div style={{
+          background: '#07111F',
+          borderBottom: '1px solid rgba(232,184,75,0.2)',
+          padding: '8px 16px',
+          overflowX: 'hidden' as const,
+        }}>
+          <div style={{
+            maxWidth: 1200,
+            margin: '0 auto',
+            display: 'flex',
+            flexWrap: 'wrap' as const,
+            gap: '6px 24px',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+            <span style={{ fontSize: 13, color: 'rgba(200,216,236,.85)', whiteSpace: 'nowrap' as const }}>⭐ <strong style={{ color: '#e8b84b' }}>"Saved me $3,200 on DoorDash taxes"</strong> — Alex M., CA</span>
+            <span style={{ fontSize: 13, color: 'rgba(200,216,236,.6)', display: 'none' }} className="trust-sep">|</span>
+            <span style={{ fontSize: 13, color: 'rgba(200,216,236,.85)', whiteSpace: 'nowrap' as const }}>🔒 100% Private — No data stored</span>
+            <span style={{ fontSize: 13, color: 'rgba(200,216,236,.85)', whiteSpace: 'nowrap' as const }}>✓ IRS 2026 — Updated April 2026</span>
+            <span style={{ fontSize: 13, color: 'rgba(200,216,236,.85)', whiteSpace: 'nowrap' as const }}>📊 All 51 states covered</span>
+          </div>
+        </div>
         <main>{children}</main>
 
         <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
