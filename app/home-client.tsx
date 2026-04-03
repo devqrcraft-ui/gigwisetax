@@ -200,7 +200,7 @@ export default function HomeClient() {
                     >
                       <div style={{ fontSize: 'clamp(16px,3.5vw,18px)', fontWeight: 800, color: '#ffffff', marginBottom: 6, textAlign: 'center', textShadow: '0 1px 3px rgba(0,0,0,.4)' }}>{ex.label}</div>
                       <div style={{ fontSize: 'clamp(13px,3vw,14px)', color: '#a8c8e8', marginBottom: 10, textAlign: 'center' }}>{ex.tag}</div>
-                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}><span class="btn-arrow">Load into calculator</span></div>
+                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}><span className="btn-arrow">Load into calculator <span className="arr">→</span></span></div>
                     </div>
                   ))}
                 </div>
@@ -285,7 +285,7 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  <div style={{ ...btnDark, fontSize: 16 }} onClick={calculate}> Calculate My Gig Taxes →</div>
+                  <div style={{ ...btnDark, fontSize: 16 }} onClick={calculate}> <span className="btn-arrow">Calculate My Gig Taxes <span className="arr">→</span></span></div>
                 </div>
               </div>
 
