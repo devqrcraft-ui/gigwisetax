@@ -337,3 +337,15 @@ select option {
 }
 a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 .nav-arrow-link{transition:all 0.15s ease;}
+
+@media(max-width:540px){
+  /* 1. Quick example cards — center text better */
+  .quick-cards-grid{grid-template-columns:1fr!important;}
+
+  /* 2. Income preset buttons — visible on mobile */
+  .income-btn{font-size:13px!important;padding:6px 10px!important;min-width:44px!important;min-height:36px!important;}
+
+  /* 3. Footer — 2 columns on mobile */
+  .footer-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
+  .footer-grid > div:last-child{grid-column:1/-1;}
+}
