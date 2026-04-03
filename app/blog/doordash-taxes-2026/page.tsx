@@ -8,7 +8,7 @@ import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
   title: "DoorDash Taxes 2026: How Much Do You Owe? Free Calculator",
-  description: "How much does DoorDash take out for taxes? Zero — you owe it yourself. DoorDash drivers pay 15.3% SE tax + income tax. Free 2026 calculator, instant results, all 50 states.",
+  description: "DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage deduction 72.5¢/mile. Free calculator — SE tax, quarterly payments, all 51 states. Updated April 2026.",
   alternates: { canonical: "https://gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
     title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
@@ -24,6 +24,7 @@ export default function DoorDashTaxGuide() {
 
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+      <style>{'.blog-grid{display:grid;grid-template-columns:1fr 280px;gap:24px}@media(max-width:700px){.blog-grid{grid-template-columns:1fr!important;grid-template-areas:none!important}.blog-sidebar{order:2;margin-top:0}}'}</style>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $30,000 net DoorDash income, total federal tax is approximately $7,500-$9,000."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. A Dasher driving 20,000 miles earns a $14,500 deduction. This is typically the single largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You will receive a 1099-NEC if you earned over $600. Access it via the DoorDash driver portal or Stripe Express dashboard."}}]}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -34,15 +35,15 @@ export default function DoorDashTaxGuide() {
             <span style={{ color: 'rgba(255,255,255,.7)' }}>DoorDash Taxes 2026</span>
           </nav>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-             DoorDash Taxes 2026 — Complete Guide for Dashers
+             DoorDash Taxes 2026: Calculator, Deductions & 1099 Guide for Dashers
           </h1>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-            Everything DoorDash drivers need to know about taxes in 2026. SE tax (15.3%), the new $0.725/mile mileage rate, quarterly payment deadlines, and every deduction Dashers can claim.
+            Everything DoorDash drivers need to know about taxes in 2026. SE tax (15.3%), the new $0.725/mile mileage rate, quarterly payment deadlines, and every deduction Dashers can claim. <span style={{fontSize:12,color:'rgba(255,255,255,.4)',display:'block',marginTop:8}}>Last updated April 2026 — reflects IRS 2026 rates & One Big Beautiful Bill tip deduction.</span>
           </p>
         </div>
       </div>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24, gridTemplateAreas: '"main sidebar"' }} className="blog-grid">
         <div>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
