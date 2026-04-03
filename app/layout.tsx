@@ -105,7 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   { label:' Penalty Finder',    href:'/tax-penalty-finder'           },
                 ].map(l => (
                   <a key={l.href} href={l.href}
-                    style={{ fontSize:14, color:'rgba(255,255,255,.85)', textDecoration:'none', background:'rgba(255,255,255,.04)', border:'1px solid rgba(255,255,255,.08)', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
+                    className="gwt-footer-link" style={{ fontSize:14, color:'rgba(255,255,255,.85)', textDecoration:'none', background:'#0d2340', border:'1px solid #2a6496', borderRadius:6, padding:'6px 12px', fontWeight:500 }}>
                     {l.label}
                   </a>
                 ))}
