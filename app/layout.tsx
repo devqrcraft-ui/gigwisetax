@@ -44,6 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         })}} />
       </head>
       <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden', minHeight:'100vh' }}>
+        <style>{'.gwt-footer-link:hover{color:#e8b84b!important;text-decoration:underline!important}.gwt-nav-link:hover{color:#e8b84b!important;background:rgba(232,184,75,0.08)!important;border-radius:4px}'}</style>
 
         <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 12px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
