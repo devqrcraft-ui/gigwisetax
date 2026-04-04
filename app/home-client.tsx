@@ -326,7 +326,7 @@ export default function HomeClient() {
                           {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 13, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
-                          <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.07)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
+                          <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.75)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
                           <div style={btnRed({ fontSize: 13, padding: '6px 0' })}>+ Calendar</div>
                         </div>
                       ))}
@@ -475,7 +475,7 @@ export default function HomeClient() {
                           {d.q}
                         </td>
                         <td style={{ padding: '14px 16px', color: '#c8d8ec', fontSize: 13 }}>{d.period}</td>
-                        <td style={{ padding: '14px 16px', fontWeight: 700, color: i===0 ? '#B22234' : 'rgba(255,255,255,0.07)', fontSize: 14 }}>{d.due}</td>
+                        <td style={{ padding: '14px 16px', fontWeight: 700, color: i===0 ? '#B22234' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{d.due}</td>
                         <td style={{ padding: '14px 16px' }}>
                           <span style={{ background: i===0 ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '4px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                         </td>
