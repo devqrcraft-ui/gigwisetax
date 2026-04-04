@@ -142,7 +142,7 @@ const CSS = `
   h1 { font-size: clamp(22px,5vw,36px); font-weight: 900; color: #fff; line-height: 1.2; margin-bottom: 12px; }
   h1 em { color: #e8b84b; font-style: normal; }
   .lead { font-size: 15px; color: #9ca3af; line-height: 1.75; margin-bottom: 12px; max-width: 720px; }
-  .disclaimer { font-size: 12px; color: rgba(255,255,255,.3); margin-bottom: 36px; }
+  .disclaimer { font-size: 13px; color: rgba(255,255,255,.7); margin-bottom: 36px; }
   h2 { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 16px; }
   h3 { font-size: 15px; font-weight: 700; color: #e8b84b; margin: 0 0 10px; }
   .section { margin-bottom: 52px; }
@@ -156,7 +156,7 @@ const CSS = `
   .combo { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 20px; }
   .combo-apps { font-size: 20px; margin-bottom: 8px; }
   .combo-title { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 4px; }
-  .combo-state { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+  .combo-state { font-size: 13px; color: rgba(255,255,255, 0.75); margin-bottom: 14px; }
   .row { display: flex; justify-content: space-between; font-size: 13px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
   .row:last-of-type { border-bottom: none; }
   .rl { color: rgba(255,255,255,0.5); }
@@ -164,7 +164,7 @@ const CSS = `
   .rv.red { color: #f87171; }
   .rv.green { color: #4ade80; }
   .rv.yellow { color: #e8b84b; }
-  .combo-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
+  .combo-note { font-size: 13px; color: rgba(255,255,255, 0.75); margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.06); line-height: 1.5; }
   .combo-cta { display: block; margin-top: 12px; background: #B22234; color: #fff; text-align: center; padding: 9px 0; border-radius: 6px; font-size: 13px; font-weight: 700; text-decoration: none; }
   .steps { counter-reset: step; margin-bottom: 24px; }
   .step { display: flex; gap: 16px; margin-bottom: 16px; }

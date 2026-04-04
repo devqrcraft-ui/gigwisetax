@@ -12,7 +12,7 @@ const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity
 const CSS = `
   body{background:#0d1117;}
   .sh-wrap{max-width:900px;margin:0 auto;padding:48px 24px 80px;color:#d1d5db;font-family:'IBM Plex Sans',sans-serif;}
-  .sh-badge{display:inline-block;background:rgba(178,34,52,.12);border:1px solid rgba(178,34,52,.35);color:#fca5a5;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
+  .sh-badge{display:inline-block;background:rgba(178,34,52,.12);border:1px solid rgba(178,34,52,.35);color:#fca5a5;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;margin-bottom:18px;}
   .sh-h1{font-size:clamp(24px,5vw,38px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:14px;}
   .sh-h1 em{color:#e8b84b;font-style:normal;}
   .sh-lead{font-size:15px;color:#9ca3af;line-height:1.75;margin-bottom:40px;max-width:700px;}
@@ -26,7 +26,7 @@ const CSS = `
   .rule-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
   .rule-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
   .rule-card.active{border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.05);}
-  .rule-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;color:rgba(255,255,255,0.5);}
+  .rule-label{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;color:rgba(255,255,255,0.5);}
   .rule-card.active .rule-label{color:#4ade80;}
   .rule-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:6px;}
   .rule-desc{font-size:13px;color:#9ca3af;line-height:1.6;}
@@ -54,7 +54,7 @@ const CSS = `
   .tl-dot.urgent{background:rgba(178,34,52,.2);border-color:rgba(178,34,52,.5);color:#fca5a5;}
   .tl-content{padding-top:4px;}
   .tl-date{font-size:13px;font-weight:700;color:#fff;margin-bottom:2px;}
-  .tl-desc{font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5;}
+  .tl-desc{font-size:13px;color:rgba(255,255,255,0.75);line-height:1.5;}
   .tl-penalty{font-size:12px;color:#f87171;font-weight:600;margin-top:3px;}
   .strategy-box{background:rgba(232,184,75,.06);border:1px solid rgba(232,184,75,.2);border-radius:12px;padding:22px;margin-bottom:16px;}
   .strategy-title{font-size:15px;font-weight:700;color:#e8b84b;margin-bottom:10px;}

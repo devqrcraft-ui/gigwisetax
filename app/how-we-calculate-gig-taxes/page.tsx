@@ -17,10 +17,10 @@ const CSS = `
   .section { margin-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.06); padding-bottom: 40px; }
   .section:last-child { border-bottom: none; }
   .formula-box { background: rgba(232,184,75,.06); border: 1px solid rgba(232,184,75,.2); border-radius: 10px; padding: 20px 24px; margin-bottom: 16px; font-family: 'Courier New', monospace; }
-  .formula-title { font-size: 11px; font-weight: 800; color: #e8b84b; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Segoe UI', sans-serif; }
+  .formula-title { font-size: 13px; font-weight: 800; color: #e8b84b; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Segoe UI', sans-serif; }
   .formula-line { font-size: 14px; color: #fff; margin-bottom: 6px; line-height: 1.7; }
   .formula-line span { color: #e8b84b; }
-  .formula-note { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 10px; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+  .formula-note { font-size: 13px; color: rgba(255,255,255, 0.75); margin-top: 10px; font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
   .source-box { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 8px; padding: 14px 18px; margin-bottom: 10px; }
   .source-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
   .source-text { font-size: 13px; color: #9ca3af; line-height: 1.65; }

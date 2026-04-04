@@ -25,9 +25,9 @@ const CSS = `
   .step-text strong{color:#fff;}
   .rates-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:40px;}
   .rate-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px;}
-  .rate-label{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
+  .rate-label{font-size:13px;color:rgba(255,255,255,0.75);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em;}
   .rate-val{font-size:24px;font-weight:700;color:#fff;}
-  .rate-sub{font-size:12px;color:rgba(255,255,255,0.5);margin-top:4px;}
+  .rate-sub{font-size:13px;color:rgba(255,255,255,0.75);margin-top:4px;}
   .platforms-section{margin-bottom:40px;}
   .platforms-section h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:16px;}
   .plat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
@@ -35,7 +35,7 @@ const CSS = `
   .plat-card:hover{border-color:rgba(139,92,246,.4);}
   .plat-emoji{font-size:22px;margin-bottom:6px;}
   .plat-name{font-size:13px;font-weight:600;color:#fff;}
-  .plat-type{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;}
+  .plat-type{font-size:13px;color:rgba(255,255,255,0.75);margin-top:2px;}
   .example-box{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px 28px;margin-bottom:40px;}
   .example-box h2{font-size:18px;font-weight:700;color:#fff;margin-bottom:18px;}
   .ex-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14px;}

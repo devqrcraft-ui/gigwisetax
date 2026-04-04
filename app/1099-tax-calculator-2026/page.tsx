@@ -20,7 +20,7 @@ const CSS = `
   .diff-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:20px;}
   .diff-card.w2{border-color:rgba(99,102,241,.3);}
   .diff-card.k99c{border-color:rgba(16,185,129,.3);}
-  .diff-title{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+  .diff-title{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
   .diff-card.w2 .diff-title{color:#a5b4fc;}
   .diff-card.k99c .diff-title{color:#6ee7b7;}
   .diff-row{display:flex;justify-content:space-between;font-size:13px;color:rgba(255,255,255,0.5);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);}
@@ -38,7 +38,7 @@ const CSS = `
   .plat-card:hover{border-color:rgba(16,185,129,.4);}
   .plat-emoji{font-size:22px;margin-bottom:6px;}
   .plat-name{font-size:13px;font-weight:600;color:#fff;}
-  .plat-type{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px;}
+  .plat-type{font-size:13px;color:rgba(255,255,255,0.75);margin-top:2px;}
   .faq-section{margin-top:48px;}
   .faq-section h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:20px;}
   .faq-q{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:16px 20px;margin-bottom:10px;}
