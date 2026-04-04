@@ -102,17 +102,17 @@ export default function HomeClient() {
   }
 
   /* ── shared style tokens ── */
-  const card     = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
+  const card     = { background: '#0d1f3c', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.2)' }
   const cardHd   = { background: 'rgba(255,255,255,0.07)', padding: '10px 12px', display: 'flex', alignItems: 'center', gap: 8, overflow: 'hidden' as const }
   const accent   = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
   const label    = { display: 'block', fontSize: 14, fontWeight: 700, color: '#a8b8d0', textTransform: 'uppercase' as const, letterSpacing: '0.5px', marginBottom: 10 }
-  const inp      = { width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1628', boxSizing: 'border-box' as const }
+  const inp      = { width: '100%', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 8, padding: '14px 16px', fontSize: 17, color: '#e8eef8', background: '#0a1f3d', boxSizing: 'border-box' as const }
   const btnDark  = { background: '#e8b84b', color: '#07111F', padding: '18px 0', borderRadius: 8, fontSize: 19, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px', boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }
   const formGrid = { display: 'grid', gridTemplateColumns: '1fr', gap: 14, marginBottom: 14 }
   const btnRed   = (extra: any = {}) => ({ background: '#B22234', color: '#fff', padding: '13px 0', borderRadius: 6, fontSize: 16, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%', boxShadow: '0 3px 8px rgba(178,34,52,0.35)', ...extra })
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
+    <div style={{ background: '#07111F', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
 
       {/* ━━ HERO STRIP ━━ */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
@@ -418,7 +418,7 @@ export default function HomeClient() {
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
                     <thead>
-                      <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
+                      <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
                           <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(178,34,52,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #B22234' : 'none' }}>{h}</th>
                         ))}
@@ -461,7 +461,7 @@ export default function HomeClient() {
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
-                    <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
+                    <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Quarter','Period','IRS Due Date','Days Left','Action'].map(h => (
                         <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
@@ -500,7 +500,7 @@ export default function HomeClient() {
               <div style={{ overflowX: 'auto' as const }}>
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
-                    <tr style={{ background: '#0d1b3e', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
+                    <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                       {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
                         <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
@@ -534,7 +534,7 @@ export default function HomeClient() {
 
 
           {/* QUICK LINKS */}
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
+          <div style={{ background: '#0d1f3c', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
               <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.75)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Popular Calculators</span>
             </div>
