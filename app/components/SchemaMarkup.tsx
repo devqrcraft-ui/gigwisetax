@@ -11,7 +11,7 @@ export function WebsiteSchema() {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "GigWiseTax",
-    "url": "https://gigwisetax.com",
+    "url": "https://www.gigwisetax.com",
     "description": "Free self-employment tax calculator for gig workers. All 51 states. Tax year 2026.",
     "potentialAction": {
       "@type": "SearchAction",
@@ -27,7 +27,7 @@ export function CalculatorSchema({ platformName, stateName }: { platformName: st
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": `${platformName} Tax Calculator 2026${stateName ? ` — ${stateName}` : ''}`,
-    "url": "https://gigwisetax.com",
+    "url": "https://www.gigwisetax.com",
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Web",
     "offers": {
@@ -39,7 +39,7 @@ export function CalculatorSchema({ platformName, stateName }: { platformName: st
     "provider": {
       "@type": "Organization",
       "name": "GigWiseTax",
-      "url": "https://gigwisetax.com"
+      "url": "https://www.gigwisetax.com"
     }
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -56,12 +56,12 @@ export function ArticleSchema({ title, description, datePublished }: { title: st
     "author": {
       "@type": "Organization",
       "name": "GigWiseTax",
-      "url": "https://gigwisetax.com"
+      "url": "https://www.gigwisetax.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "GigWiseTax",
-      "url": "https://gigwisetax.com"
+      "url": "https://www.gigwisetax.com"
     }
   }
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
