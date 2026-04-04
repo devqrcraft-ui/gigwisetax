@@ -11,7 +11,7 @@ export const metadata = {
   //_title: "DoorDash Taxes 2026: How Much Do You Owe? Free Calculator",
   description: 'Free DoorDash tax calculator 2026. Estimate self-employment tax, quarterly payments & every 1099 deduction for Dashers. Updated April 2026 · IRS compliant · All 51 states.',
   //_description: "DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage deduction 72.5¢/mile. Free calculator — SE tax, quarterly payments, all 51 states. Updated April 2026.",
-  alternates: { canonical: "https://gigwisetax.com/blog/doordash-taxes-2026" },
+  alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
     title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
     description: 'How much does DoorDash take out for taxes? Zero — you owe it. Free 2026 calculator: SE tax, federal, state, quarterly payments.',
