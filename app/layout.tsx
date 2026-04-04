@@ -30,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1a1a2e" />
@@ -149,8 +150,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}
 @media(max-width:640px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:14px!important;}}@media(max-width:400px){.footer-grid{grid-template-columns:1fr!important;}}`}</style>
         <Script src="/ai-chat-widget-final.js?v=4" strategy="lazyOnload" />
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">{
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-KR8CY8PKT0" strategy="lazyOnload" />
+        <Script id="gtag-init" strategy="lazyOnload">{
           `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-KR8CY8PKT0');`
         }</Script>
       <script dangerouslySetInnerHTML={{ __html: `

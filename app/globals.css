@@ -160,7 +160,7 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   h1 { font-size: 24px !important; }
   h2 { font-size: 20px !important; }
   h3 { font-size: 17px !important; }
-  table th { font-size: 12px !important; padding: 8px 6px !important; }
+  table th { font-size: 14px !important; padding: 8px 6px !important; }
   table td { font-size: 13px !important; padding: 8px 6px !important; }
   input, select { font-size: 16px !important; }
   label { font-size: 14px !important; }
@@ -176,13 +176,13 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
 
   /* Any element with inline font-size smaller than 13px — bump up */
   [style*="fontSize: 10"], [style*="fontSize:10"],
-  [style*="font-size: 10px"], [style*="font-size:10px"] { font-size: 12px !important; }
+  [style*="font-size: 10px"], [style*="font-size:10px"] { font-size: 14px !important; }
 
   [style*="fontSize: 11"], [style*="fontSize:11"],
   [style*="font-size: 11px"], [style*="font-size:11px"] { font-size: 13px !important; }
 
   [style*="fontSize: 12"], [style*="fontSize:12"],
-  [style*="font-size: 12px"], [style*="font-size:12px"] { font-size: 13px !important; }
+  [style*="font-size: 14px"], [style*="font-size: 14px"] { font-size: 13px !important; }
 
   [style*="fontSize: 13"], [style*="fontSize:13"],
   [style*="font-size: 13px"], [style*="font-size:13px"] { font-size: 14px !important; }
@@ -298,7 +298,7 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
     min-height: 44px !important;
     padding: 10px 12px !important;
     font-size: 16px !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
+    border: 1px solid rgba(255,255,255,0.85) !important;
     border-radius: 6px !important;
     width: 100% !important;
     appearance: auto !important;
@@ -314,7 +314,7 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
 select {
   color: #C8D8EC !important;
   background-color: #07111F !important;
-  border: 1px solid rgba(255,255,255,0.2) !important;
+  border: 1px solid rgba(255,255,255,0.85) !important;
   border-radius: 6px !important;
   min-height: 44px !important;
   padding: 10px 12px !important;
