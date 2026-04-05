@@ -420,7 +420,7 @@ export default function HomeClient() {
                     <thead>
                       <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
-                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#1a1a2efff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(232,184,75,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #e8b84b' : 'none' }}>{h}</th>
+                          <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(232,184,75,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #e8b84b' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
