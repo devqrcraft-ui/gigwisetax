@@ -83,7 +83,7 @@ export default function NavClient() {
       <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 20px', display:'flex', alignItems:'center', justifyContent:'space-between', height:60 }}>
 
         <Link href="/" style={{ textDecoration:'none', display:'flex', alignItems:'center', gap:12 }}>
-          <div style={{ width:38, height:38, background:'linear-gradient(135deg,#B22234,#3C3B6E)', borderRadius:6, display:'flex', alignItems:'center', justifyContent:'center' }}>
+          <div style={{ width:38, height:38, background:'linear-gradient(135deg,#e8b84b,#3C3B6E)', borderRadius:6, display:'flex', alignItems:'center', justifyContent:'center' }}>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <rect x="2" y="4" width="16" height="2" rx="1" fill="white" opacity=".9"/>
               <rect x="2" y="9" width="16" height="2" rx="1" fill="white" opacity=".9"/>
@@ -94,7 +94,7 @@ export default function NavClient() {
             <div style={{ fontWeight:900, fontSize:19, color:'#fff', letterSpacing:'-0.5px', lineHeight:1.1 }}>
               GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.82)', fontWeight:300, fontSize:13 }}>.COM</span>
             </div>
-            <div style={{ fontSize:12, color:'rgba(255,255,255,.3)', letterSpacing:'2px', textTransform:'uppercase' as const }}>Free · Independent · United States</div>
+            <div style={{ fontSize:12, color:'rgba(255,255,255,.85)', letterSpacing:'2px', textTransform:'uppercase' as const }}>Free · Independent · United States</div>
           </div>
         </Link>
 
@@ -138,9 +138,9 @@ export default function NavClient() {
         </nav>
 
         <div style={{ display:'flex', gap:10, alignItems:'center' }} className="desktop-cta">
-          <span style={{ fontSize:12, color:'rgba(255,255,255,.3)' }}> No data stored</span>
+          <span style={{ fontSize:12, color:'rgba(255,255,255,.85)' }}> No data stored</span>
           <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }}>
-            <div style={{ background:'#B22234', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
+            <div style={{ background:'#e8b84b', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
               Find My Savings 
             </div>
           </Link>
@@ -174,7 +174,7 @@ export default function NavClient() {
           ))}
           <div style={{ padding:16 }}>
             <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }} onClick={() => setMobileOpen(false)}>
-              <div style={{ background:'#B22234', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' as const }}>Find My Tax Savings </div>
+              <div style={{ background:'#e8b84b', color:'#fff', padding:'12px', borderRadius:4, fontSize:14, fontWeight:700, textAlign:'center' as const }}>Find My Tax Savings </div>
             </Link>
           </div>
         </div>
