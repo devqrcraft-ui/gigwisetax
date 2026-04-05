@@ -7,9 +7,9 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: 'DoorDash Taxes 2026: Calculator, 1099 Deductions & Take-Home Pay | GigWiseTax',
+  title: 'DoorDash Taxes 2026: Free Tax Calculator — How Much to Set Aside?',
   //_title: "DoorDash Taxes 2026: How Much Do You Owe? Free Calculator",
-  description: 'Free DoorDash tax calculator 2026. Estimate self-employment tax, quarterly payments & every 1099 deduction for Dashers. Updated April 2026 · IRS compliant · All 51 states.',
+  description: 'DoorDash drivers owe 15.3% self-employment tax + income tax. Free calculator: see exactly how much to set aside for 2026. Mileage deduction 72.5¢/mile. All 50 states.',
   //_description: "DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage deduction 72.5¢/mile. Free calculator — SE tax, quarterly payments, all 51 states. Updated April 2026.",
   alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
