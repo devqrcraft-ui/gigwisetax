@@ -3,8 +3,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Instacart Shopper Taxes 2026 — Gig Worker Tax Guide | GigWiseTax',
-  description: 'How Instacart shoppers and delivery workers pay taxes in 2026. SE tax 15.3%, mileage deduction $0.725/mile, quarterly estimated taxes, Schedule C, and 1099-NEC filing guide.',
+  title: 'Instacart Shopper Taxes 2026: Free Calculator — How Much Do You Owe?',
+  description: 'Instacart shoppers pay 15.3% SE tax on net earnings. Free calculator: see exactly how much to set aside for 2026. Mileage deduction $0.725/mile. All 50 states.',
   keywords: 'Instacart taxes 2026, Instacart self employment tax, Instacart shopper 1099, Instacart mileage deduction 2026, Instacart quarterly taxes',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
