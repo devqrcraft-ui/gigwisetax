@@ -27,7 +27,7 @@ const states = [
   'north-carolina','north-dakota','ohio','oklahoma','oregon',
   'pennsylvania','rhode-island','south-carolina','south-dakota',
   'tennessee','texas','utah','vermont','virginia','washington',
-  'west-virginia','wisconsin','wyoming','washington-dc',
+  'west-virginia','wisconsin','wyoming','district-of-columbia',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -64,21 +64,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7,
   }));
 
-  const calculatorPages = [
-    'doordash-tax-calculator-2026','uber-tax-calculator-2026',
-    'lyft-tax-calculator-2026','instacart-tax-calculator-2026',
-    'amazon-flex-tax-calculator-2026','airbnb-tax-calculator-2026',
-    'etsy-tax-calculator-2026','onlyfans-tax-calculator-2026',
-    'gig-worker-taxes-2026','self-employment-tax-calculator-2026',
-  ].map(slug => ({
-    url: `${BASE_URL}/${slug}`,
-    lastModified: now, changeFrequency: 'monthly' as const, priority: 0.75,
-  }));
 
   const stateCalcs = states.map(s => ({
     url: `${BASE_URL}/1099-tax-calculator/${s}`,
     lastModified: now, changeFrequency: 'monthly' as const, priority: 0.65,
   }));
 
-  return [...core, ...platformPages, ...blogPages, ...calculatorPages, ...stateCalcs];
+  return [...core, ...platformPages, ...blogPages, ...stateCalcs];
 }
