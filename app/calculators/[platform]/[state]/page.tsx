@@ -69,7 +69,7 @@ const STATES = [
   { slug: "vermont", name: "Vermont", abbr: "VT", rate: 0.0875, hasTax: true, note: "Vermont has a progressive income tax up to 8.75%." },
   { slug: "delaware", name: "Delaware", abbr: "DE", rate: 0.066, hasTax: true, note: "Delaware has a progressive income tax up to 6.6%." },
   { slug: "new-hampshire", name: "New Hampshire", abbr: "NH", rate: 0, hasTax: false, note: "New Hampshire has no earned income tax." },
-  { slug: "district-of-columbia", name: "Washington D.C.", abbr: "DC", rate: 0.0895, hasTax: true, note: "D.C. has a progressive income tax up to 8.95%." },
+  { slug: "washington-dc", name: "Washington D.C.", abbr: "DC", rate: 0.0895, hasTax: true, note: "D.C. has a progressive income tax up to 8.95%." },
 ];
 
 export async function generateStaticParams() {

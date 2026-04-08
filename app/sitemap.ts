@@ -27,7 +27,7 @@ const states = [
   'north-carolina','north-dakota','ohio','oklahoma','oregon',
   'pennsylvania','rhode-island','south-carolina','south-dakota',
   'tennessee','texas','utah','vermont','virginia','washington',
-  'west-virginia','wisconsin','wyoming','district-of-columbia',
+  'west-virginia','wisconsin','wyoming','washington-dc',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

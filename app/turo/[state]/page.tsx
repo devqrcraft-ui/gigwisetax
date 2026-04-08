@@ -308,7 +308,7 @@ const STATES = [
     "rate": 0
   },
   {
-    "slug": "district-of-columbia",
+    "slug": "washington-dc",
     "name": "District of Columbia",
     "abbr": "DC",
     "rate": 0.0895
