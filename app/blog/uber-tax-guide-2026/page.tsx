@@ -15,7 +15,7 @@ const faqSchema = {
   mainEntity: [
     { '@type': 'Question', name: 'How much tax does an Uber driver pay in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Uber drivers pay 15.3% self-employment tax plus federal income tax. On $45,000 net income after mileage deductions, expect to owe approximately $14,000-$17,000. Set aside 25-30% of each payment. The mileage deduction at $0.725/mile significantly reduces taxable income.' } },
     { '@type': 'Question', name: 'Can Uber drivers deduct tips in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Yes! A new 2026 tax law allows rideshare drivers to deduct qualified tips up to $25,000 from their income. This is a major new deduction for Uber and Lyft drivers. You still report the tip income, then deduct it separately.' } },
-    { '@type': 'Question', name: 'What is the 2026 mileage rate for Uber drivers?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS standard mileage rate is $0.725 per mile (70 cents). On 15,000 business miles, that is a $10,875 tax deduction — significantly reducing your taxable income.' } },
+    { '@type': 'Question', name: 'What is the 2026 mileage rate for Uber drivers?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS standard mileage rate is $0.725 per mile (72.5 cents). On 15,000 business miles, that is a $10,875 tax deduction — significantly reducing your taxable income.' } },
   ],
 }
 
