@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
       { source: '/onlyfans-tax-calculator-2026', destination: '/onlyfans', permanent: true },
       { source: '/amazon-flex-tax-calculator-2026', destination: '/amazon-flex', permanent: true },
       { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
+      { source: '/upwork', destination: '/calculators/upwork/california', permanent: true },
+      { source: '/fiverr', destination: '/calculators/fiverr/california', permanent: true },
+      { source: '/onlyfans/district-of-columbia', destination: '/calculators/onlyfans/washington-dc', permanent: true },
+      { source: '/compress-for-wordpress', destination: '/', permanent: true },
+      { source: '/compress-to-50kb', destination: '/', permanent: true },
     ];
   },
   compress: true,
