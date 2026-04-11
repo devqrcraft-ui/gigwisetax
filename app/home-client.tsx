@@ -236,7 +236,7 @@ export default function HomeClient() {
           {/* INCOME PRESETS */}
           <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
             {['20000','50000','100000','250000','500000'].map(v=>(
-              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background:income===v?'#e8b84b':'rgba(30,45,70,0.8)',color:income===v?'#07111f':'rgba(255,255,255,0.07)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.4)',background:income===v?'#e8b84b':'rgba(30,45,70,0.8)',color:income===v?'#07111f':'rgba(255,255,255,0.85)',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>
                 {v==='20000'?'$20k':v==='50000'?'$50k':v==='100000'?'$100k':v==='250000'?'$250k':'$500k'}
               </button>
             ))}
