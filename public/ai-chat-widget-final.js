@@ -1,3 +1,4 @@
+(function(){
 if (window.__aiChatLoaded) return;
 window.__aiChatLoaded = true;
 const css = `
@@ -83,3 +84,5 @@ setTimeout(()=>{
   badge.classList.add('show');
   setTimeout(()=>{if(!open)openChat();},1500);
 },25000);
+
+})();
