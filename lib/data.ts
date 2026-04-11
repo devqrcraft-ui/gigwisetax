@@ -70,7 +70,7 @@ export const DEADLINES_2026 = [
   { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
 ]
 
-export const MILEAGE_RATE_2026 = 0.70 // $0.725 per mile
+export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile (IRS 2026)
 
 export const DEDUCTIONS = {
   doordash: [
