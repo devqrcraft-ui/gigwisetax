@@ -31,7 +31,7 @@ const css = `
   #ai-input:focus{border-color:#e8b84b;}
   #ai-send{background:#e8b84b;border:none;border-radius:8px;width:42px;height:42px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   #ai-send svg{width:18px;height:18px;fill:#07111F;}
-  @media(max-width:540px){#ai-win{width:calc(100vw - 24px);right:12px;bottom:76px;height:160px;}.ai-msg{font-size:14px;}#ai-input{font-size:14px;}}
+  @media(max-width:540px){#ai-win{width:calc(100vw - 8px);right:4px;bottom:0px;height:260px;border-radius:16px 16px 0 0;}.ai-msg{font-size:14px;}#ai-input{font-size:14px;}}
 `;
 const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
 
