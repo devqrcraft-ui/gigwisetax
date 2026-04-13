@@ -9,6 +9,7 @@ const css = `
   #ai-badge.show{display:block;}
   #ai-win{position:fixed;bottom:84px;right:16px;z-index:9998;width:340px;height:210px;background:#07111F;border:1.5px solid rgba(232,184,75,0.4);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.7);display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
   #ai-win.open{display:flex;}
+  #ai-fab.chat-open{display:none!important;}
   #ai-head{background:linear-gradient(135deg,#0d1b3e,#07111F);border-bottom:2px solid rgba(232,184,75,0.3);padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
   #ai-dot{width:9px;height:9px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:dotpulse 2s infinite;}
   @keyframes dotpulse{0%,100%{opacity:1}50%{opacity:.4}}
@@ -48,8 +49,8 @@ function addMsg(t,r){const d=document.createElement('div');d.className='ai-msg '
 function showTyping(){const d=document.createElement('div');d.className='ai-typing';d.innerHTML='<span></span><span></span><span></span>';msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;return d;}
 
 let open=false;
-function openChat(){open=true;win.classList.add('open');badge.classList.remove('show');input.focus();}
-function closeChat(){open=false;win.classList.remove('open');}
+function openChat(){open=true;win.classList.add('open');fab.classList.add('chat-open');badge.classList.remove('show');input.focus();}
+function closeChat(){open=false;win.classList.remove('open');fab.classList.remove('chat-open');}
 fab.addEventListener('click',()=>open?closeChat():openChat());
 win.querySelector('#ai-close').addEventListener('click',closeChat);
 
