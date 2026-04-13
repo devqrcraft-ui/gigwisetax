@@ -15,8 +15,6 @@ const nextConfig: NextConfig = {
       { source: '/upwork', destination: '/calculators/upwork/california', permanent: true },
       { source: '/fiverr', destination: '/calculators/fiverr/california', permanent: true },
       { source: '/onlyfans/district-of-columbia', destination: '/calculators/onlyfans/washington-dc', permanent: true },
-      { source: '/compress-for-wordpress', destination: '/', permanent: true },
-      { source: '/compress-to-50kb', destination: '/', permanent: true },
     ];
   },
   compress: true,
