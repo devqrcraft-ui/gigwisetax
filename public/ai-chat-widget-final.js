@@ -7,7 +7,7 @@ const css = `
   #ai-fab svg{width:26px;height:26px;fill:#07111F;}
   #ai-badge{position:absolute;top:-6px;right:-6px;background:#e8b84b;color:#07111F;font-size:10px;font-weight:900;border-radius:10px;padding:2px 6px;display:none;}
   #ai-badge.show{display:block;}
-  #ai-win{position:fixed;bottom:84px;right:16px;z-index:9998;width:340px;height:420px;background:#07111F;border:1.5px solid rgba(232,184,75,0.4);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.7);display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+  #ai-win{position:fixed;bottom:84px;right:16px;z-index:9998;width:340px;height:210px;background:#07111F;border:1.5px solid rgba(232,184,75,0.4);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.7);display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
   #ai-win.open{display:flex;}
   #ai-head{background:linear-gradient(135deg,#0d1b3e,#07111F);border-bottom:2px solid rgba(232,184,75,0.3);padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
   #ai-dot{width:9px;height:9px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:dotpulse 2s infinite;}
@@ -30,7 +30,7 @@ const css = `
   #ai-input:focus{border-color:#e8b84b;}
   #ai-send{background:#e8b84b;border:none;border-radius:8px;width:42px;height:42px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   #ai-send svg{width:18px;height:18px;fill:#07111F;}
-  @media(max-width:540px){#ai-win{width:calc(100vw - 24px);right:12px;bottom:76px;height:320px;}.ai-msg{font-size:14px;}#ai-input{font-size:14px;}}
+  @media(max-width:540px){#ai-win{width:calc(100vw - 24px);right:12px;bottom:76px;height:160px;}.ai-msg{font-size:14px;}#ai-input{font-size:14px;}}
 `;
 const style=document.createElement('style');style.textContent=css;document.head.appendChild(style);
 
