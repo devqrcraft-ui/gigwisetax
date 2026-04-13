@@ -67,6 +67,7 @@ export default function HomeClient() {
     return '$' + Math.round(n).toLocaleString('en-US');
   }
   const loadExample = (ex: typeof QUICK_EXAMPLES[0]) => {
+    setTab('calc')
     setPlatform(ex.platform)
     setIncome(ex.income)
     setStateCode(ex.state)
