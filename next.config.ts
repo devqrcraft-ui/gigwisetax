@@ -15,6 +15,17 @@ const nextConfig: NextConfig = {
       { source: '/upwork', destination: '/calculators/upwork/california', permanent: true },
       { source: '/fiverr', destination: '/calculators/fiverr/california', permanent: true },
       { source: '/onlyfans/district-of-columbia', destination: '/calculators/onlyfans/washington-dc', permanent: true },
+      { source: '/instacart/district-of-columbia', destination: '/instacart/washington-dc', permanent: true },
+      { source: '/doordash/district-of-columbia', destination: '/doordash/washington-dc', permanent: true },
+      { source: '/uber/district-of-columbia', destination: '/uber/washington-dc', permanent: true },
+      { source: '/lyft/district-of-columbia', destination: '/lyft/washington-dc', permanent: true },
+      { source: '/amazon-flex/district-of-columbia', destination: '/amazon-flex/washington-dc', permanent: true },
+      { source: '/grubhub/district-of-columbia', destination: '/grubhub/washington-dc', permanent: true },
+      { source: '/airbnb/district-of-columbia', destination: '/airbnb/washington-dc', permanent: true },
+      { source: '/turo/district-of-columbia', destination: '/turo/washington-dc', permanent: true },
+      { source: '/walmart-spark/district-of-columbia', destination: '/walmart-spark/washington-dc', permanent: true },
+      { source: '/etsy/district-of-columbia', destination: '/etsy/washington-dc', permanent: true },
+
     ];
   },
   compress: true,
