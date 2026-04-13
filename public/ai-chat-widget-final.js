@@ -7,15 +7,15 @@ const css = `
   #ai-fab svg{width:26px;height:26px;fill:#07111F;}
   #ai-badge{position:absolute;top:-6px;right:-6px;background:#e8b84b;color:#07111F;font-size:10px;font-weight:900;border-radius:10px;padding:2px 6px;display:none;}
   #ai-badge.show{display:block;}
-  #ai-win{position:fixed;bottom:84px;right:16px;z-index:9998;width:340px;height:210px;background:#07111F;border:1.5px solid rgba(232,184,75,0.4);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.7);display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+  #ai-win{position:fixed;bottom:20px;right:84px;z-index:9998;width:340px;height:210px;background:#07111F;border:1.5px solid rgba(232,184,75,0.4);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.7);display:none;flex-direction:column;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
   #ai-win.open{display:flex;}
   #ai-fab.chat-open{display:none!important;}
-  #ai-head{background:linear-gradient(135deg,#0d1b3e,#07111F);border-bottom:2px solid rgba(232,184,75,0.3);padding:12px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0;}
+  #ai-head{background:linear-gradient(135deg,#0d1b3e,#07111F);border-bottom:1px solid rgba(232,184,75,0.3);padding:6px 10px;display:flex;align-items:center;gap:7px;flex-shrink:0;}
   #ai-dot{width:9px;height:9px;border-radius:50%;background:#4ade80;flex-shrink:0;animation:dotpulse 2s infinite;}
   @keyframes dotpulse{0%,100%{opacity:1}50%{opacity:.4}}
-  #ai-name{font-size:14px;font-weight:800;color:#e8b84b;flex:1;}
-  #ai-sub{font-size:11px;color:rgba(255,255,255,.5);}
-  #ai-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:20px;cursor:pointer;padding:0 4px;line-height:1;}
+  #ai-name{font-size:13px;font-weight:800;color:#e8b84b;}
+  #ai-sub{font-size:11px;color:rgba(255,255,255,.5);margin-left:6px;}
+  #ai-close{background:none;border:none;color:#e8b84b;font-size:26px;font-weight:700;cursor:pointer;padding:0 6px;line-height:1;margin-left:auto;}
   #ai-msgs{flex:1;overflow-y:auto;padding:14px 14px 8px;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:rgba(232,184,75,.2) transparent;}
   .ai-msg{max-width:88%;padding:10px 13px;border-radius:12px;font-size:15px;line-height:1.5;word-break:break-word;}
   .ai-msg.bot{background:rgba(232,184,75,0.08);border:1px solid rgba(232,184,75,0.2);color:#C8D8EC;align-self:flex-start;border-radius:4px 12px 12px 12px;}
