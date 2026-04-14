@@ -74,15 +74,7 @@ export default function PlatformPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <GigCalculator
-        platform={platform}
-        states={STATES}
-        deadlines={DEADLINES_2026}
-        deductions={deductions}
-        isPlatformDriver={isPlatformDriver}
-        isRental={isRental}
-        isCreator={isCreator}
-      />
+      <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
     </div>
   )
 }
