@@ -417,7 +417,7 @@ export default function HomeClient() {
                   <span style={{ fontWeight: 700, fontSize: 16 }}> How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
-                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 300, borderCollapse: 'collapse' as const }}>
+                  <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 480, borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
                         {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
@@ -662,7 +662,7 @@ export default function HomeClient() {
       {/* ── INTERNAL LINKS BLOCK ── */}
       <div style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 40px'}}>
         <div style={{fontSize:11,fontWeight:800,letterSpacing:'0.18em',textTransform:'uppercase',color:'#e8b84b',marginBottom:16}}>Popular Calculators</div>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
+        <div className="internal-links-grid" style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
           {[
             {href:'/doordash',label:'DoorDash Tax Calculator',desc:'SE tax + quarterly estimates'},
             {href:'/uber',label:'Uber Tax Calculator',desc:'All fees, mileage deduction'},
@@ -724,6 +724,7 @@ export default function HomeClient() {
         }
         @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:16px 12px!important;}
           .partner-banners{grid-template-columns:1fr!important;padding:0 12px 32px!important;}
+          .internal-links-grid{grid-template-columns:1fr 1fr!important;gap:8px!important;}
           .results-row{grid-template-columns:1fr!important}
           .q-grid{grid-template-columns:1fr 1fr!important}
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
