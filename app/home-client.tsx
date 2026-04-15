@@ -658,6 +658,29 @@ export default function HomeClient() {
         </div>
 
 
+      
+      {/* ── INTERNAL LINKS BLOCK ── */}
+      <div style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 40px'}}>
+        <div style={{fontSize:11,fontWeight:800,letterSpacing:'0.18em',textTransform:'uppercase',color:'#e8b84b',marginBottom:16}}>Popular Calculators</div>
+        <div style={{display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:12}}>
+          {[
+            {href:'/doordash',label:'DoorDash Tax Calculator',desc:'SE tax + quarterly estimates'},
+            {href:'/uber',label:'Uber Tax Calculator',desc:'All fees, mileage deduction'},
+            {href:'/instacart',label:'Instacart Tax Calculator',desc:'Shopper net pay estimate'},
+            {href:'/airbnb',label:'Airbnb Tax Calculator',desc:'Rental income after taxes'},
+            {href:'/etsy',label:'Etsy Tax Calculator',desc:'Self-employment tax for sellers'},
+            {href:'/amazon-flex',label:'Amazon Flex Tax Calculator',desc:'Delivery driver tax breakdown'},
+          ].map(({href,label,desc})=>(
+            <a key={href} href={href} style={{textDecoration:'none',display:'flex',flexDirection:'column',gap:6,background:'rgba(255,255,255,0.04)',border:'1px solid rgba(232,184,75,0.15)',borderRadius:10,padding:'16px 14px',transition:'border-color 0.2s'}}
+              onMouseEnter={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.45)')}
+              onMouseLeave={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.15)')}>
+              <div style={{fontSize:14,fontWeight:700,color:'#C8D8EC',lineHeight:1.3}}>{label}</div>
+              <div style={{fontSize:12,color:'rgba(200,216,236,0.55)'}}>{desc}</div>
+              <div style={{fontSize:12,fontWeight:700,color:'#e8b84b',marginTop:4}}>Calculate →</div>
+            </a>
+          ))}
+        </div>
+      </div>
       {/* ── PARTNER BANNERS ── */}
       <div className="partner-banners" style={{maxWidth:1200,margin:'0 auto',padding:'0 20px 48px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
         <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{textDecoration:'none',display:'flex',flexDirection:'column' as const,gap:12,background:'linear-gradient(135deg,#091526,#102040)',border:'1px solid rgba(245,200,66,0.35)',borderRadius:12,padding:'24px 20px'}}>
