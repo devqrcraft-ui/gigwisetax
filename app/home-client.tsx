@@ -401,9 +401,9 @@ export default function HomeClient() {
                     <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                       <div className={platform === p.name ? 'plat-card plat-card--active' : 'plat-card'} style={{ cursor: 'pointer', position: 'relative' as const }}>
                         
-                        <div style={{ fontSize: 13, fontWeight: 700, color: '#e8eef8', marginBottom: 4 }}>{p.name}</div>
+                        <div style={{ fontSize: 15, fontWeight: 700, color: '#e8eef8', marginBottom: 4 }}>{p.name}</div>
                         <div style={{ fontSize: 12, color: '#e8b84b', fontWeight: 600, marginBottom: 8 }}>{p.searches}</div>
-                        <div className="plat-btn" style={{background:'#e8b84b',color:'#1a1a2e',fontSize:11,fontWeight:700,padding:'5px 10px',borderRadius:4,marginTop:4}}>Open Calculator</div>
+                        <div className="plat-btn" style={{background:'#e8b84b',color:'#1a1a2e',fontSize:13,fontWeight:700,padding:'8px 12px',borderRadius:4,marginTop:4}}>Open Calculator</div>
                       </div>
                     </Link>
                   ))}
@@ -543,7 +543,7 @@ export default function HomeClient() {
               <Link key={p.name} href={p.href} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '14px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', color: '#c8d8ec' }}>
                   <span style={{ fontSize: 16, fontWeight: 600 }}>{p.name} Tax Calculator</span>
-                  <span style={{ fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>{p.searches}</span>
+                  <span style={{ display:'flex', alignItems:'center', gap: 8 }}><span style={{ fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>{p.searches}</span><span style={{ fontSize: 16, color: 'rgba(255,255,255,0.4)' }}>→</span></span>
                 </div>
               </Link>
             ))}
