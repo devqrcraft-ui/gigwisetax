@@ -7,13 +7,13 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: 'DoorDash Taxes 2026 — SE Tax, 72.5¢ Mileage, Quarterly Deadlines',
+  title: 'DoorDash Taxes 2026: Calculator, Deductions & 1099 Guide for Dashers',
   //_title: "DoorDash Taxes 2026: How Much Do You Owe? Free Calculator",
-  description: 'DoorDash drivers owe 15.3% SE tax. Mileage: 72.5¢/mile. New: tips deduction up to $25,000. Quarterly: Apr 15, Jun 16, Sep 15. Free calculator all 50 states.',
+  description: 'Free 2026 calculator for DoorDash drivers. SE tax 15.3%, mileage deduction 72.5¢/mile, quarterly deadlines, every 1099 deduction Dashers can claim. All 50 states.',
   //_description: "DoorDash taxes 2026: 15.3% SE tax + income tax. Mileage deduction 72.5¢/mile. Free calculator — SE tax, quarterly payments, all 51 states. Updated April 2026.",
   alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
-    title: 'DoorDash Taxes 2026 — SE Tax, 72.5¢ Mileage, Quarterly Deadlines',
+    title: 'DoorDash Taxes 2026: Calculator, Deductions & 1099 Guide for Dashers',
     description: 'How much does DoorDash take out for taxes? Zero — you owe it. Free 2026 calculator: SE tax, federal, state, quarterly payments.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
