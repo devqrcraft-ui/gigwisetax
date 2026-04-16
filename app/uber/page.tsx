@@ -9,12 +9,12 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'uber')
   if (!p) return {}
   return {
-    title: `Uber Tax Calculator 2026 — See Your Exact Tax Bill & Take-Home Pay`,
+    title: `Uber Tax Calculator 2026 — Free, Instant Results`,
     description: `Earning $40k as Uber driver? You owe ~$5,650 SE tax. Free Uber tax calculator 2026 — mileage deduction $0.725/mile, quarterly payments, all 50 states.`,
     keywords: `uber driver tax calculator, uber self employment tax 2026, uber driver quarterly taxes, uber 1099 taxes, how much tax do uber drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
+      title: `Uber Tax Calculator 2026 — Free, Instant Results`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
