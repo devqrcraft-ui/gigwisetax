@@ -9,12 +9,12 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'amazon-flex')
   if (!p) return {}
   return {
-    title: `Amazon Flex Tax Calculator 2026 — 1099 SE Tax, Deductions & Take-Home Pay`,
+    title: `Amazon Flex Tax Calculator 2026 — Free, Instant Results`,
     description: `Amazon Flex drivers owe SE tax (15.3%) + federal. Enter your earnings — get your quarterly payment in seconds. Mileage deduction at $0.725/mile included. All 51 states.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `${p.name} Tax Calculator 2026 — Free, All 51 States`,
+      title: `Amazon Flex Tax Calculator 2026 — Free, Instant Results`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
