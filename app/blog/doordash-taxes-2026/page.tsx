@@ -7,23 +7,23 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
-  description: 'How much does DoorDash take out for taxes? Zero — you owe it all. Free calculator: SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines. All 50 states.',
+  title: 'DoorDash Taxes 2026: Calculator + Best Tax Software for Dashers',
+  description: 'Best tax software for DoorDash drivers 2026 compared + free calculator. SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines, every deduction. All 50 states, no signup.',
   alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
-    title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
-    description: 'How much does DoorDash take out for taxes? Zero — you owe it all. Free calculator: SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines. All 50 states.',
+    title: 'DoorDash Taxes 2026: Calculator + Best Tax Software for Dashers',
+    description: 'Best tax software for DoorDash drivers 2026 compared + free calculator. SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines, every deduction. All 50 states, no signup.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
 }
 
 export default function DoorDashTaxGuide() {
-  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
+  const prose = { fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <style>{'.blog-grid{display:grid;grid-template-columns:1fr 280px;gap:24px}@media(max-width:700px){.blog-grid{grid-template-columns:1fr!important;grid-template-areas:none!important}.blog-sidebar{order:2;margin-top:0}}'}</style>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $30,000 net DoorDash income, total federal tax is approximately $7,500-$9,000."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. A Dasher driving 20,000 miles earns a $14,500 deduction. This is typically the single largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You will receive a 1099-NEC if you earned over $600. Access it via the DoorDash driver portal or Stripe Express dashboard."}}]}' }} />
