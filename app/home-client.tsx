@@ -47,9 +47,9 @@ const QUICK_EXAMPLES = [
 ]
 
 function QuarterlyEstimator() {
-  const [weekly, setWeekly] = React.useState('');
-  const [qState, setQState] = React.useState('No state tax');
-  const [qFiling, setQFiling] = React.useState('single');
+  const [weekly, setWeekly] = useState('');
+  const [qState, setQState] = useState('No state tax');
+  const [qFiling, setQFiling] = useState('single');
 
   const STATE_RATES = {
     'No state tax':0,'California':9.3,'New York':6.85,'Texas':0,'Florida':0,
