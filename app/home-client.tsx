@@ -46,6 +46,118 @@ const QUICK_EXAMPLES = [
   { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k · Florida'    },
 ]
 
+function QuarterlyEstimator() {
+  const [weekly, setWeekly] = React.useState('');
+  const [qState, setQState] = React.useState('No state tax');
+  const [qFiling, setQFiling] = React.useState('single');
+
+  const STATE_RATES = {
+    'No state tax':0,'California':9.3,'New York':6.85,'Texas':0,'Florida':0,
+    'Illinois':4.95,'Washington':0,'Oregon':9.9,'Colorado':4.4,'Arizona':2.5,
+    'Georgia':5.5,'North Carolina':4.75,'Virginia':5.75,'New Jersey':6.37,
+    'Massachusetts':5.0,'Pennsylvania':3.07,'Ohio':3.99,'Michigan':4.25,
+    'Minnesota':9.85,'Wisconsin':7.65,'Maryland':5.75,'Other state (avg 5%)':5.0,
+  };
+  const STD = { single:15000, married:30000, hoh:22500 };
+  const BRACKETS_S = [{max:11925,r:.10},{max:48475,r:.12},{max:103350,r:.22},{max:197300,r:.24},{max:Infinity,r:.32}];
+  const BRACKETS_M = [{max:23850,r:.10},{max:96950,r:.12},{max:206700,r:.22},{max:394600,r:.24},{max:Infinity,r:.32}];
+
+  function fedTax(taxable) {
+    const br = qFiling === 'married' ? BRACKETS_M : BRACKETS_S;
+    let t=0,p=0;
+    for(const b of br){ if(taxable<=p) break; t+=(Math.min(taxable,b.max)-p)*b.r; p=b.max; }
+    return Math.max(0,t);
+  }
+
+  const w = parseFloat(weekly) || 0;
+  const annual = w * 52;
+  const seTax = annual * 0.9235 * 0.153;
+  const seDeduct = seTax / 2;
+  const stateRate = (STATE_RATES[qState] ?? 5) / 100;
+  const taxable = Math.max(0, annual - seDeduct - (STD[qFiling] ?? 15000));
+  const fed = fedTax(taxable);
+  const state = taxable * stateRate;
+  const total = seTax + fed + state;
+  const quarterly = total / 4;
+  const hasResult = w > 0;
+
+  const DATES = [
+    {q:'Q1 2026',due:'April 15, 2026'},
+    {q:'Q2 2026',due:'June 16, 2026'},
+    {q:'Q3 2026',due:'September 15, 2026'},
+    {q:'Q4 2026',due:'January 15, 2027'},
+  ];
+
+  const inp2 = {
+    background:'#07111F', border:'2px solid #1a2d45', borderRadius:10,
+    color:'#C8D8EC', fontSize:16, minHeight:48, padding:'10px 14px',
+    width:'100%', boxSizing:'border-box', outline:'none',
+  };
+
+  return (
+    <div style={{background:'#0d1e35',border:'1px solid #1a2d45',borderRadius:16,padding:'clamp(20px,4vw,32px)'}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:16,marginBottom:20}}>
+        <div>
+          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Weekly Gig Earnings ($)</label>
+          <div style={{position:'relative'}}>
+            <span style={{position:'absolute',left:14,top:'50%',transform:'translateY(-50%)',color:'#e8b84b',fontWeight:700}}>$</span>
+            <input type="number" min={0} placeholder="0" value={weekly}
+              onChange={e=>setWeekly(e.target.value.replace(/[^0-9.]/g,''))}
+              style={{...inp2,paddingLeft:28}} />
+          </div>
+          {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString()}</p>}
+        </div>
+        <div>
+          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
+          <select value={qState} onChange={e=>setQState(e.target.value)} style={inp2}>
+            {Object.keys(STATE_RATES).map(s=><option key={s} value={s}>{s}</option>)}
+          </select>
+        </div>
+        <div>
+          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Filing Status</label>
+          <select value={qFiling} onChange={e=>setQFiling(e.target.value)} style={inp2}>
+            <option value="single">Single</option>
+            <option value="married">Married Filing Jointly</option>
+            <option value="hoh">Head of Household</option>
+          </select>
+        </div>
+      </div>
+
+      {hasResult ? (
+        <>
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:12,padding:'16px 20px',marginBottom:16}}>
+            <p style={{color:'#C8D8EC',fontSize:13,margin:'0 0 4px',opacity:.7}}>Estimated quarterly payment</p>
+            <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
+            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString()} (SE: ${Math.round(seTax).toLocaleString()} + Fed: ${Math.round(fed).toLocaleString()} + State: ${Math.round(state).toLocaleString()})</p>
+            {total < 1000 && <p style={{color:'#4ade80',fontSize:12,margin:'8px 0 0',fontWeight:600}}>Under $1,000 — quarterly payments likely not required.</p>}
+            {total >= 1000 && <p style={{color:'#e8b84b',fontSize:12,margin:'8px 0 0',fontWeight:600}}>IRS requires quarterly payments when you expect to owe $1,000+.</p>}
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:10,marginBottom:16}}>
+            {DATES.map((d,i)=>(
+              <div key={d.q} style={{background:'#07111F',border: i===0 ? '2px solid #e8b84b' : '1px solid #1a2d45',borderRadius:10,padding:'12px',textAlign:'center',position:'relative'}}>
+                {i===0 && <div style={{position:'absolute',top:-10,left:'50%',transform:'translateX(-50%)',background:'#e8b84b',color:'#07111F',fontSize:10,fontWeight:800,padding:'2px 8px',borderRadius:4,whiteSpace:'nowrap'}}>NEXT DUE</div>}
+                <p style={{color:'#e8b84b',fontSize:11,fontWeight:700,margin:'0 0 4px'}}>{d.q}</p>
+                <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
+                <p style={{color:'#C8D8EC',fontSize:10,margin:0,opacity:.6}}>Due {d.due}</p>
+              </div>
+            ))}
+          </div>
+          <a href="/multi-platform-gig-tax-calculator-2026" style={{display:'block',background:'#e8b84b',borderRadius:10,color:'#07111F',fontSize:15,fontWeight:700,minHeight:48,padding:'13px 20px',textAlign:'center',textDecoration:'none'}}>
+            Full breakdown — Multi-App Tax Calculator 2026 &rarr;
+          </a>
+        </>
+      ) : (
+        <div style={{textAlign:'center',padding:'24px 0',color:'#C8D8EC',opacity:.5,fontSize:14}}>
+          Enter your weekly earnings above to see your quarterly schedule.
+        </div>
+      )}
+      <p style={{color:'#C8D8EC',fontSize:12,margin:'14px 0 0',opacity:.55,lineHeight:1.6}}>
+        Estimates only. Based on 2026 IRS brackets, standard deduction, and simplified state rate. Not tax advice.
+      </p>
+    </div>
+  );
+}
+
 export default function HomeClient() {
   const [tab, setTab]         = useState<'calc'|'deadlines'|'platforms'>('calc')
   const [isMobile, setIsMobile] = useState(true)
@@ -603,6 +715,16 @@ export default function HomeClient() {
           </div>
         </div>
 
+        {/* QUARTERLY ESTIMATOR */}
+        <div style={{marginBottom:48}}>
+          <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
+            <div style={{width:3,height:20,background:'#e8b84b',borderRadius:2}}/>
+            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Quick Quarterly Estimator</span>
+          </div>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#C8D8EC',marginBottom:6,marginLeft:13}}>How Much Should You Pay Each Quarter?</h2>
+          <p style={{fontSize:13,color:'rgba(200,216,236,0.55)',marginBottom:20,marginLeft:13,maxWidth:640}}>If you expect to owe $1,000 or more, the IRS requires quarterly estimated payments. Enter your weekly earnings to see your schedule.</p>
+          <QuarterlyEstimator />
+        </div>
         {/* LONG-TAIL EXAMPLES */}
         <div style={{marginBottom:48}}>
           <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
