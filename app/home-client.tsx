@@ -91,7 +91,7 @@ function QuarterlyEstimator() {
   const inp2 = {
     background:'#07111F', border:'2px solid #1a2d45', borderRadius:10,
     color:'#C8D8EC', fontSize:16, minHeight:48, padding:'10px 14px',
-    width:'100%', boxSizing:'border-box', outline:'none',
+    width:'100%', boxSizing:'border-box' as const, outline:'none',
   };
 
   return (
