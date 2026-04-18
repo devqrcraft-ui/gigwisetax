@@ -406,6 +406,11 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                     → Multi-App Gig Tax Guide 2026
                   </div>
                 </a>
+                <a href="/multi-platform-gig-tax-calculator-2026" style={{ textDecoration: 'none', display: 'block', marginTop: 8 }}>
+                  <div style={{ background: '#e8b84b', color: '#07111F', padding: '9px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
+                    → Multi-App Tax Calculator 2026
+                  </div>
+                </a>
               </div>
             </div>
 
