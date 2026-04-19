@@ -7,12 +7,12 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: 'DoorDash Taxes 2026: Calculator + Best Tax Software for Dashers',
-  description: 'Best tax software for DoorDash drivers 2026 compared + free calculator. SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines, every deduction. All 50 states, no signup.',
+  title: 'DoorDash Taxes 2026: How Much You Owe + Free Calculator',
+  description: 'How much tax do DoorDash drivers pay in 2026? SE tax 15.3%, mileage 72.5¢/mi. Free calculator — enter income, get exact amount owed. All 50 states, no signup.',
   alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
-    title: 'DoorDash Taxes 2026: Calculator + Best Tax Software for Dashers',
-    description: 'Best tax software for DoorDash drivers 2026 compared + free calculator. SE tax 15.3%, mileage 72.5¢/mi, quarterly deadlines, every deduction. All 50 states, no signup.',
+    title: 'DoorDash Taxes 2026: How Much You Owe + Free Calculator',
+    description: 'How much tax do DoorDash drivers pay in 2026? SE tax 15.3%, mileage 72.5¢/mi. Free calculator — enter income, get exact amount owed. All 50 states, no signup.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },

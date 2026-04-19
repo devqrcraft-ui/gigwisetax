@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026' },
-  title: 'OnlyFans Taxes 2026: What You Owe & How to Pay Less',
-  description: 'OnlyFans taxes 2026: how much you actually owe. SE tax 15.3%, income tax by state, quarterly deadlines. Camera, home studio, subscriptions — all deductible. Free calculator, no signup.',
+  title: 'OnlyFans Taxes 2026: Exact Amount You Owe + Free Calculator',
+  description: 'OnlyFans creators pay SE tax 15.3% + income tax. Free 2026 calculator: enter earnings, see exact taxes owed by state. Camera, studio, subscriptions deductible. No signup.',
   keywords: 'onlyfans taxes 2026, onlyfans tax calculator, onlyfans 1099, onlyfans self employment tax',
   openGraph: {
-    title: 'OnlyFans Taxes 2026: What You Owe & How to Pay Less',
-    description: 'OnlyFans taxes 2026: how much you actually owe. SE tax 15.3%, income tax by state, quarterly deadlines. Camera, home studio, subscriptions — all deductible. Free calculator, no signup.',
+    title: 'OnlyFans Taxes 2026: Exact Amount You Owe + Free Calculator',
+    description: 'OnlyFans creators pay SE tax 15.3% + income tax. Free 2026 calculator: enter earnings, see exact taxes owed by state. Camera, studio, subscriptions deductible. No signup.',
     type: 'article',
   },
 }

@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Airbnb Tax Calculator 2026 — Free, All 51 States`,
-    description: `Free Airbnb tax calculator 2026. Instant SE tax (15.3%), federal + state for all 51 states. 14-day rule, Schedule E deductions, quarterly payments. No signup required.`,
+    description: `Free Airbnb tax calculator 2026. Enter your rental income — instantly see federal + state taxes, quarterly payments, every deduction. All 50 states. No signup.`,
     keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
