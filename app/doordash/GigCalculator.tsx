@@ -76,6 +76,20 @@ export default function GigCalculator({
         </div>
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
+            <div style={{ gridColumn: '1 / -1' }}>
+              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
+              </div>
+
+          {/* INCOME PRESETS */}
+          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
+            {[['20000','$20k'],['50000','$50k'],['100000','$100k'],['250000','$250k'],['500000','$500k']].map(([v,l])=>(
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(20,35,60,0.9)',color:'#e8b84b',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
+            ))}
+          </div>
+            </div>
             <div>
               <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
               <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
@@ -93,20 +107,6 @@ export default function GigCalculator({
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
               </select>
-            </div>
-            <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
-              <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
-              </div>
-
-          {/* INCOME PRESETS */}
-          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
-            {[['20000','$20k'],['50000','$50k'],['100000','$100k'],['250000','$250k'],['500000','$500k']].map(([v,l])=>(
-              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(20,35,60,0.9)',color:'#e8b84b',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
-            ))}
-          </div>
             </div>
           </div>
           <div style={btnDark} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
