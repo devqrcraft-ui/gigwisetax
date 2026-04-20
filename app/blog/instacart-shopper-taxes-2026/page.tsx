@@ -3,8 +3,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Instacart Shopper Taxes 2026: Free Calculator — How Much Do You Owe?',
-  description: 'Instacart shoppers pay 15.3% SE tax on net earnings. Free calculator: see exactly how much to set aside for 2026. Mileage deduction $0.725/mile. All 50 states.',
+  title: 'Instacart Shopper Taxes 2026: Free Calculator + Full Deduction Checklist',
+  description: 'See your exact 2026 tax bill as an Instacart shopper in 60 seconds. Mileage $0.725/mi, insulated bags, phone — all deductible. All 50 states.',
   keywords: 'Instacart taxes 2026, Instacart self employment tax, Instacart shopper 1099, Instacart mileage deduction 2026, Instacart quarterly taxes',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
