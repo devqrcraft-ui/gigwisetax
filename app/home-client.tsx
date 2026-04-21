@@ -98,24 +98,24 @@ function QuarterlyEstimator() {
     <div style={{background:'#0d1e35',border:'1px solid #1a2d45',borderRadius:16,padding:'clamp(20px,4vw,32px)'}}>
       <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:16,marginBottom:20}}>
         <div>
-          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Weekly Gig Earnings ($)</label>
+          <label htmlFor="qe-weekly" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Weekly Gig Earnings ($)</label>
           <div style={{position:'relative'}}>
             <span style={{position:'absolute',left:14,top:'50%',transform:'translateY(-50%)',color:'#e8b84b',fontWeight:700}}>$</span>
-            <input type="number" min={0} placeholder="0" value={weekly}
+            <input id="qe-weekly" type="number" min={0} placeholder="0" value={weekly}
               onChange={e=>setWeekly(e.target.value.replace(/[^0-9.]/g,''))}
               style={{...inp2,paddingLeft:28}} />
           </div>
           {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString()}</p>}
         </div>
         <div>
-          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
-          <select value={qState} onChange={e=>setQState(e.target.value)} style={inp2}>
+          <label htmlFor="qe-state" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
+          <select id="qe-state" value={qState} onChange={e=>setQState(e.target.value)} style={inp2}>
             {Object.keys(STATE_RATES).map(s=><option key={s} value={s}>{s}</option>)}
           </select>
         </div>
         <div>
-          <label style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Filing Status</label>
-          <select value={qFiling} onChange={e=>setQFiling(e.target.value)} style={inp2}>
+          <label htmlFor="qe-filing" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Filing Status</label>
+          <select id="qe-filing" value={qFiling} onChange={e=>setQFiling(e.target.value)} style={inp2}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
             <option value="hoh">Head of Household</option>
