@@ -526,7 +526,7 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={accent}/>
-                  <span style={{ fontWeight: 700, fontSize: 16 }}> How We Compare to Competitors</span>
+                  <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 480, borderCollapse: 'collapse' as const }}>
