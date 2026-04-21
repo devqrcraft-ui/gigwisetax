@@ -1,4 +1,5 @@
-import HomeClient from './home-client';
+import dynamic from 'next/dynamic';
+const HomeClient = dynamic(() => import('./home-client'), { ssr: false, loading: () => <div style={{minHeight:'600px'}} /> });
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
