@@ -10,12 +10,22 @@ const platforms = [
 
 const blogPosts = [
   'doordash-taxes-2025-guide','doordash-taxes-2026',
-  'uber-tax-guide-2026','instacart-shopper-taxes-2026',
+  'uber-tax-guide-2026',
+  'instacart-shopper-taxes-2026','instacart-tax-deductions-2026','instacart-tax-guide-2026',
   'etsy-seller-tax-deductions-2025','etsy-seller-taxes-2026',
   'home-office-deduction-gig-workers','s-corp-guide-gig-workers',
   'gig-worker-tax-deadlines-2026','1099-deadlines-2025',
-  'turo-host-taxes-2026','walmart-spark-driver-taxes-2026',
-  'w9-mistakes-gig-workers',
+  'turo-host-taxes-2026',
+  'walmart-spark-driver-taxes-2026','walmart-spark-tax-guide-2026','walmart-spark-taxes-2026',
+  'w9-mistakes-gig-workers','w2-vs-1099-guide-2026',
+  'airbnb-host-taxes-2026','airbnb-tax-deductions-2026',
+  'amazon-flex-taxes-2026',
+  'grubhub-driver-taxes-2026','grubhub-vs-doordash-taxes-2026',
+  'lyft-driver-taxes-2026',
+  'mileage-rate-2026',
+  'onlyfans-tax-guide-2026',
+  'quarterly-taxes-gig-workers',
+  'self-employment-tax-deductions-2026',
 ];
 
 const states = [
