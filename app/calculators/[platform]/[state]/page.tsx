@@ -98,6 +98,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
     description,
     keywords: `${p.name.toLowerCase()} tax calculator ${s.name.toLowerCase()}, ${p.name.toLowerCase()} taxes ${s.abbr} 2026, gig worker taxes ${s.name.toLowerCase()}`,
     openGraph: { title, description, url: `https://www.gigwisetax.com/calculators/${params.platform}/${params.state}` },
+    robots: { index: false, follow: false },
   };
 }
 
