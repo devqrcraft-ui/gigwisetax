@@ -14,7 +14,12 @@ const nextConfig: NextConfig = {
       { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
       { source: '/upwork', destination: '/calculators', permanent: true },
       { source: '/fiverr', destination: '/calculators', permanent: true },
-      { source: '/onlyfans/district-of-columbia', destination: '/calculators/onlyfans/washington-dc', permanent: true },
+      { source: '/compress-for-wordpress', destination: '/', permanent: true },
+      { source: '/compress-to-50kb', destination: '/', permanent: true },
+      { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
+      { source: '/blog/etsy-seller-tax-deductions-2025', destination: '/blog/etsy-seller-taxes-2026', permanent: true },
+      { source: '/blog/1099-deadlines-2025', destination: '/blog/gig-worker-tax-deadlines-2026', permanent: true },
+      { source: '/onlyfans/district-of-columbia', destination: '/onlyfans/washington-dc', permanent: true },
       { source: '/instacart/district-of-columbia', destination: '/instacart/washington-dc', permanent: true },
       { source: '/doordash/district-of-columbia', destination: '/doordash/washington-dc', permanent: true },
       { source: '/uber/district-of-columbia', destination: '/uber/washington-dc', permanent: true },
@@ -25,7 +30,6 @@ const nextConfig: NextConfig = {
       { source: '/turo/district-of-columbia', destination: '/turo/washington-dc', permanent: true },
       { source: '/walmart-spark/district-of-columbia', destination: '/walmart-spark/washington-dc', permanent: true },
       { source: '/etsy/district-of-columbia', destination: '/etsy/washington-dc', permanent: true },
-
     ];
   },
   compress: true,
@@ -46,6 +50,12 @@ const nextConfig: NextConfig = {
       source: "/_next/static/(.*)",
       headers: [
         { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+      ],
+    },
+    {
+      source: "/favicon.ico",
+      headers: [
+        { key: "X-Robots-Tag", value: "noindex" },
       ],
     },
     {
