@@ -262,7 +262,7 @@ export default function MultiPlatformCalculator() {
                 }}>
                   <p style={{ color: '#C8D8EC', fontSize: '12px', margin: '0 0 6px', opacity: 0.7 }}>{c.label}</p>
                   <p style={{ color: c.color, fontSize: '22px', fontWeight: 800, margin: '0 0 4px' }}>{c.val}</p>
-                  <p style={{ color: '#C8D8EC', fontSize: '11px', margin: 0, opacity: 0.55 }}>{c.sub}</p>
+                  <p style={{ color: '#C8D8EC', fontSize: '11px', margin: 0, opacity: 0.85 }}>{c.sub}</p>
                 </div>
               ))}
             </div>

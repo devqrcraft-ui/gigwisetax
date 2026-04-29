@@ -140,7 +140,7 @@ export default function WalmartSparkTaxGuide2026() {
                 ))}
               </tbody>
             </table>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 20 }}>Estimates only. State income tax not included. Use the calculator above for your exact numbers.</p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Estimates only. State income tax not included. Use the calculator above for your exact numbers.</p>
 
             <h2 style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
             <table style={tableStyle}>

@@ -706,7 +706,7 @@ export default function HomeClient() {
                 
                 <div style={{flex:1}}>
                   <div style={{fontSize:17,fontWeight:800,color:'#fff',marginBottom:4}}>{p.name} Tax Calculator</div>
-                  <div style={{fontSize:13,color:'rgba(255,255,255,0.5)',marginBottom:6}}>{p.desc}</div>
+                  <div style={{fontSize:13,color:'rgba(255,255,255,0.8)',marginBottom:6}}>{p.desc}</div>
                   <div style={{fontSize:15,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
                 </div>
                 <div style={{flexShrink:0,background:'#e8b84b',color:'#1a1a2e',fontSize:12,fontWeight:700,padding:'8px 16px',borderRadius:6,whiteSpace:'nowrap'}}>Open Calculator</div>
@@ -722,7 +722,7 @@ export default function HomeClient() {
             <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Quick Quarterly Estimator</span>
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#C8D8EC',marginBottom:6,marginLeft:13}}>How Much Should You Pay Each Quarter?</h2>
-          <p style={{fontSize:13,color:'rgba(200,216,236,0.55)',marginBottom:20,marginLeft:13,maxWidth:640}}>If you expect to owe $1,000 or more, the IRS requires quarterly estimated payments. Enter your weekly earnings to see your schedule.</p>
+          <p style={{fontSize:13,color:'rgba(200,216,236,0.85)',marginBottom:20,marginLeft:13,maxWidth:640}}>If you expect to owe $1,000 or more, the IRS requires quarterly estimated payments. Enter your weekly earnings to see your schedule.</p>
           <QuarterlyEstimator />
         </div>
         {/* LONG-TAIL EXAMPLES */}
@@ -797,7 +797,7 @@ export default function HomeClient() {
               onMouseEnter={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.45)')}
               onMouseLeave={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.15)')}>
               <div style={{fontSize:14,fontWeight:700,color:'#C8D8EC',lineHeight:1.3}}>{label}</div>
-              <div style={{fontSize:12,color:'rgba(200,216,236,0.55)'}}>{desc}</div>
+              <div style={{fontSize:12,color:'rgba(200,216,236,0.85)'}}>{desc}</div>
               <div style={{fontSize:12,fontWeight:700,color:'#e8b84b',marginTop:4}}>Calculate →</div>
             </a>
           ))}
