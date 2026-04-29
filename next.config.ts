@@ -14,8 +14,6 @@ const nextConfig: NextConfig = {
       { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
       { source: '/upwork', destination: '/calculators', permanent: true },
       { source: '/fiverr', destination: '/calculators', permanent: true },
-      { source: '/compress-for-wordpress', destination: '/', permanent: true },
-      { source: '/compress-to-50kb', destination: '/', permanent: true },
       { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
       { source: '/blog/etsy-seller-tax-deductions-2025', destination: '/blog/etsy-seller-taxes-2026', permanent: true },
       { source: '/blog/1099-deadlines-2025', destination: '/blog/gig-worker-tax-deadlines-2026', permanent: true },
