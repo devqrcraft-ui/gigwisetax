@@ -14,8 +14,6 @@ const nextConfig: NextConfig = {
       { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
       { source: '/upwork', destination: '/calculators', permanent: true },
       { source: '/fiverr/:path*', destination: '/calculators', permanent: true },
-      { source: '/compress-for-wordpress', destination: '/', permanent: true },
-      { source: '/compress-to-50kb', destination: '/', permanent: true },
       { source: '/blog/best-image-compressor-for-mac', destination: '/', permanent: true },
       { source: '/taskrabbit/:path*', destination: '/calculators', permanent: true },
       { source: '/rover/:path*', destination: '/calculators', permanent: true },
