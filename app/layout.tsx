@@ -2,7 +2,6 @@ import Script from 'next/script'
 import type { Metadata } from 'next'
 import NavClient from './NavClient'
 import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -151,7 +150,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </footer>
 
         <Analytics />
-        <SpeedInsights />
 
         <style>{`@media(max-width:900px){.desktop-nav{display:none!important}.desktop-cta{display:none!important}.mobile-hamburger{display:block!important}}
 @media(max-width:640px){.footer-grid{grid-template-columns:1fr 1fr!important;gap:14px!important;}}@media(max-width:400px){.footer-grid{grid-template-columns:1fr!important;}}`}</style>
