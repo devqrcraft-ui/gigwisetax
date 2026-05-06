@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.gigwisetax.com';
 const platforms = [
   'doordash','uber','lyft','instacart','amazon-flex',
   'grubhub','etsy','airbnb','onlyfans','turo','walmart-spark',
-  'shipt',
+  'shipt','fiverr','rover','upwork',
 ];
 
 const blogPosts = [
