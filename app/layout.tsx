@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
     title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 51 States, Free & Private | GigWiseTax',
     description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 51 states. No signup.',
