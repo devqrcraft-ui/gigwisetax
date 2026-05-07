@@ -10,6 +10,7 @@ export const PLATFORMS = [
   { slug: 'rover',      name: 'Rover',      emoji: '', searches: '50K/mo', naics: '812910', badge: null },
   { slug: 'taskrabbit', name: 'TaskRabbit', emoji: '', searches: '40K/mo', naics: '561790', badge: null },
   { slug: 'fiverr',     name: 'Fiverr',     emoji: '', searches: '60K/mo', naics: '711510', badge: null },
+  { slug: 'upwork',     name: 'Upwork',     emoji: '', searches: '55K/mo', naics: '711510', badge: null },
   { slug: 'shipt',      name: 'Shipt',      emoji: '', searches: '30K/mo', naics: '492000', badge: null },
 ]
 
@@ -210,6 +211,20 @@ export const DEDUCTIONS = {
     'Half of self-employment tax (SE tax deduction)',
     'Accounting & tax software',
     'Business insurance & liability coverage',
+  ],
+  upwork: [
+    'Upwork service fee (5-20%) — business expense',
+    'Software subscriptions (Adobe, Figma, Notion etc.)',
+    'Internet bill — business use percentage',
+    'Home office deduction',
+    'Computer, monitor, peripherals & equipment',
+    'Phone bill — business use percentage',
+    'Online courses & professional certifications',
+    'Stock assets, fonts & design resources',
+    'Cloud storage & SaaS tools',
+    'Self-employed health insurance premiums',
+    'Half of self-employment tax (SE tax deduction)',
+    'Accounting & tax software',
   ],
   fiverr: [
     'Software subscriptions (Adobe, Canva, Figma etc.)',
