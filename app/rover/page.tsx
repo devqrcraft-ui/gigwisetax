@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Rover Tax Calculator 2026 — Dog Walker 1099 SE Tax | GigWiseTax`,
-    description: `Free Rover dog walker tax calculator 2026. SE tax 15.3%, mileage 70¢/mile. Deductions: treats, leash, poop bags, rain gear, phone. Quarterly dates. No signup.`,
+    description: `Free Rover dog walker tax calculator 2026. SE tax 15.3%, mileage 72.5¢/mile. Deductions: treats, leash, poop bags, rain gear, phone. Quarterly dates. No signup.`,
     keywords: `rover tax calculator, rover dog walker taxes 2026, rover 1099, rover self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/rover` },
     openGraph: {

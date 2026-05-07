@@ -236,7 +236,7 @@ export default function CalculatorPage({ params }) {
               <p style={S.p}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
-                  { title: " Mileage", val: "67¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
+                  { title: " Mileage", val: "72.5¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
                   { title: " Phone & Data", val: "Business % deductible", desc: "App usage qualifies" },
                   { title: " Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
                   { title: " Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },

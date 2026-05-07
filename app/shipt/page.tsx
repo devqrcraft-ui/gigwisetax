@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Shipt Shopper Tax Calculator 2026 — 1099 SE Tax & Mileage | GigWiseTax`,
-    description: `Free Shipt shopper tax calculator 2026. SE tax 15.3%, mileage 70¢/mile. Insulated bags, phone deductions. All 51 states. No signup.`,
+    description: `Free Shipt shopper tax calculator 2026. SE tax 15.3%, mileage 72.5¢/mile. Insulated bags, phone deductions. All 51 states. No signup.`,
     keywords: `shipt shopper tax calculator, shipt 1099 taxes 2026, shipt self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/shipt` },
     openGraph: {

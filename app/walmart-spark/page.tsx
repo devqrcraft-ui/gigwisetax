@@ -21,7 +21,7 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (70¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
+  { icon:'▸', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
   { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
   { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
@@ -127,7 +127,7 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(e.target.value)} />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 70¢/mile for 2026</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
@@ -208,7 +208,7 @@ export default function WalmartSparkPage() {
                 ))}
               </div>
               <div style={{ marginTop:16, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', fontSize:13, color: '#4ade80' }}>
-                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 70¢/mile often saves more than actual expenses.
+                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢/mile often saves more than actual expenses.
               </div>
             </div>
           </div>

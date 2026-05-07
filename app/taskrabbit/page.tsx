@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `TaskRabbit Tax Calculator 2026 — 1099 Self-Employment Tax | GigWiseTax`,
-    description: `Free TaskRabbit tax calculator 2026. SE tax 15.3% + federal + state. Deductions: tools, equipment, mileage 70¢/mile. All 51 states. No signup.`,
+    description: `Free TaskRabbit tax calculator 2026. SE tax 15.3% + federal + state. Deductions: tools, equipment, mileage 72.5¢/mile. All 51 states. No signup.`,
     keywords: `taskrabbit tax calculator, taskrabbit 1099 taxes 2026, taskrabbit self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/taskrabbit` },
     openGraph: {

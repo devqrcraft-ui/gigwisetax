@@ -47,7 +47,7 @@ const faqSchema = {
       name: 'Can I deduct expenses from multiple gig apps?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. Common deductions include mileage (70 cents/mile in 2026 for DoorDash, Uber, Instacart deliveries), phone bills, insulated bags, and a portion of your car expenses. Each platform may have separate Schedule C filings or you can combine similar work.',
+        text: 'Yes. Common deductions include mileage (72.5 cents/mile in 2026 for DoorDash, Uber, Instacart deliveries), phone bills, insulated bags, and a portion of your car expenses. Each platform may have separate Schedule C filings or you can combine similar work.',
       },
     },
   ],

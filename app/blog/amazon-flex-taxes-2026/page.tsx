@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' },
   title: 'Amazon Flex Taxes 2026: Complete Guide for Drivers',
-  description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (70¢/mile), quarterly payments, and top deductions.',
+  description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢/mile), quarterly payments, and top deductions.',
 }
 
 export default function AmazonFlexTaxesBlogPost() {
@@ -128,7 +128,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <h2 style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {[
-              { icon: '', title: 'Mileage (70¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
+              { icon: '', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
               { icon: '', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
               { icon: '', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
               { icon: '', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },
