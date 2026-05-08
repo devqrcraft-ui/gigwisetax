@@ -175,6 +175,12 @@ export default function GigCalculator({
         </div>
       )}
 
+
+      <div style={{ margin: '24px 0 0', padding: '20px 24px', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 12 }}>
+        <div style={{ fontSize: 16, fontWeight: 800, color: '#e8b84b', marginBottom: 6 }}>Ready to file your 1099 taxes?</div>
+        <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Compare the best tax software for gig workers in 2026 and see which saves you the most.</div>
+        <a href="/blog/best-tax-software-for-gig-workers-2026" style={{ display: 'inline-block', background: '#e8b84b', color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 8, textDecoration: 'none' }}>See recommended tax software →</a>
+      </div>
       <style>{`
         @media(max-width:960px){
           .results-row{grid-template-columns:1fr 1fr!important}
