@@ -27,7 +27,15 @@ export default function BestTaxSoftware() {
           </nav>
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>Best Tax Software for Gig Workers 2026 — Ranked by Cost and 1099 Features</h1>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, maxWidth: 760, margin: 0 }}>Updated May 2026. TurboTax Self-Employed, FreeTaxUSA, TaxAct and H&R Block compared on price, Schedule C support, mileage handling and audit protection.</p>
-        </div>
+                {/* AUTHOR BOX */}
+            <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+              <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
+              <div>
+                <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
+              </div>
+            </div>
+    </div>
       </div>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px' }}>
         <p style={prose}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
