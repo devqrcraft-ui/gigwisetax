@@ -30,6 +30,14 @@ export default function BlogPost() {
 
       
 
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Lyft</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Lyft drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile saves thousands for Lyft drivers annually.
+        </p>
+      </div>
+
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>
         Top Tax Deductions for Lyft
       </h2>
@@ -100,13 +108,6 @@ export default function BlogPost() {
         <a href="/lyft" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>
           Calculate My Taxes
         </a>
-      </div>
-      {/* ANSWER-FIRST GEO BLOCK */}
-      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
-        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Lyft</div>
-        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Lyft drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile saves thousands for Lyft drivers annually.
-        </p>
       </div>
 
       {/* AUTHOR BOX */}
