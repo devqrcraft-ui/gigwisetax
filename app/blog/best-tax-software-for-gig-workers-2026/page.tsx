@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function BestTaxSoftware() {
   const prose = { fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
-  const tag = { display: 'inline-block' as const, fontSize: 11, fontWeight: 700, padding: '2px 8px', borderRadius: 4, marginBottom: 8 }
+  const tag = { display: 'inline-block' as const, fontSize: 13, fontWeight: 700, padding: '2px 8px', borderRadius: 4, marginBottom: 8 }
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>

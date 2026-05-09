@@ -94,7 +94,7 @@ export default function DoorDashTaxGuide() {
                   <div key={r.miles} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
                     <div style={{ fontSize: 11, color: '#8fa8c8', marginBottom: 4 }}>{r.miles} miles</div>
                     <div style={{ fontSize: 18, fontWeight: 900, color: '#7dd3fc' }}>{r.deduction}</div>
-                    <div style={{ fontSize: 10, color: '#7a9abf' }}>tax deduction</div>
+                    <div style={{ fontSize: 13, color: '#7a9abf' }}>tax deduction</div>
                   </div>
                 ))}
               </div>
@@ -194,7 +194,7 @@ export default function DoorDashTaxGuide() {
             </div>
           </a>
           <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 10, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 13, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
                 <span style={{ fontSize: 12, color: '#7a9abf', fontStyle: 'italic' }}>Ad image here</span>
@@ -202,7 +202,7 @@ export default function DoorDashTaxGuide() {
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Handles Schedule C and 1099-NEC for DoorDash workers. Mileage tracking included.</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
-              <div style={{ fontSize: 10, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
+              <div style={{ fontSize: 13, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
             </div>
           </div>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
