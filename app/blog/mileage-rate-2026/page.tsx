@@ -30,6 +30,13 @@ export default function MileageRate2026Post() {
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
              IRS Mileage Rate 2026: 72.5¢/Mile — What Every Gig Worker Needs to Know
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Mileage Rate 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          The 2026 IRS standard mileage rate is <strong style={{ color:'#fff' }}>72.5¢ per mile</strong>. 10,000 business miles = <strong style={{ color:'#e8b84b' }}>$7,250 deduction</strong>. 20,000 miles = $14,500 deduction. Log every mile with a mileage app — the IRS requires a contemporaneous record.
+        </p>
+      </div>
           <div style={{ display: 'flex', gap: 16 }}>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 3, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 5 min read</span>

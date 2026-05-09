@@ -42,6 +42,13 @@ export default function UberTaxGuide() {
             <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
                Uber Driver Tax Guide 2026 — How to File Your 1099
             </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Uber 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every Uber payment. Mileage at 72.5¢/mile and the new 2026 tips deduction (up to $25,000) are your biggest savings.
+        </p>
+      </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
               Complete Uber driver tax guide for 2026. Includes the new $0.725/mile mileage rate, the new tips deduction (up to $25,000),
               SE tax calculation, quarterly deadlines, and every deduction Uber drivers can claim.

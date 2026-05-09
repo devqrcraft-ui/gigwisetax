@@ -36,6 +36,13 @@ export default function HomeOfficeBlog() {
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
             Home Office Deduction for Gig Workers 2025 — Up to $1,500/Year
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Home Office Deduction</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Gig workers using a dedicated home office can deduct $5/sq ft up to 300 sq ft = $1,500 (simplified method). On $35,000 net income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. A $1,500 home office deduction saves approximately $375. Space must be used regularly and exclusively for work.
+        </p>
+      </div>
           <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0 }}>Updated January 2025 · 8 min read · GigWiseTax.com</p>
         </div>
       </div>

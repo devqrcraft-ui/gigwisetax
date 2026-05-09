@@ -25,6 +25,13 @@ export default function QuarterlyTaxesGuide() {
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete Guide · Updated 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Quarterly Taxes for Gig Workers 2026</h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Quarterly Taxes</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          2026 quarterly deadlines: April 15, June 16, September 15, January 15 2027. On $35,000 net gig income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Each payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Pay via IRS Direct Pay (free). Underpaying by more than $1,000 triggers a penalty.
+        </p>
+      </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
           If you earn $400+ per year from gig work, the IRS requires you to pay taxes quarterly — not once a year. Miss a deadline and you'll owe penalties. This guide shows you exactly how much to pay and when.
         </p>

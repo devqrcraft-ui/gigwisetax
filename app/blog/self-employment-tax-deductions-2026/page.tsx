@@ -42,6 +42,13 @@ export default function DeductionsGuide() {
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete List · Updated 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Self-Employment Tax Deductions 2026</h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — SE Tax Deductions 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Self-employed workers pay 15.3% SE tax (12.4% Social Security + 2.9% Medicare) on net earnings. On $35,000 net: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. You can deduct half of SE tax on your 1040 — reducing your federal income tax automatically.
+        </p>
+      </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
           The average gig worker overpays $2,000 to $5,000 in taxes by missing deductions. This is the complete list for 2026 — every deduction available to 1099 workers, freelancers, and gig platform earners.
         </p>

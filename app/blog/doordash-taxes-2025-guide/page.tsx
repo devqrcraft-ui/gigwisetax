@@ -37,6 +37,13 @@ export default function DoorDashTaxesBlog() {
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', margin: '0 0 14px', lineHeight: 1.2 }}>
             DoorDash Taxes 2025: The Complete Driver's Guide
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — DoorDash 2025</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          DoorDash drivers pay 15.3% self-employment tax plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every DoorDash payment. Mileage at 72.5¢/mile is your biggest deduction.
+        </p>
+      </div>
           <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0 }}>Updated January 2025 · 11 min read · GigWiseTax.com</p>
         </div>
       </div>

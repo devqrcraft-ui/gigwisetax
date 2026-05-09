@@ -25,6 +25,13 @@ export default function OnlyFansTaxGuide() {
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Creator Tax Guide · Updated 2026</div>
         <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>OnlyFans Taxes 2026: Complete Creator Guide</h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — OnlyFans 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          OnlyFans creators pay 15.3% self-employment tax on net earnings. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payout. Equipment, ring lights, and a dedicated home studio space are deductible.
+        </p>
+      </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
           OnlyFans counts you as an independent contractor — you're responsible for all taxes. That means self-employment tax (15.3%), federal income tax, and possibly state income tax. Here's exactly how to handle it.
         </p>

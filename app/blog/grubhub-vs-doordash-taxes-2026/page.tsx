@@ -30,6 +30,13 @@ export default function GrubhubVsDoorDashPost() {
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
              Grubhub vs DoorDash Taxes 2026: Are They Different?
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Grubhub vs DoorDash 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Both platforms classify drivers as independent contractors paying 15.3% SE tax. Grubhub at $35,000 net: <strong style={{ color:'#fff' }}>$7,750 total tax</strong> ($1,938/quarter). DoorDash at $40,000 net: <strong style={{ color:'#fff' }}>$8,852 total tax</strong> ($2,213/quarter). Mileage deduction at 72.5¢/mile applies equally to both.
+        </p>
+      </div>
           <div style={{ display: 'flex', gap: 16 }}>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 20, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 6 min read</span>

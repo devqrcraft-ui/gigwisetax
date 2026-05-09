@@ -71,6 +71,13 @@ export default function AirbnbTaxDeductions2026() {
           <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
             Airbnb Tax Deductions 2026: Complete Host Checklist + Free Calculator
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb Deductions 2026</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Airbnb hosts earning $50,000 net owe approximately $7,065 SE tax + $4,500 federal = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Key deductions: depreciation, cleaning fees, supplies, utilities (proportional), and mortgage interest reduce taxable income significantly. Track every expense from day one.
+        </p>
+      </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
             Every deduction Airbnb hosts can legally claim in 2026 — cleaning, depreciation, mortgage interest, utilities, supplies, and more.
             Free tax calculator included. <span style={{fontSize:12,color:'rgba(255,255,255,.4)',display:'block',marginTop:8}}>Last updated April 2026 — reflects IRS 2026 rates.</span>
