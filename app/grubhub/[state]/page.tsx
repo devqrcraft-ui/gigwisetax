@@ -328,7 +328,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
   return {
     title: `${PLATFORM_NAME} Tax Calculator — ${s.name} 2026 | GigWiseTax`,
-    description: `Free ${PLATFORM_NAME} tax calculator for ${s.name} (${rateStr}). Calculate self-employment tax (15.3%), federal income tax, and quarterly payments for 2026. No signup.`,
+    description: `Grubhub ${s.name} 2026: $35K net = ~$4,950 SE tax + $2,800 fed. ${rateStr}. Quarterly: ~$1,938. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/grubhub/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
