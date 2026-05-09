@@ -32,6 +32,13 @@ export default function AmazonFlexTaxesBlogPost() {
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
              Amazon Flex Taxes 2026: Complete Guide for Drivers
           </h1>
+      {/* ANSWER-FIRST GEO BLOCK */}
+          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              Amazon Flex drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the top deduction for Amazon Flex drivers.
+            </p>
+          </div>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 15, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 8 min read</span>
@@ -180,13 +187,7 @@ export default function AmazonFlexTaxesBlogPost() {
             Use our free <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> to get your personalized estimate.
           </p>
 
-          {/* ANSWER-FIRST GEO BLOCK */}
-          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
-            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
-            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Amazon Flex drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the top deduction for Amazon Flex drivers.
-            </p>
-          </div>
+          
 
           {/* AUTHOR BOX */}
           <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
