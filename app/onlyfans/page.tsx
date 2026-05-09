@@ -151,6 +151,14 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             {/* CALCULATOR */}
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
 
+          {/* ANSWER-FIRST GEO BLOCK */}
+          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — OnlyFans</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              OnlyFans workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payment. Equipment, internet, and home studio expenses are deductible.
+            </p>
+          </div>
+
             {/* TAX GUIDE */}
             <div style={card}>
               <div style={cardHd}>

@@ -75,6 +75,14 @@ export default function PlatformPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
+
+          {/* ANSWER-FIRST GEO BLOCK */}
+          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — TaskRabbit</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              TaskRabbit workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $45,000 net income: approximately $6,360 SE tax + $3,800 federal income tax = <strong style={{ color:'#fff' }}>$10,160 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,540</strong>. Set aside 25% of every payment. Tools, equipment, and mileage are top TaskRabbit deductions.
+            </p>
+          </div>
     </div>
   )
 }

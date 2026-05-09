@@ -174,6 +174,15 @@ export default function TuroPage() {
             )}
           </div>
 
+
+          {/* ANSWER-FIRST GEO BLOCK */}
+          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Turo</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              Turo hosts pay 15.3% self-employment tax on net rental income, plus federal income tax. On $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 25% of every payout. Depreciation, insurance, and maintenance are key Turo host deductions.
+            </p>
+          </div>
+
           <div style={card}>
             <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
