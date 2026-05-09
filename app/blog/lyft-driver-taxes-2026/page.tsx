@@ -101,6 +101,23 @@ export default function BlogPost() {
           Calculate My Taxes
         </a>
       </div>
+      {/* ANSWER-FIRST GEO BLOCK */}
+      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
+        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Lyft</div>
+        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+          Lyft drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile saves thousands for Lyft drivers annually.
+        </p>
+      </div>
+
+      {/* AUTHOR BOX */}
+      <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+        <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
+        <div>
+          <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
+        </div>
+      </div>
+
     </main>
     </div>
   )
