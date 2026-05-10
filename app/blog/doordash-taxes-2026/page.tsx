@@ -7,12 +7,12 @@ import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata = {
-  title: 'DoorDash Taxes 2026: Free Calculator + Full Deduction Checklist',
-  description: 'See your exact 2026 DoorDash tax bill in 60 seconds. Mileage $0.725/mi, phone, gear — all deductible. Enter your income, get your number. All 50 states.',
+  title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
+  description: 'DoorDash drivers on $40K owe $8,852 in taxes. Free 2026 calculator — enter income, get exact bill. Mileage 72.5c/mi, tips up to $25K deductible. All 50 states.',
   alternates: { canonical: "https://www.gigwisetax.com/blog/doordash-taxes-2026" },
   openGraph: {
-    title: 'DoorDash Taxes 2026: Free Calculator + Full Deduction Checklist',
-    description: 'See your exact 2026 DoorDash tax bill in 60 seconds. Mileage $0.725/mi, phone, gear — all deductible. Enter your income, get your number. All 50 states.',
+    title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
+    description: 'DoorDash drivers on $40K owe $8,852 in taxes. Free 2026 calculator — enter income, get exact bill. Mileage 72.5c/mi, tips up to $25K deductible. All 50 states.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
   },
