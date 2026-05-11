@@ -3,6 +3,7 @@
 // Save as: app/blog/airbnb-tax-deductions-2026/page.tsx
 // ================================================================
 
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata = {
   title: 'Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator',
   description: 'Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see exactly how much you owe. All 50 states.',

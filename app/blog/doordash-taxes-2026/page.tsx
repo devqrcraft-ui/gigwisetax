@@ -3,6 +3,7 @@
 // Save as: app/blog/doordash-taxes-2026/page.tsx
 // ================================================================
 
+import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 

@@ -1,5 +1,6 @@
 // Save as: app/blog/uber-tax-guide-2026/page.tsx
 
+import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

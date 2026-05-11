@@ -1,3 +1,4 @@
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata = {
   title: 'Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator',
   description: 'Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.',

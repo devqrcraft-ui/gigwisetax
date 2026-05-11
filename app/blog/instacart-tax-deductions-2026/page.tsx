@@ -3,6 +3,7 @@
 // Save as: app/blog/instacart-tax-deductions-2026/page.tsx
 // ================================================================
 
+import AuthorBox from '@/app/components/AuthorBox'
 export const metadata = {
   title: 'Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator',
   description: 'Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.',

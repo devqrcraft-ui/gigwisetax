@@ -1,4 +1,5 @@
 'use client'
+import AuthorBox from '@/app/components/AuthorBox'
 import { useState } from 'react'
 import Link from 'next/link'
 
