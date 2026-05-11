@@ -10,7 +10,7 @@ const platforms = [
 
 const blogPosts = [
   'doordash-taxes-2026',
-  'uber-tax-guide-2026',
+  'uber-tax-guide-2026','amazon-flex-tax-guide-2026',
   'instacart-shopper-taxes-2026','instacart-tax-deductions-2026','instacart-tax-guide-2026',
   'etsy-seller-taxes-2026',
   'home-office-deduction-gig-workers','s-corp-guide-gig-workers',
