@@ -19,6 +19,8 @@ export default function WalmartSparkTaxGuide2026() {
 
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      
+      <AuthorBox />
       <style>{`
         .blog-grid{display:grid;grid-template-columns:1fr 280px;gap:24px}
         @media(max-width:700px){.blog-grid{grid-template-columns:1fr!important}.blog-sidebar{order:2}}

@@ -284,6 +284,8 @@ export default function TuroPage() {
             </div>
           </div>
 
+      
+      <AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}

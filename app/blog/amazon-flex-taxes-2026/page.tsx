@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata = {
@@ -250,6 +251,8 @@ export default function AmazonFlexTaxesBlogPost() {
         </aside>
       </div>
 
+      
+      <AuthorBox />
       <style>{`
         @media(max-width:900px){.blog-grid{grid-template-columns:1fr!important}}
       `}</style>

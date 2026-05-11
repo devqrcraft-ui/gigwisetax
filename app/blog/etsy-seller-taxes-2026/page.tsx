@@ -132,6 +132,8 @@ export default function EtsyTaxGuide() {
           </div>
         </div>
       </div>
+      
+      <AuthorBox />
       <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
   )

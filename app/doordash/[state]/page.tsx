@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
@@ -220,6 +221,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
       </div>
 
+      
+      <AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.three-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}
       `}</style>

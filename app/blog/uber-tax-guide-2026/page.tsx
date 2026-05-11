@@ -236,7 +236,9 @@ export default function UberTaxGuide() {
             </div>
           </div>
         </div>
-        <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
+        
+      <AuthorBox />
+      <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
       </div>
     </>
   )
