@@ -3,8 +3,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Instacart Shopper Taxes 2026: Free Calculator + Full Deduction Checklist',
-  description: 'See your exact 2026 tax bill as an Instacart shopper in 60 seconds. Mileage $0.725/mi, insulated bags, phone — all deductible. All 50 states.',
+  title: 'Instacart Shopper Taxes 2026: Save $7,750 — Free Calculator + Deduction Checklist',
+  description: 'Instacart shoppers save $7,750 on average in 2026 tax deductions. Mileage $0.725/mi, insulated bags, phone — all deductible. Free calculator, all 50 states.',
   keywords: 'Instacart taxes 2026, Instacart self employment tax, Instacart shopper 1099, Instacart mileage deduction 2026, Instacart quarterly taxes',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
