@@ -5,16 +5,16 @@ const BASE_URL = 'https://www.gigwisetax.com';
 const platforms = [
   'doordash','uber','lyft','instacart','amazon-flex',
   'grubhub','etsy','airbnb','onlyfans','turo','walmart-spark',
-  'shipt','fiverr','rover','taskrabbit','upwork',
+  'fiverr','rover','taskrabbit','upwork',
 ];
 
 const blogPosts = [
-  'doordash-taxes-2025-guide','doordash-taxes-2026',
+  'doordash-taxes-2026',
   'uber-tax-guide-2026',
   'instacart-shopper-taxes-2026','instacart-tax-deductions-2026','instacart-tax-guide-2026',
-  'etsy-seller-tax-deductions-2025','etsy-seller-taxes-2026',
+  'etsy-seller-taxes-2026',
   'home-office-deduction-gig-workers','s-corp-guide-gig-workers',
-  'gig-worker-tax-deadlines-2026','1099-deadlines-2025',
+  'gig-worker-tax-deadlines-2026',
   'turo-host-taxes-2026',
   'walmart-spark-driver-taxes-2026','walmart-spark-tax-guide-2026','walmart-spark-taxes-2026',
   'w9-mistakes-gig-workers','w2-vs-1099-guide-2026',
@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/multi-app-gig-taxes-2026`,       lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${BASE_URL}/safe-harbor-quarterly-taxes`,    lastModified: now, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${BASE_URL}/self-employment-tax-calculator-2026`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
+    { url: `${BASE_URL}/shipt`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.85 },
     { url: `${BASE_URL}/how-we-calculate-gig-taxes`,     lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
     { url: `${BASE_URL}/privacy`,                        lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.3 },
   ];
