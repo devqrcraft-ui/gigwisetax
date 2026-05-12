@@ -118,7 +118,7 @@ export default function HomeOfficeBlog() {
       </div>
     </div>
 
-      {/* RELATED ARTICLES */}
+
       <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
         <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase', letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
