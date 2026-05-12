@@ -109,15 +109,12 @@ export default function SCorpGuideBlog() {
           </div>
         </div>
       </div>
-    </div>
-
-
-      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
-        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase', letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
-          <a href='/blog/mileage-rate-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>IRS Mileage Rate 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div></div></a>
-          <a href='/blog/quarterly-taxes-gig-workers' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>Quarterly Taxes for Gig Workers</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 deadlines and how to calculate estimated tax payments.</div></div></a>
-          <a href='/blog/self-employment-tax-deductions-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>Self-Employment Tax Deductions 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Every deduction self-employed workers can claim in 2026.</div></div></a>
+      <div style={{ margin:"40px 0 32px", padding:"24px", background:"rgba(255,255,255,0.03)", border:"1px solid rgba(232,184,75,0.2)", borderRadius:10 }}>
+        <div style={{ fontSize:13, fontWeight:800, color:"#e8b84b", textTransform:"uppercase" as const, letterSpacing:"1px", marginBottom:16 }}>Related Articles</div>
+        <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(220px,1fr))", gap:12 }}>
+          <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none" }}><div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(232,184,75,0.15)", borderRadius:8, padding:"16px 18px" }}><div style={{ fontSize:15, fontWeight:700, color:"#e8b84b", marginBottom:6 }}>IRS Mileage Rate 2026</div><div style={{ fontSize:13, color:"#94aabf", lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div></div></a>
+          <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none" }}><div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(232,184,75,0.15)", borderRadius:8, padding:"16px 18px" }}><div style={{ fontSize:15, fontWeight:700, color:"#e8b84b", marginBottom:6 }}>Quarterly Taxes for Gig Workers</div><div style={{ fontSize:13, color:"#94aabf", lineHeight:1.6 }}>2026 deadlines and how to calculate estimated tax payments.</div></div></a>
+          <a href="/blog/self-employment-tax-deductions-2026" style={{ textDecoration:"none" }}><div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(232,184,75,0.15)", borderRadius:8, padding:"16px 18px" }}><div style={{ fontSize:15, fontWeight:700, color:"#e8b84b", marginBottom:6 }}>SE Tax Deductions 2026</div><div style={{ fontSize:13, color:"#94aabf", lineHeight:1.6 }}>Every deduction self-employed workers can claim.</div></div></a>
         </div>
       </div>
       <AuthorBox />
