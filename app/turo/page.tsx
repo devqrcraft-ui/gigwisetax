@@ -76,6 +76,7 @@ export default function TuroPage() {
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
+    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Turo Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Turo workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Turo earnings. Download your annual tax summary or 1099-NEC from the Turo app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5 cents/mile, phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Turo income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}' }} />
     <div style={{ background:'#0d1117', minHeight:'100vh' }}>
 
       <div style={{ background:'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom:'1px solid rgba(255,255,255,.07)' }}>
@@ -292,5 +293,6 @@ export default function TuroPage() {
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}
       `}</style>
     </div>
+    </>
   )
 }
