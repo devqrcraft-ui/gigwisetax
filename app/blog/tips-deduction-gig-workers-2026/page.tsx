@@ -48,3 +48,54 @@ export default function TipsDeductionPage() {
           </p>
         </div>
       </div>
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px' }}>
+        <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
+          <div style={{ fontSize: 13, fontWeight: 800, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>Quick Answer</div>
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>Under OBBBA 2026, gig workers can deduct up to <strong>$25,000 in tips</strong> from federal taxable income. If you earned $8,000 in DoorDash tips, that full amount reduces your taxable income. Self-employment tax (15.3%) still applies — only federal income tax is reduced.</p>
+        </div>
+
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>What Is the OBBBA Tips Deduction?</h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>The One Big Beautiful Bill Act (OBBBA), signed in 2026, introduced a federal deduction for tip income received by eligible workers. Gig workers who receive customer tips through platforms like DoorDash, Uber Eats, Instacart, Lyft, and Grubhub qualify for this deduction up to $25,000 per year.</p>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>This means tip income is effectively excluded from your federal taxable income — reducing your income tax bill directly. The deduction is taken on your federal return and reduces adjusted gross income.</p>
+
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>Who Qualifies?</h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>Any gig worker who receives customer tips qualifies, including drivers and delivery workers on DoorDash, Uber Eats, Instacart, Lyft, and Grubhub. Tips must be received directly from customers — not bonuses or incentives from the platform itself.</p>
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>How to Claim the Tips Deduction</h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>Report your total income including tips on Schedule C as usual. Then deduct the qualifying tip amount (up to $25,000) as a separate line item on your federal return. Keep records of all tip income received — your platform earnings summary will show tips separately.</p>
+
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>Does It Reduce Self-Employment Tax?</h2>
+        <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>No. The OBBBA tips deduction only reduces your federal income tax. You still owe 15.3% self-employment tax on your net gig income including tips. On $8,000 in tips you save roughly $800–$2,000 in federal income tax depending on your bracket, but SE tax remains unchanged.</p>
+
+        <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>FAQ</h2>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', marginTop: 8 }}>
+          {[
+            { q: 'What is the tips deduction cap for gig workers in 2026?', a: 'The OBBBA tips deduction cap is $25,000 per year. If you earned $30,000 in tips, only $25,000 is deductible from federal income tax.' },
+            { q: 'Do DoorDash drivers qualify for the no-tax-on-tips deduction?', a: 'Yes. DoorDash delivery drivers who receive customer tips qualify for the OBBBA tips deduction up to $25,000.' },
+            { q: 'Does the tips deduction apply to self-employment tax?', a: 'No. It reduces federal income tax only. Self-employment tax (15.3%) still applies to all net gig income including tips.' },
+            { q: 'Which platforms qualify for the tips deduction in 2026?', a: 'DoorDash, Uber Eats, Instacart, Lyft, Grubhub, and any platform where customers tip directly.' },
+          ].map(({ q, a }, i) => (
+            <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '16px 0' }}>
+              <div style={{ fontSize: 16, fontWeight: 700, color: '#e8b84b', marginBottom: 8 }}>{q}</div>
+              <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7 }}>{a}</div>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ margin:'32px 0 24px', padding:'20px 24px', background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap' as const, gap:12 }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill with tips deduction — free</div>
+          <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
+        </div>
+
+        <div style={{ margin:'0 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
+          <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
+            <a href='/blog/doordash-taxes-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>DoorDash Taxes 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>How much tax do DoorDash drivers owe in 2026?</div></div></a>
+            <a href='/blog/mileage-rate-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>IRS Mileage Rate 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>72.5 cents per mile — how to track and claim it.</div></div></a>
+            <a href='/blog/self-employment-tax-deductions-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>SE Tax Deductions 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Every deduction self-employed workers can claim.</div></div></a>
+          </div>
+        </div>
+        <AuthorBox />
+      </div>
+    </div>
+  )
+}

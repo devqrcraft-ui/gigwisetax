@@ -117,5 +117,6 @@ export default function W9MistakesBlog() {
         <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
       </div>
       <AuthorBox />
+    </div>
   )
 }
