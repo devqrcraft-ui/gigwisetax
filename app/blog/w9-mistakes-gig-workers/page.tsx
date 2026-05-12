@@ -110,6 +110,12 @@ export default function W9MistakesBlog() {
           <a href='/blog/self-employment-tax-deductions-2026' style={{ textDecoration:'none' }}><div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}><div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6 }}>Self-Employment Tax Deductions 2026</div><div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Every deduction self-employed workers can claim in 2026.</div></div></a>
         </div>
       </div>
+      
+      {/* PLATFORM CTA */}
+      <div style={{ margin:'0 0 24px', padding:'20px 24px', background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap' as const, gap:12 }}>
+        <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
+        <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
+      </div>
       <AuthorBox />
   )
 }

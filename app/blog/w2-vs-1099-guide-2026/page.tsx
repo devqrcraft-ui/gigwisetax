@@ -97,6 +97,12 @@ export default function W2vs1099Guide() {
       </a>
         </div>
       </div>
+      
+      {/* PLATFORM CTA */}
+      <div style={{ margin:'0 0 24px', padding:'20px 24px', background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap' as const, gap:12 }}>
+        <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
+        <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 vs W-2 Tax Calculator →</a>
+      </div>
       <AuthorBox />
     </main>
     </div>
