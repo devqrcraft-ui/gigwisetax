@@ -1,3 +1,4 @@
+import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
