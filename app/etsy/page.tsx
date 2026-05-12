@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'etsy')
   if (!p) return {}
   return {
-    title: `Etsy Tax Calculator 2026 — Seller Self-Employment Tax | GigWiseTax`,
-    description: `Calculate your Etsy seller self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Includes Schedule C deductions for materials, shipping, fees. Free, 2026.`,
+    title: `Etsy Seller Tax Calculator 2026 — $30K Income = ~$6,448 Tax Owed`,
+    description: `Etsy sellers: $30K net = ~$4,594 SE tax + federal. Supplies, shipping, and home office deductions save $1,500+. Free 2026 calculator, all 51 states.`,
     keywords: `etsy seller tax calculator, etsy self employment tax 2026, etsy quarterly taxes, etsy 1099 taxes, how much tax do etsy sellers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

@@ -9,8 +9,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'upwork')
   if (!p) return {}
   return {
-    title: 'Upwork Tax Calculator 2026 — 1099 Self-Employment Tax | GigWiseTax',
-    description: 'Free Upwork tax calculator 2026. SE tax 15.3% + federal + state. All 51 states. No signup.',
+    title: `Upwork Tax Calculator 2026 — $60K Income = ~$14,278 Tax Owed`,
+    description: `Upwork freelancers: $60K net = ~$8,478 SE tax + federal. Home office and software deductions save $3,000+. Free 2026 calculator, all 51 states.`,
     keywords: 'upwork tax calculator, upwork 1099 taxes 2026, upwork self employment tax',
     alternates: { canonical: 'https://www.gigwisetax.com/upwork' },
     openGraph: {

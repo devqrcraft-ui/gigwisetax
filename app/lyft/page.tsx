@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'lyft')
   if (!p) return {}
   return {
-    title: `Lyft Tax Calculator 2026 — Driver Self-Employment Tax | GigWiseTax`,
-    description: `Calculate Lyft driver self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Mileage deduction, quarterly payment schedule. Free Lyft tax calculator 2026.`,
+    title: `Lyft Tax Calculator 2026 — $35K Income = ~$7,750 Tax Owed`,
+    description: `Lyft drivers: $35K net = ~$5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `lyft driver tax calculator, lyft taxes 2026, lyft self employment tax, lyft quarterly taxes, lyft 1099 tax guide`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

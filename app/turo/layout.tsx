@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Turo Host Tax Calculator 2026 — Income Tax + Depreciation | GigWiseTax", description: "Free Turo tax calculator 2026. Estimate income tax, self-employment tax, and car depreciation deductions for all 51 states. No signup required.", alternates: { canonical: "https://www.gigwisetax.com/turo" } };
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Turo Tax Calculator 2026 — $50K Income = ~$11,565 Tax Owed',
+  description: 'Turo hosts: $50K net = ~$7,065 SE tax + federal. Depreciation and mileage deductions can save $3,000+. Free 2026 calculator, all 51 states, no signup.',
+  keywords: 'turo tax calculator, turo host self employment tax 2026, turo quarterly taxes, turo 1099 taxes',
+  alternates: { canonical: 'https://www.gigwisetax.com/turo' },
+}
 export default function Layout({ children }: { children: React.ReactNode }) {
-  
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Turo Tax Calculator","item":"https://www.gigwisetax.com/turo"}]})}} />{children}</>;
+  return <>{children}</>
 }

@@ -1,5 +1,10 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Grubhub Driver Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax", description: "Free Grubhub tax calculator 2026. Estimate self-employment tax 15.3%, federal and state income tax, mileage deduction 72.5 cents per mile. No signup. Instant results.", alternates: { canonical: "https://www.gigwisetax.com/grubhub" } };
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Grubhub Tax Calculator 2026 — $35K Income = ~$7,750 Tax Owed',
+  description: 'Grubhub drivers: $35K net = ~$5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 51 states, no signup.',
+  keywords: 'grubhub tax calculator, grubhub self employment tax 2026, grubhub quarterly taxes, grubhub 1099 taxes',
+  alternates: { canonical: 'https://www.gigwisetax.com/grubhub' },
+}
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Grubhub Tax Calculator","item":"https://www.gigwisetax.com/grubhub"}]})}} />{children}</>;
+  return <>{children}</>
 }

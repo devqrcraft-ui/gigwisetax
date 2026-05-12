@@ -1,6 +1,10 @@
-import type { Metadata } from "next";
-export const metadata: Metadata = { title: "Walmart Spark Driver Tax Calculator 2026 — Instant, Free", description: "Free Walmart Spark tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax, mileage deduction 72.5 cents per mile for all 51 states.", alternates: { canonical: "https://www.gigwisetax.com/walmart-spark" } };
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Walmart Spark Tax Calculator 2026 — $30K Income = ~$6,448 Tax Owed',
+  description: 'Walmart Spark drivers: $30K net = ~$4,594 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,175+. Free 2026 calculator, all 51 states, no signup.',
+  keywords: 'walmart spark tax calculator, walmart spark self employment tax 2026, walmart spark quarterly taxes, spark driver 1099 taxes',
+  alternates: { canonical: 'https://www.gigwisetax.com/walmart-spark' },
+}
 export default function Layout({ children }: { children: React.ReactNode }) {
-  
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Walmart Spark Tax Calculator","item":"https://www.gigwisetax.com/walmart-spark"}]})}} />{children}</>;
+  return <>{children}</>
 }

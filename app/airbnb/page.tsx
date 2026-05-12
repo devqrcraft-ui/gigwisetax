@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'airbnb')
   if (!p) return {}
   return {
-    title: `Airbnb Tax Calculator 2026 — See Exact Tax Bill Instantly`,
-    description: `Airbnb tax calculator 2026. Enter rental income → see exact federal + state tax, SE tax, quarterly payments & deductions. Free, instant, no signup. All 51 states.`,
+    title: `Airbnb Tax Calculator 2026 — $50K Income = ~$11,565 Tax Owed`,
+    description: `Airbnb hosts: $50K net = ~$7,065 SE tax + federal. Depreciation and expense deductions save $3,000+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
