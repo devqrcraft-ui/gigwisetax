@@ -240,6 +240,34 @@ export default function UberTaxGuide() {
           </div>
         </div>
         
+      
+      {/* RELATED ARTICLES */}
+      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
+        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
+
+      <a href="/blog/lyft-driver-taxes-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Lyft Driver Taxes 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Tax obligations, deductions, and quarterly tips for Lyft drivers.</div>
+        </div>
+      </a>
+
+      <a href="/blog/doordash-taxes-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>DoorDash Taxes 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax, quarterly payments, and top deductions for Dashers.</div>
+        </div>
+      </a>
+
+      <a href="/blog/grubhub-driver-taxes-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Grubhub Driver Taxes 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax and deductions guide for Grubhub delivery drivers.</div>
+        </div>
+      </a>
+        </div>
+      </div>
       <AuthorBox />
       <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
       </div>

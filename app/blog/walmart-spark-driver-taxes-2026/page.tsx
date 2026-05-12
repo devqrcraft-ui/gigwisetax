@@ -1,3 +1,4 @@
+import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Walmart Spark Driver Taxes 2026 — Complete Tax Guide | GigWiseTax',
@@ -62,6 +63,32 @@ export default function BlogPost() {
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 20 }}>Walmart Spark sends 1099-NEC forms by January 31. Find it in your Spark Driver app under Tax Documents. If you earned under $600, you will not receive a 1099 but still owe taxes on that income.</p>
       <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>Should Spark drivers pay quarterly taxes?</h3>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 20 }}>Yes. If you expect to owe more than $1,000 for the year, the IRS requires quarterly estimated payments. Due dates in 2026: April 15, June 15, September 15, January 15 (2027).</p>
+    
+      {/* RELATED ARTICLES */}
+      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
+        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
+        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
+      <a href="/blog/doordash-taxes-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>DoorDash Taxes 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax, quarterly payments, and top deductions for Dashers.</div>
+        </div>
+      </a>
+      <a href="/blog/grubhub-driver-taxes-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Grubhub Driver Taxes 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax and deductions guide for Grubhub delivery drivers.</div>
+        </div>
+      </a>
+      <a href="/blog/amazon-flex-tax-guide-2026" style={{ textDecoration:'none' }}>
+        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
+          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Amazon Flex Tax Guide 2026</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>How Amazon Flex drivers handle taxes, mileage, and deductions.</div>
+        </div>
+      </a>
+        </div>
+      </div>
+      <AuthorBox />
     </main>
   )
 }
