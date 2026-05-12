@@ -63,6 +63,7 @@ export default function AirbnbTaxDeductions2026() {
         ]
       })}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","item":"https://gigwisetax.com/blog/airbnb-tax-deductions-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","description":"Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see exactly how much you owe. All 50 states.","url":"https://gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
 
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
