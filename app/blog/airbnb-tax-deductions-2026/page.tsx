@@ -62,6 +62,7 @@ export default function AirbnbTaxDeductions2026() {
           }
         ]
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","item":"https://gigwisetax.com/blog/airbnb-tax-deductions-2026"}]}' }} />
 
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>

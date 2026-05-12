@@ -17,7 +17,8 @@ export default function BestTaxSoftware() {
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
   const tag = { display: 'inline-block' as const, fontSize: 13, fontWeight: 700, padding: '2px 8px', borderRadius: 4, marginBottom: 8 }
   return (
-    <div style={{ background: '#07111F', minHeight: '100vh' }}>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Best Tax Software for Gig Workers 2026","item":"https://gigwisetax.com/blog/best-tax-software-for-gig-workers-2026"}]}' }} />
+      <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px 28px' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>

@@ -39,6 +39,7 @@ export default function InstacartTaxGuide() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Shopper Taxes 2026: Save $7,750 — Free Calculator + Deduction Checklist","item":"https://gigwisetax.com/blog/instacart-shopper-taxes-2026"}]}' }} />
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>

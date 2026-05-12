@@ -38,6 +38,7 @@ export default function Page() {
           },
         ],
       })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","item":"https://gigwisetax.com/blog/gig-worker-tax-deadlines-2026"}]}' }} />
 
       <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 20px 64px', fontFamily: 'system-ui,sans-serif', color: 'rgba(255,255,255,0.9)' }}>
 
