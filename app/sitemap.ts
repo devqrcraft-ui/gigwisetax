@@ -20,7 +20,7 @@ const blogPosts = [
   'w9-mistakes-gig-workers','w2-vs-1099-guide-2026',
   'airbnb-host-taxes-2026','airbnb-tax-deductions-2026',
   'amazon-flex-taxes-2026',
-  'grubhub-driver-taxes-2026','grubhub-vs-doordash-taxes-2026',
+  'grubhub-driver-taxes-2026','grubhub-vs-doordash-taxes-2026','doordash-vs-uber-eats-taxes-2026',
   'lyft-driver-taxes-2026',
   'mileage-rate-2026',
   'onlyfans-tax-guide-2026',
