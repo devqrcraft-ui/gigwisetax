@@ -343,7 +343,7 @@ export default function HomeClient() {
                       <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(String(Math.max(0, parseFloat(e.target.value) || 0)))} placeholder="45,000"/>
                       </div>
 
           {/* INCOME PRESETS */}
@@ -364,14 +364,14 @@ export default function HomeClient() {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label}>▸ Business Miles Driven</label>
-                      <input style={inp} type="number" placeholder="e.g. 10,000 miles"/>
+                      <input style={inp} type="number" min="0" placeholder="e.g. 10,000 miles"/>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" placeholder="e.g. 2,000"/>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000"/>
                       </div>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
                     </div>
