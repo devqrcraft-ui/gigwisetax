@@ -149,8 +149,9 @@ export default function QuarterlyTaxCalculator() {
               <input
                 type="number"
                 placeholder="e.g. 45000"
+                min="0"
                 value={income}
-                onChange={e => setIncome(e.target.value)}
+                onChange={e => setIncome(Math.max(0, parseFloat(e.target.value) || 0).toString())}
                 style={{ background: '#07111F', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px 14px', color: '#C8D8EC', fontSize: 16, outline: 'none' }}
               />
             </label>
@@ -160,8 +161,9 @@ export default function QuarterlyTaxCalculator() {
               <input
                 type="number"
                 placeholder="e.g. 8000"
+                min="0"
                 value={expenses}
-                onChange={e => setExpenses(e.target.value)}
+                onChange={e => setExpenses(Math.max(0, parseFloat(e.target.value) || 0).toString())}
                 style={{ background: '#07111F', border: '1px solid #1e3a5f', borderRadius: 8, padding: '12px 14px', color: '#C8D8EC', fontSize: 16, outline: 'none' }}
               />
             </label>
