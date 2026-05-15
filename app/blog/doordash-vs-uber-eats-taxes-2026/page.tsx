@@ -49,6 +49,16 @@ export default function DoorDashVsUberEatsPost() {
           </p>
         </div>
 
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Both DoorDash and Uber Eats classify drivers as <strong>1099 contractors</strong> — same 15.3% SE tax</li>
+            <li>DoorDash pays via <strong>Stripe Express</strong>; Uber Eats via <strong>Uber Pro card or bank transfer</strong></li>
+            <li>Both platforms send <strong>1099-NEC</strong> for earnings $2,000+ in 2026</li>
+            <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for both platforms</li>
+            <li>Tips up to <strong>$25,000</strong> are federally deductible from both platforms under OBBBA 2026</li>
+          </ul>
+        </div>
         <h2 style={h2}>Tax Treatment: DoorDash vs Uber Eats</h2>
         <p style={p}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $600) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
         <p style={p}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>

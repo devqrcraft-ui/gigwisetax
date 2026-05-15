@@ -54,6 +54,16 @@ export default function TipsDeductionPage() {
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.9)', lineHeight: 1.7, margin: 0 }}>Under OBBBA 2026, gig workers can deduct up to <strong>$25,000 in tips</strong> from federal taxable income. If you earned $8,000 in DoorDash tips, that full amount reduces your taxable income. Self-employment tax (15.3%) still applies — only federal income tax is reduced.</p>
         </div>
 
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Under OBBBA 2026, gig workers can deduct up to <strong>$25,000</strong> in tips from federal taxable income</li>
+            <li>Tips are still <strong>reported on your return</strong> — the deduction reduces taxable income, not gross income</li>
+            <li>Eligible workers include delivery drivers, rideshare drivers, and service workers</li>
+            <li>Tips deduction applies to <strong>federal tax only</strong> — state treatment varies</li>
+            <li>Keep records of all tips received — Instacart, DoorDash, Uber all report tip amounts on 1099</li>
+          </ul>
+        </div>
         <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>What Is the OBBBA Tips Deduction?</h2>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>The One Big Beautiful Bill Act (OBBBA), signed in 2026, introduced a federal deduction for tip income received by eligible workers. Gig workers who receive customer tips through platforms like DoorDash, Uber Eats, Instacart, Lyft, and Grubhub qualify for this deduction up to $25,000 per year.</p>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>This means tip income is effectively excluded from your federal taxable income — reducing your income tax bill directly. The deduction is taken on your federal return and reduces adjusted gross income.</p>

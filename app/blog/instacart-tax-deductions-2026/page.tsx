@@ -128,6 +128,16 @@ export default function InstacartTaxDeductions2026() {
               <a href="/instacart" style={{ textDecoration: 'none', background: '#e8b84b', color: '#07111F', padding: '10px 20px', borderRadius: 4, fontWeight: 800, fontSize: 14, whiteSpace: 'nowrap' as const }}>Calculate Now →</a>
             </div>
 
+            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+              <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+                <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for Instacart shoppers</li>
+                <li>Insulated bags, carts, and grocery supplies are <strong>fully deductible</strong></li>
+                <li>Phone bill business-use % and data plan are <strong>deductible</strong></li>
+                <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
+                <li>Full-service shoppers file <strong>Schedule C</strong> — in-store shoppers get W-2 from Instacart</li>
+              </ul>
+            </div>
             <h2 style={h2}>Instacart Tax Deduction Checklist 2026</h2>
             <p style={prose}>
               Instacart full-service shoppers are independent contractors. That means no taxes are withheld from your pay,

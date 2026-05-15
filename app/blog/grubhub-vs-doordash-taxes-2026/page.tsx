@@ -66,6 +66,16 @@ export default function GrubhubVsDoorDashPost() {
             The good news: the IRS doesn't care which app you're using. Both platforms classify drivers as <strong>independent contractors</strong>, and the tax rules are identical.
           </p>
 
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>Both Grubhub and DoorDash classify drivers as <strong>1099 contractors</strong> — same 15.3% SE tax</li>
+              <li>Grubhub pays weekly via <strong>direct deposit</strong>; DoorDash offers <strong>Fast Pay</strong> daily for $1.99</li>
+              <li>Both send <strong>1099-NEC</strong> for earnings $2,000+ in 2026</li>
+              <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for both platforms</li>
+              <li>Tips up to <strong>$25,000</strong> are federally deductible from both platforms under OBBBA 2026</li>
+            </ul>
+          </div>
           <h2 style={h2}>Side-by-Side Tax Comparison</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
