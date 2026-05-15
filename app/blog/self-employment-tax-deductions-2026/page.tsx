@@ -63,6 +63,16 @@ export default function DeductionsGuide() {
         <span style={{ background: 'rgba(232,184,75,.15)', color: '#e8b84b', padding: '4px 12px', borderRadius: 20, fontSize: 13 }}>IRS Schedule C</span>
       </div>
 
+      <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>Mileage at <strong>72.5¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
+          <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA — saves thousands per year</li>
+          <li>Health insurance premiums are <strong>100% deductible</strong> for self-employed workers</li>
+          <li>SEP-IRA contributions up to <strong>$69,000</strong> reduce taxable income dollar-for-dollar</li>
+          <li>Average gig worker overpays <strong>$2,000–$5,000</strong> in taxes by missing available deductions</li>
+        </ul>
+      </div>
       {deductions.map((d, i) => (
         <div key={i} style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: '20px', marginBottom: 12 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>

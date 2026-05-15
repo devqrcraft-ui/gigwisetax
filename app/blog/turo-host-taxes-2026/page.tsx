@@ -29,6 +29,16 @@ export default function BlogPost() {
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>Turo hosts report rental income on Schedule C (active) or Schedule E (passive). Deductions dramatically reduce your tax bill. Here is everything for 2026.</p>
       </div>
+      <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>Turo hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
+          <li>Vehicle depreciation is the <strong>largest deduction</strong> — deduct business-use % of car value</li>
+          <li>Insurance, maintenance, cleaning, and Turo fees are <strong>fully deductible</strong></li>
+          <li>Turo sends <strong>1099-K</strong> if you process $5,000+ in payments in 2026</li>
+          <li>Set aside <strong>30%</strong> of every payout — Turo does not withhold taxes</li>
+        </ul>
+      </div>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Turo Host Tax Deductions 2026</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage ($0.725/mile)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (

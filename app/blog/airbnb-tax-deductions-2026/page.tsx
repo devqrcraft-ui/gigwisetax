@@ -132,6 +132,16 @@ export default function AirbnbTaxDeductions2026() {
               <a href="/airbnb" style={{ textDecoration: 'none', background: '#e8b84b', color: '#07111F', padding: '10px 20px', borderRadius: 4, fontWeight: 800, fontSize: 14, whiteSpace: 'nowrap' as const }}>Calculate Now →</a>
             </div>
 
+            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+              <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+                <li>Mortgage interest, property taxes, and depreciation are the <strong>top 3 Airbnb deductions</strong></li>
+                <li>Cleaning fees, supplies, and repairs are <strong>100% deductible</strong> for rental days</li>
+                <li>Home office deduction available if you manage your Airbnb from a dedicated space</li>
+                <li>Airbnb platform fees charged to hosts are <strong>fully deductible</strong> on Schedule E</li>
+                <li>Use the <strong>rental day ratio</strong> to split shared expenses between personal and rental use</li>
+              </ul>
+            </div>
             <h2 style={h2}>Complete Airbnb Tax Deduction Checklist for 2026</h2>
             <p style={prose}>
               Airbnb hosts who rent their property for 15 or more days per year must report rental income to the IRS.
