@@ -95,7 +95,17 @@ export default function UberTaxGuide() {
                 </ul>
               </div>
 
-              <h2 style={h2}>Uber's 1099 Forms Explained</h2>
+                        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>Uber drivers on <strong>$35,000</strong> net income owe approximately <strong>$7,750</strong> in total federal tax</li>
+              <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — your single largest deduction</li>
+              <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
+              <li>Uber sends <strong>1099-NEC</strong> for earnings over $2,000 and <strong>1099-K</strong> over $5,000</li>
+              <li>Set aside <strong>25–30%</strong> of every payment for quarterly estimated taxes</li>
+            </ul>
+          </div>
+<h2 style={h2}>Uber's 1099 Forms Explained</h2>
               <p style={prose}>
                 Uber issues two different 1099 forms. The <strong>1099-K</strong> reports your gross trip earnings
                 (what riders/Uber Eats users paid — before Uber's service fee). The <strong>1099-NEC</strong>

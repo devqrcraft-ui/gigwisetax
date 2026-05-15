@@ -77,7 +77,17 @@ export default function AmazonFlexTaxesBlogPost() {
             That's great news for your paycheck every week. It's a shock every April if you haven't been setting money aside.
           </p>
 
-          <h2 style={h2}>Does Amazon Flex Send a 1099?</h2>
+                    <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$8,852</strong> in total federal tax</li>
+              <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — driving 20,000 miles = <strong>$14,500</strong> deduction</li>
+              <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
+              <li>Amazon sends <strong>1099-NEC</strong> if you earn $2,000+ in 2026</li>
+              <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
+            </ul>
+          </div>
+<h2 style={h2}>Does Amazon Flex Send a 1099?</h2>
           <p style={p}>
             Yes. Amazon sends a <strong>1099-NEC</strong> (Non-Employee Compensation) to every Flex driver who earns $600 or more in a calendar year. Your 1099-NEC will arrive by January 31, 2027 for the 2026 tax year.
           </p>
