@@ -55,9 +55,20 @@ export default function BestAppsGigWorkers() {
       <div style={{ minHeight: '100vh', background: '#07111F', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 16px' }}>
           <div style={{ marginBottom: 8 }}><span style={tag}>GIG TOOLS 2026</span></div>
-          <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, lineHeight: 1.2, marginBottom: 16, color: 'white' }}>Best Apps for Gig Workers 2026</h1>
-          <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28, fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.9)' }}>
+          <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, lineHeight: 1.2, marginBottom: 8, color: 'white' }}>Best Apps for Gig Workers 2026</h1>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist</div>
+          <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.9)' }}>
             <strong style={{ color: '#e8b84b' }}>Bottom line:</strong> The right apps save gig workers $3,000–$11,000/year. A mileage tracker at 72.5¢/mile on 15,000 miles = $10,875 deduction. A tax calculator prevents $500+ underpayment penalties. Use all 4 categories below.
+          </div>
+          <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
+            <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
+            <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
+              <li>A mileage tracker at <strong>72.5¢/mile</strong> on 15,000 miles = $10,875 deduction in 2026</li>
+              <li>Quarterly tax tools prevent <strong>$500+ underpayment penalties</strong> from the IRS</li>
+              <li>Expense tracking apps catch deductions most gig workers miss — saving <strong>$1,500–$3,000/year</strong></li>
+              <li>Self-employment tax is <strong>15.3%</strong> — apps that auto-set aside 25–30% prevent cash shortfalls</li>
+              <li>Free tools cover most needs for workers earning under <strong>$50,000/year</strong></li>
+            </ul>
           </div>
           {apps.map(({ cat, items }) => (
             <div key={cat}>
