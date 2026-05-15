@@ -59,6 +59,16 @@ export default function W9MistakesBlog() {
           <p style={p}>If you work for DoorDash, Uber, Etsy, Airbnb, or any other gig platform, you've filled out at least one W-9 form. It looks simple — just your name and SSN. But the details matter. The IRS matches every W-9 against its records, and even small mismatches can trigger backup withholding at 24% of your earnings.</p>
           <p style={p}>Here are the 7 most expensive W-9 and 1099 mistakes gig workers make — and exactly how to fix each one.</p>
 
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>Always use your <strong>legal name</strong> on W-9 — exactly as it appears on your Social Security card</li>
+              <li>Enter your <strong>SSN or EIN</strong> — not both, not a mix</li>
+              <li>W-9 errors trigger <strong>24% backup withholding</strong> from all future payments</li>
+              <li>Sole proprietors check <strong>"Individual/sole proprietor"</strong> — not LLC unless you have one</li>
+              <li>W-9 is not filed with the IRS — give it only to the <strong>platform or client requesting it</strong></li>
+            </ul>
+          </div>
           <h2 style={h2}>Mistake #1: Using a Nickname Instead of Your Legal Name</h2>
           <p style={p}>The IRS matches your W-9 name against your Social Security Administration records. If your SSN is registered to "Robert Smith" but you write "Bob Smith" on the W-9, the platform's tax software may flag the mismatch — and begin withholding 24% of your payments.</p>
           <div style={warn}> <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>

@@ -58,6 +58,16 @@ export default function SCorpGuideBlog() {
 
           <p style={p}>If you're a full-time gig worker earning over $60,000 per year, you're almost certainly overpaying self-employment tax. The SE tax rate is 15.3% — and as a sole proprietor, you pay it on every dollar of net profit. An S-Corp election changes that equation dramatically.</p>
 
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>S-Corp election makes sense when net self-employment income exceeds <strong>$80,000/year</strong></li>
+              <li>S-Corp saves SE tax on the <strong>distribution portion</strong> — only salary is subject to 15.3%</li>
+              <li>S-Corp requires paying yourself a <strong>reasonable salary</strong> — IRS scrutinizes low salaries</li>
+              <li>Setup costs $500–$2,000 — savings must exceed costs to justify the election</li>
+              <li>S-Corp files <strong>Form 1120-S</strong> separately — adds complexity and accounting costs</li>
+            </ul>
+          </div>
           <h2 style={h2}>How the S-Corp Tax Strategy Works</h2>
           <p style={p}>As a sole proprietor, 100% of your net profit is subject to 15.3% self-employment tax. As an S-Corp owner, you split your income into two buckets:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '16px 0 24px' }}>

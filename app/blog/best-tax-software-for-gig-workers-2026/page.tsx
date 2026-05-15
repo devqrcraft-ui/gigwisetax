@@ -50,6 +50,16 @@ export default function BestTaxSoftware() {
       </div>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px' }}>
         <p style={prose}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Gig workers need software that handles <strong>Schedule C, 1099-NEC, and SE tax</strong> automatically</li>
+            <li>TurboTax Self-Employed and H&R Block Premium both support mileage tracking and Schedule C</li>
+            <li>FreeTaxUSA offers Schedule C filing for <strong>under $15</strong> — best budget option for 2026</li>
+            <li>Most software imports <strong>1099-NEC directly</strong> from DoorDash, Uber, and Instacart</li>
+            <li>Choose software with <strong>audit support</strong> — gig workers are audited at higher rates</li>
+          </ul>
+        </div>
         <h2 style={h2}>Quick Comparison — 2026 Prices for Gig Workers</h2>
         <div style={{ overflowX: 'auto', marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>

@@ -115,6 +115,16 @@ export default function WalmartSparkTaxGuide2026() {
               <a href="/walmart-spark" style={{ textDecoration: 'none', background: '#e8b84b', color: '#07111F', padding: '10px 20px', borderRadius: 4, fontWeight: 800, fontSize: 14, whiteSpace: 'nowrap' as const }}>Calculate Now →</a>
             </div>
 
+            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+              <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+                <li>Walmart Spark drivers are <strong>independent contractors</strong> — 15.3% SE tax applies</li>
+                <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — track every mile from acceptance to drop-off</li>
+                <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
+                <li>Spark sends <strong>1099-NEC</strong> if you earn $2,000+ — all income is taxable regardless</li>
+                <li>Set aside <strong>25–30%</strong> of every payment for quarterly estimated taxes</li>
+              </ul>
+            </div>
             <h2 style={h2}>Are Spark Drivers Independent Contractors?</h2>
             <p style={prose}>
               Yes. Walmart Spark drivers are classified as independent contractors, not employees.

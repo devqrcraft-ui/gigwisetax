@@ -89,6 +89,16 @@ export default function Page() {
           </table>
         </div>
 
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
+            <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>
+            <li>Missing a deadline triggers a <strong>penalty of ~3–4%</strong> of the unpaid amount</li>
+            <li>Use <strong>IRS Direct Pay</strong> — free, instant, no account required</li>
+            <li>Safe harbor: pay <strong>100% of last year's tax</strong> to avoid underpayment penalties</li>
+          </ul>
+        </div>
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 12 }}>Why Gig Workers Must Pay Quarterly</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, marginBottom: 24 }}>
           Unlike W-2 employees whose employer withholds taxes every paycheck, gig workers receive gross pay with <strong>zero withholding</strong>. The IRS requires anyone who expects to owe $1,000 or more in taxes to make estimated payments using <strong>Form 1040-ES</strong>. Failing to pay enough by each deadline results in a penalty calculated on the underpaid amount for that period.

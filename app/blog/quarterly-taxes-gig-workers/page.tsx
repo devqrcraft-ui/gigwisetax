@@ -44,6 +44,16 @@ export default function QuarterlyTaxesGuide() {
          Q1 2026 DEADLINE: April 15, 2026 — Don't miss it or face a 7% IRS underpayment penalty
       </div>
 
+      <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
+          <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>
+          <li>Each quarterly payment = roughly <strong>25%</strong> of your estimated annual tax bill</li>
+          <li>Use <strong>IRS Direct Pay</strong> at irs.gov — free and instant</li>
+          <li>Safe harbor rule: pay <strong>100% of prior year tax</strong> to avoid underpayment penalties</li>
+        </ul>
+      </div>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>The 4 Quarterly Deadlines for 2026</h2>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead>
