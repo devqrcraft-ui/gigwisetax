@@ -64,6 +64,16 @@ export default function MileageRate2026Post() {
             The IRS announced the standard mileage rate for 2026 is <strong>72.5 cents per mile</strong> for business use. This is the rate delivery drivers, rideshare drivers, and other gig workers use to calculate their vehicle expense deduction — without tracking actual gas, maintenance, or insurance costs.
           </p>
 
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+              <li>2026 IRS standard mileage rate is <strong>72.5¢/mile</strong> — the highest rate in years</li>
+              <li>Driving <strong>20,000 miles</strong> for gig work = <strong>$14,500</strong> tax deduction</li>
+              <li>Mileage rate applies from first delivery mile — includes driving to pickup location</li>
+              <li>You must choose mileage <strong>or</strong> actual expenses — cannot switch mid-year</li>
+              <li>Use a mileage tracking app — IRS requires a contemporaneous log for audit protection</li>
+            </ul>
+          </div>
           <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>

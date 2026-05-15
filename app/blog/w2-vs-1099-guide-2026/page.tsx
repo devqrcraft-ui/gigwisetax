@@ -62,6 +62,16 @@ export default function W2vs1099Guide() {
         </tbody>
       </table>
 
+      <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li>1099 contractors pay <strong>15.3% self-employment tax</strong> vs 7.65% for W-2 employees</li>
+          <li>W-2 employees have taxes withheld automatically — 1099 workers pay quarterly</li>
+          <li>1099 workers can deduct <strong>50% of SE tax</strong> from gross income</li>
+          <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA 2026 for 1099 workers</li>
+          <li>Mileage at <strong>72.5¢/mile</strong>, home office, and equipment reduce 1099 tax significantly</li>
+        </ul>
+      </div>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>The Extra 7.65% Problem</h2>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 32 }}>
         As a W-2 employee, your employer pays half of your Social Security and Medicare taxes (7.65%). As a 1099 gig worker, you pay the full 15.3%. On $50,000 net income, that's an extra $3,825 compared to traditional employment — before income tax. This is why gig workers must track every deduction carefully.
