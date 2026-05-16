@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Safe Harbor & Quarterly Tax Penalties for Gig Workers 2026 | GigWiseTax',
@@ -85,6 +86,24 @@ export default function SafeHarborPage() {
           Here is exactly how the safe harbor rules work, what the penalty is, when it applies, and how to avoid it entirely.
         </p>
 
+        {/* ANSWER-FIRST */}
+        <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+          Safe harbor protects gig workers from IRS penalties. Pay <strong style={{color:'#e8b84b'}}>100% of last year's tax</strong> (or 90% of this year's) spread across 4 quarters. On $45,000 net income, missing all quarterly payments costs roughly <strong style={{color:'#e8b84b'}}>$756/year</strong> in penalties.
+        </div>
+        <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
+          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+        </div>
+        {/* KEY TAKEAWAYS */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Safe harbor rule: pay <strong>100% of prior year tax</strong> (110% if AGI exceeded $150,000) — no penalty regardless of current earnings</li>
+            <li>IRS underpayment penalty is approximately <strong>7–8% annualized</strong> on the unpaid amount per quarter</li>
+            <li>Missing <strong>Q1 (Apr 15)</strong> costs the most — penalty accrues for ~9 months; missing Q4 costs the least (~1 month)</li>
+            <li>First-year gig workers with <strong>$0 prior year tax</strong> are exempt from underpayment penalties — applies once only</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — owe $1,000+ and payments are required</li>
+          </ul>
+        </div>
         <div className="alert-box">
           <div className="alert-icon"></div>
           <div>
@@ -353,6 +372,7 @@ export default function SafeHarborPage() {
         </div>
 
       </div>
+      <AuthorBox />
     </>
   );
 }
