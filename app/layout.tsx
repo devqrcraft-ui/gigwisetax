@@ -35,6 +35,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+    <meta name="impact-site-verification" value="0ef29c44-e052-46fb-ace7-9d1fd52d1be0" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
