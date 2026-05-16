@@ -1,5 +1,6 @@
 import HomeClient from '../home-client';
 import type { Metadata } from 'next';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Airbnb Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
@@ -46,11 +47,32 @@ export default function Page() {
           <p style={{ paddingLeft: 16, fontSize: 15, color: 'rgba(255,255,255,.75)', lineHeight: 1.6, maxWidth: 700, marginBottom: 16 }}>
             Airbnb hosts report rental income on Schedule E (passive) or Schedule C (active hosting). SE tax applies if hosting is your primary business. Estimate your 2026 Airbnb tax for all 51 states.
           </p>
+          {/* ANSWER-FIRST */}
+          <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,marginLeft:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+            Airbnb hosts earning <strong style={{color:'#e8b84b'}}>$50,000</strong> owe roughly <strong style={{color:'#e8b84b'}}>$11,565</strong> in total taxes — about <strong style={{color:'#e8b84b'}}>$2,891 per quarter</strong>. Active hosts pay 15.3% SE tax on Schedule C. Passive rental income goes on Schedule E — no SE tax applies.
+          </div>
+          <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12,paddingLeft:16}}>
+            Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          </div>
           <div style={{ paddingLeft: 16, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {['SE Tax 15.3%', 'All 51 States', 'Free, No Signup', 'Quarterly Schedule'].map(b => (
               <span key={b} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 20, padding: '4px 12px', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{b}</span>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* KEY TAKEAWAYS */}
+      <div style={{maxWidth:860,margin:'0 auto',padding:'24px 20px 0'}}>
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:8}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Active Airbnb hosts pay <strong>15.3% SE tax</strong> on Schedule C — passive landlords use Schedule E (no SE tax)</li>
+            <li>At <strong>$50,000</strong> net income, total tax is ~$11,565 — set aside $2,891 each quarter</li>
+            <li>Top deductions: cleaning fees, host service fee (3%), depreciation, utilities, repairs, and furnishings</li>
+            <li>Airbnb sends a <strong>1099-K</strong> if you earn $5,000+ — report all rental income regardless</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if you expect to owe $1,000+</li>
+          </ul>
         </div>
       </div>
 
@@ -92,6 +114,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <AuthorBox />
     </>
   );
 }

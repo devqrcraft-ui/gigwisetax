@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Center 2026 — DoorDash, Uber, OnlyFans, Airbnb & More | GigWiseTax',
@@ -86,6 +87,13 @@ export default function GigWorkerTaxCenter() {
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#fff', lineHeight: 1.2, marginBottom: 16 }}>
             Free Gig Worker Tax Calculators 2026 —<br />DoorDash, Uber, OnlyFans, Airbnb & More
           </h1>
+          {/* ANSWER-FIRST */}
+          <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:20,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+            Gig workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> plus federal income tax on net profit. On $40,000 income, expect to owe around <strong style={{color:'#e8b84b'}}>$8,852 total</strong> — roughly $2,213/quarter. Use a calculator below to get your exact number by platform and state.
+          </div>
+          <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
+            Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          </div>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,.65)', lineHeight: 1.7, maxWidth: 700 }}>
             SE tax 15.3% + federal + state for all 51 jurisdictions. Pick your platform and get your exact tax estimate in seconds. No signup, no data stored.
           </p>
@@ -98,6 +106,17 @@ export default function GigWorkerTaxCenter() {
 
       {/* CATEGORIES */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '48px 20px' }}>
+        {/* KEY TAKEAWAYS */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Self-employment tax is <strong>15.3%</strong> on net profit — 12.4% Social Security + 2.9% Medicare</li>
+            <li>DoorDash driver earning <strong>$40,000</strong> owes ~$8,852 in total taxes — about $2,213 per quarter</li>
+            <li>Uber driver at <strong>$50,000</strong> owes ~$11,565 — mileage deduction at 72.5¢/mile reduces that significantly</li>
+            <li>IRS mileage rate for 2026 is <strong>72.5 cents per mile</strong> — the highest deduction for rideshare and delivery drivers</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — miss one and face an underpayment penalty</li>
+          </ul>
+        </div>
         {CATEGORIES.map(cat => (
           <div key={cat.title} style={{ marginBottom: 40 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16 }}>
@@ -160,6 +179,7 @@ export default function GigWorkerTaxCenter() {
           <div style={{ background: '#B8924A', color: '#07111F', fontWeight: 800, padding: '12px 24px', borderRadius: 8, display: 'inline-block', fontSize: 14 }}>Find My Deductions →</div>
         </a>
       </div>
+      <AuthorBox />
     </div>
   );
 }

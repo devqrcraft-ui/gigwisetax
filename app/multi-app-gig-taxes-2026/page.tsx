@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Multi-App Gig Taxes 2026 — Uber + DoorDash + Instacart Combined | GigWiseTax',
@@ -203,6 +204,24 @@ export default function MultiAppPage() {
           Based on IRS Schedule C, Schedule SE, and 2026 tax brackets. Not affiliated with the IRS. Estimates only — not tax advice.
         </p>
 
+        {/* ANSWER-FIRST */}
+        <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+          Multi-app gig workers combine all delivery/rideshare income on <strong style={{color:'#e8b84b'}}>one Schedule C</strong>. SE tax is 15.3% on net profit across all platforms. Uber + DoorDash in California at $62,000 gross = roughly <strong style={{color:'#e8b84b'}}>$17,643 total tax</strong> — about $4,411/quarter.
+        </div>
+        <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
+          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+        </div>
+        {/* KEY TAKEAWAYS */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Same type of gig work across apps = <strong>one Schedule C</strong> — DoorDash + Instacart + Amazon Flex all go together</li>
+            <li>Truly different businesses (driving + Etsy) may need <strong>two Schedule C forms</strong> — check with a CPA</li>
+            <li>Combine all business miles across every app — <strong>72.5¢/mile</strong> in 2026, never count the same mile twice</li>
+            <li>Set aside <strong>25–30%</strong> of combined net income — SE tax 15.3% + federal + state</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if combined tax owed exceeds $1,000</li>
+          </ul>
+        </div>
         {/* RULE 1 */}
         <div className="section">
           <h2>The #1 Rule: One Business = One Schedule C</h2>
@@ -344,6 +363,7 @@ export default function MultiAppPage() {
         </div>
 
       </div>
+      <AuthorBox />
     </>
   );
 }

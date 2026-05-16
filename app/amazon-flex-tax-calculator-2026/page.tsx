@@ -1,5 +1,6 @@
 import HomeClient from '../home-client';
 import type { Metadata } from 'next';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Amazon Flex Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
@@ -46,11 +47,32 @@ export default function Page() {
           <p style={{ paddingLeft: 16, fontSize: 15, color: 'rgba(255,255,255,.75)', lineHeight: 1.6, maxWidth: 700, marginBottom: 16 }}>
             Amazon Flex drivers are independent contractors paid via 1099-NEC. SE tax 15.3% applies to net earnings. Estimate your 2026 Amazon Flex tax bill and quarterly IRS payment schedule.
           </p>
+          {/* ANSWER-FIRST */}
+          <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,marginLeft:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+            Amazon Flex drivers earning <strong style={{color:'#e8b84b'}}>$40,000</strong> owe roughly <strong style={{color:'#e8b84b'}}>$8,852</strong> in total taxes — about <strong style={{color:'#e8b84b'}}>$2,213 per quarter</strong>. SE tax is 15.3% on 92.35% of net profit. Mileage at 72.5¢/mile is your biggest deduction — log every delivery mile.
+          </div>
+          <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12,paddingLeft:16}}>
+            Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          </div>
           <div style={{ paddingLeft: 16, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {['SE Tax 15.3%', 'All 51 States', 'Free, No Signup', 'Quarterly Schedule'].map(b => (
               <span key={b} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 20, padding: '4px 12px', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{b}</span>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* KEY TAKEAWAYS */}
+      <div style={{maxWidth:860,margin:'0 auto',padding:'24px 20px 0'}}>
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:8}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>Amazon Flex drivers pay <strong>15.3% SE tax</strong> on 92.35% of net profit as independent contractors</li>
+            <li>At <strong>$40,000</strong> net income, total tax is ~$8,852 — set aside $2,213 each quarter</li>
+            <li>Mileage at <strong>72.5¢/mile</strong> in 2026 covers all delivery driving — from warehouse to drop-off</li>
+            <li>Amazon Flex sends a <strong>1099-NEC</strong> for earnings over $600 — all income is taxable regardless</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — owe $1,000+ and quarterly payments are required</li>
+          </ul>
         </div>
       </div>
 
@@ -90,6 +112,7 @@ export default function Page() {
           </div>
         </div>
       </div>
+      <AuthorBox />
     </>
   );
 }

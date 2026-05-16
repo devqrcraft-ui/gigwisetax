@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Self-Employment Tax Calculator 2026 — Free SE Tax Estimator for Gig Workers',
@@ -72,6 +73,24 @@ export default function SECalculatorPage() {
           No signup, no paywall — all math runs in your browser.
         </p>
 
+        {/* ANSWER-FIRST */}
+        <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
+          Self-employment tax is <strong style={{color:'#e8b84b'}}>15.3%</strong> on 92.35% of net profit — you pay both sides of FICA. On $60,000 net income, SE tax alone is <strong style={{color:'#e8b84b'}}>$8,478</strong>. The 50% SE deduction and QBI deduction reduce your federal income tax on top of that.
+        </div>
+        <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:20}}>
+          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+        </div>
+        {/* KEY TAKEAWAYS */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>SE tax rate is <strong>15.3%</strong> — 12.4% Social Security + 2.9% Medicare on net profit</li>
+            <li>SE tax applies to <strong>92.35%</strong> of net income — the IRS removes the employer-equivalent portion first</li>
+            <li><strong>50% of SE tax</strong> is deductible above-the-line — reduces your federal taxable income automatically</li>
+            <li>2026 Social Security wage base is <strong>$176,100</strong> — the 12.4% cap stops there; Medicare has no cap</li>
+            <li>Anyone with <strong>$400+</strong> net self-employment income must pay SE tax and file Schedule SE</li>
+          </ul>
+        </div>
         <div className="rates-grid">
           <div className="rate-card">
             <div className="rate-label">SE Tax Rate</div>
@@ -157,6 +176,7 @@ export default function SECalculatorPage() {
         </div>
 
       </div>
+      <AuthorBox />
     </>
   );
 }
