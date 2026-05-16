@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /_next/static/chunks/
 
 User-agent: GPTBot
 Disallow: /
