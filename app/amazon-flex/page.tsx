@@ -155,6 +155,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             {/* CALCULATOR */}
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
 
+
+          {/* KEY TAKEAWAYS */}
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, Amazon Flex drivers owe approximately <strong>$8,852 total tax</strong> in 2026'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,213</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢/mile</strong> — Amazon Flex drivers average 25,000–40,000 miles/year'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Amazon Flex does <strong>not withhold taxes</strong> — you are a 1099 contractor for all routes'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–27%</strong> of each block payment to cover all quarterly tax obligations'}}/>
+            </ul>
+          </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>

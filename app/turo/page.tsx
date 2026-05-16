@@ -177,6 +177,18 @@ export default function TuroPage() {
           </div>
 
 
+
+          {/* KEY TAKEAWAYS */}
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$50,000 net income</strong>, Turo hosts owe approximately <strong>$11,565 total tax</strong> in 2026'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,891</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Depreciation, insurance, car maintenance, and cleaning fees are <strong>top Turo deductions</strong>'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Turo takes a <strong>10–35% platform fee</strong> — deductible as a business expense on Schedule C'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–28%</strong> of gross Turo revenue — you are a 1099 contractor paying self-employment tax'}}/>
+            </ul>
+          </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Turo</div>

@@ -77,6 +77,18 @@ export default function PlatformPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Rover Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Rover workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Rover earnings. Download your annual tax summary or 1099-NEC from the Rover app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5 cents/mile, phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Rover income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}' }} />
       <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
 
+
+          {/* KEY TAKEAWAYS */}
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$25,000 net income</strong>, Rover sitters owe approximately <strong>$5,340 total tax</strong> in 2026'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,335</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Pet supplies, vet visits for business animals, and home office are <strong>deductible</strong> Rover expenses'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Rover charges a <strong>20–25% service fee</strong> — deductible as a business cost on Schedule C'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25%</strong> of every Rover payment — you are a 1099 contractor, no taxes withheld'}}/>
+            </ul>
+          </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Rover</div>
