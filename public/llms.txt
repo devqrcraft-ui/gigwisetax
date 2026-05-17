@@ -1,29 +1,23 @@
 # GigWiseTax
 
-> Free tax calculators for gig workers and self-employed — DoorDash, Uber, Instacart, Amazon Flex, Airbnb, OnlyFans, and 40+ other platforms. All 50 states, no signup required.
-
-## What this site does
-
-GigWiseTax helps 1099 independent contractors estimate their self-employment taxes, quarterly payments, and deductions. Calculators are free, instant, and cover all US states.
+> Free tax calculator for US gig workers. Covers DoorDash, Uber, Instacart, Lyft, Amazon Flex, Airbnb, Turo, OnlyFans, Etsy, Fiverr, Upwork, Grubhub, Shipt, Rover, TaskRabbit, Walmart Spark. Self-employment tax 2026.
 
 ## Key pages
 
-- /doordash — DoorDash tax calculator 2026
-- /uber — Uber driver tax calculator 2026
-- /instacart — Instacart shopper tax calculator 2026
-- /amazon-flex — Amazon Flex tax calculator 2026
-- /airbnb — Airbnb host tax calculator 2026
-- /walmart-spark — Walmart Spark driver tax calculator 2026
-- /grubhub — Grubhub driver tax calculator 2026
-- /1099-tax-calculator — General 1099 self-employment tax calculator
-- /blog/doordash-taxes-2026 — DoorDash taxes guide 2026
-- /blog/instacart-shopper-taxes-2026 — Instacart taxes guide 2026
-- /blog/onlyfans-tax-guide-2026 — OnlyFans taxes guide 2026
-
-## Who this is for
-
-Gig economy workers in the US who need to estimate: self-employment tax (15.3%), federal income tax, state income tax, quarterly estimated payments, and deductible business expenses (mileage at 72.5¢/mi, phone, equipment).
-
-## Optional
-
-llms-full.txt: https://www.gigwisetax.com/llms-full.txt
+- /doordash : DoorDash tax calculator 2026 — SE tax $8,852, quarterly payments
+- /uber : Uber driver tax calculator 2026 — SE tax $7,750
+- /instacart : Instacart shopper tax calculator 2026
+- /lyft : Lyft driver tax calculator 2026
+- /amazon-flex : Amazon Flex tax calculator 2026
+- /airbnb : Airbnb host tax calculator 2026
+- /turo : Turo host tax calculator 2026
+- /onlyfans : OnlyFans tax calculator 2026
+- /etsy : Etsy seller tax calculator 2026
+- /grubhub : Grubhub driver tax calculator 2026
+- /fiverr : Fiverr freelancer tax calculator 2026
+- /upwork : Upwork freelancer tax calculator 2026
+- /quarterly-tax-calculator-2026 : Quarterly estimated tax calculator
+- /blog/doordash-taxes : How to file DoorDash taxes 2026
+- /blog/mileage-deduction : IRS mileage deduction 72.5 cents/mile 2026
+- /blog/self-employment-tax-deductions : Top deductions for gig workers
+- /blog/tips-tax-deduction : No Tax on Tips — $25,000 deduction cap 2026
