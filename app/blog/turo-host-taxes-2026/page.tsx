@@ -39,6 +39,13 @@ export default function BlogPost() {
           <li>Set aside <strong>30%</strong> of every payout — Turo does not withhold taxes</li>
         </ul>
       </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least       </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Turo Host Tax Deductions 2026</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage ($0.725/mile)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (

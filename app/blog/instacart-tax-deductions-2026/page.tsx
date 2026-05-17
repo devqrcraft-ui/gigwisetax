@@ -138,6 +138,13 @@ export default function InstacartTaxDeductions2026() {
                 <li>Full-service shoppers file <strong>Schedule C</strong> — in-store shoppers get W-2 from Instacart</li>
               </ul>
             </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least             </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
             <h2 style={h2}>Instacart Tax Deduction Checklist 2026</h2>
             <p style={prose}>
               Instacart full-service shoppers are independent contractors. That means no taxes are withheld from your pay,

@@ -69,6 +69,13 @@ export default function W9MistakesBlog() {
               <li>W-9 is not filed with the IRS — give it only to the <strong>platform or client requesting it</strong></li>
             </ul>
           </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least           </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
           <h2 style={h2}>Mistake #1: Using a Nickname Instead of Your Legal Name</h2>
           <p style={p}>The IRS matches your W-9 name against your Social Security Administration records. If your SSN is registered to "Robert Smith" but you write "Bob Smith" on the W-9, the platform's tax software may flag the mismatch — and begin withholding 24% of your payments.</p>
           <div style={warn}> <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>

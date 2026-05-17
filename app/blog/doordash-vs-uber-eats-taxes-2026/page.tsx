@@ -59,6 +59,13 @@ export default function DoorDashVsUberEatsPost() {
             <li>Tips up to <strong>$25,000</strong> are federally deductible from both platforms under OBBBA 2026</li>
           </ul>
         </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least         </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
         <h2 style={h2}>Tax Treatment: DoorDash vs Uber Eats</h2>
         <p style={p}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $600) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
         <p style={p}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>

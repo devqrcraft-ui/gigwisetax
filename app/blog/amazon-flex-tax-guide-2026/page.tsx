@@ -68,6 +68,13 @@ export default function AmazonFlexTaxGuide() {
                 <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
               </ul>
             </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least             </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
             <h2 style={h2}>How Amazon Flex Taxes Work in 2026</h2>
             <p style={prose}>Amazon Flex drivers are independent contractors — Amazon does not withhold any taxes from your earnings. You receive a 1099-NEC at year end and must pay self-employment tax (15.3%) plus federal income tax yourself. On $40,000 net income after deductions, total tax is approximately $8,852.</p>
             <h2 style={h2}>2026 Amazon Flex Tax Breakdown</h2>

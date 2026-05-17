@@ -64,6 +64,13 @@ export default function TipsDeductionPage() {
             <li>Keep records of all tips received — Instacart, DoorDash, Uber all report tip amounts on 1099</li>
           </ul>
         </div>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least         </div>,000 in federal tax for the year."
+            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
+              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            </cite>
+          </blockquote>
         <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }}>What Is the OBBBA Tips Deduction?</h2>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>The One Big Beautiful Bill Act (OBBBA), signed in 2026, introduced a federal deduction for tip income received by eligible workers. Gig workers who receive customer tips through platforms like DoorDash, Uber Eats, Instacart, Lyft, and Grubhub qualify for this deduction up to $25,000 per year.</p>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>This means tip income is effectively excluded from your federal taxable income — reducing your income tax bill directly. The deduction is taken on your federal return and reduces adjusted gross income.</p>
