@@ -68,11 +68,10 @@ export default function AmazonFlexTaxGuide() {
                 <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
               </ul>
             </div>
-
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
-            "Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least             </div>,000 in federal tax for the year."
+            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
             <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
-              — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+              {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
             <h2 style={h2}>How Amazon Flex Taxes Work in 2026</h2>
