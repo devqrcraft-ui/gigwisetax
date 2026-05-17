@@ -90,6 +90,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <main>{children}</main>
 
+        <div style={{background:'rgba(232,184,75,0.06)',borderTop:'1px solid rgba(232,184,75,0.15)',borderBottom:'1px solid rgba(232,184,75,0.15)',padding:'8px 20px',textAlign:'center'}}>
+          <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.45)',lineHeight:1.6}}>
+            <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not tax advice — consult a licensed CPA for your situation.
+          </p>
+        </div>
         <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
