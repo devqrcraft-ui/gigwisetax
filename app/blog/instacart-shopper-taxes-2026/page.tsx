@@ -137,7 +137,17 @@ export default function InstacartTaxGuide() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-<h2 style={h2}>Instacart 2026 Mileage Deduction ($0.725/mile)</h2>
+          {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#mileage-deduction"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Mileage Deduction ($0.725/mile)</a></li>
+              <li style={{marginBottom:6}}><a href={"#top-deductions"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Top Deductions for Instacart Shoppers</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Quarterly Tax Deadlines 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Instacart Taxes 2026</a></li>
+            </ol>
+          </div>
+<h2 id="mileage-deduction" style={h2}>Instacart 2026 Mileage Deduction ($0.725/mile)</h2>
               <p style={prose}>
                 The mileage deduction is the most valuable tax deduction for Instacart full-service shoppers.
                 The 2026 IRS standard mileage rate is <strong>$0.725 per mile</strong> — the highest in recent years.
@@ -166,7 +176,7 @@ export default function InstacartTaxGuide() {
                 </div>
               </div>
 
-              <h2 style={h2}>Top Deductions for Instacart Shoppers 2026</h2>
+              <h2 id="top-deductions" style={h2}>Top Deductions for Instacart Shoppers 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
                   { icon: '', name: 'Mileage ($0.725/mile)', detail: 'Most valuable deduction. Track every batch mile using Stride, MileIQ, or Everlance.' },
@@ -184,7 +194,7 @@ export default function InstacartTaxGuide() {
                 ))}
               </div>
 
-              <h2 style={h2}>Quarterly Tax Deadlines for Instacart Workers 2026</h2>
+              <h2 id="quarterly-deadlines" style={h2}>Quarterly Tax Deadlines for Instacart Workers 2026</h2>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
                 <thead>
                   <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
@@ -214,7 +224,7 @@ export default function InstacartTaxGuide() {
                 </tbody>
               </table>
 
-              <h2 style={h2}>FAQ — Instacart Taxes 2026</h2>
+              <h2 id="faq" style={h2}>FAQ — Instacart Taxes 2026</h2>
               {[
                 {
                   q: 'Does Instacart report my income to the IRS?',

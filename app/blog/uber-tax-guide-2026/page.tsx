@@ -111,7 +111,19 @@ export default function UberTaxGuide() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-<h2 style={h2}>Uber's 1099 Forms Explained</h2>
+          {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#1099-forms"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Uber's 1099 Forms Explained</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage-deduction"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 Mileage Deduction for Uber Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#top-deductions"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Top Deductions for Uber Drivers in 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage-vs-actual"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Standard Mileage vs Actual Expense Method</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 Quarterly Tax Deadlines for Uber Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Uber Taxes 2026</a></li>
+            </ol>
+          </div>
+<h2 id="1099-forms" style={h2}>Uber's 1099 Forms Explained</h2>
               <p style={prose}>
                 Uber issues two different 1099 forms. The <strong>1099-K</strong> reports your gross trip earnings
                 (what riders/Uber Eats users paid — before Uber's service fee). The <strong>1099-NEC</strong>
@@ -120,7 +132,7 @@ export default function UberTaxGuide() {
                 (shown in your Uber Tax Summary). The net amount is what you report on Schedule C.
               </p>
 
-              <h2 style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
+              <h2 id="mileage-deduction" style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
               <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                 <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 12 }}> $0.725 per mile in 2026</div>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
@@ -137,7 +149,7 @@ export default function UberTaxGuide() {
                 </p>
               </div>
 
-              <h2 style={h2}>Top Deductions for Uber Drivers in 2026</h2>
+              <h2 id="top-deductions" style={h2}>Top Deductions for Uber Drivers in 2026</h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
                 {[
                   { icon: '', name: 'Mileage ($0.725/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
@@ -157,7 +169,7 @@ export default function UberTaxGuide() {
                 ))}
               </div>
 
-              <h2 style={h2}>Standard Mileage vs Actual Expense Method</h2>
+              <h2 id="mileage-vs-actual" style={h2}>Standard Mileage vs Actual Expense Method</h2>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
                 <thead><tr style={{ background: 'rgba(255,255,255,0.07)' }}>
                   {['Method','Best For','Pros','Cons'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
@@ -178,7 +190,7 @@ export default function UberTaxGuide() {
                 </tbody>
               </table>
 
-              <h2 style={h2}>2026 Quarterly Tax Deadlines for Uber Drivers</h2>
+              <h2 id="quarterly-deadlines" style={h2}>2026 Quarterly Tax Deadlines for Uber Drivers</h2>
               <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
                 <thead><tr style={{ background: 'rgba(255,255,255,0.07)' }}>
                   {['Quarter','Due Date','Days Left'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
@@ -199,7 +211,7 @@ export default function UberTaxGuide() {
                 </tbody>
               </table>
 
-              <h2 style={h2}>FAQ — Uber Taxes 2026</h2>
+              <h2 id="faq" style={h2}>FAQ — Uber Taxes 2026</h2>
               {[
                 { q: 'Does Uber report my income to the IRS?', a: 'Yes. Uber sends 1099-K and/or 1099-NEC forms directly to the IRS with your SSN. If you earn $600+ in bonuses, you get a 1099-NEC. For trips, you get a 1099-K. Even if you earn less than $600, you must still report all income on Schedule C.' },
                 { q: 'How do I track mileage for Uber taxes?', a: 'Use a mileage tracking app like Stride (free), MileIQ ($7.50/month), or Everlance. Track all business miles including: driving to first pickup, trips between rides, driving back after last trip. Uber also provides an annual mileage summary in your Tax Summary document.' },

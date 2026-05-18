@@ -93,7 +93,19 @@ export default function AmazonFlexTaxesBlogPost() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-<h2 style={h2}>Does Amazon Flex Send a 1099?</h2>
+          {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#1099-forms"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Does Amazon Flex Send a 1099?</a></li>
+              <li style={{marginBottom:6}}><a href={"#how-much-tax"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How Much Tax Do Amazon Flex Drivers Owe?</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage-deduction"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>The Mileage Deduction: Your Biggest Tax Break</a></li>
+              <li style={{marginBottom:6}}><a href={"#top-deductions"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Top Tax Deductions for Amazon Flex Drivers 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-payments"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Quarterly Tax Payments for Amazon Flex Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#set-aside"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How Much Should Amazon Flex Drivers Set Aside?</a></li>
+            </ol>
+          </div>
+<h2 id="1099-forms" style={h2}>Does Amazon Flex Send a 1099?</h2>
           <p style={p}>
             Yes. Amazon sends a <strong>1099-NEC</strong> (Non-Employee Compensation) to every Flex driver who earns $600 or more in a calendar year. Your 1099-NEC will arrive by January 31, 2027 for the 2026 tax year.
           </p>
@@ -101,7 +113,7 @@ export default function AmazonFlexTaxesBlogPost() {
             Important: Even if you earn less than $600 and don't receive a 1099, the IRS still requires you to report all self-employment income. Amazon reports all payments to the IRS regardless of threshold.
           </p>
 
-          <h2 style={h2}>How Much Tax Do Amazon Flex Drivers Owe?</h2>
+          <h2 id="how-much-tax" style={h2}>How Much Tax Do Amazon Flex Drivers Owe?</h2>
           <p style={p}>
             Your total tax burden as a Flex driver has two main components:
           </p>
@@ -133,7 +145,7 @@ export default function AmazonFlexTaxesBlogPost() {
             After deducting half of your SE tax, your remaining profit is taxed at your regular federal income tax bracket rate, plus your state's rate. Use our <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> to get your exact estimate.
           </p>
 
-          <h2 style={h2}>The Mileage Deduction: Your Biggest Tax Break</h2>
+          <h2 id="mileage-deduction" style={h2}>The Mileage Deduction: Your Biggest Tax Break</h2>
           <p style={p}>
             The IRS standard mileage rate for 2026 is <strong>72.5 cents per mile</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
           </p>
@@ -151,7 +163,7 @@ export default function AmazonFlexTaxesBlogPost() {
             <strong>What counts as a deductible mile?</strong> From the moment you accept a block and start driving to pick up packages, through all deliveries, until you return home after your last delivery.
           </p>
 
-          <h2 style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
+          <h2 id="top-deductions" style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {[
               { icon: '', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
@@ -171,7 +183,7 @@ export default function AmazonFlexTaxesBlogPost() {
             ))}
           </div>
 
-          <h2 style={h2}>Quarterly Tax Payments for Amazon Flex Drivers</h2>
+          <h2 id="quarterly-payments" style={h2}>Quarterly Tax Payments for Amazon Flex Drivers</h2>
           <p style={p}>
             If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
           </p>
@@ -198,7 +210,7 @@ export default function AmazonFlexTaxesBlogPost() {
             Pay online at <a href="https://irs.gov/payments" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS.gov/payments</a> using Direct Pay (free) or EFTPS. Missing a quarterly payment triggers a penalty of roughly 7–8% annually on the unpaid amount.
           </p>
 
-          <h2 style={h2}>How Much Should Amazon Flex Drivers Set Aside?</h2>
+          <h2 id="set-aside" style={h2}>How Much Should Amazon Flex Drivers Set Aside?</h2>
           <p style={p}>
             A safe rule of thumb: <strong>set aside 25–30% of every Amazon Flex payment</strong> you receive. The exact percentage depends on your state, filing status, and other income sources. Drivers in no-income-tax states like Texas or Florida can often get away with 22–25%.
           </p>

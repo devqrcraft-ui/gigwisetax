@@ -80,7 +80,17 @@ export default function MileageRate2026Post() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={h2}>Mileage Rate History: How 2026 Compares</h2>
+                    {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#mileage-history"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Mileage Rate History: How 2026 Compares</a></li>
+              <li style={{marginBottom:6}}><a href={"#how-much-save"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How Much Can You Save? (By Miles Driven)</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage-vs-actual"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Standard Mileage vs. Actual Expenses</a></li>
+              <li style={{marginBottom:6}}><a href={"#track-miles"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How to Track Miles for the IRS</a></li>
+            </ol>
+          </div>
+<h2 id="mileage-history" style={h2}>Mileage Rate History: How 2026 Compares</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
@@ -100,7 +110,7 @@ export default function MileageRate2026Post() {
             ))}
           </div>
 
-          <h2 style={h2}>How Much Can You Save? (By Miles Driven)</h2>
+          <h2 id="how-much-save" style={h2}>How Much Can You Save? (By Miles Driven)</h2>
           <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (72.5¢/mile, 2026)</div>
             {[
@@ -121,7 +131,7 @@ export default function MileageRate2026Post() {
             <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', fontSize: 11, color: '#7a9abf' }}>*Tax savings estimated at 30% combined rate. Actual savings depend on your tax bracket and state.</div>
           </div>
 
-          <h2 style={h2}>Standard Mileage vs. Actual Expenses: Which Is Better?</h2>
+          <h2 id="mileage-vs-actual" style={h2}>Standard Mileage vs. Actual Expenses: Which Is Better?</h2>
           <p style={p}>
             You can only choose one method per vehicle per year. Once you use actual expenses in the first year, you cannot switch to standard mileage later. If you use standard mileage first, you can switch to actual expenses in future years.
           </p>
@@ -147,7 +157,7 @@ export default function MileageRate2026Post() {
             For most gig workers, <strong>standard mileage is simpler and often yields a larger deduction</strong> — especially if you drive a fuel-efficient car. Run the numbers both ways if you have a high-expense vehicle.
           </p>
 
-          <h2 style={h2}>How to Track Miles for the IRS</h2>
+          <h2 id="track-miles" style={h2}>How to Track Miles for the IRS</h2>
           <p style={p}>
             The IRS requires a contemporaneous mileage log — meaning you record trips at or near the time they happen, not months later from memory. Your log should include:
           </p>

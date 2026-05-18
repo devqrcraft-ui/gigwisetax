@@ -131,7 +131,18 @@ export default function WalmartSparkTaxGuide2026() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-            <h2 style={h2}>Are Spark Drivers Independent Contractors?</h2>
+                      {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#independent-contractor"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Are Spark Drivers Independent Contractors?</a></li>
+              <li style={{marginBottom:6}}><a href={"#deduction-checklist"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Spark Driver Tax Deduction Checklist 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#tax-on-40k"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How Much Tax on $40,000 Spark Income in 2026?</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Quarterly Estimated Tax Deadlines 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Spark Driver Taxes 2026</a></li>
+            </ol>
+          </div>
+<h2 id="independent-contractor" style={h2}>Are Spark Drivers Independent Contractors?</h2>
             <p style={prose}>
               Yes. Walmart Spark drivers are classified as independent contractors, not employees.
               This means Spark does not withhold any federal or state taxes from your earnings.
@@ -139,7 +150,7 @@ export default function WalmartSparkTaxGuide2026() {
               either through quarterly estimated payments or when you file your annual return.
             </p>
 
-            <h2 style={h2}>Spark Driver Tax Deduction Checklist 2026</h2>
+            <h2 id="deduction-checklist" style={h2}>Spark Driver Tax Deduction Checklist 2026</h2>
             <table style={tableStyle}>
               <thead>
                 <tr>
@@ -169,7 +180,7 @@ export default function WalmartSparkTaxGuide2026() {
               </tbody>
             </table>
 
-            <h2 style={h2}>How Much Tax on $40,000 Spark Income in 2026?</h2>
+            <h2 id="tax-on-40k" style={h2}>How Much Tax on $40,000 Spark Income in 2026?</h2>
             <table style={tableStyle}>
               <thead>
                 <tr>
@@ -198,7 +209,7 @@ export default function WalmartSparkTaxGuide2026() {
             </table>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Estimates only. State income tax not included. Use the calculator above for your exact numbers.</p>
 
-            <h2 style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
+            <h2 id="quarterly-deadlines" style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
             <table style={tableStyle}>
               <thead>
                 <tr>
@@ -223,7 +234,7 @@ export default function WalmartSparkTaxGuide2026() {
               </tbody>
             </table>
 
-            <h2 style={h2}>FAQ — Spark Driver Taxes 2026</h2>
+            <h2 id="faq" style={h2}>FAQ — Spark Driver Taxes 2026</h2>
             {[
               { q: 'How do I track mileage for Spark deliveries?', a: 'Use a mileage tracking app like Stride, MileIQ, or Everlance. The IRS requires a contemporaneous mileage log with date, origin, destination, and business purpose. Apps automate this with GPS. You cannot reconstruct mileage from memory at tax time — start tracking from your first delivery.' },
               { q: 'Should I pay quarterly taxes as a Spark driver?', a: 'Yes, if you expect to owe $1,000 or more in federal taxes for the year. Missing quarterly payments results in an underpayment penalty. As a rule of thumb: if you earn more than $6,500 net from Spark in a year, you likely need to make quarterly payments.' },

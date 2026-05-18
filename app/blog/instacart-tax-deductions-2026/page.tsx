@@ -144,7 +144,18 @@ export default function InstacartTaxDeductions2026() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-            <h2 style={h2}>Instacart Tax Deduction Checklist 2026</h2>
+                      {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#deduction-checklist"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Instacart Tax Deduction Checklist 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Mileage — The Biggest Instacart Deduction</a></li>
+              <li style={{marginBottom:6}}><a href={"#fullservice-vs-instore"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Full-Service vs In-Store Shopper: Tax Difference</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Quarterly Estimated Tax Deadlines 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Instacart Taxes 2026</a></li>
+            </ol>
+          </div>
+<h2 id="deduction-checklist" style={h2}>Instacart Tax Deduction Checklist 2026</h2>
             <p style={prose}>
               Instacart full-service shoppers are independent contractors. That means no taxes are withheld from your pay,
               but it also means you can deduct every legitimate business expense to reduce what you owe.
@@ -181,7 +192,7 @@ export default function InstacartTaxDeductions2026() {
               </tbody>
             </table>
 
-            <h2 style={h2}>Mileage — The Biggest Instacart Deduction</h2>
+            <h2 id="mileage" style={h2}>Mileage — The Biggest Instacart Deduction</h2>
             <p style={prose}>
               For most Instacart shoppers, mileage is the single largest tax deduction.
               At 72.5 cents per mile in 2026, a shopper driving 15,000 business miles saves <strong>$10,875</strong> in taxable income.
@@ -197,7 +208,7 @@ export default function InstacartTaxDeductions2026() {
               Miles from the store to the customer and from one store to another are deductible.
             </p>
 
-            <h2 style={h2}>Full-Service Shopper vs In-Store Shopper: Tax Difference</h2>
+            <h2 id="fullservice-vs-instore" style={h2}>Full-Service Shopper vs In-Store Shopper: Tax Difference</h2>
             <table style={tableStyle}>
               <thead>
                 <tr>
@@ -222,7 +233,7 @@ export default function InstacartTaxDeductions2026() {
               </tbody>
             </table>
 
-            <h2 style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
+            <h2 id="quarterly-deadlines" style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
             <p style={prose}>
               If you expect to owe $1,000 or more in federal taxes, you must pay quarterly estimates to avoid penalties.
             </p>
@@ -250,7 +261,7 @@ export default function InstacartTaxDeductions2026() {
               </tbody>
             </table>
 
-            <h2 style={h2}>FAQ — Instacart Taxes 2026</h2>
+            <h2 id="faq" style={h2}>FAQ — Instacart Taxes 2026</h2>
             {[
               { q: 'Does Instacart send a 1099 in 2026?', a: 'Yes. Instacart sends a 1099-NEC to full-service shoppers who earned $600 or more in 2026. The form is issued by January 31, 2027. You can access it through the Instacart Shopper app or Stripe Express. Even if you do not receive a 1099-NEC, you must still report all income.' },
               { q: 'How much should Instacart shoppers set aside for taxes?', a: 'Set aside 25-30% of net earnings after mileage deduction. In high-tax states like California or New York, set aside 30-35%. Use our free calculator to get a precise estimate for your state and income level.' },

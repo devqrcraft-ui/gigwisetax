@@ -92,7 +92,19 @@ export default function DoorDashTaxGuide() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-<h2 style={h2}>DoorDash Self-Employment Tax in 2026</h2>
+          {/* TABLE OF CONTENTS */}
+          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
+            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
+              <li style={{marginBottom:6}}><a href={"#se-tax"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>DoorDash Self-Employment Tax in 2026</a></li>
+              <li style={{marginBottom:6}}><a href={"#mileage-rate"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 IRS Mileage Rate for DoorDash Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#top-deductions"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Top Deductions for DoorDash Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 Quarterly Tax Deadlines for Dashers</a></li>
+              <li style={{marginBottom:6}}><a href={"#new-tax-laws"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 New Tax Laws for DoorDash Drivers</a></li>
+              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — DoorDash Taxes 2026</a></li>
+            </ol>
+          </div>
+<h2 id="se-tax" style={h2}>DoorDash Self-Employment Tax in 2026</h2>
             <p style={prose}>
               DoorDash classifies all Dashers as <strong>independent contractors</strong>. You receive a 1099-NEC (not a W-2),
               which means you are responsible for paying all your own taxes directly to the IRS.
@@ -104,7 +116,7 @@ export default function DoorDashTaxGuide() {
               And by tracking your business expenses — especially mileage — you can significantly reduce your taxable income.
             </p>
 
-            <h2 style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
+            <h2 id="mileage-rate" style={h2}>2026 IRS Mileage Rate for DoorDash Drivers</h2>
             <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8, fontSize: 15 }}> 2026 Standard Mileage Rate: $0.725 per mile</div>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px' }}>
@@ -126,7 +138,7 @@ export default function DoorDashTaxGuide() {
               </div>
             </div>
 
-            <h2 style={h2}>Top Deductions for DoorDash Drivers</h2>
+            <h2 id="top-deductions" style={h2}>Top Deductions for DoorDash Drivers</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
               {[
                 { icon: '', name: 'Mileage ($0.725/mile)', detail: 'Most valuable deduction. Track every delivery mile from pickup to drop-off, plus en-route miles.' },
@@ -144,7 +156,7 @@ export default function DoorDashTaxGuide() {
               ))}
             </div>
 
-            <h2 style={h2}>2026 Quarterly Tax Deadlines for Dashers</h2>
+            <h2 id="quarterly-deadlines" style={h2}>2026 Quarterly Tax Deadlines for Dashers</h2>
             <p style={prose}>Pay quarterly if you expect to owe $1,000 or more in taxes. Use IRS Form 1040-ES and pay online at IRS Direct Pay.</p>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
               <thead><tr style={{ background: 'rgba(255,255,255,0.07)' }}>
@@ -173,7 +185,7 @@ export default function DoorDashTaxGuide() {
               </tbody>
             </table>
 
-            <h2 style={h2}>2026 New Tax Laws for DoorDash Drivers (OBBBA)</h2>
+            <h2 id="new-tax-laws" style={h2}>2026 New Tax Laws for DoorDash Drivers (OBBBA)</h2>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>The One Big Beautiful Bill Act (OBBBA), signed into law in 2025, introduced major changes for gig workers starting in 2026. Here is what every DoorDash driver needs to know.</p>
             <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 6, padding: 18, marginBottom: 20 }}>
               <div style={{ display: 'grid', gap: 14 }}>
@@ -191,7 +203,7 @@ export default function DoorDashTaxGuide() {
                 ))}
               </div>
             </div>
-            <h2 style={h2}>FAQ — DoorDash Taxes 2026</h2>
+            <h2 id="faq" style={h2}>FAQ — DoorDash Taxes 2026</h2>
             {[
               { q: 'How much should I set aside for DoorDash taxes?', a: 'Set aside 25–30% of your net DoorDash income for taxes. In high-tax states like California or New York, set aside 30–35%. This covers the 15.3% SE tax plus federal income tax. The mileage deduction can significantly reduce this amount.' },
               { q: 'Does DoorDash report my income to the IRS?', a: 'Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN if you earn $600+. The IRS matches this against your tax return. Not reporting DoorDash income will result in an IRS notice and penalties.' },
