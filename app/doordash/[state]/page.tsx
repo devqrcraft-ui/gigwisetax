@@ -58,6 +58,30 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <title>{`${platform.name} Tax Calculator ${state.name} 2026`}</title>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>
 
+        {/* Answer-First */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'14px 18px',marginBottom:20,marginTop:8}}>
+          <p style={{margin:0,fontSize:15,lineHeight:1.8,color:'rgba(255,255,255,0.88)'}}>
+            {platform.name}{' '}drivers in {state.name} pay{' '}
+            <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong>{' '}
+            on net profit plus federal income tax
+            {noStateTax ? '.' : <span> and <strong style={{color:'#e8b84b'}}>{stateRateStr} {state.name} state tax</strong>.</span>}
+            {' '}On <strong style={{color:'#e8b84b'}}>{'$40,000'}</strong> net income a DoorDash driver owes roughly{' '}
+            <strong style={{color:'#e8b84b'}}>{'$8,852'}</strong> total — about <strong style={{color:'#e8b84b'}}>{'$2,213'}</strong> per quarter.
+          </p>
+        </div>
+
+        {/* Key Takeaways */}
+        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
+          <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+            <li>{'DoorDash drivers on $40K net owe ~$8,852 in total 2026 taxes'}</li>
+            <li>{'Self-employment tax is 15.3% on net profit — paid entirely by you'}</li>
+            <li>{'Mileage deduction: 72.5¢/mile — 10,000 miles = $7,250 deduction'}</li>
+            <li>{noStateTax ? state.name + ' has no state income tax — federal + SE tax only' : state.name + ' state tax up to ' + stateRateStr + ' — file state quarterly payments too'}</li>
+            <li>{'Tip income up to $25,000 is federally deductible in 2026'}</li>
+          </ul>
+        </div>
+
         {/* Breadcrumb */}
         <div style={{ fontSize: 12, color: '#8fa8c8', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
           <a href="/" style={{ color: '#B22234', textDecoration: 'none' }}>Home</a> /
@@ -66,13 +90,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
 
         {/* Hero */}
-        <div style={{ background: 'linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)', borderRadius: 8, padding: '28px 28px 22px', marginBottom: 24, border: '1px solid #2d2d4e' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)', borderRadius: 8, padding: 'clamp(14px,4vw,28px)', marginBottom: 24, border: '1px solid #2d2d4e' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap' as const, gap: 16 }}>
             <div>
               <div style={{ fontSize: 12, color: '#e8b84b', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
                 {platform.name} · {state.abbr} · Tax Year 2026
               </div>
-              <h1 style={{ fontSize: 26, fontWeight: 900, color: '#fff', margin: '0 0 8px', lineHeight: 1.25 }}>
+              <h1 style={{ fontSize: 22, fontWeight: 900, color: '#fff', margin: '0 0 8px', lineHeight: 1.25 }}>
                 {platform.name} Tax Calculator<br/>{state.name} 2026
               </h1>
               <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
@@ -224,7 +248,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <AuthorBox />
       <style>{`
-        @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.three-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}
+        @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:600px){.three-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
       `}</style>
     </>
   )
