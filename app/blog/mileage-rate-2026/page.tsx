@@ -65,7 +65,7 @@ export default function MileageRate2026Post() {
           </p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
               <li>2026 IRS standard mileage rate is <strong>72.5¢/mile</strong> — the highest rate in years</li>
               <li>Driving <strong>20,000 miles</strong> for gig work = <strong>$14,500</strong> tax deduction</li>

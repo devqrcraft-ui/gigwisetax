@@ -15,19 +15,19 @@ export const metadata = {
 
 export default function QuarterlyTaxesGuide() {
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 estimated tax due dates: Q1 — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15, 2027. If you expect to owe $1,000 or more for the year, you must make these payments to avoid penalties."}},{"@type":"Question","name":"How much should gig workers pay in quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay either 90% of your 2026 tax liability or 100% of your 2025 tax (110% if 2025 AGI was over $150,000). The safe harbor method using last year\'s tax is the easiest for most gig workers."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (free) or through the IRS2Go app. Use Form 1040-ES to calculate the amount. Most gig workers set aside 25-30% of each paycheck into a dedicated tax savings account."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Quarterly Taxes for Gig Workers 2026 — Complete Guide","item":"https://gigwisetax.com/blog/quarterly-taxes-gig-workers"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Taxes for Gig Workers 2026 — Complete Guide","description":"How to pay quarterly estimated taxes as a gig worker in 2026. Deadlines, amounts, and step-by-step instructions for DoorDash, Uber, Etsy, and more.","url":"https://gigwisetax.com/blog/quarterly-taxes-gig-workers","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › Quarterly Taxes Guide
       </nav>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete Guide · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Quarterly Taxes for Gig Workers 2026</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Quarterly Taxes for Gig Workers 2026</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Quarterly Taxes</div>
@@ -45,7 +45,7 @@ export default function QuarterlyTaxesGuide() {
       </div>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
           <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>

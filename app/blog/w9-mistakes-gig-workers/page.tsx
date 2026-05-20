@@ -60,7 +60,7 @@ export default function W9MistakesBlog() {
           <p style={p}>Here are the 7 most expensive W-9 and 1099 mistakes gig workers make — and exactly how to fix each one.</p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
               <li>Always use your <strong>legal name</strong> on W-9 — exactly as it appears on your Social Security card</li>
               <li>Enter your <strong>SSN or EIN</strong> — not both, not a mix</li>

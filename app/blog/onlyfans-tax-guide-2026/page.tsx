@@ -15,19 +15,19 @@ export const metadata = {
 
 export default function OnlyFansTaxGuide() {
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do OnlyFans creators owe in 2026?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators owe self-employment tax (15.3%) plus federal income tax on net profit. On $60,000 gross with $10,000 in deductions, net tax is approximately $14,000-$16,000 depending on filing status."}},{"@type":"Question","name":"What business expenses can OnlyFans creators deduct?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators can deduct camera equipment, lighting, props, costumes, home studio space, internet, phone, editing software, and marketing. A dedicated business bank account makes tracking deductions much easier."}},{"@type":"Question","name":"Does OnlyFans report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. OnlyFans reports creator income to the IRS on a 1099-NEC for earnings over $600. All income must be reported on Schedule C of your tax return regardless of whether you receive a 1099."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","item":"https://gigwisetax.com/blog/onlyfans-tax-guide-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","description":"OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.","url":"https://gigwisetax.com/blog/onlyfans-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › OnlyFans Taxes 2026
       </nav>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Creator Tax Guide · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>OnlyFans Taxes 2026: Complete Creator Guide</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>OnlyFans Taxes 2026: Complete Creator Guide</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — OnlyFans 2026</div>
@@ -41,7 +41,7 @@ export default function OnlyFansTaxGuide() {
       </div>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>OnlyFans creators on <strong>$40,000</strong> net income owe approximately <strong>$8,852</strong> in total federal tax</li>
           <li>OnlyFans sends <strong>1099-NEC</strong> if you earn $2,000+ — all income is taxable regardless</li>

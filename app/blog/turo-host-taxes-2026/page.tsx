@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function BlogPost() {
   const card: React.CSSProperties = { background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }
   return (
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Turo hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends on activity level. Casual Turo hosts (fewer than 3 cars, passive rental) report income on Schedule E — no SE tax. Active hosts who manage fleets report on Schedule C and owe 15.3% SE tax."}},{"@type":"Question","name":"Does Turo send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turo sends a 1099-K to hosts who process over $5,000 in gross payments in 2026. Even without a 1099-K you must report all rental income."}},{"@type":"Question","name":"What is the best tax deduction for Turo hosts?","acceptedAnswer":{"@type":"Answer","text":"Depreciation is the largest deduction. Under MACRS, a car used for Turo depreciates over 5 years. Bonus depreciation may allow up to 40% in year one for 2026."}}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Turo Host Taxes 2026 — Complete Tax Guide","item":"https://gigwisetax.com/blog/turo-host-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Turo Host Taxes 2026 — Complete Tax Guide","description":"How to file Turo host taxes in 2026. Depreciation, mileage, platform fees deduction, 1099-K. Free calculator — no signup.","url":"https://gigwisetax.com/blog/turo-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
@@ -19,7 +19,7 @@ export default function BlogPost() {
       </nav>
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase' as const, letterSpacing: 1 }}>Tax Guide - Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Turo Host Taxes 2026 — Complete Guide</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Turo Host Taxes 2026 — Complete Guide</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Turo 2026</div>
@@ -30,7 +30,7 @@ export default function BlogPost() {
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>Turo hosts report rental income on Schedule C (active) or Schedule E (passive). Deductions dramatically reduce your tax bill. Here is everything for 2026.</p>
       </div>
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>Turo hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
           <li>Vehicle depreciation is the <strong>largest deduction</strong> — deduct business-use % of car value</li>

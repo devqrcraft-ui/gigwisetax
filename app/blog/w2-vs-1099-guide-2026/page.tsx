@@ -10,19 +10,19 @@ export const metadata = {
 
 export default function W2vs1099Guide() {
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between W-2 and 1099 for taxes?","acceptedAnswer":{"@type":"Answer","text":"W-2 employees have taxes withheld by their employer and split FICA (7.65% each). 1099 contractors pay self-employment tax (15.3%) on the full amount themselves but can deduct all business expenses, half of SE tax, and retirement contributions."}},{"@type":"Question","name":"Is it better to be a W-2 or 1099 worker?","acceptedAnswer":{"@type":"Answer","text":"1099 workers pay more in SE tax but have more deductions available. W-2 workers get employer benefits and simpler taxes. At the same gross income, a 1099 worker with good deductions can end up with similar net pay to a W-2 employee."}},{"@type":"Question","name":"Can I be both W-2 and 1099 in the same year?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many workers have a W-2 job plus gig income. Report W-2 income normally and add 1099 income on Schedule C. Your W-2 withholding may partially offset your gig tax liability depending on total income."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"W-2 vs 1099 Tax Differences 2026 — Gig Worker Guide","item":"https://gigwisetax.com/blog/w2-vs-1099-guide-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"W-2 vs 1099 Tax Differences 2026 — Gig Worker Guide","description":"W-2 vs 1099: tax differences, pros and cons, and what it means for gig workers in 2026. Free calculator included.","url":"https://gigwisetax.com/blog/w2-vs-1099-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › W-2 vs 1099
       </nav>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Tax Basics · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>W-2 vs 1099: What's the Difference for Gig Workers?</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>W-2 vs 1099: What's the Difference for Gig Workers?</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — W-2 vs 1099 2026</div>
@@ -63,7 +63,7 @@ export default function W2vs1099Guide() {
       </table>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>1099 contractors pay <strong>15.3% self-employment tax</strong> vs 7.65% for W-2 employees</li>
           <li>W-2 employees have taxes withheld automatically — 1099 workers pay quarterly</li>

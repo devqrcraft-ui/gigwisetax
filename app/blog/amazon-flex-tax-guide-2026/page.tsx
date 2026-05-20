@@ -59,7 +59,7 @@ export default function AmazonFlexTaxGuide() {
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
           <div>
             <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
               <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
                 <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$8,852</strong> in total federal tax</li>
                 <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — driving 20,000 miles = <strong>$14,500</strong> deduction</li>

@@ -10,12 +10,12 @@ export const metadata = {
 
 export default function BlogPost() {
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Airbnb hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends. Hosts who provide hotel-like services (daily cleaning, concierge) may owe SE tax on Schedule C. Most Airbnb hosts report on Schedule E as passive rental income and do not owe SE tax."}},{"@type":"Question","name":"What is the 14-day rule for Airbnb taxes?","acceptedAnswer":{"@type":"Answer","text":"If you rent your property for 14 days or fewer per year, rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case."}},{"@type":"Question","name":"How do I report Airbnb income on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Most Airbnb hosts report on Schedule E (Supplemental Income). If you provide substantial services, use Schedule C. Airbnb issues a 1099-K for earnings over $600 and reports this to the IRS."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Host Taxes 2026 — Complete Guide","item":"https://gigwisetax.com/blog/airbnb-host-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026 — Complete Guide","description":"How Airbnb hosts file taxes in 2026. Schedule E vs Schedule C, deductions, occupancy tax. Free calculator.","url":"https://gigwisetax.com/blog/airbnb-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}
@@ -25,7 +25,7 @@ export default function BlogPost() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Tax Guide · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Airbnb Host Taxes 2026 — Complete Guide</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Airbnb Host Taxes 2026 — Complete Guide</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb 2026</div>
@@ -43,7 +43,7 @@ export default function BlogPost() {
         </div>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>Airbnb hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
           <li>The <strong>14-day rule</strong> — rent your home 14 days or fewer per year and income is <strong>100% tax-free</strong></li>

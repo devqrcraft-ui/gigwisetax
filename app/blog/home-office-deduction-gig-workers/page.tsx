@@ -59,7 +59,7 @@ export default function HomeOfficeBlog() {
           <p style={p}>The home office deduction is one of the most valuable tax breaks for gig workers — and one of the most misunderstood. Many workers skip it out of fear of an audit. But when claimed correctly, it's completely legitimate and can save $400–$1,500 per year.</p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
               <li>Simplified method: deduct <strong>$5/sq ft</strong> up to 300 sq ft = max <strong>$1,500/year</strong></li>
               <li>Regular method: deduct actual % of rent, utilities, and internet based on office sq footage</li>

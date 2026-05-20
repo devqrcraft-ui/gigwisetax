@@ -48,7 +48,7 @@ export default function Page() {
           <Link href="/blog" style={{ fontSize: 13, color: '#B22234', textDecoration: 'none', fontWeight: 600 }}>← Blog</Link>
         </div>
 
-        <h1 style={{ fontSize: 32, fontWeight: 900, lineHeight: 1.2, marginBottom: 12 }}>
+        <h1 style={{ fontSize: 22, fontWeight: 900, lineHeight: 1.2, marginBottom: 12 }}>
           Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates
         </h1>
       {/* ANSWER-FIRST GEO BLOCK */}
@@ -90,7 +90,7 @@ export default function Page() {
         </div>
 
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+          <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
             <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>

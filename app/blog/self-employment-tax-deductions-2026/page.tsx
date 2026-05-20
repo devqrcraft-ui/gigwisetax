@@ -30,12 +30,12 @@ export default function DeductionsGuide() {
   ]
 
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the top tax deductions for self-employed workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Top deductions: mileage (72.5 cents/mile), home office, health insurance premiums, half of SE tax, retirement contributions (up to $23,500 to a Solo 401k), business phone and internet, and equipment purchases under Section 179."}},{"@type":"Question","name":"How much can self-employed workers deduct for retirement in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employed workers can contribute up to $23,500 to a Solo 401k ($31,000 if age 50+) or up to 20% of net self-employment income to a SEP-IRA (max $69,000). Both contributions reduce taxable income dollar for dollar."}},{"@type":"Question","name":"Can I deduct health insurance as a self-employed person?","acceptedAnswer":{"@type":"Answer","text":"Yes. Self-employed individuals can deduct 100% of health insurance premiums for themselves and their family as an above-the-line deduction — even if you do not itemize. This reduces both income tax and AGI."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Self-Employment Tax Deductions 2026 — Complete List","item":"https://gigwisetax.com/blog/self-employment-tax-deductions-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-Employment Tax Deductions 2026 — Complete List","description":"Every tax deduction available to gig workers and self-employed in 2026. Mileage, home office, health insurance, QBI deduction, and more.","url":"https://gigwisetax.com/blog/self-employment-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' › '}
         <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a>{' › '}
@@ -44,7 +44,7 @@ export default function DeductionsGuide() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete List · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Self-Employment Tax Deductions 2026</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Self-Employment Tax Deductions 2026</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — SE Tax Deductions 2026</div>
@@ -64,7 +64,7 @@ export default function DeductionsGuide() {
       </div>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>Mileage at <strong>72.5¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
           <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA — saves thousands per year</li>
