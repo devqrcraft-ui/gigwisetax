@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import AuthorBox from '@/components/AuthorBox'
+import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Uber Eats Taxes 2026: $35K Income = $7,750 Tax — Free Guide',
