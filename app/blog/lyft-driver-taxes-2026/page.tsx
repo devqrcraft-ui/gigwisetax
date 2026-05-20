@@ -3,19 +3,19 @@ import type { Metadata } from 'next'
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/lyft-driver-taxes-2026' },
-  title: 'Lyft Driver Taxes 2026 — Complete Tax Guide | GigWiseTax',
-  description: 'How to file Lyft driver taxes in 2026. Mileage deduction, 1099-NEC, quarterly payments. Free calculator.',
+  title: 'Lyft Driver Taxes 2026: $35K Income = $7,750 Tax Owed',
+  description: 'Lyft drivers on $35K owe $7,750 in 2026 taxes. Free calculator — mileage 72.5¢/mi, tips up to $25K deductible. All 50 states.',
   keywords: 'lyft driver taxes 2026, lyft tax calculator, lyft 1099, lyft driver deductions',
 }
 
 export default function BlogPost() {
   return (
-    <div style={{ background: "#0d1117", minHeight: "100vh" }}>
+    <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Lyft drivers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers file taxes using Schedule C to report income and deductions. Use the 1099-K or 1099-NEC from Lyft plus your mileage log. Most drivers use tax software or a CPA for the first year."}},{"@type":"Question","name":"What is the Lyft mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers can deduct 72.5 cents per mile using the 2026 IRS standard mileage rate. This includes miles driven with passengers and while waiting for rides (deadhead miles may qualify if en route)."}},{"@type":"Question","name":"Does Lyft send tax forms to drivers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lyft sends a 1099-K if gross earnings exceed $600, or a 1099-NEC for referral bonuses. Forms are available in the Lyft driver app by January 31 each year."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Lyft Driver Taxes 2026 — Complete Tax Guide","item":"https://gigwisetax.com/blog/lyft-driver-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lyft Driver Taxes 2026 — Complete Tax Guide","description":"How to file Lyft driver taxes in 2026. Mileage deduction, 1099-NEC, quarterly payments. Free calculator.","url":"https://gigwisetax.com/blog/lyft-driver-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
+    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         {' › '}
@@ -25,7 +25,7 @@ export default function BlogPost() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Tax Guide · Updated 2026</div>
-        <h1 style={{ fontSize: 36, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Lyft Driver Taxes 2026 — Complete Tax Guide</h1>
+        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Lyft Driver Taxes 2026 — Complete Tax Guide</h1>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
           Lyft drivers are independent contractors who receive a 1099-NEC. You owe self-employment tax (15.3%) on net earnings. The mileage deduction is your biggest tool to reduce your tax bill.
         </p>
@@ -42,7 +42,7 @@ export default function BlogPost() {
       </div>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
               <li>Lyft drivers on <strong>$35,000</strong> net income owe approximately <strong>$7,750</strong> in total federal tax</li>
               <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — driving 15,000 miles = <strong>$10,875</strong> deduction</li>
