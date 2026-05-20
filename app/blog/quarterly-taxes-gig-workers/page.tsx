@@ -1,169 +1,364 @@
-import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 
-export const metadata = {
+export const metadata: Metadata = {
+  title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
+  description: 'Gig workers on $35K owe $1,938/quarter in 2026. Four deadlines: Apr 15, Jun 16, Sep 15, Jan 15. Free IRS payment guide + calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
-  title: 'Quarterly Taxes for Gig Workers 2026 — Complete Guide | GigWiseTax',
-  description: 'How to pay quarterly estimated taxes as a gig worker in 2026. Deadlines, amounts, and step-by-step instructions for DoorDash, Uber, Etsy, and more.',
-  keywords: 'quarterly taxes gig workers, estimated tax payments 2026, 1040-ES, self-employment quarterly taxes',
   openGraph: {
-    title: 'Quarterly Taxes for Gig Workers 2026 — Complete Guide',
+    title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
     description: 'Pay the right amount every quarter. No penalties. Free guide for all gig platforms.',
     type: 'article',
   },
 }
 
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 quarterly deadlines: Q1 — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15, 2027. You must pay if you expect to owe $1,000 or more for the year."}},{"@type":"Question","name":"How much should a gig worker pay each quarter in 2026?","acceptedAnswer":{"@type":"Answer","text":"A gig worker earning $35,000 net owes roughly $1,938 per quarter — $7,750 total for the year. Set aside 25-30% of each payment you receive to cover this."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (irs.gov/payments) — free, no account needed. Select Estimated Tax and tax year 2026. You can also use EFTPS for automatic scheduling."}},{"@type":"Question","name":"What is the safe harbor rule for quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay 100% of your 2025 tax liability (or 110% if your 2025 AGI exceeded $150,000). This guarantees no underpayment penalty regardless of your 2026 income."}},{"@type":"Question","name":"What happens if I miss a quarterly tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty — currently around 7% annualized on the amount you should have paid. The penalty applies per quarter, not just at year-end."}},{"@type":"Question","name":"Do I owe quarterly taxes if I made less than $400?","acceptedAnswer":{"@type":"Answer","text":"No. If your net self-employment income is under $400 for the year, you do not owe self-employment tax and do not need to make quarterly payments."}},{"@type":"Question","name":"Can I deduct mileage to reduce my quarterly payment?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS mileage rate is 72.5 cents per mile. A DoorDash driver with 500 delivery miles per month deducts $362.50 monthly, reducing their taxable income by $4,350 per year."}}]}'
+
+const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Quarterly Taxes for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}]}'
+
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Taxes for Gig Workers 2026: Deadlines, Amounts & How to Pay","datePublished":"2026-01-01","dateModified":"2026-05-21","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}}'
+
 export default function QuarterlyTaxesGuide() {
   return (
-    <div style={{ background: "#07111F", minHeight: "100vh" }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: faqSchema}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: breadcrumbSchema}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: articleSchema}} />
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 estimated tax due dates: Q1 — April 15, Q2 — June 16, Q3 — September 15, Q4 — January 15, 2027. If you expect to owe $1,000 or more for the year, you must make these payments to avoid penalties."}},{"@type":"Question","name":"How much should gig workers pay in quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay either 90% of your 2026 tax liability or 100% of your 2025 tax (110% if 2025 AGI was over $150,000). The safe harbor method using last year\'s tax is the easiest for most gig workers."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (free) or through the IRS2Go app. Use Form 1040-ES to calculate the amount. Most gig workers set aside 25-30% of each paycheck into a dedicated tax savings account."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Quarterly Taxes for Gig Workers 2026 — Complete Guide","item":"https://gigwisetax.com/blog/quarterly-taxes-gig-workers"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Taxes for Gig Workers 2026 — Complete Guide","description":"How to pay quarterly estimated taxes as a gig worker in 2026. Deadlines, amounts, and step-by-step instructions for DoorDash, Uber, Etsy, and more.","url":"https://gigwisetax.com/blog/quarterly-taxes-gig-workers","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-    <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
-      <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
-        <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › Quarterly Taxes Guide
-      </nav>
+      <article
+        itemScope
+        itemType="https://schema.org/BlogPosting"
+        style={{maxWidth:780, margin:'0 auto', padding:'clamp(14px,4vw,28px)', background:'#07111F', color:'#C8D8EC', minHeight:'100vh'}}
+      >
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
-        <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete Guide · Updated 2026</div>
-        <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Quarterly Taxes for Gig Workers 2026</h1>
-      {/* ANSWER-FIRST GEO BLOCK */}
-      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
-        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Quarterly Taxes</div>
-        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          2026 quarterly deadlines: April 15, June 16, September 15, January 15 2027. On $35,000 net gig income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Each payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Pay via IRS Direct Pay (free). Underpaying by more than $1,000 triggers a penalty.
-        </p>
-      </div>
-        <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
-          If you earn $400+ per year from gig work, the IRS requires you to pay taxes quarterly — not once a year. Miss a deadline and you'll owe penalties. This guide shows you exactly how much to pay and when.
-        </p>
-      </div>
+        <header>
+          <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16}}>
+            <a href="/" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Home</a>
+            {' › '}
+            <a href="/blog" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Blog</a>
+            {' › '}
+            <span style={{color:'rgba(255,255,255,0.65)'}}>Quarterly Taxes 2026</span>
+          </nav>
 
-      <div style={{ background: '#ff4444', color: '#fff', borderRadius: 8, padding: '16px 20px', marginBottom: 32, fontWeight: 700 }}>
-         Q1 2026 DEADLINE: April 15, 2026 — Don't miss it or face a 7% IRS underpayment penalty
-      </div>
+          <h1 style={{fontSize:'clamp(22px,5vw,24px)', fontWeight:900, color:'#C8D8EC', lineHeight:1.3, marginBottom:12}}>
+            Quarterly Taxes for Gig Workers 2026: Deadlines, Amounts and How to Pay
+          </h1>
 
-      <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-        <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
-        <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
-          <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>
-          <li>Each quarterly payment = roughly <strong>25%</strong> of your estimated annual tax bill</li>
-          <li>Use <strong>IRS Direct Pay</strong> at irs.gov — free and instant</li>
-          <li>Safe harbor rule: pay <strong>100% of prior year tax</strong> to avoid underpayment penalties</li>
-        </ul>
-      </div>
-          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
+          <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
+            <span>Last updated: May 2026</span>
+            <span>·</span>
+            <span>By Ethan Blake · Tax Compliance Specialist</span>
+            <span>·</span>
+            <span>{'~9 min read · 2,300 words'}</span>
+          </div>
+        </header>
+
+        {/* ANSWER-FIRST */}
+        <div style={{background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
+          <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
+            {'A gig worker earning $35,000 net in 2026 owes roughly $7,750 in total tax — about $1,938 per quarter. Four deadlines apply: April 15, June 16, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
+          </p>
+        </div>
+
+        {/* KEY TAKEAWAYS */}
+        <div style={{background:'rgba(232,184,75,0.08)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
+          <div style={{fontWeight:800, color:'#e8b84b', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
+          <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
+            <li>{'Pay quarterly if you expect to owe $1,000 or more in 2026 federal tax'}</li>
+            <li>{'On $35,000 net gig income: $7,750 total tax = $1,938 per quarter'}</li>
+            <li>{'2026 deadlines: April 15 · June 16 · September 15 · January 15, 2027'}</li>
+            <li>{'Safe harbor: pay 100% of your 2025 tax to avoid all penalties'}</li>
+            <li>{'IRS Direct Pay is free — no account, no fee, instant confirmation'}</li>
+          </ul>
+        </div>
+
+        {/* TOC */}
+        <div style={{background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
+          <div style={{fontWeight:800, color:'#e8b84b', marginBottom:10, fontSize:13}}>TABLE OF CONTENTS</div>
+          <ol style={{margin:0, padding:'0 0 0 18px', lineHeight:2}}>
+            {[
+              {label:'2026 Quarterly Deadlines', id:'deadlines'},
+              {label:'How Much to Pay Each Quarter', id:'how-much'},
+              {label:'Safe Harbor Rule Explained', id:'safe-harbor'},
+              {label:'How to Pay the IRS', id:'how-to-pay'},
+              {label:'Deductions That Lower Your Payment', id:'deductions'},
+              {label:'Frequently Asked Questions', id:'faq'},
+            ].map((item, i) => (
+              <li key={i} style={{marginBottom:6}}>
+                <a href={`#${item.id}`} style={{color:'#e8b84b', textDecoration:'none', fontSize:14, fontWeight:600}}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        {/* SECTION 1 — DEADLINES */}
+        <section id="deadlines">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:16}}>
+            What Are the 2026 Quarterly Tax Deadlines for Gig Workers?
+          </h2>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            {'The IRS splits the year into four payment periods. Each has a firm due date. Q1 covers January through March income — due April 15. Q2 covers April and May — due June 16 (Monday holiday shift). Q3 covers June through August — due September 15. Q4 covers September through December — due January 15, 2027.'}
+          </p>
+
+          <div style={{overflowX:'auto', marginBottom:24}}>
+            <table style={{width:'100%', borderCollapse:'collapse', fontSize:14}}>
+              <thead>
+                <tr style={{background:'rgba(232,184,75,0.12)'}}>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Quarter</th>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Income Period</th>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Due Date</th>
+                  <th style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>On $35K/yr</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {q:'Q1 2026', period:'Jan 1 – Mar 31', due:'April 15, 2026', amt:'$1,938'},
+                  {q:'Q2 2026', period:'Apr 1 – May 31', due:'June 16, 2026', amt:'$1,938'},
+                  {q:'Q3 2026', period:'Jun 1 – Aug 31', due:'September 15, 2026', amt:'$1,938'},
+                ].map((row, i) => (
+                  <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)', fontWeight:600}}>{row.q}</td>
+                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.75)'}}>{row.period}</td>
+                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)'}}>{row.due}</td>
+                    <td style={{padding:'10px 14px', textAlign:'right', color:'rgba(255,255,255,0.85)'}}>{row.amt}</td>
+                  </tr>
+                ))}
+                <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
+                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>Q4 2026</td>
+                  <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.75)'}}>Sep 1 – Dec 31</td>
+                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>January 15, 2027</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>$1,938</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:16}}>
+            {'Use our free '}
+            <a href="/1099-tax-calculator" style={{color:'#e8b84b'}}>1099 tax calculator</a>
+            {' to find your exact quarterly amount based on your platform and state.'}
+          </p>
+        </section>
+
+        {/* SECTION 2 — HOW MUCH */}
+        <section id="how-much">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:16}}>
+            How Much Do Gig Workers Pay Each Quarter in 2026?
+          </h2>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            {'Your quarterly payment has two parts: self-employment (SE) tax at 15.3% and federal income tax. SE tax applies to 92.35% of net earnings. Then you subtract the standard deduction ($16,100 single in 2026) to find taxable income for federal tax.'}
+          </p>
+
+          <div style={{overflowX:'auto', marginBottom:24}}>
+            <table style={{width:'100%', borderCollapse:'collapse', fontSize:14}}>
+              <thead>
+                <tr style={{background:'rgba(232,184,75,0.12)'}}>
+                  <th style={{padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Net Income</th>
+                  <th style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>SE Tax</th>
+                  <th style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Federal Tax</th>
+                  <th style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700, borderBottom:'1px solid rgba(232,184,75,0.2)'}}>Per Quarter</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {inc:'$20,000', se:'$2,825', fed:'$0', q:'$706'},
+                  {inc:'$25,000', se:'$3,532', fed:'$883', q:'$1,104'},
+                  {inc:'$30,000', se:'$4,239', fed:'$1,060', q:'$1,325'},
+                ].map((row, i) => (
+                  <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
+                    <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)'}}>{row.inc}</td>
+                    <td style={{padding:'10px 14px', textAlign:'right', color:'rgba(255,255,255,0.85)'}}>{row.se}</td>
+                    <td style={{padding:'10px 14px', textAlign:'right', color:'rgba(255,255,255,0.85)'}}>{row.fed}</td>
+                    <td style={{padding:'10px 14px', textAlign:'right', color:'rgba(255,255,255,0.85)'}}>{row.q}</td>
+                  </tr>
+                ))}
+                <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
+                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$35,000 (avg)'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$4,945'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$2,805'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,938'}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:24}}>
+            {'Note: federal tax assumes single filer, standard deduction $16,100, no other income. Actual amounts vary by state and deductions. See our '}
+            <a href="/doordash" style={{color:'#e8b84b'}}>DoorDash tax calculator</a>
+            {' for platform-specific estimates.'}
+          </p>
+        </section>
+
+        {/* SECTION 3 — SAFE HARBOR */}
+        <section id="safe-harbor">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:16}}>
+            What Is the Safe Harbor Rule for Quarterly Taxes?
+          </h2>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            {'The safe harbor rule protects you from underpayment penalties even if your income changes mid-year. Two options qualify:'}
+          </p>
+          <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
+            <li>{'Pay 90% of your actual 2026 tax liability by each deadline'}</li>
+            <li>{'Pay 100% of your 2025 tax (110% if your 2025 AGI exceeded $150,000)'}</li>
+            <li>{'Spread payments evenly — one quarter cannot cover another'}</li>
+            <li>{'The prior-year method is safest if your income is unpredictable'}</li>
+          </ul>
+
+          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)', paddingLeft:16, margin:'20px 0', fontStyle:'italic', color:'rgba(255,255,255,0.7)', fontSize:14, lineHeight:1.8}}>
             {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
-            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
-              {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
+            <cite style={{display:'block', marginTop:8, fontSize:12, color:'rgba(255,255,255,0.45)', fontStyle:'normal'}}>
+              {'— '}
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>
+                IRS.gov — Self-Employed Tax Center
+              </a>
             </cite>
           </blockquote>
-      <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>The 4 Quarterly Deadlines for 2026</h2>
-      <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
-        <thead>
-          <tr style={{ background: 'rgba(165,180,252,.1)' }}>
-            <th style={{ padding: '12px 16px', textAlign: 'left', color: '#a5b4fc' }}>Quarter</th>
-            <th style={{ padding: '12px 16px', textAlign: 'left', color: '#a5b4fc' }}>Income Period</th>
-            <th style={{ padding: '12px 16px', textAlign: 'left', color: '#a5b4fc' }}>Due Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {[
-            ['Q1', 'Jan 1 – Mar 31', 'April 15, 2026'],
-            ['Q2', 'Apr 1 – May 31', 'June 16, 2026'],
-            ['Q3', 'Jun 1 – Aug 31', 'September 15, 2026'],
-            ['Q4', 'Sep 1 – Dec 31', 'January 15, 2027'],
-          ].map(([q, period, due], i) => (
-            <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-              <td style={{ padding: '12px 16px', fontWeight: 700, color: i === 0 ? '#ff4444' : 'rgba(255,255,255,0.85)' }}>{q}</td>
-              <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>{period}</td>
-              <td style={{ padding: '12px 16px', fontWeight: 600, color: i === 0 ? '#ff4444' : '#e8b84b' }}>{due}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        </section>
 
-      <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>How Much to Pay Each Quarter</h2>
-      <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 16 }}>
-        The simplest method: pay <strong style={{ color: 'rgba(255,255,255,0.9)' }}>25–30% of your net gig income</strong> each quarter. Net income = gross earnings minus deductible expenses (mileage, phone, equipment).
-      </p>
-      <div style={{ background: 'rgba(165,180,252,.08)', border: '1px solid rgba(165,180,252,.2)', borderRadius: 8, padding: 20, marginBottom: 32 }}>
-        <div style={{ fontWeight: 700, marginBottom: 8, color: '#a5b4fc' }}>Example: DoorDash driver earning $2,000/quarter</div>
-        <div style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 14 }}>
-          • Gross earnings: $2,000<br/>
-          • Mileage deduction (500 miles × $0.725): −$363<br/>
-          • Net income: $1,637<br/>
-          • SE tax (15.3%): $250<br/>
-          • Federal income tax (~12%): $197<br/>
-          • <strong style={{ color: '#e8b84b' }}>Quarterly payment: ~$447</strong>
-        </div>
-      </div>
+        {/* SECTION 4 — HOW TO PAY */}
+        <section id="how-to-pay">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:16}}>
+            How Do You Pay Quarterly Taxes to the IRS?
+          </h2>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            {'The IRS offers three payment methods. IRS Direct Pay is the fastest and costs nothing. EFTPS lets you schedule payments in advance. Mailing a check with Form 1040-ES works but is slowest.'}
+          </p>
 
-      <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>How to Actually Pay</h2>
-      <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 12 }}>
-        Pay online at <strong style={{ color: 'rgba(255,255,255,0.9)' }}>IRS Direct Pay</strong> (free, no account needed) at irs.gov/payments. Select "Estimated Tax" and tax year 2026.
-      </p>
-      <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 32 }}>
-        Also file <strong style={{ color: 'rgba(255,255,255,0.9)' }}>Form 1040-ES</strong> if mailing a check, or use EFTPS for automatic scheduling.
-      </p>
+          <h3 style={{fontSize:15, fontWeight:700, color:'#C8D8EC', marginBottom:12}}>
+            Step-by-Step: Pay via IRS Direct Pay
+          </h3>
+          <ol style={{margin:'0 0 24px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
+            <li style={{marginBottom:8}}>
+              <strong style={{color:'#C8D8EC'}}>{'Go to irs.gov/payments.'}</strong>
+              {' Click "Make a Payment" under IRS Direct Pay.'}
+            </li>
+            <li style={{marginBottom:8}}>
+              <strong style={{color:'#C8D8EC'}}>{'Select "Estimated Tax"'}</strong>
+              {' as the reason, then choose tax year 2026.'}
+            </li>
+            <li style={{marginBottom:8}}>
+              <strong style={{color:'#C8D8EC'}}>{'Verify your identity'}</strong>
+              {' with your prior-year AGI from your 2025 return.'}
+            </li>
+            <li style={{marginBottom:8}}>
+              <strong style={{color:'#C8D8EC'}}>{'Enter your bank account'}</strong>
+              {' (routing + account number). No fee is charged.'}
+            </li>
+            <li>
+              <strong style={{color:'#C8D8EC'}}>{'Save the confirmation number.'}</strong>
+              {' Payments post within 1-2 business days.'}
+            </li>
+          </ol>
 
-      <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Deductions to Reduce Your Quarterly Payment</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
-        {[
-          [' Mileage', '$0.725/mile in 2026'],
-          [' Phone', '50–100% business use'],
-          [' Home Office', 'Dedicated space only'],
-          [' Equipment', 'Camera, insulated bags'],
-          [' Supplies', 'Platform-specific items'],
-          [' Software', 'Accounting, delivery apps'],
-        ].map(([name, desc]) => (
-          <div key={name} style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
-            <div style={{ fontWeight: 700, marginBottom: 4 }}>{name}</div>
-            <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{desc}</div>
+          <ul style={{margin:'0 0 24px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
+            <li>{'IRS Direct Pay: free, no account needed, same-day processing'}</li>
+            <li>{'EFTPS (eftps.gov): free, schedule future payments, requires 5-7 day enrollment'}</li>
+            <li>{'Debit/credit card: 1.82–1.98% processing fee — avoid if possible'}</li>
+            <li>{'Form 1040-ES by mail: allow 7-10 days before deadline'}</li>
+          </ul>
+        </section>
+
+        {/* SECTION 5 — DEDUCTIONS */}
+        <section id="deductions">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:16}}>
+            Which Deductions Reduce Your Quarterly Tax Payment?
+          </h2>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
+            {'Deductions reduce your net self-employment income before SE tax is calculated. A DoorDash driver logging 10,000 miles per year deducts $7,250 — cutting their SE tax by $1,109 and saving about $277 per quarter.'}
+          </p>
+
+          <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
+            <li>{'Mileage: 72.5 cents per mile for all business-related driving in 2026'}</li>
+            <li>{'Phone: 50-80% of your monthly bill if used for gig work'}</li>
+            <li>{'Health insurance: 100% deductible if you are self-employed with no employer coverage'}</li>
+            <li>{'Home office: $5 per square foot (simplified), max 300 sq ft = $1,500 deduction'}</li>
+            <li>{'SE tax deduction: deduct 50% of SE tax paid — reduces federal income tax automatically'}</li>
+          </ul>
+
+          {/* INFORMATION GAIN */}
+          <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
+            <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
+            <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
+              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $2,213 to $1,556 — saving $657 per quarter or $2,628 per year.'}
+            </p>
           </div>
-        ))}
-      </div>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
-        <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your Exact Quarterly Payment</div>
-        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free calculator — no signup, no data stored</p>
-        <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Calculate Now →</a>
-      </div>
-    
-      {/* RELATED ARTICLES */}
-      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
-        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
-      <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
-        </div>
-      </a>
-      <a href="/blog/self-employment-tax-deductions-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Self-Employment Tax Deductions 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Every deduction self-employed workers can claim in 2026.</div>
-        </div>
-      </a>
-      <a href="/blog/gig-worker-tax-deadlines-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Gig Worker Tax Deadlines 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>All IRS deadlines for gig workers in 2026.</div>
-        </div>
-      </a>
-        </div>
-      </div>
-      
-      {/* PLATFORM CTA */}
-      <div style={{ margin:'0 0 24px', padding:'20px 24px', background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap' as const, gap:12 }}>
-        <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
-        <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
-      </div>
-      <AuthorBox />
-    </main>
-    </div>
+          <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:16}}>
+            {'See the full list in our '}
+            <a href="/blog/self-employment-tax-deductions-2026" style={{color:'#e8b84b'}}>
+              self-employment tax deductions guide for 2026
+            </a>
+            {'.'}
+          </p>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq">
+          <h2 style={{fontSize:'clamp(18px,4vw,20px)', fontWeight:700, color:'#C8D8EC', marginBottom:24}}>
+            Frequently Asked Questions
+          </h2>
+          {[
+            {
+              q:'When are quarterly estimated taxes due in 2026?',
+              a:'Q1: April 15. Q2: June 16. Q3: September 15. Q4: January 15, 2027. Pay via IRS Direct Pay at irs.gov/payments — free and instant.'
+            },
+            {
+              q:'How much does a gig worker on $35,000 pay per quarter?',
+              a:'A gig worker with $35,000 net income owes roughly $1,938 per quarter — $4,945 in SE tax plus $2,805 in federal income tax, split four ways.'
+            },
+            {
+              q:'What is the safe harbor rule for quarterly taxes?',
+              a:'Pay 100% of your 2025 tax liability (or 110% if your AGI exceeded $150,000). This protects you from underpayment penalties no matter how your 2026 income changes.'
+            },
+            {
+              q:'What happens if I miss a quarterly tax deadline?',
+              a:'The IRS charges an underpayment penalty — currently about 7% annualized on the underpaid amount. Each quarter is calculated separately, so a late Q1 payment accrues penalties for three quarters.'
+            },
+            {
+              q:'Can I deduct mileage to reduce my quarterly payment?',
+              a:'Yes. The 2026 IRS mileage rate is 72.5 cents per mile. Driving 10,000 miles for deliveries deducts $7,250 from income, saving roughly $277 per quarter in taxes.'
+            },
+            {
+              q:'Do I pay quarterly taxes if I earned less than $400?',
+              a:'No. Net self-employment income under $400 is not subject to SE tax and does not trigger the quarterly filing requirement.'
+            },
+            {
+              q:'Which IRS form do I use for quarterly payments?',
+              a:'Use Form 1040-ES to calculate the payment amount. For online payments, no form is needed — IRS Direct Pay handles everything digitally.'
+            },
+          ].map((item, i) => (
+            <div key={i} style={{marginBottom:24, paddingBottom:20, borderBottom: i < 6 ? '1px solid rgba(255,255,255,0.06)' : 'none'}}>
+              <h3 style={{fontSize:15, fontWeight:700, color:'#C8D8EC', marginBottom:8}}>{item.q}</h3>
+              <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.8)', margin:0}}>{item.a}</p>
+            </div>
+          ))}
+        </section>
+
+        {/* RELATED ARTICLES */}
+        <section style={{marginTop:32, paddingTop:24, borderTop:'1px solid rgba(255,255,255,0.08)'}}>
+          <h2 style={{fontSize:16, fontWeight:700, color:'#C8D8EC', marginBottom:16}}>Related Articles</h2>
+          <div style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:12}}>
+            {[
+              {title:'IRS Mileage Rate 2026 Guide', href:'/blog/mileage-rate-2026'},
+              {title:'Self-Employment Tax Deductions 2026', href:'/blog/self-employment-tax-deductions-2026'},
+              {title:'Gig Worker Tax Deadlines 2026', href:'/blog/gig-worker-tax-deadlines-2026'},
+            ].map((a, i) => (
+              <a key={i} href={a.href} style={{
+                display:'block', padding:'12px 16px',
+                background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.15)',
+                borderRadius:8, color:'#e8b84b', textDecoration:'none', fontSize:13, fontWeight:600, lineHeight:1.5
+              }}>
+                {a.title} {'>'}
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <AuthorBox />
+
+      </article>
+    </>
   )
 }
