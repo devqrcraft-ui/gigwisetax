@@ -27,6 +27,9 @@ const blogPosts = [
   'onlyfans-tax-guide-2026',
   'quarterly-taxes-gig-workers',
   'self-employment-tax-deductions-2026',
+  'uber-eats-tax-guide-2026',
+  'fiverr-taxes-2026',
+  'etsy-taxes-2026',
   'best-tax-software-for-gig-workers-2026',
 ];
 
