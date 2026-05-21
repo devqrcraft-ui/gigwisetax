@@ -1,304 +1,346 @@
-// Save as: app/blog/uber-tax-guide-2026/page.tsx
-
-import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
+import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: 'Uber Driver Tax Guide 2026 — How to File Your 1099 | GigWiseTax',
-  description: 'Complete Uber driver tax guide for 2026. SE tax 15.3%, mileage rate $0.725/mile, tip deduction up to $25,000, quarterly deadlines, and Schedule C filing. Free calculator included.',
-  keywords: 'Uber driver taxes 2026, Uber 1099 how to file, Uber mileage deduction 2026, Uber quarterly taxes, rideshare self employment tax 2026',
+  title: 'Uber Driver Tax Guide 2026 — How to File Your 1099',
+  description: 'Uber drivers on $35K owe $7,750 in 2026 taxes. SE tax 15.3%, mileage 72.5¢/mi, tips up to $25K deductible. Free calculator. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-tax-guide-2026' },
-  openGraph: { title: 'Uber Driver Tax Guide 2026', description: 'How Uber drivers pay taxes in 2026. SE tax, mileage, tips deduction, and quarterly schedule.' },
 }
 
-const faqSchema = {
-  '@context': 'https://schema.org', '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'How much tax does an Uber driver pay in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Uber drivers pay 15.3% self-employment tax plus federal income tax. On $45,000 net income after mileage deductions, expect to owe approximately $14,000-$17,000. Set aside 25-30% of each payment. The mileage deduction at $0.725/mile significantly reduces taxable income.' } },
-    { '@type': 'Question', name: 'Can Uber drivers deduct tips in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'Yes! A new 2026 tax law allows rideshare drivers to deduct qualified tips up to $25,000 from their income. This is a major new deduction for Uber and Lyft drivers. You still report the tip income, then deduct it separately.' } },
-    { '@type': 'Question', name: 'What is the 2026 mileage rate for Uber drivers?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS standard mileage rate is $0.725 per mile (72.5 cents). On 15,000 business miles, that is a $10,875 tax deduction — significantly reducing your taxable income.' } },
-  ],
-}
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Uber drivers pay 15.3% self-employment tax plus federal income tax. On $35,000 net income after mileage deductions, total federal tax is approximately $7,750. Set aside 25 to 30% of each payment."}},{"@type":"Question","name":"Can Uber drivers deduct tips in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under OBBBA 2026, rideshare drivers can deduct qualified tips up to $25,000 from federal taxable income. You still report the tip income on Schedule C, then deduct it on Schedule 1."}},{"@type":"Question","name":"What is the 2026 mileage rate for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile. On 15,000 business miles, that is a $10,875 deduction — your largest single tax reduction."}},{"@type":"Question","name":"Does Uber report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Uber sends 1099-K and 1099-NEC forms directly to the IRS with your SSN. Even if you earn less than the 1099 threshold, you must report all income on Schedule C."}},{"@type":"Question","name":"What is the difference between 1099-K and 1099-NEC for Uber?","acceptedAnswer":{"@type":"Answer","text":"The 1099-K reports gross trip earnings — what riders paid before Uber fees. The 1099-NEC reports bonuses and referral payments over $600. Your actual taxable income is the net amount after Uber fees, shown in your Tax Summary."}},{"@type":"Question","name":"Standard mileage vs actual expense method — which is better for Uber?","acceptedAnswer":{"@type":"Answer","text":"Most Uber drivers benefit more from the standard mileage method at 72.5 cents per mile. It is simpler and requires no expense receipts. The actual expense method may yield more for drivers with expensive vehicles or high maintenance costs."}},{"@type":"Question","name":"When are the 2026 quarterly tax deadlines for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"Quarterly estimated tax deadlines for 2026 are: April 15 (Q1), June 16 (Q2), September 15 (Q3), and January 15 2027 (Q4). Pay online at IRS Direct Pay. Missing a deadline triggers an underpayment penalty of approximately 7% annualized."}}]}'
+
+const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Driver Tax Guide 2026","item":"https://www.gigwisetax.com/blog/uber-tax-guide-2026"}]}'
+
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Driver Tax Guide 2026 — How to File Your 1099","datePublished":"2026-01-01","dateModified":"2026-05-21","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-tax-guide-2026"}}'
 
 export default function UberTaxGuide() {
-  const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
-  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
-
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Driver Tax Guide 2026 — How to File Your 1099","item":"https://gigwisetax.com/blog/uber-tax-guide-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Driver Tax Guide 2026 — How to File Your 1099","description":"Complete Uber driver tax guide for 2026. SE tax 15.3%, mileage rate $0.725/mile, tip deduction up to $25,000, quarterly deadlines, and Schedule C filing. Free calculator included.","url":"https://gigwisetax.com/blog/uber-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
-      <div style={{ background: '#0d1117', minHeight: '100vh' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-          <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
-            <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
-              <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> ›{' '}
-              <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> ›{' '}
-              <span style={{ color: 'rgba(255,255,255,.7)' }}>Uber Tax Guide 2026</span>
-            </nav>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
-              <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>January 20, 2026</span>
-              <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>7 min read</span>
-              <span style={{ background: '#059669', color: '#fff', fontSize: 11, padding: '3px 10px', borderRadius: 3, fontWeight: 700 }}>NEW 2026 Tips Deduction</span>
-            </div>
-            <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
-               Uber Driver Tax Guide 2026 — How to File Your 1099
-            </h1>
-      {/* ANSWER-FIRST GEO BLOCK */}
-      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
-        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Uber 2026</div>
-        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every Uber payment. Mileage at 72.5¢/mile and the new 2026 tips deduction (up to $25,000) are your biggest savings.
-        </p>
-      </div>
-            <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-              Complete Uber driver tax guide for 2026. Includes the new $0.725/mile mileage rate, the new tips deduction (up to $25,000),
-              SE tax calculation, quarterly deadlines, and every deduction Uber drivers can claim.
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleSchema }} />
+
+      <article
+        itemScope
+        itemType="https://schema.org/BlogPosting"
+        style={{ maxWidth: 780, margin: '0 auto', padding: 'clamp(14px,4vw,28px)', background: '#07111F', color: '#C8D8EC', minHeight: '100vh' }}
+      >
+        <header>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Home</a>
+            {' › '}
+            <a href="/blog" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Blog</a>
+            {' › '}
+            <span style={{ color: '#C8D8EC' }}>Uber Driver Tax Guide 2026</span>
+          </nav>
+
+          <h1
+            itemProp="headline"
+            style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, lineHeight: 1.3, color: '#C8D8EC', margin: '0 0 16px' }}
+          >
+            Uber Driver Tax Guide 2026 — How to File Your 1099
+          </h1>
+
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+            <span>Last updated: May 2026</span>
+            <span>·</span>
+            <span>By Ethan Blake · Tax Compliance Specialist</span>
+            <span>·</span>
+            <span>{'~8 min read · 2,050 words'}</span>
+          </div>
+        </header>
+
+        {/* ANSWER-FIRST */}
+        <section id="answer">
+          <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
+            <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
+              {'Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,950 SE tax + $2,800 federal income tax = $7,750 total. Quarterly estimated payment: $1,938. Set aside 25% of every Uber payment. The 2026 mileage rate is 72.5 cents per mile and the OBBBA tips deduction (up to $25,000) are your two largest savings.'}
             </p>
           </div>
-        </div>
+        </section>
 
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
-          <div>
-            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+        {/* KEY TAKEAWAYS */}
+        <section id="key-takeaways">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8b84b', margin: '0 0 14px' }}>
+            Key Takeaways
+          </h2>
+          <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
+            <li>{'Uber drivers on $35,000 net income owe approximately $7,750 in total federal tax'}</li>
+            <li>{'2026 IRS mileage rate is 72.5 cents per mile — your single largest deduction'}</li>
+            <li>{'Tips up to $25,000 are federally deductible under OBBBA 2026'}</li>
+            <li>{'Uber sends 1099-NEC for earnings over $2,000 and 1099-K for trip earnings'}</li>
+            <li>{'Set aside 25 to 30% of every payment for quarterly estimated taxes'}</li>
+          </ul>
+        </section>
 
-              <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 16, marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' as const }}>
-                <div style={{ fontWeight: 700, color: '#fff', fontSize: 14 }}> Calculate Your Uber Taxes Instantly</div>
-                <a href="/uber" style={{ textDecoration: 'none' }}>
-                  <div style={{ background: '#B22234', color: '#fff', padding: '9px 18px', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Open Calculator →</div>
-                </a>
-              </div>
-
-              {/* NEW 2026 TIP DEDUCTION */}
-              <div style={{ background: 'rgba(5,150,105,0.12)', border: '2px solid #059669', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 800, color: '#059669', marginBottom: 8, fontSize: 15 }}> NEW 2026 LAW: Uber Drivers Can Deduct Tips Up to $25,000</div>
-                <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px' }}>
-                  Starting in tax year 2026 (returns filed in 2027), a new federal tax law allows rideshare and delivery drivers
-                  to deduct <strong>qualified tips up to $25,000</strong> from their taxable income.
-                  You still report the tip income on Schedule C, then take a separate deduction on Schedule 1 to exempt it from tax.
-                </p>
-                <div style={{ fontSize: 13, color: '#4ade80', fontWeight: 600 }}>
-                  Example: $8,000 in Uber tips + $25,000 cap = entire $8,000 is deductible. Saves approx. $2,400 in taxes.
-                </div>
-              </div>
-
-              <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid #fecaca', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8 }}> Key Facts: Uber Taxes 2026</div>
-                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 2 }}>
-                  <li><strong>Uber does NOT withhold any taxes</strong> — you are an independent contractor</li>
-                  <li><strong>2026 mileage rate: $0.725/mile</strong> — highest in years</li>
-                  <li><strong>NEW: Tips deduction up to $25,000</strong> for 2026 tax year</li>
-                  <li><strong>1099-K</strong> for ride earnings + <strong>1099-NEC</strong> for bonuses/referrals</li>
-                  <li><strong>File Schedule C + Schedule SE</strong> with your Form 1040</li>
-                  <li><strong>Set aside 25–30%</strong> of every Uber payment for taxes</li>
-                </ul>
-              </div>
-
-                        <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
-            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-              <li>Uber drivers on <strong>$35,000</strong> net income owe approximately <strong>$7,750</strong> in total federal tax</li>
-              <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — your single largest deduction</li>
-              <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
-              <li>Uber sends <strong>1099-NEC</strong> for earnings over $2,000 and <strong>1099-K</strong> over $5,000</li>
-              <li>Set aside <strong>25–30%</strong> of every payment for quarterly estimated taxes</li>
-            </ul>
-          </div>
-          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
-            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
-            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
-              {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
-            </cite>
-          </blockquote>
-          {/* TABLE OF CONTENTS */}
-          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
-            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
-              <li style={{marginBottom:6}}><a href={"#1099-forms"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Uber's 1099 Forms Explained</a></li>
-              <li style={{marginBottom:6}}><a href={"#mileage-deduction"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 Mileage Deduction for Uber Drivers</a></li>
-              <li style={{marginBottom:6}}><a href={"#top-deductions"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Top Deductions for Uber Drivers in 2026</a></li>
-              <li style={{marginBottom:6}}><a href={"#mileage-vs-actual"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Standard Mileage vs Actual Expense Method</a></li>
-              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>2026 Quarterly Tax Deadlines for Uber Drivers</a></li>
-              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Uber Taxes 2026</a></li>
+        {/* TOC */}
+        <section id="toc">
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: '18px 22px', marginBottom: 32 }}>
+            <div style={{ fontWeight: 700, fontSize: 14, color: '#C8D8EC', marginBottom: 12 }}>Table of Contents</div>
+            <ol style={{ margin: 0, paddingLeft: 20, lineHeight: 2, fontSize: 13 }}>
+              <li><a href="#1099-forms" style={{ color: '#e8b84b', textDecoration: 'none' }}>{"Uber's 1099 Forms Explained"}</a></li>
+              <li><a href="#mileage-deduction" style={{ color: '#e8b84b', textDecoration: 'none' }}>2026 Mileage Deduction for Uber Drivers</a></li>
+              <li><a href="#top-deductions" style={{ color: '#e8b84b', textDecoration: 'none' }}>Top Deductions for Uber Drivers in 2026</a></li>
+              <li><a href="#mileage-vs-actual" style={{ color: '#e8b84b', textDecoration: 'none' }}>Standard Mileage vs Actual Expense Method</a></li>
+              <li><a href="#quarterly-deadlines" style={{ color: '#e8b84b', textDecoration: 'none' }}>2026 Quarterly Tax Deadlines</a></li>
+              <li><a href="#obbba" style={{ color: '#e8b84b', textDecoration: 'none' }}>2026 OBBBA Changes for Uber Drivers</a></li>
+              <li><a href="#faq" style={{ color: '#e8b84b', textDecoration: 'none' }}>Frequently Asked Questions</a></li>
             </ol>
           </div>
-<h2 id="1099-forms" style={h2}>Uber's 1099 Forms Explained</h2>
-              <p style={prose}>
-                Uber issues two different 1099 forms. The <strong>1099-K</strong> reports your gross trip earnings
-                (what riders/Uber Eats users paid — before Uber's service fee). The <strong>1099-NEC</strong>
-                reports bonuses, referral payments, and other non-trip income over $600.
-                Your actual taxable income is the 1099-K amount minus Uber's fees and commissions
-                (shown in your Uber Tax Summary). The net amount is what you report on Schedule C.
-              </p>
+        </section>
 
-              <h2 id="mileage-deduction" style={h2}>2026 Mileage Deduction for Uber Drivers</h2>
-              <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 12 }}> $0.725 per mile in 2026</div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 10 }}>
-                  {[['10,000 mi','$7,250'],['15,000 mi','$10,875'],['20,000 mi','$14,500']].map(([mi, d]) => (
-                    <div key={mi} style={{ background: '#0d1b3e', border: '1px solid #bae6fd', borderRadius: 4, padding: 12, textAlign: 'center' as const }}>
-                      <div style={{ fontSize: 11, color: '#8fa8c8', marginBottom: 3 }}>{mi}/year</div>
-                      <div style={{ fontSize: 20, fontWeight: 900, color: '#7dd3fc' }}>{d}</div>
-                      <div style={{ fontSize: 13, color: '#7a9abf' }}>deduction</div>
-                    </div>
-                  ))}
-                </div>
-                <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginTop: 10, marginBottom: 0 }}>
-                  Uber provides your online miles in the Tax Summary. Track ALL miles — including driving to first pickup and between trips — using MileIQ, Stride, or Everlance apps.
-                </p>
-              </div>
+        {/* SECTION 1 */}
+        <section id="1099-forms">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            {"How Do Uber's 1099 Forms Work in 2026?"}
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'Uber issues two different 1099 forms. The 1099-K reports gross trip earnings — what riders paid before Uber fees. The 1099-NEC reports bonuses, referral payments, and other non-trip income. Your actual taxable income is the 1099-K amount minus Uber fees shown in your Uber Tax Summary.'}
+          </p>
 
-              <h2 id="top-deductions" style={h2}>Top Deductions for Uber Drivers in 2026</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
+          <blockquote style={{ borderLeft: '3px solid #e8b84b', margin: '0 0 24px', padding: '12px 18px', background: 'rgba(232,184,75,0.05)', borderRadius: '0 8px 8px 0' }}>
+            <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
+              {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+            </p>
+            <p style={{ margin: '8px 0 0', fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>
+              {'— '}
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color: '#e8b84b', textDecoration: 'none' }}>
+                IRS.gov — Self-Employed Tax Center
+              </a>
+            </p>
+          </blockquote>
+
+          <ul style={{ margin: '0 0 28px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
+            <li>{'Uber does NOT withhold any taxes — you are fully responsible as an independent contractor'}</li>
+            <li>{'1099-K reports gross trip earnings before Uber service fees'}</li>
+            <li>{'1099-NEC reports bonuses and referral payments over $600'}</li>
+            <li>{'Net taxable income = 1099-K minus Uber fees, shown in your Tax Summary'}</li>
+            <li>{'File Schedule C + Schedule SE with your Form 1040'}</li>
+          </ul>
+        </section>
+
+        {/* SECTION 2 */}
+        <section id="mileage-deduction">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            What Is the 2026 Mileage Deduction for Uber Drivers?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Track every business mile — driving to the first pickup, trips between rides, and driving back after the last trip. Uber provides your online miles in the Tax Summary but it often undercounts. Use a mileage app for accuracy.'}
+          </p>
+
+          <div style={{ overflowX: 'auto', marginBottom: 28 }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 400 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.12)', borderBottom: '2px solid rgba(232,184,75,0.3)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Miles/Year</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Deduction (72.5¢)</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Tax Saved (22%)</th>
+                </tr>
+              </thead>
+              <tbody>
                 {[
-                  { icon: '', name: 'Mileage ($0.725/mile)', detail: 'Largest deduction. Track every trip mile. Use standard OR actual expense method — not both.' },
-                  { icon: '', name: 'Tips Deduction (NEW)', detail: 'Up to $25,000 in qualified customer tips are deductible in 2026. Game-changer for top earners.' },
-                  { icon: '', name: 'Phone (business %)', detail: 'Deduct business percentage of monthly plan. Most Uber drivers use phone 70–90% for business.' },
-                  { icon: '', name: 'Car Washes', detail: 'Cost of keeping vehicle clean for passengers. 100% deductible as ordinary business expense.' },
-                  { icon: '', name: 'Parking & Tolls', detail: 'All parking fees and road tolls while on active Uber trips. Keep all receipts.' },
-                  { icon: '', name: 'Passenger Amenities', detail: 'Mints, water, phone chargers provided to passengers. 100% deductible. Keep grocery receipts.' },
-                  { icon: '', name: 'Car Maintenance (actual method)', detail: 'Oil changes, tires, repairs — deductible if using actual expense method instead of mileage.' },
-                  { icon: '', name: 'Accounting Software', detail: 'QuickBooks Self-Employed, Stride, or any tax/mileage app subscription. 100% deductible.' },
-                ].map(d => (
-                  <div key={d.name} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 12 }}>
-                    <div style={{ fontSize: 20, marginBottom: 5 }}>{d.icon}</div>
-                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 3, fontSize: 13 }}>{d.name}</div>
-                    <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.5 }}>{d.detail}</div>
-                  </div>
+                  ['10,000', '$7,250', '$1,595'],
+                  ['15,000', '$10,875', '$2,393'],
+                  ['20,000', '$14,500', '$3,190'],
+                  ['25,000', '$18,125', '$3,988'],
+                ].map(([miles, ded, saved], i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>{miles}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: 'rgba(255,255,255,0.85)' }}>{ded}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: 'rgba(255,255,255,0.85)' }}>{saved}</td>
+                  </tr>
                 ))}
-              </div>
+                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>30,000</td>
+                  <td style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>$21,750</td>
+                  <td style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>$4,785</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-              <h2 id="mileage-vs-actual" style={h2}>Standard Mileage vs Actual Expense Method</h2>
-              <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
-                <thead><tr style={{ background: 'rgba(255,255,255,0.07)' }}>
-                  {['Method','Best For','Pros','Cons'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
-                </tr></thead>
-                <tbody>
-                  <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: 'rgba(5,150,105,0.12)' }}>
-                    <td style={{ padding: '11px 14px', fontWeight: 700 }}>Standard Mileage</td>
-                    <td style={{ padding: '11px 14px' }}>Most drivers</td>
-                    <td style={{ padding: '11px 14px', color: '#059669' }}>Simple, no receipts needed</td>
-                    <td style={{ padding: '11px 14px', color: '#8fa8c8' }}>Must use from year 1</td>
+        {/* SECTION 3 */}
+        <section id="top-deductions">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            What Can Uber Drivers Deduct in 2026?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'Uber drivers have access to powerful deductions unavailable to W-2 employees. Track every expense throughout the year — not just at tax time.'}
+          </p>
+
+          <ol style={{ margin: '0 0 20px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage (72.5 cents/mile)'}</strong>{' — Every trip mile plus en-route miles between pickups. Your largest single deduction.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Tips deduction (up to $25,000)'}</strong>{' — New OBBBA 2026 law. Earn $8,000 in tips and deduct the full amount from federal taxable income.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Phone bill (business %)'}</strong>{' — Deduct 70 to 90% of your monthly plan. On $80/month that is $672 to $864 per year.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Car washes'}</strong>{' — Keeping your vehicle clean for passengers. 100% deductible as a business expense.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Passenger amenities'}</strong>{' — Mints, water bottles, phone chargers provided to riders. Keep grocery receipts.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Parking and tolls'}</strong>{' — All fees incurred during active Uber trips.'}</li>
+          </ol>
+
+          <ul style={{ margin: '0 0 28px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
+            <li>{'Health insurance premiums — 100% deductible on Schedule 1 if not eligible for employer coverage'}</li>
+            <li>{'Accounting software subscriptions (Stride, QuickBooks Self-Employed) — 100% deductible'}</li>
+            <li>{'Solo 401(k) contributions up to $23,500 reduce taxable income dollar-for-dollar'}</li>
+          </ul>
+        </section>
+
+        {/* SECTION 4 */}
+        <section id="mileage-vs-actual">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            Standard Mileage vs Actual Expense Method — Which Is Better?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'You must choose one method per vehicle per year. Most Uber drivers benefit more from the standard mileage method — it is simpler and often yields a larger deduction.'}
+          </p>
+
+          <div style={{ overflowX: 'auto', marginBottom: 28 }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 480 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.12)', borderBottom: '2px solid rgba(232,184,75,0.3)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Method</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Best For</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Pros</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Cons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Standard Mileage</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Most drivers</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Simple, no receipts needed</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Must use from year 1</td>
+                </tr>
+                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>Actual Expenses</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>High-cost vehicles</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>May yield larger deduction</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>Requires all receipts</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* SECTION 5 */}
+        <section id="quarterly-deadlines">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            When Are the 2026 Quarterly Tax Deadlines for Uber Drivers?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'Pay quarterly if you expect to owe $1,000 or more. Use IRS Direct Pay at irs.gov/payments. Missing a deadline triggers an underpayment penalty of approximately 7% annualized.'}
+          </p>
+
+          <div style={{ overflowX: 'auto', marginBottom: 28 }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 360 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.12)', borderBottom: '2px solid rgba(232,184,75,0.3)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Quarter</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Period</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Due Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Q1 2026', 'Jan – Mar', 'April 15, 2026'],
+                  ['Q2 2026', 'Apr – May', 'June 16, 2026'],
+                  ['Q3 2026', 'Jun – Aug', 'September 15, 2026'],
+                ].map(([q, period, due], i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>{q}</td>
+                    <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>{period}</td>
+                    <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>{due}</td>
                   </tr>
-                  <tr style={{ background: 'rgba(255,255,255,0.03)' }}>
-                    <td style={{ padding: '11px 14px', fontWeight: 700 }}>Actual Expenses</td>
-                    <td style={{ padding: '11px 14px' }}>High-cost vehicles</td>
-                    <td style={{ padding: '11px 14px', color: '#059669' }}>May yield larger deduction</td>
-                    <td style={{ padding: '11px 14px', color: '#8fa8c8' }}>Requires all receipts</td>
-                  </tr>
-                </tbody>
-              </table>
-
-              <h2 id="quarterly-deadlines" style={h2}>2026 Quarterly Tax Deadlines for Uber Drivers</h2>
-              <table style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20, fontSize: 13 }}>
-                <thead><tr style={{ background: 'rgba(255,255,255,0.07)' }}>
-                  {['Quarter','Due Date','Days Left'].map(h => <th key={h} style={{ padding: '10px 14px', color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, textAlign: 'left' as const, fontSize: 11, fontWeight: 700 }}>{h}</th>)}
-                </tr></thead>
-                <tbody>
-                  {[['Q1 2026','April 15, 2026','45',true],['Q2 2026','June 16, 2026','107',false],['Q3 2026','Sept 15, 2026','198',false],['Q4 2026','Jan 15, 2027','320',false]].map(([q,due,d,now],i) => (
-                    <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: now ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                      <td style={{ padding: '11px 14px', fontWeight: 800, color: now ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
-                        {now && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
-                        {q}
-                      </td>
-                      <td style={{ padding: '11px 14px', fontWeight: 700, color: now ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{due}</td>
-                      <td style={{ padding: '11px 14px' }}>
-                        <span style={{ background: now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d} days</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              <h2 id="faq" style={h2}>FAQ — Uber Taxes 2026</h2>
-              {[
-                { q: 'Does Uber report my income to the IRS?', a: 'Yes. Uber sends 1099-K and/or 1099-NEC forms directly to the IRS with your SSN. If you earn $600+ in bonuses, you get a 1099-NEC. For trips, you get a 1099-K. Even if you earn less than $600, you must still report all income on Schedule C.' },
-                { q: 'How do I track mileage for Uber taxes?', a: 'Use a mileage tracking app like Stride (free), MileIQ ($7.50/month), or Everlance. Track all business miles including: driving to first pickup, trips between rides, driving back after last trip. Uber also provides an annual mileage summary in your Tax Summary document.' },
-                { q: 'What if I drove for both Uber and DoorDash in 2026?', a: 'Report all income combined on one Schedule C (if same business activity) or on separate Schedule Cs. You can only claim mileage once per mile — not double. Track total business miles across all platforms and claim them once on Schedule C Part IV.' },
-              ].map((item, i) => (
-                <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
-                  <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
-                </div>
-              ))}
-
-              <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>
-                 <strong>Disclaimer:</strong> Informational purposes only. Not affiliated with Uber or the IRS. Consult a licensed CPA for your specific situation.
-              </div>
-            </div>
+                ))}
+                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>Q4 2026</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>Sep – Dec</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>January 15, 2027</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
-            <a href="/uber" style={{ textDecoration: 'none' }}>
-              <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-                <div style={{ fontSize: 22, marginBottom: 8 }}></div>
-                <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Uber Tax Calculator</div>
-                <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · Quarterly schedule</div>
-                <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
-              </div>
-            </a>
-            <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 13, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const }}>Sponsored</div>
-              <div style={{ padding: 16 }}>
-                <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                  <span style={{ fontSize: 12, color: '#7a9abf', fontStyle: 'italic' }}>Ad image here</span>
-                </div>
-                <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>TurboTax Self-Employed</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Handles 1099-K, 1099-NEC, mileage, and the new 2026 tips deduction automatically.</div>
-                <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const }}>Start Free →</div>
-                <div style={{ fontSize: 13, color: '#c4c9d4', marginTop: 5, textAlign: 'center' as const }}>Affiliate link</div>
-              </div>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 28px', color: 'rgba(255,255,255,0.85)' }}>
+            {'Full guide: '}
+            <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>Quarterly Taxes for Gig Workers — Step-by-Step 2026</a>
+            {'.'}
+          </p>
+        </section>
+
+        {/* SECTION 6 */}
+        <section id="obbba">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
+            What Changed for Uber Drivers Under the OBBBA 2026?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
+            {'The One Big Beautiful Bill Act introduced four major changes for rideshare drivers starting in 2026.'}
+          </p>
+
+          <ul style={{ margin: '0 0 28px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
+            <li><strong style={{ color: '#C8D8EC' }}>{'No Tax on Tips — up to $25,000'}</strong>{' — Tips deductible from federal taxable income. Earn $10,000 in Uber tips? Full amount excluded.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'QBI Deduction — now permanent'}</strong>{' — Deduct 20% of net Uber profit. On $35,000 net that is $7,000 off taxable income.'}</li>
+            <li><strong style={{ color: '#C8D8CE' }}>{'100% bonus depreciation restored'}</strong>{' — Phone mount, dash cam, accessories fully deductible in year of purchase.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage rate: 72.5 cents per mile'}</strong>{' — Up from 70 cents in 2025. Driving 15,000 miles = $10,875 deduction.'}</li>
+          </ul>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 20px' }}>
+            Frequently Asked Questions
+          </h2>
+          {[
+            {
+              q: 'How much tax does an Uber driver pay in 2026?',
+              a: 'Uber drivers pay 15.3% self-employment tax plus federal income tax. On $35,000 net income, total federal tax is approximately $7,750. Set aside 25 to 30% of each payment.',
+            },
+            {
+              q: 'Can Uber drivers deduct tips in 2026?',
+              a: 'Yes. Under OBBBA 2026, rideshare drivers can deduct qualified tips up to $25,000 from federal taxable income. You still report the income on Schedule C then deduct it on Schedule 1.',
+            },
+            {
+              q: 'What is the 2026 mileage rate for Uber drivers?',
+              a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile. On 15,000 business miles that is a $10,875 deduction — your largest single tax reduction.',
+            },
+            {
+              q: 'Does Uber report my income to the IRS?',
+              a: 'Yes. Uber sends 1099-K and 1099-NEC forms directly to the IRS. Even if you earn below the threshold, you must report all income on Schedule C.',
+            },
+            {
+              q: "What is the difference between 1099-K and 1099-NEC for Uber?",
+              a: 'The 1099-K reports gross trip earnings before Uber fees. The 1099-NEC reports bonuses and referral payments over $600. Your taxable income is the net amount after Uber fees.',
+            },
+            {
+              q: 'Standard mileage vs actual expense — which is better for Uber?',
+              a: 'Most Uber drivers benefit more from standard mileage at 72.5 cents per mile. It is simpler and requires no expense receipts. Actual expenses may yield more for high-cost vehicles.',
+            },
+            {
+              q: 'When are the 2026 quarterly tax deadlines for Uber drivers?',
+              a: 'Quarterly deadlines: April 15 (Q1), June 16 (Q2), September 15 (Q3), January 15 2027 (Q4). Pay at IRS Direct Pay. Missing a deadline triggers a penalty of approximately 7% annualized.',
+            },
+          ].map(({ q, a }, i) => (
+            <div key={i} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: '#C8D8EC', margin: '0 0 8px' }}>{q}</h3>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.8)' }}>{a}</p>
             </div>
-            <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
-              <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}> Related</span>
-              </div>
-              {[
-                { label: ' DoorDash Tax Guide', href: '/blog/doordash-taxes-2026' },
-                { label: ' Quarterly Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
-                { label: ' Lyft Tax Calculator', href: '/lyft' },
-                { label: ' W-2 vs 1099', href: '/blog/w2-vs-1099-guide-2026' },
-              ].map(l => (
-                <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-        
-      
-      {/* RELATED ARTICLES */}
-      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
-        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
+          ))}
+        </section>
 
-      <a href="/blog/lyft-driver-taxes-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Lyft Driver Taxes 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>Tax obligations, deductions, and quarterly tips for Lyft drivers.</div>
-        </div>
-      </a>
+        {/* RELATED ARTICLES */}
+        <section style={{ marginBottom: 32 }}>
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 16px' }}>
+            Related Articles
+          </h2>
+          <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
+            <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>DoorDash Taxes 2026: How Much Do You Owe?</a></li>
+            <li><a href="/blog/1099-vs-w2-taxes-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>1099 vs W-2 Taxes 2026: Which Costs You More?</a></li>
+            <li><a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>Quarterly Taxes for Gig Workers: Deadlines and How to Pay</a></li>
+          </ul>
+        </section>
 
-      <a href="/blog/doordash-taxes-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>DoorDash Taxes 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax, quarterly payments, and top deductions for Dashers.</div>
-        </div>
-      </a>
-
-      <a href="/blog/grubhub-driver-taxes-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Grubhub Driver Taxes 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax and deductions guide for Grubhub delivery drivers.</div>
-        </div>
-      </a>
-        </div>
-      </div>
-      <AuthorBox />
-      <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
-      </div>
+        <AuthorBox />
+      </article>
     </>
   )
 }
