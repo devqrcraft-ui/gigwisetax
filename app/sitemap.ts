@@ -32,6 +32,7 @@ const blogPosts = [
   'etsy-taxes-2026',
   'best-tax-software-for-gig-workers-2026',
   'self-employment-tax-rate-2026',
+  '1099-vs-w2-taxes-2026',
 ];
 
 const states = [
