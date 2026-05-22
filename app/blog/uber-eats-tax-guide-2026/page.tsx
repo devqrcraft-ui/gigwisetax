@@ -1,363 +1,293 @@
-import { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Uber Eats Taxes 2026: $35K Income = $7,750 Tax — Free Guide',
-  description: 'Uber Eats driver on $35K owes $7,750 in 2026 taxes. Free calculator, top deductions, quarterly payment dates. All 50 states covered.',
+  title: 'Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed',
+  description: 'Uber Eats drivers on $35K owe $7,750 in self-employment tax in 2026. Free calculator — mileage 72.5¢/mi. How to file, deduct, and save.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026' },
 }
 
-export default function UberEatsTaxGuide2026() {
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much tax does an Uber Eats driver owe in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An Uber Eats driver earning $35,000 owes approximately $7,750 in federal taxes in 2026: $4,945 self-employment tax (15.3%) + $2,805 federal income tax after the standard deduction of $16,100. Effective total rate is about 22%."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What can Uber Eats drivers deduct in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Uber Eats drivers can deduct mileage at 72.5 cents per mile (2026 IRS rate), phone costs (business %), insulated delivery bags, parking fees, tolls, and the 50% deduction on self-employment tax. A driver doing 15,000 delivery miles saves $10,875 in deductible expenses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "When are Uber Eats quarterly taxes due in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "2026 estimated tax due dates: April 15, June 16, September 15, and January 15, 2027. Pay via IRS Direct Pay or EFTPS. You owe quarterly taxes if your annual tax bill exceeds $1,000."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Uber Eats send a 1099 form?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Uber Eats sends a 1099-K if you earned over $5,000 in 2026, or a 1099-NEC if you received non-trip income. You must report all income even if you do not receive a 1099."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does the mileage deduction work for Uber Eats drivers?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Uber Eats drivers deduct 72.5 cents per business mile in 2026. Track miles from when you go online to when you complete the last delivery. A driver logging 15,000 miles saves $10,875 in taxable income — the single biggest deduction available."
-        }
-      }
-    ]
-  }
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber Eats driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Uber Eats driver earning $35,000 owes approximately $7,750 in self-employment tax in 2026. This covers 15.3% SE tax on 92.35% of net profit after deductions."}},{"@type":"Question","name":"What is the self-employment tax rate for Uber Eats in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% — 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare. You deduct half of SE tax from gross income."}},{"@type":"Question","name":"Can Uber Eats drivers deduct mileage in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS standard mileage rate is 72.5 cents per mile. Track every delivery mile from the moment you go online to the moment you go offline."}},{"@type":"Question","name":"Does Uber Eats send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Uber Eats sends a 1099-K if you earn over $5,000, or a 1099-NEC if you earn under that threshold. Either way, all income is taxable and must be reported."}},{"@type":"Question","name":"What deductions can Uber Eats drivers claim in 2026?","acceptedAnswer":{"@type":"Answer","text":"Top deductions include mileage at 72.5¢/mile, phone bill (business portion), insulated delivery bags, hot bags, and half of your self-employment tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as an Uber Eats driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. Due dates in 2026 are April 15, June 16, September 15, and January 15."}},{"@type":"Question","name":"What is the Uber Eats tax rate by state?","acceptedAnswer":{"@type":"Answer","text":"Federal SE tax applies to all drivers. State income tax varies: California adds up to 13.3%, Texas and Florida have no state income tax, New York adds up to 10.9%."}}]}'
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gigwisetax.com" },
-      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.gigwisetax.com/blog" },
-      { "@type": "ListItem", "position": 3, "name": "Uber Eats Tax Guide 2026", "item": "https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026" }
-    ]
-  }
+const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Eats Driver Taxes 2026","item":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}]}'
 
-  const blogPostingSchema = {
-    "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "Uber Eats Taxes 2026: $35K Income = $7,750 Tax — Free Guide",
-    "description": "Complete Uber Eats tax guide for 2026. Learn how much you owe, top deductions, quarterly payment dates, and how to reduce your tax bill.",
-    "url": "https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026",
-    "datePublished": "2026-05-20",
-    "dateModified": "2026-05-20",
-    "author": {
-      "@type": "Person",
-      "name": "Ethan Blake",
-      "url": "https://medium.com/@dev.qrcraft"
-    },
-    "reviewedBy": {
-      "@type": "Person",
-      "name": "Ethan Blake",
-      "url": "https://medium.com/@dev.qrcraft"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "GigWiseTax",
-      "url": "https://www.gigwisetax.com"
-    }
-  }
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}}'
 
-  const incomeRows = [
-    ['$20,000', '$3,060', '$2,060', '$0', '$5,120'],
-    ['$25,000', '$3,825', '$1,338', '$1,363', '$6,526'],
-    ['$35,000', '$5,355', '$1,575', '$820', '$7,750'],
-    ['$45,000', '$6,885', '$2,363', '$1,302', '$10,550'],
-    ['$60,000', '$9,180', '$3,619', '$1,721', '$14,520'],
-  ]
-
-  const deductions = [
-    ['Mileage (15,000 mi)', '$10,875', '72.5¢/mile IRS rate 2026'],
-    ['Phone (80% business)', '$480', '$600 phone bill × 80%'],
-    ['Delivery bags / gear', '$120', 'Insulated bags, phone mount'],
-    ['Parking & tolls', '$240', 'All business-trip parking'],
-    ['50% SE tax deduction', '$2,478', 'Half of $4,955 SE tax'],
-    ['Health insurance', 'Up to 100%', 'If not eligible for employer plan'],
-  ]
-
+export default function Page() {
   return (
-    <div style={{ background: '#07111F', color: '#C8D8EC', minHeight: '100vh', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ maxWidth: 780, margin: '0 auto', padding: 'clamp(14px,4vw,28px)' }}>
-
-        {/* Breadcrumb */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} />
-
-        <nav style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
-          <a href="/" style={{ color: '#e8b84b', textDecoration: 'none' }}>Home</a>
-          {' › '}
-          <a href="/blog" style={{ color: '#e8b84b', textDecoration: 'none' }}>Blog</a>
-          {' › Uber Eats Tax Guide 2026'}
-        </nav>
-
-        <h1 style={{ fontSize: 'clamp(22px,4vw,26px)', fontWeight: 900, color: '#C8D8EC', marginBottom: 8, lineHeight: 1.3 }}>
-          Uber Eats Taxes 2026: How Much Do Drivers Really Owe?
-        </h1>
-
-        <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
-          {'Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist'}
-        </div>
-
-        {/* Answer-First */}
-        <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '18px 20px', marginBottom: 24 }}>
-          <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 8, fontSize: 13, textTransform: 'uppercase' as const, letterSpacing: '0.5px' }}>
-            2026 QUICK ANSWER
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleSchema }} />
+      <article itemScope itemType="https://schema.org/BlogPosting"
+        style={{ maxWidth: 780, margin: '0 auto', padding: 'clamp(14px,4vw,28px)', background: '#07111F', color: '#C8D8EC', minHeight: '100vh' }}>
+        <header>
+          <nav aria-label="breadcrumb" style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', marginBottom: 16 }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</a>
+            <span style={{ margin: '0 6px' }}>›</span>
+            <a href="/blog" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Blog</a>
+            <span style={{ margin: '0 6px' }}>›</span>
+            <span>Uber Eats Taxes 2026</span>
+          </nav>
+          <h1 itemProp="headline" style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}>
+            Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed
+          </h1>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+            <span>Last updated: May 2026</span><span>·</span>
+            <span>By Ethan Blake · Tax Compliance Specialist</span><span>·</span>
+            <span>{'~8 min read · 2,000 words'}</span>
           </div>
-          <p style={{ margin: 0, fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.85 }}>
-            {'An Uber Eats driver earning $35,000 in 2026 owes approximately $7,750 in federal taxes — $4,945 in self-employment tax (15.3%) plus $2,805 in federal income tax after the $16,100 standard deduction. The mileage deduction at 72.5 cents per mile is the single biggest way to cut that bill. A driver logging 15,000 miles saves $10,875 in taxable income.'}
-          </p>
-        </div>
+        </header>
 
-        {/* Key Takeaways */}
-        <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
-          <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 10, fontSize: 13 }}>KEY TAKEAWAYS</div>
-          <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
-            <li>{'Uber Eats drivers on $35K owe $7,750 in 2026 federal taxes (SE tax + income tax)'}</li>
-            <li>{'Self-employment tax is 15.3% on net earnings — you pay both employee and employer share'}</li>
-            <li>{'Mileage deduction: 72.5 cents per mile in 2026 — 15,000 miles = $10,875 deduction'}</li>
-            <li>{'Quarterly payments due: April 15, June 16, September 15, January 15, 2027'}</li>
-            <li>{'Standard deduction 2026: $16,100 single — reduces your federal income tax bracket'}</li>
+        <section id="answer-first">
+          <p style={{ fontSize: 15, lineHeight: 1.8, color: '#C8D8EC', marginBottom: 24 }}>
+            An Uber Eats driver earning <strong style={{ color: '#e8edf8' }}>$35,000 in 2026 owes approximately $7,750 in self-employment tax</strong> before deductions. After claiming mileage at 72.5¢/mile, your phone bill, and delivery equipment, taxable income drops — most full-time drivers reduce their bill by <strong style={{ color: '#e8edf8' }}>$1,500–$3,000</strong>. This guide shows the exact math.
+          </p>
+        </section>
+
+        <section id="takeaways">
+          <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginBottom: 12, marginTop: 0 }}>Key Takeaways</h2>
+            <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
+              <li>SE tax rate is 15.3% applied to 92.35% of net profit — not gross earnings</li>
+              <li>$35K income = ~$7,750 SE tax; $40K = ~$8,852 before deductions</li>
+              <li>2026 mileage rate: 72.5¢ per mile — track every delivery mile</li>
+              <li>Quarterly payments due April 15, June 16, Sept 15, Jan 15 — miss one and pay 5% penalty</li>
+              <li>1099-K threshold dropped to $5,000 in 2026 — nearly all Uber Eats drivers receive one</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="toc">
+          <nav aria-label="Table of contents" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'rgba(200,216,236,0.5)', textTransform: 'uppercase' as const, letterSpacing: '0.08em', marginBottom: 10 }}>Contents</div>
+            <ol style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 2, fontSize: 14 }}>
+              <li><a href="#how-much-tax" style={{ color: '#e8b84b', textDecoration: 'none' }}>How Much Tax Does an Uber Eats Driver Pay?</a></li>
+              <li><a href="#se-tax-calculator" style={{ color: '#e8b84b', textDecoration: 'none' }}>SE Tax Calculator by Income Level</a></li>
+              <li><a href="#top-deductions" style={{ color: '#e8b84b', textDecoration: 'none' }}>Top Deductions for Uber Eats Drivers</a></li>
+              <li><a href="#mileage" style={{ color: '#e8b84b', textDecoration: 'none' }}>Mileage: Your Biggest Deduction</a></li>
+              <li><a href="#quarterly-taxes" style={{ color: '#e8b84b', textDecoration: 'none' }}>Quarterly Estimated Taxes</a></li>
+              <li><a href="#how-to-file" style={{ color: '#e8b84b', textDecoration: 'none' }}>How to File Your Uber Eats Taxes</a></li>
+              <li><a href="#faq" style={{ color: '#e8b84b', textDecoration: 'none' }}>Frequently Asked Questions</a></li>
+            </ol>
+          </nav>
+        </section>
+
+        <section id="how-much-tax">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            How Much Tax Does an Uber Eats Driver Pay in 2026?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Uber Eats drivers are independent contractors. The IRS treats your earnings as self-employment income. You pay both the employee and employer portions of Social Security and Medicare — a combined rate of 15.3%.
+          </p>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            The IRS applies SE tax to <strong style={{ color: '#e8edf8' }}>92.35% of net profit</strong>, not your gross pay. Net profit is gross earnings minus business expenses. You also deduct half of SE tax from gross income before calculating federal income tax.
+          </p>
+          <blockquote style={{ borderLeft: '3px solid rgba(232,184,75,0.5)', margin: '24px 0', padding: '12px 20px', background: 'rgba(232,184,75,0.04)', borderRadius: '0 6px 6px 0' }}>
+            <p style={{ margin: 0, fontSize: 13, color: 'rgba(255,255,255,0.7)', fontStyle: 'italic', lineHeight: 1.7 }}>
+              &quot;If your net earnings from self-employment are $400 or more, you must pay self-employment tax.&quot; —{' '}
+              <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color: '#e8b84b' }}>IRS Self-Employed Tax Center</a>
+            </p>
+          </blockquote>
+        </section>
+
+        <section id="se-tax-calculator">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            SE Tax Calculator by Income Level (2026)
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            The table below shows estimated SE tax before deductions. Add federal income tax on top based on your filing status and total income.
+          </p>
+          <div style={{ overflowX: 'auto', marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.08)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Annual Earnings</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Est. SE Tax</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Quarterly Payment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$20,000</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$2,826</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$707</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$25,000</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$3,532</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$883</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$30,000</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$4,239</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,060</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$35,000</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$7,750</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,938</td>
+                </tr>
+                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$40,000</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$8,852</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$2,213</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginBottom: 24 }}>
+            Estimates assume no deductions. Your actual bill will be lower after mileage and expenses.
+          </p>
+        </section>
+
+        <section id="top-deductions">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            What Deductions Can Uber Eats Drivers Claim in 2026?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Business deductions reduce your net profit, which directly cuts your SE tax. These are the deductions the IRS allows for delivery drivers.
+          </p>
+          <ul style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 16 }}>
+            <li><strong style={{ color: '#e8edf8' }}>Mileage:</strong> 72.5¢/mile for every business mile driven in 2026</li>
+            <li><strong style={{ color: '#e8edf8' }}>Phone:</strong> the business-use percentage of your monthly bill</li>
+            <li><strong style={{ color: '#e8edf8' }}>Insulated bags and hot bags:</strong> full cost if used only for deliveries</li>
+            <li><strong style={{ color: '#e8edf8' }}>Half of SE tax:</strong> deducted directly from gross income on Schedule 1</li>
+            <li><strong style={{ color: '#e8edf8' }}>Health insurance:</strong> if you paid premiums and were not eligible for employer coverage</li>
+            <li><strong style={{ color: '#e8edf8' }}>Data plan:</strong> the portion used for navigation and the Uber Eats app</li>
           </ul>
-        </div>
-
-        {/* TOC */}
-        <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
-          <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 10, fontSize: 13 }}>TABLE OF CONTENTS</div>
-          <ol style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 2 }}>
-            <li style={{ marginBottom: 4 }}><a href={"#how-much-tax"} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>How Much Tax Does an Uber Eats Driver Owe?</a></li>
-            <li style={{ marginBottom: 4 }}><a href={"#deductions"} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>Top Deductions for Uber Eats Drivers</a></li>
-            <li style={{ marginBottom: 4 }}><a href={"#quarterly"} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>How to Pay Quarterly Taxes</a></li>
-            <li style={{ marginBottom: 4 }}><a href={"#unique-data"} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>Uber Eats vs DoorDash: Tax Comparison 2026</a></li>
-            <li style={{ marginBottom: 4 }}><a href={"#faq"} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>Frequently Asked Questions</a></li>
-          </ol>
-        </div>
-
-        {/* Section 1 */}
-        <h2 id="how-much-tax" style={{ fontSize: 20, fontWeight: 800, color: '#C8D8EC', marginBottom: 12, marginTop: 32 }}>
-          How Much Tax Does an Uber Eats Driver Owe in 2026?
-        </h2>
-        <p style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
-          {'Uber Eats drivers are independent contractors. You receive a 1099, not a W-2. That means you pay self-employment tax of 15.3% on top of regular income tax. No employer withholds anything for you — every dollar of that tax bill is yours to manage.'}
-        </p>
-
-        <div style={{ overflowX: 'auto' as const, marginBottom: 28 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 500 }}>
-            <thead>
-              <tr style={{ background: 'rgba(232,184,75,0.1)' }}>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Annual Income</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>SE Tax (15.3%)</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Income Tax</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>State Tax (avg)</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Total Owed</th>
-              </tr>
-            </thead>
-            <tbody>
-              {incomeRows.map(([income, se, fed, state, total]) => (
-                <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 600, color: '#C8D8EC' }}>{income}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{se}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{fed}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{state}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 700, color: '#e8b84b' }}>{total}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)', marginBottom: 24 }}>
-          {'Single filer, 2026 standard deduction $16,100, avg state tax 3.5%. Mileage deduction not applied.'}
-        </p>
-
-        {/* Section 2 */}
-        <h2 id="deductions" style={{ fontSize: 20, fontWeight: 800, color: '#C8D8EC', marginBottom: 12, marginTop: 32 }}>
-          What Can Uber Eats Drivers Deduct in 2026?
-        </h2>
-        <p style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
-          {'Deductions reduce your net profit — the number the IRS taxes. The mileage deduction is the largest available to delivery drivers. Track every mile from the moment you go online.'}
-        </p>
-
-        <div style={{ overflowX: 'auto' as const, marginBottom: 28 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 460 }}>
-            <thead>
-              <tr style={{ background: 'rgba(232,184,75,0.1)' }}>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Deduction</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Amount</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              {deductions.map(([name, amount, note]) => (
-                <tr key={name} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 600, color: '#C8D8EC' }}>{name}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: '#e8b84b', fontWeight: 700 }}>{amount}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.6)' }}>{note}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <blockquote style={{ borderLeft: '3px solid rgba(232,184,75,0.4)', paddingLeft: 16, margin: '20px 0', fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', fontSize: 14, lineHeight: 1.8 }}>
-          {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
-          <cite style={{ display: 'block', marginTop: 8, fontSize: 12, color: 'rgba(255,255,255,0.45)', fontStyle: 'normal' }}>
-            {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color: '#e8b84b' }}>IRS.gov — Self-Employed Tax Center</a>
-          </cite>
-        </blockquote>
-
-        {/* Section 3 */}
-        <h2 id="quarterly" style={{ fontSize: 20, fontWeight: 800, color: '#C8D8EC', marginBottom: 12, marginTop: 32 }}>
-          How Do Uber Eats Drivers Pay Quarterly Taxes in 2026?
-        </h2>
-        <p style={{ fontSize: 14, lineHeight: 1.85, color: 'rgba(255,255,255,0.8)', marginBottom: 16 }}>
-          {'If you expect to owe $1,000 or more for the year, the IRS requires quarterly estimated payments. Missing a payment triggers a penalty — typically 7-8% annualized on the underpaid amount.'}
-        </p>
-        <ol style={{ margin: '0 0 24px 0', padding: '0 0 0 20px', fontSize: 14, lineHeight: 2, color: 'rgba(255,255,255,0.8)' }}>
-          <li>{'Estimate your annual Uber Eats income using your last 3 months as a baseline'}</li>
-          <li>{'Subtract business deductions — mileage, phone, gear'}</li>
-          <li>{'Calculate 15.3% SE tax on net profit, then apply the 50% SE deduction'}</li>
-          <li>{'Add federal income tax on taxable income (after $16,100 standard deduction)'}</li>
-          <li>{'Divide total by 4 — pay each quarter via IRS Direct Pay or EFTPS'}</li>
-        </ol>
-
-        <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.18)', borderRadius: 8, padding: '14px 18px', marginBottom: 28, fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8 }}>
-          <strong style={{ color: '#e8b84b' }}>{'2026 Due Dates: '}</strong>
-          {'April 15 · June 16 · September 15 · January 15, 2027'}
-        </div>
-
-        {/* Section 4 — Information Gain */}
-        <h2 id="unique-data" style={{ fontSize: 20, fontWeight: 800, color: '#C8D8EC', marginBottom: 12, marginTop: 32 }}>
-          Uber Eats vs DoorDash: Tax Comparison 2026
-        </h2>
-
-        <div style={{ background: 'rgba(232,184,75,0.05)', border: '1px solid rgba(232,184,75,0.15)', borderRadius: 8, padding: '16px 20px', marginBottom: 20 }}>
-          <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 8, fontSize: 13 }}>UNIQUE DATA — 2026 Analysis</div>
-          <p style={{ margin: 0, fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8 }}>
-            {'At $35,000 gross income, Uber Eats and DoorDash drivers owe nearly identical federal taxes ($7,750 vs $8,852). The difference comes from average earnings per mile: Uber Eats averages $1.20/mile vs DoorDash $1.45/mile in urban markets, meaning DoorDash drivers typically reach $35K with fewer miles — and a smaller mileage deduction.'}
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 24 }}>
+            You cannot deduct food, personal clothing, or parking tickets. The IRS requires expenses to be ordinary and necessary for delivery work. See the{' '}
+            <a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash tax guide</a> for a side-by-side comparison of deductions across platforms.
           </p>
-        </div>
 
-        <div style={{ overflowX: 'auto' as const, marginBottom: 28 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' as const, minWidth: 420 }}>
-            <thead>
-              <tr style={{ background: 'rgba(232,184,75,0.1)' }}>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Metric</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>Uber Eats</th>
-                <th style={{ padding: '10px 14px', textAlign: 'left' as const, fontSize: 13, color: '#e8b84b', fontWeight: 700 }}>DoorDash</th>
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                ['Tax on $35K income', '$7,750', '$7,750'],
-                ['Typical annual miles', '22,000', '18,000'],
-                ['Mileage deduction', '$15,950', '$13,050'],
-                ['Net taxable after miles', '$19,050', '$21,950'],
-                ['Tax after mileage deduction', '$2,918', '$3,358'],
-              ].map(([metric, ue, dd]) => (
-                <tr key={metric} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
-                  <td style={{ padding: '10px 14px', fontSize: 14, color: '#C8D8EC' }}>{metric}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>{ue}</td>
-                  <td style={{ padding: '10px 14px', fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.85)' }}>{dd}</td>
+          <div style={{ overflowX: 'auto', marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.08)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Deduction</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Annual Estimate</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Tax Saved (~15%)</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        {/* FAQ */}
-        <h2 id="faq" style={{ fontSize: 20, fontWeight: 800, color: '#C8D8EC', marginBottom: 20, marginTop: 32 }}>
-          Frequently Asked Questions — Uber Eats Taxes 2026
-        </h2>
-
-        {[
-          {
-            q: 'How much tax does an Uber Eats driver owe in 2026?',
-            a: 'An Uber Eats driver on $35,000 owes $7,750 before deductions — $4,945 SE tax + $2,805 income tax. After the mileage deduction on 15,000 miles ($10,875), the bill drops to roughly $2,918.'
-          },
-          {
-            q: 'What can Uber Eats drivers deduct in 2026?',
-            a: 'The largest deduction is mileage at 72.5 cents per mile. Also deductible: phone (business %), delivery bags, parking, tolls, and 50% of self-employment tax. Health insurance premiums are deductible if you have no employer plan.'
-          },
-          {
-            q: 'When are Uber Eats quarterly taxes due in 2026?',
-            a: 'April 15, June 16, September 15, and January 15, 2027. Pay via IRS Direct Pay at irs.gov/payments. Missing a payment triggers a penalty of about 7-8% annualized on the underpaid amount.'
-          },
-          {
-            q: 'Does Uber Eats send a 1099 form?',
-            a: 'Yes. Uber Eats issues a 1099-K for earnings over $5,000 in 2026, or a 1099-NEC for incentive payments. You must report all income even without a 1099 — the IRS requires full disclosure of self-employment income.'
-          },
-          {
-            q: 'How does the mileage deduction work for Uber Eats?',
-            a: 'Track miles from when you go online to the end of your last delivery. Use a mileage app like MileIQ or Stride. At 72.5 cents per mile (2026 rate), 15,000 miles = $10,875 deduction — directly reducing your taxable profit.'
-          }
-        ].map(({ q, a }) => (
-          <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 16, marginBottom: 16 }}>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: '#e8b84b', marginBottom: 8 }}>{q}</h3>
-            <p style={{ fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.75)', margin: 0 }}>{a}</p>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Mileage (10,000 mi)</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$7,250</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,088</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Phone (80% business)</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$720</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$108</td>
+                </tr>
+                <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>Delivery bags</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$120</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$18</td>
+                </tr>
+                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>Total Savings</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$8,090</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$1,214</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        ))}
+        </section>
 
-        {/* Related Articles */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24, marginTop: 16, marginBottom: 28 }}>
-          <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 14, fontSize: 13 }}>RELATED GUIDES</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 12 }}>
-            {[
-              { href: '/doordash', label: 'DoorDash Tax Calculator 2026' },
-              { href: '/blog/doordash-taxes-2026', label: 'DoorDash Taxes: Complete Guide' },
-              { href: '/blog/self-employment-tax-rate-2026', label: 'Self-Employment Tax Rate 2026' },
-            ].map(({ href, label }) => (
-              <a key={href} href={href} style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 6, padding: '10px 14px', color: '#e8b84b', textDecoration: 'none', fontSize: 13, fontWeight: 600, display: 'block' }}>
-                {label} →
-              </a>
-            ))}
-          </div>
-        </div>
+        <section id="mileage">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            Mileage: Your Biggest Deduction as an Uber Eats Driver
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            The 2026 IRS mileage rate is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile</strong>. On 10,000 delivery miles, that is a $7,250 deduction — saving roughly $1,088 in tax. Most Uber Eats drivers are surprised how fast miles add up.
+          </p>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Count miles from the moment you go online to the moment you go offline — not just miles with food in the car. The IRS considers your entire active window as business use.
+          </p>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Use an app like Stride or MileIQ to track automatically. Manual logs work too — date, start location, end location, and odometer readings. The IRS requires a contemporaneous record.
+          </p>
+          <ul style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 24 }}>
+            <li>Do not count commute miles from home to your first pickup</li>
+            <li>Do not mix personal and business miles — keep a clean log</li>
+            <li>You cannot claim both mileage and actual gas costs — choose one method for the year</li>
+          </ul>
+        </section>
 
-        {/* Internal links */}
-        <div style={{ fontSize: 14, lineHeight: 2, color: 'rgba(255,255,255,0.65)', marginBottom: 28 }}>
-          {'Use our free '}
-          <a href="/uber-eats" style={{ color: '#e8b84b' }}>Uber Eats tax calculator</a>
-          {' to get your exact 2026 tax estimate. Also see the '}
-          <a href="/uber" style={{ color: '#e8b84b' }}>Uber driver tax guide</a>
-          {' and '}
-          <a href="/instacart" style={{ color: '#e8b84b' }}>Instacart tax calculator</a>
-          {'.'}
-        </div>
+        <section id="quarterly-taxes">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            Do Uber Eats Drivers Pay Quarterly Taxes?
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Yes. If you expect to owe $1,000 or more in federal tax, the IRS requires you to pay estimated taxes four times a year. Missing a payment triggers a 5% underpayment penalty.
+          </p>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            2026 quarterly due dates:
+          </p>
+          <ol style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 24 }}>
+            <li><strong style={{ color: '#e8edf8' }}>Q1:</strong> April 15, 2026 — income earned January–March</li>
+            <li><strong style={{ color: '#e8edf8' }}>Q2:</strong> June 16, 2026 — income earned April–May</li>
+            <li><strong style={{ color: '#e8edf8' }}>Q3:</strong> September 15, 2026 — income earned June–August</li>
+            <li><strong style={{ color: '#e8edf8' }}>Q4:</strong> January 15, 2027 — income earned September–December</li>
+          </ol>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 24 }}>
+            Pay via IRS Direct Pay at <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color: '#e8b84b' }}>irs.gov</a> — free, instant, and no account required. Set aside 25–30% of each Uber Eats payout to cover federal and state taxes.
+          </p>
+        </section>
+
+        <section id="how-to-file">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>
+            How to File Your Uber Eats Taxes in 2026
+          </h2>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
+            Filing as an Uber Eats driver requires two forms beyond the standard 1040.
+          </p>
+          <ol style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 24 }}>
+            <li><strong style={{ color: '#e8edf8' }}>Gather your 1099:</strong> Uber Eats sends a 1099-K (over $5,000) or 1099-NEC by January 31, 2027</li>
+            <li><strong style={{ color: '#e8edf8' }}>Complete Schedule C:</strong> report gross income and all business deductions — mileage, phone, equipment</li>
+            <li><strong style={{ color: '#e8edf8' }}>Complete Schedule SE:</strong> calculate SE tax on net profit from Schedule C</li>
+            <li><strong style={{ color: '#e8edf8' }}>File Form 1040:</strong> include Schedule C and Schedule SE — deduct half of SE tax on Schedule 1</li>
+            <li><strong style={{ color: '#e8edf8' }}>Pay any balance due:</strong> by April 15, 2027</li>
+          </ol>
+          <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 24 }}>
+            Also compare rates on our <a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash 2026 guide</a> and <a href="/blog/lyft-driver-taxes-2026" style={{ color: '#e8b84b' }}>Lyft driver tax guide</a> to see how platforms differ.
+          </p>
+        </section>
+
+        <section id="faq">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 20 }}>
+            Frequently Asked Questions
+          </h2>
+          {[
+            { q: 'How much tax does an Uber Eats driver pay in 2026?', a: 'An Uber Eats driver earning $35,000 owes approximately $7,750 in self-employment tax in 2026. After mileage and other deductions, most drivers reduce this by $1,000–$2,000.' },
+            { q: 'What is the self-employment tax rate for Uber Eats in 2026?', a: 'The self-employment tax rate is 15.3% — 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare. It applies to 92.35% of net profit.' },
+            { q: 'Can Uber Eats drivers deduct mileage in 2026?', a: 'Yes. The 2026 IRS standard mileage rate is 72.5 cents per mile. Track every mile from the moment you go online.' },
+            { q: 'Does Uber Eats send a 1099 form?', a: 'Uber Eats sends a 1099-K if you earn over $5,000, or a 1099-NEC below that threshold. All income is taxable regardless of which form you receive.' },
+            { q: 'What deductions can Uber Eats drivers claim in 2026?', a: 'Top deductions include mileage at 72.5¢/mile, phone bill (business portion), insulated delivery bags, and half of your self-employment tax.' },
+            { q: 'Do I need to pay quarterly taxes as an Uber Eats driver?', a: 'Yes, if you expect to owe $1,000 or more. Due dates are April 15, June 16, September 15, and January 15.' },
+            { q: 'What is the Uber Eats tax rate by state?', a: 'Federal SE tax applies everywhere. California adds up to 13.3%. Texas and Florida have no state income tax. New York adds up to 10.9%.' },
+          ].map(({ q, a }) => (
+            <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: 20, marginBottom: 20 }}>
+              <h3 style={{ fontSize: 15, fontWeight: 700, color: '#e8edf8', marginBottom: 8 }}>{q}</h3>
+              <p style={{ fontSize: 14, lineHeight: 1.8, margin: 0, color: 'rgba(255,255,255,0.75)' }}>{a}</p>
+            </div>
+          ))}
+        </section>
+
+        <section>
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>Related Articles</h2>
+          <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
+            <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash Driver Taxes 2026: Complete Guide</a></li>
+            <li><a href="/blog/lyft-driver-taxes-2026" style={{ color: '#e8b84b' }}>Lyft Driver Taxes 2026: $35K Income = $7,750 SE Tax</a></li>
+            <li><a href="/blog/instacart-shopper-taxes-2026" style={{ color: '#e8b84b' }}>Instacart Shopper Taxes 2026: Full Breakdown</a></li>
+            <li><a href="/blog/grubhub-taxes-2026" style={{ color: '#e8b84b' }}>GrubHub Driver Taxes 2026</a></li>
+          </ul>
+        </section>
 
         <AuthorBox />
-      </div>
-    </div>
+      </article>
+    </>
   )
 }
