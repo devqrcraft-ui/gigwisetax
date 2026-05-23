@@ -11,7 +11,6 @@ const nextConfig: NextConfig = {
       { source: '/lyft-tax-calculator-2026', destination: '/lyft', permanent: true },
       { source: '/onlyfans-tax-calculator-2026', destination: '/onlyfans', permanent: true },
       { source: '/amazon-flex-tax-calculator-2026', destination: '/amazon-flex', permanent: true },
-      { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
       { source: '/blog/best-image-compressor-for-mac', destination: '/', permanent: true },
       { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
       { source: '/blog/etsy-seller-tax-deductions-2025', destination: '/blog/etsy-seller-taxes-2026', permanent: true },
