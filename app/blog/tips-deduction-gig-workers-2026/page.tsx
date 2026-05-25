@@ -21,6 +21,7 @@ export default function TipsDeductionPage() {
 
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
       <style>{'.blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}@media(max-width:700px){.blog-grid{grid-template-columns:1fr!important}}'}</style>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the tips deduction for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the One Big Beautiful Bill Act (OBBBA) 2026, eligible workers including gig workers can deduct up to $25,000 in tips from their federal taxable income. This means if you earned $8,000 in DoorDash tips, that entire amount reduces your taxable income."}},{"@type":"Question","name":"Do DoorDash drivers qualify for the no-tax-on-tips deduction?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoorDash delivery drivers who receive customer tips qualify for the OBBBA tips deduction up to $25,000. Tips received through the DoorDash app count as qualifying tip income for this deduction."}},{"@type":"Question","name":"How do I claim the tips deduction as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Report total income including tips on Schedule C. Then deduct the qualifying tip amount (up to $25,000) as a separate line item on your federal return. The deduction reduces your adjusted gross income directly."}},{"@type":"Question","name":"Does the tips deduction apply to self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"No. The OBBBA tips deduction reduces your federal income tax only. You still owe 15.3% self-employment tax on your net gig income including tips. Only federal income tax is reduced."}},{"@type":"Question","name":"Which gig platforms qualify for the tips deduction in 2026?","acceptedAnswer":{"@type":"Answer","text":"Any gig worker who receives customer tips qualifies, including DoorDash, Uber Eats, Instacart, Lyft, Grubhub, and other platforms where customers tip directly. The deduction applies to tips received in 2026 and reported on your 2026 tax return."}}]}' }} />
@@ -112,6 +113,7 @@ export default function TipsDeductionPage() {
         </div>
         <AuthorBox />
       </div>
-    </div>
+          </article>
+</div>
   )
 }

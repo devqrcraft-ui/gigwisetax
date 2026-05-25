@@ -21,6 +21,7 @@ export default function OnlyFansTaxGuide() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","item":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","description":"OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.","url":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › OnlyFans Taxes 2026
       </nav>
@@ -154,6 +155,7 @@ export default function OnlyFansTaxGuide() {
         </div>
       </div>
       <AuthorBox />
+      </article>
     </main>
     </div>
   )

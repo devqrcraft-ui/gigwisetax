@@ -25,6 +25,7 @@ export default function InstacartTaxDeductions2026() {
 
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
       
       
       {/* RELATED ARTICLES */}
@@ -314,6 +315,7 @@ export default function InstacartTaxDeductions2026() {
           </div>
         </div>
       </div>
-    </div>
+          </article>
+</div>
   )
 }

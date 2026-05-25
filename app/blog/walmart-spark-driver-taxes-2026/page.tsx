@@ -10,6 +10,7 @@ export default function BlogPost() {
   const card: React.CSSProperties = { background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }
   return (
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Walmart Spark drivers owe in 2026?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers owe self-employment tax (15.3%) plus federal and state income tax. After mileage deductions, most part-time Spark drivers owe $1,200-$3,500 annually."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn over $600. Available by January 31 in your Spark Driver app under Tax Documents."}},{"@type":"Question","name":"What mileage rate can Walmart Spark drivers use in 2026?","acceptedAnswer":{"@type":"Answer","text":"$0.725 per mile in 2026. Covers miles to the store, to customers, and between stops."}}]}) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Walmart Spark Driver Taxes 2026 — Complete Tax Guide","item":"https://www.gigwisetax.com/blog/walmart-spark-driver-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walmart Spark Driver Taxes 2026 — Complete Tax Guide","description":"How to file Walmart Spark driver taxes in 2026. Mileage deduction, 1099-NEC, quarterly payments. Free calculator — no signup.","url":"https://www.gigwisetax.com/blog/walmart-spark-driver-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
@@ -105,6 +106,7 @@ export default function BlogPost() {
         </div>
       </div>
       <AuthorBox />
+      </article>
     </main>
   )
 }

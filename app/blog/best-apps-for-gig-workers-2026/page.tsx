@@ -53,6 +53,7 @@ export default function BestAppsGigWorkers() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Best Apps for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/best-apps-for-gig-workers-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Apps for Gig Workers 2026 — Track Miles, Taxes & Income","description":"Top 8 apps every gig worker needs in 2026.","url":"https://www.gigwisetax.com/blog/best-apps-for-gig-workers-2026","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
       <div style={{ minHeight: '100vh', background: '#07111F', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 16px' }}>
           <div style={{ marginBottom: 8 }}><span style={tag}>GIG TOOLS 2026</span></div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, lineHeight: 1.2, marginBottom: 8, color: 'white' }}>Best Apps for Gig Workers 2026</h1>
@@ -122,6 +123,7 @@ export default function BestAppsGigWorkers() {
           </div>
           <AuthorBox />
         </div>
+      </article>
       </div>
     </>
   )

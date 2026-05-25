@@ -17,7 +17,8 @@ export default function W9MistakesBlog() {
   const tip  = { background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#4ade80', lineHeight: 1.7 }
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a W-9 form used for?","acceptedAnswer":{"@type":"Answer","text":"A W-9 provides your taxpayer identification (SSN or EIN) to clients or platforms who pay you. They use it to file a 1099 with the IRS. As a gig worker, you fill out W-9s for clients paying you $600 or more."}},{"@type":"Question","name":"What are common W-9 mistakes gig workers make?","acceptedAnswer":{"@type":"Answer","text":"Common mistakes: wrong TIN, mismatched name and SSN, leaving backup withholding checkbox blank, using personal name instead of business name (or vice versa), and not updating W-9 when changing business structure."}},{"@type":"Question","name":"What happens if I give the wrong information on a W-9?","acceptedAnswer":{"@type":"Answer","text":"If your W-9 TIN does not match IRS records, the payer must withhold 24% backup withholding from future payments. Correct errors immediately by submitting a new W-9. Intentional false information can result in penalties."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"W-9 Mistakes That Cost Gig Workers Thousands — 2025 Guide","item":"https://www.gigwisetax.com/blog/w9-mistakes-gig-workers"}]}' }} />
@@ -125,6 +126,7 @@ export default function W9MistakesBlog() {
         </div>
       </div>
       <AuthorBox />
-    </div>
+          </article>
+</div>
   )
 }

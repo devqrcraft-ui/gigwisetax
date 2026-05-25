@@ -17,7 +17,8 @@ export default function SCorpGuideBlog() {
   const warn = { background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.5)', borderRadius: 6, padding: '14px 18px', margin: '20px 0', fontSize: 14, color: '#7f1d1d', lineHeight: 1.7 }
 
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should a gig worker form an S-Corp?","acceptedAnswer":{"@type":"Answer","text":"An S-Corp can save on SE tax once net income exceeds $40,000-$50,000/year. You pay yourself a reasonable salary (taxed normally) and take remaining profit as a distribution (not subject to SE tax). CPA setup costs $500-$2,000/year."}},{"@type":"Question","name":"How much does an S-Corp save in taxes for gig workers?","acceptedAnswer":{"@type":"Answer","text":"On $80,000 net gig income, an S-Corp with a $45,000 salary saves roughly $5,355 in SE tax annually (15.3% x $35,000 in distributions). The savings typically exceed the cost of maintaining the S-Corp at this income level."}},{"@type":"Question","name":"What is the downside of an S-Corp for gig workers?","acceptedAnswer":{"@type":"Answer","text":"S-Corps require payroll, quarterly payroll taxes, separate bank accounts, annual state fees, and additional accounting costs. The administrative burden typically is not worth it below $40,000-$50,000 in annual net gig income."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"S-Corp Election for Gig Workers 2025 — Save $3,000–$12,000/yr","item":"https://www.gigwisetax.com/blog/s-corp-guide-gig-workers"}]}' }} />
@@ -135,6 +136,7 @@ export default function SCorpGuideBlog() {
         </div>
       </div>
       <AuthorBox />
-    </div>
+          </article>
+</div>
   )
 }

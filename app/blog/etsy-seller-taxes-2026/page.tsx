@@ -13,7 +13,8 @@ export default function EtsyTaxGuide() {
   const prose = { fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
   const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
   return (
-    <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+    <div style={{ background: '#07111F', minHeight: '100vh' }}>
+      <article itemScope itemType="https://schema.org/BlogPosting">
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Etsy report sales to the IRS in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy issues a 1099-K to sellers with over $600 in sales and reports this to the IRS. All Etsy income must be reported on Schedule C regardless of whether you receive a 1099."}},{"@type":"Question","name":"How much can I sell on Etsy before paying taxes?","acceptedAnswer":{"@type":"Answer","text":"There is no threshold — all Etsy income is taxable. However, after deducting supplies, Etsy fees, shipping, and other expenses, your taxable profit may be significantly lower than gross sales."}},{"@type":"Question","name":"Do Etsy sellers pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy sellers who operate as sole proprietors pay self-employment tax of 15.3% on net profit plus income tax. You can deduct half of SE tax on your return, reducing the effective rate."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Etsy Seller Taxes 2026 — Complete 1099 Filing Guide","item":"https://www.gigwisetax.com/blog/etsy-seller-taxes-2026"}]}' }} />
@@ -182,6 +183,7 @@ export default function EtsyTaxGuide() {
       </div>
       <AuthorBox />
       <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
-    </div>
+          </article>
+</div>
   )
 }
