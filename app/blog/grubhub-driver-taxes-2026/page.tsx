@@ -23,7 +23,7 @@ export default function BlogPost() {
         {' › '}Grubhub Taxes 2026
       </nav>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 32, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Tax Guide · Updated 2026</div>
         <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Grubhub Driver Taxes 2026 — Complete Tax Guide</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
@@ -140,7 +140,7 @@ export default function BlogPost() {
         ))}
       </div>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Free Grubhub Tax Calculator</div>
         <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>All 51 states · No signup · Instant results</p>
         <a href="/grubhub" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>

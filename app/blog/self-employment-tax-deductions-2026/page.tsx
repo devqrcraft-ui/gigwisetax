@@ -43,7 +43,7 @@ export default function DeductionsGuide() {
         Deductions 2026
       </nav>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete List · Updated 2026</div>
         <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Self-Employment Tax Deductions 2026</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
@@ -85,7 +85,7 @@ export default function DeductionsGuide() {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
             <div style={{ fontWeight: 700, fontSize: 17 }}>{d.name}</div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-              {d.tag && <span style={{ background: '#e8b84b', color: '#0d1117', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{d.tag}</span>}
+              {d.tag && <span style={{ background: '#e8b84b', color: '#07111F', padding: '2px 10px', borderRadius: 20, fontSize: 12, fontWeight: 700 }}>{d.tag}</span>}
               <span style={{ color: '#a5b4fc', fontWeight: 700, fontSize: 15 }}>{d.amount}</span>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function DeductionsGuide() {
         </div>
       ))}
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginTop: 32 }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginTop: 32 }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your Tax After Deductions</div>
         <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Enter your income + expenses. See your real tax bill in seconds.</p>
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Free Calculator</a>

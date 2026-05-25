@@ -21,7 +21,7 @@ export default function W2vs1099Guide() {
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> › <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a> › W-2 vs 1099
       </nav>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
         <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Tax Basics · Updated 2026</div>
         <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>W-2 vs 1099: What's the Difference for Gig Workers?</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
@@ -84,7 +84,7 @@ export default function W2vs1099Guide() {
         As a W-2 employee, your employer pays half of your Social Security and Medicare taxes (7.65%). As a 1099 gig worker, you pay the full 15.3%. On $50,000 net income, that's an extra $3,825 compared to traditional employment — before income tax. This is why gig workers must track every deduction carefully.
       </p>
 
-      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your 1099 Tax Bill</div>
         <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free, no signup, all 51 states</p>
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Calculate Now →</a>
