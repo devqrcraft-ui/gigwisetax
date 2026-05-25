@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1a1a2e" />
+        <meta name="theme-color" content="#07111F" />
         
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — Gig Worker Tax Calculator","url":"https://www.gigwisetax.com","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }} />
 
@@ -49,10 +49,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "potentialAction":{"@type":"SearchAction","target":"https://www.gigwisetax.com/calculators?q={search_term_string}","query-input":"required name=search_term_string"}
         })}} />
       </head>
-      <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#0d1117', overflowX:'hidden', minHeight:'100vh' }}>
+      <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#07111F', overflowX:'hidden', minHeight:'100vh' }}>
         <style>{'.gwt-footer-link:hover{color:#e8b84b!important;text-decoration:underline!important}.gwt-nav-link:hover{color:#e8b84b!important;background:rgba(232,184,75,0.08)!important;border-radius:4px}'}</style>
 
-        <div style={{ background:'#0d1b3e', borderBottom:'4px solid #B22234' }}>
+        <div style={{ background:'#07111F', borderBottom:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'7px 12px', display:'flex', alignItems:'center', justifyContent:'space-between', flexWrap:'wrap', gap:8, overflow:'hidden' }}>
             <div style={{ display:'flex', alignItems:'center', gap:10, minWidth:0, overflow:'hidden' }}>
               <span style={{ fontSize:20, flexShrink:0 }}></span>
@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not tax advice — consult a licensed CPA for your situation.
           </p>
         </div>
-        <footer style={{ background:'#1a1a2e', borderTop:'4px solid #B22234' }}>
+        <footer style={{ background:'#07111F', borderTop:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
               <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.7)', fontWeight:300, fontSize:14 }}>.COM</span></div>

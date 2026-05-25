@@ -27,8 +27,8 @@ export default function AmazonFlexTaxGuide() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Tax Guide 2026 — Save $8,852 With Every Deduction","item":"https://gigwisetax.com/blog/amazon-flex-tax-guide-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide 2026 — Save $8,852 With Every Deduction","description":"Amazon Flex drivers on $40K owe $8,852 in taxes. Mileage 72.5c/mi, phone, bags — all deductible. Free 2026 calculator. Quarterly payments: $2,213. All 50 states.","url":"https://gigwisetax.com/blog/amazon-flex-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Tax Guide 2026 — Save $8,852 With Every Deduction","item":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide 2026 — Save $8,852 With Every Deduction","description":"Amazon Flex drivers on $40K owe $8,852 in taxes. Mileage 72.5c/mi, phone, bags — all deductible. Free 2026 calculator. Quarterly payments: $2,213. All 50 states.","url":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -42,7 +42,7 @@ export default function AmazonFlexTaxGuide() {
               <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>8 min read</span>
               <span style={{ background: '#059669', color: '#fff', fontSize: 11, padding: '3px 10px', borderRadius: 3, fontWeight: 700 }}>2026 Mileage 72.5c/mi</span>
             </div>
-            <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
+            <h1 style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
               Amazon Flex Tax Guide 2026 — Every Deduction You Can Claim
             </h1>
             <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
@@ -56,7 +56,7 @@ export default function AmazonFlexTaxGuide() {
             </p>
           </div>
         </div>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 24 }} className="blog-grid">
+        <div style={{ maxWidth: 780, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr', gap: 24 }} className="blog-grid">
           <div>
             <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
               <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>

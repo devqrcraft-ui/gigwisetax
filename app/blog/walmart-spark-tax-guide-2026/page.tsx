@@ -51,7 +51,7 @@ export default function WalmartSparkTaxGuide2026() {
       </div>
       <AuthorBox />
       <style>{`
-        .blog-grid{display:grid;grid-template-columns:1fr 280px;gap:24px}
+        .blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}
         @media(max-width:700px){.blog-grid{grid-template-columns:1fr!important}.blog-sidebar{order:2}}
       `}</style>
 
@@ -76,8 +76,8 @@ export default function WalmartSparkTaxGuide2026() {
           }
         ]
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","item":"https://gigwisetax.com/blog/walmart-spark-tax-guide-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","description":"Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.","url":"https://gigwisetax.com/blog/walmart-spark-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","item":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","description":"Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.","url":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -86,7 +86,7 @@ export default function WalmartSparkTaxGuide2026() {
             <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a>{' '}›{' '}
             <span style={{ color: 'rgba(255,255,255,.7)' }}>Walmart Spark Tax Guide 2026</span>
           </nav>
-          <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
+          <h1 style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
             Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator
           </h1>
       {/* ANSWER-FIRST GEO BLOCK */}

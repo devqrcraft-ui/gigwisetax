@@ -56,7 +56,7 @@ export default function InstacartTaxDeductions2026() {
       </div>
       <AuthorBox />
       <style>{`
-        .blog-grid{display:grid;grid-template-columns:1fr 280px;gap:24px}
+        .blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}
         @media(max-width:700px){
           .blog-grid{grid-template-columns:1fr!important}
           .blog-sidebar{order:2;margin-top:0}
@@ -89,8 +89,8 @@ export default function InstacartTaxDeductions2026() {
           }
         ]
       })}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","item":"https://gigwisetax.com/blog/instacart-tax-deductions-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","description":"Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.","url":"https://gigwisetax.com/blog/instacart-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://gigwisetax.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","item":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","description":"Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.","url":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -99,7 +99,7 @@ export default function InstacartTaxDeductions2026() {
             <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a>{' '}›{' '}
             <span style={{ color: 'rgba(255,255,255,.7)' }}>Instacart Tax Deductions 2026</span>
           </nav>
-          <h1 style={{ fontSize: 30, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
+          <h1 style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
             Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator
           </h1>
       {/* ANSWER-FIRST GEO BLOCK */}
