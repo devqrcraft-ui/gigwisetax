@@ -37,7 +37,7 @@ export default function CalculatorsIndex() {
 
       
 
-      <div style={{ background: "linear-gradient(135deg,#1e2d5a,#0d1b3e)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+      <div style={{ background: "linear-gradient(135deg,#1e2d5a,#07111F)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "36px 20px" }}>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
             Gig Worker Tax Calculators — All Platforms × All States
@@ -50,7 +50,7 @@ export default function CalculatorsIndex() {
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "32px 20px 64px" }}>
         {PLATFORMS.map(platform => (
-          <div key={platform.slug} style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
+          <div key={platform.slug} style={{ background: "#07111F", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden", marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" }}>
             <div style={{ background: "#1a1a2e", padding: "13px 20px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
                 <span style={{ fontSize: 22 }}></span>

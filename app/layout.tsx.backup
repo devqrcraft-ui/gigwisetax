@@ -65,7 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body style={{ margin: 0, fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: '#0d1117' }}>
 
         {/* ━━━ GOV TOP BAR ━━━ */}
-        <div style={{ background: '#0d1b3e', borderBottom: '4px solid #B22234' }}>
+        <div style={{ background: '#07111F', borderBottom: '4px solid #B22234' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '7px 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
               <span style={{ fontSize: 20 }}>🇺🇸</span>

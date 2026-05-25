@@ -102,7 +102,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       { '@type': 'ListItem', position: 12, name: "EV charging costs" }
     ],
   };
-  const card = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const card = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
@@ -113,10 +113,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Uber Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Uber workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Uber earnings. Download your annual tax summary or 1099-NEC from the Uber app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5 cents/mile, phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Uber income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}' }} />
 
-      <div style={{ background: '#0d1b3e', minHeight: '100vh' }}>
+      <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
         {/* HERO */}
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
             <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
               <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
@@ -346,7 +346,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
                 {PLATFORMS.filter(p => p.slug !== 'uber').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#0d1b3e', position: 'relative' as const }}>
+                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#07111F', position: 'relative' as const }}>
                       
                       <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{p.name}</div>
                       <div style={{ fontSize: 13, color: '#e05070', fontWeight: 600 }}>{p.searches}</div>
@@ -360,9 +360,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           {/* SIDEBAR */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
             {/* AD */}
-            <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             {/* OTHER CALCULATORS */}
-<div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
+<div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
             </div>
@@ -387,7 +387,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* STATES LINKS */}
-            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Top States</span>
               </div>
@@ -411,11 +411,11 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* AD 2 */}
-            <div style={{ background: '#0d1b3e', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
             </div>
 
             {/* MULTI-APP BANNER */}
-            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Drive for multiple apps?</span>
               </div>

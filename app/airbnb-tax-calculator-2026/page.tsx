@@ -36,7 +36,7 @@ export default function Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* HERO */}
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', padding: '32px 20px 24px' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)', padding: '32px 20px 24px' }}>
         <div style={{ maxWidth: 860, margin: '0 auto' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
             <div style={{ width: 4, minWidth: 4, height: 34, background: '#B22234', borderRadius: 2, marginTop: 4 }} />

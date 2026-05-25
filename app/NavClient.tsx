@@ -114,7 +114,7 @@ export default function NavClient() {
                 {item.label} <span style={{ fontSize:12, opacity:.5 }}>▾</span>
               </div>
               {openNav===item.label && (
-                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#0d1b3e', border:'1px solid rgba(255,255,255,.82)',
+                <div style={{ position:'absolute' as const, top:'100%', left:0, background:'#07111F', border:'1px solid rgba(255,255,255,.82)',
                   borderRadius:6, minWidth:260, zIndex:200, boxShadow:'0 10px 32px rgba(0,0,0,.5)', overflow:'hidden' as const, marginTop:0 }}>
                   <div style={{ background:'#1a1a2e', padding:'8px 14px', fontSize:10, fontWeight:700, color:'rgba(255,255,255,.45)', textTransform:'uppercase' as const, letterSpacing:'1px' }}>{item.label}</div>
                   {item.items.map(sub => (

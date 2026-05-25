@@ -70,16 +70,16 @@ export default function TuroPage() {
     setResult({ gross, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1), businessPct: (businessPct*100).toFixed(0) })
   }
 
-  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background: '#0d1b3e', boxSizing:'border-box' as const }
+  const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background: '#07111F', boxSizing:'border-box' as const }
   const lbl = { display:'block', fontSize:11, fontWeight:700, color: 'rgba(255,255,255,0.85)', textTransform:'uppercase' as const, letterSpacing:'0.8px', marginBottom:6 }
-  const card= { background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }
+  const card= { background: '#07111F', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const, marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
     <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Turo Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Turo workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Turo earnings. Download your annual tax summary or 1099-NEC from the Turo app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5 cents/mile, phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Turo income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}' }} />
     <div style={{ background:'#0d1117', minHeight:'100vh' }}>
 
-      <div style={{ background:'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom:'1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background:'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom:'1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px 28px' }}>
           <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginBottom:10 }}>
             <Link href="/" style={{ color:'rgba(255,255,255,.4)', textDecoration:'none' }}>Home</Link> › <Link href="/calculators" style={{ color:'rgba(255,255,255,.4)', textDecoration:'none' }}>Calculators</Link> › Turo
@@ -235,7 +235,7 @@ export default function TuroPage() {
         </div>
 
         <div style={{ display:'flex', flexDirection:'column' as const, gap:16 }}>
-          <div style={{ background: '#0d1b3e', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background: '#07111F', border:'2px dashed #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             {/* OWN BANNER — privatepaycheck.com */}
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
@@ -250,7 +250,7 @@ export default function TuroPage() {
             </a>
           </div>
 
-          <div style={{ background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
+          <div style={{ background: '#07111F', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden' as const }}>
             <div style={{ background:'#1a1a2e', padding:'10px 16px' }}>
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
@@ -283,7 +283,7 @@ export default function TuroPage() {
 
 
           {/* INTERNAL LINKS */}
-          <div style={{ background: '#0d1b3e', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#07111F', border:'1px solid #d8dce6', borderRadius:6, overflow:'hidden', marginBottom:20, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
             <div style={{ background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Related Guides & Calculators</span>

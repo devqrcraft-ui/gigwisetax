@@ -31,7 +31,7 @@ export default function AmazonFlexTaxGuide() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide 2026 — Save $8,852 With Every Deduction","description":"Amazon Flex drivers on $40K owe $8,852 in taxes. Mileage 72.5c/mi, phone, bags — all deductible. Free 2026 calculator. Quarterly payments: $2,213. All 50 states.","url":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
             <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
               <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a> {' › '}

@@ -228,7 +228,7 @@ export default function HomeClient() {
     <div style={{ background: '#07111F', minHeight: '100vh', overflowX: 'hidden' as const, maxWidth: '100vw' }}>
 
       {/* ━━ HERO STRIP ━━ */}
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)', overflow: 'hidden' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(10px,2vw,18px) 16px clamp(8px,1.5vw,14px)', overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: 28, background: '#e8b84b', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />

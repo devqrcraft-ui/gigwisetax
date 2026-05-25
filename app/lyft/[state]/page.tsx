@@ -95,7 +95,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.`
         : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
 
-  const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
@@ -118,7 +118,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
         {/* HERO */}
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
             <nav style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>
               <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
@@ -291,7 +291,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
           {/* SIDEBAR */}
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
-            <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             {/* OWN BANNER — privatepaycheck.com */}
             <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
@@ -306,7 +306,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </a>
             </div>
 
-            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.7)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Platforms in {state.abbr}</span>
               </div>
@@ -320,7 +320,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               ))}
             </div>
 
-            <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '2px dashed #d8dce6', borderRadius: 6, overflow: 'hidden' as const }}>
             </div>
           </div>
         </div>

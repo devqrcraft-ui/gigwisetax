@@ -19,7 +19,7 @@ export default function GrubhubVsDoorDashPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Grubhub vs DoorDash Taxes 2026: What\","item":"https://www.gigwisetax.com/blog/grubhub-vs-doordash-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Grubhub vs DoorDash Taxes 2026: What\","description":"Both Grubhub and DoorDash classify drivers as 1099 contractors. But your deductions, income patterns, and strategies differ. Full comparison for 2026.","url":"https://www.gigwisetax.com/blog/grubhub-vs-doordash-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> ›{' '}
@@ -83,7 +83,7 @@ export default function GrubhubVsDoorDashPost() {
             </cite>
           </blockquote>
           <h2 style={h2}>Side-by-Side Tax Comparison</h2>
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
+          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#e8b84b', textTransform: 'uppercase' as const, letterSpacing: '1px', textAlign: 'center' as const }}> Grubhub</span>
@@ -164,7 +164,7 @@ export default function GrubhubVsDoorDashPost() {
         </article>
 
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Use a Calculator</span>
             </div>
@@ -174,7 +174,7 @@ export default function GrubhubVsDoorDashPost() {
               </Link>
             ))}
           </div>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> More Guides</span>
             </div>

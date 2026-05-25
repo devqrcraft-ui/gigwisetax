@@ -119,7 +119,7 @@ export default function Page() {
         </p>
 
         {/* CTA */}
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderRadius: 10, padding: '28px 24px', marginBottom: 40, textAlign: 'center' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderRadius: 10, padding: '28px 24px', marginBottom: 40, textAlign: 'center' }}>
           <p style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, marginBottom: 8 }}>Free · No signup · All 51 states</p>
           <Link href="/" style={{ display: 'inline-block', background: '#B22234', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 800, fontSize: 17, textDecoration: 'none' }}>
             Calculate My 2026 Quarterly Taxes →

@@ -21,7 +21,7 @@ export default function AmazonFlexTaxesBlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Taxes 2026: Complete Guide for Drivers","item":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Taxes 2026: Complete Guide for Drivers","description":"How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢/mile), quarterly payments, and top deductions.","url":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> ›{' '}
@@ -187,7 +187,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <p style={p}>
             If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
           </p>
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
             {[
               { q: 'Q1 2026', period: 'Jan – Mar income', due: 'April 15, 2026', urgent: true },
@@ -240,7 +240,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
         {/* SIDEBAR */}
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
@@ -252,7 +252,7 @@ export default function AmazonFlexTaxesBlogPost() {
             </div>
           </div>
 
-          <div style={{ background: '#0d1b3e', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#07111F', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 13, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
             <div style={{ padding: 16 }}>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
@@ -263,7 +263,7 @@ export default function AmazonFlexTaxesBlogPost() {
             </div>
           </div>
 
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Articles</span>
             </div>

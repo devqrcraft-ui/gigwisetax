@@ -46,8 +46,8 @@ export default function DeductionsChecklist() {
 
   const bg   = { minHeight: '100vh', background: '#0d1117', padding: '40px 20px' }
   const wrap = { maxWidth: 780, margin: '0 auto' }
-  const card = { background: '#0d1b3e', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 4px 24px rgba(0,0,0,.3)', marginBottom: 20 }
-  const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
+  const card = { background: '#07111F', borderRadius: 8, overflow: 'hidden' as const, boxShadow: '0 4px 24px rgba(0,0,0,.3)', marginBottom: 20 }
+  const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#07111F)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
 
   return (
     <div style={bg}><div style={wrap}>
@@ -108,7 +108,7 @@ export default function DeductionsChecklist() {
         </div>
         {checkedCount > 0 && (
           <a href="https://1099deductions.com" target="_blank" rel="noopener"
-            style={{ background: '#0d1b3e', color: '#B8924A', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>
+            style={{ background: '#07111F', color: '#B8924A', borderRadius: 6, padding: '12px 20px', fontSize: 14, fontWeight: 800, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>
             Find All Deductions →
           </a>
         )}

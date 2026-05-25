@@ -80,7 +80,7 @@ export default function WalmartSparkTaxGuide2026() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","item":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","description":"Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.","url":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
             <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' '}›{' '}
@@ -106,7 +106,7 @@ export default function WalmartSparkTaxGuide2026() {
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px' }} className="blog-grid">
         <div>
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
             <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 6, padding: 18, marginBottom: 28, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
               <div style={{ flex: 1 }}>
@@ -269,7 +269,7 @@ export default function WalmartSparkTaxGuide2026() {
               <div style={{ background: '#e8b84b', color: '#07111F', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 800 }}>Calculate Now →</div>
             </div>
           </a>
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
+          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>Related Guides</span>
             </div>

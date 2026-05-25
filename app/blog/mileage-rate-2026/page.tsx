@@ -19,7 +19,7 @@ export default function MileageRate2026Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"IRS Mileage Rate 2026: 70 Cents Per Mile — Complete Guide for Gig Workers","item":"https://www.gigwisetax.com/blog/mileage-rate-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"IRS Mileage Rate 2026: 70 Cents Per Mile — Complete Guide for Gig Workers","description":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. Learn how to use it, track miles, and maximize your deduction as a DoorDash, Uber, or Amazon Flex driver.","url":"https://www.gigwisetax.com/blog/mileage-rate-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> ›{' '}
@@ -91,7 +91,7 @@ export default function MileageRate2026Post() {
             </ol>
           </div>
 <h2 id="mileage-history" style={h2}>Mileage Rate History: How 2026 Compares</h2>
-          <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
               ['2026', '72.5¢/mile', true],
@@ -111,7 +111,7 @@ export default function MileageRate2026Post() {
           </div>
 
           <h2 id="how-much-save" style={h2}>How Much Can You Save? (By Miles Driven)</h2>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (72.5¢/mile, 2026)</div>
             {[
               ['5,000 miles', '$3,625', '$1,087'],
@@ -196,7 +196,7 @@ export default function MileageRate2026Post() {
         </article>
 
         <aside style={{ position: 'sticky', top: 80 }}>
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Calculate Your Taxes</span>
             </div>
@@ -213,7 +213,7 @@ export default function MileageRate2026Post() {
             ))}
           </div>
 
-          <div style={{ background: '#0d1b3e', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
+          <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, overflow: 'hidden' }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Related Guides</span>
             </div>

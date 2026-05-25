@@ -36,7 +36,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const stateNote = state.name + (noStateTax ? ' has no state income tax. TaskRabbit workers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + stateRateStr + ' state income tax rate. TaskRabbit workers in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')
 
-  const card   = { background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
@@ -56,7 +56,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do TaskRabbit workers pay taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. TaskRabbit classifies taskers as independent contractors. TaskRabbit does not withhold taxes. If you earn $400 or more you must pay self-employment tax (15.3%) plus federal and state income tax."}},{"@type":"Question","name":"Does TaskRabbit send a 1099?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit sends a 1099-K if you process $5,000 or more through the platform in a year. Even without a 1099 all income is taxable and must be reported on Schedule C."}},{"@type":"Question","name":"What can TaskRabbit workers deduct?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit workers can deduct tools and equipment, work supplies, mileage driving to client locations (72.5 cents/mile in 2026), a home office if used exclusively for the business, and any training costs."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }} />
       <div style={{ background: '#0d1117', minHeight: '100vh' }}>
-        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
             <nav style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}>
               <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
@@ -148,7 +148,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <div style={{ fontSize: 14, color: '#7A96B8', marginBottom: 8, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
               <div style={{ background: '#F5C842', color: '#091526', fontSize: 15, fontWeight: 700, padding: '10px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck</div>
             </a>
-            <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
+            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
               <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
                 <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,.7)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Other Platforms in {state.abbr}</span>
               </div>

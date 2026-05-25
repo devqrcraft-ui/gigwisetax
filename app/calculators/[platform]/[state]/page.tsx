@@ -123,7 +123,7 @@ export default function CalculatorPage({ params }) {
 
   const S = {
     page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#07111F", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
-    card: { background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
+    card: { background: "#07111F", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" as const, marginBottom: 20, boxShadow: "0 1px 6px rgba(0,0,0,0.05)" },
     h2: { fontSize: 20, fontWeight: 800, color: "rgba(255,255,255,0.9)", margin: "0 0 14px", lineHeight: 1.3 },
     p: { fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 14 },
   };
@@ -133,7 +133,7 @@ export default function CalculatorPage({ params }) {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate gig worker taxes?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross earnings, select your platform and state. The calculator applies self-employment tax (15.3%), federal income tax brackets, standard deduction, and your state tax rate to show your exact tax owed and take-home pay."}},{"@type":"Question","name":"What is self-employment tax for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% on net earnings up to $176,100 (12.4% Social Security + 2.9% Medicare). Above that threshold, only the 2.9% Medicare portion applies. You can deduct half of SE tax on your return."}},{"@type":"Question","name":"How often do gig workers pay taxes?","acceptedAnswer":{"@type":"Answer","text":"Gig workers who expect to owe $1,000 or more must pay quarterly estimated taxes. 2026 due dates: April 15, June 16, September 15, and January 15, 2027. Underpayment results in IRS penalties."}}]}' }} />
       {/* GOV BAR */}
-      <div style={{ background: "#0d1b3e", borderBottom: "4px solid #B22234", padding: "7px 0" }}>
+      <div style={{ background: "#07111F", borderBottom: "4px solid #B22234", padding: "7px 0" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 20px", display: "flex", alignItems: "center", gap: 10 }}>
           <span style={{ fontSize: 20 }}></span>
           <span style={{ color: "rgba(255,255,255,.6)", fontSize: 12 }}>Independent Tax Estimation Tool for U.S. Gig Workers — Free, No Registration</span>
@@ -157,7 +157,7 @@ export default function CalculatorPage({ params }) {
       </header>
 
       {/* HERO */}
-      <div style={{ background: "linear-gradient(135deg,#1e2d5a,#0d1b3e)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
+      <div style={{ background: "linear-gradient(135deg,#1e2d5a,#07111F)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div style={{ maxWidth: 1000, margin: "0 auto", padding: "36px 20px" }}>
           <div style={{ display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" }}>
             <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>{p.name}</span>
@@ -301,7 +301,7 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* OTHER STATES */}
-          <div style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ background: "#07111F", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> {p.name} in Other States</span>
             </div>
@@ -314,7 +314,7 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* OTHER PLATFORMS */}
-          <div style={{ background: "#0d1b3e", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ background: "#07111F", border: "1px solid #d8dce6", borderRadius: 6, overflow: "hidden" }}>
             <div style={{ background: "#1a1a2e", padding: "10px 16px" }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: "rgba(255,255,255,.55)", textTransform: "uppercase" as const, letterSpacing: "1px" }}> Other Platforms in {s.name}</span>
             </div>

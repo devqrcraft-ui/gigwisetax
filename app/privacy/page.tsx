@@ -16,7 +16,7 @@ export default function PrivacyPage() {
   return (
     <div style={{ background: '#0d1117', minHeight: '100vh' }}>
 
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 10 }}>
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Privacy Policy
@@ -35,7 +35,7 @@ export default function PrivacyPage() {
           </div>
         </div>
 
-        <div style={{ background: '#0d1b3e', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+        <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
 
           <div style={section}>
             <h2 style={h2}>1. Who We Are</h2>

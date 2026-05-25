@@ -81,7 +81,7 @@ export default function GigWorkerTaxCenter() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       {/* HERO */}
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#0d1b3e)', borderBottom: '1px solid rgba(255,255,255,.07)', padding: '48px 20px 40px' }}>
+      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)', padding: '48px 20px 40px' }}>
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <div style={{ fontSize: 11, fontWeight: 800, color: '#e8b84b', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: 12 }}>Gig Worker Tax Center 2026</div>
           <h1 style={{ fontSize: 36, fontWeight: 900, color: '#fff', lineHeight: 1.2, marginBottom: 16 }}>
