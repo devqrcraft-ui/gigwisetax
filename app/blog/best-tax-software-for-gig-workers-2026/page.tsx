@@ -48,6 +48,7 @@ export default function BestTaxSoftware() {
             </div>
     </div>
       </div>
+      <article itemScope itemType="https://schema.org/BlogPosting">
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px' }}>
         <p style={prose}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
@@ -129,6 +130,7 @@ export default function BestTaxSoftware() {
         <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
         <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
       </div>
+      </article>
       <AuthorBox />
     </>
   )
