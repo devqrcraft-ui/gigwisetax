@@ -21,6 +21,7 @@ export default function BestTaxSoftware() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Best Tax Software for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/best-tax-software-for-gig-workers-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Tax Software for Gig Workers 2026 — Ranked & Compared","description":"Compare TurboTax, FreeTaxUSA, TaxAct and H&R Block for 1099 gig workers in 2026. See which saves you the most on self-employment taxes.","url":"https://www.gigwisetax.com/blog/best-tax-software-for-gig-workers-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
+      <article itemScope itemType="https://schema.org/BlogPosting">
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -48,7 +49,6 @@ export default function BestTaxSoftware() {
             </div>
     </div>
       </div>
-      <article itemScope itemType="https://schema.org/BlogPosting">
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px' }}>
         <p style={prose}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
@@ -132,8 +132,8 @@ export default function BestTaxSoftware() {
         <a href="/1099-tax-calculator" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
       </div>
       </div>
-      </article>
       <AuthorBox />
+      </article>
     </>
   )
 }
