@@ -50,6 +50,23 @@ export default function SelfEmploymentTaxRate2026() {
             <span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
+        <section id="answer">
+          <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
+            The self-employment tax rate in 2026 is 15.3% — 12.4% for Social Security on income up to $184,500, and 2.9% for Medicare with no cap. SE tax applies to 92.35% of net profit, not gross income. On $50,000 net profit, SE tax is $11,565. You deduct half ($5,783) from gross income before calculating federal income tax.
+          </p>
+        </section>
+        <section id="key-takeaways">
+          <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
+            <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
+          <li>SE tax rate: 15.3% total — 12.4% SS + 2.9% Medicare</li>
+          <li>SS wage base: $184,500 in 2026 — income above this cap pays only 2.9% Medicare</li>
+          <li>SE tax applies to 92.35% of net profit — not your gross earnings</li>
+          <li>Deduct half of SE tax on Schedule 1 Line 15 — reduces federal income tax</li>
+          <li>$50K net profit = $11,565 SE tax | $35K = $7,750 | $40K = $8,852</li>
+            </ul>
+          </div>
+        </section>
         </header>
 
         {/* ANSWER-FIRST */}

@@ -44,6 +44,23 @@ export default function MileageRate2026Post() {
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 3, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 5 min read</span>
           </div>
+        <section id="answer">
+          <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
+            The IRS standard mileage rate for 2026 is 72.5 cents per mile for business use. On 10,000 delivery miles, that is a $7,250 deduction — saving $1,088 in self-employment tax. This rate applies to DoorDash, Uber, Lyft, Instacart, and all gig economy drivers who use their personal vehicle for work.
+          </p>
+        </section>
+        <section id="key-takeaways">
+          <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
+            <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
+          <li>2026 IRS mileage rate: 72.5¢/mile — highest rate in five years</li>
+          <li>10,000 business miles = $7,250 deduction = $1,088 SE tax saved</li>
+          <li>Count miles from app-on to app-off — not just miles with passengers or food</li>
+          <li>Cannot combine mileage deduction with actual gas/depreciation in the same year</li>
+          <li>Use Stride, MileIQ, or a manual logbook — IRS requires contemporaneous records</li>
+            </ul>
+          </div>
+        </section>
         </div>
       </div>
 

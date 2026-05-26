@@ -44,6 +44,23 @@ export default function GrubhubVsDoorDashPost() {
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 20, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 6 min read</span>
           </div>
+        <section id="answer">
+          <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
+            GrubHub and DoorDash drivers pay identical SE tax rates in 2026 — 15.3% on 92.35% of net profit. On $35,000, both owe $7,750 before deductions. Both platforms now use the $2,000 1099-NEC threshold under OBBBA 2026. Mileage at 72.5¢/mile is the primary deduction for both.
+          </p>
+        </section>
+        <section id="key-takeaways">
+          <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
+            <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
+            <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
+          <li>Both platforms: 15.3% SE tax on 92.35% of net profit — same calculation</li>
+          <li>$35K income = $7,750 SE tax = $1,938 per quarter on both platforms</li>
+          <li>Both use $2,000 1099-NEC threshold in 2026 under OBBBA</li>
+          <li>Mileage at 72.5¢/mile applies equally to GrubHub and DoorDash</li>
+          <li>If you drive both: combine miles in one mileage log — separate income on Schedule C</li>
+            </ul>
+          </div>
+        </section>
         </div>
       </div>
 
