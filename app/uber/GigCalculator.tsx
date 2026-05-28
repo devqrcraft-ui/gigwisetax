@@ -122,7 +122,19 @@ export default function GigCalculator({
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
               <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                <div style={btnRed}>+ Add All to Google Calendar</div>
+                <button style={{...btnRed, border:'none', cursor:'pointer'}} onClick={() => {
+                  const dates = [
+                    {q:'Q1 2026',date:'20260415'},
+                    {q:'Q2 2026',date:'20260616'},
+                    {q:'Q3 2026',date:'20260915'},
+                    {q:'Q4 2026',date:'20270115'},
+                  ];
+                  dates.forEach(d => {
+                    const title = encodeURIComponent(d.q + ' Estimated Tax — ' + fmt(result.quarterly));
+                    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + d.date + '/' + d.date;
+                    window.open(url, '_blank');
+                  });
+                }}>+ Add All to Google Calendar</button>
                 <div style={btnGray} onClick={() => {
                   const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
                   const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
@@ -140,7 +152,12 @@ export default function GigCalculator({
                   <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 4 }}>{d.due}</div>
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
-                  <div style={btnRed}>+ Calendar</div>
+                  <button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
+                    const calDates = ['20260415','20260616','20260915','20270115'];
+                    const title = encodeURIComponent(d.q + ' 2026 Estimated Tax — ' + fmt(result.quarterly));
+                    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + calDates[i] + '/' + calDates[i];
+                    window.open(url, '_blank');
+                  }}>+ Calendar</button>
                 </div>
               ))}
             </div>
