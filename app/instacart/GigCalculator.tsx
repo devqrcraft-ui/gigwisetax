@@ -127,6 +127,23 @@ export default function GigCalculator({
                     window.open(url, '_blank');
                   });
                 }}>+ Add All to Google Calendar</button>
+                <button style={{background:'rgba(255,255,255,0.08)',color:'#e8b84b',padding:'10px 16px',borderRadius:4,fontSize:14,fontWeight:600,cursor:'pointer',border:'1px solid rgba(232,184,75,0.3)'}} onClick={() => {
+                  const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
+                  const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
+                  try {
+                    const ta = document.createElement('textarea')
+                    ta.value = text
+                    ta.style.position = 'fixed'
+                    ta.style.opacity = '0'
+                    document.body.appendChild(ta)
+                    ta.focus()
+                    ta.select()
+                    document.execCommand('copy')
+                    document.body.removeChild(ta)
+                    const el = document.getElementById('copy-sched-btn2')
+                    if (el) { el.textContent = '✓ Copied!'; setTimeout(() => { if(el) el.textContent = ' Copy schedule' }, 2000) }
+                  } catch(e) {}
+                }} id="copy-sched-btn2"> Copy schedule</button>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="q-grid">
               {deadlines.map((d, i) => (
