@@ -99,23 +99,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
-  const schemaJson = {
-    '@context': 'https://schema.org',
-    '@type': 'WebApplication',
-    name: `${platform.name} Tax Calculator ${state.name} 2026`,
-    applicationCategory: 'FinanceApplication',
-    description: `Free ${platform.name} tax calculator for ${state.name} 2026`,
-    url: `https://www.gigwisetax.com/${platform.slug}/${state.slug}`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    areaServed: { '@type': 'State', name: state.name, containedIn: { '@type': 'Country', name: 'United States' } },
-  }
-
   return (
     <>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Airbnb hosts taxed?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts report rental income on Schedule E (passive) or Schedule C (active/hotel-like). If you rent fewer than 15 days per year, the income is tax-free. Otherwise, you owe income tax on net profit minus allowable deductions."}},{"@type":"Question","name":"What can Airbnb hosts deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts can deduct mortgage interest, property taxes, insurance, cleaning fees, supplies, repairs, depreciation, Airbnb service fees, and utilities proportional to rental use. These deductions can significantly reduce taxable income."}},{"@type":"Question","name":"Does Airbnb report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Airbnb issues a 1099-K to hosts who earn over $600 per year and reports this to the IRS. All rental income must be reported even if you do not receive a 1099."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
-      <div style={{ background: '#0d1117', minHeight: '100vh' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebApplication","name":"Airbnb Tax Calculator ' + state.name + ' 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Airbnb Tax Calculator","item":"https://www.gigwisetax.com/airbnb"},{"@type":"ListItem","position":3,"name":"' + state.name + '","item":"https://www.gigwisetax.com/airbnb/' + state.slug + '"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Calculator ' + state.name + ' 2026","datePublished":"2026-01-01","dateModified":"2026-05-29","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/airbnb/' + state.slug + '"}}' }} />
+      <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
         {/* HERO */}
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -140,6 +131,34 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 : ` Includes the ${stateRateStr} ${state.name} state income tax plus federal SE tax (15.3%) and federal income tax.`
               } Quarterly payment schedule with Google Calendar export. No signup required.
             </p>
+          </div>
+        </div>
+        <div style={{ maxWidth:1200, margin:'0 auto', padding:'4px 16px 0' }}>
+          <div style={{ fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16, display:'flex', gap:12, flexWrap:'wrap' as const }}>
+            <span>Last updated: May 2026</span><span>·</span>
+            <span>By Ethan Blake · Tax Compliance Specialist</span><span>·</span>
+            <span>{'~6 min read · 1,500 words'}</span>
+          </div>
+          <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Airbnb Taxes {state.name} 2026</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              {'Airbnb hosts in ' + state.name + ' earning $50,000 net owe approximately $11,565 total — $7,065 self-employment tax (15.3%) + $4,500 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$2,891. Top deductions: depreciation, cleaning, mortgage interest, utilities.'}
+            </p>
+          </section>
+          <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
+            <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
+            <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
+              <li>Airbnb hosts are self-employed — Airbnb withholds zero taxes</li>
+              <li>{'On $50,000 net income: ~$7,065 SE tax + ~$4,500 federal = ~$11,565 total in ' + state.name}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$2,891 each'}</li>
+              <li>14-day rule: rent under 15 days per year = income is tax-free</li>
+              <li>Top deductions: depreciation, cleaning fees, mortgage interest, utilities</li>
+              <li>File Schedule E (passive) or Schedule C (hotel-like services)</li>
+            </ul>
+          </section>
+        </div>
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px 12px' }}>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {[
                 ` ${state.abbr}: ${noStateTax ? 'No Tax' : stateRateStr}`,
@@ -190,6 +209,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </div>
 
                 {/* QUARTERLY TABLE */}
+                <blockquote style={{ borderLeft:'3px solid rgba(232,184,75,0.5)', margin:'16px 0', padding:'12px 20px', background:'rgba(232,184,75,0.04)', borderRadius:'0 6px 6px 0' }}>
+                  <p style={{ margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7 }}>
+                    {'If you rent your home for fewer than 15 days during the year, you do not include the rental income in your income and you do not deduct the rental expenses.'} — <a href="https://www.irs.gov/publications/p527" rel="nofollow" target="_blank" style={{ color:'#e8b84b' }}>IRS Publication 527</a>
+                  </p>
+                </blockquote>
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>
                   2026 Quarterly Tax Deadlines for {state.name}
                 </h3>
