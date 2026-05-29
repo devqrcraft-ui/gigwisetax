@@ -56,27 +56,7 @@ export default function WalmartSparkTaxGuide2026() {
         @media(max-width:700px){.blog-grid{grid-template-columns:1fr!important}.blog-sidebar{order:2}}
       `}</style>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "How much tax do Walmart Spark drivers pay in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Spark drivers pay self-employment tax of 15.3% on net profit plus federal and state income tax. On $35,000 gross with $8,000 in deductions (mainly mileage), net profit is $27,000. SE tax is approximately $3,815 and federal income tax is approximately $1,500-$3,000 depending on filing status and state." }
-          },
-          {
-            "@type": "Question",
-            "name": "What can Walmart Spark drivers deduct on taxes in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Spark drivers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated delivery bags, car washes, parking and tolls, and half of self-employment tax. Mileage is the largest deduction for most drivers." }
-          },
-          {
-            "@type": "Question",
-            "name": "Does Walmart Spark send a 1099 form in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Spark drivers who earn $600 or more receive a 1099-NEC from Walmart by January 31, 2027. The form is available through the Spark Driver app or DDI Technology portal. Even without a 1099-NEC, all income must be reported to the IRS." }
-          }
-        ]
-      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Walmart Spark drivers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers pay self-employment tax of 15.3% on net profit plus federal and state income tax. On $35,000 gross with $8,000 in deductions (mainly mileage), net profit is $27,000. SE tax is approximately $3,815 and federal income tax is approximately $1,500-$3,000 depending on filing status and state."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated delivery bags, car washes, parking and tolls, and half of self-employment tax. Mileage is the largest deduction for most drivers."}},{"@type":"Question","name":"Does Walmart Spark send a 1099 form in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Spark drivers who earn $600 or more receive a 1099-NEC from Walmart by January 31, 2027. The form is available through the Spark Driver app or DDI Technology portal. Even without a 1099-NEC, all income must be reported to the IRS."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","item":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator","description":"Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.","url":"https://www.gigwisetax.com/blog/walmart-spark-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 

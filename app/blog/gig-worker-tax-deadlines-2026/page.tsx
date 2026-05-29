@@ -18,27 +18,7 @@ const DEADLINES = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: [
-          {
-            '@type': 'Question',
-            name: 'When are gig worker quarterly tax payments due in 2026?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'What happens if I miss a quarterly estimated tax deadline?',
-            acceptedAnswer: { '@type': 'Answer', text: 'The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed.' },
-          },
-          {
-            '@type': 'Question',
-            name: 'How do I calculate how much to pay each quarter?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add federal income tax, then divide by 4. Use the GigWiseTax calculator for an instant result.' },
-          },
-        ],
-      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are gig worker quarterly tax payments due in 2026?","acceptedAnswer":{"@type":"Answer","text":"Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027."}},{"@type":"Question","name":"What happens if I miss a quarterly estimated tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed."}},{"@type":"Question","name":"How do I calculate how much to pay each quarter?","acceptedAnswer":{"@type":"Answer","text":"Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add federal income tax, then divide by 4. Use the GigWiseTax calculator for an instant result."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","item":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","description":"All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 16, September 15, January 15 2027. Miss one and pay a 7% penalty.","url":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 

@@ -65,32 +65,7 @@ export default function AirbnbTaxDeductions2026() {
         .form-grid{grid-template-columns:1fr!important}
       `}</style>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What can Airbnb hosts deduct on taxes in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Airbnb hosts can deduct: cleaning and maintenance, supplies and toiletries, mortgage interest (proportional to rental use), property depreciation, utilities, insurance, platform fees (3%), advertising, and home office expenses. The 14-day rule applies — if you rent fewer than 15 days per year, income is tax-free and no deductions apply." }
-          },
-          {
-            "@type": "Question",
-            "name": "Do Airbnb hosts pay self-employment tax in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "It depends. If you provide hotel-like services (daily cleaning, meals, concierge), the IRS may classify income as Schedule C self-employment income subject to 15.3% SE tax. Most casual hosts report on Schedule E (rental income), which is not subject to SE tax. Consult a CPA if you are unsure." }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the Airbnb 14-day rule for 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Under IRS rules, if you rent your home for fewer than 15 days in 2026, the rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case. This rule applies per property." }
-          },
-          {
-            "@type": "Question",
-            "name": "How much tax will I owe on $30,000 Airbnb income in 2026?",
-            "acceptedAnswer": { "@type": "Answer", "text": "On $30,000 gross Airbnb rental income (Schedule E), after typical deductions of $8,000-$12,000 (depreciation, mortgage interest, cleaning, supplies), net taxable income is $18,000-$22,000. Federal income tax at 12-22% bracket = approximately $2,200-$4,800. Use our free Airbnb tax calculator for your exact estimate." }
-          }
-        ]
-      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Airbnb hosts deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts can deduct: cleaning and maintenance, supplies and toiletries, mortgage interest (proportional to rental use), property depreciation, utilities, insurance, platform fees (3%), advertising, and home office expenses. The 14-day rule applies — if you rent fewer than 15 days per year, income is tax-free and no deductions apply."}},{"@type":"Question","name":"Do Airbnb hosts pay self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"It depends. If you provide hotel-like services (daily cleaning, meals, concierge), the IRS may classify income as Schedule C self-employment income subject to 15.3% SE tax. Most casual hosts report on Schedule E (rental income), which is not subject to SE tax. Consult a CPA if you are unsure."}},{"@type":"Question","name":"What is the Airbnb 14-day rule for 2026?","acceptedAnswer":{"@type":"Answer","text":"Under IRS rules, if you rent your home for fewer than 15 days in 2026, the rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case. This rule applies per property."}},{"@type":"Question","name":"How much tax will I owe on $30,000 Airbnb income in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $30,000 gross Airbnb rental income (Schedule E), after typical deductions of $8,000-$12,000 (depreciation, mortgage interest, cleaning, supplies), net taxable income is $18,000-$22,000. Federal income tax at 12-22% bracket = approximately $2,200-$4,800. Use our free Airbnb tax calculator for your exact estimate."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","item":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","description":"Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see exactly how much you owe. All 50 states.","url":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
 
