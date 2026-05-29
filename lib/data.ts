@@ -12,6 +12,9 @@ export const PLATFORMS = [
   { slug: 'fiverr',     name: 'Fiverr',     emoji: '', searches: '60K/mo', naics: '711510', badge: null },
   { slug: 'upwork',     name: 'Upwork',     emoji: '', searches: '55K/mo', naics: '711510', badge: null },
   { slug: 'shipt',      name: 'Shipt',      emoji: '', searches: '30K/mo', naics: '492000', badge: null },
+  { slug: 'turo',       name: 'Turo',       emoji: '', searches: '45K/mo', naics: '532111', badge: null },
+  { slug: 'grubhub',    name: 'Grubhub',    emoji: '', searches: '60K/mo', naics: '492000', badge: null },
+  { slug: 'walmart-spark', name: 'Walmart Spark', emoji: '', searches: '35K/mo', naics: '492000', badge: null },
 ]
 
 export const STATES = [
