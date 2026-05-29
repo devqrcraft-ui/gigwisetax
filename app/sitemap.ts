@@ -5,7 +5,7 @@ const BASE_URL = 'https://www.gigwisetax.com';
 const platforms = [
   'doordash','uber','lyft','instacart','amazon-flex',
   'grubhub','etsy','airbnb','onlyfans','turo','walmart-spark',
-  'fiverr','rover','taskrabbit','upwork',
+  'fiverr','rover','taskrabbit','upwork','shipt',
 ];
 
 const blogPosts = [
@@ -82,7 +82,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/lyft-tax-calculator-2026`,           lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/onlyfans-tax-calculator-2026`,       lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${BASE_URL}/uber-tax-calculator-2026`,           lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
-    { url: `${BASE_URL}/shipt`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.85 },
     { url: `${BASE_URL}/how-we-calculate-gig-taxes`,     lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.5 },
     { url: `${BASE_URL}/privacy`,                        lastModified: now, changeFrequency: 'yearly'  as const, priority: 0.3 },
   ];
