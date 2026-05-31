@@ -1,296 +1,288 @@
-// ================================================================
-// BLOG: Instacart Tax Deductions 2026
-// Save as: app/blog/instacart-tax-deductions-2026/page.tsx
-// ================================================================
-
 import AuthorBox from '@/app/components/AuthorBox'
-export const metadata = {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
   title: 'Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator',
   description: 'Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-tax-deductions-2026' },
-  openGraph: {
-    title: 'Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator',
-    description: 'Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.',
-    type: 'article',
-    url: 'https://www.gigwisetax.com/blog/instacart-tax-deductions-2026',
-  },
 }
 
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Instacart shoppers deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated bags and coolers, parking and tolls, hot bags and equipment, and a portion of health insurance premiums. Mileage is typically the largest deduction for full-service shoppers."}},{"@type":"Question","name":"How much tax do Instacart shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers pay self-employment tax of 15.3% on net profit plus federal income tax. On $35,000 gross with $10,000 in deductions, net profit is $25,000. SE tax is approximately $3,533 and federal income tax approximately $1,500. Total owed: $5,033. Quarterly payment: $1,258."}},{"@type":"Question","name":"Does Instacart take taxes out of your pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Instacart does not withhold any taxes. Full-service shoppers are independent contractors who receive 1099-NEC forms and are responsible for paying their own SE tax and income tax. In-store shoppers who are W-2 employees do have taxes withheld automatically."}},{"@type":"Question","name":"What is the mileage deduction for Instacart in 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. Instacart shoppers can deduct miles driven from home to the store, store to customer, and between stores. Commute miles (home to the first store of the day) are generally not deductible."}},{"@type":"Question","name":"What forms does Instacart send for taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart sends a 1099-NEC to full-service shoppers who earn $600 or more during the year. The form is available in the Instacart Shopper app by January 31. Report all income even if you do not receive a 1099."}},{"@type":"Question","name":"Can Instacart shoppers deduct phone expenses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart shoppers can deduct the business-use percentage of their phone and data plan. If you use your phone 60% for Instacart, you can deduct 60% of your monthly bill. Keep records showing business vs personal use."}},{"@type":"Question","name":"How do Instacart shoppers pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 gross income with $10,000 in deductions, quarterly estimated payments are approximately $1,258. IRS due dates are April 15, June 16, September 15, and January 15. Pay via IRS Direct Pay or EFTPS."}}}]}'
+
+const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026","item":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}]}'
+
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","datePublished":"2026-01-01","dateModified":"2026-05-31","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}}'
+
 export default function InstacartTaxDeductions2026() {
-  const prose = { fontSize: 16, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, textAlign: 'justify' as const, marginBottom: 16 }
-  const h2 = { fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12, marginTop: 28 }
-  const tableStyle = { width: '100%', borderCollapse: 'collapse' as const, fontSize: 14, marginBottom: 20 }
-  const th = { background: 'rgba(255,255,255,0.08)', color: '#e8b84b', padding: '10px 12px', textAlign: 'left' as const, fontWeight: 700 }
-  const td = { padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.85)' }
-
   return (
-    <div style={{ background: '#07111F', minHeight: '100vh' }}>
-      <article itemScope itemType="https://schema.org/BlogPosting">
-      
-      
-      {/* RELATED ARTICLES */}
-      <div style={{ margin:'40px 0 32px', padding:'24px', background:'rgba(255,255,255,0.03)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:10 }}>
-        <div style={{ fontSize:13, fontWeight:800, color:'#e8b84b', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:16 }}>Related Articles</div>
-        <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))', gap:12 }}>
-
-      <a href="/blog/doordash-taxes-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>DoorDash Taxes 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax, quarterly payments, and top deductions for Dashers.</div>
-        </div>
-      </a>
-
-      <a href="/blog/grubhub-driver-taxes-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Grubhub Driver Taxes 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>SE tax and deductions guide for Grubhub delivery drivers.</div>
-        </div>
-      </a>
-
-      <a href="/blog/amazon-flex-tax-guide-2026" style={{ textDecoration:'none' }}>
-        <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
-          <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>Amazon Flex Tax Guide 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>How Amazon Flex drivers handle taxes, mileage, and deductions.</div>
-        </div>
-      </a>
-        </div>
-      </div>
-      <AuthorBox />
-      <style>{`
-        .blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}
-        @media(max-width:700px){
-          .blog-grid{grid-template-columns:1fr!important}
-          .blog-sidebar{order:2;margin-top:0}
-        }
-      `}</style>
-
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Instacart shoppers deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated bags and coolers, parking and tolls, hot bags and equipment, and a portion of health insurance premiums. Mileage is typically the largest deduction for full-service shoppers."}},{"@type":"Question","name":"How much tax do Instacart shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers pay self-employment tax of 15.3% on net profit plus federal income tax. On $40,000 gross with $10,000 in deductions, net profit is $30,000. SE tax is approximately $4,239 and federal income tax is approximately $1,600-$3,200 depending on filing status. Use our free calculator for your exact estimate."}},{"@type":"Question","name":"Does Instacart take taxes out of your pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Instacart does not withhold any taxes. Full-service shoppers are independent contractors who receive 1099-NEC forms and are responsible for paying their own SE tax and income tax. In-store shoppers who are W-2 employees do have taxes withheld automatically."}},{"@type":"Question","name":"What is the mileage deduction for Instacart in 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. Instacart shoppers can deduct miles driven from home to the store, store to customer, and between stores. Commute miles (home to the first store of the day) are generally not deductible."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","item":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","description":"Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.","url":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"reviewedBy":{"@type":"Person","name":"Ethan Blake","jobTitle":"Tax Compliance Specialist","sameAs":["https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"]},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
-
-      <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
-          <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
-            <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' '}›{' '}
-            <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a>{' '}›{' '}
-            <span style={{ color: 'rgba(255,255,255,.7)' }}>Instacart Tax Deductions 2026</span>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleSchema }} />
+      <article
+        itemScope
+        itemType="https://schema.org/BlogPosting"
+        style={{ maxWidth: 780, margin: '0 auto', padding: 'clamp(14px,4vw,28px)', background: '#07111F', color: '#C8D8EC', minHeight: '100vh' }}
+      >
+        <header>
+          <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.4)', marginBottom: 20 }}>
+            <a href="/" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Home</a>
+            {' > '}
+            <a href="/blog" style={{ color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Blog</a>
+            {' > '}Instacart Tax Deductions 2026
           </nav>
-          <h1 style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: '0 0 14px' }}>
+          <h1
+            itemProp="headline"
+            style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
+          >
             Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator
           </h1>
-      {/* ANSWER-FIRST GEO BLOCK */}
-      <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
-        <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Instacart Deductions 2026</div>
-        <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Instacart shoppers earning $35,000 net owe approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Top deductions: mileage (72.5¢/mile), insulated bags, phone bill (business %), reusable bags, and parking. Most Instacart shoppers deduct $4,000–$8,000 annually in qualified expenses.
-        </p>
-      </div>
-          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-            Every deduction Instacart full-service shoppers can claim in 2026 — mileage, phone, equipment, and more. Free tax calculator included.
-            <span style={{fontSize:12,color:'rgba(255,255,255,.4)',display:'block',marginTop:8}}>Last updated April 2026 — reflects IRS 2026 mileage rate of 72.5c/mi.</span>
-          </p>
-        </div>
-      </div>
+          <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
+            <span>Last updated: May 2026</span><span>·</span>
+            <span>By Ethan Blake · Tax Compliance Specialist</span><span>·</span>
+            <span>{'~8 min read · 2,000 words'}</span>
+          </div>
+        </header>
 
-      <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 48px' }} className="blog-grid">
-        <div>
-          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, padding: 28, boxShadow: '0 2px 12px rgba(0,0,0,0.3)' }}>
+        <section id="answer-first">
+          <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
+            <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
+              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,533 SE tax + $1,500 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,033 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Mileage at 72.5¢/mile is the largest deduction — 10,000 miles eliminates $7,250 from taxable income.
+            </p>
+          </div>
+        </section>
 
-            <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 6, padding: 18, marginBottom: 28, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
-              <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 800, color: '#e8b84b', fontSize: 15, marginBottom: 4 }}>Free Instacart Tax Calculator 2026</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Enter your earnings — see SE tax, income tax, and quarterly payments by state. No signup.</div>
-              </div>
-              <a href="/instacart" style={{ textDecoration: 'none', background: '#e8b84b', color: '#07111F', padding: '10px 20px', borderRadius: 4, fontWeight: 800, fontSize: 14, whiteSpace: 'nowrap' as const }}>Calculate Now →</a>
-            </div>
+        <section id="takeaways">
+          <div style={{ background: 'rgba(232,184,75,0.04)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
+            <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
+            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
+              {[
+                '$35K gross with $10K deductions = $5,033 total tax owed ($1,258/quarter)',
+                'Mileage deduction: 72.5 cents/mile — biggest write-off for full-service shoppers',
+                'SE tax rate: 15.3% on net profit — 12.4% Social Security + 2.9% Medicare',
+                'Instacart sends 1099-NEC (not W-2) — no taxes withheld from your pay',
+                'In-store shoppers are W-2 employees — taxes withheld automatically',
+                'Phone, insulated bags, parking, and tolls are all fully deductible',
+              ].map((t, i) => (
+                <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
+                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block' }} />
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
-            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
-              <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-                <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for Instacart shoppers</li>
-                <li>Insulated bags, carts, and grocery supplies are <strong>fully deductible</strong></li>
-                <li>Phone bill business-use % and data plan are <strong>deductible</strong></li>
-                <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
-                <li>Full-service shoppers file <strong>Schedule C</strong> — in-store shoppers get W-2 from Instacart</li>
-              </ul>
-            </div>
-          <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
-            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
-            <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
-              {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
-            </cite>
-          </blockquote>
-                      {/* TABLE OF CONTENTS */}
-          <div style={{background:'rgba(232,184,75,0.06)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
-            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'📋 TABLE OF CONTENTS'}</div>
-            <ol style={{margin:0,padding:'0 0 0 18px',lineHeight:2}}>
-              <li style={{marginBottom:6}}><a href={"#deduction-checklist"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Instacart Tax Deduction Checklist 2026</a></li>
-              <li style={{marginBottom:6}}><a href={"#mileage"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Mileage — The Biggest Instacart Deduction</a></li>
-              <li style={{marginBottom:6}}><a href={"#fullservice-vs-instore"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Full-Service vs In-Store Shopper: Tax Difference</a></li>
-              <li style={{marginBottom:6}}><a href={"#quarterly-deadlines"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>Quarterly Estimated Tax Deadlines 2026</a></li>
-              <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Instacart Taxes 2026</a></li>
+        <section id="toc">
+          <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: '18px 22px', marginBottom: 32 }}>
+            <div style={{ fontSize: 12, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 12 }}>Table of Contents</div>
+            <ol style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
+              {[
+                ['#deductions', 'Instacart Tax Deduction Checklist 2026'],
+                ['#mileage', 'Mileage — The Biggest Instacart Deduction'],
+                ['#fullservice-vs-instore', 'Full-Service vs In-Store Shopper: Tax Difference'],
+                ['#quarterly', 'Quarterly Estimated Tax Deadlines 2026'],
+                ['#faq', 'Frequently Asked Questions'],
+              ].map(([href, label]) => (
+                <li key={href}><a href={href} style={{ color: '#e8b84b', textDecoration: 'none', fontSize: 14 }}>{label}</a></li>
+              ))}
             </ol>
           </div>
-<h2 id="deduction-checklist" style={h2}>Instacart Tax Deduction Checklist 2026</h2>
-            <p style={prose}>
-              Instacart full-service shoppers are independent contractors. That means no taxes are withheld from your pay,
-              but it also means you can deduct every legitimate business expense to reduce what you owe.
-              Below is the complete list of deductions available to Instacart shoppers in 2026.
-            </p>
+        </section>
 
-            <table style={tableStyle}>
-              <thead>
-                <tr>
-                  <th style={th}>Deduction</th>
-                  <th style={th}>Details</th>
-                  <th style={th}>Typical Value</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Mileage', '72.5c/mi — store to customer, between stores', '$4,350 per 6,000 miles'],
-                  ['Phone & Data Plan', 'Business use % only — most shoppers claim 50-80%', '$400–$900/yr'],
-                  ['Insulated Bags & Coolers', 'Hot bags, cold bags, coolers used for deliveries', '$50–$300/yr'],
-                  ['Parking & Tolls', 'Parking at stores, toll roads during deliveries', '$100–$600/yr'],
-                  ['Phone Mount & Accessories', 'Car mount, charger, power bank', '$30–$150/yr'],
-                  ['Health Insurance Premiums', 'Self-employed health insurance deduction (Schedule 1)', 'Full premium'],
-                  ['Half of SE Tax', 'IRS allows deduction of 50% of self-employment tax', 'Auto-calculated'],
-                  ['Home Office', 'Only if dedicated space for business admin', 'Varies'],
-                  ['Car Washes', 'Business proportion only', '$50–$200/yr'],
-                  ['Tax Preparation Fees', 'CPA or tax software cost', '$50–$300/yr'],
-                ].map(([d, n, v]) => (
-                  <tr key={d}>
-                    <td style={{ ...td, fontWeight: 600, color: '#e8b84b' }}>{d}</td>
-                    <td style={td}>{n}</td>
-                    <td style={{ ...td, color: 'rgba(255,255,255,0.6)' }}>{v}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <h2 id="mileage" style={h2}>Mileage — The Biggest Instacart Deduction</h2>
-            <p style={prose}>
-              For most Instacart shoppers, mileage is the single largest tax deduction.
-              At 72.5 cents per mile in 2026, a shopper driving 15,000 business miles saves <strong>$10,875</strong> in taxable income.
-              That translates to roughly $1,500–$2,400 in actual tax savings depending on your bracket.
-            </p>
-            <p style={prose}>
-              Track every mile with an app like Stride, MileIQ, or Everlance.
-              The IRS requires a contemporaneous mileage log — you cannot reconstruct miles at tax time from memory.
-              Record the date, starting point, destination, and business purpose for each trip.
-            </p>
-            <p style={prose}>
-              Note: miles from your home to the first store of the day are generally considered commute miles and are <strong>not deductible</strong>.
-              Miles from the store to the customer and from one store to another are deductible.
-            </p>
-
-            <h2 id="fullservice-vs-instore" style={h2}>Full-Service Shopper vs In-Store Shopper: Tax Difference</h2>
-            <table style={tableStyle}>
-              <thead>
-                <tr>
-                  <th style={th}>Type</th>
-                  <th style={th}>Tax Status</th>
-                  <th style={th}>SE Tax</th>
-                  <th style={th}>Deductions</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Full-Service Shopper', '1099 contractor', 'Yes — 15.3%', 'All above deductions apply'],
-                  ['In-Store Shopper', 'W-2 employee', 'No — withheld by Instacart', 'Limited — only unreimbursed job expenses'],
-                ].map(([t, s, se, d]) => (
-                  <tr key={t}>
-                    <td style={{ ...td, fontWeight: 700, color: '#e8b84b' }}>{t}</td>
-                    <td style={td}>{s}</td>
-                    <td style={td}>{se}</td>
-                    <td style={td}>{d}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <h2 id="quarterly-deadlines" style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
-            <p style={prose}>
-              If you expect to owe $1,000 or more in federal taxes, you must pay quarterly estimates to avoid penalties.
-            </p>
-            <table style={tableStyle}>
-              <thead>
-                <tr>
-                  <th style={th}>Quarter</th>
-                  <th style={th}>Income Period</th>
-                  <th style={th}>Due Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  ['Q1 2026', 'Jan 1 – Mar 31', 'April 15, 2026'],
-                  ['Q2 2026', 'Apr 1 – May 31', 'June 16, 2026'],
-                  ['Q3 2026', 'Jun 1 – Aug 31', 'September 15, 2026'],
-                  ['Q4 2026', 'Sep 1 – Dec 31', 'January 15, 2027'],
-                ].map(([q, p, d]) => (
-                  <tr key={q}>
-                    <td style={{ ...td, fontWeight: 700, color: '#e8b84b' }}>{q}</td>
-                    <td style={td}>{p}</td>
-                    <td style={{ ...td, fontWeight: 600 }}>{d}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            <h2 id="faq" style={h2}>FAQ — Instacart Taxes 2026</h2>
+        <section id="deductions">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '36px 0 14px', lineHeight: 1.35 }}>
+            Instacart Tax Deduction Checklist 2026
+          </h2>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Full-service Instacart shoppers can deduct every ordinary and necessary business expense. The more you deduct, the lower your taxable income — and the less SE tax you owe.
+          </p>
+          <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              { q: 'Does Instacart send a 1099 in 2026?', a: 'Yes. Instacart sends a 1099-NEC to full-service shoppers who earned $600 or more in 2026. The form is issued by January 31, 2027. You can access it through the Instacart Shopper app or Stripe Express. Even if you do not receive a 1099-NEC, you must still report all income.' },
-              { q: 'How much should Instacart shoppers set aside for taxes?', a: 'Set aside 25-30% of net earnings after mileage deduction. In high-tax states like California or New York, set aside 30-35%. Use our free calculator to get a precise estimate for your state and income level.' },
-              { q: 'Can Instacart shoppers deduct their car payment?', a: 'Not directly. If you use the standard mileage rate (72.5c/mi), you cannot also deduct car payments, insurance, or depreciation separately. If you use the actual expense method, you can deduct the business percentage of all car costs including depreciation, but not the loan principal.' },
+              'Mileage: 72.5 cents per mile for all business driving in 2026',
+              'Phone and data plan: deduct the business-use percentage',
+              'Insulated bags, coolers, and hot bags for grocery delivery',
+              'Parking fees and tolls incurred during deliveries',
+              'Car washes and cleaning supplies used for your vehicle',
+              'Health insurance premiums if self-employed with no employer coverage',
+              'Portion of home internet if used for managing orders',
+              'Accounting software and tax preparation fees',
             ].map((item, i) => (
-              <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 14, marginBottom: 14 }}>
-                <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 14, marginBottom: 6 }}>Q: {item.q}</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7 }}>{item.a}</div>
-              </div>
+              <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}
-
-            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>
-            {/* AUTHOR BOX */}
-            <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-              <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
-              <div>
-                <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
-              </div>
-            </div>
-              <strong>Disclaimer:</strong> Informational purposes only. Consult a licensed CPA for your specific situation. Not affiliated with Instacart or the IRS.
-            </div>
+          </ul>
+          <div style={{ overflowX: 'auto', marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.08)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Deduction</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Typical Amount</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Tax Savings (15.3% SE)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Mileage (10,000 miles)', '$7,250', '$1,109'],
+                  ['Phone (60% business use)', '$480–$720', '$73–$110'],
+                  ['Insulated bags and equipment', '$100–$300', '$15–$46'],
+                  ['Parking and tolls', '$200–$600', '$31–$92'],
+                  ['Health insurance premiums', '$2,400–$6,000', '$367–$918'],
+                  ['Total potential deductions', '$10,430–$14,870', '$1,596–$2,275'],
+                ].map(([ded, amt, sav], i, arr) => (
+                  <tr key={i} style={i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{ded}</td>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{amt}</td>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{sav}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <div className="blog-sidebar" style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
-          <a href="/instacart" style={{ textDecoration: 'none' }}>
-            <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
-              <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Instacart Tax Calculator</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 50 states · Mileage included</div>
-              <div style={{ background: '#e8b84b', color: '#07111F', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 800 }}>Calculate Now →</div>
-            </div>
-          </a>
-          <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden' as const }}>
-            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
-              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const }}>Related Guides</span>
-            </div>
+          <blockquote style={{ borderLeft: '3px solid rgba(232,184,75,0.4)', paddingLeft: 16, margin: '20px 0', fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', fontSize: 14, lineHeight: 1.8 }}>
+            Per IRS Publication 463: business expenses must be ordinary and necessary. Mileage records must include date, destination, business purpose, and miles driven.{' '}
+            <a href="https://www.irs.gov/publications/p463" rel="nofollow" target="_blank" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS Publication 463 →</a>
+          </blockquote>
+        </section>
+
+        <section id="mileage">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '36px 0 14px', lineHeight: 1.35 }}>
+            Mileage — The Biggest Instacart Deduction in 2026
+          </h2>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            The IRS standard mileage rate for 2026 is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile</strong>. For most Instacart shoppers, mileage is the single largest tax deduction — easily eliminating thousands of dollars from taxable income.
+          </p>
+          <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              { label: 'Instacart Tax Calculator', href: '/instacart' },
-              { label: 'DoorDash Tax Guide 2026', href: '/blog/doordash-taxes-2026' },
-              { label: 'Airbnb Tax Deductions 2026', href: '/blog/airbnb-tax-deductions-2026' },
-              { label: '1099 Tax Calculator', href: '/1099-tax-calculator' },
-              { label: 'Quarterly Tax Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
-              { label: 'Amazon Flex Tax Guide', href: '/amazon-flex' },
-            ].map(l => (
-              <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>
-                <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>{l.label}</div>
+              'Deductible: miles from home to first store (if going directly to pick up an order)',
+              'Deductible: miles from store to customer delivery address',
+              'Deductible: miles between stores when shopping multiple orders',
+              'Deductible: miles to return to a store for a missing item',
+              'Not deductible: personal errands combined with Instacart trips',
+            ].map((item, i) => (
+              <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
+            ))}
+          </ul>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Track every mile with an app like MileIQ or Stride. The IRS requires a mileage log with date, destination, and business purpose. On <strong style={{ color: '#e8b84b' }}>15,000 miles</strong>, your deduction is <strong style={{ color: '#e8edf8' }}>$10,875</strong> — saving over $1,600 in SE tax alone.
+          </p>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Instacart tax calculator</a> to enter your mileage and get your exact tax estimate.
+          </p>
+        </section>
+
+        <section id="fullservice-vs-instore">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '36px 0 14px', lineHeight: 1.35 }}>
+            Full-Service Shopper vs In-Store Shopper: Tax Difference
+          </h2>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Your Instacart role determines how you file taxes. Full-service shoppers are independent contractors. In-store shoppers are W-2 employees with taxes withheld automatically.
+          </p>
+          <div style={{ overflowX: 'auto', marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+              <thead>
+                <tr style={{ background: 'rgba(232,184,75,0.08)' }}>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Feature</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Full-Service Shopper</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>In-Store Shopper</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  ['Employment status', 'Independent contractor', 'W-2 employee'],
+                  ['Tax form received', '1099-NEC', 'W-2'],
+                  ['Taxes withheld', 'No — you pay quarterly', 'Yes — automatic'],
+                  ['SE tax (15.3%)', 'Owed on net profit', 'Split with Instacart'],
+                  ['Mileage deduction', 'Yes — 72.5c/mile', 'No'],
+                  ['Equipment deduction', 'Yes — bags, phone', 'Limited'],
+                  ['Schedule used', 'Schedule C', 'Standard W-2 filing'],
+                ].map(([feat, fs, is], i, arr) => (
+                  <tr key={i} style={i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: 600 }}>{feat}</td>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{fs}</td>
+                    <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{is}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="quarterly">
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '36px 0 14px', lineHeight: 1.35 }}>
+            Quarterly Estimated Tax Deadlines for Instacart Shoppers 2026
+          </h2>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments. Missing payments triggers an IRS underpayment penalty.
+          </p>
+          <ol style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
+            {[
+              'Q1 (Jan–Mar): due April 15, 2026',
+              'Q2 (Apr–May): due June 16, 2026',
+              'Q3 (Jun–Aug): due September 15, 2026',
+              'Q4 (Sep–Dec): due January 15, 2027',
+            ].map((item, i) => (
+              <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
+            ))}
+          </ol>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Rule of thumb: set aside <strong style={{ color: '#e8edf8' }}>25–28%</strong> of every Instacart payment. On $35,000 gross with $10,000 in deductions, each quarterly payment is approximately <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Pay via IRS Direct Pay or EFTPS.
+          </p>
+          <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
+            {[
+              'Open a separate savings account and transfer 25% of each payout immediately',
+              'Use the safe harbor rule: pay 100% of prior year tax to avoid penalties',
+              'Download the IRS2Go app to pay directly from your phone',
+              'Use the free Instacart tax calculator to get your exact quarterly amount',
+            ].map((item, i) => (
+              <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section id="faq" style={{ marginTop: 40 }}>
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '0 0 14px', lineHeight: 1.35 }}>
+            Frequently Asked Questions
+          </h2>
+          {[
+            ['What can Instacart shoppers deduct on taxes in 2026?', 'Instacart shoppers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated bags, parking, tolls, and health insurance premiums. Mileage is typically the largest deduction.'],
+            ['How much tax do Instacart shoppers pay in 2026?', 'On $35,000 gross with $10,000 in deductions, net profit is $25,000. SE tax is approximately $3,533 and federal income tax approximately $1,500. Total owed: $5,033. Quarterly payment: $1,258.'],
+            ['Does Instacart take taxes out of your pay?', 'No. Full-service shoppers are independent contractors — Instacart does not withhold taxes. In-store shoppers are W-2 employees and do have taxes withheld automatically.'],
+            ['What is the mileage deduction for Instacart in 2026?', 'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Track miles from store to customer and between stores. Use a mileage tracking app to keep an accurate log.'],
+            ['What forms does Instacart send for taxes?', 'Instacart sends a 1099-NEC to full-service shoppers who earn $600 or more. The form is available in the Shopper app by January 31. Report all income even without a 1099.'],
+            ['Can Instacart shoppers deduct phone expenses?', 'Yes. Deduct the business-use percentage of your phone and data plan. If you use your phone 60% for Instacart, deduct 60% of your monthly bill. Keep usage records.'],
+            ['How do Instacart shoppers pay quarterly estimated taxes?', 'On $35,000 gross with $10,000 deductions, quarterly payments are approximately $1,258. IRS due dates are April 15, June 16, September 15, and January 15. Pay via IRS Direct Pay.'],
+          ].map(([q, a], i, arr) => (
+            <div key={i} style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding: '18px 0' }}>
+              <h3 style={{ fontSize: 15, fontWeight: 600, color: '#e8edf8', margin: '0 0 8px' }}>{q}</h3>
+              <p style={{ fontSize: 14, color: '#C8D8EC', margin: 0, lineHeight: 1.7 }}>{a}</p>
+            </div>
+          ))}
+        </section>
+
+        <section style={{ marginTop: 40 }}>
+          <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '0 0 16px', lineHeight: 1.35 }}>Related Tax Guides</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 12 }}>
+            {[
+              ['/instacart', 'Instacart Tax Calculator 2026', 'CALCULATOR'],
+              ['/blog/doordash-taxes-2026', 'DoorDash Driver Taxes 2026', 'GUIDE'],
+              ['/blog/lyft-driver-taxes-2026', 'Lyft Driver Taxes 2026', 'GUIDE'],
+              ['/blog/quarterly-tax-calculator-2026', 'Quarterly Tax Calculator 2026', 'CALCULATOR'],
+            ].map(([href, title, tag]) => (
+              <a key={href} href={href} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: 16, textDecoration: 'none', display: 'block' }}>
+                <div style={{ fontSize: 10, color: '#e8b84b', fontFamily: 'monospace', letterSpacing: '0.04em', marginBottom: 6 }}>{tag}</div>
+                <div style={{ color: '#e8edf8', fontSize: 13, fontWeight: 600, lineHeight: 1.4 }}>{title}</div>
               </a>
             ))}
           </div>
-        </div>
-      </div>
-          </article>
-</div>
+        </section>
+
+        <AuthorBox />
+      </article>
+    </>
   )
 }
