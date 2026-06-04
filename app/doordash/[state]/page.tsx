@@ -54,7 +54,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     <>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should a DoorDash driver set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers should set aside 25-30% of net earnings for taxes. This covers self-employment tax (15.3%) plus federal income tax. Use quarterly estimated payments to avoid underpayment penalties."}},{"@type":"Question","name":"Does DoorDash withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. DoorDash does not withhold federal or state taxes. Dashers are independent contractors and receive a 1099-NEC. You are responsible for paying self-employment tax and income tax yourself."}},{"@type":"Question","name":"What can DoorDash drivers deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers can deduct mileage (72.5 cents/mile in 2026), phone bill percentage, insulated bags, car insurance portion, and other business expenses. Mileage is typically the largest deduction."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebApplication","name":"DoorDash Tax Calculator ' + state.name + ' 2026","url":"https://www.gigwisetax.com/doordash/' + state.slug + '","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"DoorDash Tax Calculator","item":"https://www.gigwisetax.com/doordash"},{"@type":"ListItem","position":3,"name":"' + state.name + '","item":"https://www.gigwisetax.com/doordash/' + state.slug + '"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"DoorDash Tax Calculator ' + state.name + ' 2026","description":"Free DoorDash tax calculator for ' + state.name + ' 2026.","datePublished":"2026-01-01","dateModified":"2026-06-04","author":{"@type":"Person","name":"Ethan Blake"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/doordash/' + state.slug + '"}}' }} />
       <title>{`${platform.name} Tax Calculator ${state.name} 2026`}</title>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>
 
@@ -70,6 +72,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </p>
         </div>
 
+        <p style={{fontSize:13,color:'rgba(255,255,255,0.65)',margin:'-12px 0 16px',fontStyle:'italic' as const}}>By <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>Ethan Blake</a> &nbsp;·&nbsp; ~5 min read &nbsp;·&nbsp; Updated June 2026</p>
+
         {/* Key Takeaways */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
@@ -82,15 +86,20 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </ul>
         </div>
 
+        <blockquote style={{borderLeft:'3px solid #e8b84b',padding:'12px 16px 12px 18px',margin:'0 0 20px',background:'rgba(232,184,75,0.05)',borderRadius:'0 6px 6px 0'}}>
+          <p style={{margin:0,fontSize:14,color:'rgba(255,255,255,0.75)',fontStyle:'italic' as const,lineHeight:1.7}}>"Self-employed individuals are required to pay self-employment tax and income tax. Self-employment tax includes Social Security and Medicare taxes."</p>
+          <cite style={{display:'block',marginTop:8,fontSize:12,color:'#e8b84b',fontStyle:'normal' as const}}>— <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employment Tax</a></cite>
+        </blockquote>
+
         {/* Breadcrumb */}
         <div style={{ fontSize: 12, color: '#8fa8c8', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
-          <a href="/" style={{ color: '#B22234', textDecoration: 'none' }}>Home</a> /
+          <a href="/" style={{ color: '#8fa8c8', textDecoration: 'none' }}>Home</a> /
           <a href={`/${platform.slug}`} style={{ color: '#B22234', textDecoration: 'none' }}>{platform.name} Tax</a> /
           <span>{state.name}</span>
         </div>
 
         {/* Hero */}
-        <div style={{ background: 'linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)', borderRadius: 8, padding: 'clamp(14px,4vw,28px)', marginBottom: 24, border: '1px solid #2d2d4e' }}>
+        <div style={{ background: '#07111F', borderRadius: 8, padding: 'clamp(14px,4vw,28px)', marginBottom: 24, border: '1px solid rgba(255,255,255,0.12)' }}>
           <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap' as const, gap: 16 }}>
             <div>
               <div style={{ fontSize: 12, color: '#e8b84b', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
@@ -99,7 +108,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <h1 style={{ fontSize: 22, fontWeight: 900, color: '#fff', margin: '0 0 8px', lineHeight: 1.25 }}>
                 {platform.name} Tax Calculator<br/>{state.name} 2026
               </h1>
-              <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
+              <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
                 Estimate your {platform.name} self-employment taxes in {state.name}. Includes SE tax (15.3%), federal income tax, {noStateTax ? 'no state income tax' : `${stateRateStr} ${state.name} state tax`}, and quarterly payment schedule.
               </p>
             </div>
@@ -193,6 +202,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in ${state.name}?`,
                     a: `Federal SE tax is 15.3% regardless of state. In ${state.name} you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
+                  },
+                  {
+                    q: `What mileage rate can DoorDash drivers deduct in ${state.name} in 2026?`,
+                    a: `DoorDash drivers in ${state.name} can deduct 72.5 cents per mile for deliveries in 2026. On 10,000 delivery miles that is a $7,250 deduction directly reducing taxable profit.`,
+                  },
+                  {
+                    q: `Does the No Tax on Tips law apply to DoorDash drivers in ${state.name}?`,
+                    a: `Yes. Under the One Big Beautiful Budget Act 2026, tip income up to $25,000 is federally deductible for DoorDash drivers in ${state.name}, in addition to mileage and business expense deductions.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>
