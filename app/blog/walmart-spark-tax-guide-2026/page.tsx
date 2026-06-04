@@ -258,7 +258,7 @@ export default function WalmartSparkTaxGuide2026() {
               { label: 'DoorDash Tax Guide 2026', href: '/blog/doordash-taxes-2026' },
               { label: 'Instacart Tax Deductions 2026', href: '/blog/instacart-tax-deductions-2026' },
               { label: 'Amazon Flex Tax Guide', href: '/amazon-flex' },
-              { label: '1099 Tax Calculator', href: '/1099-tax-calculator' },
+              { label: '1099 Tax Calculator', href: '/1099-tax-calculator-2026' },
               { label: 'Quarterly Tax Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
             ].map(l => (
               <a key={l.href} href={l.href} style={{ textDecoration: 'none' }}>

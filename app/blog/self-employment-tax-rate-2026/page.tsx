@@ -172,7 +172,7 @@ export default function SelfEmploymentTaxRate2026() {
 
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:24}}>
             {'Use our free '}
-            <a href="/1099-tax-calculator" style={{color:'#e8b84b'}}>1099 tax calculator</a>
+            <a href="/1099-tax-calculator-2026" style={{color:'#e8b84b'}}>1099 tax calculator</a>
             {' to get your exact SE tax in under 60 seconds — including state taxes.'}
           </p>
         </section>

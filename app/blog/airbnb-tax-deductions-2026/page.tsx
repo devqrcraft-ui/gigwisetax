@@ -278,7 +278,7 @@ export default function AirbnbTaxDeductions2026() {
               { label: '🏠 Airbnb Tax Calculator', href: '/airbnb' },
               { label: '🚗 DoorDash Tax Guide 2026', href: '/blog/doordash-taxes-2026' },
               { label: '🛒 Instacart Tax Guide 2026', href: '/blog/instacart-shopper-taxes-2026' },
-              { label: '📋 1099 Tax Calculator', href: '/1099-tax-calculator' },
+              { label: '📋 1099 Tax Calculator', href: '/1099-tax-calculator-2026' },
               { label: '📅 Quarterly Tax Deadlines', href: '/blog/quarterly-taxes-gig-workers' },
               { label: '🚗 Turo Host Tax Guide', href: '/turo' },
             ].map(l => (

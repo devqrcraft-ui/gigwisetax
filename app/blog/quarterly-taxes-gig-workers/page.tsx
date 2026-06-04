@@ -154,7 +154,7 @@ export default function QuarterlyTaxesGuide() {
 
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:16}}>
             {'Use our free '}
-            <a href="/1099-tax-calculator" style={{color:'#e8b84b'}}>1099 tax calculator</a>
+            <a href="/1099-tax-calculator-2026" style={{color:'#e8b84b'}}>1099 tax calculator</a>
             {' to find your exact quarterly amount based on your platform and state.'}
           </p>
         </section>
