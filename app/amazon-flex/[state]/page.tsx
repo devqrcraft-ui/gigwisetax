@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!p || !s) return {}
   const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
-    title: `${p.name} Tax Calculator ${s.name} 2026 — ${stateStr} | GigWiseTax`,
+    title: `Amazon Flex ${s.name} Taxes 2026 — $40K = $5,652 SE Tax`,
     description: `Amazon Flex ${s.name} 2026: $40K net = ~$5,652 SE tax + $3,200 fed. ${stateStr}. Quarterly: ~$2,213. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },

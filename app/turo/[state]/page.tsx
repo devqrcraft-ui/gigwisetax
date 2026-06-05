@@ -329,7 +329,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!s) return {}
   const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
   return {
-    title: `${PLATFORM_NAME} Tax Calculator — ${s.name} 2026 | GigWiseTax`,
+    title: `Turo ${s.name} Taxes 2026 — $40K = $5,652 SE Tax`,
     description: `Turo ${s.name} 2026: $50K net = ~$7,065 SE tax + $4,500 fed. ${rateStr}. Quarterly: ~$2,891. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/turo/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
