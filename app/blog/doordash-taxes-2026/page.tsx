@@ -3,7 +3,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
 export const metadata: Metadata = {
-  title: 'DoorDash Taxes 2026: How Much Do You Owe? Free Calculator',
+  title: 'DoorDash Taxes 2026: $40K = $8,852 Owed — Free Calculator',
   description: 'DoorDash drivers on $40K owe $8,852 in 2026 taxes. Free calculator — mileage 72.5¢/mi, tips up to $25K deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
 }

@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' },
-  title: 'Amazon Flex Taxes 2026: Complete Guide for Drivers',
+  title: 'Amazon Flex Taxes 2026: $40K = $5,652 SE Tax + Deductions',
   description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢/mile), quarterly payments, and top deductions.',
 }
 
