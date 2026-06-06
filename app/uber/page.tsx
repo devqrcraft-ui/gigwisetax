@@ -5,7 +5,7 @@ import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from
 import GigCalculator from './GigCalculator'
 import type { Metadata } from 'next'
 
-export async function generateStaticParams() { return [{ platform: 'uber' }] }
+] }
 
 export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'uber')
@@ -22,7 +22,6 @@ export async function generateMetadata({ params }: { params: { platform: string 
     },
   }
 }
-
 
 export default function PlatformPage({ params }: { params: { platform: string } }) {
   const platform = PLATFORMS.find(p => p.slug === 'uber')
@@ -81,7 +80,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       },
     ],
   }
-
 
   const deductionsSchema = {
     '@context': 'https://schema.org',
@@ -145,7 +143,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           </div>
         </div>
 
-
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
 
@@ -153,7 +150,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div>
             {/* CALCULATOR */}
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
-
 
           {/* KEY TAKEAWAYS */}
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>

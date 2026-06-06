@@ -320,8 +320,7 @@ const STATES = [
 
 const DEDUCTIONS = [" Vehicle maintenance"," Insurance premiums"," Depreciation"," Car cleaning & detailing"," Parking costs"," Turo platform fees"," Phone (business use)"," Home office"]
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
+))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {

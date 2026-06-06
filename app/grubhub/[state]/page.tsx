@@ -318,8 +318,7 @@ const STATES = [
 
 const DEDUCTIONS = [" Mileage ($0.725/mile)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
+))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {

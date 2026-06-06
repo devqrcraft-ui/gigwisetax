@@ -7,8 +7,7 @@ import type { Metadata } from 'next'
 
 const PLATFORM_SLUG = 'doordash'
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
+))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
@@ -38,7 +37,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-
 
   const schemaJson = {
     '@context': 'https://schema.org',
