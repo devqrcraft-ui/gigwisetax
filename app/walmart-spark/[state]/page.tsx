@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
@@ -318,7 +317,8 @@ const STATES = [
 
 const DEDUCTIONS = [" Mileage ($0.725/mile)"," Phone & data plan"," Insulated grocery bags"," Vehicle maintenance"," Parking & tolls"," Delivery apps"]
 
-))
+export async function generateStaticParams() {
+  return STATES.map(s => ({ state: s.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {

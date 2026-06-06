@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -7,7 +6,8 @@ import type { Metadata } from 'next'
 
 const PLATFORM_SLUG = 'fiverr'
 
-))
+export async function generateStaticParams() {
+  return STATES.map(s => ({ state: s.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {

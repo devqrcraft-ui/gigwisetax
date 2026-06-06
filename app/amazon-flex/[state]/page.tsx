@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -61,7 +60,8 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'wyoming':        (p, r, n) => `Wyoming has NO state income tax — making it one of the best states for ${p} gig workers. You only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
 }
 
-))
+export async function generateStaticParams() {
+  return STATES.map(s => ({ state: s.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
@@ -153,6 +153,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
           </div>
         </div>
+
 
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">

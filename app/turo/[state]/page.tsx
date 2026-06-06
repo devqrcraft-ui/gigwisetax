@@ -1,4 +1,3 @@
-export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES as ALL_STATES, DEADLINES_2026 } from '@/lib/data'
@@ -320,7 +319,8 @@ const STATES = [
 
 const DEDUCTIONS = [" Vehicle maintenance"," Insurance premiums"," Depreciation"," Car cleaning & detailing"," Parking costs"," Turo platform fees"," Phone (business use)"," Home office"]
 
-))
+export async function generateStaticParams() {
+  return STATES.map(s => ({ state: s.slug }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {

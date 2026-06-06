@@ -1,4 +1,3 @@
-export const runtime = "edge";
 // @ts-nocheck
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -73,7 +72,11 @@ const STATES = [
   { slug: "washington-dc", name: "Washington D.C.", abbr: "DC", rate: 0.0895, hasTax: true, note: "D.C. has a progressive income tax up to 8.95%." },
 ];
 
-);
+export async function generateStaticParams() {
+  const params = [];
+  for (const platform of PLATFORMS) {
+    for (const state of STATES) {
+      params.push({ platform: platform.slug, state: state.slug });
     }
   }
   return params;
