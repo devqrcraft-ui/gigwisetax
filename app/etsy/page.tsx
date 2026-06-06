@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from '@/lib/data'

@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import { STATES, DEADLINES_2026 } from '@/lib/data'
 import type { Metadata } from 'next'

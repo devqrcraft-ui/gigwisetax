@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'

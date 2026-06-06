@@ -1,3 +1,4 @@
+export const runtime = "edge";
 import { notFound } from 'next/navigation'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from './GigCalculator'
