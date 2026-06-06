@@ -6,9 +6,6 @@ import type { Metadata } from 'next'
 
 const PLATFORM_SLUG = 'upwork'
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: stateSlug } = await params

@@ -2,9 +2,6 @@ import { notFound } from 'next/navigation'
 import { STATES, DEADLINES_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: stateSlug } = await params

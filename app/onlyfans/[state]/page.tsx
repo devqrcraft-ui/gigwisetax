@@ -60,9 +60,6 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'wyoming':        (p, r, n) => `Wyoming has NO state income tax — making it one of the best states for ${p} gig workers. You only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
 }
 
-export async function generateStaticParams() {
-  return STATES.map(s => ({ state: s.slug }))
-}
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: stateSlug } = await params
