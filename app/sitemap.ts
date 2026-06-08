@@ -18,7 +18,7 @@ const blogPosts = [
   'turo-host-taxes-2026',
   'walmart-spark-driver-taxes-2026','walmart-spark-tax-guide-2026','walmart-spark-taxes-2026',
   'w9-mistakes-gig-workers','w2-vs-1099-guide-2026',
-  'airbnb-host-taxes-2026','airbnb-tax-deductions-2026',
+  'airbnb-host-taxes-2026','airbnb-tax-calculator-2026','airbnb-tax-deductions-2026',
   'amazon-flex-taxes-2026',
   'grubhub-driver-taxes-2026','grubhub-vs-doordash-taxes-2026','doordash-vs-uber-eats-taxes-2026',
   'best-apps-for-gig-workers-2026',
