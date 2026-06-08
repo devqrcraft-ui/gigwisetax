@@ -123,12 +123,12 @@ export default function WalmartSparkPage() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
                   <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
                 </div>
                 <div>

@@ -115,12 +115,12 @@ export default function TuroPage() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
                   <label style={lbl} htmlFor="annual-turo-host-income-usd-se-0"> Annual Turo Host Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 24000" value={income} onChange={e=>setIncome(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 24000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total payouts from Turo (before deductions)</div>
                 </div>
                 <div>
                   <label style={lbl}> Rental Days Per Year (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 180" value={rentalDays} onChange={e=>setRentalDays(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 180" value={rentalDays} onChange={e=>setRentalDays(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Used to calculate business-use % for deductions</div>
                 </div>
                 <div>

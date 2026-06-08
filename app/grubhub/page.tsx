@@ -117,12 +117,12 @@ export default function GrubhubPage() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
                   <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
                   <label style={lbl}>▸ Business Miles Driven (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(e.target.value)} />
+                  <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>72.5¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
