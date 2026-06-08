@@ -288,7 +288,7 @@ export default function HomeClient() {
                 borderBottom: tab === t.id ? '2px solid #e8b84b' : '2px solid transparent', border: tab === t.id ? '1px solid #e8b84b' : '1px solid #d8dce6',
                 marginBottom: -2, transition: 'all .15s', whiteSpace: 'normal', flex: 1, textAlign: 'center' as const, wordBreak: 'break-word',
               }}>
-                {t.label}
+                {t.label}{tab !== t.id ? <span style={{marginLeft:6,fontSize:12,opacity:0.75}}>→</span> : <span style={{marginLeft:5,fontSize:11}}>▼</span>}
               </div>
             ))}
           </div>
