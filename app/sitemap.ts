@@ -36,6 +36,7 @@ const blogPosts = [
   'best-tax-software-for-gig-workers-2026',
   'self-employment-tax-rate-2026',
   '1099-vs-w2-taxes-2026','quarterly-tax-calculator-2026',
+  'doordash-tax-calculator-2026','shipt-taxes-2026',
 ];
 
 const states = [
