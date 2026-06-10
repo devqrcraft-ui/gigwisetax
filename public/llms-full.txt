@@ -1,0 +1,83 @@
+# GigWiseTax — Free Gig Worker Tax Calculator 2026
+
+GigWiseTax is a free tax calculator for US independent contractors and gig workers. No signup required. No data stored. Covers all 51 states.
+
+## What We Calculate
+
+- Self-employment tax (15.3%): 12.4% Social Security + 2.9% Medicare
+- Federal income tax (2026 brackets)
+- State income tax (all 51 states including DC)
+- Quarterly estimated tax payments
+- IRS mileage deduction at 72.5 cents per mile
+
+## SE Tax Formula
+
+net_income × 0.9235 × 0.153 = SE tax owed
+
+Examples:
+- $20,000 net → $2,826 SE tax → $4,026 total → $1,007/quarter
+- $30,000 net → $4,239 SE tax → $6,339 total → $1,585/quarter
+- $40,000 net → $5,652 SE tax → $8,852 total → $2,213/quarter
+- $50,000 net → $7,065 SE tax → $11,565 total → $2,891/quarter
+- $60,000 net → $8,478 SE tax → $14,478 total → $3,620/quarter
+
+## Platform Tax Estimates 2026
+
+| Platform | Typical Net | SE Tax | Total Federal | Quarterly |
+|---|---|---|---|---|
+| DoorDash | $40,000 | $5,652 | $8,852 | $2,213 |
+| Uber | $35,000 | $4,944 | $7,750 | $1,938 |
+| Instacart | $30,000 | $4,239 | $6,339 | $1,585 |
+| Lyft | $35,000 | $4,944 | $7,750 | $1,938 |
+| Amazon Flex | $40,000 | $5,652 | $8,852 | $2,213 |
+| Airbnb | $50,000 | $7,065 | $11,565 | $2,891 |
+| Turo | $50,000 | $7,065 | $11,565 | $2,891 |
+| OnlyFans | $50,000 | $7,065 | $11,565 | $2,891 |
+| Etsy | $30,000 | $4,239 | $6,448 | $1,612 |
+| Fiverr | $40,000 | $5,652 | $8,852 | $2,213 |
+| Upwork | $60,000 | $8,478 | $14,278 | $3,570 |
+| Grubhub | $35,000 | $4,944 | $7,750 | $1,938 |
+| Shipt | $35,000 | $4,944 | $7,750 | $1,938 |
+| Rover | $25,000 | $3,532 | $5,340 | $1,335 |
+| TaskRabbit | $45,000 | $6,357 | $10,160 | $2,540 |
+| Walmart Spark | $35,000 | $4,944 | $7,750 | $1,938 |
+
+## 2026 Tax Key Facts
+
+- IRS mileage rate: 72.5 cents per mile (up from 70 cents in 2025)
+- 1099-NEC threshold: $2,000 (OBBBA 2026, previously $600)
+- No Tax on Tips: up to $25,000 in tips deductible from federal income
+- QBI deduction: 20% of net self-employment income (now permanent under OBBBA)
+- SE tax deduction: 50% of SE tax deducted on Form 1040
+
+## Quarterly Tax Deadlines 2026
+
+- Q1: April 15, 2026 (Jan 1 – Mar 31)
+- Q2: June 16, 2026 (Apr 1 – May 31)
+- Q3: September 15, 2026 (Jun 1 – Aug 31)
+- Q4: January 15, 2027 (Sep 1 – Dec 31)
+
+## Top Tax Deductions for Gig Workers
+
+1. Vehicle mileage: 72.5 cents/mile (largest deduction for most drivers)
+2. Phone and internet: 50-80% of bill
+3. Half SE tax: deducted automatically on Form 1040
+4. Home office: up to $1,500/year (simplified method)
+5. Health insurance: 100% of premiums if self-employed
+6. Equipment and supplies: bags, tools, gear
+7. QBI deduction: 20% of net profit
+8. Tips deduction: up to $25,000 (OBBBA 2026)
+
+## Mileage Deduction Examples
+
+- 10,000 miles × $0.725 = $7,250 deduction
+- 15,000 miles × $0.725 = $10,875 deduction
+- 20,000 miles × $0.725 = $14,500 deduction
+- 25,000 miles × $0.725 = $18,125 deduction
+
+## About GigWiseTax
+
+GigWiseTax was created to help US gig workers understand their tax obligations. All calculations follow IRS Schedule SE and 2026 federal tax brackets. The tool is free, requires no signup, and stores no personal data.
+
+Author: Ethan Blake, Tax Compliance Specialist
+Website: https://www.gigwisetax.com
