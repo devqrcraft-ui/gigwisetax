@@ -31,9 +31,6 @@ const nextConfig: NextConfig = {
       { source: '/compress-to-50kb', destination: '/', permanent: true },
       { source: '/compress-for-wordpress', destination: '/', permanent: true },
       { source: '/visa-photo-compressor', destination: '/', permanent: true },
-      { source: '/1099-tax-calculator', destination: '/blog/1099-vs-w2-taxes-2026', permanent: true },
-      { source: '/1099-tax-calculator-2026', destination: '/blog/1099-vs-w2-taxes-2026', permanent: true },
-      { source: '/1099-tax-calculator/:state', destination: '/blog/1099-vs-w2-taxes-2026', permanent: true },
       { source: '/shipt/district-of-columbia', destination: '/shipt/washington-dc', permanent: true },
     ];
   },
