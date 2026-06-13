@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
+import { ReviewsSection, ContactSection } from '@/app/components/ReviewsSection'
 
 export const metadata: Metadata = {
   title: 'DoorDash Tax Calculator 2026 — Free SE Tax Estimator',
@@ -289,6 +290,8 @@ export default function DoorDashTaxCalculator2026() {
           </ul>
         </section>
 
+        <ReviewsSection />
+        <ContactSection />
         <AuthorBox />
       </article>
     </>
