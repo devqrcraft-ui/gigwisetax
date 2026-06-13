@@ -1,9 +1,9 @@
 const reviews = [
-  { initials: 'MR', name: 'Marcus R.', location: 'Texas', platform: 'DoorDash', rating: 5, date: 'April 14, 2026', text: 'Used this before filing my 2025 return. Calculator was spot on — my CPA confirmed the SE tax number. Saved me from underpaying quarterly. Way better than TaxAct which tried to charge me $90 just to see my estimate.' },
-  { initials: 'JL', name: 'Jamie L.', location: 'California', platform: 'Uber Eats', rating: 5, date: 'March 28, 2026', text: 'Finally a calculator that actually breaks down SE tax, federal AND state. I drive in CA so state tax matters a lot. No sign-up, no email required, just got my number in 30 seconds. Bookmarked it for every quarter.' },
-  { initials: 'ST', name: 'Sarah T.', location: 'Florida', platform: 'Instacart', rating: 5, date: 'February 9, 2026', text: 'First year doing gig taxes and I was terrified. This calculator explained everything — SE tax, the mileage deduction, quarterly deadlines. Set aside 27% like it suggested and had exactly enough when Q1 was due.' },
-  { initials: 'DK', name: 'Derek K.', location: 'New York', platform: 'Amazon Flex', rating: 4, date: 'January 22, 2026', text: 'Solid tool, completely free which is rare. I checked against TurboTax self-employed calculator and the numbers matched. Would love a PDF export but for a free tool this is excellent.' },
-  { initials: 'AC', name: 'Ashley C.', location: 'Illinois', platform: 'DoorDash + Lyft', rating: 5, date: 'May 3, 2026', text: 'I work two gig platforms and this was the only free calculator that let me combine income. No hidden upgrade, no premium plan required. Just entered my numbers and got everything I needed.' },
+  { initials: 'MR', name: 'Marcus R.', location: 'Texas', platform: 'DoorDash', rating: 5, date: 'April 14, 2026', text: 'Used this before filing my 2025 return. Calculator was spot on — my CPA confirmed the SE tax number. Way better than TaxAct which tried to charge me $90 just to see my estimate.' },
+  { initials: 'JL', name: 'Jamie L.', location: 'California', platform: 'Uber Eats', rating: 5, date: 'March 28, 2026', text: 'Finally a calculator that actually breaks down SE tax, federal AND state. No sign-up, no email required, just got my number in 30 seconds.' },
+  { initials: 'ST', name: 'Sarah T.', location: 'Florida', platform: 'Instacart', rating: 5, date: 'February 9, 2026', text: 'First year doing gig taxes and I was terrified. This calculator explained everything — SE tax, mileage deduction, quarterly deadlines. Set aside 27% and had exactly enough when Q1 was due.' },
+  { initials: 'DK', name: 'Derek K.', location: 'New York', platform: 'Amazon Flex', rating: 4, date: 'January 22, 2026', text: 'Solid tool, completely free which is rare. I checked against TurboTax and the numbers matched. Would love a PDF export but for a free tool this is excellent.' },
+  { initials: 'AC', name: 'Ashley C.', location: 'Illinois', platform: 'DoorDash + Lyft', rating: 5, date: 'May 3, 2026', text: 'I work two gig platforms and this was the only free calculator that let me combine income. No hidden upgrade, no premium plan required.' },
 ]
 
 function StarRating({ count }: { count: number }) {
@@ -18,7 +18,7 @@ function StarRating({ count }: { count: number }) {
 
 export function ReviewsSection() {
   return (
-    <section id=reviews style={{ marginBottom: 36 }}>
+    <section id="reviews" style={{ marginBottom: 36 }}>
       <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '0 0 6px' }}>What Gig Workers Say</h2>
       <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', margin: '0 0 20px' }}>No sign-up required. No hidden fees. Ever.</p>
       <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
@@ -52,13 +52,13 @@ export function ReviewsSection() {
 
 export function ContactSection() {
   return (
-    <section id=contact style={{ marginBottom: 36 }}>
+    <section id="contact" style={{ marginBottom: 36 }}>
       <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '18px 22px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap' as const, gap: 12 }}>
         <div>
           <div style={{ fontSize: 13, fontWeight: 700, color: '#C8D8EC', marginBottom: 4 }}>Questions about your tax estimate?</div>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>We read every message — usually reply within 24 hours.</div>
         </div>
-        <a href=mailto:kalkulator018@gmail.com style={{ display: 'inline-block', background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.25)', color: '#e8b84b', fontWeight: 700, fontSize: 13, padding: '9px 20px', borderRadius: 7, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>kalkulator018@gmail.com</a>
+        <a href="mailto:kalkulator018@gmail.com" style={{ display: 'inline-block', background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.25)', color: '#e8b84b', fontWeight: 700, fontSize: 13, padding: '9px 20px', borderRadius: 7, textDecoration: 'none', whiteSpace: 'nowrap' as const }}>kalkulator018@gmail.com</a>
       </div>
     </section>
   )
