@@ -33,6 +33,7 @@ const nextConfig: NextConfig = {
       { source: '/visa-photo-compressor', destination: '/', permanent: true },
       { source: '/shipt/district-of-columbia', destination: '/shipt/washington-dc', permanent: true },
       { source: '/1099-tax-calculator/district-of-columbia', destination: '/1099-tax-calculator/washington-dc', permanent: true },
+      { source: '/year', destination: '/', permanent: true },
     ];
   },
   compress: true,
