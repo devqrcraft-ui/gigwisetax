@@ -2,8 +2,11 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Instacart Shopper Taxes 2026: $35K Income = $7,750 Tax Owed',
-  description: 'Instacart shoppers on $35K owe $7,750 in 2026 taxes. Free calculator — mileage 72.5¢/mi, insulated bags, phone all deductible. All 50 states.',
+  title: 'Instacart Shopper Tax Deductions 2026: $35K = $4,950 SE Tax + $3,480 Saved',
+  description: 'Instacart shoppers on $35K net: $4,950 SE tax, but mileage 72.5¢/mi + insulated bags + phone saves $3,480+. Free 2026 calculator, all 51 states.',
+  keywords: 'instacart shopper tax deductions 2026, instacart mileage deduction, instacart 1099 taxes, instacart shopper self employment tax',
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
 
