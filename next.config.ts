@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
+      // ── -2026 URL aliases ──
       { source: '/doordash-tax-calculator-2026', destination: '/doordash', permanent: true },
       { source: '/uber-tax-calculator-2026', destination: '/uber', permanent: true },
       { source: '/airbnb-tax-calculator-2026', destination: '/airbnb', permanent: true },
@@ -11,10 +12,14 @@ const nextConfig: NextConfig = {
       { source: '/lyft-tax-calculator-2026', destination: '/lyft', permanent: true },
       { source: '/onlyfans-tax-calculator-2026', destination: '/onlyfans', permanent: true },
       { source: '/amazon-flex-tax-calculator-2026', destination: '/amazon-flex', permanent: true },
+      { source: '/gig-worker-taxes-2026', destination: '/', permanent: true },
+      { source: '/1099-tax-calculator-2026', destination: '/1099-tax-calculator', permanent: true },
+      // ── blog redirects ──
       { source: '/blog/best-image-compressor-for-mac', destination: '/', permanent: true },
       { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
       { source: '/blog/etsy-seller-tax-deductions-2025', destination: '/blog/etsy-seller-taxes-2026', permanent: true },
       { source: '/blog/1099-deadlines-2025', destination: '/blog/gig-worker-tax-deadlines-2026', permanent: true },
+      // ── /district-of-columbia → /washington-dc (all platforms) ──
       { source: '/onlyfans/district-of-columbia', destination: '/onlyfans/washington-dc', permanent: true },
       { source: '/instacart/district-of-columbia', destination: '/instacart/washington-dc', permanent: true },
       { source: '/doordash/district-of-columbia', destination: '/doordash/washington-dc', permanent: true },
@@ -26,13 +31,18 @@ const nextConfig: NextConfig = {
       { source: '/turo/district-of-columbia', destination: '/turo/washington-dc', permanent: true },
       { source: '/walmart-spark/district-of-columbia', destination: '/walmart-spark/washington-dc', permanent: true },
       { source: '/etsy/district-of-columbia', destination: '/etsy/washington-dc', permanent: true },
-      { source: '/upwork', destination: '/blog/upwork-taxes-2026', permanent: true },
+      { source: '/shipt/district-of-columbia', destination: '/shipt/washington-dc', permanent: true },
+      { source: '/1099-tax-calculator/district-of-columbia', destination: '/1099-tax-calculator/washington-dc', permanent: true },
+      { source: '/fiverr/district-of-columbia', destination: '/fiverr/washington-dc', permanent: true },
+      { source: '/rover/district-of-columbia', destination: '/rover/washington-dc', permanent: true },
+      { source: '/taskrabbit/district-of-columbia', destination: '/taskrabbit/washington-dc', permanent: true },
+      // ── compress pages → home ──
       { source: '/compress-to-20kb', destination: '/', permanent: true },
       { source: '/compress-to-50kb', destination: '/', permanent: true },
       { source: '/compress-for-wordpress', destination: '/', permanent: true },
       { source: '/visa-photo-compressor', destination: '/', permanent: true },
-      { source: '/shipt/district-of-columbia', destination: '/shipt/washington-dc', permanent: true },
-      { source: '/1099-tax-calculator/district-of-columbia', destination: '/1099-tax-calculator/washington-dc', permanent: true },
+      // ── other ──
+      { source: '/upwork', destination: '/blog/upwork-taxes-2026', permanent: true },
       { source: '/year', destination: '/', permanent: true },
     ];
   },
@@ -54,6 +64,7 @@ const nextConfig: NextConfig = {
       source: "/_next/static/(.*)",
       headers: [
         { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
+        { key: "X-Robots-Tag", value: "noindex, nofollow" },
       ],
     },
     {
