@@ -1,30 +1,20 @@
 import type { Metadata } from 'next'
-
 export const metadata: Metadata = {
-  title: 'Airbnb Tax Calculator 2026 — Free, Instant Results for All 51 States | GigWiseTax',
-  description: 'Calculate Airbnb host taxes for 2026. SE tax, federal & state for all 51 states. Includes 14-day rule, Schedule E deductions, depreciation. Free Airbnb tax estimator.',
+  title: 'Airbnb Tax Calculator 2026 — $50K Net = $7,065 SE Tax + Deductions',
+  description: 'Airbnb hosts on $50K net owe $7,065 SE tax + federal in 2026. Depreciation + 14-day rule saves $3,000+. Free calculator, all 51 states.',
+  keywords: 'airbnb tax calculator 2026, airbnb host taxes, airbnb self employment tax, airbnb income tax calculator',
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/airbnb' },
   openGraph: {
-    title: 'Airbnb Tax Calculator 2026 — Free, Instant Results for All 51 States | GigWiseTax',
-    description: 'Calculate Airbnb host taxes for 2026. SE tax, federal & state for all 51 states. Includes 14-day rule, Schedule E deductions, depreciation. Free Airbnb tax estimator.',
+    title: 'Airbnb Tax Calculator 2026 — $50K Net = $7,065 SE Tax',
+    url: 'https://www.gigwisetax.com/airbnb',
     siteName: 'GigWiseTax',
     type: 'website',
+    images: [{ url: 'https://www.gigwisetax.com/og-image.png', width: 1200, height: 630, alt: 'Airbnb Tax Calculator 2026' }],
   },
+  twitter: { card: 'summary_large_image', site: '@gigwisetax', creator: '@gigwisetax', title: 'Airbnb Tax Calculator 2026 — $50K Net = $7,065 SE Tax', description: 'Free Airbnb tax calculator. All 51 states.' },
 }
-
-
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},
-          {"@type":"ListItem","position":2,"name":"Airbnb Tax Calculator","item":"https://www.gigwisetax.com/airbnb"}
-        ]
-      })}} />
-      {children}
-    </>
-  )
+  return <>{children}</>
 }
