@@ -1,22 +1,25 @@
 import type { Metadata } from 'next'
-
 export const metadata: Metadata = {
-  title: 'Instacart Tax Calculator 2026 — Shopper Self-Employment Tax | GigWiseTax',
-  description: 'Calculate Instacart shopper self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Mileage deduction, quarterly payment schedule. Free, 2026 IRS rules.',
+  title: 'Instacart Tax Calculator 2026 — $35K Net = $4,950 SE Tax',
+  description: 'Instacart shoppers on $35K net owe $4,950 SE tax + federal in 2026. Mileage 72.5¢/mile, insulated bags, phone deductible. Free calculator, all 51 states.',
+  keywords: 'instacart tax calculator 2026, instacart shopper self employment tax, instacart 1099 taxes, instacart quarterly taxes',
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/instacart' },
   openGraph: {
-    title: 'Instacart Tax Calculator 2026 — Free, All 51 States | GigWiseTax',
-    description: 'Calculate Instacart shopper self-employment taxes. SE tax 15.3%, federal & state for all 51 states. Mileage deduction, quarterly payment schedule. Free, 2026 IRS rules.',
+    title: 'Instacart Tax Calculator 2026 — $35K Net = $4,950 SE Tax',
+    description: 'Instacart shoppers on $35K net owe $4,950 SE tax + federal in 2026. Mileage 72.5¢/mile deductible. Free calculator, all 51 states.',
+    url: 'https://www.gigwisetax.com/instacart',
     siteName: 'GigWiseTax',
     type: 'website',
+    images: [{ url: 'https://www.gigwisetax.com/og-image.png', width: 1200, height: 630, alt: 'Instacart Tax Calculator 2026' }],
   },
+  twitter: { card: 'summary_large_image', site: '@gigwisetax', creator: '@gigwisetax', title: 'Instacart Tax Calculator 2026 — $35K Net = $4,950 SE Tax', description: 'Free Instacart tax calculator. $35K net = $4,950 SE tax. All 51 states.' },
 }
-
-
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
+      <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
