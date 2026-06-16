@@ -3,8 +3,11 @@ import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Center 2026 — DoorDash, Uber, OnlyFans, Airbnb & More | GigWiseTax',
-  description: 'Complete gig worker tax hub 2026. Free SE tax calculators for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb, Amazon Flex. Quarterly deadlines, deductions, IRS guides.',
+  title: 'Gig Worker Taxes 2026: SE Tax 15.3% — Free Calculator All Platforms',
+  description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $3,200 federal = $8,852. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 51 states.',
+  keywords: 'gig worker taxes 2026, gig economy tax calculator, self employment tax gig workers, gig worker tax deductions 2026',
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/gig-worker-taxes-2026' },
 };
 

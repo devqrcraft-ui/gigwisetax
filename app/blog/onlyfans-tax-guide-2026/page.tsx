@@ -6,6 +6,8 @@ export const metadata = {
   title: 'OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed',
   description: 'OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.',
   keywords: 'onlyfans taxes 2026, onlyfans tax calculator, onlyfans 1099, onlyfans self employment tax',
+  authors: [{ name: 'Ethan Blake' }],
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   openGraph: {
     title: 'OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed',
     description: 'OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.',
