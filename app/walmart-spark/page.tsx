@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -349,6 +350,7 @@ export default function WalmartSparkPage() {
           </div>
 
       
+      <ReviewsSection />
       <AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}

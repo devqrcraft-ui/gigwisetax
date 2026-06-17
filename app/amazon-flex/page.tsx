@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
+import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from '@/lib/data'
 import GigCalculator from './GigCalculator'
 import type { Metadata } from 'next'
@@ -447,6 +448,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         </div>
 
         
+      <ReviewsSection />
       <AuthorBox />
       <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
