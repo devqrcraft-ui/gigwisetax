@@ -87,6 +87,43 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <cite style={{display:'block',marginTop:8,fontSize:12,color:'#e8b84b',fontStyle:'normal' as const}}>— <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employment-tax-social-security-and-medicare-taxes" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employment Tax</a></cite>
         </blockquote>
 
+        {/* California Prop 22 + AB5 — only shown for CA */}
+        {state.slug === 'california' && (
+          <div style={{background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.3)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>
+            <div style={{fontWeight:800,color:'#B22234',marginBottom:10,fontSize:13}}>{'🏛 CALIFORNIA DOORDASH: PROP 22 + AB5 — WHAT IT MEANS FOR YOUR TAXES'}</div>
+            <p style={{margin:'0 0 12px',fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
+              California DoorDash drivers operate under <strong style={{color:'#e8b84b'}}>Proposition 22</strong> (passed Nov 2020), which classifies app-based delivery workers as independent contractors — not employees. This means you still owe <strong style={{color:'#e8b84b'}}>15.3% SE tax</strong> on net profit and must pay <strong style={{color:'#e8b84b'}}>California state income tax up to 9.3%</strong>.
+            </p>
+            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,marginBottom:12}}>
+              {[
+                {label:'Prop 22 Status',value:'Active',sub:'IC classification maintained',color:'#059669'},
+                {label:'CA State Tax',value:'Up to 9.3%',sub:'On net earnings',color:'#B22234'},
+                {label:'Prop 22 Benefit',value:'~120%',sub:'Min earnings guarantee',color:'#e8b84b'},
+                {label:'Healthcare Subsidy',value:'≥15 hrs/wk',sub:'Stipend if eligible',color:'#e8b84b'},
+              ].map(s => (
+                <div key={s.label} style={{background:'rgba(255,255,255,0.05)',border:'1px solid rgba(255,255,255,0.1)',borderRadius:4,padding:'10px 14px'}}>
+                  <div style={{fontSize:10,fontWeight:700,color:'#8fa8c8',textTransform:'uppercase',letterSpacing:'0.7px',marginBottom:4}}>{s.label}</div>
+                  <div style={{fontSize:18,fontWeight:900,color:s.color,marginBottom:2}}>{s.value}</div>
+                  <div style={{fontSize:11,color:'#7a9abf'}}>{s.sub}</div>
+                </div>
+              ))}
+            </div>
+            <h3 style={{fontSize:15,fontWeight:800,color:'rgba(255,255,255,0.9)',margin:'12px 0 8px'}}>How Prop 22 Affects Your 2026 Tax Bill</h3>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.82)'}}>
+              <li>You remain an <strong style={{color:'#e8b84b'}}>independent contractor</strong> — DoorDash does not withhold taxes</li>
+              <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of CA minimum wage</strong> during active delivery time + 30¢/mile</li>
+              <li>On $40K net: SE tax $5,652 + federal ~$3,200 + CA state ~$1,700 = <strong style={{color:'#e8b84b'}}>~$10,552 total</strong></li>
+              <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
+              <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 16, Sep 15, Jan 15</strong></li>
+              <li>Mileage deduction 72.5¢/mile reduces both federal and CA taxable income</li>
+            </ul>
+            <blockquote style={{borderLeft:'3px solid #B22234',padding:'10px 14px',margin:'12px 0 0',background:'rgba(178,34,52,0.05)',borderRadius:'0 4px 4px 0'}}>
+              <p style={{margin:0,fontSize:13,color:'rgba(255,255,255,0.7)',fontStyle:'italic',lineHeight:1.7}}>"App-based drivers who work under Proposition 22 are independent contractors and must pay self-employment tax on net earnings."</p>
+              <cite style={{display:'block',marginTop:6,fontSize:11,color:'#e8b84b',fontStyle:'normal'}}>— <a href="https://www.ftb.ca.gov/file/personal/income-types/gig-economy.html" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>California FTB — Gig Economy</a></cite>
+            </blockquote>
+          </div>
+        )}
+
         {/* Breadcrumb */}
         <div style={{ fontSize: 12, color: '#8fa8c8', padding: '14px 0 10px', display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
           <a href="/" style={{ color: '#8fa8c8', textDecoration: 'none' }}>Home</a> /
