@@ -25,10 +25,10 @@ export default function AuthorBox() {
           Ethan Blake
         </div>
         <div style={{fontSize:12, color:'rgba(255,255,255,0.5)', marginBottom:8}} itemProp="jobTitle">
-          Tax Compliance Specialist · Since 2017
+          Tax Compliance Specialist
         </div>
         <p style={{margin:'0 0 10px', fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.7}} itemProp="description">
-          {'Helped 5,000+ freelancers navigate IRS rules. Specializes in gig economy and 1099 taxation.'}
+          {'Writes about self-employment tax, gig economy income, and 1099 deductions for US freelancers and independent contractors.'}
         </p>
         <div style={{display:'flex', gap:16, flexWrap:'wrap' as const}}>
           <a
