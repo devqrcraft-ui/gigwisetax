@@ -68,7 +68,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!p || !s) return {}
   const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
-    title: `Uber ${s.name} Taxes 2026 — $40K = $5,652 SE Tax`,
+    title: s.rate === 0
+      ? `Uber ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
+      : `Uber ${s.name} Taxes 2026 — $35K Earner Owes $${(7750 + Math.round(35000 * s.rate)).toLocaleString()} Total`,
     description: `Uber ${s.name} 2026: $35K net = ~$4,950 SE tax + $2,800 fed. ${stateStr}. Quarterly: ~$1,938. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
