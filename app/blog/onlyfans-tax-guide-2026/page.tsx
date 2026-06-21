@@ -3,13 +3,13 @@ import type { Metadata } from 'next'
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026' },
-  title: 'OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed',
+  title: 'OnlyFans Taxes 2026: Free Calculator + Every Deduction You Can Claim',
   description: 'OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.',
   keywords: 'onlyfans taxes 2026, onlyfans tax calculator, onlyfans 1099, onlyfans self employment tax',
   authors: [{ name: 'Ethan Blake' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   openGraph: {
-    title: 'OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed',
+    title: 'OnlyFans Taxes 2026: Free Calculator + Every Deduction You Can Claim',
     description: 'OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.',
     type: 'article',
   },
@@ -20,8 +20,8 @@ export default function OnlyFansTaxGuide() {
     <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do OnlyFans creators owe in 2026?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators owe self-employment tax (15.3%) plus federal income tax on net profit. On $60,000 gross with $10,000 in deductions, net tax is approximately $14,000-$16,000 depending on filing status."}},{"@type":"Question","name":"What business expenses can OnlyFans creators deduct?","acceptedAnswer":{"@type":"Answer","text":"OnlyFans creators can deduct camera equipment, lighting, props, costumes, home studio space, internet, phone, editing software, and marketing. A dedicated business bank account makes tracking deductions much easier."}},{"@type":"Question","name":"Does OnlyFans report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. OnlyFans reports creator income to the IRS on a 1099-NEC for earnings over $600. All income must be reported on Schedule C of your tax return regardless of whether you receive a 1099."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","item":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"OnlyFans Taxes 2026: $40K Income = $8,852 Tax Owed","description":"OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.","url":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"OnlyFans Taxes 2026: Free Calculator + Every Deduction You Can Claim","item":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026"}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"OnlyFans Taxes 2026: Free Calculator + Every Deduction You Can Claim","description":"OnlyFans creators on $40K owe $8,852 in taxes. Free 2026 calculator — camera, ring lights, home studio all deductible. No signup.","url":"https://www.gigwisetax.com/blog/onlyfans-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
