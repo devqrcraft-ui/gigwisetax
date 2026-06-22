@@ -2,39 +2,39 @@
 > Free gig worker tax calculator for US independent contractors. Covers all 51 states. Self-employment tax 15.3%, federal + state income tax, quarterly payments. IRS mileage rate 72.5¢/mile 2026. No signup, no data stored.
 
 ## Platform Calculators
-- /doordash : DoorDash tax calculator 2026 — SE tax, quarterly payments, mileage deduction
-- /uber : Uber driver tax calculator 2026 — SE tax $7,750 on $35K net
-- /instacart : Instacart shopper tax calculator 2026
-- /lyft : Lyft driver tax calculator 2026
-- /amazon-flex : Amazon Flex tax calculator 2026
-- /airbnb : Airbnb host tax calculator 2026
-- /turo : Turo host tax calculator 2026
-- /onlyfans : OnlyFans creator tax calculator 2026
-- /etsy : Etsy seller tax calculator 2026
-- /fiverr : Fiverr freelancer tax calculator 2026
-- /upwork : Upwork freelancer tax calculator 2026
-- /grubhub : Grubhub driver tax calculator 2026
-- /shipt : Shipt shopper tax calculator 2026
-- /rover : Rover pet sitter tax calculator 2026
-- /taskrabbit : TaskRabbit tax calculator 2026
-- /walmart-spark : Walmart Spark driver tax calculator 2026
+- https://www.gigwisetax.com/doordash : DoorDash tax calculator 2026 — SE tax, quarterly payments, mileage deduction
+- https://www.gigwisetax.com/uber : Uber driver tax calculator 2026 — SE tax $7,750 on $35K net
+- https://www.gigwisetax.com/instacart : Instacart shopper tax calculator 2026
+- https://www.gigwisetax.com/lyft : Lyft driver tax calculator 2026
+- https://www.gigwisetax.com/amazon-flex : Amazon Flex tax calculator 2026
+- https://www.gigwisetax.com/airbnb : Airbnb host tax calculator 2026
+- https://www.gigwisetax.com/turo : Turo host tax calculator 2026
+- https://www.gigwisetax.com/onlyfans : OnlyFans creator tax calculator 2026
+- https://www.gigwisetax.com/etsy : Etsy seller tax calculator 2026
+- https://www.gigwisetax.com/fiverr : Fiverr freelancer tax calculator 2026
+- https://www.gigwisetax.com/upwork : Upwork freelancer tax calculator 2026
+- https://www.gigwisetax.com/grubhub : Grubhub driver tax calculator 2026
+- https://www.gigwisetax.com/shipt : Shipt shopper tax calculator 2026
+- https://www.gigwisetax.com/rover : Rover pet sitter tax calculator 2026
+- https://www.gigwisetax.com/taskrabbit : TaskRabbit tax calculator 2026
+- https://www.gigwisetax.com/walmart-spark : Walmart Spark driver tax calculator 2026
 
 ## Calculators
-- / : Main gig worker tax calculator — SE tax + federal + all 51 states
-- /quarterly-tax-calculator-2026 : Quarterly estimated tax calculator 2026
-- /self-employment-tax-calculator-2026 : Self-employment tax calculator 15.3%
-- /1099-tax-calculator-2026 : 1099 tax calculator 2026
-- /multi-platform-gig-tax-calculator-2026 : Multi-app gig tax calculator
-- /s-corp-calculator : S-Corp savings calculator for gig workers
-- /safe-harbor-quarterly-taxes : Safe harbor quarterly tax calculator
-- /employee-vs-contractor-quiz-2026 : Employee vs contractor quiz
+- https://www.gigwisetax.com/ : Main gig worker tax calculator — SE tax + federal + all 51 states
+- https://www.gigwisetax.com/quarterly-tax-calculator-2026 : Quarterly estimated tax calculator 2026
+- https://www.gigwisetax.com/self-employment-tax-calculator-2026 : Self-employment tax calculator 15.3%
+- https://www.gigwisetax.com/1099-tax-calculator-2026 : 1099 tax calculator 2026
+- https://www.gigwisetax.com/multi-platform-gig-tax-calculator-2026 : Multi-app gig tax calculator
+- https://www.gigwisetax.com/s-corp-calculator : S-Corp savings calculator for gig workers
+- https://www.gigwisetax.com/safe-harbor-quarterly-taxes : Safe harbor quarterly tax calculator
+- https://www.gigwisetax.com/employee-vs-contractor-quiz-2026 : Employee vs contractor quiz
 
 ## Blog Guides
-- /blog/doordash-tax-calculator-2026 : DoorDash tax calculator guide 2026
-- /blog/shipt-taxes-2026 : Shipt shopper taxes guide 2026
-- /blog/best-tax-software-gig-workers-2026 : Best tax software for gig workers
-- /gig-worker-taxes-2026 : Complete gig worker tax guide 2026
-- /how-we-calculate-gig-taxes : How GigWiseTax calculates taxes
+- https://www.gigwisetax.com/blog/doordash-tax-calculator-2026 : DoorDash tax calculator guide 2026
+- https://www.gigwisetax.com/blog/shipt-taxes-2026 : Shipt shopper taxes guide 2026
+- https://www.gigwisetax.com/blog/best-tax-software-gig-workers-2026 : Best tax software for gig workers
+- https://www.gigwisetax.com/gig-worker-taxes-2026 : Complete gig worker tax guide 2026
+- https://www.gigwisetax.com/how-we-calculate-gig-taxes : How GigWiseTax calculates taxes
 
 ## Key Tax Facts 2026
 - IRS mileage rate: 72.5 cents per mile
