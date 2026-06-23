@@ -680,7 +680,7 @@ export default function HomeClient() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>Tax Calculators by Platform</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
+          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
               { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
               { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
@@ -724,7 +724,7 @@ export default function HomeClient() {
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers Actually Pay</h2>
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
-          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:12}}>
+          <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
               {label:'DoorDash $40,000 — California',se:'$5,651',fed:'$4,200',state:'$2,800',net:'~$27,350',href:'/doordash/california'},
               {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$5,500',state:'$0',net:'~$37,435',href:'/uber/texas'},
@@ -733,7 +733,7 @@ export default function HomeClient() {
               {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
               {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
             ].map((ex,i)=>(
-              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,padding:'18px 16px',textDecoration:'none',display:'block'}}>
+              <a key={i} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '1px solid rgba(255,255,255,0.08)',padding:'14px 16px',textDecoration:'none',display:'block'}}>
                 <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.label}</div>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px 8px',marginBottom:14,textAlign:'center'}}>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>SE Tax</div>
