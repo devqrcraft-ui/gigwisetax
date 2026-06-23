@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'uber')
   if (!p) return {}
   return {
-    title: `Uber Driver Tax Calculator 2026 — $35K Income = ~$7,750 Tax Owed`,
-    description: `Uber drivers: $35K net = ~$5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 51 states, no signup.`,
+    title: `Uber Driver Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
+    description: `Uber drivers: $35K net = $5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `uber driver tax calculator, uber self employment tax 2026, uber driver quarterly taxes, uber 1099 taxes, how much tax do uber drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
@@ -162,7 +162,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$35,000 net income</strong>, Uber drivers owe approximately <strong>$7,750 total tax</strong> in 2026 — $4,950 SE tax + ~$2,800 federal'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$35,000 net income</strong>, Uber drivers owe approximately <strong>$7,750 total tax</strong> in 2026 — $4,950 SE tax + $2,800 federal'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,938</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢/mile</strong> in 2026 — tracking miles is the single largest deduction for Uber drivers'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Uber does <strong>not withhold taxes</strong> — you are responsible for all SE tax and federal/state income tax'}}/>
@@ -347,13 +347,13 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Other Platform Calculators</span>
               </div>
-              <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
+              <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="p-grid">
                 {PLATFORMS.filter(p => p.slug !== 'uber').map(p => (
                   <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#07111F', position: 'relative' as const }}>
+                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '16px 12px', textAlign: 'center' as const, background: '#07111F', position: 'relative' as const }}>
                       
-                      <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{p.name}</div>
-                      <div style={{ fontSize: 13, color: '#e05070', fontWeight: 600 }}>{p.searches}</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#fff', marginBottom: 6 }}>{p.name}</div>
+                      <div style={{ fontSize: 14, color: '#e05070', fontWeight: 700 }}>{p.searches}</div>
                     </div>
                   </a>
                 ))}

@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'taskrabbit')
   if (!p) return {}
   return {
-    title: `TaskRabbit Tax Calculator 2026 — $45K Income = ~$10,160 Tax Owed`,
-    description: `TaskRabbit workers: $45K net = ~$6,360 SE tax + federal. Tools and mileage deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
+    title: `TaskRabbit Tax Calculator 2026 — $45K Income = $10,160 Tax Owed`,
+    description: `TaskRabbit workers: $45K net = $6,360 SE tax + federal. Tools and mileage deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `taskrabbit tax calculator, taskrabbit 1099 taxes 2026, taskrabbit self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/taskrabbit` },
     openGraph: {

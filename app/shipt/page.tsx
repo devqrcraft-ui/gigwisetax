@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'shipt')
   if (!p) return {}
   return {
-    title: `Shipt Shopper Tax Calculator 2026 — $30K Income = ~$6,448 Tax Owed`,
-    description: `Shipt shoppers: $30K net = ~$4,594 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,175+. Free 2026 calculator, all 51 states, no signup.`,
+    title: `Shipt Shopper Tax Calculator 2026 — $30K Income = $6,448 Tax Owed`,
+    description: `Shipt shoppers: $30K net = $4,594 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,175+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `shipt shopper tax calculator, shipt 1099 taxes 2026, shipt self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/shipt` },
     openGraph: {

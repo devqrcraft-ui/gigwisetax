@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'rover')
   if (!p) return {}
   return {
-    title: `Rover Tax Calculator 2026 — $25K Income = ~$5,340 Tax Owed`,
-    description: `Rover dog walkers: $25K net = ~$3,540 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 51 states, no signup.`,
+    title: `Rover Tax Calculator 2026 — $25K Income = $5,340 Tax Owed`,
+    description: `Rover dog walkers: $25K net = $3,540 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `rover tax calculator, rover dog walker taxes 2026, rover 1099, rover self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/rover` },
     openGraph: {

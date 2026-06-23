@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'onlyfans')
   if (!p) return {}
   return {
-    title: `OnlyFans Tax Calculator 2026 — $40K Income = ~$8,852 Tax Owed`,
-    description: `OnlyFans creators: $40K net = ~$5,652 SE tax + federal. Equipment and home office deductions save $2,500+. Free 2026 calculator, all 51 states.`,
+    title: `OnlyFans Tax Calculator 2026 — $40K Income = $8,852 Tax Owed`,
+    description: `OnlyFans creators: $40K net = $5,652 SE tax + federal. Equipment and home office deductions save $2,500+. Free 2026 calculator, all 51 states.`,
     keywords: `onlyfans tax calculator, onlyfans taxes 2026, onlyfans self employment tax, how much tax do onlyfans creators pay, onlyfans 1099 taxes`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
