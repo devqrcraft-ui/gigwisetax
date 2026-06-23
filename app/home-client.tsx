@@ -232,26 +232,22 @@ export default function HomeClient() {
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(10px,2vw,18px) 16px clamp(8px,1.5vw,14px)', overflow: 'hidden' }}>
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: 28, background: '#e8b84b', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
-            <h1 style={{ fontSize: 'clamp(21px,4vw,27px)', fontWeight: 900, color: '#fff', lineHeight: 1.25, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
+            <h1 style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
               Free Gig Worker Tax Calculator 2026 — All Platforms, All 51 States
             </h1>
           </div>
           {/* 3 promise bullets — visible on all screens */}
-          <div style={{ paddingLeft: 16, display: 'flex', flexDirection: 'column' as const, gap: 5, marginBottom: 10 }}>
+          <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column' as const, gap: 7, marginBottom: 12 }}>
             {[
-              ' Self-employment tax 15.3% + federal + state (all 51 states)',
-              ' Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
-              ' Free, no signup, no app — results in seconds',
+              '✓ Self-employment tax 15.3% + federal + state (all 51 states)',
+              '✓ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
+              '✓ Free, no signup, no app — results in seconds',
             ].map(b => (
-              <span key={b} style={{ fontSize: 14, color: 'rgba(255,255,255,.85)', fontWeight: 500, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
+              <span key={b} style={{ fontSize: 15, color: 'rgba(255,255,255,.9)', fontWeight: 600, display: 'block', wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>{b}</span>
             ))}
           </div>
-          {/* sub-H1 tagline */}
-          <p style={{ paddingLeft: 16, fontSize: 14, color: 'rgba(255,255,255,.75)', fontWeight: 400, marginBottom: 6, lineHeight: 1.55, maxWidth: 680 }}>
-            Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more — no signup, no data stored.
-          </p>
           {/* gov-style disclaimer */}
-          <div style={{ paddingLeft: 16, fontSize: 13, color:'rgba(255,255,255,.8)', lineHeight: 1.5 }}>
+          <div style={{ padding: '0 16px', fontSize: 13, color:'rgba(255,255,255,.6)', lineHeight: 1.5 }}>
             Based on IRS Schedule SE and 2026 tax brackets. Not affiliated with the IRS or any government agency. Estimates only — not tax advice.
           </div>
         </div>
