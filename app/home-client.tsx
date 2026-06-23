@@ -571,34 +571,25 @@ export default function HomeClient() {
                 <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 IRS Estimated Tax Deadlines</span>
               </div>
-              <div style={{ overflowX: 'auto' as const }}>
-                <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
-                  <thead>
-                    <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
-                      {['Quarter','Period','IRS Due Date','Days Left','Action'].map(h => (
-                        <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {DEADLINES.map((d,i) => (
-                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i===0 ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                        <td style={{ padding: '14px 16px', fontWeight: 800, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}>
-                          {i===0 && <span style={{ background:'#e8b84b',color:'#1a1a2e', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NOW</span>}
-                          {d.q}
-                        </td>
-                        <td style={{ padding: '14px 16px', color: '#c8d8ec', fontSize: 13 }}>{d.period}</td>
-                        <td style={{ padding: '14px 16px', fontWeight: 700, color: i===0 ? '#e8b84b' : 'rgba(255,255,255,0.75)', fontSize: 14 }}>{d.due}</td>
-                        <td style={{ padding: '14px 16px' }}>
-                          <span style={{ background: i===0 ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '4px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
-                        </td>
-                        <td style={{ padding: '14px 16px', width: 150 }}>
-                          <div style={{...btnRed({ fontSize: 12, padding: '7px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}> + Calendar</div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table></div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: '4px 0' }}>
+                {DEADLINES.map((d,i) => (
+                  <div key={d.q} style={{ background: i===0 ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.03)', border: i===0 ? '1px solid rgba(232,184,75,0.35)' : '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: '14px 16px' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
+                      <span style={{ fontWeight: 800, fontSize: 15, color: 'rgba(255,255,255,0.95)' }}>
+                        {i===0 && <span style={{ background:'#e8b84b', color:'#1a1a2e', fontSize: 9, padding: '2px 6px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NOW</span>}
+                        {d.q}
+                      </span>
+                      <span style={{ color: '#8fa8c8', fontSize: 13 }}>{d.period}</span>
+                    </div>
+                    <div style={{ textAlign: 'center', margin: '8px 0' }}>
+                      <div style={{ fontSize: 18, fontWeight: 800, color: i===0 ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>{d.due}</div>
+                      <div style={{ marginTop: 4 }}>
+                        <span style={{ background: i===0 ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
+                      </div>
+                    </div>
+                    <div style={{...btnRed({ fontSize: 13, padding: '9px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
+                  </div>
+                ))}
               </div>
             </div>
           )}
