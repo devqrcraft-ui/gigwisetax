@@ -733,14 +733,17 @@ export default function HomeClient() {
               {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
               {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
             ].map((ex,i)=>(
-              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'20px',textDecoration:'none',display:'block'}}>
-                <div style={{fontSize:18,fontWeight:800,color:'#e8b84b',marginBottom:14}}>{ex.label}</div>
-                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px 16px',marginBottom:14}}>
-                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>SE Tax</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.se}</div>
-                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>Federal</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.fed}</div>
-                  <div style={{fontSize:16,color:'rgba(255,255,255,0.6)'}}>State</div><div style={{fontSize:16,color:'#f87171',fontWeight:700}}>{ex.state}</div>
+              <a key={i} href={ex.href} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,padding:'18px 16px',textDecoration:'none',display:'block'}}>
+                <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.label}</div>
+                <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px 8px',marginBottom:14,textAlign:'center'}}>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>SE Tax</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>Federal</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>State</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.se}</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.fed}</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.state}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:12,fontSize:18,fontWeight:900,color:'#4ade80'}}>Take-home {ex.net}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:12,fontSize:20,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Take-home {ex.net}</div>
               </a>
             ))}
           </div>
