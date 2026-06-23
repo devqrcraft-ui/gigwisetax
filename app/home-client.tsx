@@ -733,7 +733,7 @@ export default function HomeClient() {
               {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
               {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
             ].map((ex,i)=>(
-              <a key={i} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '1px solid rgba(255,255,255,0.08)',padding:'14px 16px',textDecoration:'none',display:'block'}}>
+              <a key={i} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '2px solid rgba(232,184,75,0.25)',padding:'16px 16px',textDecoration:'none',display:'block'}}>
                 <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.label}</div>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px 8px',marginBottom:14,textAlign:'center'}}>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>SE Tax</div>
@@ -743,7 +743,7 @@ export default function HomeClient() {
                   <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.fed}</div>
                   <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.state}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.08)',paddingTop:12,fontSize:20,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Take-home {ex.net}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.12)',paddingTop:10,marginTop:4,fontSize:22,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Take-home {ex.net}</div>
               </a>
             ))}
           </div>
