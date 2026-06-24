@@ -324,7 +324,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   if (!s) return {}
   const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
   return {
-    title: `Walmart Spark ${s.name} Taxes 2026 — $40K = $5,652 SE Tax`,
+    title: s.rate === 0
+      ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
+      : `Walmart Spark ${s.name} Taxes 2026 — $40K Earner Owes $${(8129 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
     description: `Walmart Spark ${s.name} 2026: $35K net = ~$4,950 SE tax + $2,800 fed. ${rateStr}. Quarterly: ~$1,938. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
