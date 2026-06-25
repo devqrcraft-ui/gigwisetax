@@ -835,12 +835,12 @@ export default function HomeClient() {
           .q-grid{grid-template-columns:1fr 1fr!important}
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
         }
-        @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:16px 12px!important;}
-          .partner-banners{grid-template-columns:1fr!important;padding:0 12px 32px!important;}
-          .internal-links-grid{grid-template-columns:1fr 1fr!important;gap:8px!important;}
-          .results-row{grid-template-columns:1fr!important}
+        @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:8px 8px!important;}
+          .partner-banners{grid-template-columns:1fr!important;padding:0 8px 16px!important;}
+          .internal-links-grid{grid-template-columns:1fr!important;gap:6px!important;}
+          .results-row{grid-template-columns:1fr 1fr!important}
           .q-grid{grid-template-columns:1fr 1fr!important}
-          .p-grid{grid-template-columns:repeat(2,1fr)!important}
+          .p-grid{grid-template-columns:1fr 1fr!important}
         }
       `}</style>
     </div>
