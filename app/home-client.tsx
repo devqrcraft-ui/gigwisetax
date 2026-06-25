@@ -688,7 +688,7 @@ export default function HomeClient() {
               { name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
               { name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
             ].map((p,i)=>(
-              <a key={i} href={p.href} style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'20px',textDecoration:'none',display:'flex',alignItems:'center',gap:16,transition:'all .2s'}}
+              <a key={i} href={p.href} className="plat-row" style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'16px',textDecoration:'none',display:'flex',alignItems:'center',gap:12,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
                 onMouseLeave={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(255,255,255,0.09)';(e.currentTarget as HTMLElement).style.background='rgba(255,255,255,0.04)';}}>
                 
@@ -697,7 +697,7 @@ export default function HomeClient() {
                   <div style={{fontSize:13,color:'rgba(255,255,255,0.8)',marginBottom:6}}>{p.desc}</div>
                   <div style={{fontSize:15,fontWeight:700,color:'#4ade80'}}>{p.ex}</div>
                 </div>
-                <div style={{flexShrink:0,background:'#e8b84b',color:'#1a1a2e',fontSize:12,fontWeight:700,padding:'8px 16px',borderRadius:6,whiteSpace:'nowrap'}}>Open Calculator</div>
+                <div style={{flexShrink:0,background:'#e8b84b',color:'#1a1a2e',fontSize:14,fontWeight:700,padding:'10px 18px',borderRadius:6,whiteSpace:'nowrap'}}>Open Calculator</div>
               </a>
             ))}
           </div>
@@ -836,6 +836,8 @@ export default function HomeClient() {
           .p-grid{grid-template-columns:repeat(2,1fr)!important}
         }
         @media(max-width:540px){.main-grid{grid-template-columns:1fr!important;padding:8px 8px!important;}
+          .plat-row{flex-direction:column!important;align-items:stretch!important;text-align:center!important;}
+          .plat-row>div:last-child{text-align:center!important;}
           .partner-banners{grid-template-columns:1fr!important;padding:0 8px 16px!important;}
           .internal-links-grid{grid-template-columns:1fr!important;gap:6px!important;}
           .results-row{grid-template-columns:1fr 1fr!important}
