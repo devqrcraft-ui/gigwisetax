@@ -79,7 +79,7 @@ export default function GigCalculator({
               </div>
             </div>
           </div>
-          <div style={btnDark} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
+          <div style={{...btnDark, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
         </div>
       </div>
 
