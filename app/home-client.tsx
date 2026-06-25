@@ -395,7 +395,7 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  <div style={{ ...btnDark, fontSize: 16 }} onClick={calculate}> <span className="btn-arrow">Calculate My Gig Taxes <span className="arr">→</span></span></div>
+                  <div style={{ ...btnDark, fontSize: 16, background: income ? "#4CAF50" : "#e8b84b", transition: "background 0.2s" }} onClick={calculate}> <span className="btn-arrow">Calculate My Gig Taxes <span className="arr">→</span></span></div>
                 </div>
               </div>
 
