@@ -340,7 +340,7 @@ export default function HomeClient() {
                       <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(String(Math.max(0, parseFloat(e.target.value) || 0)))} placeholder="45,000"/>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
                       </div>
 
           {/* INCOME PRESETS */}
