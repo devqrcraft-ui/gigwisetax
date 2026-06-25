@@ -784,12 +784,12 @@ export default function HomeClient() {
             {href:'/etsy',label:'Etsy Tax Calculator',desc:'Self-employment tax for sellers'},
             {href:'/amazon-flex',label:'Amazon Flex Tax Calculator',desc:'Delivery driver tax breakdown'},
           ].map(({href,label,desc})=>(
-            <a key={href} href={href} style={{textDecoration:'none',display:'flex',flexDirection:'column',gap:6,background:'rgba(255,255,255,0.04)',border:'1px solid rgba(232,184,75,0.15)',borderRadius:10,padding:'16px 14px',transition:'border-color 0.2s'}}
+            <a key={href} href={href} style={{textDecoration:'none',display:'flex',flexDirection:'column',gap:6,background:'rgba(255,255,255,0.04)',border:'1px solid rgba(232,184,75,0.15)',borderRadius:10,padding:'16px 14px',transition:'border-color 0.2s',textAlign:'center' as const,alignItems:'center'}}
               onMouseEnter={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.45)')}
               onMouseLeave={e=>(e.currentTarget.style.borderColor='rgba(232,184,75,0.15)')}>
-              <div style={{fontSize:14,fontWeight:700,color:'#C8D8EC',lineHeight:1.3}}>{label}</div>
-              <div style={{fontSize:12,color:'rgba(200,216,236,0.85)'}}>{desc}</div>
-              <div style={{fontSize:12,fontWeight:700,color:'#e8b84b',marginTop:4}}>Calculate →</div>
+              <div style={{fontSize:15,fontWeight:800,color:'#C8D8EC',lineHeight:1.3}}>{label}</div>
+              <div style={{fontSize:13,color:'rgba(200,216,236,0.85)'}}>{desc}</div>
+              <div style={{fontSize:13,fontWeight:700,color:'#e8b84b',marginTop:4}}>Calculate →</div>
             </a>
           ))}
         </div>
