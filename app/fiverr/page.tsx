@@ -7,8 +7,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'fiverr')
   if (!p) return {}
   return {
-    title: `Fiverr Tax Calculator 2026 — $60K Income = ~$14,278 Tax Owed`,
-    description: `Fiverr freelancers: $60K net = ~$8,478 SE tax + federal. Equipment and software deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
+    title: `Fiverr Tax Calculator 2026 — $60K Income = $14,278 Tax Owed`,
+    description: `Fiverr freelancers: $60K net = $8,478 SE tax + federal. Equipment and software deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
     keywords: `fiverr tax calculator, fiverr seller taxes 2026, fiverr 1099 self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/fiverr` },
     openGraph: {
