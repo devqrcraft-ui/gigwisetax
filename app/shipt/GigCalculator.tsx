@@ -98,7 +98,7 @@ export default function GigCalculator({
               <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(String(Math.max(0, parseFloat(e.target.value) || 0)))} placeholder="e.g. 45,000"/>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
               </div>
 
           {/* INCOME PRESETS */}

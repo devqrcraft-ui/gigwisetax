@@ -75,7 +75,7 @@ export default function GigCalculator({
             <div style={{ gridColumn: '1 / -1' }}>
               <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
-                 <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(String(Math.max(0, parseFloat(e.target.value) || 0)))} placeholder="e.g. 45,000"/>
+                 <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
                </div>
 
           {/* INCOME PRESETS */}
