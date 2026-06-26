@@ -12,7 +12,6 @@ const nextConfig: NextConfig = {
       { source: '/lyft-tax-calculator-2026', destination: '/lyft', permanent: true },
       { source: '/onlyfans-tax-calculator-2026', destination: '/onlyfans', permanent: true },
       { source: '/amazon-flex-tax-calculator-2026', destination: '/amazon-flex', permanent: true },
-      { source: '/gig-worker-taxes-2026', destination: '/', permanent: true },
       // ── blog redirects ──
       { source: '/blog/best-image-compressor-for-mac', destination: '/', permanent: true },
       { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
