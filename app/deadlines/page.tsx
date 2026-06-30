@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
-  title: '2026 Quarterly Tax Deadlines — All 51 States | GigWiseTax',
+  title: '2026 Quarterly Tax Deadlines — All 50 States + DC | GigWiseTax',
   description: 'Complete 2026 quarterly estimated tax deadlines for gig workers. Q1: April 15 · Q2: June 16 · Q3: Sept 15 · Q4: Jan 15. Federal and all 50 state deadlines. Google Calendar export.',
   keywords: '2026 quarterly tax deadlines, estimated tax deadlines 2026, IRS 1040-ES due dates 2026, gig worker tax deadlines',
   alternates: { canonical: 'https://www.gigwisetax.com/deadlines' },
@@ -43,12 +43,12 @@ export default function DeadlinesPage() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
             <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
             <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
-               2026 Quarterly Estimated Tax Deadlines — All 51 States
+               2026 Quarterly Estimated Tax Deadlines — All 50 States + DC
             </h1>
           </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 760, textAlign: 'justify' }}>
             Official IRS quarterly estimated tax payment deadlines for gig workers in 2026.
-            Includes federal deadlines and state-level payment portals for all 51 jurisdictions.
+            Includes federal deadlines and state-level payment portals for all 50 states + DC.
             Export any deadline directly to Google Calendar — free, no signup required.
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function DeadlinesPage() {
             <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 12, textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Calculate Your Quarterly Payment</div>
-              <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 10 }}>All platforms · All 51 states</div>
+              <div style={{ fontSize: 14, color: 'rgba(255,255,255,.5)', marginBottom: 10 }}>All platforms · All 50 States + DC</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 15, fontWeight: 700 }}>Open Calculator →</div>
             </div>
           </a>

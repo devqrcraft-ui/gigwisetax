@@ -120,7 +120,7 @@ export default function OnlyFansTaxGuide() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Free OnlyFans Tax Calculator</div>
-        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Calculate SE tax + federal + state. All 51 states. No signup.</p>
+        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Calculate SE tax + federal + state. All 50 States + DC. No signup.</p>
         <a href="/onlyfans" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Calculate My Taxes →</a>
       </div>
             {/* AUTHOR BOX */}

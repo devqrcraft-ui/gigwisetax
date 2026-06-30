@@ -234,13 +234,13 @@ export default function HomeClient() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 10, overflow: 'hidden', minWidth: 0 }}>
             <div style={{ width: 4, minWidth: 4, height: 28, background: '#e8b84b', borderRadius: 2, flexShrink: 0, marginTop: 4 }} />
             <h1 style={{ fontSize: 'clamp(24px,5vw,32px)', fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.3px', margin: 0, wordBreak: 'break-word' as const, overflowWrap: 'break-word' as const, maxWidth: '100%' }}>
-              Free Gig Worker Tax Calculator 2026 — All Platforms, All 51 States
+              Free Gig Worker Tax Calculator 2026 — All Platforms, All 50 States + DC
             </h1>
           </div>
           {/* 3 promise bullets — visible on all screens */}
           <div style={{ padding: '0 16px', display: 'flex', flexDirection: 'column' as const, gap: 7, marginBottom: 12 }}>
             {[
-              '✓ Self-employment tax 15.3% + federal + state (all 51 states)',
+              '✓ Self-employment tax 15.3% + federal + state (all 50 states + DC)',
               '✓ Built for DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
               '✓ Free, no signup, no app — results in seconds',
             ].map(b => (
@@ -464,7 +464,7 @@ export default function HomeClient() {
                   {[
                     { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
                     { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($15,000 single / $30,000 married). Rates from 10% to 37%.' },
-                    { label: 'State income tax', detail: '2026 state rates for all 51 jurisdictions — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
+                    { label: 'State income tax', detail: '2026 state rates for all 50 states + DC — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
                   ].map(item => (
                     <div key={item.label} style={{ borderLeft: '3px solid #e8b84b', paddingLeft: 12 }}>
                       <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 4 }}>{item.label}</div>
@@ -538,12 +538,12 @@ export default function HomeClient() {
                       {[
                         [' Free to use',               true,  false, false, true ],
                         [' No registration required',  true,  false, false, true ],
-                        [' All 51 states included',    true,  false, false, false],
+                        [' All 50 States + DC included',    true,  false, false, false],
                         ['▸ OnlyFans tax calculator',    true,  false, false, false],
                         [' Google Calendar export',    true,  false, false, false],
                         [' Interactive tool',          true,  false, false, false],
                         [' No app required',           true,  false, false, true ],
-                        [' 100% private, no data stored', true, false, false, false],
+                        [' 100% private — calculations stay in your browser', true, false, false, false],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
@@ -676,7 +676,7 @@ export default function HomeClient() {
             <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Gig Worker Tax Center 2026</span>
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>Tax Calculators by Platform</h2>
-          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 51 jurisdictions, and quarterly payment schedule.</p>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 50 states + DC, and quarterly payment schedule.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
               { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
@@ -759,7 +759,7 @@ export default function HomeClient() {
               ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
               ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is $0.725 per mile. A driver logging 15,000 business miles saves $10,500 in deductible expenses, which reduces SE tax and income tax.'],
               ['Do OnlyFans creators pay self-employment tax?','Yes. OnlyFans sends a 1099-NEC for earnings over $600. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses.'],
-              ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 51 states.'],
+              ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 50 states + DC.'],
               ['Is gig work income taxed differently than W-2?','Yes. W-2 employees split FICA 50/50 with their employer. Gig workers pay both halves (15.3%) but can deduct 50% of SE tax on Form 1040. This makes accurate quarterly payments critical to avoid underpayment penalties.'],
             ].map(([q,a],i)=>(
               <details key={i} style={{background:'rgba(255,255,255,0.03)',border:'1px solid rgba(255,255,255,0.08)',borderRadius:6,padding:'14px 18px'}}>

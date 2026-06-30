@@ -3,7 +3,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Shipt Shopper Taxes 2026 — Free Tax Calculator + Guide',
-  description: 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35K net: $7,750 total tax. Free calculator, mileage 72.5¢/mile, quarterly deadlines. All 51 states.',
+  description: 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35K net: $7,750 total tax. Free calculator, mileage 72.5¢/mile, quarterly deadlines. All 50 States + DC.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/shipt-taxes-2026' },
   keywords: 'shipt taxes 2026, shipt shopper tax calculator, shipt 1099 tax, shipt self employment tax, shipt quarterly tax',
   authors: [{ name: 'Ethan Blake' }],
@@ -98,7 +98,7 @@ export default function ShiptTaxes2026() {
         <section style={{ marginBottom: 36 }}>
           <div style={{ background: 'rgba(76,175,80,0.08)', border: '2px solid rgba(76,175,80,0.3)', borderRadius: 12, padding: '24px', textAlign: 'center' as const }}>
             <p style={{ fontSize: 16, fontWeight: 700, color: '#e8edf8', margin: '0 0 8px' }}>Try the Free Shipt Tax Calculator</p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', margin: '0 0 16px' }}>Enter earnings — get SE tax, federal + state, quarterly payments instantly. All 51 states.</p>
+            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', margin: '0 0 16px' }}>Enter earnings — get SE tax, federal + state, quarterly payments instantly. All 50 States + DC.</p>
             <a href="/shipt" style={{ display: 'inline-block', background: '#4CAF50', color: '#fff', fontWeight: 700, fontSize: 15, padding: '12px 32px', borderRadius: 8, textDecoration: 'none' }}>
               Open Shipt Calculator →
             </a>

@@ -8,11 +8,11 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Fiverr Tax Calculator 2026 — $60K Income = $14,278 Tax Owed`,
-    description: `Fiverr freelancers: $60K net = $8,478 SE tax + federal. Equipment and software deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
+    description: `Fiverr freelancers: $60K net = $8,478 SE tax + federal. Equipment and software deductions save $2,000+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `fiverr tax calculator, fiverr seller taxes 2026, fiverr 1099 self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/fiverr` },
     openGraph: {
-      title: `Fiverr Tax Calculator 2026 — Free, All 51 States`,
+      title: `Fiverr Tax Calculator 2026 — Free, All 50 States + DC`,
       description: `Estimate your Fiverr self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/fiverr`,
     },
@@ -30,7 +30,7 @@ export default function PlatformPage() {
     '@type': 'WebApplication',
     name: `Fiverr Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
-    description: `Free Fiverr self-employment tax calculator for 2026. All 51 states.`,
+    description: `Free Fiverr self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/fiverr`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }

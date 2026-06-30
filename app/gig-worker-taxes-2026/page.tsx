@@ -4,7 +4,7 @@ import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Gig Worker Taxes 2026: SE Tax 15.3% — Free Calculator All Platforms',
-  description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $3,200 federal = $8,852. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 51 states.',
+  description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $3,200 federal = $8,852. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 50 states + DC.',
   keywords: 'gig worker taxes 2026, gig economy tax calculator, self employment tax gig workers, gig worker tax deductions 2026',
   authors: [{ name: 'Ethan Blake' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
@@ -16,7 +16,7 @@ const schema = {
   '@type': 'CollectionPage',
   name: 'Gig Worker Tax Center 2026',
   url: 'https://www.gigwisetax.com/gig-worker-taxes-2026',
-  description: 'Free SE tax calculators for all gig platforms. DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb, Amazon Flex. All 51 states, 2026 IRS brackets.',
+  description: 'Free SE tax calculators for all gig platforms. DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb, Amazon Flex. All 50 States + DC, 2026 IRS brackets.',
   hasPart: [
     { '@type': 'WebApplication', name: 'DoorDash Tax Calculator', url: 'https://www.gigwisetax.com/doordash' },
     { '@type': 'WebApplication', name: 'Uber Tax Calculator', url: 'https://www.gigwisetax.com/uber' },
@@ -98,7 +98,7 @@ export default function GigWorkerTaxCenter() {
             Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
           </div>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,.65)', lineHeight: 1.7, maxWidth: 700 }}>
-            SE tax 15.3% + federal + state for all 51 jurisdictions. Pick your platform and get your exact tax estimate in seconds. No signup, no data stored.
+            SE tax 15.3% + federal + state for all 50 states + DC. Pick your platform and get your exact tax estimate in seconds. No signup, no data stored.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
             <Link href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 24px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>→ Open Main Calculator</Link>

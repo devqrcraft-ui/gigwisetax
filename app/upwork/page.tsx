@@ -10,11 +10,11 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Upwork Tax Calculator 2026 — $60K Income = $14,278 Tax Owed`,
-    description: `Upwork freelancers: $60K net = $8,478 SE tax + federal. Home office and software deductions save $3,000+. Free 2026 calculator, all 51 states.`,
+    description: `Upwork freelancers: $60K net = $8,478 SE tax + federal. Home office and software deductions save $3,000+. Free 2026 calculator, all 50 states + DC.`,
     keywords: 'upwork tax calculator, upwork 1099 taxes 2026, upwork self employment tax',
     alternates: { canonical: 'https://www.gigwisetax.com/upwork' },
     openGraph: {
-      title: 'Upwork Tax Calculator 2026 — Free, All 51 States',
+      title: 'Upwork Tax Calculator 2026 — Free, All 50 States + DC',
       description: 'Estimate your Upwork self-employment taxes instantly.',
       url: 'https://www.gigwisetax.com/upwork',
     },
@@ -30,7 +30,7 @@ export default function PlatformPage() {
     '@type': 'WebApplication',
     name: 'Upwork Tax Calculator 2026',
     applicationCategory: 'FinanceApplication',
-    description: 'Free Upwork self-employment tax calculator for 2026. All 51 states.',
+    description: 'Free Upwork self-employment tax calculator for 2026. All 50 States + DC.',
     url: 'https://www.gigwisetax.com/upwork',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }

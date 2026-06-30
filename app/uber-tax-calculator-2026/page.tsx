@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
-  title: 'Uber Tax Calculator 2026 — SE Tax + All 51 States | GigWiseTax',
-  description: 'Free Uber tax calculator 2026. Estimate self-employment tax 15.3%, federal and state income tax for all 51 states. Quarterly payment schedule included. No signup.',
+  title: 'Uber Tax Calculator 2026 — SE Tax + All 50 States + DC | GigWiseTax',
+  description: 'Free Uber tax calculator 2026. Estimate self-employment tax 15.3%, federal and state income tax for all 50 states + DC. Quarterly payment schedule included. No signup.',
   alternates: { canonical: 'https://www.gigwisetax.com/uber-tax-calculator-2026' },
 };
 
@@ -41,7 +41,7 @@ export default function Page() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 12 }}>
             <div style={{ width: 4, minWidth: 4, height: 34, background: '#B22234', borderRadius: 2, marginTop: 4 }} />
             <h1 style={{ fontSize: 'clamp(22px,4vw,30px)', fontWeight: 900, color: '#fff', lineHeight: 1.25, margin: 0 }}>
-               Uber Tax Calculator 2026 — SE Tax + All 51 States
+               Uber Tax Calculator 2026 — SE Tax + All 50 States + DC
             </h1>
           </div>
           <p style={{ paddingLeft: 16, fontSize: 15, color: 'rgba(255,255,255,.75)', lineHeight: 1.6, maxWidth: 700, marginBottom: 16 }}>
@@ -55,7 +55,7 @@ export default function Page() {
             Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
           </div>
           <div style={{ paddingLeft: 16, display: 'flex', flexWrap: 'wrap', gap: 8 }}>
-            {['SE Tax 15.3%', 'All 51 States', 'Free, No Signup', 'Quarterly Schedule'].map(b => (
+            {['SE Tax 15.3%', 'All 50 States + DC', 'Free, No Signup', 'Quarterly Schedule'].map(b => (
               <span key={b} style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 20, padding: '4px 12px', fontSize: 12, fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{b}</span>
             ))}
           </div>

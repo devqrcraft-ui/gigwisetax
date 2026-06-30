@@ -8,11 +8,11 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `TaskRabbit Tax Calculator 2026 — $45K Income = $10,160 Tax Owed`,
-    description: `TaskRabbit workers: $45K net = $6,360 SE tax + federal. Tools and mileage deductions save $2,000+. Free 2026 calculator, all 51 states, no signup.`,
+    description: `TaskRabbit workers: $45K net = $6,360 SE tax + federal. Tools and mileage deductions save $2,000+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `taskrabbit tax calculator, taskrabbit 1099 taxes 2026, taskrabbit self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/taskrabbit` },
     openGraph: {
-      title: `TaskRabbit Tax Calculator 2026 — Free, All 51 States`,
+      title: `TaskRabbit Tax Calculator 2026 — Free, All 50 States + DC`,
       description: `Estimate your TaskRabbit self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/taskrabbit`,
     },
@@ -30,7 +30,7 @@ export default function PlatformPage() {
     '@type': 'WebApplication',
     name: `TaskRabbit Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
-    description: `Free TaskRabbit self-employment tax calculator for 2026. All 51 states.`,
+    description: `Free TaskRabbit self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/taskrabbit`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }

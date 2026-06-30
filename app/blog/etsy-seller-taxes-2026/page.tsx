@@ -5,7 +5,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Etsy Seller Taxes 2026 — Complete 1099 Filing Guide | GigWiseTax',
-  description: 'How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 51 states.',
+  description: 'How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 50 states + DC.',
   keywords: 'Etsy seller taxes 2026, Etsy 1099 how to file, Etsy self employment tax, Etsy COGS deduction, Etsy quarterly taxes 2026',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/etsy-seller-taxes-2026' },
 }
@@ -18,7 +18,7 @@ export default function EtsyTaxGuide() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does Etsy report sales to the IRS in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy issues a 1099-K to sellers with over $600 in sales and reports this to the IRS. All Etsy income must be reported on Schedule C regardless of whether you receive a 1099."}},{"@type":"Question","name":"How much can I sell on Etsy before paying taxes?","acceptedAnswer":{"@type":"Answer","text":"There is no threshold — all Etsy income is taxable. However, after deducting supplies, Etsy fees, shipping, and other expenses, your taxable profit may be significantly lower than gross sales."}},{"@type":"Question","name":"Do Etsy sellers pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy sellers who operate as sole proprietors pay self-employment tax of 15.3% on net profit plus income tax. You can deduct half of SE tax on your return, reducing the effective rate."}}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Etsy Seller Taxes 2026 — Complete 1099 Filing Guide","item":"https://www.gigwisetax.com/blog/etsy-seller-taxes-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Etsy Seller Taxes 2026 — Complete 1099 Filing Guide","description":"How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 51 states.","url":"https://www.gigwisetax.com/blog/etsy-seller-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Etsy Seller Taxes 2026 — Complete 1099 Filing Guide","description":"How Etsy sellers pay taxes in 2026. Schedule C, SE tax 15.3%, COGS deduction, home office, shipping, quarterly payments. Free Etsy tax calculator for all 50 states + DC.","url":"https://www.gigwisetax.com/blog/etsy-seller-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }} />
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
           <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
@@ -136,7 +136,7 @@ export default function EtsyTaxGuide() {
             <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}></div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Etsy Tax Calculator</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 51 states · COGS included</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 50 States + DC · COGS included</div>
               <div style={{ background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 700 }}>Calculate Now →</div>
             </div>
           </a>

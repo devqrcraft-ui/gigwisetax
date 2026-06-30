@@ -126,7 +126,7 @@ export default function HowWeCalculatePage() {
         <div className="section">
           <h2>Step 3 — State Income Tax</h2>
           <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
-            We include state income tax for all 51 jurisdictions (50 states + D.C.).
+            We include state income tax for all 50 states + DC (50 states + D.C.).
             Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire,
             South Dakota, Tennessee, Texas, Washington, and Wyoming.
           </p>

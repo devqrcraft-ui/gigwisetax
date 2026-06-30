@@ -86,7 +86,7 @@ export default function W2vs1099Guide() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your 1099 Tax Bill</div>
-        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free, no signup, all 51 states</p>
+        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free, no signup, all 50 states + DC</p>
         <a href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700, fontSize: 15 }}>Calculate Now →</a>
       </div>
     

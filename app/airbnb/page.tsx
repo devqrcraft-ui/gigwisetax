@@ -11,11 +11,11 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Airbnb Tax Calculator 2026 — $50K Income = $11,565 Tax Owed + Deductions`,
-    description: `Airbnb hosts: $50K net = ~$7,065 SE tax + federal. Depreciation and expense deductions save $3,000+. Free 2026 calculator, all 51 states, no signup.`,
+    description: `Airbnb hosts: $50K net = ~$7,065 SE tax + federal. Depreciation and expense deductions save $3,000+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `Airbnb Host Tax Calculator 2026 — Free, All 51 States, No Signup`,
+      title: `Airbnb Host Tax Calculator 2026 — Free, All 50 States + DC, No Signup`,
       description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
@@ -37,7 +37,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     '@type': 'WebApplication',
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
-    description: `Free ${platform.name} self-employment tax calculator for 2026. All 51 states.`,
+    description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/${platform.slug}`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
@@ -133,16 +133,16 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
               <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
               <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
-                {platform.name} Tax Calculator 2026 — All 51 States
+                {platform.name} Tax Calculator 2026 — All 50 States + DC
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 51 jurisdictions.
+              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 50 states + DC.
               Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
-              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 51 states.
+              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 50 states + DC.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-              {[' IRS Schedule SE', ' All 51 States', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : ' Instant Results'].filter(Boolean).map(b => (
+              {[' IRS Schedule SE', ' All 50 States + DC', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : ' Instant Results'].filter(Boolean).map(b => (
                 <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
               ))}
             </div>

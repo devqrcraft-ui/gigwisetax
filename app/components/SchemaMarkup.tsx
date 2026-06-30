@@ -12,7 +12,7 @@ export function WebsiteSchema() {
     "@type": "WebSite",
     "name": "GigWiseTax",
     "url": "https://www.gigwisetax.com",
-    "description": "Free self-employment tax calculator for gig workers. All 51 states. Tax year 2026.",
+    "description": "Free self-employment tax calculator for gig workers. All 50 States + DC. Tax year 2026.",
     "potentialAction": {
       "@type": "SearchAction",
       "target": "https://www.gigwisetax.com/calculators?q={search_term_string}",

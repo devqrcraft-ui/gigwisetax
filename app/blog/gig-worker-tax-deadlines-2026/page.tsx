@@ -95,12 +95,12 @@ export default function Page() {
           A simple formula: <strong>Net income × 0.9235 × 15.3% (SE tax)</strong> + estimated federal income tax, divided by 4. Most gig workers in the 22% federal bracket should set aside <strong>25–30%</strong> of every payment.
         </p>
         <p style={{ fontSize: 16, lineHeight: 1.75, marginBottom: 32 }}>
-          The fastest way: use our free calculator below — it handles SE tax, all 51 state rates, and shows your exact quarterly payment.
+          The fastest way: use our free calculator below — it handles SE tax, all 50 state rates + DC, and shows your exact quarterly payment.
         </p>
 
         {/* CTA */}
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderRadius: 10, padding: '28px 24px', marginBottom: 40, textAlign: 'center' }}>
-          <p style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, marginBottom: 8 }}>Free · No signup · All 51 states</p>
+          <p style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, marginBottom: 8 }}>Free · No signup · All 50 States + DC</p>
           <Link href="/" style={{ display: 'inline-block', background: '#B22234', color: '#fff', padding: '14px 32px', borderRadius: 8, fontWeight: 800, fontSize: 17, textDecoration: 'none' }}>
             Calculate My 2026 Quarterly Taxes →
           </Link>
@@ -111,7 +111,7 @@ export default function Page() {
         {[
           ['When are gig worker quarterly tax payments due in 2026?', 'Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027.'],
           ['What happens if I miss a quarterly estimated tax deadline?', 'The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed.'],
-          ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 51 states.'],
+          ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 50 states + DC.'],
         ].map(([q, a]) => (
           <details key={q as string} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>
             <summary style={{ fontWeight: 700, fontSize: 15, cursor: 'pointer', color: 'rgba(255,255,255,0.9)' }}>{q as string}</summary>

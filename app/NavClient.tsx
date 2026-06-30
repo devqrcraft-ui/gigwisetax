@@ -43,7 +43,7 @@ const NAV = [
       { label: '▸ Texas (No Tax)',      href: '/doordash/texas'      },
       { label: ' Florida (No Tax)',   href: '/doordash/florida'    },
       { label: ' Illinois (4.95%)',   href: '/doordash/illinois'   },
-      { label: ' All 51 States',      href: '/calculators'          },
+      { label: ' All 50 States + DC',      href: '/calculators'          },
     ],
   },
   {
@@ -138,7 +138,7 @@ export default function NavClient() {
         </nav>
 
         <div style={{ display:'flex', gap:10, alignItems:'center' }} className="desktop-cta">
-          <span style={{ fontSize:12, color:'rgba(255,255,255,.85)' }}> No data stored</span>
+          <span style={{ fontSize:12, color:'rgba(255,255,255,.85)' }}> Calculations stay in your browser</span>
           <Link href="/tax-penalty-finder" style={{ textDecoration:'none' }}>
             <div style={{ background:'#e8b84b', color:'#fff', padding:'8px 18px', borderRadius:4, fontSize:13, fontWeight:700, cursor:'pointer' }}>
               Find My Savings 

@@ -4,7 +4,7 @@ import { ReviewsSection, ContactSection } from '@/app/components/ReviewsSection'
 
 export const metadata: Metadata = {
   title: 'DoorDash Tax Calculator 2026 — Free SE Tax Estimator',
-  description: 'Free DoorDash tax calculator 2026. Enter net income, get SE tax, federal + state tax, quarterly payments. 72.5 cents/mile deduction. All 51 states.',
+  description: 'Free DoorDash tax calculator 2026. Enter net income, get SE tax, federal + state tax, quarterly payments. 72.5 cents/mile deduction. All 50 States + DC.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-tax-calculator-2026' },
   keywords: 'doordash tax calculator 2026, doordash 1099 tax, doordash self employment tax, doordash quarterly tax',
   authors: [{ name: 'Ethan Blake' }],

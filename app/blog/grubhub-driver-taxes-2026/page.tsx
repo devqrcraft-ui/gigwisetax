@@ -142,7 +142,7 @@ export default function BlogPost() {
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
         <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Free Grubhub Tax Calculator</div>
-        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>All 51 states · No signup · Instant results</p>
+        <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>All 50 States + DC · No signup · Instant results</p>
         <a href="/grubhub" style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>
           Calculate My Taxes
         </a>

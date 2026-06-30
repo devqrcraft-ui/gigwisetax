@@ -94,15 +94,15 @@ export default function WalmartSparkPage() {
           <div style={{ display:'flex', gap:12, alignItems:'flex-start', marginBottom:14 }}>
             <div style={{ width:4, height:34, background:'#B22234', borderRadius:2, flexShrink:0, marginTop:4 }} />
             <h1 style={{ fontSize:28, fontWeight:900, color:'#fff', lineHeight:1.2, letterSpacing:'-0.5px', margin:0 }}>
-              ▸ Walmart Spark Driver Tax Calculator 2026 — All 51 States
+              ▸ Walmart Spark Driver Tax Calculator 2026 — All 50 States + DC
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
             Free self-employment tax calculator for Walmart Spark delivery drivers. Estimate your SE tax (15.3%),
-            federal income tax, state tax, and mileage deduction for all 51 jurisdictions. Instant results — no signup required.
+            federal income tax, state tax, and mileage deduction for all 50 states + DC. Instant results — no signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' IRS Schedule SE',' All 51 States','▸ Mileage Deduction',' No Registration',' Instant Results'].map(b => (
+            {[' IRS Schedule SE',' All 50 States + DC','▸ Mileage Deduction',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>

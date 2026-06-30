@@ -8,11 +8,11 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Rover Tax Calculator 2026 — $25K Income = $5,340 Tax Owed`,
-    description: `Rover dog walkers: $25K net = $3,540 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 51 states, no signup.`,
+    description: `Rover dog walkers: $25K net = $3,540 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `rover tax calculator, rover dog walker taxes 2026, rover 1099, rover self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/rover` },
     openGraph: {
-      title: `Rover Tax Calculator 2026 — Free, All 51 States`,
+      title: `Rover Tax Calculator 2026 — Free, All 50 States + DC`,
       description: `Estimate your Rover self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/rover`,
     },
@@ -30,7 +30,7 @@ export default function PlatformPage() {
     '@type': 'WebApplication',
     name: `Rover Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
-    description: `Free Rover self-employment tax calculator for 2026. All 51 states.`,
+    description: `Free Rover self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/rover`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }

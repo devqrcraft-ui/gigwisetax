@@ -31,9 +31,9 @@ export default function AboutPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '', label: 'No Data Stored', desc: 'Your numbers never leave your browser' },
+            { icon: '', label: 'Calculations Stay Private', desc: 'Your numbers never leave your browser' },
             { icon: '', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
-            { icon: '', label: 'All 51 States', desc: 'Every U.S. jurisdiction covered' },
+            { icon: '', label: 'All 50 States + DC', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
             <div key={s.label} style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8, padding: '20px 16px', textAlign: 'center' as const }}>
               <div style={{ fontSize: 32, marginBottom: 8 }}>{s.icon}</div>
@@ -49,7 +49,7 @@ export default function AboutPage() {
             Millions of Americans drive for DoorDash, deliver for Instacart, sell on Etsy, or host on Airbnb — and most of them are surprised every April when they owe thousands in unexpected taxes. As independent contractors, gig workers receive no tax withholding, no employer match, and no guidance on quarterly payments.
           </p>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
-            Most free tax tools either require account registration, sell your data, or stop at the federal level without covering all 51 state jurisdictions. Paid tools like FlyFin or Keeper Tax charge $100–$400/year — a significant cost for someone making $35,000 delivering groceries.
+            Most free tax tools either require account registration, sell your data, or stop at the federal level without covering all 50 state jurisdictions + DC. Paid tools like FlyFin or Keeper Tax charge $100–$400/year — a significant cost for someone making $35,000 delivering groceries.
           </p>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 0 }}>
             We built GigWiseTax.com to fill that gap: a completely free, private, no-signup tool that helps every gig worker quickly estimate what they owe and when to pay it. We believe financial clarity shouldn't have a paywall.

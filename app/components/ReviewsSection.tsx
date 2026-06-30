@@ -44,7 +44,7 @@ export function ReviewsSection() {
       </div>
       <div style={{ marginTop: 20, padding: '12px 18px', background: 'rgba(76,175,80,0.06)', border: '1px solid rgba(76,175,80,0.15)', borderRadius: 8, display: 'flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' as const }}>
         <span style={{ color: '#4CAF50', fontSize: 16 }}>✓</span>
-        <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>GigWiseTax is 100% free · No account required · No data stored · No credit card · No surprises</span>
+        <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>GigWiseTax is 100% free · No account required · Calculations stay in your browser · No credit card · No surprises</span>
       </div>
     </section>
   )

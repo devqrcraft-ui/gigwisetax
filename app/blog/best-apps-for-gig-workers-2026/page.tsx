@@ -22,7 +22,7 @@ export default function BestAppsGigWorkers() {
       { name: 'Everlance', desc: 'Free tier tracks 40 trips/month. Premium adds expense tracking and 1099 income logging. Good for part-time gig workers under 500 miles/month.' },
     ]},
     { cat: '2. Tax Calculation', items: [
-      { name: 'GigWiseTax.com — Free', desc: 'Enter platform + income + state. Instantly see SE tax, federal tax, state tax, and quarterly payment. All 51 states. No signup. On $35K Uber income: $7,750 SE tax, $1,938/quarter.' },
+      { name: 'GigWiseTax.com — Free', desc: 'Enter platform + income + state. Instantly see SE tax, federal tax, state tax, and quarterly payment. All 50 States + DC. No signup. On $35K Uber income: $7,750 SE tax, $1,938/quarter.' },
       { name: 'QuickBooks Self-Employed', desc: 'Syncs bank accounts, auto-categorizes expenses, calculates quarterly taxes, exports Schedule C data. Best for gig workers earning $60K+ across multiple platforms. Cost: $15/month.' },
     ]},
     { cat: '3. Expense Tracking', items: [

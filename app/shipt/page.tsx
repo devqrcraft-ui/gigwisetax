@@ -8,11 +8,11 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Shipt Shopper Tax Calculator 2026 — $30K Income = $6,448 Tax Owed`,
-    description: `Shipt shoppers: $30K net = $4,594 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,175+. Free 2026 calculator, all 51 states, no signup.`,
+    description: `Shipt shoppers: $30K net = $4,594 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,175+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `shipt shopper tax calculator, shipt 1099 taxes 2026, shipt self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/shipt` },
     openGraph: {
-      title: `Shipt Tax Calculator 2026 — Free, All 51 States`,
+      title: `Shipt Tax Calculator 2026 — Free, All 50 States + DC`,
       description: `Estimate your Shipt self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
       url: `https://www.gigwisetax.com/shipt`,
     },
@@ -30,7 +30,7 @@ export default function PlatformPage() {
     '@type': 'WebApplication',
     name: `Shipt Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
-    description: `Free Shipt self-employment tax calculator for 2026. All 51 states.`,
+    description: `Free Shipt self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/shipt`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }

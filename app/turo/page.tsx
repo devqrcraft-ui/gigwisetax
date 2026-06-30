@@ -90,14 +90,14 @@ export default function TuroPage() {
           <div style={{ display:'flex', gap:12, alignItems:'flex-start', marginBottom:14 }}>
             <div style={{ width:4, height:34, background:'#B22234', borderRadius:2, flexShrink:0, marginTop:4 }} />
             <h1 style={{ fontSize:28, fontWeight:900, color:'#fff', lineHeight:1.2, letterSpacing:'-0.5px', margin:0 }}>
-               Turo Host Tax Calculator 2026 — All 51 States
+               Turo Host Tax Calculator 2026 — All 50 States + DC
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
-            Free tax calculator for Turo car-sharing hosts. Estimate your income tax, self-employment tax, and car depreciation deductions for all 51 states. No signup required.
+            Free tax calculator for Turo car-sharing hosts. Estimate your income tax, self-employment tax, and car depreciation deductions for all 50 states + DC. No signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
-            {[' Schedule C / Schedule E',' All 51 States',' Depreciation Included',' No Registration',' Instant Results'].map(b => (
+            {[' Schedule C / Schedule E',' All 50 States + DC',' Depreciation Included',' No Registration',' Instant Results'].map(b => (
               <span key={b} style={{ background:'rgba(255,255,255,.07)', border:'1px solid rgba(255,255,255,.12)', borderRadius:3, padding:'4px 10px', fontSize:11, color:'rgba(255,255,255,.55)', fontWeight:500 }}>{b}</span>
             ))}
           </div>
@@ -274,7 +274,7 @@ export default function TuroPage() {
 
           <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #d8dce6', borderRadius:6, padding:16 }}>
             <div style={{ fontSize:11, fontWeight:700, color: '#8fa8c8', textTransform:'uppercase' as const, letterSpacing:'1px', marginBottom:10 }}> About This Tool</div>
-            <div style={{ fontSize:12, color: 'rgba(255,255,255,0.85)', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. No data stored. Estimates only.</div>
+            <div style={{ fontSize:12, color: 'rgba(255,255,255,0.85)', lineHeight:1.7 }}>Free estimation tool. Not affiliated with Turo, IRS, or any government agency. Calculations stay in your browser. Estimates only.</div>
             <div style={{ marginTop:12, display:'flex', gap:12 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l,h]) => (
                 <Link key={l} href={h} style={{ fontSize:11, color: '#8fa8c8', textDecoration:'underline' }}>{l}</Link>

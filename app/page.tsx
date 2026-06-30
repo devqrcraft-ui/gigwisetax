@@ -2,11 +2,11 @@ import HomeClient from './home-client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 51 States Free',
-  description: 'Free 1099 tax calculator 2026. DoorDash $40K = $5,652 SE tax. Uber, Instacart, Airbnb, OnlyFans. Quarterly deadlines, mileage 72.5¢/mile. All 51 states, no signup.',
+  title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 50 States + DC Free',
+  description: 'Free 1099 tax calculator 2026. DoorDash $40K = $5,652 SE tax. Uber, Instacart, Airbnb, OnlyFans. Quarterly deadlines, mileage 72.5¢/mile. All 50 States + DC, no signup.',
   alternates: { canonical: 'https://www.gigwisetax.com' },
   openGraph: {
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 51 States Free',
+    title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 50 States + DC Free',
     description: 'Calculate SE tax, federal and state taxes for any gig platform. Free, private, no signup.',
     url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — 1099 Self-Employment Tax Calculator","url":"https://www.gigwisetax.com","description":"Free 1099 self-employment tax calculator. Calculates SE tax 15.3%, federal and state taxes for DoorDash, Uber, Instacart, OnlyFans and all gig workers. All 51 states.","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"634","bestRating":"5","worstRating":"1"}}' }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebApplication","name":"GigWiseTax — 1099 Self-Employment Tax Calculator","url":"https://www.gigwisetax.com","description":"Free 1099 self-employment tax calculator. Calculates SE tax 15.3%, federal and state taxes for DoorDash, Uber, Instacart, OnlyFans and all gig workers. All 50 States + DC.","applicationCategory":"FinanceApplication","operatingSystem":"Any","browserRequirements":"Requires JavaScript","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","ratingCount":"634","bestRating":"5","worstRating":"1"}}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebSite","name":"GigWiseTax","url":"https://gigwisetax.com","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gigwisetax.com/blog?q={search_term_string}"},"query-input":"required name=search_term_string"}}' }} />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much self-employment tax do gig workers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay 15.3% self-employment (SE) tax on 92.35% of net earnings. You can deduct half of SE tax from your federal taxable income."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe ,000 or more, the IRS requires quarterly estimated payments. 2026 deadlines: April 15, June 16, September 15, January 15 2027."}},{"@type":"Question","name":"What is the 1099 threshold for gig work in 2026?","acceptedAnswer":{"@type":"Answer","text":"Platforms must issue a 1099-NEC if you earn 00 or more. You must report all income even without a 1099."}},{"@type":"Question","name":"How much should I set aside for taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of net gig income. Higher earners in CA or NY should set aside 35-40% to cover SE tax, federal, and state income tax."}}]}' }} />
       <HomeClient />
@@ -27,7 +27,7 @@ export default function Page() {
 
         <section style={{maxWidth:'960px',margin:'0 auto',padding:'20px 16px 16px'}}>
           <h2 style={{fontSize:'clamp(20px,3vw,28px)',fontWeight:800,color:'#ffffff',marginBottom:'8px'}}>Gig Worker Tax Center 2026</h2>
-          <p style={{fontSize:'14px',opacity:0.75,marginBottom:'12px'}}>Every major platform. Every tax question. Free calculators for all 51 states.</p>
+          <p style={{fontSize:'14px',opacity:0.75,marginBottom:'12px'}}>Every major platform. Every tax question. Free calculators for all 50 states + DC.</p>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'10px'}}>
             {[
               {href:'/uber',       label:'Uber',         desc:'SE tax + quarterly estimates',   cta:'Open Uber Tax Calculator'},

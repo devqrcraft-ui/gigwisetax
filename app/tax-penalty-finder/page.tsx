@@ -244,7 +244,7 @@ export default function TaxPenaltyFinder() {
           )}
         </div>
       </div>
-      <p style={{ color:'rgba(255,255,255,.3)', fontSize:11, textAlign:'center' }}>For informational purposes only. Consult a CPA for personalized advice. GigWiseTax.com</p>
+      <p style={{ color:'rgba(255,255,255,.3)', fontSize:11, textAlign:'center' }}>For informational purposes only. Consult a CPA or tax professional for personalized advice. GigWiseTax.com</p>
     </div></div>
   )
 }
