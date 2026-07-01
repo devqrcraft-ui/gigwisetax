@@ -296,9 +296,9 @@ export default function HomeClient() {
               {/* QUICK EXAMPLES */}
               <div style={{ marginBottom: 10 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color:'rgba(255,255,255,.75)', textTransform:'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
-                   Quick Examples — tap to load
+                   Try These Real Examples
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="examples-grid">
                   {/* 2-col desktop, 1-col mobile via inline media */}
                   {QUICK_EXAMPLES.map(ex => (
                     <a

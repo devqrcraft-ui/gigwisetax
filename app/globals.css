@@ -349,3 +349,7 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
   .footer-grid{grid-template-columns:1fr 1fr!important;gap:16px!important;}
   .footer-grid > div:last-child{grid-column:1/-1;}
 }
+
+@media (max-width: 600px) {
+  .examples-grid { grid-template-columns: 1fr !important; }
+}
