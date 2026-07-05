@@ -40,7 +40,6 @@ const nextConfig: NextConfig = {
       { source: '/compress-for-wordpress', destination: '/', permanent: true },
       { source: '/visa-photo-compressor', destination: '/', permanent: true },
       // ── other ──
-      { source: '/upwork', destination: '/blog/upwork-taxes-2026', permanent: true },
       { source: '/year', destination: '/', permanent: true },
     ];
   },
