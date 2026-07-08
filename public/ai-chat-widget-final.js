@@ -1,6 +1,7 @@
 (function(){
 if (window.__aiChatLoaded) return;
 window.__aiChatLoaded = true;
+if (window.innerWidth <= 540) return;
 const css = `
   #ai-fab{position:fixed;bottom:20px;right:20px;z-index:9999;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#e8b84b,#c9982a);box-shadow:0 4px 20px rgba(232,184,75,0.5);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;animation:fabpulse 2.5s ease-in-out infinite;}
   @keyframes fabpulse{0%,100%{box-shadow:0 4px 20px rgba(232,184,75,0.5)}50%{box-shadow:0 4px 32px rgba(232,184,75,0.85)}}
