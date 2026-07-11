@@ -3,16 +3,16 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Self-Employment Tax Rate 2026: 15.3% Explained + Calculator',
-  description: 'Self-employment tax rate is 15.3% in 2026. On $40K net income you owe $5,650. How SE tax works, who pays it, and how to reduce it. Free calculator.',
+  description: 'Self-employment tax rate is 15.3% in 2026. On $40K net income you owe $5,652. How SE tax works, who pays it, and how to reduce it. Free calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/self-employment-tax-rate-2026' },
   openGraph: {
     title: 'Self-Employment Tax Rate 2026: 15.3% Explained',
-    description: 'On $40K net income you owe $5,650 in SE tax. Learn how to calculate and reduce it.',
+    description: 'On $40K net income you owe $5,652 in SE tax. Learn how to calculate and reduce it.',
     type: 'article',
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the self-employment tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% in 2026 — 12.4% for Social Security (on income up to $184,500) plus 2.9% for Medicare. On $40,000 net income, SE tax is $5,650."}},{"@type":"Question","name":"Who has to pay self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Anyone with $400 or more in net self-employment income must pay SE tax. This includes gig workers on DoorDash, Uber, Etsy, Airbnb, Fiverr, and any other 1099 platform."}},{"@type":"Question","name":"How is self-employment tax calculated?","acceptedAnswer":{"@type":"Answer","text":"Multiply your net earnings by 92.35% (this adjusts for the employer-half deduction), then multiply by 15.3%. Example: $40,000 x 0.9235 x 0.153 = $5,650."}},{"@type":"Question","name":"Can I deduct self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct 50% of SE tax paid as an adjustment to income on Schedule 1, Line 15. On $5,650 in SE tax, you deduct $2,825 — reducing your federal income tax."}},{"@type":"Question","name":"What is the Social Security wage base for 2026?","acceptedAnswer":{"@type":"Answer","text":"The Social Security wage base is $184,500 in 2026. The 12.4% SS portion applies only up to this limit. Above $184,500, only the 2.9% Medicare tax continues with no cap."}},{"@type":"Question","name":"Does self-employment tax apply to all income?","acceptedAnswer":{"@type":"Answer","text":"SE tax applies to 92.35% of your net self-employment earnings — not 100%. This 92.35% factor accounts for the employer-equivalent portion you are allowed to deduct."}},{"@type":"Question","name":"How do I reduce my self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Track all deductible expenses — especially mileage at 72.5 cents per mile. Deductions reduce net income before SE tax is calculated. On $5,000 in deductions, SE tax drops by about $707."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the self-employment tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% in 2026 — 12.4% for Social Security (on income up to $184,500) plus 2.9% for Medicare. On $40,000 net income, SE tax is $5,652."}},{"@type":"Question","name":"Who has to pay self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Anyone with $400 or more in net self-employment income must pay SE tax. This includes gig workers on DoorDash, Uber, Etsy, Airbnb, Fiverr, and any other 1099 platform."}},{"@type":"Question","name":"How is self-employment tax calculated?","acceptedAnswer":{"@type":"Answer","text":"Multiply your net earnings by 92.35% (this adjusts for the employer-half deduction), then multiply by 15.3%. Example: $40,000 x 0.9235 x 0.153 = $5,652."}},{"@type":"Question","name":"Can I deduct self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct 50% of SE tax paid as an adjustment to income on Schedule 1, Line 15. On $5,652 in SE tax, you deduct $2,825 — reducing your federal income tax."}},{"@type":"Question","name":"What is the Social Security wage base for 2026?","acceptedAnswer":{"@type":"Answer","text":"The Social Security wage base is $184,500 in 2026. The 12.4% SS portion applies only up to this limit. Above $184,500, only the 2.9% Medicare tax continues with no cap."}},{"@type":"Question","name":"Does self-employment tax apply to all income?","acceptedAnswer":{"@type":"Answer","text":"SE tax applies to 92.35% of your net self-employment earnings — not 100%. This 92.35% factor accounts for the employer-equivalent portion you are allowed to deduct."}},{"@type":"Question","name":"How do I reduce my self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Track all deductible expenses — especially mileage at 72.5 cents per mile. Deductions reduce net income before SE tax is calculated. On $5,000 in deductions, SE tax drops by about $707."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Self-Employment Tax Rate 2026","item":"https://www.gigwisetax.com/blog/self-employment-tax-rate-2026"}]}'
 
@@ -72,7 +72,7 @@ export default function SelfEmploymentTaxRate2026() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'The self-employment tax rate in 2026 is 15.3% — 12.4% Social Security plus 2.9% Medicare. On $40,000 net gig income, SE tax is $5,650. You pay this on top of federal income tax. Every DoorDash, Uber, Etsy, and Airbnb worker earning $400+ per year owes it.'}
+            {'The self-employment tax rate in 2026 is 15.3% — 12.4% Social Security plus 2.9% Medicare. On $40,000 net gig income, SE tax is $5,652. You pay this on top of federal income tax. Every DoorDash, Uber, Etsy, and Airbnb worker earning $400+ per year owes it.'}
           </p>
         </div>
 
@@ -81,7 +81,7 @@ export default function SelfEmploymentTaxRate2026() {
           <div style={{fontWeight:800, color:'#e8b84b', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'SE tax rate is 15.3% — applies to 92.35% of net self-employment income'}</li>
-            <li>{'On $40,000 net income: $5,650 in SE tax owed in 2026'}</li>
+            <li>{'On $40,000 net income: $5,652 in SE tax owed in 2026'}</li>
             <li>{'Social Security portion (12.4%) caps at the $184,500 wage base in 2026'}</li>
             <li>{'Deduct 50% of SE tax paid — reduces your federal income tax automatically'}</li>
             <li>{'Every $1,000 in deductions saves roughly $141 in SE tax'}</li>
@@ -212,7 +212,7 @@ export default function SelfEmploymentTaxRate2026() {
                 ))}
                 <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$40,000 (avg)'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$5,650'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$5,652'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$2,213'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$7,863'}</td>
                 </tr>
@@ -224,7 +224,7 @@ export default function SelfEmploymentTaxRate2026() {
           <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
             <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'SE tax is the single largest tax bill for most gig workers — larger than federal income tax at every income level below $60,000. At $40,000 net income, SE tax ($5,650) exceeds federal income tax ($2,213) by 155%. This gap closes only above $80,000 where the 22% bracket kicks in fully.'}
+              {'SE tax is the single largest tax bill for most gig workers — larger than federal income tax at every income level below $60,000. At $40,000 net income, SE tax ($5,652) exceeds federal income tax ($2,213) by 155%. This gap closes only above $80,000 where the 22% bracket kicks in fully.'}
             </p>
           </div>
         </section>
@@ -296,7 +296,7 @@ export default function SelfEmploymentTaxRate2026() {
                 ))}
                 <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>On $40K net</td>
-                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$5,650'}</td>
+                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$5,652'}</td>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$2,213'}</td>
                 </tr>
               </tbody>
@@ -320,7 +320,7 @@ export default function SelfEmploymentTaxRate2026() {
           {[
             {
               q:'What is the self-employment tax rate in 2026?',
-              a:'The SE tax rate is 15.3% — 12.4% Social Security plus 2.9% Medicare. It applies to 92.35% of net self-employment income. On $40,000 net income, SE tax is $5,650.'
+              a:'The SE tax rate is 15.3% — 12.4% Social Security plus 2.9% Medicare. It applies to 92.35% of net self-employment income. On $40,000 net income, SE tax is $5,652.'
             },
             {
               q:'Who has to pay self-employment tax in 2026?',
@@ -328,11 +328,11 @@ export default function SelfEmploymentTaxRate2026() {
             },
             {
               q:'How is self-employment tax calculated?',
-              a:'Multiply net income by 92.35%, then by 15.3%. Example: $40,000 × 0.9235 × 0.153 = $5,650. Report on Schedule SE and attach to Form 1040.'
+              a:'Multiply net income by 92.35%, then by 15.3%. Example: $40,000 × 0.9235 × 0.153 = $5,652. Report on Schedule SE and attach to Form 1040.'
             },
             {
               q:'Can I deduct self-employment tax?',
-              a:'Yes — 50% of SE tax paid is deductible as an adjustment to income. On $5,650 in SE tax, you deduct $2,825. This reduces your federal income tax but not SE tax itself.'
+              a:'Yes — 50% of SE tax paid is deductible as an adjustment to income. On $5,652 in SE tax, you deduct $2,825. This reduces your federal income tax but not SE tax itself.'
             },
             {
               q:'What is the Social Security wage base for 2026?',
