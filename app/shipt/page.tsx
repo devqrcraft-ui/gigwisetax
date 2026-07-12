@@ -34,35 +34,16 @@ export default function PlatformPage() {
     url: `https://www.gigwisetax.com/shipt`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
+  const FAQ = [
+    { q: `How much tax do I pay on Shipt income?`, a: `As a Shipt independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10-37% depending on total income), plus any state income tax. Most Shipt workers should set aside 25-30% of net income for taxes.` },
+    { q: `Does Shipt send a 1099?`, a: `Yes. Shipt sends a 1099-NEC if you earn $600 or more in a calendar year. You must report all income even if you do not receive a 1099.` },
+    { q: `How do I get my 1099 from Shipt?`, a: `Shipt issues your 1099-NEC by January 31 if you earned $600 or more. Check the Shipt Shopper app or your email for a download link or mailed copy. Contact Shipt support if you haven't received it by mid-February.` },
+    { q: `When are quarterly taxes due for Shipt workers in 2026?`, a: `Quarterly estimated tax due dates for 2026: April 15, June 16, September 15, and January 15, 2027. Pay if you expect to owe $1,000 or more for the year.` },
+  ]
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `How much tax do I pay on Shipt income?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `As a Shipt independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10-37% depending on total income), plus any state income tax. Most Shipt workers should set aside 25-30% of net income for taxes.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `Does Shipt send a 1099?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Yes. Shipt sends a 1099-NEC if you earn $600 or more in a calendar year. You must report all income even if you do not receive a 1099.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `When are quarterly taxes due for Shipt workers in 2026?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Quarterly estimated tax due dates for 2026: April 15, June 16, September 15, and January 15, 2027. Pay if you expect to owe $1,000 or more for the year.`,
-        },
-      },
-    ],
+    mainEntity: FAQ.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
   }
   return (
     <div>
@@ -96,9 +77,19 @@ export default function PlatformPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Shipt</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Shipt workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,248 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$6,448 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,612</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the largest deduction for Shipt shoppers.
+              Shipt workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$6,448 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,612</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the largest deduction for Shipt shoppers.
             </p>
           </div>
+          {/* FAQ SECTION */}
+          <section id="faq" style={{ margin: '24px 0' }}>
+            <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '0 0 20px' }}>Frequently Asked Questions</h2>
+            {FAQ.map((f, i) => (
+              <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 20, marginBottom: 20 }}>
+                <h3 style={{ fontSize: 14, fontWeight: 700, color: '#e8edf8', margin: '0 0 8px' }}>{f.q}</h3>
+                <p style={{ fontSize: 13, lineHeight: 1.75, color: 'rgba(255,255,255,0.75)', margin: 0 }}>{f.a}</p>
+              </div>
+            ))}
+          </section>
     </div>
   )
 }
