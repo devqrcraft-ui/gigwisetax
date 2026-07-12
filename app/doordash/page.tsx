@@ -452,6 +452,13 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
         
       <ReviewsSection />
+{/* RELATED ARTICLES */}
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px 24px' }}>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: '#e8edf8', margin: '0 0 14px' }}>Related Articles</h2>
+        <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
+            <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>DoorDash Taxes 2026: Complete Guide</a></li>
+        </ul>
+      </section>
       <AuthorBox />
       <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
