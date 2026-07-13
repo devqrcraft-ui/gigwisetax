@@ -60,7 +60,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `Does ${platform.name} withhold taxes?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `No. ${platform.name} classifies workers as independent contractors and does not withhold federal, state, or Social Security/Medicare taxes. You are responsible for calculating and paying your own taxes quarterly using IRS Form 1040-ES.`,
+          text: `It depends on your role. Full-Service Shoppers (who shop and deliver) are independent contractors — ${platform.name} does not withhold any taxes, you pay quarterly using IRS Form 1040-ES. In-Store Shoppers are part-time employees — ${platform.name} withholds taxes and issues a W-2 instead of a 1099.`,
         },
       },
       {
@@ -191,9 +191,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   How {platform.name} Taxes Work in 2026
                 </h2>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
-                  As a {platform.name} worker, you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
-                  This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from your payments.
+                  As a Full-Service {platform.name} Shopper (shop + deliver), you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
+                  This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from Full-Service Shopper payments.
                   You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
+                  <strong>In-Store Shoppers</strong> are part-time employees who receive a W-2 with taxes already withheld — this calculator isn't for you; try our free <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ color: '#F5C842' }}>W-2 paycheck calculator</a> instead.
                 </p>
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
@@ -311,7 +312,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {[
                   {
                     q: `Does ${platform.name} withhold taxes from my payments?`,
-                    a: `No. ${platform.name} classifies all workers as independent contractors (1099). They do not withhold federal income tax, state income tax, Social Security, or Medicare taxes. You must calculate and pay these yourself using IRS Form 1040-ES.`,
+                    a: `It depends on your role. Full-Service Shoppers are independent contractors (1099) — ${platform.name} does not withhold federal income tax, state income tax, Social Security, or Medicare taxes; you must calculate and pay these yourself using IRS Form 1040-ES. In-Store Shoppers are part-time employees who get a W-2 with taxes already withheld — see the free W-2 paycheck calculator further down this page instead.`,
                   },
                   {
                     q: `How much should I set aside for ${platform.name} taxes?`,
