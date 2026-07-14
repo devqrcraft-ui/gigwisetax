@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Upwork ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Upwork ${s.name} Taxes 2026 — $40K Earner Owes $${(8129 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
+      : `Upwork ${s.name} Taxes 2026 — $60K Earner Owes ${(14278 + Math.round(60000 * s.rate)).toLocaleString()} Total`,
     description: `Upwork ${s.name} 2026: $60K net = ~$8,478 SE tax + $5,800 fed. ${stateStr}. Quarterly: ~$3,570. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', upwork 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },

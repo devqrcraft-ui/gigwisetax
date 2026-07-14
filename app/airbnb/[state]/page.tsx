@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Airbnb ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Airbnb ${s.name} Taxes 2026 — $40K Earner Owes $${(8129 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
+      : `Airbnb ${s.name} Taxes 2026 — $50K Earner Owes ${(11565 + Math.round(50000 * s.rate)).toLocaleString()} Total`,
     description: `Airbnb ${s.name} 2026: $50K net = ~$7,065 SE tax + $4,500 fed. ${stateStr}. Quarterly: ~$2,891. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
