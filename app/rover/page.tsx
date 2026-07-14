@@ -8,7 +8,7 @@ export async function generateMetadata(): Promise<Metadata> {
   if (!p) return {}
   return {
     title: `Rover Tax Calculator 2026 — $25K Income = $5,340 Tax Owed`,
-    description: `Rover dog walkers: $25K net = $3,540 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 50 states + DC, no signup.`,
+    description: `Rover dog walkers: $25K net = $3,532 SE tax + federal. Mileage at 72.5¢/mile and supplies deductible. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `rover tax calculator, rover dog walker taxes 2026, rover 1099, rover self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/rover` },
     openGraph: {
@@ -96,7 +96,7 @@ export default function PlatformPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Rover</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Rover workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $25,000 net income: approximately $3,540 SE tax + $1,800 federal income tax = <strong style={{ color:'#fff' }}>$5,340 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,335</strong>. Set aside 25% of every payment. Phone, supplies, and home office deductions apply to Rover sitters.
+              Rover workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $25,000 net income: approximately $3,532 SE tax + $1,808 federal income tax = <strong style={{ color:'#fff' }}>$5,340 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,335</strong>. Set aside 25% of every payment. Phone, supplies, and home office deductions apply to Rover sitters.
             </p>
           </div>
     </div>

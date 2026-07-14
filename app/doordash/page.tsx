@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'doordash')
   if (!p) return {}
   return {
-    title: `DoorDash Tax Calculator 2026 — $40K Income = ~$8,850 Tax Owed`,
-    description: `DoorDash drivers: $40K net = ~$5,650 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,900+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    title: `DoorDash Tax Calculator 2026 — $40K Income = $8,852 Tax Owed`,
+    description: `DoorDash drivers: $40K net = $5,652 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,900+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `doordash tax calculator, doordash self employment tax 2026, doordash quarterly taxes, doordash 1099 taxes, how much taxes do doordash drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

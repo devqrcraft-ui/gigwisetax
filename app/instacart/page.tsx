@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'instacart')
   if (!p) return {}
   return {
-    title: `Instacart Tax Calculator 2026 — $35K Income = $7,700 Tax Owed`,
-    description: `Instacart shoppers: $35K net = $4,950 SE tax + federal. Mileage deduction 72.5¢/mile. Free 2026 calculator, quarterly payment dates, all 50 states + DC.`,
+    title: `Instacart Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
+    description: `Instacart shoppers: $35K net = $4,944 SE tax + federal. Mileage deduction 72.5¢/mile. Free 2026 calculator, quarterly payment dates, all 50 states + DC.`,
     keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
@@ -175,7 +175,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Instacart</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Instacart workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile applies to all active shopping miles.
+              Instacart workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,944 SE tax + $2,806 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile applies to all active shopping miles.
             </p>
           </div>
 
