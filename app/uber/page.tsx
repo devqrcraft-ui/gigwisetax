@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Uber Driver Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
-    description: `Uber drivers: $35K net = $5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    description: `Uber drivers: $35K net = $4,944 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `uber driver tax calculator, uber self employment tax 2026, uber driver quarterly taxes, uber 1099 taxes, how much tax do uber drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   if (!p) return {}
   return {
     title: `Lyft Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
-    description: `Lyft drivers: $35K net = $5,513 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    description: `Lyft drivers: $35K net = $4,944 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `lyft driver tax calculator, lyft taxes 2026, lyft self employment tax, lyft quarterly taxes, lyft 1099 tax guide`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
