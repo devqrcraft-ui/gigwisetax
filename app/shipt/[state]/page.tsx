@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Shipt ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Shipt ${s.name} Taxes 2026 — $30K Earner Owes ${(6448 + Math.round(30000 * s.rate)).toLocaleString()} Total`,
+      : `Shipt ${s.name} Taxes 2026 — $30K Earner Owes $${(6448 + Math.round(30000 * s.rate)).toLocaleString()} Total`,
     description: 'Shipt ' + s.name + ' 2026: $30K net = ~$4,239 SE tax + federal. ' + stateStr + '. Mileage 72.5¢/mile. Free calculator, no signup.',
     keywords: 'Shipt taxes ' + s.name + ', shipt 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/shipt/' + s.slug },
