@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: s.rate === 0
       ? `Rover ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
       : `Rover ${s.name} Taxes 2026 — $25K Earner Owes $${(5340 + Math.round(25000 * s.rate)).toLocaleString()} Total`,
-    description: `Rover ${s.name} 2026: $25K net = ~$3,540 SE tax + $1,800 fed. ${stateStr}. Quarterly: ~$1,335. Free calculator, no signup.`,
+    description: `Rover ${s.name} 2026: $25K net = ~$3,532 SE tax + $1,800 fed. ${stateStr}. Quarterly: ~$1,335. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', rover pet sitter taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -84,7 +84,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Rover sitters are independent contractors — Rover withholds zero taxes</li>
-              <li>{'On $25,000 net income: ~$3,540 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name}</li>
+              <li>{'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name}</li>
               <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$1,335 each'}</li>
               <li>IRS mileage deduction: 72.5¢/mile for driving to client homes in 2026</li>
               <li>Deduct pet supplies, leashes, dog food used for clients, home office</li>
