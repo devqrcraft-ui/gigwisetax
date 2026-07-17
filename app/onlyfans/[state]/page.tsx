@@ -239,7 +239,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $40,000 net income, expect to owe approximately $${(8852 + Math.round(40000 * s.rate)).toLocaleString()} total.`,
+                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $40,000 net income, expect to owe approximately $${(8852 + Math.round(40000 * state.rate)).toLocaleString()} total.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
