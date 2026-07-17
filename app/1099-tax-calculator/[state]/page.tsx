@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `${s.name} 1099 Tax Calculator 2026 — No State Tax + Free SE Calculator`
-      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${(8129 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
+      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${(8852 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
     description: noTax
       ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
       : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
