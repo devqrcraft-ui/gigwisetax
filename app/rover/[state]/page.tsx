@@ -77,7 +77,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Rover Taxes {'{state.name}'} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $5,340 total — $3,540 self-employment tax (15.3%) + $1,800 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$1,335. Deduct mileage at 72.5¢/mile, pet supplies, and home office.'}
+              {'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $' + (5340 + Math.round(25000 * state.rate)).toLocaleString() + ' total — $3,532 self-employment tax (15.3%) + $1,808 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round((5340 + Math.round(25000 * state.rate)) / 4).toLocaleString() + '. Deduct mileage at 72.5¢/mile, pet supplies, and home office.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>

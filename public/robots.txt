@@ -13,8 +13,6 @@ Disallow: /unemployment-calculator/methodology
 Disallow: /bonus-tax-calculator/methodology
 Disallow: /hourly-paycheck-calculator/methodology
 Disallow: /minimum-wage/methodology
-# Block sitemap from indexing
-Disallow: /sitemap.xml
 # AI bots — allow all
 User-agent: GPTBot
 Allow: /

@@ -141,7 +141,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Airbnb Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Airbnb hosts in ' + state.name + ' earning $50,000 net owe approximately $11,565 total — $7,065 self-employment tax (15.3%) + $4,500 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$2,891. Top deductions: depreciation, cleaning, mortgage interest, utilities.'}
+              {'Airbnb hosts in ' + state.name + ' earning $50,000 net owe approximately $' + (11565 + Math.round(50000 * state.rate)).toLocaleString() + ' total — $7,065 self-employment tax (15.3%) + $4,500 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round((11565 + Math.round(50000 * state.rate)) / 4).toLocaleString() + '. Top deductions: depreciation, cleaning, mortgage interest, utilities.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
