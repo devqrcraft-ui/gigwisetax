@@ -15,6 +15,7 @@ export const PLATFORMS = [
   { slug: 'turo',       name: 'Turo',       emoji: '', searches: '45K/mo', naics: '532111', badge: null },
   { slug: 'grubhub',    name: 'Grubhub',    emoji: '', searches: '60K/mo', naics: '492000', badge: null },
   { slug: 'walmart-spark', name: 'Walmart Spark', emoji: '', searches: '35K/mo', naics: '492000', badge: null },
+  { slug: 'wag', name: 'Wag', emoji: '', searches: '20K/mo', naics: '812910', badge: null },
 ]
 
 export const STATES = [
@@ -200,6 +201,20 @@ export const DEDUCTIONS = {
     'Half of self-employment tax (SE tax deduction)',
     'Accounting & tax software',
     'Business insurance & liability coverage',
+  ],
+  wag: [
+    "Mileage deduction — 72.5¢/mile (Jan–Jun 2026), 76¢/mile (Jul–Dec 2026)",
+    "Pet supplies, treats & toys for client dogs",
+    "Leash, harness & walking equipment",
+    "Waste bags & sanitation supplies",
+    "Rain gear & cold-weather gear",
+    "Pet first aid kit & certifications",
+    "Phone bill — Wag app business use percentage",
+    "Sub-walker payments (1099-NEC required at $600+)",
+    "Liability insurance for your dog-walking business",
+    "Self-employed health insurance premiums",
+    "Half of self-employment tax (SE tax deduction)",
+    "Accounting & tax software",
   ],
   taskrabbit: [
     'Mileage deduction — $0.725/mile (2026 IRS rate)',
