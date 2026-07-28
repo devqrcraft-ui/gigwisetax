@@ -17,6 +17,7 @@ export const PLATFORMS = [
   { slug: 'walmart-spark', name: 'Walmart Spark', emoji: '', searches: '35K/mo', naics: '492000', badge: null },
   { slug: 'wag', name: 'Wag', emoji: '', searches: '20K/mo', naics: '812910', badge: null },
   { slug: 'poshmark', name: 'Poshmark', emoji: '', searches: '25K/mo', naics: '454110', badge: null },
+  { slug: 'twitch', name: 'Twitch', emoji: '', searches: '30K/mo', naics: '711510', badge: null },
 ]
 
 export const STATES = [
@@ -224,6 +225,18 @@ export const DEDUCTIONS = {
     "Mileage sourcing inventory — thrift stores, estate sales, wholesale",
     "Photography equipment & lighting for listings",
     "Home office deduction (storage/staging space)",
+    "Self-employed health insurance premiums",
+    "Half of self-employment tax (SE tax deduction)",
+    "Accounting & tax software",
+    "Business bank account fees",
+  ],
+  twitch: [
+    "Streaming equipment — camera, microphone, capture card, lighting",
+    "Software subscriptions — OBS plugins, overlays, editing tools",
+    "Internet bill — business use percentage",
+    "Home office deduction (dedicated streaming space)",
+    "Computer/PC hardware upgrades used for streaming",
+    "Graphic design & video editing software",
     "Self-employed health insurance premiums",
     "Half of self-employment tax (SE tax deduction)",
     "Accounting & tax software",
