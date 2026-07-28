@@ -16,6 +16,7 @@ export const PLATFORMS = [
   { slug: 'grubhub',    name: 'Grubhub',    emoji: '', searches: '60K/mo', naics: '492000', badge: null },
   { slug: 'walmart-spark', name: 'Walmart Spark', emoji: '', searches: '35K/mo', naics: '492000', badge: null },
   { slug: 'wag', name: 'Wag', emoji: '', searches: '20K/mo', naics: '812910', badge: null },
+  { slug: 'poshmark', name: 'Poshmark', emoji: '', searches: '25K/mo', naics: '454110', badge: null },
 ]
 
 export const STATES = [
@@ -215,6 +216,18 @@ export const DEDUCTIONS = {
     "Self-employed health insurance premiums",
     "Half of self-employment tax (SE tax deduction)",
     "Accounting & tax software",
+  ],
+  poshmark: [
+    "Cost of goods sold — what you originally paid for resold items",
+    "Poshmark selling fee (20% on sales $15+, $2.95 flat under $15)",
+    "Shipping supplies — boxes, mailers, tape, labels",
+    "Mileage sourcing inventory — thrift stores, estate sales, wholesale",
+    "Photography equipment & lighting for listings",
+    "Home office deduction (storage/staging space)",
+    "Self-employed health insurance premiums",
+    "Half of self-employment tax (SE tax deduction)",
+    "Accounting & tax software",
+    "Business bank account fees",
   ],
   taskrabbit: [
     'Mileage deduction — $0.725/mile (2026 IRS rate)',

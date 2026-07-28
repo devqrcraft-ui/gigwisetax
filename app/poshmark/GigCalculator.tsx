@@ -1,0 +1,241 @@
+'use client'
+import { useState } from 'react'
+interface State { slug: string; name: string; abbr: string; rate: number }
+interface Platform { slug: string; name: string; emoji: string }
+interface Deadline { q: string; period: string; due: string; days: number }
+const POSHMARK_COMMISSION_RATE = 0.20
+export default function GigCalculator({
+  platform, states, deadlines
+}: {
+  platform: Platform
+  states: State[]
+  deadlines: Deadline[]
+}) {
+  const [grossSales, setGrossSales] = useState('')
+  const [cogs, setCogs]             = useState('')
+  const [stateSlug, setStateSlug]   = useState('california')
+  const [filing, setFiling]         = useState<'single'|'married'>('single')
+  const [result, setResult]         = useState<any>(null)
+  const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
+  const calculate = () => {
+    const gross = parseFloat(grossSales) || 0
+    if (!gross) return
+    const cogsVal = parseFloat(cogs) || 0
+    const commission = gross * POSHMARK_COMMISSION_RATE
+    const afterCommission = gross - commission
+    const net = Math.max(0, afterCommission - cogsVal)
+    const st = states.find(s => s.slug === stateSlug)
+    const seBase   = net * 0.9235
+    const seTax    = seBase * 0.153
+    const seDeduct = seTax * 0.5
+    const std = filing === 'married' ? 30000 : 15000
+    const taxable  = Math.max(0, net - seDeduct - std)
+    let federal = 0
+    if (filing === 'married') {
+      if (taxable > 768700) federal = 174238.25 + (taxable - 768700) * 0.37
+      else if (taxable > 512450) federal = 79087.25 + (taxable - 512450) * 0.35
+      else if (taxable > 403350) federal = 40426.75 + (taxable - 403350) * 0.32
+      else if (taxable > 201550) federal = 23200.75 + (taxable - 201550) * 0.24
+      else if (taxable > 100525) federal = 9328.75 + (taxable - 100525) * 0.22
+      else if (taxable > 23200) federal = 2320.00 + (taxable - 23200) * 0.12
+      else federal = taxable * 0.10
+    } else {
+      if (taxable > 626350) federal = 186601.50 + (taxable - 626350) * 0.37
+      else if (taxable > 250525) federal = 55374.00 + (taxable - 250525) * 0.35
+      else if (taxable > 197300) federal = 37104.00 + (taxable - 197300) * 0.32
+      else if (taxable > 100525) federal = 17168.50 + (taxable - 100525) * 0.24
+      else if (taxable > 48475) federal = 5426.50 + (taxable - 48475) * 0.22
+      else if (taxable > 11925) federal = 1192.50 + (taxable - 11925) * 0.12
+      else federal = taxable * 0.10
+    }
+    const stateTax = taxable * (st?.rate ?? 0.05)
+    const total    = federal + seTax + stateTax
+    const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
+    setResult({ gross, commission, afterCommission, cogsVal, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+  }
+  const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const cardHd  = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
+  const accent  = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
+  const lbl     = { display: 'block', fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.85)', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 6 }
+  const inp     = { width: '100%', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.07)', boxSizing: 'border-box' as const }
+  const btnDark = { background: 'rgba(255,255,255,0.07)', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
+  const btnRed  = { background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 16, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
+  const btnGray = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, border: '1px solid rgba(255,255,255,0.15)', whiteSpace: 'nowrap' as const }
+  return (
+    <>
+      <div style={card}>
+        <div style={cardHd}>
+          <div style={accent}/>
+          <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Tax Calculator 2026</span>
+          <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.6)', fontSize: 13, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
+        </div>
+        <div style={{ padding: 14 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
+            <div>
+              <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
+              <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
+                {states.map(s => (
+                  <option key={s.slug} value={s.slug}>
+                    {s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+              <select style={inp}  id="filing-status-1" value={filing} onChange={e => setFiling(e.target.value as any)}>
+                <option value="single">Single</option>
+                <option value="married">Married Filing Jointly</option>
+                <option value="hoh">Head of Household</option>
+              </select>
+            </div>
+            <div style={{ gridColumn: '1 / -1' }}>
+              <label style={lbl}> Annual Gross Poshmark Sales (USD)</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={grossSales} onChange={e => setGrossSales(e.target.value)} placeholder="e.g. 60,000"/>
+              </div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>The total buyers paid you — this matches the amount on your 1099-K, before Poshmark's commission.</div>
+              <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
+                {[['20000','$20k'],['40000','$40k'],['60000','$60k'],['100000','$100k']].map(([v,l])=>(
+                  <button key={v} onClick={()=>setGrossSales(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(20,35,60,0.9)',color:'#e8b84b',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
+                ))}
+              </div>
+            </div>
+            <div style={{ gridColumn: '1 / -1' }}>
+              <label style={lbl}> Cost of Goods Sold (USD)</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={cogs} onChange={e => setCogs(e.target.value)} placeholder="e.g. 25,000"/>
+              </div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>What you originally paid for the items you sold — thrift, wholesale, or clearance receipts. This is not on your 1099-K but it reduces your taxable profit.</div>
+            </div>
+          </div>
+          <div style={{...btnDark, background: grossSales ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
+        </div>
+      </div>
+
+      {result && (
+        <div style={card}>
+          <div style={cardHd}>
+            <div style={accent}/>
+            <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your {platform.name} Tax Estimate</span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
+            {[
+              { label: 'Poshmark Commission', val: fmt(result.commission), sub: '20% of sales', hi: false },
+              { label: 'Cost of Goods', val: fmt(result.cogsVal), sub: 'What you paid', hi: false },
+              { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
+              { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
+            ].map((r, i) => (
+              <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: 'rgba(255,255,255,0.05)' }}>
+                <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
+                <div style={{ fontSize: 20, fontWeight: 900, color: 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{r.val}</div>
+                <div style={{ fontSize: 13, color: '#7a9abf' }}>{r.sub}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
+            <div style={{ padding: '10px 10px', borderRight: '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.05)' }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{result.stateAbbr} State Tax</div>
+              <div style={{ fontSize: 20, fontWeight: 900, color: 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{fmt(result.stateTax)}</div>
+              <div style={{ fontSize: 13, color: '#7a9abf' }}>Estimated</div>
+            </div>
+            <div style={{ padding: '10px 10px', background: 'rgba(178,34,52,0.12)', borderLeft: '4px solid #B22234' }}>
+              <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>Total Annual</div>
+              <div style={{ fontSize: 20, fontWeight: 900, color: '#B22234', marginBottom: 4 }}>{fmt(result.total)}</div>
+              <div style={{ fontSize: 13, color: '#7a9abf' }}>{result.rate}% effective rate</div>
+            </div>
+          </div>
+
+          <div style={{ background: 'rgba(232,184,75,0.08)', borderBottom: '1px solid rgba(232,184,75,0.2)', padding: '10px 20px', fontSize: 13, color: '#e8b84b' }}>
+            Net profit after commission and cost of goods: <strong>{fmt(result.net)}</strong> (from {fmt(result.gross)} gross sales)
+          </div>
+
+          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+            <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
+               Recommendation: Set aside <strong>{result.saveRate}% of every payout</strong> for taxes (approx. {fmt(parseFloat(grossSales) * result.saveRate / 100 / 12)}/month)
+            </span>
+          </div>
+
+          <div style={{ padding: 14 }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
+              <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <button style={{...btnRed, border:'none', cursor:'pointer'}} onClick={() => {
+                  const dates = [
+                    {q:'Q1 2026',date:'20260415'},
+                    {q:'Q2 2026',date:'20260616'},
+                    {q:'Q3 2026',date:'20260915'},
+                    {q:'Q4 2026',date:'20270115'},
+                  ];
+                  dates.forEach(d => {
+                    const title = encodeURIComponent(d.q + ' Estimated Tax — ' + fmt(result.quarterly));
+                    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + d.date + '/' + d.date;
+                    window.open(url, '_blank');
+                  });
+                }}>+ Add All to Google Calendar</button>
+                <button style={{...btnGray, border:'none', cursor:'pointer'}} onClick={() => {
+                  const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
+                  const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
+                  try {
+                    const ta = document.createElement('textarea')
+                    ta.value = text
+                    ta.style.position = 'fixed'
+                    ta.style.opacity = '0'
+                    document.body.appendChild(ta)
+                    ta.focus()
+                    ta.select()
+                    document.execCommand('copy')
+                    document.body.removeChild(ta)
+                    const el = document.getElementById('copy-sched-btn')
+                    if (el) { el.textContent = '✓ Copied!'; setTimeout(() => { if(el) el.textContent = ' Copy schedule' }, 2000) }
+                  } catch(e) {
+                    navigator.clipboard.writeText(text).catch(()=>{})
+                  }
+                }} id="copy-sched-btn"> Copy schedule</button>
+              </div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="q-grid">
+              {deadlines.map((d, i) => (
+                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
+                  {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
+                  <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
+                  <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 4 }}>{d.due}</div>
+                  <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
+                  <button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
+                    const calDates = ['20260415','20260616','20260915','20270115'];
+                    const title = encodeURIComponent(d.q + ' 2026 Estimated Tax — ' + fmt(result.quarterly));
+                    const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + calDates[i] + '/' + calDates[i];
+                    window.open(url, '_blank');
+                  }}>+ Calendar</button>
+                </div>
+              ))}
+            </div>
+            <div style={{ marginTop: 14, background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 4, padding: '10px 14px', fontSize: 14, color: '#fcd34d', lineHeight: 1.6 }}>
+               <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div style={{ margin: '24px 0 0', padding: '20px 24px', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 12 }}>
+        <div style={{ fontSize: 16, fontWeight: 800, color: '#e8b84b', marginBottom: 6 }}>Ready to file your 1099 taxes?</div>
+        <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Compare the best tax software for gig workers in 2026 and see which saves you the most.</div>
+        <a href="/blog/best-tax-software-for-gig-workers-2026" style={{ display: 'inline-block', background: '#e8b84b', color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 8, textDecoration: 'none' }}>See recommended tax software →</a>
+      </div>
+      <style>{`
+        @media(max-width:960px){
+          .results-row{grid-template-columns:1fr 1fr!important}
+          .q-grid{grid-template-columns:1fr 1fr!important}
+          .form-grid{grid-template-columns:1fr!important}
+        }
+        @media(max-width:480px){
+          .results-row{grid-template-columns:1fr!important}
+        }
+      `}</style>
+    </>
+  )
+}
