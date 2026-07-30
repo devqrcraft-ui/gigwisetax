@@ -323,7 +323,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
-                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $176,100 of net earnings in 2026. You can deduct 50% of SE tax from your taxable income.`,
+                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn under $600?`,

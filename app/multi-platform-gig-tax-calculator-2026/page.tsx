@@ -31,7 +31,7 @@ const faqSchema = {
       name: 'What is the self-employment tax rate for gig workers in 2026?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'The SE tax rate is 15.3% — 12.4% for Social Security (on earnings up to $176,100) and 2.9% for Medicare. It applies to 92.35% of your net self-employment income. You can deduct half of SE tax from your gross income.',
+        text: 'The SE tax rate is 15.3% — 12.4% for Social Security (on earnings up to $184,500) and 2.9% for Medicare. It applies to 92.35% of your net self-employment income. You can deduct half of SE tax from your gross income.',
       },
     },
     {

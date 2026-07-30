@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/self-employment-tax-calculator-2026' },
 };
 
-const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security on income up to $176,100, and 2.9% for Medicare on all income. Self-employed workers pay both the employee and employer portions."}},{"@type":"Question","name":"Who has to pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Anyone with net self-employment income of $400 or more must pay self-employment tax. This includes freelancers, gig workers (DoorDash, Uber, Instacart, etc.), independent contractors, and sole proprietors."}},{"@type":"Question","name":"Can I deduct self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct 50% of your self-employment tax from gross income before calculating federal income tax. This deduction is automatic — you do not need to itemize to claim it."}},{"@type":"Question","name":"How do I calculate self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Step 1: Calculate net self-employment income (gross minus business expenses). Step 2: Multiply by 0.9235 (92.35%). Step 3: Multiply by 0.153 (15.3%). The result is your SE tax. For example: $60,000 net x 0.9235 x 0.153 = $8,479."}},{"@type":"Question","name":"What is the 2026 Social Security wage base?","acceptedAnswer":{"@type":"Answer","text":"The 2026 Social Security wage base is $176,100. The 12.4% Social Security portion of SE tax only applies to income up to this limit. The 2.9% Medicare portion applies to all net self-employment income with no cap."}}]};
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is self-employment tax in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% of net self-employment income: 12.4% for Social Security on income up to $184,500, and 2.9% for Medicare on all income. Self-employed workers pay both the employee and employer portions."}},{"@type":"Question","name":"Who has to pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Anyone with net self-employment income of $400 or more must pay self-employment tax. This includes freelancers, gig workers (DoorDash, Uber, Instacart, etc.), independent contractors, and sole proprietors."}},{"@type":"Question","name":"Can I deduct self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can deduct 50% of your self-employment tax from gross income before calculating federal income tax. This deduction is automatic — you do not need to itemize to claim it."}},{"@type":"Question","name":"How do I calculate self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Step 1: Calculate net self-employment income (gross minus business expenses). Step 2: Multiply by 0.9235 (92.35%). Step 3: Multiply by 0.153 (15.3%). The result is your SE tax. For example: $60,000 net x 0.9235 x 0.153 = $8,479."}},{"@type":"Question","name":"What is the 2026 Social Security wage base?","acceptedAnswer":{"@type":"Answer","text":"The 2026 Social Security wage base is $184,500. The 12.4% Social Security portion of SE tax only applies to income up to this limit. The 2.9% Medicare portion applies to all net self-employment income with no cap."}}]};
 
 const CSS = `
   body{background:#0f1117;}
@@ -87,7 +87,7 @@ export default function SECalculatorPage() {
             <li>SE tax rate is <strong>15.3%</strong> — 12.4% Social Security + 2.9% Medicare on net profit</li>
             <li>SE tax applies to <strong>92.35%</strong> of net income — the IRS removes the employer-equivalent portion first</li>
             <li><strong>50% of SE tax</strong> is deductible above-the-line — reduces your federal taxable income automatically</li>
-            <li>2026 Social Security wage base is <strong>$176,100</strong> — the 12.4% cap stops there; Medicare has no cap</li>
+            <li>2026 Social Security wage base is <strong>$184,500</strong> — the 12.4% cap stops there; Medicare has no cap</li>
             <li>Anyone with <strong>$400+</strong> net self-employment income must pay SE tax and file Schedule SE</li>
           </ul>
         </div>
@@ -99,7 +99,7 @@ export default function SECalculatorPage() {
           </div>
           <div className="rate-card">
             <div className="rate-label">SS Wage Base 2026</div>
-            <div className="rate-val">$176,100</div>
+            <div className="rate-val">$184,500</div>
             <div className="rate-sub">12.4% applies up to this</div>
           </div>
           <div className="rate-card">
@@ -162,11 +162,11 @@ export default function SECalculatorPage() {
 
         <div className="faq-section">
           <h2>Self-Employment Tax FAQs</h2>
-          <div className="faq-q"><div className="faq-qt">What is self-employment tax in 2026?</div><div className="faq-qa">Self-employment tax is 15.3% of net self-employment income: 12.4% Social Security (up to $176,100) + 2.9% Medicare on all income. You pay both the employee and employer portions.</div></div>
+          <div className="faq-q"><div className="faq-qt">What is self-employment tax in 2026?</div><div className="faq-qa">Self-employment tax is 15.3% of net self-employment income: 12.4% Social Security (up to $184,500) + 2.9% Medicare on all income. You pay both the employee and employer portions.</div></div>
           <div className="faq-q"><div className="faq-qt">Who has to pay self-employment tax?</div><div className="faq-qa">Anyone with $400 or more in net self-employment income — freelancers, gig workers (DoorDash, Uber, Instacart, etc.), independent contractors, and sole proprietors.</div></div>
           <div className="faq-q"><div className="faq-qt">Can I deduct self-employment tax?</div><div className="faq-qa">Yes — you deduct 50% of SE tax from gross income before calculating federal income tax. This is automatic and does not require itemizing.</div></div>
           <div className="faq-q"><div className="faq-qt">How do I calculate self-employment tax?</div><div className="faq-qa">Net income × 0.9235 × 0.153 = SE tax. Example: $60,000 × 0.9235 × 0.153 = $8,478 SE tax.</div></div>
-          <div className="faq-q"><div className="faq-qt">What is the 2026 Social Security wage base?</div><div className="faq-qa">$176,100. The 12.4% SS portion applies only up to this limit. The 2.9% Medicare portion applies to all income with no cap.</div></div>
+          <div className="faq-q"><div className="faq-qt">What is the 2026 Social Security wage base?</div><div className="faq-qa">$184,500. The 12.4% SS portion applies only up to this limit. The 2.9% Medicare portion applies to all income with no cap.</div></div>
         </div>
 
         <div className="cta-box">

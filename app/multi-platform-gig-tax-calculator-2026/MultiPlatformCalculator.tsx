@@ -364,7 +364,7 @@ export default function MultiPlatformCalculator() {
           </h2>
           {[
             { q: 'Do I add up all gig app income for taxes?', a: 'Yes. The IRS considers all 1099 income together. Income from DoorDash, Uber, Instacart, Amazon Flex, and any other platform is combined and subject to SE tax of 15.3% on 92.35% of net earnings, plus federal and state income tax.' },
-            { q: 'What is the self-employment tax rate for gig workers in 2026?', a: 'The SE tax rate is 15.3% — 12.4% for Social Security (on earnings up to $176,100) and 2.9% for Medicare. You can deduct half of your SE tax from gross income, which reduces your federal and state tax.' },
+            { q: 'What is the self-employment tax rate for gig workers in 2026?', a: 'The SE tax rate is 15.3% — 12.4% for Social Security (on earnings up to $184,500) and 2.9% for Medicare. You can deduct half of your SE tax from gross income, which reduces your federal and state tax.' },
             { q: 'How do I calculate quarterly taxes for multiple gig apps?', a: 'Add all net income, calculate total annual tax, divide by 4. Pay by Apr 15, Jun 16, Sep 15 2026, and Jan 15 2027. If you expect $1,000+ in tax owed, quarterly payments are required to avoid IRS penalties.' },
             { q: 'Can I deduct mileage for DoorDash and Uber at the same time?', a: 'Yes — but only once per mile. If you pick up a DoorDash and Uber Eats order on the same trip, you cannot deduct the mileage twice. Track miles per platform and total across all apps. The 2026 standard mileage rate is 72.5 cents per mile.' },
           ].map(item => (
