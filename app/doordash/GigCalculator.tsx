@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { MILEAGE_RATE_H1_2026, MILEAGE_RATE_H2_2026 } from '@/lib/data'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
 interface Deadline { q: string; period: string; due: string; days: number }
+
 
 export default function GigCalculator({
   platform, states, deadlines
@@ -14,7 +16,8 @@ export default function GigCalculator({
   deadlines: Deadline[]
 }) {
   const [income, setIncome]     = useState('')
-  const [miles, setMiles]       = useState('')
+  const [milesH1, setMilesH1]   = useState('')
+  const [milesH2, setMilesH2]   = useState('')
   const [stateSlug, setStateSlug] = useState('california')
   const [filing, setFiling]     = useState<'single'|'married'>('single')
   const [result, setResult]     = useState<any>(null)
@@ -24,8 +27,9 @@ export default function GigCalculator({
   const calculate = () => {
     const gross = parseFloat(income) || 0
     if (!gross) return
-    const mi = parseFloat(miles) || 0
-    const mileDeduct = mi * 0.725
+    const miH1 = parseFloat(milesH1) || 0
+    const miH2 = parseFloat(milesH2) || 0
+    const mileDeduct = (miH1 * MILEAGE_RATE_H1_2026) + (miH2 * MILEAGE_RATE_H2_2026)
     const net = Math.max(0, gross - mileDeduct)
     const st = states.find(s => s.slug === stateSlug)
     const seBase   = net * 0.9235
@@ -108,6 +112,14 @@ export default function GigCalculator({
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
+            <div>
+              <label style={lbl}> Miles Driven Jan–Jun (72.5¢/mi)</label>
+              <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
+            </div>
+            <div>
+              <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
+              <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
+            </div>
           </div>
           <div style={{...btnDark, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
         </div>
@@ -122,7 +134,7 @@ export default function GigCalculator({
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
-              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: '$0.725/mile', hi: false } : null,
+              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: 'split-rate 2026', hi: false } : null,
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
