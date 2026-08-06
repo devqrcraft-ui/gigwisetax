@@ -217,7 +217,7 @@ export default function TaxPenaltyFinder() {
           {step === 6 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Are you paying quarterly estimated taxes?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 8% of owed amount</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 7% of owed amount</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}> Yes, I pay quarterly</button>
                 <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}> No / Not sure</button>

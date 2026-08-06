@@ -216,7 +216,7 @@ export default function Page() {
             Do Fiverr Sellers Pay Quarterly Taxes in 2026?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-            Yes. Fiverr does not withhold taxes from your earnings. If you expect to owe $1,000 or more, the IRS requires quarterly estimated payments. Missing payments triggers a 5% underpayment penalty.
+            Yes. Fiverr does not withhold taxes from your earnings. If you expect to owe $1,000 or more, the IRS requires quarterly estimated payments. Missing payments triggers a 7% underpayment penalty.
           </p>
           <ol style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 24 }}>
             <li><strong style={{ color: '#e8edf8' }}>Q1:</strong> April 15, 2026 — income earned January–March</li>

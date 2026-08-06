@@ -53,7 +53,7 @@ export default function QuarterlyTaxesGuide() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,938 per quarter. Missing payments triggers a 5% underpayment penalty. Pay via IRS Direct Pay — free and takes under 5 minutes.
+            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,938 per quarter. Missing payments triggers a 7% underpayment penalty. Pay via IRS Direct Pay — free and takes under 5 minutes.
           </p>
         </section>
         <section id="key-takeaways">

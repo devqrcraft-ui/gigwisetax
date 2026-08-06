@@ -114,7 +114,7 @@ export default function DoorDashVsUberEatsPost() {
         <p style={p}>Key factors: DoorDash typically averages <strong>$20–25/hour</strong> in suburban markets. Uber Eats averages <strong>$18–22/hour</strong> in urban areas. Check local Facebook driver groups for current market rates before committing.</p>
 
         <h2 style={h2}>Quarterly Taxes: Same Rules for Both</h2>
-        <p style={p}>If you expect to owe $1,000+ in taxes, you must pay quarterly estimated taxes. Due dates for 2026: <strong>April 15, June 16, September 15, January 15 (2027)</strong>. Use IRS Form 1040-ES. Missing a payment triggers a penalty of approximately 8% annualized.</p>
+        <p style={p}>If you expect to owe $1,000+ in taxes, you must pay quarterly estimated taxes. Due dates for 2026: <strong>April 15, June 16, September 15, January 15 (2027)</strong>. Use IRS Form 1040-ES. Missing a payment triggers a penalty of approximately 7% annualized.</p>
         <p style={p}>Set aside <strong>25–30% of every payout</strong> from both DoorDash and Uber Eats into a separate savings account. Pay quarterly from that account.</p>
 
         <h2 style={h2}>Frequently Asked Questions</h2>

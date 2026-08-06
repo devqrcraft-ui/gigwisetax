@@ -282,7 +282,7 @@ export default function QuarterlyTaxCalculator() {
           <section>
             <h2 style={{ fontSize: 22, color: '#e8b84b', marginBottom: 14 }}>What Happens If You Miss a Quarterly Payment?</h2>
             <p style={{ fontSize: 15, lineHeight: 1.7 }}>
-              The IRS charges an underpayment penalty — currently around <strong>7–8% annualized</strong> on the shortfall. You avoid penalties if you pay at least 90% of your current-year tax OR 100% of last year's tax liability (110% if prior-year AGI exceeded $150,000). This is the <strong>safe harbor rule</strong>.
+              The IRS charges an underpayment penalty — currently around <strong>7% annualized</strong> on the shortfall. You avoid penalties if you pay at least 90% of your current-year tax OR 100% of last year's tax liability (110% if prior-year AGI exceeded $150,000). This is the <strong>safe harbor rule</strong>.
             </p>
             <p style={{ fontSize: 15, lineHeight: 1.7 }}>
               See our <Link href="/safe-harbor-quarterly-taxes" style={{ color: '#e8b84b' }}>Safe Harbor Guide</Link> for the full calculation.

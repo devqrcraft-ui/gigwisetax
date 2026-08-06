@@ -221,7 +221,7 @@ export default function Page() {
             Do Uber Eats Drivers Pay Quarterly Taxes?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-            Yes. If you expect to owe $1,000 or more in federal tax, the IRS requires you to pay estimated taxes four times a year. Missing a payment triggers a 5% underpayment penalty.
+            Yes. If you expect to owe $1,000 or more in federal tax, the IRS requires you to pay estimated taxes four times a year. Missing a payment triggers a 7% underpayment penalty.
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
             2026 quarterly due dates:

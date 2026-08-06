@@ -207,7 +207,7 @@ export default function AmazonFlexTaxesBlogPost() {
             ))}
           </div>
           <p style={p}>
-            Pay online at <a href="https://irs.gov/payments" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS.gov/payments</a> using Direct Pay (free) or EFTPS. Missing a quarterly payment triggers a penalty of roughly 7–8% annually on the unpaid amount.
+            Pay online at <a href="https://irs.gov/payments" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS.gov/payments</a> using Direct Pay (free) or EFTPS. Missing a quarterly payment triggers a penalty of roughly 7% annually on the unpaid amount.
           </p>
 
           <h2 id="set-aside" style={h2}>How Much Should Amazon Flex Drivers Set Aside?</h2>
