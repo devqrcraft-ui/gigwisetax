@@ -60,6 +60,11 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'wyoming':        (p, r, n) => `Wyoming has NO state income tax — making it one of the best states for ${p} gig workers. You only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
 }
 
+const STATE_TOT_NOTES: Record<string, string> = {
+  'california': "California's Transient Occupancy Tax (TOT) is set locally, not statewide — rates run roughly 10-14% depending on city/county (Los Angeles County 12%, San Francisco 14%, many others 10%). Airbnb automatically collects and remits TOT in most major CA cities (LA, SF, San Diego), but coverage isn't universal — verify your specific jurisdiction.",
+  'texas': "Texas charges a 6% state Hotel Occupancy Tax on all short-term rentals, which Airbnb has collected and remitted automatically since May 2017. On top of that, most Texas cities and counties add their own local hotel tax (commonly 6-9%) — Airbnb often does NOT collect this local portion, so hosts may need to register and file directly with their city.",
+}
+
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
   const { state: stateSlug } = await params
@@ -98,10 +103,47 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
+  const faqItems = [
+    {
+      q: `How much is ${platform.name} tax in ${state.name}?`,
+      a: noStateTax
+        ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
+        : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $50,000 net income, expect to owe approximately ${(11565 + Math.round(50000 * state.rate)).toLocaleString()} total.`,
+    },
+    {
+      q: `Do I need to make quarterly payments in ${state.name}?`,
+      a: noStateTax
+        ? `In ${state.name}, you must make federal quarterly estimated payments (IRS Form 1040-ES) if you expect to owe $1,000 or more. No state quarterly payments are required.`
+        : `Yes. In ${state.name}, you must make both federal quarterly estimated payments (IRS Form 1040-ES) and ${state.name} state quarterly payments if you expect to owe $1,000 or more.`,
+    },
+    {
+      q: `What is the self-employment tax rate in ${state.name} for ${platform.name} workers?`,
+      a: `The federal self-employment tax rate is 15.3% regardless of state. This covers Social Security (12.4%) and Medicare (2.9%). In ${state.name}, you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
+    },
+    {
+      q: `Does ${platform.name} take out taxes in ${state.name}?`,
+      a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for paying all federal SE tax, federal income tax${noStateTax ? '' : `, and ${state.name} state income tax`} yourself, typically through quarterly estimated payments.`,
+    },
+    {
+      q: `Do I need to collect occupancy or lodging tax on my ${state.name} Airbnb?`,
+      a: STATE_TOT_NOTES[stateSlug] || `${state.name} short-term rental hosts should check whether their state or city charges a transient occupancy / hotel tax separate from income tax. Airbnb auto-collects this in some jurisdictions but not all — confirm in your Airbnb host dashboard under Taxes, and check your city or county tax office directly.`,
+    },
+  ]
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+
   return (
     <>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Airbnb hosts taxed?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts report rental income on Schedule E (passive) or Schedule C (active/hotel-like). If you rent fewer than 15 days per year, the income is tax-free. Otherwise, you owe income tax on net profit minus allowable deductions."}},{"@type":"Question","name":"What can Airbnb hosts deduct on taxes?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts can deduct mortgage interest, property taxes, insurance, cleaning fees, supplies, repairs, depreciation, Airbnb service fees, and utilities proportional to rental use. These deductions can significantly reduce taxable income."}},{"@type":"Question","name":"Does Airbnb report income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Airbnb issues a 1099-K to hosts who earn over $600 per year and reports this to the IRS. All rental income must be reported even if you do not receive a 1099."}}]}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"WebApplication","name":"Airbnb Tax Calculator ' + state.name + ' 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Airbnb Tax Calculator","item":"https://www.gigwisetax.com/airbnb"},{"@type":"ListItem","position":3,"name":"' + state.name + '","item":"https://www.gigwisetax.com/airbnb/' + state.slug + '"}]}' }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Calculator ' + state.name + ' 2026","datePublished":"2026-01-01","dateModified":"2026-05-29","author":{"@type":"Person","name":"Ethan Blake","url":"https://medium.com/@dev.qrcraft"},"reviewedBy":{"@type":"Person","name":"Ethan Blake"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/airbnb/' + state.slug + '"}}' }} />
@@ -258,28 +300,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>
                   FAQ — {platform.name} Taxes in {state.name} 2026
                 </h3>
-                {[
-                  {
-                    q: `How much is ${platform.name} tax in ${state.name}?`,
-                    a: noStateTax
-                      ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $50,000 net income, expect to owe approximately $${(11565 + Math.round(50000 * state.rate)).toLocaleString()} total.`,
-                  },
-                  {
-                    q: `Do I need to make quarterly payments in ${state.name}?`,
-                    a: noStateTax
-                      ? `In ${state.name}, you must make federal quarterly estimated payments (IRS Form 1040-ES) if you expect to owe $1,000 or more. No state quarterly payments are required.`
-                      : `Yes. In ${state.name}, you must make both federal quarterly estimated payments (IRS Form 1040-ES) and ${state.name} state quarterly payments if you expect to owe $1,000 or more.`,
-                  },
-                  {
-                    q: `What is the self-employment tax rate in ${state.name} for ${platform.name} workers?`,
-                    a: `The federal self-employment tax rate is 15.3% regardless of state. This covers Social Security (12.4%) and Medicare (2.9%). In ${state.name}, you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
-                  },
-                  {
-                    q: `Does ${platform.name} take out taxes in ${state.name}?`,
-                    a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for paying all federal SE tax, federal income tax${noStateTax ? '' : `, and ${state.name} state income tax`} yourself, typically through quarterly estimated payments.`,
-                  },
-                ].map((item, i) => (
+                {faqItems.map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>
                     <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 16, marginBottom: 6 }}>Q: {item.q}</div>
                     <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, textAlign: 'justify' as const }}>{item.a}</div>
