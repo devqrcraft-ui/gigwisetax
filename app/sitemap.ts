@@ -29,6 +29,7 @@ const blogPosts = [
   'mileage-rate-2026',
   'onlyfans-tax-guide-2026',
   'quarterly-taxes-gig-workers',
+  'pay-subcontractors-gig-business-2026',
   'self-employment-tax-deductions-2026',
   'uber-eats-tax-guide-2026',
   'fiverr-taxes-2026',
