@@ -24,7 +24,7 @@ export default function PlatformPage() {
   const deductions = DEDUCTIONS['twitch' as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `Twitch Streamer Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free Twitch streamer tax calculator for 2026. All 50 States + DC.`,

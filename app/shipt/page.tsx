@@ -27,7 +27,7 @@ export default function PlatformPage() {
   const isCreator = false
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `Shipt Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free Shipt self-employment tax calculator for 2026. All 50 States + DC.`,

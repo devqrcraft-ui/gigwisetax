@@ -18,14 +18,14 @@ const schema = {
   url: 'https://www.gigwisetax.com/gig-worker-taxes-2026',
   description: 'Free SE tax calculators for all gig platforms. DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb, Amazon Flex. All 50 States + DC, 2026 IRS brackets.',
   hasPart: [
-    { '@type': 'WebApplication', name: 'DoorDash Tax Calculator', url: 'https://www.gigwisetax.com/doordash' },
-    { '@type': 'WebApplication', name: 'Uber Tax Calculator', url: 'https://www.gigwisetax.com/uber' },
-    { '@type': 'WebApplication', name: 'Etsy Tax Calculator', url: 'https://www.gigwisetax.com/etsy' },
-    { '@type': 'WebApplication', name: 'OnlyFans Tax Calculator', url: 'https://www.gigwisetax.com/onlyfans' },
-    { '@type': 'WebApplication', name: 'Instacart Tax Calculator', url: 'https://www.gigwisetax.com/instacart' },
-    { '@type': 'WebApplication', name: 'Airbnb Tax Calculator', url: 'https://www.gigwisetax.com/airbnb' },
-    { '@type': 'WebApplication', name: 'Amazon Flex Tax Calculator', url: 'https://www.gigwisetax.com/amazon-flex' },
-    { '@type': 'WebApplication', name: 'Lyft Tax Calculator', url: 'https://www.gigwisetax.com/lyft' },
+    { '@type': 'WebPage', name: 'DoorDash Tax Calculator', url: 'https://www.gigwisetax.com/doordash' },
+    { '@type': 'WebPage', name: 'Uber Tax Calculator', url: 'https://www.gigwisetax.com/uber' },
+    { '@type': 'WebPage', name: 'Etsy Tax Calculator', url: 'https://www.gigwisetax.com/etsy' },
+    { '@type': 'WebPage', name: 'OnlyFans Tax Calculator', url: 'https://www.gigwisetax.com/onlyfans' },
+    { '@type': 'WebPage', name: 'Instacart Tax Calculator', url: 'https://www.gigwisetax.com/instacart' },
+    { '@type': 'WebPage', name: 'Airbnb Tax Calculator', url: 'https://www.gigwisetax.com/airbnb' },
+    { '@type': 'WebPage', name: 'Amazon Flex Tax Calculator', url: 'https://www.gigwisetax.com/amazon-flex' },
+    { '@type': 'WebPage', name: 'Lyft Tax Calculator', url: 'https://www.gigwisetax.com/lyft' },
   ],
 };
 

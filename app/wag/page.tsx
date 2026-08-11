@@ -28,7 +28,7 @@ export default function PlatformPage() {
 
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `Wag Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free Wag self-employment tax calculator for 2026. All 50 States + DC.`,

@@ -35,7 +35,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `${platform.name} Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,

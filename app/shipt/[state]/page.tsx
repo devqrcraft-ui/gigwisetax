@@ -37,7 +37,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
-  const schemaJson = '{"@context":"https://schema.org","@type":"WebApplication","name":"Shipt Tax Calculator ' + state.name + ' 2026","url":"https://www.gigwisetax.com/shipt/' + state.slug + '","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}'
+  const schemaJson = '{"@context":"https://schema.org","@type":"WebPage","name":"Shipt Tax Calculator ' + state.name + ' 2026","url":"https://www.gigwisetax.com/shipt/' + state.slug + '","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}'
   const breadcrumbJson = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Shipt Tax Calculator","item":"https://www.gigwisetax.com/shipt"},{"@type":"ListItem","position":3,"name":"' + state.name + '","item":"https://www.gigwisetax.com/shipt/' + state.slug + '"}]}'
   return (
     <>

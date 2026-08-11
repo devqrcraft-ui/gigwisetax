@@ -41,7 +41,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: platform.name + ' Tax Calculator ' + state.name + ' 2026',
     applicationCategory: 'FinanceApplication',
     description: 'Free ' + platform.name + ' tax calculator for ' + state.name + ' 2026',

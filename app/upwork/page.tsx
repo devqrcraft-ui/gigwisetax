@@ -27,7 +27,7 @@ export default function PlatformPage() {
   const deductions = DEDUCTIONS['upwork' as keyof typeof DEDUCTIONS] || []
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: 'Upwork Tax Calculator 2026',
     applicationCategory: 'FinanceApplication',
     description: 'Free Upwork self-employment tax calculator for 2026. All 50 States + DC.',

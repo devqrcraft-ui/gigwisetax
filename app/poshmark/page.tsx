@@ -28,7 +28,7 @@ export default function PlatformPage() {
 
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `Poshmark Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free Poshmark reseller tax calculator for 2026, including cost of goods sold. All 50 States + DC.`,

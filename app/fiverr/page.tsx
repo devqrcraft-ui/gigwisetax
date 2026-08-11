@@ -27,7 +27,7 @@ export default function PlatformPage() {
   const isCreator = true
   const schemaJson = {
     '@context': 'https://schema.org',
-    '@type': 'WebApplication',
+    '@type': 'WebPage',
     name: `Fiverr Tax Calculator 2026`,
     applicationCategory: 'FinanceApplication',
     description: `Free Fiverr self-employment tax calculator for 2026. All 50 States + DC.`,
