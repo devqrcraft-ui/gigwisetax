@@ -29,10 +29,8 @@ export default function PlatformPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `Shipt Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free Shipt self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/shipt`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
   const FAQ = [
     { q: `How much tax do I pay on Shipt income?`, a: `As a Shipt independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10-37% depending on total income), plus any state income tax. Most Shipt workers should set aside 25-30% of net income for taxes.` },

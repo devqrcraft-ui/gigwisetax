@@ -37,10 +37,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `${platform.name} Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/${platform.slug}`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 
   const faqSchema = {

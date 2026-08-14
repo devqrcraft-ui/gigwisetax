@@ -29,10 +29,8 @@ export default function PlatformPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `TaskRabbit Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free TaskRabbit self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/taskrabbit`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
   const faqSchema = {
     '@context': 'https://schema.org',

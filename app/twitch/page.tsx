@@ -26,10 +26,8 @@ export default function PlatformPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `Twitch Streamer Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free Twitch streamer tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/twitch`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
   const faqSchema = {
     '@context': 'https://schema.org',

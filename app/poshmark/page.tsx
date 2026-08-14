@@ -30,10 +30,8 @@ export default function PlatformPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `Poshmark Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free Poshmark reseller tax calculator for 2026, including cost of goods sold. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/poshmark`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 
   const faqSchema = {

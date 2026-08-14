@@ -30,10 +30,8 @@ export default function PlatformPage() {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `Wag Tax Calculator 2026`,
-    applicationCategory: 'FinanceApplication',
     description: `Free Wag self-employment tax calculator for 2026. All 50 States + DC.`,
     url: `https://www.gigwisetax.com/wag`,
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   }
 
   const faqSchema = {
