@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
+import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import { ReviewsSection, ContactSection } from '@/app/components/ReviewsSection'
 
 export const metadata: Metadata = {
@@ -177,7 +178,7 @@ export default function DoorDashTaxCalculator2026() {
             DoorDash Quarterly Tax Payments 2026
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            If you expect to owe $1,000 or more in federal taxes, you must make quarterly estimated payments. Missing a deadline triggers an underpayment penalty of approximately 7% annualized.
+            If you expect to owe $1,000 or more in federal taxes, you must make quarterly estimated payments. Missing a deadline triggers an underpayment penalty of approximately {UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
           </p>
           <div style={{ overflowX: 'auto' as const, marginBottom: 24 }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>

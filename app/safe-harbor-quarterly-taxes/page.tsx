@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
+import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data';
 
 export const metadata: Metadata = {
   title: 'Safe Harbor & Quarterly Tax Penalties for Gig Workers 2026 | GigWiseTax',
@@ -98,7 +99,7 @@ export default function SafeHarborPage() {
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>Safe harbor rule: pay <strong>100% of prior year tax</strong> (110% if AGI exceeded $150,000) — no penalty regardless of current earnings</li>
-            <li>IRS underpayment penalty is approximately <strong>7% annualized</strong> on the unpaid amount per quarter</li>
+            <li>IRS underpayment penalty is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the unpaid amount per quarter</li>
             <li>Missing <strong>Q1 (Apr 15)</strong> costs the most — penalty accrues for ~9 months; missing Q4 costs the least (~1 month)</li>
             <li>First-year gig workers with <strong>$0 prior year tax</strong> are exempt from underpayment penalties — applies once only</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — owe $1,000+ and payments are required</li>
