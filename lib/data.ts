@@ -85,6 +85,11 @@ export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile (IRS 2026) — DEPRECA
 export const MILEAGE_RATE_H1_2026 = 0.725 // Jan 1 – Jun 30, 2026
 export const MILEAGE_RATE_H2_2026 = 0.76  // Jul 1 – Dec 31, 2026
 
+// IRS underpayment penalty rate (federal short-term rate + 3 pts), set quarterly under IRC § 6621.
+// Q1 2026: 7% | Q2 2026: 6% | Q3 2026: 7% (current, thru Sep 30, 2026).
+// CHECK IRS.gov for Q4 2026 rate after Oct 1, 2026 and update this value.
+export const UNDERPAYMENT_PENALTY_RATE_2026 = 7 // percent, annualized, valid thru Sep 30, 2026
+
 export const DEDUCTIONS = {
   doordash: [
     'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
