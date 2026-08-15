@@ -4,6 +4,7 @@
 
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
+import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: '2026 Quarterly Tax Deadlines — All 50 States + DC | GigWiseTax',
@@ -58,7 +59,7 @@ export default function DeadlinesPage() {
       {/* ANSWER-FIRST + KEY TAKEAWAYS */}
       <div style={{maxWidth:1200,margin:'0 auto',padding:'16px 16px 0'}}>
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~7% annualized.
+          Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~{UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12}}>
           Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
@@ -69,7 +70,7 @@ export default function DeadlinesPage() {
             <li>2026 federal quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15, 2027</strong></li>
             <li>Required if you expect to owe <strong>$1,000+</strong> in federal taxes after withholding and credits</li>
             <li>Safe Harbor: pay <strong>100%</strong> of your 2025 tax liability (110% if AGI exceeded $150,000) — no penalty even if you owe more</li>
-            <li>IRS underpayment penalty for 2026 is approximately <strong>7% annualized</strong> on the underpaid amount</li>
+            <li>IRS underpayment penalty for 2026 is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the underpaid amount</li>
             <li>Pay free via <strong>IRS Direct Pay</strong> at directpay.irs.gov — no registration, same-day processing</li>
           </ul>
         </div>
@@ -110,7 +111,7 @@ export default function DeadlinesPage() {
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
               you must make quarterly estimated payments or face an <strong>underpayment penalty</strong>.
-              For 2026, the underpayment rate is approximately <strong>7% annualized</strong> on the amount owed.
+              For 2026, the underpayment rate is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the amount owed.
             </p>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>
               Safe Harbor: Pay at least 100% of your 2025 tax liability (110% if 2025 AGI exceeded $150,000) and avoid penalties entirely — even if you owe more in April.
