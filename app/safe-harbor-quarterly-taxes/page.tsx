@@ -148,7 +148,7 @@ export default function SafeHarborPage() {
           <h2 className="sh-h2">How the Underpayment Penalty Is Calculated</h2>
           <p style={{fontSize:'14px',color:'rgba(255,255,255,0.5)',marginBottom:'20px',lineHeight:'1.6'}}>
             The penalty is not a flat fee — it accrues per quarter at the current IRS short-term rate plus 3%.
-            In 2026 this is approximately <strong style={{color:'#fca5a5'}}>7% annually</strong> on the underpaid amount.
+            In 2026 this is approximately <strong style={{color:'#fca5a5'}}>{UNDERPAYMENT_PENALTY_RATE_2026}% annually</strong> on the underpaid amount.
           </p>
           <table className="penalty-table">
             <thead>

@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -90,7 +91,7 @@ export default function W9MistakesBlog() {
           <div style={tip}> <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
 
           <h2 style={h2}>Mistake #4: Missing the Quarterly Tax Deadline</h2>
-          <p style={p}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently 7% annually on the amount owed.</p>
+          <p style={p}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently {UNDERPAYMENT_PENALTY_RATE_2026}% annually on the amount owed.</p>
           <div style={warn}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
 
           <h2 style={h2}>Mistake #5: Using Your SSN When You Should Use an EIN</h2>

@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -43,7 +44,7 @@ export default function Page() {
         </p>
 
         <p style={{ fontSize: 16, lineHeight: 1.75, marginBottom: 24 }}>
-          As a gig worker — whether you drive for DoorDash, deliver for Amazon Flex, rent on Airbnb, or sell on Etsy — the IRS expects you to pay taxes <strong>four times per year</strong>, not just in April. Missing a deadline triggers an underpayment penalty (currently ~7% annually). Here are every date you need for 2026.
+          As a gig worker — whether you drive for DoorDash, deliver for Amazon Flex, rent on Airbnb, or sell on Etsy — the IRS expects you to pay taxes <strong>four times per year</strong>, not just in April. Missing a deadline triggers an underpayment penalty (currently ~{UNDERPAYMENT_PENALTY_RATE_2026}% annually). Here are every date you need for 2026.
         </p>
 
         {/* TABLE */}
