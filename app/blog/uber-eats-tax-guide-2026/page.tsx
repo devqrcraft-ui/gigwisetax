@@ -52,7 +52,7 @@ export default function Page() {
               <li>SE tax rate is 15.3% applied to 92.35% of net profit — not gross earnings</li>
               <li>$35K income = ~$7,750 SE tax; $40K = ~$8,852 before deductions</li>
               <li>2026 mileage rate: 72.5¢ per mile — track every delivery mile</li>
-              <li>Quarterly payments due April 15, June 16, Sept 15, Jan 15 — miss one and pay 5% penalty</li>
+              <li>Quarterly payments due April 15, June 16, Sept 15, Jan 15 — miss one and pay a ~7% annualized underpayment penalty</li>
               <li>1099-K threshold dropped to $5,000 in 2026 — nearly all Uber Eats drivers receive one</li>
             </ul>
           </div>
