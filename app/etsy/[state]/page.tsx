@@ -153,6 +153,41 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
 
+        {/* Marketplace Facilitator Sales Tax — pilot states only */}
+        {(() => {
+          const PILOT_STATES = ['california','texas','oregon','montana','new-hampshire','delaware'];
+          const NO_STATEWIDE_SALES_TAX = ['delaware','montana','new-hampshire','oregon','alaska'];
+          if (!PILOT_STATES.includes(state.slug)) return null;
+          const exempt = NO_STATEWIDE_SALES_TAX.includes(state.slug);
+          return exempt ? (
+            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:8,padding:'16px 20px',marginTop:14,marginBottom:4}}>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>
+                {'⚠ ' + state.name.toUpperCase() + ': ETSY DOES NOT COLLECT SALES TAX HERE'}
+              </div>
+              <p style={{margin:0,fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
+                {state.name} has no statewide sales tax, so Etsy's marketplace-facilitator collection does not apply here.
+                Unlike sellers shipping to the other 45 states plus D.C., where Etsy automatically collects and remits sales tax
+                on your behalf under marketplace facilitator laws, {state.name} sellers don't need to worry about Etsy sales
+                tax collection — there's no statewide tax for Etsy to collect. This does not affect your income tax or
+                self-employment tax obligations, which are separate and still apply.
+              </p>
+            </div>
+          ) : (
+            <div style={{background:'rgba(5,150,105,0.08)',border:'1px solid rgba(5,150,105,0.3)',borderRadius:8,padding:'16px 20px',marginTop:14,marginBottom:4}}>
+              <div style={{fontWeight:800,color:'#34d399',marginBottom:10,fontSize:13}}>
+                {'✓ ETSY HANDLES YOUR ' + state.name.toUpperCase() + ' SALES TAX AUTOMATICALLY'}
+              </div>
+              <p style={{margin:0,fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
+                {state.name} is one of 45 states (plus D.C. and Puerto Rico) where Etsy is legally required, as a marketplace
+                facilitator, to calculate, collect, and remit sales tax on your behalf for orders shipped to {state.name} buyers.
+                You don't collect or remit this tax yourself — Etsy handles it automatically at checkout. You're still responsible
+                for reporting your Etsy income on Schedule C and paying self-employment tax on your net profit, which is
+                completely separate from sales tax.
+              </p>
+            </div>
+          );
+        })()}
+
 
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
