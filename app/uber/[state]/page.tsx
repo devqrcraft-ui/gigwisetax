@@ -153,6 +153,30 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
 
+        {/* TNC-Specific State Fees/Laws — pilot states only */}
+        {(() => {
+          const TNC_RULES = {
+            'new-york': { label: '4% TNC ASSESSMENT ON EVERY RIDE', text: "New York imposes a 4% Temporary Transportation Assessment (TNC assessment) on every Uber ride, collected by Uber and remitted to the state. This is separate from your income tax — it does not reduce your self-employment tax bill, and you don't file anything extra for it yourself. New York City drivers also fall under the state's minimum per-trip earnings standard set by the NYC Taxi and Limousine Commission." },
+            'massachusetts': { label: '$0.20 PER-RIDE FEE + $34.48/HR EARNINGS FLOOR', text: "Massachusetts charges a $0.20 excise fee on every rideshare ride, paid by Uber (not deducted from your earnings). Separately, Massachusetts Question 3 set a minimum earnings floor of $34.48/hour of active driving time as of January 15, 2026 — if your Uber payouts fall short of this floor across a pay period, Uber owes you the difference. This earnings floor is taxable income like any other Uber payout." },
+            'rhode-island': { label: '7% RIDESHARE SALES TAX', text: 'Rhode Island applies its standard 7% sales tax to rideshare rides, collected from riders by Uber. This does not affect your driver income tax or self-employment tax — it is a tax on the fare paid by the passenger, not a tax on your earnings.' },
+            'south-carolina': { label: '1% RIDESHARE REVENUE TAX', text: "South Carolina imposes a 1% tax on rideshare trip revenue, collected and remitted by Uber. Like the other TNC-specific fees on this list, this is a rider-facing or platform-remitted charge and does not change how you calculate your own self-employment or income tax as a driver." },
+            'washington': { label: 'STATE-MANDATED PAY FLOOR: $0.70/MIN + $1.63/MILE', text: "Washington state (ESHB 2076) sets a minimum compensation floor for rideshare drivers of $0.70 per minute plus $1.63 per mile of active trip time, before Uber's cut. Washington has no state income tax, so Seattle-area drivers only owe federal SE tax and federal income tax — but should expect materially higher gross payouts per trip than drivers in states without a pay floor." },
+            'california': { label: "AB 1340: DRIVERS GAINED UNION RIGHTS JAN 1, 2026", text: 'California AB 1340, effective January 1, 2026, grants rideshare drivers the right to unionize while keeping their independent-contractor status under Prop 22 intact. This does not change your tax classification — you are still a 1099 independent contractor responsible for 15.3% SE tax plus California state income tax up to 9.3% on net earnings.' },
+          };
+          const rule = TNC_RULES[state.slug];
+          if (!rule) return null;
+          return (
+            <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:8,padding:'16px 20px',marginTop:14,marginBottom:4}}>
+              <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>
+                {state.name.toUpperCase() + ': ' + rule.label}
+              </div>
+              <p style={{margin:0,fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
+                {rule.text}
+              </p>
+            </div>
+          );
+        })()}
+
 
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
