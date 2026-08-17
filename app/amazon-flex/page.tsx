@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'amazon-flex')
   if (!p) return {}
   return {
-    title: `Amazon Flex Tax Calculator 2026 — $40K Income = $8,852 Tax Owed`,
+    title: `Amazon Flex Tax Calculator 2026 — $40K Income = $8,074 Tax Owed`,
     description: `Amazon Flex drivers: $40K net = $5,652 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,900+. Free 2026 calculator, all 50 states + DC, no signup.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
@@ -162,8 +162,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, Amazon Flex drivers owe approximately <strong>$8,852 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,213</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, Amazon Flex drivers owe approximately <strong>$8,074 total tax</strong> in 2026'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,019</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢/mile</strong> — Amazon Flex drivers average 25,000–40,000 miles/year'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Amazon Flex does <strong>not withhold taxes</strong> — you are a 1099 contractor for all routes'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–27%</strong> of each block payment to cover all quarterly tax obligations'}}/>
@@ -173,7 +173,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Amazon Flex workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the top deduction for Amazon Flex drivers.
+              Amazon Flex workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,422 federal income tax = <strong style={{ color:'#fff' }}>$8,074 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,019</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the top deduction for Amazon Flex drivers.
             </p>
           </div>
 
