@@ -95,7 +95,7 @@ export default function GigWorkerTaxCenter() {
             Gig workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> plus federal income tax on net profit. On $40,000 income, expect to owe around <strong style={{color:'#e8b84b'}}>$8,852 total</strong> — roughly $2,213/quarter. Use a calculator below to get your exact number by platform and state.
           </div>
           <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-            Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+            Last updated: May 2026 · By the GigWiseTax Team
           </div>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,.65)', lineHeight: 1.7, maxWidth: 700 }}>
             SE tax 15.3% + federal + state for all 50 states + DC. Pick your platform and get your exact tax estimate in seconds. No signup, no data stored.

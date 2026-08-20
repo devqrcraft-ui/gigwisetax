@@ -70,7 +70,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{ maxWidth:1200, margin:'0 auto', padding:'4px 16px 0' }}>
           <div style={{ fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16, display:'flex', gap:12, flexWrap:'wrap' as const }}>
             <span>Last updated: July 2026</span><span>·</span>
-            <span>By Ethan Blake · Tax Compliance Specialist</span><span>·</span>
+            <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~5 min read · 1,200 words'}</span>
           </div>
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>

@@ -39,7 +39,7 @@ export default function DoorDashVsUberEatsPost() {
             ))}
           </div>
           <h1 style={{ fontSize: 'clamp(22px,4vw,34px)', fontWeight: 900, color: '#fff', lineHeight: 1.25, marginBottom: 12 }}>DoorDash vs Uber Eats Taxes 2026: Which Platform Pays More After Tax?</h1>
-          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0 }}>By Ethan Blake · Updated May 13, 2026 · 8 min read</p>
+          <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.6)', margin: 0 }}>By the GigWiseTax Team · Updated May 13, 2026 · 8 min read</p>
         </div>
       </div>
 

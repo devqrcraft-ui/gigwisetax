@@ -209,7 +209,7 @@ export default function MultiAppPage() {
           Multi-app gig workers combine all delivery/rideshare income on <strong style={{color:'#e8b84b'}}>one Schedule C</strong>. SE tax is 15.3% on net profit across all platforms. Uber + DoorDash in California at $62,000 gross = roughly <strong style={{color:'#e8b84b'}}>$17,643 total tax</strong> — about $4,411/quarter.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         {/* KEY TAKEAWAYS */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>

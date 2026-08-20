@@ -46,7 +46,7 @@ export default function SelfEmploymentTaxRate2026() {
           <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
             <span>Last updated: May 2026</span>
             <span>·</span>
-            <span>By Ethan Blake · Tax Compliance Specialist</span>
+            <span>By the GigWiseTax Team</span>
             <span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>

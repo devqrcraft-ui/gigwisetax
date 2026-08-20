@@ -62,7 +62,7 @@ export default function DeadlinesPage() {
           Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~{UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12}}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:16}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>

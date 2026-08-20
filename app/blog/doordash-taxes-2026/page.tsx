@@ -45,7 +45,7 @@ export default function DoorDashTaxGuide() {
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span>
             <span>·</span>
-            <span>By Ethan Blake · Tax Compliance Specialist</span>
+            <span>By the GigWiseTax Team</span>
             <span>·</span>
             <span>{'~9 min read · 2,200 words'}</span>
           </div>

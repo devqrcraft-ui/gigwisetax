@@ -55,7 +55,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
           Shipt Tax Calculator {state.name} 2026
         </h1>
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '14px 18px', marginBottom: 20 }}>
           <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.7 }}>

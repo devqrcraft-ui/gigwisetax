@@ -67,7 +67,7 @@ export default function Calculator1099HubPage() {
           1099 workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> on net profit plus federal and state income tax. On $40,000 net income, total tax is roughly <strong style={{color:'#e8b84b'}}>$8,852</strong> — about $2,213 per quarter. Pick your platform below for a precise estimate.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         <p className="k99-lead">
           Free tax estimator built for gig workers, freelancers, and independent contractors.

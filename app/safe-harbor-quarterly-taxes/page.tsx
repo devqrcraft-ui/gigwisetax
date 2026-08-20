@@ -92,7 +92,7 @@ export default function SafeHarborPage() {
           Safe harbor protects gig workers from IRS penalties. Pay <strong style={{color:'#e8b84b'}}>100% of last year's tax</strong> (or 90% of this year's) spread across 4 quarters. On $45,000 net income, missing all quarterly payments costs roughly <strong style={{color:'#e8b84b'}}>$756/year</strong> in penalties.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         {/* KEY TAKEAWAYS */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>

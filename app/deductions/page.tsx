@@ -70,7 +70,7 @@ export default function DeductionsChecklist() {
         Gig workers can deduct <strong style={{color:'#e8b84b'}}>mileage at 72.5¢/mile</strong>, phone bill, home office, equipment, and health insurance. The <strong style={{color:'#e8b84b'}}>QBI deduction</strong> (up to 20% of net income) and <strong style={{color:'#e8b84b'}}>50% SE tax deduction</strong> are automatic — no itemizing needed.
       </div>
       <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-        Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+        Last updated: May 2026 · By the GigWiseTax Team
       </div>
       {/* KEY TAKEAWAYS */}
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>

@@ -46,7 +46,7 @@ export default function PaySubcontractorsGuide() {
           <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
             <span>Last updated: August 2026</span>
             <span>·</span>
-            <span>By Ethan Blake</span>
+            <span>By the GigWiseTax Team</span>
             <span>·</span>
             <span>{'~6 min read · 1,400 words'}</span>
           </div>

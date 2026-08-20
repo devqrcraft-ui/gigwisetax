@@ -35,7 +35,7 @@ export default function EmployeeContractorQuizPage() {
           Most gig platform workers — DoorDash, Uber, Instacart — are classified as <strong style={{color:'#e8b84b'}}>independent contractors</strong>. They receive a 1099-NEC, pay <strong style={{color:'#e8b84b'}}>15.3% SE tax</strong> on net earnings, and can deduct mileage at 72.5¢/mile. This quiz helps you understand your classification.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-          Last updated: May 2026 · By Ethan Blake · Tax Compliance Specialist
+          Last updated: May 2026 · By the GigWiseTax Team
         </div>
         {/* KEY TAKEAWAYS */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>

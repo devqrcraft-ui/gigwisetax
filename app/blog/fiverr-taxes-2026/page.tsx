@@ -34,7 +34,7 @@ export default function Page() {
           </h1>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
-            <span>By Ethan Blake · Tax Compliance Specialist</span><span>·</span>
+            <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,100 words'}</span>
           </div>
         </header>
