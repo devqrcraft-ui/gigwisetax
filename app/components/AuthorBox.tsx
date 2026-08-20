@@ -2,8 +2,6 @@
 export default function AuthorBox() {
   return (
     <div
-      itemScope
-      itemType="https://schema.org/Person"
       style={{
         display:'flex', alignItems:'flex-start', gap:16,
         background:'rgba(232,184,75,0.06)',
@@ -16,30 +14,19 @@ export default function AuthorBox() {
         background:'rgba(232,184,75,0.15)',
         display:'flex', alignItems:'center', justifyContent:'center',
         fontWeight:800, fontSize:18, color:'#e8b84b'
-      }}>EB</div>
+      }}>GW</div>
       <div>
         <div style={{fontSize:11, fontWeight:600, color:'rgba(200,216,236,0.6)', textTransform:'uppercase' as const, letterSpacing:'0.08em', marginBottom:4}}>
-          Written & reviewed by
+          Written by
         </div>
-        <div style={{fontWeight:700, color:'#C8D8EC', fontSize:15, marginBottom:2}} itemProp="name">
-          Ethan Blake
+        <div style={{fontWeight:700, color:'#C8D8EC', fontSize:15, marginBottom:2}}>
+          the GigWiseTax Team
         </div>
-        <div style={{fontSize:12, color:'rgba(255,255,255,0.5)', marginBottom:8}} itemProp="jobTitle">
-          Tax Compliance Specialist
-        </div>
-        <p style={{margin:'0 0 10px', fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.7}} itemProp="description">
-          {'Writes about self-employment tax, gig economy income, and 1099 deductions for US freelancers and independent contractors.'}
+        <p style={{margin:'0 0 10px', fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.7}}>
+          {'Estimates are based on current IRS guidance. This is not tax advice — consult a licensed professional for your situation.'}
         </p>
         <div style={{display:'flex', gap:16, flexWrap:'wrap' as const}}>
-          <a
-            href="https://medium.com/@dev.qrcraft"
-            rel="nofollow"
-            target="_blank"
-            style={{fontSize:12, color:'#e8b84b', textDecoration:'none'}}
-            itemProp="url"
-          >
-            Medium Profile
-          </a>
+          
           <a
             href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center"
             rel="nofollow"
@@ -48,11 +35,12 @@ export default function AuthorBox() {
           >
             IRS.gov Source
           </a>
+          
           <a
             href="/blog"
             style={{fontSize:12, color:'rgba(255,255,255,0.5)', textDecoration:'none'}}
           >
-            All articles by Ethan Blake →
+            All articles →
           </a>
         </div>
       </div>
