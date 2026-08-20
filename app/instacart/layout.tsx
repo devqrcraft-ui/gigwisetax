@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: 'Instacart Tax Calculator 2026 — $35K Net = $4,944 SE Tax',
   description: 'Instacart shoppers on $35K net owe $4,944 SE tax + federal in 2026. Mileage 72.5¢/mile, insulated bags, phone deductible. Free calculator, all 50 states + DC.',
   keywords: 'instacart tax calculator 2026, instacart shopper self employment tax, instacart 1099 taxes, instacart quarterly taxes',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/instacart' },
   openGraph: {

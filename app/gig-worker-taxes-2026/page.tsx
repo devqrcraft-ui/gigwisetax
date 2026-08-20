@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Gig Worker Taxes 2026: SE Tax 15.3% — Free Calculator All Platforms',
   description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $3,200 federal = $8,852. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 50 states + DC.',
   keywords: 'gig worker taxes 2026, gig economy tax calculator, self employment tax gig workers, gig worker tax deductions 2026',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/gig-worker-taxes-2026' },
 };

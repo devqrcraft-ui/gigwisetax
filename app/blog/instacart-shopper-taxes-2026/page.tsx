@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Instacart Shopper Taxes 2026 — $35K Net = $4,950 SE Tax',
   description: 'Instacart shoppers on $35K net: $4,950 SE tax, but mileage 72.5¢/mi + insulated bags + phone saves $3,480+. Free 2026 calculator, all 50 states + DC.',
   keywords: 'instacart shopper tax deductions 2026, instacart mileage deduction, instacart 1099 taxes, instacart shopper self employment tax',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }

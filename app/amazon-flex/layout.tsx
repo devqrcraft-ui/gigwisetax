@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: 'Amazon Flex Tax Calculator 2026 — $40K Net = $5,652 SE Tax',
   description: 'Amazon Flex drivers on $40K net owe $5,652 SE tax + federal in 2026. Mileage 72.5¢/mile saves $2,900+. Free calculator, all 50 states + DC, no signup.',
   keywords: 'amazon flex tax calculator 2026, amazon flex self employment tax, amazon flex 1099 taxes, amazon flex quarterly taxes',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/amazon-flex' },
   openGraph: {

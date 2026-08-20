@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: 'Uber Driver Tax Calculator 2026 — $35K Net = $4,944 SE Tax',
   description: 'Uber drivers on $35K net owe $4,944 SE tax + federal in 2026. Mileage 72.5¢/mile, phone, car depreciation deductible. Free calculator, all 50 states + DC.',
   keywords: 'uber tax calculator 2026, uber driver self employment tax, uber 1099 taxes, uber quarterly taxes',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/uber' },
   openGraph: {

@@ -70,7 +70,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </p>
         </div>
 
-        <p style={{fontSize:13,color:'rgba(255,255,255,0.65)',margin:'-12px 0 16px',fontStyle:'italic' as const}}>By <a href="https://medium.com/@ethanblake_tax" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>Ethan Blake</a> &nbsp;·&nbsp; ~5 min read &nbsp;·&nbsp; Updated June 2026</p>
+        <p style={{fontSize:13,color:'rgba(255,255,255,0.65)',margin:'-12px 0 16px',fontStyle:'italic' as const}}>By the GigWiseTax Team &nbsp;·&nbsp; ~5 min read &nbsp;·&nbsp; Updated June 2026</p>
 
         {/* Key Takeaways */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>

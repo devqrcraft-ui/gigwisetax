@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: 'Free DoorDash tax calculator 2026. Enter net income, get SE tax, federal + state tax, quarterly payments. 72.5 cents/mile deduction. All 50 States + DC.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-tax-calculator-2026' },
   keywords: 'doordash tax calculator 2026, doordash 1099 tax, doordash self employment tax, doordash quarterly tax',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 }
 

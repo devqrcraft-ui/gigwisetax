@@ -3,7 +3,7 @@ export const metadata: Metadata = {
   title: 'Airbnb Tax Calculator 2026 — $50K Net = $7,065 SE Tax + Deductions',
   description: 'Airbnb hosts on $50K net owe $7,065 SE tax + federal in 2026. Depreciation + 14-day rule saves $3,000+. Free calculator, all 50 states + DC.',
   keywords: 'airbnb tax calculator 2026, airbnb host taxes, airbnb self employment tax, airbnb income tax calculator',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/airbnb' },
   openGraph: {

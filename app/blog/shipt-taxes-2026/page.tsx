@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35K net: $7,750 total tax. Free calculator, mileage 72.5¢/mile, quarterly deadlines. All 50 States + DC.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/shipt-taxes-2026' },
   keywords: 'shipt taxes 2026, shipt shopper tax calculator, shipt 1099 tax, shipt self employment tax, shipt quarterly tax',
-  authors: [{ name: 'Ethan Blake' }],
+  authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 }
 
