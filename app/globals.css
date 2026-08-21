@@ -353,3 +353,9 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 @media (max-width: 600px) {
   .examples-grid { grid-template-columns: 1fr !important; }
 }
+
+@media (max-width: 768px) {
+  .mobile-no-border { border:none !important; padding:15px 10px !important; background:transparent !important; }
+  body { font-size: 16px !important; }
+  input, select, button { font-size: 16px !important; min-height: 48px !important; }
+}
