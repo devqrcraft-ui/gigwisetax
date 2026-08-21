@@ -359,3 +359,5 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
   body { font-size: 16px !important; }
   input, select, button { font-size: 16px !important; min-height: 48px !important; }
 }
+
+@media (max-width: 768px) { body { font-size: 16px !important; } .mobile-no-border { border:none !important; padding:10px !important; } }
