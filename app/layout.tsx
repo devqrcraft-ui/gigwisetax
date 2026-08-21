@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
 
         <div style={{background:'rgba(232,184,75,0.06)',borderTop:'1px solid rgba(232,184,75,0.15)',borderBottom:'1px solid rgba(232,184,75,0.15)',padding:'8px 20px',textAlign:'center'}}>
-          <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.45)',lineHeight:1.6}}>
+          <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>
             <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not tax advice — consult a licensed CPA for your situation.
           </p>
         </div>
@@ -148,8 +148,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <div style={{ borderTop:'1px solid rgba(255,255,255,.06)' }}>
             <div style={{ maxWidth:1200, margin:'0 auto', padding:'14px 20px', display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:8 }}>
-              <span style={{ fontSize:14, color:'rgba(255,255,255,.55)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
-              <span style={{ fontSize:14, color:'rgba(255,255,255,.55)' }}> Made for U.S. Gig Workers ·  Calculations stay in your browser</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.8)' }}>© 2026 GigWiseTax.com — Not affiliated with IRS or any government agency. Not tax advice.</span>
+              <span style={{ fontSize:14, color:'rgba(255,255,255,.8)' }}> Made for U.S. Gig Workers ·  Calculations stay in your browser</span>
             </div>
           </div>
         </footer>
