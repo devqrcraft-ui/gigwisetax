@@ -30,6 +30,19 @@ export const metadata: Metadata = {
   },
 }
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.gigwisetax.com"
+    }
+  ]
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -48,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "description":"Free self-employment tax calculator for U.S. gig workers. All 50 States + DC. No signup required.",
           "potentialAction":{"@type":"SearchAction","target":"https://www.gigwisetax.com/calculators?q={search_term_string}","query-input":"required name=search_term_string"}
         })}} />
+              <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body style={{ margin:0, padding:0, boxSizing:'border-box', fontFamily:"'Segoe UI','Helvetica Neue',Arial,sans-serif", background:'#07111F', overflowX:'hidden', minHeight:'100vh' }}>
         <style>{'.gwt-footer-link:hover{color:#e8b84b!important;text-decoration:underline!important}.gwt-nav-link:hover{color:#e8b84b!important;background:rgba(232,184,75,0.08)!important;border-radius:4px}'}</style>
@@ -88,7 +102,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <span style={{ fontSize: 13, color: 'rgba(200,216,236,.85)', whiteSpace: 'nowrap' as const }}>📊 All 50 States + DC covered</span>
           </div>
         </div>
-        <main>{children}</main>
+        <main><div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);color:#22c55e;padding:6px 14px;border-radius:20px;display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;margin:15px 0;border-left:4px solid #22c55e;"><span>✓</span> 2026 IRS Guidance Compliant</div>
+{children}</main>
 
         <div style={{background:'rgba(232,184,75,0.06)',borderTop:'1px solid rgba(232,184,75,0.15)',borderBottom:'1px solid rgba(232,184,75,0.15)',padding:'8px 20px',textAlign:'center'}}>
           <p style={{margin:0,fontSize:12,color:'rgba(255,255,255,0.75)',lineHeight:1.6}}>
