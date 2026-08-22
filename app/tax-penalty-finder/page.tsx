@@ -137,7 +137,7 @@ export default function TaxPenaltyFinder() {
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1 }}>{step === 0 ? 'START' : `STEP ${step} OF 7`}</div>
             <div style={{ color:'rgba(255,255,255,.5)', fontSize:12 }}>GigWiseTax</div>
           </div>
-          {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
+          {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
         </div>
         <div style={{body}}>
           {step === 0 && (

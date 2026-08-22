@@ -33,9 +33,9 @@ export default function PaySubcontractorsGuide() {
         <header>
           <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16}}>
             <a href="/" style={{color:'#e8b84b', textDecoration:'none', fontWeight:700}}>🏠 Home</a>
-            {' › '}
+            <span> › </span>
             <a href="/blog" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Blog</a>
-            {' › '}
+            <span> › </span>
             <span style={{color:'rgba(255,255,255,0.65)'}}>Pay Subcontractors 2026</span>
           </nav>
 

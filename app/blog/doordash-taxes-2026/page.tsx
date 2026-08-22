@@ -29,9 +29,9 @@ export default function DoorDashTaxGuide() {
         <header>
           <nav aria-label="breadcrumb" style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 20 }}>
             <a href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Home</a>
-            {' › '}
+            <span> › </span>
             <a href="/blog" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Blog</a>
-            {' › '}
+            <span> › </span>
             <span style={{ color: '#C8D8EC' }}>DoorDash Taxes 2026</span>
           </nav>
 

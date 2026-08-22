@@ -111,9 +111,9 @@ export default function QuarterlyTaxCalculator() {
         {/* Breadcrumb */}
         <nav style={{ fontSize: 14, marginBottom: 24, color: '#8a9bb0' }}>
           <Link href="/" style={{ color: '#e8b84b', textDecoration: 'none' }}>GigWiseTax</Link>
-          {' › '}
+          <span> › </span>
           <Link href="/calculators" style={{ color: '#e8b84b', textDecoration: 'none' }}>Calculators</Link>
-          {' › '}
+          <span> › </span>
           Quarterly Tax Calculator 2026
         </nav>
 
@@ -200,7 +200,7 @@ export default function QuarterlyTaxCalculator() {
                   { label: 'Federal Income Tax', value: fmt(result.federalTax) },
                   { label: 'Total Annual Tax', value: fmt(result.totalAnnual), highlight: true },
                 ].map(({ label, value, highlight }) => (
-                  <div key={label} style={{ background: '#07111F', border: `1px solid ${highlight ? '#e8b84b' : '#1e3a5f'}`, borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
+                  <div key={label} style={{ background: '#07111F', border: `1px solid ${highlight ? '#e8b84b' : '#1e3a5f'}}`, borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
                     <div style={{ fontSize: 13, color: '#8a9bb0', marginBottom: 6 }}>{label}</div>
                     <div style={{ fontSize: 22, fontWeight: 800, color: highlight ? '#e8b84b' : '#C8D8EC' }}>{value}</div>
                   </div>
@@ -358,9 +358,9 @@ export default function QuarterlyTaxCalculator() {
       </div>
 
       {/* Schema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.gigwisetax.com/calculators"},{"@type":"ListItem","position":3,"name":"Quarterly Tax Calculator 2026","item":"https://www.gigwisetax.com/quarterly-tax-calculator-2026"}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I set aside for quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of every payment you receive. For most gig workers earning $30K-$80K, this covers both self-employment tax (15.3%) and federal income tax after deductions."}},{"@type":"Question","name":"Do I have to pay quarterly taxes if I also have a W-2 job?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your 1099 gig income creates a tax liability of $1,000 or more after withholding from your W-2. You can also ask your employer to withhold extra from your W-2 paycheck."}},{"@type":"Question","name":"What is the self-employment tax rate for 2026?","acceptedAnswer":{"@type":"Answer","text":"The SE tax rate is 15.3% on 92.35% of your net profit - 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare."}},{"@type":"Question","name":"Can I pay quarterly taxes online?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use IRS Direct Pay at irs.gov/payments, EFTPS, or pay by debit/credit card. IRS Direct Pay is free."}},{"@type":"Question","name":"What if my income varies each quarter?","acceptedAnswer":{"@type":"Answer","text":"Use the annualized income installment method (IRS Form 2210, Schedule AI) to base each quarter payment on actual income earned that quarter."}}]}' }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Tax Calculator 2026","description":"Calculate your 2026 quarterly estimated taxes for freelancers and gig workers.","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":"https://www.gigwisetax.com/quarterly-tax-calculator-2026"}' }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Calculators","item":"https://www.gigwisetax.com/calculators"},{"@type":"ListItem","position":3,"name":"Quarterly Tax Calculator 2026","item":"https://www.gigwisetax.com/quarterly-tax-calculator-2026"}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much should I set aside for quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of every payment you receive. For most gig workers earning $30K-$80K, this covers both self-employment tax (15.3%) and federal income tax after deductions."}},{"@type":"Question","name":"Do I have to pay quarterly taxes if I also have a W-2 job?","acceptedAnswer":{"@type":"Answer","text":"Yes, if your 1099 gig income creates a tax liability of $1,000 or more after withholding from your W-2. You can also ask your employer to withhold extra from your W-2 paycheck."}},{"@type":"Question","name":"What is the self-employment tax rate for 2026?","acceptedAnswer":{"@type":"Answer","text":"The SE tax rate is 15.3% on 92.35% of your net profit - 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare."}},{"@type":"Question","name":"Can I pay quarterly taxes online?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use IRS Direct Pay at irs.gov/payments, EFTPS, or pay by debit/credit card. IRS Direct Pay is free."}},{"@type":"Question","name":"What if my income varies each quarter?","acceptedAnswer":{"@type":"Answer","text":"Use the annualized income installment method (IRS Form 2210, Schedule AI) to base each quarter payment on actual income earned that quarter."}}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Tax Calculator 2026","description":"Calculate your 2026 quarterly estimated taxes for freelancers and gig workers.","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":"https://www.gigwisetax.com/quarterly-tax-calculator-2026"}` }} />
     </div>
   );
 }

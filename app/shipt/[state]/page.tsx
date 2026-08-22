@@ -46,9 +46,9 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>
         <nav style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>
           <a href="/" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Home</a>
-          {' › '}
+          <span> › </span>
           <a href="/shipt" style={{ color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Shipt Tax Calculator</a>
-          {' › '}
+          <span> › </span>
           <span style={{ color: 'rgba(255,255,255,0.7)' }}>{state.name}</span>
         </nav>
         <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', marginBottom: 6, lineHeight: 1.2 }}>

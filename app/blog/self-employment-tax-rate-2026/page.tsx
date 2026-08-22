@@ -33,9 +33,9 @@ export default function SelfEmploymentTaxRate2026() {
         <header>
           <nav aria-label="breadcrumb" style={{fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16}}>
             <a href="/" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Home</a>
-            {' › '}
+            <span> › </span>
             <a href="/blog" style={{color:'rgba(255,255,255,0.45)', textDecoration:'none'}}>Blog</a>
-            {' › '}
+            <span> › </span>
             <span style={{color:'rgba(255,255,255,0.65)'}}>Self-Employment Tax Rate 2026</span>
           </nav>
 

@@ -68,7 +68,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 This free {state.name} 1099 tax calculator helps gig workers, freelancers and independent contractors estimate their 2026 self-employment tax, federal income tax and {noStateTax ? 'no state income tax ('+state.name+' is tax-free)' : state.name+' state income tax'} on 1099 income. Works for DoorDash, Uber, Etsy, OnlyFans, Airbnb and all gig platforms.
               </p>
             </div>
-            <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
+            <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
               <div style={{ fontSize: 11, color: noStateTax ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Tax Rate</div>
               <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax ? '#34d399' : '#f87171' }}>{rateStr}</div>
               <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{noStateTax ? 'No state income tax' : 'Top marginal rate'}</div>
