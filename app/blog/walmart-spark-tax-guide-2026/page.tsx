@@ -123,21 +123,21 @@ export default function WalmartSparkTaxGuide2026() {
               <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Spark Driver Taxes 2026</a></li>
             </ol>
           </div>
-<h2 id="independent-contractor" style={h2}>Are Spark Drivers Independent Contractors?</h2>
-            <p style={prose}>
+<h2 id="independent-contractor" style={{h2}}>Are Spark Drivers Independent Contractors?</h2>
+            <p style={{prose}}>
               Yes. Walmart Spark drivers are classified as independent contractors, not employees.
               This means Spark does not withhold any federal or state taxes from your earnings.
               You are responsible for paying self-employment tax (15.3%) and income tax yourself,
               either through quarterly estimated payments or when you file your annual return.
             </p>
 
-            <h2 id="deduction-checklist" style={h2}>Spark Driver Tax Deduction Checklist 2026</h2>
-            <table style={tableStyle}>
+            <h2 id="deduction-checklist" style={{h2}}>Spark Driver Tax Deduction Checklist 2026</h2>
+            <table style={{tableStyle}}>
               <thead>
                 <tr>
-                  <th style={th}>Deduction</th>
-                  <th style={th}>Details</th>
-                  <th style={th}>Typical Value</th>
+                  <th style={{th}}>Deduction</th>
+                  <th style={{th}}>Details</th>
+                  <th style={{th}}>Typical Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -154,19 +154,19 @@ export default function WalmartSparkTaxGuide2026() {
                 ].map(([d, n, v]) => (
                   <tr key={d}>
                     <td style={{ ...td, fontWeight: 600, color: '#e8b84b' }}>{d}</td>
-                    <td style={td}>{n}</td>
+                    <td style={{td}}>{n}</td>
                     <td style={{ ...td, color: 'rgba(255,255,255,0.6)' }}>{v}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <h2 id="tax-on-40k" style={h2}>How Much Tax on $40,000 Spark Income in 2026?</h2>
-            <table style={tableStyle}>
+            <h2 id="tax-on-40k" style={{h2}}>How Much Tax on $40,000 Spark Income in 2026?</h2>
+            <table style={{tableStyle}}>
               <thead>
                 <tr>
-                  <th style={th}>Item</th>
-                  <th style={th}>Amount</th>
+                  <th style={{th}}>Item</th>
+                  <th style={{th}}>Amount</th>
                 </tr>
               </thead>
               <tbody>
@@ -182,7 +182,7 @@ export default function WalmartSparkTaxGuide2026() {
                   ['Quarterly payment (divide by 4)', '~ $1,540'],
                 ].map(([item, amt]) => (
                   <tr key={item}>
-                    <td style={td}>{item}</td>
+                    <td style={{td}}>{item}</td>
                     <td style={{ ...td, fontWeight: 700, color: amt.startsWith('~') ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>{amt}</td>
                   </tr>
                 ))}
@@ -190,13 +190,13 @@ export default function WalmartSparkTaxGuide2026() {
             </table>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', marginBottom: 20 }}>Estimates only. State income tax not included. Use the calculator above for your exact numbers.</p>
 
-            <h2 id="quarterly-deadlines" style={h2}>Quarterly Estimated Tax Deadlines 2026</h2>
-            <table style={tableStyle}>
+            <h2 id="quarterly-deadlines" style={{h2}}>Quarterly Estimated Tax Deadlines 2026</h2>
+            <table style={{tableStyle}}>
               <thead>
                 <tr>
-                  <th style={th}>Quarter</th>
-                  <th style={th}>Income Period</th>
-                  <th style={th}>Due Date</th>
+                  <th style={{th}}>Quarter</th>
+                  <th style={{th}}>Income Period</th>
+                  <th style={{th}}>Due Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -208,14 +208,14 @@ export default function WalmartSparkTaxGuide2026() {
                 ].map(([q, p, d]) => (
                   <tr key={q}>
                     <td style={{ ...td, fontWeight: 700, color: '#e8b84b' }}>{q}</td>
-                    <td style={td}>{p}</td>
+                    <td style={{td}}>{p}</td>
                     <td style={{ ...td, fontWeight: 600 }}>{d}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <h2 id="faq" style={h2}>FAQ — Spark Driver Taxes 2026</h2>
+            <h2 id="faq" style={{h2}}>FAQ — Spark Driver Taxes 2026</h2>
             {[
               { q: 'How do I track mileage for Spark deliveries?', a: 'Use a mileage tracking app like Stride, MileIQ, or Everlance. The IRS requires a contemporaneous mileage log with date, origin, destination, and business purpose. Apps automate this with GPS. You cannot reconstruct mileage from memory at tax time — start tracking from your first delivery.' },
               { q: 'Should I pay quarterly taxes as a Spark driver?', a: 'Yes, if you expect to owe $1,000 or more in federal taxes for the year. Missing quarterly payments results in an underpayment penalty. As a rule of thumb: if you earn more than $6,500 net from Spark in a year, you likely need to make quarterly payments.' },

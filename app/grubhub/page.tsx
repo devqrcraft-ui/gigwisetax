@@ -110,8 +110,8 @@ export default function GrubhubPage() {
         <div>
 
           {/* CALCULATOR */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Grubhub Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
@@ -119,24 +119,24 @@ export default function GrubhubPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={{lbl}} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
+                  <input style={{inp}} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
-                  <label style={lbl}>▸ Business Miles Driven (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={{lbl}}>▸ Business Miles Driven (Optional)</label>
+                  <input style={{inp}} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>72.5¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
-                  <label style={lbl}> State of Residence</label>
-                  <select style={inp}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={{lbl}}> State of Residence</label>
+                  <select style={{inp}}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
-                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={{lbl}} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={{inp}}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>
@@ -204,8 +204,8 @@ export default function GrubhubPage() {
             </p>
           </div>
           {/* DEDUCTIONS */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Grubhub Drivers 2026</span>
             </div>
@@ -223,8 +223,8 @@ export default function GrubhubPage() {
           </div>
 
           {/* FAQ */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Grubhub Taxes FAQ 2026</span>
             </div>

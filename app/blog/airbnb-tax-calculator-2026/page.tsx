@@ -122,8 +122,8 @@ export default function AirbnbTaxCalculator2026() {
                   ['$75,000', '$10,597', '$8,500', '$19,097', '$4,774'],
                   ['$100,000', '$14,130', '$14,000', '$28,130', '$7,033'],
                 ].map(([inc, se, fed, tot, qtr], i, arr) => (
-                  <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                  <tr key={i} style={{i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
                     : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{inc}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{se}</td>
@@ -187,8 +187,8 @@ export default function AirbnbTaxCalculator2026() {
                   ['Supplies & toiletries', '$500–$1,500', '$110–$330'],
                   ['Total potential deductions', '$24,409–$36,909', '$5,370–$8,120'],
                 ].map(([ded, amt, sav], i, arr) => (
-                  <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                  <tr key={i} style={{i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
                     : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{ded}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{amt}</td>

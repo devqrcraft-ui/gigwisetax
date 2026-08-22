@@ -129,8 +129,8 @@ export default function InstacartTaxDeductions2026() {
                   ['Health insurance premiums', '$2,400–$6,000', '$367–$918'],
                   ['Total potential deductions', '$10,430–$14,870', '$1,596–$2,275'],
                 ].map(([ded, amt, sav], i, arr) => (
-                  <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                  <tr key={i} style={{i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
                     : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{ded}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{amt}</td>
@@ -199,8 +199,8 @@ export default function InstacartTaxDeductions2026() {
                   ['Equipment deduction', 'Yes — bags, phone', 'Limited'],
                   ['Schedule used', 'Schedule C', 'Standard W-2 filing'],
                 ].map(([feat, fs, is], i, arr) => (
-                  <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                  <tr key={i} style={{i === arr.length - 1
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
                     : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: 600 }}>{feat}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{fs}</td>

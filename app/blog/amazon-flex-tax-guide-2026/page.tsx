@@ -65,9 +65,9 @@ export default function AmazonFlexTaxGuide() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-            <h2 style={h2}>How Amazon Flex Taxes Work in 2026</h2>
-            <p style={prose}>Amazon Flex drivers are independent contractors — Amazon does not withhold any taxes from your earnings. You receive a 1099-NEC at year end and must pay self-employment tax (15.3%) plus federal income tax yourself. On $40,000 net income after deductions, total tax is approximately $8,852.</p>
-            <h2 style={h2}>2026 Amazon Flex Tax Breakdown</h2>
+            <h2 style={{h2}}>How Amazon Flex Taxes Work in 2026</h2>
+            <p style={{prose}}>Amazon Flex drivers are independent contractors — Amazon does not withhold any taxes from your earnings. You receive a 1099-NEC at year end and must pay self-employment tax (15.3%) plus federal income tax yourself. On $40,000 net income after deductions, total tax is approximately $8,852.</p>
+            <h2 style={{h2}}>2026 Amazon Flex Tax Breakdown</h2>
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 8, padding: '16px 20px', marginBottom: 16 }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, color: 'rgba(255,255,255,0.85)' }}>
                 <thead><tr><th style={{ textAlign: 'left', padding: '6px 0', color: '#e8b84b', fontWeight: 700 }}>Tax Type</th><th style={{ textAlign: 'right', padding: '6px 0', color: '#e8b84b', fontWeight: 700 }}>Amount</th></tr></thead>
@@ -80,13 +80,13 @@ export default function AmazonFlexTaxGuide() {
                 </tbody>
               </table>
             </div>
-            <h2 style={h2}>Top Amazon Flex Deductions 2026</h2>
-            <p style={prose}>Mileage is your biggest deduction. At 72.5 cents per mile, 20,000 business miles = $14,500 deduction. Track every mile with an app like MileIQ or Stride. Other key deductions include your phone (business use %), insulated delivery bags, car insurance (business %), and parking and tolls.</p>
-            <h2 style={h2}>2026 Quarterly Tax Deadlines</h2>
-            <p style={prose}>Amazon Flex drivers must pay estimated taxes four times per year. Missing a deadline triggers an IRS underpayment penalty. Due dates: April 15 (Q1), June 16 (Q2), September 15 (Q3), January 15 2027 (Q4). On $40,000 net income, each payment is $2,213.</p>
-            <h2 style={h2}>How to File Amazon Flex Taxes</h2>
-            <p style={prose}>File Schedule C (Profit or Loss from Business) with your Form 1040. Report gross Amazon Flex income, then deduct all business expenses. The net profit is subject to self-employment tax on Schedule SE. Use Form 1040-ES for quarterly payments.</p>
-            <h2 style={h2}>Frequently Asked Questions</h2>
+            <h2 style={{h2}}>Top Amazon Flex Deductions 2026</h2>
+            <p style={{prose}}>Mileage is your biggest deduction. At 72.5 cents per mile, 20,000 business miles = $14,500 deduction. Track every mile with an app like MileIQ or Stride. Other key deductions include your phone (business use %), insulated delivery bags, car insurance (business %), and parking and tolls.</p>
+            <h2 style={{h2}}>2026 Quarterly Tax Deadlines</h2>
+            <p style={{prose}}>Amazon Flex drivers must pay estimated taxes four times per year. Missing a deadline triggers an IRS underpayment penalty. Due dates: April 15 (Q1), June 16 (Q2), September 15 (Q3), January 15 2027 (Q4). On $40,000 net income, each payment is $2,213.</p>
+            <h2 style={{h2}}>How to File Amazon Flex Taxes</h2>
+            <p style={{prose}}>File Schedule C (Profit or Loss from Business) with your Form 1040. Report gross Amazon Flex income, then deduct all business expenses. The net profit is subject to self-employment tax on Schedule SE. Use Form 1040-ES for quarterly payments.</p>
+            <h2 style={{h2}}>Frequently Asked Questions</h2>
             {[
               { q: 'How much tax does an Amazon Flex driver pay in 2026?', a: 'On $40,000 net income: $5,652 SE tax + $3,200 federal = $8,852 total. Quarterly payment: $2,213. Set aside 25% of every payment.' },
               { q: 'What mileage rate can Amazon Flex drivers use in 2026?', a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile. On 20,000 miles: $14,500 deduction — your single biggest tax saving.' },

@@ -71,17 +71,17 @@ export default function GigCalculator({
 
   return (
     <>
-      <div style={card}>
-        <div style={cardHd}>
-          <div style={accent}/>
+      <div style={{card}}>
+        <div style={{cardHd}}>
+          <div style={{accent}}/>
           <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Tax Calculator 2026</span>
           <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.6)', fontSize: 13, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
         </div>
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
             <div>
-              <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
-              <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
+              <label style={{lbl}} htmlFor="state-of-residence-0"> State of Residence</label>
+              <select style={{inp}}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
                 {states.map(s => (
                   <option key={s.slug} value={s.slug}>
                     {s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}
@@ -90,23 +90,23 @@ export default function GigCalculator({
               </select>
             </div>
             <div>
-              <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
-              <select style={inp}  id="filing-status-1" value={filing} onChange={e => setFiling(e.target.value as any)}>
+              <label style={{lbl}} htmlFor="filing-status-1"> Filing Status</label>
+              <select style={{inp}}  id="filing-status-1" value={filing} onChange={e => setFiling(e.target.value as any)}>
                 <option value="single">Single</option>
                 <option value="married">Married Filing Jointly</option>
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
             <div>
-              <label style={lbl}> Miles Driven Jan–Jun (72.5¢/mi)</label>
-              <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
+              <label style={{lbl}}> Miles Driven Jan–Jun (72.5¢/mi)</label>
+              <input style={{inp}} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
             <div>
-              <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
-              <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
+              <label style={{lbl}}> Miles Driven Jul–Dec (76¢/mi)</label>
+              <input style={{inp}} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
+              <label style={{lbl}}> Annual {platform.name} Net Income (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
                 <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
@@ -125,9 +125,9 @@ export default function GigCalculator({
       </div>
 
       {result && (
-        <div style={card}>
-          <div style={cardHd}>
-            <div style={accent}/>
+        <div style={{card}}>
+          <div style={{cardHd}}>
+            <div style={{accent}}/>
             <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your {platform.name} Tax Estimate</span>
           </div>
 

@@ -136,20 +136,20 @@ export default function AirbnbTaxDeductions2026() {
               <li style={{marginBottom:6}}><a href={"#faq"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>FAQ — Airbnb Taxes 2026</a></li>
             </ol>
           </div>
-<h2 id="deduction-checklist" style={h2}>Complete Airbnb Tax Deduction Checklist for 2026</h2>
-            <p style={prose}>
+<h2 id="deduction-checklist" style={{h2}}>Complete Airbnb Tax Deduction Checklist for 2026</h2>
+            <p style={{prose}}>
               Airbnb hosts who rent their property for 15 or more days per year must report rental income to the IRS.
               The good news: you can offset that income with a long list of legitimate deductions.
               Below is every deduction the IRS allows for short-term rental hosts in 2026.
             </p>
 
             {/* DEDUCTION TABLE */}
-            <table style={tableStyle}>
+            <table style={{tableStyle}}>
               <thead>
                 <tr>
-                  <th style={th}>Deduction</th>
-                  <th style={th}>Notes</th>
-                  <th style={th}>Typical Value</th>
+                  <th style={{th}}>Deduction</th>
+                  <th style={{th}}>Notes</th>
+                  <th style={{th}}>Typical Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -171,51 +171,51 @@ export default function AirbnbTaxDeductions2026() {
                 ].map(([d, n, v]) => (
                   <tr key={d}>
                     <td style={{ ...td, fontWeight: 600, color: '#e8b84b' }}>{d}</td>
-                    <td style={td}>{n}</td>
+                    <td style={{td}}>{n}</td>
                     <td style={{ ...td, color: 'rgba(255,255,255,0.6)' }}>{v}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <h2 id="14-day-rule" style={h2}>The 14-Day Rule — When Airbnb Income Is Tax-Free</h2>
-            <p style={prose}>
+            <h2 id="14-day-rule" style={{h2}}>The 14-Day Rule — When Airbnb Income Is Tax-Free</h2>
+            <p style={{prose}}>
               If you rent your home for <strong>fewer than 15 days</strong> in 2026, the IRS does not require you to report that income at all.
               This is one of the most valuable tax breaks available to occasional hosts.
               However, if you use the 14-day rule, you cannot deduct any rental expenses either.
             </p>
-            <p style={prose}>
+            <p style={{prose}}>
               The rule applies per property. If you have two Airbnb properties, the 14-day limit applies to each separately.
             </p>
 
-            <h2 id="schedule-e-vs-c" style={h2}>Schedule E vs Schedule C: Which One Do You File?</h2>
-            <p style={prose}>
+            <h2 id="schedule-e-vs-c" style={{h2}}>Schedule E vs Schedule C: Which One Do You File?</h2>
+            <p style={{prose}}>
               Most Airbnb hosts file <strong>Schedule E</strong> (Supplemental Income and Loss). Schedule E rental income is <em>not</em> subject to self-employment tax (15.3%) — only federal and state income tax applies.
             </p>
-            <p style={prose}>
+            <p style={{prose}}>
               You must use <strong>Schedule C</strong> if you provide substantial services to guests — daily maid service, meals, concierge, or other hotel-like amenities. Schedule C income is subject to SE tax. Most casual hosts qualify for Schedule E.
             </p>
 
-            <h2 id="depreciation" style={h2}>Depreciation — The Biggest Airbnb Deduction</h2>
-            <p style={prose}>
+            <h2 id="depreciation" style={{h2}}>Depreciation — The Biggest Airbnb Deduction</h2>
+            <p style={{prose}}>
               Property depreciation is often the largest single deduction for Airbnb hosts.
               The IRS allows residential rental property to be depreciated over 27.5 years.
               On a $300,000 home where 40% is used for Airbnb, the annual depreciation deduction is approximately <strong>$4,364/year</strong>.
             </p>
-            <p style={prose}>
+            <p style={{prose}}>
               Furniture, appliances, and equipment can be fully deducted in year one using <strong>Section 179 or 100% bonus depreciation</strong> (check current bonus depreciation phase-down rules for 2026).
             </p>
 
-            <h2 id="quarterly-taxes" style={h2}>Quarterly Estimated Taxes for Airbnb Hosts</h2>
-            <p style={prose}>
+            <h2 id="quarterly-taxes" style={{h2}}>Quarterly Estimated Taxes for Airbnb Hosts</h2>
+            <p style={{prose}}>
               If you expect to owe $1,000 or more in federal taxes in 2026, you must make quarterly estimated payments to avoid IRS penalties.
             </p>
-            <table style={tableStyle}>
+            <table style={{tableStyle}}>
               <thead>
                 <tr>
-                  <th style={th}>Quarter</th>
-                  <th style={th}>Income Period</th>
-                  <th style={th}>Due Date</th>
+                  <th style={{th}}>Quarter</th>
+                  <th style={{th}}>Income Period</th>
+                  <th style={{th}}>Due Date</th>
                 </tr>
               </thead>
               <tbody>
@@ -227,14 +227,14 @@ export default function AirbnbTaxDeductions2026() {
                 ].map(([q, p, d]) => (
                   <tr key={q}>
                     <td style={{ ...td, fontWeight: 700, color: '#e8b84b' }}>{q}</td>
-                    <td style={td}>{p}</td>
+                    <td style={{td}}>{p}</td>
                     <td style={{ ...td, fontWeight: 600, color: 'rgba(255,255,255,0.9)' }}>{d}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <h2 id="faq" style={h2}>FAQ — Airbnb Taxes 2026</h2>
+            <h2 id="faq" style={{h2}}>FAQ — Airbnb Taxes 2026</h2>
             {[
               { q: 'Does Airbnb report my income to the IRS?', a: 'Yes. Airbnb sends a 1099-K to the IRS if you process more than $600 in payments in 2026 (the new threshold under IRS rules). Even if you do not receive a 1099-K, you are still required to report rental income.' },
               { q: 'Can I deduct a home office as an Airbnb host?', a: 'Only if you have a dedicated space used exclusively and regularly for managing your Airbnb business (recordkeeping, guest communication, etc.). The space cannot be a guest bedroom. The deduction is calculated based on square footage percentage.' },

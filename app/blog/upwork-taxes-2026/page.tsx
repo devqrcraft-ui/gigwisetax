@@ -117,7 +117,7 @@ export default function UpworkTaxes2026() {
                   ['$60,000', '$8,478', '$5,800', '$14,278', '$3,570'],
                   ['$80,000', '$11,304', '$8,800', '$20,104', '$5,026'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <tr key={i} style={{i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }} : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}
@@ -179,7 +179,7 @@ export default function UpworkTaxes2026() {
                   ['Over $10,000', '5%', '$250+', '$55+'],
                   ['Total example ($10K)', '~10.5% avg', '$1,050', '$231'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <tr key={i} style={{i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }} : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}

@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function HubPage() {
   return (
-    <div className="max-w-4xl mx-auto p-8" style={color: '#C8D8EC', background: '#07111f'}>
-      <div style={background:'rgba(34,197,94,0.1)', border:'1px solid rgba(34,197,94,0.2)', color:'#22c55e', padding:'4px 12px', borderRadius:'20px', display:'inline-flex', alignItems:'center', gap:'6px', fontSize:'12px', fontWeight:700, marginBottom:'20px'}>
+    <div className="max-w-4xl mx-auto p-8" style={{color: '#C8D8EC', background: '#07111f'}}>
+      <div style={{background:'rgba(34,197,94,0.1)', border:'1px solid rgba(34,197,94,0.2)', color:'#22c55e', padding:'4px 12px', borderRadius:'20px', display:'inline-flex', alignItems:'center', gap:'6px', fontSize:'12px', fontWeight:700, marginBottom:'20px'}}>
         <span>✓</span> 2026 IRS Guidance Compliant
       </div>
       <h1 className="text-4xl font-bold mb-6">California Gig Tax Guide 2026</h1>

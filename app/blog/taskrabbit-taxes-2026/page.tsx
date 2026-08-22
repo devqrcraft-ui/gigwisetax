@@ -117,7 +117,7 @@ export default function TaskRabbitTaxes2026() {
                   ['$45,000', '$6,358', '$3,802', '$10,160', '$2,540'],
                   ['$60,000', '$8,478', '$5,600', '$14,078', '$3,520'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <tr key={i} style={{i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }} : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}
@@ -201,7 +201,7 @@ export default function TaskRabbitTaxes2026() {
                   ['Tool bag + hand tools', '$250', '$55', '$38'],
                   ['Total example', '$900', '$198', '$138'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                  <tr key={i} style={{i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }} : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}

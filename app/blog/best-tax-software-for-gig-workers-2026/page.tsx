@@ -50,7 +50,7 @@ export default function BestTaxSoftware() {
     </div>
       </div>
       <div style={{ maxWidth: 860, margin: '0 auto', padding: '32px 20px' }}>
-        <p style={prose}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
+        <p style={{prose}}>Filing taxes as a gig worker means handling Schedule C, self-employment tax at 15.3%, quarterly estimated payments, mileage deductions and the 2026 OBBBA changes including the permanent 20% QBI deduction and up to $25,000 tips deduction. Not all tax software handles these equally well.</p>
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
@@ -67,7 +67,7 @@ export default function BestTaxSoftware() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-        <h2 style={h2}>Quick Comparison — 2026 Prices for Gig Workers</h2>
+        <h2 style={{h2}}>Quick Comparison — 2026 Prices for Gig Workers</h2>
         <div style={{ overflowX: 'auto', marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead><tr style={{ background: 'rgba(232,184,75,0.15)' }}>
@@ -82,16 +82,16 @@ export default function BestTaxSoftware() {
             </tbody>
           </table>
         </div>
-        <h2 style={h2}>1. TurboTax Self-Employed — Best for First-Time Filers</h2>
-        <p style={prose}>TurboTax guides you through every gig-specific question step by step. It automatically imports mileage, handles DoorDash and Uber income, and correctly applies the 2026 QBI deduction and $25,000 tips exclusion. At $129 federal it is the most expensive option but the easiest for first-time Schedule C filers.</p>
-        <h2 style={h2}>2. FreeTaxUSA — Best Value</h2>
-        <p style={prose}>FreeTaxUSA files federal taxes free including Schedule C, Schedule SE and all 2026 OBBBA deductions. State filing costs $15. Every gig worker deduction is supported. Mileage is entered manually rather than imported automatically.</p>
-        <h2 style={h2}>3. H&R Block Self-Employed — Best for Mixed Income</h2>
-        <p style={prose}>At $85 federal H&R Block handles multiple 1099-NEC forms from different platforms and includes a gig worker interview flow. Best for Airbnb and Turo hosts with both rental and 1099 income.</p>
-        <h2 style={h2}>4. TaxAct Self-Employed — Best Audit Protection</h2>
-        <p style={prose}>TaxAct includes audit protection in the $65 base price. Fully supports Schedule C, QBI deduction and the 2026 tips exclusion. Best for full-time gig workers earning over $50,000 who want audit cover without paying extra.</p>
-        <h2 style={h2}>Key 2026 Tax Changes for Gig Workers</h2>
-        <p style={prose}>The OBBBA 2026 made three changes affecting every 1099 worker: the 20% QBI deduction is now permanent, tips up to $25,000 are deductible from federal taxable income, and the standard mileage rate increased to 72.5 cents per mile. All four software options handle these correctly.</p>
+        <h2 style={{h2}}>1. TurboTax Self-Employed — Best for First-Time Filers</h2>
+        <p style={{prose}}>TurboTax guides you through every gig-specific question step by step. It automatically imports mileage, handles DoorDash and Uber income, and correctly applies the 2026 QBI deduction and $25,000 tips exclusion. At $129 federal it is the most expensive option but the easiest for first-time Schedule C filers.</p>
+        <h2 style={{h2}}>2. FreeTaxUSA — Best Value</h2>
+        <p style={{prose}}>FreeTaxUSA files federal taxes free including Schedule C, Schedule SE and all 2026 OBBBA deductions. State filing costs $15. Every gig worker deduction is supported. Mileage is entered manually rather than imported automatically.</p>
+        <h2 style={{h2}}>3. H&R Block Self-Employed — Best for Mixed Income</h2>
+        <p style={{prose}}>At $85 federal H&R Block handles multiple 1099-NEC forms from different platforms and includes a gig worker interview flow. Best for Airbnb and Turo hosts with both rental and 1099 income.</p>
+        <h2 style={{h2}}>4. TaxAct Self-Employed — Best Audit Protection</h2>
+        <p style={{prose}}>TaxAct includes audit protection in the $65 base price. Fully supports Schedule C, QBI deduction and the 2026 tips exclusion. Best for full-time gig workers earning over $50,000 who want audit cover without paying extra.</p>
+        <h2 style={{h2}}>Key 2026 Tax Changes for Gig Workers</h2>
+        <p style={{prose}}>The OBBBA 2026 made three changes affecting every 1099 worker: the 20% QBI deduction is now permanent, tips up to $25,000 are deductible from federal taxable income, and the standard mileage rate increased to 72.5 cents per mile. All four software options handle these correctly.</p>
         <div style={{ marginTop: 32, padding: '20px 24px', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 12 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: '#e8b84b', marginBottom: 6 }}>Estimate your tax bill first</div>
           <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Use our free gig tax calculator to see your exact quarterly payment before you file. Takes 60 seconds.</div>

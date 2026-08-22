@@ -49,7 +49,7 @@ export default function BlogPost() {
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Walmart Spark Tax Deductions 2026</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
         {([['Mileage ($0.725/mile)','Track every mile — to store, to customer, between stops'],['Phone and Data Plan','50-100% of your phone bill used for the Spark app'],['Insulated Delivery Bags','Hot and cold bags — fully deductible'],['Vehicle Maintenance','Oil changes, tires, repairs — business-use percentage'],['Parking and Tolls','100% deductible on active deliveries'],['Gig Apps','Any apps used to manage your delivery business']] as [string,string][]).map(([t,d]) => (
-          <div key={t} style={card}><div style={{ fontWeight: 700, marginBottom: 4 }}>{t}</div><div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{d}</div></div>
+          <div key={t} style={{card}}><div style={{ fontWeight: 700, marginBottom: 4 }}>{t}</div><div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{d}</div></div>
         ))}
       </div>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Estimated Tax by Income — 2026</h2>

@@ -118,8 +118,8 @@ export default function WalmartSparkPage() {
         <div>
 
           {/* CALCULATOR */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Walmart Spark Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
@@ -127,24 +127,24 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={{lbl}} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
+                  <input style={{inp}} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
                 <div>
-                  <label style={lbl}>▸ Total Miles Driven (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={{lbl}}>▸ Total Miles Driven (Optional)</label>
+                  <input style={{inp}} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
                 </div>
                 <div>
-                  <label style={lbl}> State of Residence</label>
-                  <select style={inp}  id="annual-spark-net-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={{lbl}}> State of Residence</label>
+                  <select style={{inp}}  id="annual-spark-net-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
-                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={{lbl}} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={{inp}}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>
@@ -216,8 +216,8 @@ export default function WalmartSparkPage() {
             </p>
           </div>
           {/* DEDUCTIONS */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Walmart Spark Drivers 2026</span>
             </div>
@@ -241,8 +241,8 @@ export default function WalmartSparkPage() {
           </div>
 
           {/* FAQ */}
-          <div style={card}>
-            <div style={cardHd}>
+          <div style={{card}}>
+            <div style={{cardHd}}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Walmart Spark Taxes FAQ 2026</span>
             </div>
@@ -262,7 +262,7 @@ export default function WalmartSparkPage() {
           </div>
 
           {/* SEO TEXT */}
-          <div style={card}>
+          <div style={{card}}>
             <div style={{ padding:24 }}>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}>Walmart Spark Driver Taxes: Complete 2026 Guide</h2>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>

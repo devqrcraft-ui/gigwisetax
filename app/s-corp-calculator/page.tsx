@@ -40,7 +40,7 @@ export default function SCorpCalculator() {
   )
 
   return (
-    <div style={bg}><div style={wrap}>
+    <div style={{bg}}><div style={{wrap}}>
 
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
         <div style={{ display: 'inline-block', background: '#B22234', color: '#fff', fontSize: 11, fontWeight: 800, letterSpacing: 1.5, padding: '5px 14px', borderRadius: 20, marginBottom: 14 }}>FREE CALCULATOR</div>
@@ -55,20 +55,20 @@ export default function SCorpCalculator() {
         </p>
       </div>
 
-      <div style={card}>
-        <div style={hdr}>
+      <div style={{card}}>
+        <div style={{hdr}}>
           <div style={{ color: '#e8b84b', fontSize: 11, fontWeight: 700, letterSpacing: 1.5, marginBottom: 6 }}>GIGWISETAX — S-CORP CALCULATOR</div>
           <div style={{ color: '#fff', fontSize: 20, fontWeight: 800 }}>Enter Your Numbers</div>
         </div>
-        <div style={body}>
+        <div style={{body}}>
 
-          <label style={lbl}>Annual Net Profit (after all expenses)</label>
+          <label style={{lbl}}>Annual Net Profit (after all expenses)</label>
           <input
             type="number"
             value={income}
             onChange={e => setIncome(e.target.value)}
             placeholder="e.g. 80000"
-            style={inp}
+            style={{inp}}
           />
           <div style={{ display: 'flex', gap: 8, marginTop: 10, flexWrap: 'wrap' as const }}>
             {['40000','60000','80000','100000','120000','150000'].map(v => (
@@ -79,13 +79,13 @@ export default function SCorpCalculator() {
             ))}
           </div>
 
-          <label style={lbl}>Your Reasonable Salary as S-Corp Owner <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — we'll estimate if blank)</span></label>
+          <label style={{lbl}}>Your Reasonable Salary as S-Corp Owner <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — we'll estimate if blank)</span></label>
           <input
             type="number"
             value={salary}
             onChange={e => setSalary(e.target.value)}
             placeholder="e.g. 50000"
-            style={inp}
+            style={{inp}}
           />
           <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 8, lineHeight: 1.6 }}>
             IRS requires S-Corp owners to pay themselves a "reasonable salary" — typically 40–60% of profit. The rest is taken as distributions (not subject to 15.3% SE tax).
@@ -125,12 +125,12 @@ export default function SCorpCalculator() {
         </div>
 
         {/* COMPARISON */}
-        <div style={card}>
-          <div style={hdr}>
+        <div style={{card}}>
+          <div style={{hdr}}>
             <div style={{ color: '#fff', fontSize: 16, fontWeight: 800 }}>Side-by-Side Tax Comparison</div>
             <div style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 4 }}>Based on {fmt(result.inc)} annual profit</div>
           </div>
-          <div style={body}>
+          <div style={{body}}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
               <div style={{ background: 'rgba(178,34,52,0.12)', border: '2px solid #fca5a5', borderRadius: 8, padding: 16 }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: '#B22234', marginBottom: 12, textAlign: 'center' as const }}>SOLE PROPRIETOR</div>

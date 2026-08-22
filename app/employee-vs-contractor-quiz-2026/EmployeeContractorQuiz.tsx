@@ -71,7 +71,7 @@ export default function EmployeeContractorQuiz() {
             <h2 style={{color:'#C8D8EC',fontSize:'clamp(17px,2.5vw,21px)',fontWeight:700,lineHeight:1.4,marginBottom:'24px'}}>{q.question}</h2>
             <div style={{display:'flex',flexDirection:'column',gap:'12px'}}>
               {q.options.map(opt=>(
-                <button key={opt.label} onClick={()=>handleAnswer(opt.weight)} style={btnBase}
+                <button key={opt.label} onClick={()=>handleAnswer(opt.weight)} style={{btnBase}}
                   onMouseEnter={e=>{(e.currentTarget as HTMLButtonElement).style.borderColor='#e8b84b';(e.currentTarget as HTMLButtonElement).style.background='rgba(232,184,75,0.08)';}}
                   onMouseLeave={e=>{(e.currentTarget as HTMLButtonElement).style.borderColor='#1a2d45';(e.currentTarget as HTMLButtonElement).style.background='transparent';}}>
                   {opt.label}

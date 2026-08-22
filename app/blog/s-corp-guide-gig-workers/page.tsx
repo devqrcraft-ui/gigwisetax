@@ -52,12 +52,12 @@ export default function SCorpGuideBlog() {
       </div>
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
-        <div style={s}>
+        <div style={{s}}>
           <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Gig workers earning $60,000+ in net profit can save $3,000–$12,000/year by electing S-Corp status. The strategy reduces self-employment tax (15.3%) on income above a "reasonable salary." Most gig workers never hear about this until it's too late.
           </div>
 
-          <p style={p}>If you're a full-time gig worker earning over $60,000 per year, you're almost certainly overpaying self-employment tax. The SE tax rate is 15.3% — and as a sole proprietor, you pay it on every dollar of net profit. An S-Corp election changes that equation dramatically.</p>
+          <p style={{p}}>If you're a full-time gig worker earning over $60,000 per year, you're almost certainly overpaying self-employment tax. The SE tax rate is 15.3% — and as a sole proprietor, you pay it on every dollar of net profit. An S-Corp election changes that equation dramatically.</p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
@@ -75,8 +75,8 @@ export default function SCorpGuideBlog() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={h2}>How the S-Corp Tax Strategy Works</h2>
-          <p style={p}>As a sole proprietor, 100% of your net profit is subject to 15.3% self-employment tax. As an S-Corp owner, you split your income into two buckets:</p>
+          <h2 style={{h2}}>How the S-Corp Tax Strategy Works</h2>
+          <p style={{p}}>As a sole proprietor, 100% of your net profit is subject to 15.3% self-employment tax. As an S-Corp owner, you split your income into two buckets:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '16px 0 24px' }}>
             <div style={{ background: 'rgba(178,34,52,0.12)', border: '2px solid #fca5a5', borderRadius: 8, padding: 16 }}>
               <div style={{ fontSize: 13, fontWeight: 800, color: '#B22234', marginBottom: 8 }}>SOLE PROPRIETOR</div>
@@ -88,11 +88,11 @@ export default function SCorpGuideBlog() {
             </div>
           </div>
 
-          <h2 style={h2}>Who Should Consider an S-Corp Election?</h2>
-          <p style={p}>The S-Corp strategy makes financial sense when your <strong>net self-employment profit consistently exceeds $60,000 per year</strong>. Below that threshold, the compliance costs (~$2,500/year for payroll and tax prep) often exceed the tax savings.</p>
-          <div style={tip}> <strong>Good candidates:</strong> Full-time DoorDash/Uber drivers earning $70k+, Etsy sellers with $80k+ profit, OnlyFans creators with $60k+ net income, multi-platform gig workers with combined income over $60k.</div>
+          <h2 style={{h2}}>Who Should Consider an S-Corp Election?</h2>
+          <p style={{p}}>The S-Corp strategy makes financial sense when your <strong>net self-employment profit consistently exceeds $60,000 per year</strong>. Below that threshold, the compliance costs (~$2,500/year for payroll and tax prep) often exceed the tax savings.</p>
+          <div style={{tip}}> <strong>Good candidates:</strong> Full-time DoorDash/Uber drivers earning $70k+, Etsy sellers with $80k+ profit, OnlyFans creators with $60k+ net income, multi-platform gig workers with combined income over $60k.</div>
 
-          <h2 style={h2}>Step-by-Step: How to Elect S-Corp Status</h2>
+          <h2 style={{h2}}>Step-by-Step: How to Elect S-Corp Status</h2>
           {[
             { n: 1, title: 'Form an LLC (if you haven\'t already)', body: 'File Articles of Organization with your state. Cost: $50–$500 depending on state. Do this online at your state\'s Secretary of State website. Takes 1–4 weeks.' },
             { n: 2, title: 'File IRS Form 2553', body: 'This is the S-Corp election form. File within 75 days of your LLC formation date, OR by March 15 for the current tax year. File at IRS.gov or mail to your regional IRS service center. It\'s free.' },
@@ -109,7 +109,7 @@ export default function SCorpGuideBlog() {
             </div>
           ))}
 
-          <div style={warn}> <strong>Important deadlines:</strong> To elect S-Corp status for 2025, you must file Form 2553 by March 15, 2025 (for existing entities) or within 75 days of forming a new LLC. Missing the deadline means waiting until 2026.</div>
+          <div style={{warn}}> <strong>Important deadlines:</strong> To elect S-Corp status for 2025, you must file Form 2553 by March 15, 2025 (for existing entities) or within 75 days of forming a new LLC. Missing the deadline means waiting until 2026.</div>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>CALCULATE YOUR S-CORP SAVINGS</div>

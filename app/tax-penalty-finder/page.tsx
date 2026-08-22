@@ -62,14 +62,14 @@ export default function TaxPenaltyFinder() {
   const inp  = { width: '100%', border: '2px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 14px', fontSize: 16, boxSizing: 'border-box' as const, marginTop: 8 }
 
   if (result) return (
-    <div style={bg}><div style={wrap}>
-      <div style={card}>
-        <div style={hdr}>
+    <div style={{bg}}><div style={{wrap}}>
+      <div style={{card}}>
+        <div style={{hdr}}>
           <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:6 }}>GIGWISETAX — FREE ANALYSIS</div>
           <div style={{ color:'#fff', fontSize:22, fontWeight:800 }}>Your Tax Penalty Report</div>
           <div style={{ color:'rgba(255,255,255,.6)', fontSize:13, marginTop:4 }}>{platform} • ${parseFloat(income).toLocaleString()} income</div>
         </div>
-        <div style={body}>
+        <div style={{body}}>
           <div style={{ background:'rgba(178,34,52,0.12)', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#B22234', letterSpacing:1, marginBottom:4 }}>YOU ARE CURRENTLY OVERPAYING THE IRS</div>
             <div style={{ fontSize:52, fontWeight:900, color:'#B22234', lineHeight:1 }}>{fmt(result.overpaying)}</div>
@@ -125,21 +125,21 @@ export default function TaxPenaltyFinder() {
   )
 
   return (
-    <div style={bg}><div style={wrap}>
+    <div style={{bg}}><div style={{wrap}}>
       <div style={{ textAlign:'center', marginBottom:32 }}>
         <div style={{ display:'inline-block', background:'#B22234', color:'#fff', fontSize:11, fontWeight:800, letterSpacing:1.5, padding:'5px 14px', borderRadius:20, marginBottom:14 }}>FREE TAX ANALYSIS</div>
         <h1 style={{ color:'#fff', fontSize:28, fontWeight:900, margin:'0 0 10px', lineHeight:1.2 }}>How Much Are You Overpaying the IRS?</h1>
         <p style={{ color:'rgba(255,255,255,.6)', fontSize:15, margin:0 }}>Answer 7 quick questions — get your personalized penalty report in 60 seconds</p>
       </div>
-      <div style={card}>
-        <div style={hdr}>
+      <div style={{card}}>
+        <div style={{hdr}}>
           <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center' }}>
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1 }}>{step === 0 ? 'START' : `STEP ${step} OF 7`}</div>
             <div style={{ color:'rgba(255,255,255,.5)', fontSize:12 }}>GigWiseTax</div>
           </div>
           {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
         </div>
-        <div style={body}>
+        <div style={{body}}>
           {step === 0 && (
             <div style={{ textAlign:'center' }}>
               <div style={{ fontSize:48, marginBottom:16 }}></div>
@@ -150,7 +150,7 @@ export default function TaxPenaltyFinder() {
                   <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
                 ))}
               </div>
-              <button onClick={() => setStep(1)} style={btnR}>Find My Tax Savings →</button>
+              <button onClick={() => setStep(1)} style={{btnR}}>Find My Tax Savings →</button>
             </div>
           )}
           {step === 1 && (
@@ -175,7 +175,7 @@ export default function TaxPenaltyFinder() {
                 ))}
               </div>
               <button onClick={() => income && setStep(hasMileage ? 3 : 4)} style={{ ...btnR, opacity: income ? 1 : 0.5 }}>Next →</button>
-              <button onClick={() => setStep(1)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(1)} style={{btnG}}>← Back</button>
             </div>
           )}
           {step === 3 && hasMileage && (
@@ -186,8 +186,8 @@ export default function TaxPenaltyFinder() {
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#4ade80', fontWeight:600 }}>
                  Potential deduction: ${(parseFloat(miles)*0.725).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.725*0.28).toLocaleString()} in taxes
               </div>}
-              <button onClick={() => setStep(4)} style={btnR}>Next →</button>
-              <button onClick={() => setStep(2)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(4)} style={{btnR}}>Next →</button>
+              <button onClick={() => setStep(2)} style={{btnG}}>← Back</button>
             </div>
           )}
           {step === 4 && (
@@ -195,11 +195,11 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you have a dedicated home office?</h2>
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>A room used exclusively for work = up to $1,500/yr deduction</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setHomeOffice(true)} style={opt(homeOffice===true)}> Yes, I do</button>
-                <button onClick={() => setHomeOffice(false)} style={opt(homeOffice===false)}> No</button>
+                <button onClick={() => setHomeOffice(true)} style={{opt(homeOffice===true)}}> Yes, I do</button>
+                <button onClick={() => setHomeOffice(false)} style={{opt(homeOffice===false)}}> No</button>
               </div>
               <button onClick={() => homeOffice !== null && setStep(5)} style={{ ...btnR, opacity: homeOffice !== null ? 1 : 0.5 }}>Next →</button>
-              <button onClick={() => setStep(hasMileage ? 3 : 2)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(hasMileage ? 3 : 2)} style={{btnG}}>← Back</button>
             </div>
           )}
           {step === 5 && (
@@ -207,11 +207,11 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you use your phone/internet for work?</h2>
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>50–80% of your bill is deductible if used for work</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setPhone(true)} style={opt(phone===true)}> Yes</button>
-                <button onClick={() => setPhone(false)} style={opt(phone===false)}> No</button>
+                <button onClick={() => setPhone(true)} style={{opt(phone===true)}}> Yes</button>
+                <button onClick={() => setPhone(false)} style={{opt(phone===false)}}> No</button>
               </div>
               <button onClick={() => phone !== null && setStep(6)} style={{ ...btnR, opacity: phone !== null ? 1 : 0.5 }}>Next →</button>
-              <button onClick={() => setStep(4)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(4)} style={{btnG}}>← Back</button>
             </div>
           )}
           {step === 6 && (
@@ -219,11 +219,11 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Are you paying quarterly estimated taxes?</h2>
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 7% of owed amount</p>
               <div style={{ display:'flex', gap:12 }}>
-                <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}> Yes, I pay quarterly</button>
-                <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}> No / Not sure</button>
+                <button onClick={() => setQuarterly(true)} style={{opt(quarterly===true)}}> Yes, I pay quarterly</button>
+                <button onClick={() => setQuarterly(false)} style={{opt(quarterly===false)}}> No / Not sure</button>
               </div>
               <button onClick={() => quarterly !== null && setStep(7)} style={{ ...btnR, opacity: quarterly !== null ? 1 : 0.5 }}>Next →</button>
-              <button onClick={() => setStep(5)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(5)} style={{btnG}}>← Back</button>
             </div>
           )}
           {step === 7 && (
@@ -239,7 +239,7 @@ export default function TaxPenaltyFinder() {
                 ))}
               </div>
               <button onClick={() => entity && calculate()} style={{ ...btnR, opacity: entity ? 1 : 0.5 }}> Calculate My Savings →</button>
-              <button onClick={() => setStep(6)} style={btnG}>← Back</button>
+              <button onClick={() => setStep(6)} style={{btnG}}>← Back</button>
             </div>
           )}
         </div>

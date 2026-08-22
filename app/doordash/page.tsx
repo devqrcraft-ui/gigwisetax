@@ -176,9 +176,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           </div>
 
             {/* TAX GUIDE */}
-            <div style={card}>
-              <div style={cardHd}>
-                <div style={accent}/>
+            <div style={{card}}>
+              <div style={{cardHd}}>
+                <div style={{accent}}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax Guide 2026</span>
               </div>
               <div style={{ padding: 24 }}>
@@ -340,9 +340,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* OTHER PLATFORMS */}
-            <div style={card}>
-              <div style={cardHd}>
-                <div style={accent}/>
+            <div style={{card}}>
+              <div style={{cardHd}}>
+                <div style={{accent}}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Other Platform Calculators</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
