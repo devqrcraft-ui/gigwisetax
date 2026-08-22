@@ -110,7 +110,25 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <strong style={{color:'rgba(255,255,255,0.6)'}}>Disclosure:</strong> This site may contain affiliate links. If you click and purchase, we may earn a small commission at no extra cost to you. We only recommend tools we trust. This is not tax advice — consult a licensed CPA for your situation.
           </p>
         </div>
-        <footer style={{ background:'#07111F', borderTop:'4px solid #B22234' }}>
+        
+          <div>
+            <h4 className="text-white font-bold mb-4">Platform Guides</h4>
+            <ul className="space-y-2 text-sm opacity-60">
+              <li><a href="/uber-tax-guide" className="hover:opacity-100 transition">Uber Tax Guide</a></li>
+              <li><a href="/doordash-tax-guide" className="hover:opacity-100 transition">DoorDash Guide</a></li>
+              <li><a href="/onlyfans-tax-guide" className="hover:opacity-100 transition">OnlyFans Guide</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="text-white font-bold mb-4">State Guides</h4>
+            <ul className="space-y-2 text-sm opacity-60">
+              <li><a href="/california-tax-guide" className="hover:opacity-100 transition">California Guide</a></li>
+              <li><a href="/texas-tax-guide" className="hover:opacity-100 transition">Texas Guide</a></li>
+              <li><a href="/florida-tax-guide" className="hover:opacity-100 transition">Florida Guide</a></li>
+            </ul>
+          </div>
+    
+<footer style={{ background:'#07111F', borderTop:'4px solid #B22234' }}>
           <div style={{ maxWidth:1200, margin:'0 auto', padding:'32px 20px', display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))', gap:28 }} className="footer-grid">
             <div>
               <div style={{ fontWeight:900, fontSize:17, color:'#fff', marginBottom:10 }}>GIGWISE<span style={{ color:'#e8b84b' }}>TAX</span><span style={{ color:'rgba(255,255,255,.7)', fontWeight:300, fontSize:14 }}>.COM</span></div>
