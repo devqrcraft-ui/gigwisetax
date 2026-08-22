@@ -361,3 +361,8 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 }
 
 @media (max-width: 768px) { body { font-size: 16px !important; } .mobile-no-border { border:none !important; padding:10px !important; } }
+
+/* 3D UI v80 */
+.btn-3d-red{position:relative;display:inline-flex;align-items:center;padding:12px 24px;background:linear-gradient(180deg,#B22234 0%,#8B0000 100%);color:#fff!important;font-weight:800;border-radius:8px;border:1px solid #ff4d4d;box-shadow:0 4px 0 #5a0000,0 8px 15px rgba(0,0,0,0.4);transition:all .1s;cursor:pointer;text-transform:uppercase}
+.btn-3d-red:hover{transform:translateY(-3px);box-shadow:0 7px 0 #5a0000,0 12px 20px rgba(178,34,52,0.4);filter:brightness(1.1)}
+.btn-3d-red:active{transform:translateY(2px);box-shadow:0 2px 0 #5a0000}
