@@ -188,7 +188,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <span style={{ fontSize:14, color:'rgba(255,255,255,.8)' }}> Made for U.S. Gig Workers ·  Calculations stay in your browser</span>
             </div>
           </div>
-        </footer>
+        <div style={{padding:20,background:"rgba(232,184,75,0.05)",borderTop:"1px solid rgba(255,255,255,0.1)"}}><div style={{maxWidth:1200,margin:"0 auto"}}><div style={{fontSize:12,fontWeight:800,color:"#e8b84b",marginBottom:10}}>★ TAX ECOSYSTEM</div><a href="https://www.privatepaycheck.com" style={{color:"#fff",marginRight:20,textDecoration:"none"}}>PrivatePaycheck ➔</a><a href="https://www.ukgigtax.com" style={{color:"#fff",textDecoration:"none"}}>UKGigTax ➔</a></div></div></footer>
 
         
 
