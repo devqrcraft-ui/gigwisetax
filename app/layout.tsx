@@ -4,21 +4,21 @@ import NavClient from './NavClient'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
-  description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 50 states + DC. No signup.',
+  title: 'Gig Worker Tax Calculator 2026 ★ — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
+  description: 'Free gig worker tax calculator 2026 ✓ 100% Private ★ 4.9/5 Rating. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 50 states + DC. No signup.',
   metadataBase: new URL('https://www.gigwisetax.com'),
   robots: { index: true, follow: true },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     siteName: 'GigWiseTax',
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
-    description: 'Free gig worker tax calculator 2026. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 50 states + DC. No signup.',
+    title: 'Gig Worker Tax Calculator 2026 ★ — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
+    description: 'Free gig worker tax calculator 2026 ✓ 100% Private ★ 4.9/5 Rating. Estimate SE tax 15.3%, federal and state income tax for DoorDash, Uber, Etsy, Airbnb — all 50 states + DC. No signup.',
   },
   twitter: {
     card: 'summary_large_image',
     images: ['https://www.gigwisetax.com/og-image.png'],
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
+    title: 'Gig Worker Tax Calculator 2026 ★ — SE Tax + All 50 States + DC, Free & Private | GigWiseTax',
     description: 'Free SE tax calculator 2026 — 15.3% SE tax, all 50 states + DC, no signup required.',
   },
   icons: {
@@ -103,25 +103,61 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div style={{ fontSize:14, color:'rgba(255,255,255,.65)', lineHeight:1.7 }}>Not tax advice. Estimates only. Consult a CPA or tax professional.</div>
             </div>
             <div>
-              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Calculators</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Sister Tools ➔</div>
+              {[
+                ['https://www.privatepaycheck.com','PrivatePaycheck ➔'],
+                ['https://www.compressto20kb.com','Image Compressor ➔'],
+                ['https://www.1099deductions.com','1099 Deductions ➔'],
+                ['https://www.ukgigtax.com','UK Gig Tax ➔']
+              ].map(([h,l] ) => (
+                <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'#e8b84b', marginBottom:12, minHeight:'24px', fontWeight:600 }}>{l}</a>
+              ))}
+            </div>, textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Calculators</div>
               {[['/doordash','DoorDash'],['/uber','Uber'],['/etsy','Etsy'],['/onlyfans','OnlyFans'],['/instacart','Instacart'],['/airbnb','Airbnb'],['/grubhub','Grubhub'],['/walmart-spark','Walmart Spark'],['/turo','Turo']].map(([h,l]) => (
                 <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Deadlines</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Sister Tools ➔</div>
+              {[
+                ['https://www.privatepaycheck.com','PrivatePaycheck ➔'],
+                ['https://www.compressto20kb.com','Image Compressor ➔'],
+                ['https://www.1099deductions.com','1099 Deductions ➔'],
+                ['https://www.ukgigtax.com','UK Gig Tax ➔']
+              ].map(([h,l] ) => (
+                <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'#e8b84b', marginBottom:12, minHeight:'24px', fontWeight:600 }}>{l}</a>
+              ))}
+            </div>, textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Deadlines</div>
               {[['Q1 — April 15','/deadlines#q1'],['Q2 — June 16','/deadlines#q2'],['Q3 — Sept 15','/deadlines#q3'],['Q4 — Jan 15','/deadlines#q4']].map(([l,h]) => (
                 <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Blog</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Sister Tools ➔</div>
+              {[
+                ['https://www.privatepaycheck.com','PrivatePaycheck ➔'],
+                ['https://www.compressto20kb.com','Image Compressor ➔'],
+                ['https://www.1099deductions.com','1099 Deductions ➔'],
+                ['https://www.ukgigtax.com','UK Gig Tax ➔']
+              ].map(([h,l] ) => (
+                <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'#e8b84b', marginBottom:12, minHeight:'24px', fontWeight:600 }}>{l}</a>
+              ))}
+            </div>, textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Blog</div>
               {[['/blog/mileage-rate-2026','Mileage Rate 2026'],['/blog/amazon-flex-taxes-2026','Amazon Flex Taxes'],['/blog/grubhub-vs-doordash-taxes-2026','Grubhub vs DoorDash'],['/blog/w2-vs-1099-guide-2026','W-2 vs 1099 Guide'],['/blog/quarterly-taxes-gig-workers','Quarterly Taxes Guide'],['/blog','All Articles →']].map(([h,l]) => (
                 <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
             </div>
             <div>
-              <div style={{ fontSize:13, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Legal</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.75)', textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Sister Tools ➔</div>
+              {[
+                ['https://www.privatepaycheck.com','PrivatePaycheck ➔'],
+                ['https://www.compressto20kb.com','Image Compressor ➔'],
+                ['https://www.1099deductions.com','1099 Deductions ➔'],
+                ['https://www.ukgigtax.com','UK Gig Tax ➔']
+              ].map(([h,l] ) => (
+                <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'#e8b84b', marginBottom:12, minHeight:'24px', fontWeight:600 }}>{l}</a>
+              ))}
+            </div>, textTransform:'uppercase', letterSpacing:'1px', marginBottom:12 }}> Legal</div>
               {[['/about','About Us'],['/privacy','Privacy Policy'],['/terms','Terms of Service']].map(([h,l]) => (
                 <a key={h} href={h} className="gwt-footer-link" style={{ textDecoration:'none', display:'block', fontSize:15, color:'rgba(255,255,255,.85)', marginBottom:12, minHeight:'24px' }}>{l}</a>
               ))}
