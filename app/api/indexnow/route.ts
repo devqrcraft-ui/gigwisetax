@@ -16,7 +16,7 @@ export async function GET() {
   ];
 
   platforms.forEach(p => {
-    urlList.add(`https://${HOST}/${p}` );
+    urlList.push(`https://${HOST}/${p}` );
     states.forEach(s => {
       urlList.push(`https://${HOST}/${p}/${s}` );
     });

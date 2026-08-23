@@ -77,7 +77,7 @@ export default function MileageRate2026Post() {
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.3)', marginTop: 8 }}>For business use of a personal vehicle · IRS Rev. Proc. 2026-01</div>
           </div>
 
-          <p style={{p}}>
+          <p style={p}>
             The IRS announced the standard mileage rate for 2026 is <strong>72.5 cents per mile</strong> for business use. This is the rate delivery drivers, rideshare drivers, and other gig workers use to calculate their vehicle expense deduction — without tracking actual gas, maintenance, or insurance costs.
           </p>
 
@@ -107,7 +107,7 @@ export default function MileageRate2026Post() {
               <li style={{marginBottom:6}}><a href={"#track-miles"} style={{color:'#e8b84b',textDecoration:'none',fontSize:14,fontWeight:600}}>How to Track Miles for the IRS</a></li>
             </ol>
           </div>
-<h2 id="mileage-history" style={{h2}}>Mileage Rate History: How 2026 Compares</h2>
+<h2 id="mileage-history" style={h2}>Mileage Rate History: How 2026 Compares</h2>
           <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
@@ -127,7 +127,7 @@ export default function MileageRate2026Post() {
             ))}
           </div>
 
-          <h2 id="how-much-save" style={{h2}}>How Much Can You Save? (By Miles Driven)</h2>
+          <h2 id="how-much-save" style={h2}>How Much Can You Save? (By Miles Driven)</h2>
           <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (72.5¢/mile, 2026)</div>
             {[
@@ -148,8 +148,8 @@ export default function MileageRate2026Post() {
             <div style={{ padding: '8px 16px', background: 'rgba(255,255,255,0.05)', fontSize: 11, color: '#7a9abf' }}>*Tax savings estimated at 30% combined rate. Actual savings depend on your tax bracket and state.</div>
           </div>
 
-          <h2 id="mileage-vs-actual" style={{h2}}>Standard Mileage vs. Actual Expenses: Which Is Better?</h2>
-          <p style={{p}}>
+          <h2 id="mileage-vs-actual" style={h2}>Standard Mileage vs. Actual Expenses: Which Is Better?</h2>
+          <p style={p}>
             You can only choose one method per vehicle per year. Once you use actual expenses in the first year, you cannot switch to standard mileage later. If you use standard mileage first, you can switch to actual expenses in future years.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
@@ -170,12 +170,12 @@ export default function MileageRate2026Post() {
               </ul>
             </div>
           </div>
-          <p style={{p}}>
+          <p style={p}>
             For most gig workers, <strong>standard mileage is simpler and often yields a larger deduction</strong> — especially if you drive a fuel-efficient car. Run the numbers both ways if you have a high-expense vehicle.
           </p>
 
-          <h2 id="track-miles" style={{h2}}>How to Track Miles for the IRS</h2>
-          <p style={{p}}>
+          <h2 id="track-miles" style={h2}>How to Track Miles for the IRS</h2>
+          <p style={p}>
             The IRS requires a contemporaneous mileage log — meaning you record trips at or near the time they happen, not months later from memory. Your log should include:
           </p>
           <ul style={{ paddingLeft: 24, marginBottom: 20 }}>

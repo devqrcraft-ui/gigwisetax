@@ -78,9 +78,9 @@ export default function DeadlinesPage() {
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: 'minmax(0,1fr)', gap: 24 }} className="main-grid">
         <div>
           {/* 2026 FEDERAL DEADLINES */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
-              <div style={{accent}}/>
+          <div style={card}>
+            <div style={cardHd}>
+              <div style={accent}/>
               <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
@@ -96,7 +96,7 @@ export default function DeadlinesPage() {
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
                   <div style={{ fontSize: 18, fontWeight: 900, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
                   <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.days} days</div>
-                  <div style={{btnRed}}> + Calendar</div>
+                  <div style={btnRed}> + Calendar</div>
                 </div>
               ))}
             </div>
@@ -119,9 +119,9 @@ export default function DeadlinesPage() {
           </div>
 
           {/* STATE DEADLINES */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
-              <div style={{accent}}/>
+          <div style={card}>
+            <div style={cardHd}>
+              <div style={accent}/>
               <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> State Quarterly Tax Deadlines 2026</span>
             </div>
             <div style={{ overflowX: 'auto' as const }}>

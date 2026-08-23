@@ -33,8 +33,8 @@ export default function QuarterlyReminder() {
   const btnR = { background: '#B22234', color: '#fff', border: 'none', borderRadius: 6, padding: '15px', fontSize: 16, fontWeight: 800, cursor: 'pointer', width: '100%', marginTop: 20 } as const
 
   if (step === 'success') return (
-    <div style={{bg}}><div style={{wrap}}>
-      <div style={{card}}>
+    <div style={bg}><div style={wrap}>
+      <div style={card}>
         <div style={{ background: 'linear-gradient(135deg,#16a34a,#15803d)', padding: '48px 24px', textAlign: 'center' }}>
           <div style={{ fontSize: 64, marginBottom: 16 }}></div>
           <h1 style={{ color: '#fff', fontSize: 26, fontWeight: 900, margin: '0 0 10px' }}>You're All Set, {name}!</h1>
@@ -43,7 +43,7 @@ export default function QuarterlyReminder() {
             Never pay an IRS penalty again.
           </p>
         </div>
-        <div style={{body}}>
+        <div style={body}>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 14 }}> You'll receive reminders before:</div>
             {DEADLINES.map((d, i) => (
@@ -83,7 +83,7 @@ export default function QuarterlyReminder() {
   )
 
   return (
-    <div style={{bg}}><div style={{wrap}}>
+    <div style={bg}><div style={wrap}>
 
       {/* HEADER */}
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
@@ -102,12 +102,12 @@ export default function QuarterlyReminder() {
       </div>
 
       {/* DEADLINES */}
-      <div style={{card}}>
-        <div style={{hdr}}>
+      <div style={card}>
+        <div style={hdr}>
           <div style={{ color: '#e8b84b', fontSize: 11, fontWeight: 700, letterSpacing: 1.5, marginBottom: 6 }}>2026 QUARTERLY TAX CALENDAR</div>
           <div style={{ color: '#fff', fontSize: 18, fontWeight: 800 }}>All 4 IRS Payment Deadlines</div>
         </div>
-        <div style={{body}}>
+        <div style={body}>
           {DEADLINES.map((d, i) => (
             <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 8, marginBottom: 10, border: d.urgent ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.12)' }}>
               <div>
@@ -127,25 +127,25 @@ export default function QuarterlyReminder() {
       </div>
 
       {/* SIGNUP FORM */}
-      <div style={{card}}>
-        <div style={{hdr}}>
+      <div style={card}>
+        <div style={hdr}>
           <div style={{ color: '#e8b84b', fontSize: 11, fontWeight: 700, letterSpacing: 1.5, marginBottom: 6 }}>FREE EMAIL REMINDERS</div>
           <div style={{ color: '#fff', fontSize: 20, fontWeight: 800 }}>Get Reminded Before Every Deadline</div>
           <div style={{ color: 'rgba(255,255,255,.6)', fontSize: 13, marginTop: 4 }}>14 days before each quarterly payment — completely free</div>
         </div>
-        <div style={{body}}>
+        <div style={body}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             <div>
-              <label style={{lbl}}>Your First Name</label>
-              <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. John" style={{inp}}/>
+              <label style={lbl}>Your First Name</label>
+              <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="e.g. John" style={inp}/>
             </div>
             <div>
-              <label style={{lbl}}>Email Address</label>
-              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="john@gmail.com" style={{inp}}/>
+              <label style={lbl}>Email Address</label>
+              <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="john@gmail.com" style={inp}/>
             </div>
           </div>
 
-          <label style={{lbl}}>Your Platform <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional)</span></label>
+          <label style={lbl}>Your Platform <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional)</span></label>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const, marginTop: 8 }}>
             {PLATFORMS.map(p => (
               <button key={p} onClick={() => setPlatform(p)}
@@ -155,7 +155,7 @@ export default function QuarterlyReminder() {
             ))}
           </div>
 
-          <label style={{lbl}}>Estimated Annual Income <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — helps us personalize reminders)</span></label>
+          <label style={lbl}>Estimated Annual Income <span style={{ color: '#7a9abf', fontWeight: 400 }}>(optional — helps us personalize reminders)</span></label>
           <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' as const }}>
             {['Under $20k','$20k–$50k','$50k–$100k','Over $100k'].map(v => (
               <button key={v} onClick={() => setIncome(v)}
@@ -176,11 +176,11 @@ export default function QuarterlyReminder() {
       </div>
 
       {/* WHY */}
-      <div style={{card}}>
+      <div style={card}>
         <div style={{ ...hdr, borderBottom: '1px solid rgba(255,255,255,.82)' }}>
           <div style={{ color: '#fff', fontSize: 16, fontWeight: 800 }}>Why Quarterly Taxes Matter</div>
         </div>
-        <div style={{body}}>
+        <div style={body}>
           {[
             { icon: '', title: 'Avoid IRS Penalties', desc: 'Missing quarterly payments triggers underpayment penalties — up to 8% of the amount owed. On a $5,000 tax bill, that\'s $400 wasted.' },
             { icon: '', title: 'Required for Gig Workers', desc: 'If you earn $400+ in self-employment income, the IRS requires quarterly payments. DoorDash, Uber, Etsy — all platforms send 1099s, not W-2s.' },

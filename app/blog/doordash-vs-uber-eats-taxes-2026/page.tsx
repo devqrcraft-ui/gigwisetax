@@ -67,11 +67,11 @@ export default function DoorDashVsUberEatsPost() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-        <h2 style={{h2}}>Tax Treatment: DoorDash vs Uber Eats</h2>
-        <p style={{p}}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $600) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
-        <p style={{p}}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>
+        <h2 style={h2}>Tax Treatment: DoorDash vs Uber Eats</h2>
+        <p style={p}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $600) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
+        <p style={p}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>
 
-        <h2 style={{h2}}>2026 Tax Comparison: $40K DoorDash vs $35K Uber Eats</h2>
+        <h2 style={h2}>2026 Tax Comparison: $40K DoorDash vs $35K Uber Eats</h2>
         <div style={{ overflowX: 'auto', marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
@@ -106,19 +106,19 @@ export default function DoorDashVsUberEatsPost() {
           </table>
         </div>
 
-        <h2 style={{h2}}>Mileage Deduction: The Key Difference</h2>
-        <p style={{p}}>The <strong>IRS mileage rate for 2026 is 72.5¢ per mile</strong>. This is identical for DoorDash and Uber Eats. A driver doing 20,000 business miles deducts $14,500 — the single largest deduction available. Track every mile from the moment you open the app to your last drop-off.</p>
-        <p style={{p}}>DoorDash drivers typically drive more miles per order (suburban markets, longer distances). Uber Eats skews toward urban areas with shorter routes. More miles = larger deduction = lower taxes.</p>
+        <h2 style={h2}>Mileage Deduction: The Key Difference</h2>
+        <p style={p}>The <strong>IRS mileage rate for 2026 is 72.5¢ per mile</strong>. This is identical for DoorDash and Uber Eats. A driver doing 20,000 business miles deducts $14,500 — the single largest deduction available. Track every mile from the moment you open the app to your last drop-off.</p>
+        <p style={p}>DoorDash drivers typically drive more miles per order (suburban markets, longer distances). Uber Eats skews toward urban areas with shorter routes. More miles = larger deduction = lower taxes.</p>
 
-        <h2 style={{h2}}>Which Platform Is Better After Taxes?</h2>
-        <p style={{p}}>Tax treatment is identical. The better platform after taxes is simply the one with <strong>higher earnings per hour in your specific market</strong>. Run both apps simultaneously (dual-apping) to maximize hourly earnings — both platforms allow this.</p>
-        <p style={{p}}>Key factors: DoorDash typically averages <strong>$20–25/hour</strong> in suburban markets. Uber Eats averages <strong>$18–22/hour</strong> in urban areas. Check local Facebook driver groups for current market rates before committing.</p>
+        <h2 style={h2}>Which Platform Is Better After Taxes?</h2>
+        <p style={p}>Tax treatment is identical. The better platform after taxes is simply the one with <strong>higher earnings per hour in your specific market</strong>. Run both apps simultaneously (dual-apping) to maximize hourly earnings — both platforms allow this.</p>
+        <p style={p}>Key factors: DoorDash typically averages <strong>$20–25/hour</strong> in suburban markets. Uber Eats averages <strong>$18–22/hour</strong> in urban areas. Check local Facebook driver groups for current market rates before committing.</p>
 
-        <h2 style={{h2}}>Quarterly Taxes: Same Rules for Both</h2>
-        <p style={{p}}>If you expect to owe $1,000+ in taxes, you must pay quarterly estimated taxes. Due dates for 2026: <strong>April 15, June 16, September 15, January 15 (2027)</strong>. Use IRS Form 1040-ES. Missing a payment triggers a penalty of approximately {UNDERPAYMENT_PENALTY_RATE_2026}% annualized.</p>
-        <p style={{p}}>Set aside <strong>25–30% of every payout</strong> from both DoorDash and Uber Eats into a separate savings account. Pay quarterly from that account.</p>
+        <h2 style={h2}>Quarterly Taxes: Same Rules for Both</h2>
+        <p style={p}>If you expect to owe $1,000+ in taxes, you must pay quarterly estimated taxes. Due dates for 2026: <strong>April 15, June 16, September 15, January 15 (2027)</strong>. Use IRS Form 1040-ES. Missing a payment triggers a penalty of approximately {UNDERPAYMENT_PENALTY_RATE_2026}% annualized.</p>
+        <p style={p}>Set aside <strong>25–30% of every payout</strong> from both DoorDash and Uber Eats into a separate savings account. Pay quarterly from that account.</p>
 
-        <h2 style={{h2}}>Frequently Asked Questions</h2>
+        <h2 style={h2}>Frequently Asked Questions</h2>
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 24 }}>
           {[
             { q: 'Do DoorDash and Uber Eats drivers pay the same taxes?', a: 'Yes. Both are 1099 self-employment income. SE tax is 15.3% on net profit for both platforms.' },

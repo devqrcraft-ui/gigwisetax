@@ -65,7 +65,7 @@ export default function RoverTaxes2026() {
                 'Supplies — food, treats, leashes, waste bags — fully deductible on Schedule C',
               ].map((t, i) => (
                 <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
-                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block` }} />
+                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block' }} />
                   {t}
                 </li>
               ))}
@@ -117,7 +117,7 @@ export default function RoverTaxes2026() {
                   ['$30,000', '$4,239', '$2,400', '$6,639', '$1,660'],
                   ['$40,000', '$5,652', '$3,800', '$9,452', '$2,363'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}
@@ -198,7 +198,7 @@ export default function RoverTaxes2026() {
                   ['Simplified', '$5 × sq ft of space', '$1,500 (300 sq ft max)', 'Easy, no depreciation recapture'],
                   ['Actual Expenses', '% of home costs', 'Unlimited', 'Larger homes, higher expenses'],
                 ].map((row, i, arr) => (
-                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                  <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
                       <td key={j} style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{cell}</td>
                     ))}

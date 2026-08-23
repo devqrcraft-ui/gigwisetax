@@ -195,9 +195,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} />
 
             {/* STATE GUIDE */}
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> {platform.name} Taxes in {state.name} — 2026 Guide</span>
               </div>
               <div style={{ padding: 14 }}>
@@ -304,9 +304,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
 
             {/* OTHER STATES */}
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> {platform.name} Tax in Other States</span>
               </div>
               <div style={{ padding: 12, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6 }} className="p-grid">

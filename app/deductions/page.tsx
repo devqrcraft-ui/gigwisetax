@@ -50,7 +50,7 @@ export default function DeductionsChecklist() {
   const hdr  = { background: 'linear-gradient(135deg,#1e2d5a,#07111F)', padding: '20px 24px', borderBottom: '3px solid #B22234' }
 
   return (
-    <div style={{bg}}><div style={{wrap}}>
+    <div style={bg}><div style={wrap}>
 
       {/* HEADER */}
       <div style={{ textAlign: 'center', marginBottom: 32 }}>
@@ -125,8 +125,8 @@ export default function DeductionsChecklist() {
       </div>
 
       {/* DEDUCTIONS LIST */}
-      <div style={{card}}>
-        <div style={{hdr}}>
+      <div style={card}>
+        <div style={hdr}>
           <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>GIGWISETAX — DEDUCTIONS CHECKLIST 2025</div>
           <div style={{ color: '#fff', fontSize: 16, fontWeight: 800 }}>
             {category === 'All' ? `All ${DEDUCTIONS.length} Deductions` : category} — check what applies to you

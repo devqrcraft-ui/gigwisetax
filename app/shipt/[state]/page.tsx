@@ -77,8 +77,8 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }} className="main-grid">
           <div>
             <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} />
-            <div style={{card}}>
-              <div style={{cardHd}}><div style={{accent}} /><span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Taxes in {state.name} — 2026 Guide</span></div>
+            <div style={card}>
+              <div style={cardHd}><div style={accent} /><span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Taxes in {state.name} — 2026 Guide</span></div>
               <div style={{ padding: 14 }}>
                 <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}>How {platform.name} Taxes Work in {state.name}</h2>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: 16 }}>{stateNote}</p>
@@ -118,8 +118,8 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
                 </div>
               </div>
             </div>
-            <div style={{card}}>
-              <div style={{cardHd}}><div style={{accent}} /><span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>Shipt Tax in Other States</span></div>
+            <div style={card}>
+              <div style={cardHd}><div style={accent} /><span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>Shipt Tax in Other States</span></div>
               <div style={{ padding: 12, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 6 }} className="p-grid">
                 {STATES.filter(s => s.slug !== stateSlug).map(s => (
                   <a key={s.slug} href={'/shipt/' + s.slug} style={{ textDecoration: 'none' }}>

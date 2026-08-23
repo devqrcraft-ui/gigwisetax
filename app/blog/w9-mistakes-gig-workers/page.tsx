@@ -53,13 +53,13 @@ export default function W9MistakesBlog() {
       </div>
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
-        <div style={{s}}>
+        <div style={s}>
           <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Most gig workers fill out W-9 forms wrong — or skip them entirely. These 7 mistakes trigger IRS penalties, withholding problems, and lost deductions worth thousands per year.
           </div>
 
-          <p style={{p}}>If you work for DoorDash, Uber, Etsy, Airbnb, or any other gig platform, you've filled out at least one W-9 form. It looks simple — just your name and SSN. But the details matter. The IRS matches every W-9 against its records, and even small mismatches can trigger backup withholding at 24% of your earnings.</p>
-          <p style={{p}}>Here are the 7 most expensive W-9 and 1099 mistakes gig workers make — and exactly how to fix each one.</p>
+          <p style={p}>If you work for DoorDash, Uber, Etsy, Airbnb, or any other gig platform, you've filled out at least one W-9 form. It looks simple — just your name and SSN. But the details matter. The IRS matches every W-9 against its records, and even small mismatches can trigger backup withholding at 24% of your earnings.</p>
+          <p style={p}>Here are the 7 most expensive W-9 and 1099 mistakes gig workers make — and exactly how to fix each one.</p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
@@ -77,32 +77,32 @@ export default function W9MistakesBlog() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={{h2}}>Mistake #1: Using a Nickname Instead of Your Legal Name</h2>
-          <p style={{p}}>The IRS matches your W-9 name against your Social Security Administration records. If your SSN is registered to "Robert Smith" but you write "Bob Smith" on the W-9, the platform's tax software may flag the mismatch — and begin withholding 24% of your payments.</p>
-          <div style={{warn}}> <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>
+          <h2 style={h2}>Mistake #1: Using a Nickname Instead of Your Legal Name</h2>
+          <p style={p}>The IRS matches your W-9 name against your Social Security Administration records. If your SSN is registered to "Robert Smith" but you write "Bob Smith" on the W-9, the platform's tax software may flag the mismatch — and begin withholding 24% of your payments.</p>
+          <div style={warn}> <strong>The Fix:</strong> Use the exact name on your Social Security card. If you've legally changed your name (marriage, court order), update the SSA first at ssa.gov, then update your W-9.</div>
 
-          <h2 style={{h2}}>Mistake #2: Wrong Tax Classification</h2>
-          <p style={{p}}>Box 3 on the W-9 asks you to select your federal tax classification. Most solo gig workers should check "Individual/sole proprietor." But many workers incorrectly select "LLC" (even when they have no formal LLC), or leave it blank entirely.</p>
-          <div style={{warn}}> <strong>The Fix:</strong> If you're a solo gig worker with no formal business entity, select "Individual/sole proprietor or single-member LLC." If you've formed an actual LLC or S-Corp, select the appropriate box and add your EIN.</div>
+          <h2 style={h2}>Mistake #2: Wrong Tax Classification</h2>
+          <p style={p}>Box 3 on the W-9 asks you to select your federal tax classification. Most solo gig workers should check "Individual/sole proprietor." But many workers incorrectly select "LLC" (even when they have no formal LLC), or leave it blank entirely.</p>
+          <div style={warn}> <strong>The Fix:</strong> If you're a solo gig worker with no formal business entity, select "Individual/sole proprietor or single-member LLC." If you've formed an actual LLC or S-Corp, select the appropriate box and add your EIN.</div>
 
-          <h2 style={{h2}}>Mistake #3: Not Reporting Income Under $600</h2>
-          <p style={{p}}>The $600 threshold only determines whether a platform must send you a 1099-NEC form. You must report ALL self-employment income to the IRS — even $50, even $1 — if your total self-employment profit exceeds $400 for the year.</p>
-          <div style={{warn}}> <strong>The Penalty:</strong> Failing to report income = 20% accuracy penalty on understated tax + interest. On $5,000 of unreported income, that's $1,000+ in penalties before interest.</div>
-          <div style={{tip}}> <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
+          <h2 style={h2}>Mistake #3: Not Reporting Income Under $600</h2>
+          <p style={p}>The $600 threshold only determines whether a platform must send you a 1099-NEC form. You must report ALL self-employment income to the IRS — even $50, even $1 — if your total self-employment profit exceeds $400 for the year.</p>
+          <div style={warn}> <strong>The Penalty:</strong> Failing to report income = 20% accuracy penalty on understated tax + interest. On $5,000 of unreported income, that's $1,000+ in penalties before interest.</div>
+          <div style={tip}> <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
 
-          <h2 style={{h2}}>Mistake #4: Missing the Quarterly Tax Deadline</h2>
-          <p style={{p}}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently {UNDERPAYMENT_PENALTY_RATE_2026}% annually on the amount owed.</p>
-          <div style={{warn}}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
+          <h2 style={h2}>Mistake #4: Missing the Quarterly Tax Deadline</h2>
+          <p style={p}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently {UNDERPAYMENT_PENALTY_RATE_2026}% annually on the amount owed.</p>
+          <div style={warn}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
 
-          <h2 style={{h2}}>Mistake #5: Using Your SSN When You Should Use an EIN</h2>
-          <p style={{p}}>Many gig workers share their Social Security Number on W-9 forms without realizing they can use an Employer Identification Number (EIN) instead. An EIN is free, takes 5 minutes to get at IRS.gov, and protects your SSN from identity theft.</p>
-          <div style={{tip}}> <strong>Get your free EIN:</strong> Visit IRS.gov/EIN. It's instant online. Once you have an EIN, use it on all W-9 forms instead of your SSN.</div>
+          <h2 style={h2}>Mistake #5: Using Your SSN When You Should Use an EIN</h2>
+          <p style={p}>Many gig workers share their Social Security Number on W-9 forms without realizing they can use an Employer Identification Number (EIN) instead. An EIN is free, takes 5 minutes to get at IRS.gov, and protects your SSN from identity theft.</p>
+          <div style={tip}> <strong>Get your free EIN:</strong> Visit IRS.gov/EIN. It's instant online. Once you have an EIN, use it on all W-9 forms instead of your SSN.</div>
 
-          <h2 style={{h2}}>Mistake #6: Not Keeping Copies of W-9 Forms You Submit</h2>
-          <p style={{p}}>Platforms sometimes lose W-9 data or update their systems. If there's ever a dispute about withholding or incorrect 1099 amounts, your copy of the W-9 is your proof. Keep a PDF copy of every W-9 you submit, with the date and platform name.</p>
+          <h2 style={h2}>Mistake #6: Not Keeping Copies of W-9 Forms You Submit</h2>
+          <p style={p}>Platforms sometimes lose W-9 data or update their systems. If there's ever a dispute about withholding or incorrect 1099 amounts, your copy of the W-9 is your proof. Keep a PDF copy of every W-9 you submit, with the date and platform name.</p>
 
-          <h2 style={{h2}}>Mistake #7: Ignoring the Address Change Rule</h2>
-          <p style={{p}}>If you move, you must submit a new W-9 to each platform with your updated address. 1099 forms mailed to an old address often get lost — and you may not realize your income was reported to the IRS until you receive an audit notice months later.</p>
+          <h2 style={h2}>Mistake #7: Ignoring the Address Change Rule</h2>
+          <p style={p}>If you move, you must submit a new W-9 to each platform with your updated address. 1099 forms mailed to an old address often get lost — and you may not realize your income was reported to the IRS until you receive an audit notice months later.</p>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>FREE TAX TOOLS — GIGWISETAX.COM</div>

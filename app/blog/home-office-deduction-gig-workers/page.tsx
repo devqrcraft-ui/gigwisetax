@@ -52,12 +52,12 @@ export default function HomeOfficeBlog() {
       </div>
 
       <div style={{ background: 'rgba(255,255,255,0.03)' }}>
-        <div style={{s}}>
+        <div style={s}>
           <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 6, padding: '14px 18px', marginBottom: 24, fontSize: 14, color: '#fcd34d' }}>
             <strong>Quick Summary:</strong> Gig workers with a dedicated home workspace can deduct $5/sq ft up to 300 sq ft ($1,500 max) using the simplified method — or more using actual expenses. The key rule: the space must be used regularly and exclusively for business.
           </div>
 
-          <p style={{p}}>The home office deduction is one of the most valuable tax breaks for gig workers — and one of the most misunderstood. Many workers skip it out of fear of an audit. But when claimed correctly, it's completely legitimate and can save $400–$1,500 per year.</p>
+          <p style={p}>The home office deduction is one of the most valuable tax breaks for gig workers — and one of the most misunderstood. Many workers skip it out of fear of an audit. But when claimed correctly, it's completely legitimate and can save $400–$1,500 per year.</p>
 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
@@ -75,8 +75,8 @@ export default function HomeOfficeBlog() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={{h2}}>Who Qualifies for the Home Office Deduction?</h2>
-          <p style={{p}}>To qualify, you need a space in your home that you use <strong>regularly and exclusively</strong> for your gig work business. This means:</p>
+          <h2 style={h2}>Who Qualifies for the Home Office Deduction?</h2>
+          <p style={p}>To qualify, you need a space in your home that you use <strong>regularly and exclusively</strong> for your gig work business. This means:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, margin: '0 0 20px' }}>
             <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid #86efac', borderRadius: 6, padding: 14 }}>
               <div style={{ fontSize: 13, fontWeight: 700, color: '#4ade80', marginBottom: 8 }}> QUALIFIES</div>
@@ -92,8 +92,8 @@ export default function HomeOfficeBlog() {
             </div>
           </div>
 
-          <h2 style={{h2}}>Simplified Method: $5 Per Square Foot</h2>
-          <p style={{p}}>The IRS simplified method lets you deduct $5 per square foot of your dedicated workspace, up to a maximum of 300 square feet. This gives a maximum deduction of $1,500 per year with no recordkeeping of actual expenses required.</p>
+          <h2 style={h2}>Simplified Method: $5 Per Square Foot</h2>
+          <p style={p}>The IRS simplified method lets you deduct $5 per square foot of your dedicated workspace, up to a maximum of 300 square feet. This gives a maximum deduction of $1,500 per year with no recordkeeping of actual expenses required.</p>
           <div style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 8, padding: 20, margin: '0 0 20px' }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 12 }}> Calculator Example:</div>
             {[{ sqft: 100, ded: '$500' }, { sqft: 150, ded: '$750' }, { sqft: 200, ded: '$1,000' }, { sqft: 300, ded: '$1,500 (max)' }].map(r => (
@@ -104,10 +104,10 @@ export default function HomeOfficeBlog() {
             ))}
           </div>
 
-          <div style={{tip}}> <strong>Pro Tip:</strong> Measure your dedicated workspace with a tape measure and take a photo. Keep this documentation in case the IRS ever asks. It takes 5 minutes and protects a $1,500 deduction.</div>
+          <div style={tip}> <strong>Pro Tip:</strong> Measure your dedicated workspace with a tape measure and take a photo. Keep this documentation in case the IRS ever asks. It takes 5 minutes and protects a $1,500 deduction.</div>
 
-          <h2 style={{h2}}>Actual Expense Method: Potentially More Valuable</h2>
-          <p style={{p}}>If your home expenses are high, the actual expense method may save more than the simplified method. You calculate the percentage of your home used for business (workspace sq ft ÷ total home sq ft) and apply that percentage to:</p>
+          <h2 style={h2}>Actual Expense Method: Potentially More Valuable</h2>
+          <p style={p}>If your home expenses are high, the actual expense method may save more than the simplified method. You calculate the percentage of your home used for business (workspace sq ft ÷ total home sq ft) and apply that percentage to:</p>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, margin: '0 0 20px' }}>
             {['Rent or mortgage interest','Utilities (electric, gas, water)','Home insurance','Internet (business portion)','Home repairs and maintenance','Property taxes'].map(item => (
               <div key={item} style={{ background: '#0a1e35', border: '1px solid #1e3a5a', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', display: 'flex', gap: 8 }}>
@@ -116,7 +116,7 @@ export default function HomeOfficeBlog() {
             ))}
           </div>
 
-          <div style={{warn}}> <strong>Audit risk:</strong> The actual expense method requires detailed recordkeeping and is more likely to trigger IRS scrutiny. For most gig workers, the simplified method ($5/sq ft) offers the best balance of savings and simplicity.</div>
+          <div style={warn}> <strong>Audit risk:</strong> The actual expense method requires detailed recordkeeping and is more likely to trigger IRS scrutiny. For most gig workers, the simplified method ($5/sq ft) offers the best balance of savings and simplicity.</div>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>CLAIM ALL YOUR DEDUCTIONS</div>

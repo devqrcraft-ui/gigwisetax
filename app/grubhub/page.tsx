@@ -76,9 +76,9 @@ export default function GrubhubPage() {
 
   return (
     <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Grubhub Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Grubhub workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Grubhub earnings. Download your annual tax summary or 1099-NEC from the Grubhub app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Grubhub income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Grubhub Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/grubhub"}]}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Grubhub Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/grubhub","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Grubhub Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/grubhub"}]}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Grubhub Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/grubhub","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
     <div style={{ background:'#0d1117', minHeight:'100vh' }}>
 
       {/* HERO */}
@@ -110,8 +110,8 @@ export default function GrubhubPage() {
         <div>
 
           {/* CALCULATOR */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Grubhub Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
@@ -119,24 +119,24 @@ export default function GrubhubPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={{lbl}} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
-                  <input style={{inp}} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
+                  <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
-                  <label style={{lbl}}>▸ Business Miles Driven (Optional)</label>
-                  <input style={{inp}} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={lbl}>▸ Business Miles Driven (Optional)</label>
+                  <input style={inp} type="number" placeholder="e.g. 22000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>72.5¢/mile IRS standard rate 2026</div>
                 </div>
                 <div>
-                  <label style={{lbl}}> State of Residence</label>
-                  <select style={{inp}}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={lbl}> State of Residence</label>
+                  <select style={inp}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={{lbl}} htmlFor="filing-status-1"> Filing Status</label>
-                  <select style={{inp}}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>
@@ -204,8 +204,8 @@ export default function GrubhubPage() {
             </p>
           </div>
           {/* DEDUCTIONS */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Grubhub Drivers 2026</span>
             </div>
@@ -223,8 +223,8 @@ export default function GrubhubPage() {
           </div>
 
           {/* FAQ */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Grubhub Taxes FAQ 2026</span>
             </div>

@@ -109,13 +109,13 @@ function QuarterlyEstimator() {
         </div>
         <div>
           <label htmlFor="qe-state" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
-          <select id="qe-state" value={qState} onChange={e=>setQState(e.target.value)} style={{inp2}}>
+          <select id="qe-state" value={qState} onChange={e=>setQState(e.target.value)} style={inp2}>
             {Object.keys(STATE_RATES).map(s=><option key={s} value={s}>{s}</option>)}
           </select>
         </div>
         <div>
           <label htmlFor="qe-filing" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>Filing Status</label>
-          <select id="qe-filing" value={qFiling} onChange={e=>setQFiling(e.target.value)} style={{inp2}}>
+          <select id="qe-filing" value={qFiling} onChange={e=>setQFiling(e.target.value)} style={inp2}>
             <option value="single">Single</option>
             <option value="married">Married Filing Jointly</option>
             <option value="hoh">Head of Household</option>
@@ -317,9 +317,9 @@ export default function HomeClient() {
               </div>
 
               {/* FORM CARD */}
-              <div style={{card}}>
-                <div style={{cardHd}}>
-                  <div style={{accent}}/>
+              <div style={card}>
+                <div style={cardHd}>
+                  <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Self-Employment Tax Estimator</span>
                   <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color:'rgba(255,255,255,.8)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
                 </div>
@@ -331,13 +331,13 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={{label}} htmlFor="gig-platform-0">▸ Gig Platform</label>
-                      <select style={{inp}}  id="gig-platform-0" value={platform} onChange={e => setPlatform(e.target.value)}>
+                      <label style={label} htmlFor="gig-platform-0">▸ Gig Platform</label>
+                      <select style={inp}  id="gig-platform-0" value={platform} onChange={e => setPlatform(e.target.value)}>
                         {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={{label}} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
+                      <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
@@ -360,12 +360,12 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={{label}}>▸ Business Miles Driven</label>
-                      <input style={{inp}} type="number" min="0" placeholder="e.g. 10,000 miles"/>
+                      <label style={label}>▸ Business Miles Driven</label>
+                      <input style={inp} type="number" min="0" placeholder="e.g. 10,000 miles"/>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
                     </div>
                     <div>
-                      <label style={{label}}> Other Business Expenses</label>
+                      <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000"/>
@@ -380,14 +380,14 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={{label}}> State of Residence</label>
-                      <select style={{inp}}  id="annual-gig-revenue-usd-setinco-1" value={stateCode} onChange={e => setStateCode(e.target.value)}>
+                      <label style={label}> State of Residence</label>
+                      <select style={inp}  id="annual-gig-revenue-usd-setinco-1" value={stateCode} onChange={e => setStateCode(e.target.value)}>
                         {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>
                     <div>
-                      <label style={{label}} htmlFor="filing-status-2"> Filing Status</label>
-                      <select style={{inp}}  id="filing-status-2" value={filing} onChange={e => setFiling(e.target.value)}>
+                      <label style={label} htmlFor="filing-status-2"> Filing Status</label>
+                      <select style={inp}  id="filing-status-2" value={filing} onChange={e => setFiling(e.target.value)}>
                         <option value="single">Single</option>
                         <option value="married">Married Filing Jointly</option>
                         <option value="hoh">Head of Household</option>
@@ -401,9 +401,9 @@ export default function HomeClient() {
 
               {/* RESULTS */}
               {result && (
-                <div style={{card}}>
-                  <div style={{cardHd}}>
-                    <div style={{accent}}/>
+                <div style={card}>
+                  <div style={cardHd}>
+                    <div style={accent}/>
                     <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your Tax Estimate</span>
                   </div>
 
@@ -437,7 +437,7 @@ export default function HomeClient() {
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
                           <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#e8b84b' : 'rgba(255,255,255,0.75)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
-                          <div style={{...btnRed({ fontSize: 13, padding: '6px 0' }}), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
+                          <div style={{...btnRed({ fontSize: 13, padding: '6px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
                         </div>
                       ))}
                     </div></div>
@@ -499,9 +499,9 @@ export default function HomeClient() {
               )}
 
               {/* PLATFORM GRID */}
-              <div style={{card}}>
-                <div style={{cardHd}}>
-                  <div style={{accent}}/>
+              <div style={card}>
+                <div style={cardHd}>
+                  <div style={accent}/>
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Select Your Platform</span>
                   <span style={{ marginLeft: 'auto', fontSize: 12, color:'rgba(255,255,255,.8)' }}>51-state tax included</span>
                 </div>
@@ -520,9 +520,9 @@ export default function HomeClient() {
               </div>
 
               {/* COMPARE TABLE */}
-              <div style={{card}}>
+              <div style={card}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{accent}}/>
+                  <div style={accent}/>
                   <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> How We Compare to Competitors</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
@@ -563,9 +563,9 @@ export default function HomeClient() {
 
           {/* ═══ DEADLINES ═══ */}
           {tab === 'deadlines' && (
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 IRS Estimated Tax Deadlines</span>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: '4px 0' }}>
@@ -584,7 +584,7 @@ export default function HomeClient() {
                         <span style={{ background: i===0 ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
                       </div>
                     </div>
-                    <div style={{...btnRed({ fontSize: 13, padding: '9px 0' }}), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
+                    <div style={{...btnRed({ fontSize: 13, padding: '9px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260616/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
                   </div>
                 ))}
               </div>
@@ -593,9 +593,9 @@ export default function HomeClient() {
 
           {/* ═══ PLATFORMS ═══ */}
           {tab === 'platforms' && (
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> All Supported Platforms</span>
               </div>
               <div style={{ overflowX: 'auto' as const }}>

@@ -75,19 +75,19 @@ export default function EtsyTaxGuide() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-            <h2 style={{h2}}>How Etsy Taxes Differ from Other Gig Platforms</h2>
-            <p style={{prose}}>
+            <h2 style={h2}>How Etsy Taxes Differ from Other Gig Platforms</h2>
+            <p style={prose}>
               Unlike DoorDash or Uber where income is straightforward, Etsy sellers have a more complex tax situation.
               You must account for <strong>cost of goods sold (COGS)</strong> — the cost of materials, supplies, and production
               costs that went into creating what you sold. COGS directly reduces your gross income before calculating SE tax,
               making it one of the most important deductions for Etsy sellers.
             </p>
-            <p style={{prose}}>
+            <p style={prose}>
               Additionally, Etsy handles sales tax collection and remittance in most states — meaning the sales tax
               collected from buyers is NOT your income and does NOT appear on your 1099-K.
               Your taxable income is only the portion you receive as the seller.
             </p>
-            <h2 style={{h2}}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
+            <h2 style={h2}>Cost of Goods Sold (COGS) — The #1 Etsy Deduction</h2>
             <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid #bae6fd', borderRadius: 6, padding: 16, marginBottom: 20 }}>
               <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}> COGS Formula for Etsy Sellers</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, fontFamily: 'monospace' }}>
@@ -97,7 +97,7 @@ export default function EtsyTaxGuide() {
                 = <strong>Cost of Goods Sold (deductible)</strong>
               </div>
             </div>
-            <h2 style={{h2}}>Top Tax Deductions for Etsy Sellers in 2026</h2>
+            <h2 style={h2}>Top Tax Deductions for Etsy Sellers in 2026</h2>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
               {[
                 { icon: '', name: 'Materials & Supplies (COGS)', detail: 'Yarn, fabric, clay, paint, wood, beads — all raw materials used to create your products.' },

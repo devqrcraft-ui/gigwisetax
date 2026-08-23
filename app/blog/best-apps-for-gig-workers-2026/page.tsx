@@ -55,7 +55,7 @@ export default function BestAppsGigWorkers() {
       <div style={{ minHeight: '100vh', background: '#07111F', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
         <div style={{ maxWidth: 860, margin: '0 auto', padding: '40px 16px' }}>
-          <div style={{ marginBottom: 8 }}><span style={{tag}}>GIG TOOLS 2026</span></div>
+          <div style={{ marginBottom: 8 }}><span style={tag}>GIG TOOLS 2026</span></div>
           <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, lineHeight: 1.2, marginBottom: 8, color: 'white' }}>Best Apps for Gig Workers 2026</h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>Last updated: May 2026 · By the GigWiseTax Team</div>
           <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.9)' }}>
@@ -73,9 +73,9 @@ export default function BestAppsGigWorkers() {
           </div>
           {apps.map(({ cat, items }) => (
             <div key={cat}>
-              <h2 style={{h2style}}>{cat}</h2>
+              <h2 style={h2style}>{cat}</h2>
               {items.map(({ name, desc }) => (
-                <div key={name} style={{card}}>
+                <div key={name} style={card}>
                   <div style={{ fontWeight: 800, fontSize: 15, color: '#e8b84b', marginBottom: 6 }}>{name}</div>
                   <p style={{ ...prose, marginBottom: 0 }}>{desc}</p>
                 </div>
@@ -100,7 +100,7 @@ export default function BestAppsGigWorkers() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={{h2style}}>Frequently Asked Questions</h2>
+          <h2 style={h2style}>Frequently Asked Questions</h2>
           {faqs.map(({ q, a }) => (
             <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 14, marginBottom: 14 }}>
               <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 6, color: 'white' }}>{q}</div>

@@ -112,9 +112,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Lyft Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Lyft workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Lyft earnings. Download your annual tax summary or 1099-NEC from the Lyft app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Lyft income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Lyft Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/lyft"}]}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Lyft Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/lyft","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Lyft Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/lyft"}]}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Lyft Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/lyft","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
 
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
@@ -177,9 +177,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           </div>
 
             {/* TAX GUIDE */}
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax Guide 2026</span>
               </div>
               <div style={{ padding: 24 }}>
@@ -341,9 +341,9 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* OTHER PLATFORMS */}
-            <div style={{card}}>
-              <div style={{cardHd}}>
-                <div style={{accent}}/>
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
                 <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Other Platform Calculators</span>
               </div>
               <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">

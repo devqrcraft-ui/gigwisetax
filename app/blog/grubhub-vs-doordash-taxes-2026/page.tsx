@@ -76,10 +76,10 @@ export default function GrubhubVsDoorDashPost() {
             </p>
           </div>
 
-          <p style={{p}}>
+          <p style={p}>
             If you drive for both Grubhub and DoorDash (a common strategy called "multi-apping"), you might wonder: do the two platforms have different tax rules? Do I file separately? Is one better for taxes?
           </p>
-          <p style={{p}}>
+          <p style={p}>
             The good news: the IRS doesn't care which app you're using. Both platforms classify drivers as <strong>independent contractors</strong>, and the tax rules are identical.
           </p>
 
@@ -99,7 +99,7 @@ export default function GrubhubVsDoorDashPost() {
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
           </blockquote>
-          <h2 style={{h2}}>Side-by-Side Tax Comparison</h2>
+          <h2 style={h2}>Side-by-Side Tax Comparison</h2>
           <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 24 }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr', background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Tax Factor</span>
@@ -126,13 +126,13 @@ export default function GrubhubVsDoorDashPost() {
             ))}
           </div>
 
-          <h2 style={{h2}}>What Actually Differs: Income & Miles</h2>
-          <p style={{p}}>
+          <h2 style={h2}>What Actually Differs: Income & Miles</h2>
+          <p style={p}>
             The real difference between Grubhub and DoorDash taxes is simply <strong>how much you earn</strong> and <strong>how many miles you drive</strong> for each platform. Grubhub tends to have longer distances between restaurant and customer, which means more mileage — and more mileage = bigger deduction.
           </p>
 
-          <h2 style={{h2}}>Filing Taxes When You Drive for Both</h2>
-          <p style={{p}}>
+          <h2 style={h2}>Filing Taxes When You Drive for Both</h2>
+          <p style={p}>
             If you drive for both Grubhub and DoorDash, you file a <strong>single Schedule C</strong> combining all self-employment income. You don't file two separate Schedule Cs unless you run them as genuinely separate business activities (rare).
           </p>
           <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16, marginBottom: 16 }}>
@@ -151,8 +151,8 @@ export default function GrubhubVsDoorDashPost() {
             ))}
           </div>
 
-          <h2 style={{h2}}>Which Platform Is "Better" for Taxes?</h2>
-          <p style={{p}}>
+          <h2 style={h2}>Which Platform Is "Better" for Taxes?</h2>
+          <p style={p}>
             Neither — the tax math is identical. Choose your platform based on earnings per hour, not tax implications. If one platform pays better after expenses, drive for that one more. From a tax perspective, it makes zero difference.
           </p>
 

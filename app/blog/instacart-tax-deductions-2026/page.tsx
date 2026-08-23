@@ -65,7 +65,7 @@ export default function InstacartTaxDeductions2026() {
                 'Phone, insulated bags, parking, and tolls are all fully deductible',
               ].map((t, i) => (
                 <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
-                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block` }} />
+                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block' }} />
                   {t}
                 </li>
               ))}
@@ -130,8 +130,8 @@ export default function InstacartTaxDeductions2026() {
                   ['Total potential deductions', '$10,430–$14,870', '$1,596–$2,275'],
                 ].map(([ded, amt, sav], i, arr) => (
                   <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
-                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{ded}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{amt}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{sav}</td>
@@ -200,8 +200,8 @@ export default function InstacartTaxDeductions2026() {
                   ['Schedule used', 'Schedule C', 'Standard W-2 filing'],
                 ].map(([feat, fs, is], i, arr) => (
                   <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
-                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: 600 }}>{feat}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{fs}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{is}</td>

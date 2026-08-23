@@ -120,7 +120,7 @@ export default function CalculatorPage({ params }) {
   };
 
   return (
-    <div style={{S.page}}>
+    <div style={S.page}>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate gig worker taxes?","acceptedAnswer":{"@type":"Answer","text":"Enter your gross earnings, select your platform and state. The calculator applies self-employment tax (15.3%), federal income tax brackets, standard deduction, and your state tax rate to show your exact tax owed and take-home pay."}},{"@type":"Question","name":"What is self-employment tax for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Self-employment tax is 15.3% on net earnings up to $184,500 (12.4% Social Security + 2.9% Medicare). Above that threshold, only the 2.9% Medicare portion applies. You can deduct half of SE tax on your return."}},{"@type":"Question","name":"How often do gig workers pay taxes?","acceptedAnswer":{"@type":"Answer","text":"Gig workers who expect to owe $1,000 or more must pay quarterly estimated taxes. 2026 due dates: April 15, June 16, September 15, and January 15, 2027. Underpayment results in IRS penalties."}}]}` }} />
       {/* GOV BAR */}
@@ -172,9 +172,9 @@ export default function CalculatorPage({ params }) {
           {/* STATE TAX INFO */}
           <div style={{ ...S.card, borderLeft: s.hasTax ? "4px solid #B22234" : "4px solid #0d7a40" }}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={{S.h2}}> {s.name} State Tax for {p.name} Workers</h2>
-              <p style={{S.p}}>{s.note}</p>
-              <p style={{S.p}}>
+              <h2 style={S.h2}> {s.name} State Tax for {p.name} Workers</h2>
+              <p style={S.p}>{s.note}</p>
+              <p style={S.p}>
                 {s.hasTax
                   ? `As a ${p.name} driver in ${s.name}, you pay the standard 15.3% federal self-employment tax PLUS ${(s.rate * 100).toFixed(1)}% state income tax on your net profit. This means your total effective tax rate is typically between ${(15.3 + s.rate * 100 * 0.5).toFixed(0)}–${(15.3 + s.rate * 100 + 10).toFixed(0)}% depending on your total income.`
                   : `${s.name} is one of the best states to be a ${p.name} driver from a tax perspective. Without state income tax, your only major tax obligations are the 15.3% federal self-employment tax and federal income tax. This typically saves ${s.name} gig workers $1,500–$5,000 per year compared to high-tax states.`}
@@ -183,7 +183,7 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* TAX TABLE */}
-          <div style={{S.card}}>
+          <div style={S.card}>
             <div style={{ background: "#1a1a2e", padding: "13px 20px", display: "flex", alignItems: "center", gap: 10 }}>
               <div style={{ width: 3, height: 18, background: "#e8b84b", borderRadius: 2 }} />
               <span style={{ color: "#fff", fontWeight: 700, fontSize: 15 }}> {p.name} Tax Estimates — {s.name} 2026</span>
@@ -221,10 +221,10 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* DEDUCTIONS */}
-          <div style={{S.card}}>
+          <div style={S.card}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={{S.h2}}> Top Deductions for {p.name} Workers in {s.name}</h2>
-              <p style={{S.p}}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
+              <h2 style={S.h2}> Top Deductions for {p.name} Workers in {s.name}</h2>
+              <p style={S.p}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
                   { title: " Mileage", val: "72.5¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
@@ -243,9 +243,9 @@ export default function CalculatorPage({ params }) {
           </div>
 
           {/* QUARTERLY */}
-          <div style={{S.card}}>
+          <div style={S.card}>
             <div style={{ padding: "18px 22px" }}>
-              <h2 style={{S.h2}}> 2026 Quarterly Tax Deadlines</h2>
+              <h2 style={S.h2}> 2026 Quarterly Tax Deadlines</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 12 }}>
                 {[
                   { q: "Q1", due: "April 15, 2026", urgent: true },

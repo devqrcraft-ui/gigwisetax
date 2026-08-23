@@ -310,7 +310,7 @@ export default function MultiPlatformCalculator() {
                   <div key={p.key} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                     <span style={{ color: p.color, fontSize: '13px', fontWeight: 600, minWidth: '130px' }}>{p.label}</span>
                     <div style={{ flex: 1, background: '#07111F', borderRadius: '99px', height: '8px' }}>
-                      <div style={{ background: p.color, height: '8px', borderRadius: '99px', width: (share * 100).toFixed(1) + '%` }} />
+                      <div style={{ background: p.color, height: '8px', borderRadius: '99px', width: (share * 100).toFixed(1) + '%' }} />
                     </div>
                     <span style={{ color: '#C8D8EC', fontSize: '13px', minWidth: '80px', textAlign: 'right' }}>{fmt(v)}</span>
                   </div>

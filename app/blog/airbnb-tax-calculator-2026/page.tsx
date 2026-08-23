@@ -67,7 +67,7 @@ export default function AirbnbTaxCalculator2026() {
                 'QBI deduction: up to 20% of net rental income — permanent under OBBBA 2026',
               ].map((t, i) => (
                 <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
-                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block` }} />
+                  <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block' }} />
                   {t}
                 </li>
               ))}
@@ -123,8 +123,8 @@ export default function AirbnbTaxCalculator2026() {
                   ['$100,000', '$14,130', '$14,000', '$28,130', '$7,033'],
                 ].map(([inc, se, fed, tot, qtr], i, arr) => (
                   <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
-                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{inc}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{se}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{fed}</td>
@@ -188,8 +188,8 @@ export default function AirbnbTaxCalculator2026() {
                   ['Total potential deductions', '$24,409–$36,909', '$5,370–$8,120'],
                 ].map(([ded, amt, sav], i, arr) => (
                   <tr key={i} style={i === arr.length - 1
-                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}
-                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }>
+                    ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
+                    : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{ded}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC' }}>{amt}</td>
                     <td style={{ padding: '10px 14px', color: i === arr.length - 1 ? '#e8b84b' : '#C8D8EC', fontWeight: i === arr.length - 1 ? 700 : 400 }}>{sav}</td>

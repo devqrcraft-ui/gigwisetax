@@ -52,14 +52,14 @@ export default function DoorDashInlineCalc() {
             <input type="number" placeholder="e.g. 35000" value={income}
               onChange={e => setIncome(e.target.value)}
               style={{ width:'100%', padding:'12px 14px', borderRadius:8, border:'1px solid #e8b84b55',
-                background:'#07111F', color:'#C8D8EC', fontSize:16, boxSizing:'border-box` }} />
+                background:'#07111F', color:'#C8D8EC', fontSize:16, boxSizing:'border-box' }} />
           </div>
           <div>
             <label style={{ color:'#C8D8EC', fontSize:13, display:'block', marginBottom:4 }}>Business miles driven (optional)</label>
             <input type="number" placeholder="e.g. 12000" value={miles}
               onChange={e => setMiles(e.target.value)}
               style={{ width:'100%', padding:'12px 14px', borderRadius:8, border:'1px solid #e8b84b33',
-                background:'#07111F', color:'#C8D8EC', fontSize:16, boxSizing:'border-box` }} />
+                background:'#07111F', color:'#C8D8EC', fontSize:16, boxSizing:'border-box' }} />
           </div>
         </div>
 

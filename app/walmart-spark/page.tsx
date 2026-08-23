@@ -81,9 +81,9 @@ export default function WalmartSparkPage() {
 
   return (
     <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_webAppSchema_walmart_spark) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(_faqSchemaFromFAQ_walmart_spark) }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Walmart Spark Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Walmart Spark workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Walmart Spark earnings. Download your annual tax summary or 1099-NEC from the Walmart Spark app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Walmart Spark income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Walmart Spark Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/walmart-spark"}]}' }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/walmart-spark","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}' }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Walmart Spark Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/walmart-spark"}]}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/walmart-spark","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
     <div style={{ background:'#0d1117', minHeight:'100vh' }}>
 
       {/* HERO */}
@@ -118,8 +118,8 @@ export default function WalmartSparkPage() {
         <div>
 
           {/* CALCULATOR */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}>▸ Walmart Spark Tax Calculator 2026</span>
               <span style={{ marginLeft:'auto', fontSize:11, color:'rgba(255,255,255,.4)', background:'rgba(255,255,255,.07)', padding:'3px 8px', borderRadius:3 }}>IRS Schedule SE</span>
@@ -127,24 +127,24 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={{lbl}} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
-                  <input style={{inp}} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
+                  <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total earnings after Spark's service fees</div>
                 </div>
                 <div>
-                  <label style={{lbl}}>▸ Total Miles Driven (Optional)</label>
-                  <input style={{inp}} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <label style={lbl}>▸ Total Miles Driven (Optional)</label>
+                  <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
                 </div>
                 <div>
-                  <label style={{lbl}}> State of Residence</label>
-                  <select style={{inp}}  id="annual-spark-net-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={lbl}> State of Residence</label>
+                  <select style={inp}  id="annual-spark-net-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>
                 <div>
-                  <label style={{lbl}} htmlFor="filing-status-1"> Filing Status</label>
-                  <select style={{inp}}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
+                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
                     <option value="single">Single</option>
                     <option value="mfj">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>
@@ -216,8 +216,8 @@ export default function WalmartSparkPage() {
             </p>
           </div>
           {/* DEDUCTIONS */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Top Tax Deductions for Walmart Spark Drivers 2026</span>
             </div>
@@ -241,8 +241,8 @@ export default function WalmartSparkPage() {
           </div>
 
           {/* FAQ */}
-          <div style={{card}}>
-            <div style={{cardHd}}>
+          <div style={card}>
+            <div style={cardHd}>
               <div style={{ width:3, height:18, background:'#e8b84b', borderRadius:2 }} />
               <span style={{ color:'#fff', fontWeight:700, fontSize:15 }}> Walmart Spark Taxes FAQ 2026</span>
             </div>
@@ -262,7 +262,7 @@ export default function WalmartSparkPage() {
           </div>
 
           {/* SEO TEXT */}
-          <div style={{card}}>
+          <div style={card}>
             <div style={{ padding:24 }}>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}>Walmart Spark Driver Taxes: Complete 2026 Guide</h2>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>

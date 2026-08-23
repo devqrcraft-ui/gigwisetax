@@ -427,7 +427,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                       const total = se + st + fed
                       const isLast = i === arr.length - 1
                       return (
-                        <tr key={income} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)', ...(isLast ? { background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)' }} : {}) }}>
+                        <tr key={income} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)', ...(isLast ? { background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)' } : {}) }}>
                           <td style={{ padding:'10px 14px', fontWeight:600, color: isLast ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>${income.toLocaleString()}</td>
                           <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>${se.toLocaleString()}</td>
                           {!noTax && <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>${st.toLocaleString()}</td>}
