@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import AuthorBox from '@/app/components/AuthorBox'
+import PlatformStatesGrid from '@/app/components/PlatformStatesGrid'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from '@/lib/data'
 import GigCalculator from './GigCalculator'
@@ -392,28 +393,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             </div>
 
             {/* STATES LINKS */}
-            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
-              <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
-                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Top States</span>
-              </div>
-              {[
-                { slug: 'california', name: 'California', rate: '9.3%' },
-                { slug: 'new-york', name: 'New York', rate: '6.85%' },
-                { slug: 'texas', name: 'Texas', rate: 'No Tax' },
-                { slug: 'florida', name: 'Florida', rate: 'No Tax' },
-                { slug: 'illinois', name: 'Illinois', rate: '4.95%' },
-                { slug: 'washington', name: 'Washington', rate: 'No Tax' },
-                { slug: 'nevada', name: 'Nevada', rate: 'No Tax' },
-                { slug: 'georgia', name: 'Georgia', rate: '5.5%' },
-              ].map(s => (
-                <a key={s.slug} href={`/${'instacart'}/${s.slug}`} style={{ textDecoration: 'none' }}>
-                  <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.07)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: 'rgba(255,255,255,0.8)' }}>
-                    <span style={{ fontSize: 13, fontWeight: 500 }}>{platform.name} in {s.name}</span>
-                    <span style={{ fontSize: 11, color: s.rate === 'No Tax' ? '#059669' : '#B22234', fontWeight: 700 }}>{s.rate}</span>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <PlatformStatesGrid platformSlug="instacart" />
 
             {/* AD 2 */}
             <div style={{ background: '#07111F', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
