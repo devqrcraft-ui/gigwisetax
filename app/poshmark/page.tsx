@@ -1,23 +1,434 @@
-import React from "react";
-import { Metadata } from "next";
-export const metadata: Metadata = {
-  title: "Poshmark Tax Calculator 2026 ★ ✓ 100% Private",
-  description: "Calculate Poshmark taxes. ✓ Free ★ ✓ 100% Private ★ ✓ IRS 2026 Updated.",
-  alternates: { canonical: "https://www.gigwisetax.com/poshmark" }
-};
-export default function Page( ) {
+import { notFound } from 'next/navigation'
+import AuthorBox from '@/app/components/AuthorBox'
+import PlatformStatesGrid from '@/app/components/PlatformStatesGrid'
+import { ReviewsSection } from '@/app/components/ReviewsSection'
+import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from '@/lib/data'
+import GigCalculator from './GigCalculator'
+import type { Metadata } from 'next'
+
+export async function generateStaticParams() { return [{ platform: 'poshmark' }] }
+
+export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
+  const p = PLATFORMS.find(x => x.slug === 'poshmark')
+  if (!p) return {}
+  return {
+    title: `${p.name} Tax Calculator 2026 — $30K Income = $5,417 Tax Owed`,
+    description: `${p.name} workers: $30K net = $4,239 SE tax + $1,178 federal. Free 2026 calculator, all 50 states + DC, no signup.`,
+    keywords: `poshmark tax calculator, poshmark self employment tax 2026, poshmark quarterly taxes, poshmark 1099 taxes, how much taxes do poshmark workers pay`,
+    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
+    openGraph: {
+      title: `${p.name} Tax Calculator 2026 — Free, All 50 States + DC`,
+      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      url: `https://www.gigwisetax.com/${p.slug}`,
+    },
+  }
+}
+
+
+export default function PlatformPage({ params }: { params: { platform: string } }) {
+  const platform = PLATFORMS.find(p => p.slug === 'poshmark')
+  if (!platform) return notFound()
+
+  const deductions = DEDUCTIONS['poshmark' as keyof typeof DEDUCTIONS] || DEDUCTIONS.poshmark
+  const isPlatformDriver = true
+  const isRental = false
+  const isCreator = false
+
+  const schemaJson = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `${platform.name} Tax Calculator 2026`,
+    description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,
+    url: `https://www.gigwisetax.com/${platform.slug}`,
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `How much tax do I pay on ${platform.name} income?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `As a ${platform.name} independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10–37% depending on total income), plus any state income tax. Most ${platform.name} workers should set aside 25–30% of net income for taxes.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Does ${platform.name} withhold taxes?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `No. ${platform.name} classifies workers as independent contractors and does not withhold federal, state, or Social Security/Medicare taxes. You are responsible for calculating and paying your own taxes quarterly using IRS Form 1040-ES.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `When are ${platform.name} quarterly taxes due in 2026?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `For 2026: Q1 taxes are due April 15, 2026. Q2 is due June 16, 2026. Q3 is due September 15, 2026. Q4 is due January 15, 2027.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What is the ${platform.name} 1099 threshold for 2026?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `For 2026, ${platform.name} must issue a 1099-NEC if you earn $600 or more. However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
+        },
+      },
+    ],
+  }
+
+
+  const deductionsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Top Tax Deductions for ${platform.name} Workers 2026`,
+    numberOfItems: deductions.length,
+    itemListElement: deductions.map((d: string, i: number) => ({ '@type': 'ListItem', position: i + 1, name: d })),
+  };
+  const card = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
+  const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
+  const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
+
   return (
-    <div style={{ background: "#07111F", color: "#C8D8EC", minHeight: "100vh", padding: "60px 20px", fontFamily: "sans-serif" }}>
-      <div style={{ maxWidth: "800px", margin: "0 auto" }}>
-        <h1 style={{ fontSize: "38px", fontWeight: 900, color: "#fff", marginBottom: "20px" }}>★ Poshmark Tax Calculator 2026</h1>
-        <div style={{ background: "rgba(232,184,75,0.06)", border: "1px solid rgba(232,184,75,0.2)", borderRadius: "14px", padding: "40px", marginBottom: "40px", boxShadow: "0 10px 30px rgba(0,0,0,0.3)" }}>
-          <p style={{ fontSize: "20px", lineHeight: 1.7, marginBottom: "30px" }}>Estimate 2026 taxes for <strong>Poshmark</strong>. ✓ 100% Private.</p>
-          <a href="/" className="btn-3d-pro glow-gold" style={{ display: "inline-flex", textDecoration: "none" }}>Launch Calculator ➔</a>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a ${platform.name} Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for ${platform.name} workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all ${platform.name} earnings. Download your annual tax summary or 1099-NEC from the ${platform.name} app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all ${platform.name} income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"${platform.name} Tax Calculator","item":"https://www.gigwisetax.com/poshmark"}]}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"${platform.name} Tax Calculator 2026","url":"https://www.gigwisetax.com/poshmark","dateModified":"2026-08-24","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
+
+      <div style={{ background: '#07111F', minHeight: '100vh' }}>
+
+        {/* HERO */}
+        <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', padding: '32px 20px 28px' }}>
+            <nav style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', marginBottom: 14 }}>
+              <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
+              <span style={{ margin: '0 8px' }}>›</span>
+              <a href="/calculators" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Calculators</a>
+              <span style={{ margin: '0 8px' }}>›</span>
+              <span style={{ color: 'rgba(255,255,255,.7)' }}>{platform.name}</span>
+            </nav>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
+              <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
+              <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, letterSpacing: '-0.5px', margin: 0 }}>
+                {platform.name} Tax Calculator 2026 — All 50 States + DC
+              </h1>
+            </div>
+            <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
+              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 50 states + DC.
+              Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
+              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 50 states + DC.
+            </p>
+            <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
+              {[' IRS Schedule SE', ' All 50 States + DC', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : ' Instant Results'].filter(Boolean).map(b => (
+                <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
+              ))}
+            </div>
+          </div>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "30px", fontSize: "14px" }}>
-          <p>Sister Tools: <a href="https://www.privatepaycheck.com" style={{color:"#e8b84b"}}>PrivatePaycheck</a> | <a href="https://www.compressto20kb.com" style={{color:"#e8b84b"}}>CompressTo20KB</a></p>
+
+
+        {/* MAIN GRID */}
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '24px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
+
+          {/* LEFT */}
+          <div>
+            {/* CALCULATOR */}
+            <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
+
+
+          {/* KEY TAKEAWAYS */}
+          <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
+            <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
+            <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, {platform.name} workers owe approximately <strong>$5,417 total tax</strong> in 2026 — $4,239 SE tax + ~$1,178 federal'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,354</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'IRS mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July 2026</strong> — one of the largest deductions available'}}/>
+          <li dangerouslySetInnerHTML={{__html: '{platform.name} does <strong>not withhold taxes</strong> — you owe 15.3% SE tax on every dollar of net profit'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Most {platform.name} workers should set aside <strong>25–27%</strong> of gross earnings for taxes'}}/>
+            </ul>
+          </div>
+          {/* ANSWER-FIRST GEO BLOCK */}
+          <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — {platform.name}</div>
+            <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
+              {platform.name} workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $1,178 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,354</strong>. Set aside 25% of every payment. Mileage deduction — 72.5¢/mile through June 30, 76¢/mile from July 1 — is one of the largest deductions available.
+            </p>
+          </div>
+
+            {/* TAX GUIDE */}
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> {platform.name} Tax Guide 2026</span>
+              </div>
+              <div style={{ padding: 24 }}>
+
+                <h2 style={{ fontSize: 20, fontWeight: 800, color: '#ffffff', marginBottom: 12 }}>
+                  How {platform.name} Taxes Work in 2026
+                </h2>
+                <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
+                  As a {platform.name} worker, you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
+                  This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from your payments.
+                  You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
+                </p>
+
+                <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
+                    Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
+                    If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
+                  </p>
+                </div>
+
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#ffffff', marginBottom: 12 }}>
+                  What Taxes Do {platform.name} Workers Pay?
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
+                  {[
+                    { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
+                    { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#7dd3fc' },
+                    { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#a78bfa' },
+                    { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
+                  ].map(item => (
+                    <div key={item.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
+                      <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
+                      <div style={{ fontSize: 22, fontWeight: 900, color: item.color, marginBottom: 4 }}>{item.value}</div>
+                      <div style={{ fontSize: 11, color: '#7a9abf' }}>{item.detail}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#ffffff', marginBottom: 12 }}>
+                  2026 Quarterly Tax Deadlines for {platform.name} Workers
+                </h3>
+                <table className="deadline-table" style={{ width: '100%', borderCollapse: 'collapse' as const, marginBottom: 20 }}>
+                  <thead>
+                    <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
+                      {['Quarter','Income Period','Due Date','Days Left'].map(h => (
+                        <th key={h} style={{ padding: '10px 14px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.6)', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {DEADLINES_2026.map((d, i) => (
+                      <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
+                        <td data-label="Quarter" style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', fontSize: 14 }}>
+                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 5px', borderRadius: 2, marginRight: 6, fontWeight: 800 }}>NOW</span>}
+                          {d.q} 2026
+                        </td>
+                        <td data-label="Period" style={{ padding: '12px 14px', color: 'rgba(255,255,255,0.8)', fontSize: 13 }}>{d.period}</td>
+                        <td data-label="Due Date" style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', fontSize: 14 }}>{d.due}</td>
+                        <td data-label="Days Left" style={{ padding: '12px 14px' }}>
+                          <span style={{ background: i === 0 ? 'rgba(178,34,52,0.25)' : 'rgba(255,255,255,0.08)', color: i === 0 ? '#fca5a5' : 'rgba(255,255,255,0.7)', padding: '3px 10px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+
+                {/* DEDUCTIONS */}
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#ffffff', marginBottom: 12 }}>
+                  Top Tax Deductions for {platform.name} Workers in 2026
+                </h3>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }} className="form-grid">
+                  {deductions.map((d: string) => (
+                    <div key={d} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '10px 14px', fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 500 }}>
+                      {d}
+                    </div>
+                  ))}
+                </div>
+
+                {/* 1099DEDUCTIONS CROSS-LINK */}
+                <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'linear-gradient(135deg,#0E2240,#07111F)', border: '1px solid rgba(184,146,74,0.35)', borderRadius: 8, padding: '14px 18px', marginBottom: 16, textDecoration: 'none' }}>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#D4AA66', letterSpacing: '1px', textTransform: 'uppercase', marginBottom: 4 }}>Full Deductions Checklist</div>
+                    <div style={{ fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.9)' }}>See complete IRS Schedule C write-offs on <span style={{ color: '#D4AA66' }}>1099Deductions.com</span></div>
+                    <div style={{ fontSize: 12, color: '#7A96B8', marginTop: 2 }}>DoorDash, Uber, Airbnb, Etsy, OnlyFans — 17 job types. 100% free.</div>
+                  </div>
+                  <div style={{ fontSize: 22, color: '#D4AA66', marginLeft: 12 }}>→</div>
+                </a>
+
+                {isPlatformDriver && (
+                  <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid rgba(3,105,161,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: 72.5¢ (Jan–Jun) / 76¢ (Jul–Dec) per mile</div>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
+                      The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
+                      Track every mile driven for {platform.name} using a mileage app. On 10,000 miles, that's roughly a <strong>$7,250–$7,600 deduction</strong> depending on when you drove (72.5¢/mile before July 1, 76¢/mile after) — reducing your taxable income significantly.
+                      Use the actual expense method if your vehicle costs exceed the standard rate.
+                    </p>
+                  </div>
+                )}
+
+                {isRental && (
+                  <div style={{ background: 'rgba(22,101,52,0.12)', border: '1px solid rgba(22,101,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                    <div style={{ fontWeight: 700, color: '#86efac', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
+                      If you rent your property for <strong>14 days or fewer</strong> per year, rental income is tax-free (Section 280A exclusion).
+                      Above 14 days, you must report income but can deduct a proportional share of mortgage interest, property taxes, utilities, and depreciation.
+                    </p>
+                  </div>
+                )}
+
+                {isCreator && (
+                  <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
+                    <div style={{ fontWeight: 700, color: '#b45309', marginBottom: 8 }}> {platform.name} Tip: Home Office Deduction</div>
+                    <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
+                      If you use a dedicated space at home exclusively for your {platform.name} business, you can deduct home office expenses.
+                      The simplified method allows <strong>$5 per square foot</strong> (up to 300 sq ft = $1,500 deduction).
+                      Equipment and software are fully deductible in the year of purchase under Section 179.
+                    </p>
+                  </div>
+                )}
+
+                {/* FAQ */}
+                <h3 style={{ fontSize: 17, fontWeight: 800, color: '#ffffff', marginBottom: 16 }}>
+                  Frequently Asked Questions — {platform.name} Taxes 2026
+                </h3>
+                {[
+                  {
+                    q: `Does ${platform.name} withhold taxes from my payments?`,
+                    a: `No. ${platform.name} classifies all workers as independent contractors (1099). They do not withhold federal income tax, state income tax, Social Security, or Medicare taxes. You must calculate and pay these yourself using IRS Form 1040-ES.`,
+                  },
+                  {
+                    q: `How much should I set aside for ${platform.name} taxes?`,
+                    a: `Set aside 25–30% of your net ${platform.name} income for taxes. This covers the 15.3% self-employment tax plus federal income tax. In high-tax states like California or New York, set aside 30–35%.`,
+                  },
+                  {
+                    q: `What 1099 form does ${platform.name} send?`,
+                    a: `${platform.name} issues a 1099-NEC (or 1099-K for some platforms) if you earn $600 or more in a calendar year. You must report ALL income even if you don't receive a 1099 form.`,
+                  },
+                  {
+                    q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
+                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
+                  },
+                  {
+                    q: `Do I need to pay ${platform.name} taxes if I earn under $600?`,
+                    a: `Yes. The $600 threshold only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                  },
+                ].map((item, i) => (
+                  <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>
+                    <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.95)', fontSize: 14, marginBottom: 8 }}>Q: {item.q}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' }}>{item.a}</div>
+                  </div>
+                ))}
+
+                {/* DISCLAIMER */}
+                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: 14, fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, textAlign: 'justify' as const }}>
+                   <strong>Disclaimer:</strong> This calculator provides estimates for planning purposes only. Tax laws are subject to change. Consult a licensed CPA or tax professional, or visit <a href="https://irs.gov" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>IRS.gov</a> for official guidance. GigWiseTax.com is not affiliated with {platform.name}, the IRS, or any government agency.
+                </div>
+              </div>
+            </div>
+
+            {/* OTHER PLATFORMS */}
+            <div style={card}>
+              <div style={cardHd}>
+                <div style={accent}/>
+                <span style={{ color: '#fff', fontWeight: 700, fontSize: 15 }}> Other Platform Calculators</span>
+              </div>
+              <div style={{ padding: 16, display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 10 }} className="p-grid">
+                {PLATFORMS.filter(p => p.slug !== 'poshmark').map(p => (
+                  <a key={p.slug} href={`/${p.slug}`} style={{ textDecoration: 'none' }}>
+                    <div style={{ border: '1px solid rgba(255,255,255,0.15)', borderRadius: 6, padding: '12px 8px', textAlign: 'center' as const, background: '#07111F', position: 'relative' as const }}>
+
+                      <div style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 2 }}>{p.name}</div>
+                      <div style={{ fontSize: 13, color: '#e05070', fontWeight: 600 }}>{p.searches}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* SIDEBAR */}
+          <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 16 }}>
+            {/* AD */}
+            <div style={{ background: '#07111F', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
+            {/* OTHER CALCULATORS */}
+<div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const, marginBottom: 16 }}>
+            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
+              <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Other Gig Tax Calculators</span>
+            </div>
+              <a href="/uber" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Uber Tax Calculator</span><span style={{ fontSize: 13, color: '#e05070', fontWeight: 700 }}>→</span></a>
+              <a href="/instacart" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Instacart Tax Calculator</span><span style={{ fontSize: 13, color: '#e05070', fontWeight: 700 }}>→</span></a>
+              <a href="/lyft" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Lyft Tax Calculator</span><span style={{ fontSize: 13, color: '#e05070', fontWeight: 700 }}>→</span></a>
+              <a href="/etsy" style={{ textDecoration: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '9px 12px', borderBottom: '1px solid rgba(255,255,255,0.07)', color: 'rgba(255,255,255,0.8)' }}><span style={{ fontSize: 13 }}>▸ Etsy Tax Calculator</span><span style={{ fontSize: 13, color: '#e05070', fontWeight: 700 }}>→</span></a>
+          </div>
+
+          {/* OWN BANNER — privatepaycheck.com */}
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'block', background: 'linear-gradient(135deg,#091526,#102040)', border: '1px solid rgba(245,200,66,0.35)', borderRadius: 10, padding: '20px 16px' }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#F5C842', marginBottom: 8, fontFamily: 'monospace' }}>W-2 Paycheck Tool</div>
+              <div style={{ fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>PrivatePaycheck<span style={{ color: '#F5C842' }}>.com</span></div>
+              <div style={{ fontSize: 12, color: '#7A96B8', marginBottom: 12, lineHeight: 1.5 }}>Free paycheck calculator for W-2 employees. All 50 states, 2026 IRS brackets. No signup.</div>
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' as const, marginBottom: 12 }}>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>Salary &amp; Hourly</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>All 50 States</span>
+                <span style={{ background: 'rgba(245,200,66,0.1)', border: '1px solid rgba(245,200,66,0.25)', color: '#F5C842', fontSize: 10, padding: '2px 7px', borderRadius: 3 }}>100% Free</span>
+              </div>
+              <div style={{ background: '#F5C842', color: '#091526', fontSize: 12, fontWeight: 700, padding: '9px 0', borderRadius: 5, textAlign: 'center' as const }}>Calculate My Paycheck ›</div>
+            </a>
+            </div>
+
+            {/* STATES LINKS */}
+            <PlatformStatesGrid platformSlug="poshmark" />
+
+            {/* AD 2 */}
+            <div style={{ background: '#07111F', border: '2px dashed rgba(255,255,255,0.15)', borderRadius: 10, overflow: 'hidden' as const }}>
+            </div>
+
+            {/* MULTI-APP BANNER */}
+            <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 10, overflow: 'hidden' as const }}>
+              <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px' }}>
+                <span style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Drive for multiple apps?</span>
+              </div>
+              <div style={{ padding: '14px 16px' }}>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.6, marginBottom: 10 }}>
+                  Working Uber + DoorDash, Instacart + Amazon Flex, or other combinations? Learn how to combine your gig income for taxes.
+                </div>
+                <a href="/multi-app-gig-taxes-2026" style={{ textDecoration: 'none' }}>
+                  <div style={{ background: '#B22234', color: '#fff', padding: '9px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
+                    → Multi-App Gig Tax Guide 2026
+                  </div>
+                </a>
+                <a href="/multi-platform-gig-tax-calculator-2026" style={{ textDecoration: 'none', display: 'block', marginTop: 8 }}>
+                  <div style={{ background: '#e8b84b', color: '#07111F', padding: '9px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>
+                    → Multi-App Tax Calculator 2026
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            {/* TRUST */}
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
+              <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' as const }}>
+                GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. No personal data is stored.
+              </div>
+            </div>
+          </div>
         </div>
+
+
+      <ReviewsSection />
+{/* RELATED ARTICLES */}
+      <section style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px 24px' }}>
+        <h2 style={{ fontSize: 16, fontWeight: 700, color: '#e8edf8', margin: '0 0 14px' }}>Related Articles</h2>
+        <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
+            <li><a href="/blog/self-employment-tax-rate-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>Self-Employment Tax Rate 2026: Complete Guide</a></li>
+        </ul>
+      </section>
+      <AuthorBox />
+      <style>{`
+          @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
+        `}</style>
       </div>
-    </div>
-   );
+    </>
+  )
 }
