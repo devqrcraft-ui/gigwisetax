@@ -4,15 +4,6 @@ Allow: /
 Disallow: /_next/static/
 Disallow: /_next/image/
 Disallow: /api/
-# Block utility/internal short routes
-Disallow: /hr
-Disallow: /week
-# Block methodology pages (thin content, noindex anyway)
-Disallow: /tip-calculator/methodology
-Disallow: /unemployment-calculator/methodology
-Disallow: /bonus-tax-calculator/methodology
-Disallow: /hourly-paycheck-calculator/methodology
-Disallow: /minimum-wage/methodology
 # AI bots — allow all
 User-agent: GPTBot
 Allow: /
