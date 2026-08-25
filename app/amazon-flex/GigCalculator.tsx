@@ -1,10 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { MILEAGE_RATE_H1_2026, MILEAGE_RATE_H2_2026 } from '@/lib/data'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
 interface Deadline { q: string; period: string; due: string; days: number }
+
 
 export default function GigCalculator({
   platform, states, deadlines
@@ -14,6 +16,8 @@ export default function GigCalculator({
   deadlines: Deadline[]
 }) {
   const [income, setIncome]     = useState('')
+  const [milesH1, setMilesH1]   = useState('')
+  const [milesH2, setMilesH2]   = useState('')
   const [stateSlug, setStateSlug] = useState('california')
   const [filing, setFiling]     = useState<'single'|'married'>('single')
   const [result, setResult]     = useState<any>(null)
@@ -21,18 +25,40 @@ export default function GigCalculator({
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
 
   const calculate = () => {
-    const net = parseFloat(income) || 0
-    if (!net) return
+    const gross = parseFloat(income) || 0
+    if (!gross) return
+    const miH1 = parseFloat(milesH1) || 0
+    const miH2 = parseFloat(milesH2) || 0
+    const mileDeduct = (miH1 * MILEAGE_RATE_H1_2026) + (miH2 * MILEAGE_RATE_H2_2026)
+    const net = Math.max(0, gross - mileDeduct)
     const st = states.find(s => s.slug === stateSlug)
     const seBase   = net * 0.9235
     const seTax    = seBase * 0.153
-    const taxable  = net - seTax * 0.5
-    const fedRate  = filing === 'single' ? 0.22 : 0.12
-    const federal  = taxable * fedRate
+    const seDeduct = seTax * 0.5
+    const std = filing === 'married' ? 32200 : 16100
+    const taxable  = Math.max(0, net - seDeduct - std)
+    let federal = 0
+    if (filing === 'married') {
+      if (taxable > 768700) federal = 206583.50 + (taxable - 768700) * 0.37
+      else if (taxable > 512450) federal = 116896.00 + (taxable - 512450) * 0.35
+      else if (taxable > 403550) federal = 82048.00 + (taxable - 403550) * 0.32
+      else if (taxable > 211400) federal = 35932.00 + (taxable - 211400) * 0.24
+      else if (taxable > 100800) federal = 11600.00 + (taxable - 100800) * 0.22
+      else if (taxable > 24800) federal = 2480.00 + (taxable - 24800) * 0.12
+      else federal = taxable * 0.10
+    } else {
+      if (taxable > 640600) federal = 192979.25 + (taxable - 640600) * 0.37
+      else if (taxable > 256225) federal = 58448.00 + (taxable - 256225) * 0.35
+      else if (taxable > 201775) federal = 41024.00 + (taxable - 201775) * 0.32
+      else if (taxable > 105700) federal = 17966.00 + (taxable - 105700) * 0.24
+      else if (taxable > 50400) federal = 5800.00 + (taxable - 50400) * 0.22
+      else if (taxable > 12400) federal = 1240.00 + (taxable - 12400) * 0.12
+      else federal = taxable * 0.10
+    }
     const stateTax = taxable * (st?.rate ?? 0.05)
     const total    = federal + seTax + stateTax
-    const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)
-    setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
+    setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
   }
 
   const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -42,6 +68,7 @@ export default function GigCalculator({
   const inp     = { width: '100%', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.07)', boxSizing: 'border-box' as const }
   const btnDark = { background: 'rgba(255,255,255,0.07)', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 16, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
+  const btnGray = { background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.85)', padding: '8px 14px', borderRadius: 4, fontSize: 12, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, border: '1px solid rgba(255,255,255,0.15)', whiteSpace: 'nowrap' as const }
 
   return (
     <>
@@ -53,6 +80,20 @@ export default function GigCalculator({
         </div>
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
+            <div style={{ gridColumn: '1 / -1' }}>
+              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
+              <div style={{ position: 'relative' }}>
+                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
+                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
+              </div>
+
+          {/* INCOME PRESETS */}
+          <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
+            {[['20000','$20k'],['50000','$50k'],['100000','$100k'],['250000','$250k'],['500000','$500k']].map(([v,l])=>(
+              <button key={v} onClick={()=>setIncome(v)} style={{padding:'4px 10px',borderRadius:'20px',border:'1px solid rgba(232,184,75,0.35)',background:'rgba(20,35,60,0.9)',color:'#e8b84b',fontSize:'12px',fontWeight:600,cursor:'pointer'}}>{l}</button>
+            ))}
+          </div>
+            </div>
             <div>
               <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
               <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
@@ -71,12 +112,13 @@ export default function GigCalculator({
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
-            <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
-              <div style={{ position: 'relative' }}>
-                <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
-              </div>
+            <div>
+              <label style={lbl}> Miles Driven Jan–Jun (72.5¢/mi)</label>
+              <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
+            </div>
+            <div>
+              <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
+              <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
           </div>
           <div style={{...btnDark, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
@@ -92,11 +134,12 @@ export default function GigCalculator({
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
+              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: 'split-rate 2026', hi: false } : null,
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
-            ].map((r, i) => (
+            ].filter(Boolean).map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
                 <div style={{ fontSize: 20, fontWeight: 900, color: r.hi ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 4 }}>{r.val}</div>
@@ -114,7 +157,8 @@ export default function GigCalculator({
           <div style={{ padding: 14 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
-              <button style={{...btnRed, border:'none', cursor:'pointer'}} onClick={() => {
+              <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                <button style={{...btnRed, border:'none', cursor:'pointer'}} onClick={() => {
                   const dates = [
                     {q:'Q1 2026',date:'20260415'},
                     {q:'Q2 2026',date:'20260616'},
@@ -127,7 +171,7 @@ export default function GigCalculator({
                     window.open(url, '_blank');
                   });
                 }}>+ Add All to Google Calendar</button>
-                <button style={{background:'rgba(255,255,255,0.08)',color:'#e8b84b',padding:'10px 16px',borderRadius:4,fontSize:14,fontWeight:600,cursor:'pointer',border:'1px solid rgba(232,184,75,0.3)'}} onClick={() => {
+                <button style={{...btnGray, border:'none', cursor:'pointer'}} onClick={() => {
                   const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
                   const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
                   try {
@@ -140,10 +184,13 @@ export default function GigCalculator({
                     ta.select()
                     document.execCommand('copy')
                     document.body.removeChild(ta)
-                    const el = document.getElementById('copy-sched-btn2')
+                    const el = document.getElementById('copy-sched-btn')
                     if (el) { el.textContent = '✓ Copied!'; setTimeout(() => { if(el) el.textContent = ' Copy schedule' }, 2000) }
-                  } catch(e) {}
-                }} id="copy-sched-btn2"> Copy schedule</button>
+                  } catch(e) {
+                    navigator.clipboard.writeText(text).catch(()=>{})
+                  }
+                }} id="copy-sched-btn"> Copy schedule</button>
+              </div>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="q-grid">
               {deadlines.map((d, i) => (
