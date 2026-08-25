@@ -26,9 +26,27 @@ export default function GigCalculator({
     const st = states.find(s => s.slug === stateSlug)
     const seBase   = net * 0.9235
     const seTax    = seBase * 0.153
-    const taxable  = net - seTax * 0.5
-    const fedRate  = filing === 'single' ? 0.22 : 0.12
-    const federal  = taxable * fedRate
+    const seDeduct = seTax * 0.5
+    const std = filing === 'married' ? 32200 : 16100
+    const taxable  = Math.max(0, net - seDeduct - std)
+    let federal = 0
+    if (filing === 'married') {
+      if (taxable > 768700) federal = 206583.50 + (taxable - 768700) * 0.37
+      else if (taxable > 512450) federal = 116896.00 + (taxable - 512450) * 0.35
+      else if (taxable > 403550) federal = 82048.00 + (taxable - 403550) * 0.32
+      else if (taxable > 211400) federal = 35932.00 + (taxable - 211400) * 0.24
+      else if (taxable > 100800) federal = 11600.00 + (taxable - 100800) * 0.22
+      else if (taxable > 24800) federal = 2480.00 + (taxable - 24800) * 0.12
+      else federal = taxable * 0.10
+    } else {
+      if (taxable > 640600) federal = 192979.25 + (taxable - 640600) * 0.37
+      else if (taxable > 256225) federal = 58448.00 + (taxable - 256225) * 0.35
+      else if (taxable > 201775) federal = 41024.00 + (taxable - 201775) * 0.32
+      else if (taxable > 105700) federal = 17966.00 + (taxable - 105700) * 0.24
+      else if (taxable > 50400) federal = 5800.00 + (taxable - 50400) * 0.22
+      else if (taxable > 12400) federal = 1240.00 + (taxable - 12400) * 0.12
+      else federal = taxable * 0.10
+    }
     const stateTax = taxable * (st?.rate ?? 0.05)
     const total    = federal + seTax + stateTax
     const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)

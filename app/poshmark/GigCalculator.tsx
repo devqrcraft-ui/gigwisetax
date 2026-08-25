@@ -28,24 +28,24 @@ export default function GigCalculator({
     const seBase   = net * 0.9235
     const seTax    = seBase * 0.153
     const seDeduct = seTax * 0.5
-    const std = filing === 'married' ? 30000 : 15000
+    const std = filing === 'married' ? 32200 : 16100
     const taxable  = Math.max(0, net - seDeduct - std)
     let federal = 0
     if (filing === 'married') {
-      if (taxable > 768700) federal = 174238.25 + (taxable - 768700) * 0.37
-      else if (taxable > 512450) federal = 79087.25 + (taxable - 512450) * 0.35
-      else if (taxable > 403350) federal = 40426.75 + (taxable - 403350) * 0.32
-      else if (taxable > 201550) federal = 23200.75 + (taxable - 201550) * 0.24
-      else if (taxable > 100525) federal = 9328.75 + (taxable - 100525) * 0.22
-      else if (taxable > 23200) federal = 2320.00 + (taxable - 23200) * 0.12
+      if (taxable > 768700) federal = 206583.50 + (taxable - 768700) * 0.37
+      else if (taxable > 512450) federal = 116896.00 + (taxable - 512450) * 0.35
+      else if (taxable > 403550) federal = 82048.00 + (taxable - 403550) * 0.32
+      else if (taxable > 211400) federal = 35932.00 + (taxable - 211400) * 0.24
+      else if (taxable > 100800) federal = 11600.00 + (taxable - 100800) * 0.22
+      else if (taxable > 24800) federal = 2480.00 + (taxable - 24800) * 0.12
       else federal = taxable * 0.10
     } else {
-      if (taxable > 626350) federal = 186601.50 + (taxable - 626350) * 0.37
-      else if (taxable > 250525) federal = 55374.00 + (taxable - 250525) * 0.35
-      else if (taxable > 197300) federal = 37104.00 + (taxable - 197300) * 0.32
-      else if (taxable > 100525) federal = 17168.50 + (taxable - 100525) * 0.24
-      else if (taxable > 48475) federal = 5426.50 + (taxable - 48475) * 0.22
-      else if (taxable > 11925) federal = 1192.50 + (taxable - 11925) * 0.12
+      if (taxable > 640600) federal = 192979.25 + (taxable - 640600) * 0.37
+      else if (taxable > 256225) federal = 58448.00 + (taxable - 256225) * 0.35
+      else if (taxable > 201775) federal = 41024.00 + (taxable - 201775) * 0.32
+      else if (taxable > 105700) federal = 17966.00 + (taxable - 105700) * 0.24
+      else if (taxable > 50400) federal = 5800.00 + (taxable - 50400) * 0.22
+      else if (taxable > 12400) federal = 1240.00 + (taxable - 12400) * 0.12
       else federal = taxable * 0.10
     }
     const stateTax = taxable * (st?.rate ?? 0.05)
