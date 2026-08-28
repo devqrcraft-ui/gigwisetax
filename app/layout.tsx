@@ -8,11 +8,11 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "GigWiseTax ★ 1099 Tax Calculator 2026 ✓ Professional",
+  title: "GigWiseTax — Free Gig Worker Tax Calculator 2026",
   description: "Free 1099 self-employment tax calculator for DoorDash, Uber, OnlyFans and all gig workers.",
   metadataBase: new URL('https://www.gigwisetax.com' ),
   openGraph: {
-    title: "GigWiseTax ★ 1099 Tax Calculator 2026 ✓ Professional",
+    title: "GigWiseTax — Free Gig Worker Tax Calculator 2026",
     description: "Free 1099 self-employment tax calculator.",
     url: "https://www.gigwisetax.com",
     siteName: "GigWiseTax",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GigWiseTax ★ 1099 Tax Calculator 2026 ✓ Professional",
+    title: "GigWiseTax — Free Gig Worker Tax Calculator 2026",
     description: "Free 1099 self-employment tax calculator.",
     images: ["/og-image.png"],
   },

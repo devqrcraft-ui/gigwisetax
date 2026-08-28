@@ -81,9 +81,12 @@ export const DEADLINES_2026 = [
   { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
 ]
 
-export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile (IRS 2026) — DEPRECATED, use H1/H2 below
+// IRS Notice 2026-10 (Dec 29, 2025) sets ONE flat rate for all of 2026 — no mid-year change announced.
+// Verified against irs.gov Notice 2026-10, 2026-08-28. If IRS announces a genuine mid-year revision,
+// update MILEAGE_RATE_H2_2026 with a cited source, do not guess.
+export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile, full year 2026 (IRS Notice 2026-10)
 export const MILEAGE_RATE_H1_2026 = 0.725 // Jan 1 – Jun 30, 2026
-export const MILEAGE_RATE_H2_2026 = 0.76  // Jul 1 – Dec 31, 2026
+export const MILEAGE_RATE_H2_2026 = 0.725 // Jul 1 – Dec 31, 2026 — same as H1, no IRS mid-year change for 2026
 
 // IRS underpayment penalty rate (federal short-term rate + 3 pts), set quarterly under IRC § 6621.
 // Q1 2026: 7% | Q2 2026: 6% | Q3 2026: 7% (current, thru Sep 30, 2026).
@@ -92,7 +95,7 @@ export const UNDERPAYMENT_PENALTY_RATE_2026 = 7 // percent, annualized, valid th
 
 export const DEDUCTIONS = {
   doordash: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Insulated bags & delivery equipment',
@@ -106,7 +109,7 @@ export const DEDUCTIONS = {
     'EV charging costs (if electric vehicle)',
   ],
   uber: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Car washes & interior cleaning',
@@ -148,7 +151,7 @@ export const DEDUCTIONS = {
     'Business courses & coaching',
   ],
   instacart: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Insulated bags & coolers',
@@ -174,7 +177,7 @@ export const DEDUCTIONS = {
     'Business insurance & liability coverage',
   ],
   'amazon-flex': [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Parking fees & tolls',
@@ -186,7 +189,7 @@ export const DEDUCTIONS = {
     'Business bank account fees',
   ],
   lyft: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Phone bill — business use percentage',
     'Auto insurance — business use percentage',
     'Car washes & interior cleaning',
@@ -198,7 +201,7 @@ export const DEDUCTIONS = {
     'EV charging costs (if electric vehicle)',
   ],
   rover: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Dog treats & pet supplies (business use)',
     'Leash, harness & walking equipment',
     'Poop bags & sanitation supplies',
@@ -212,7 +215,7 @@ export const DEDUCTIONS = {
     'Business insurance & liability coverage',
   ],
   wag: [
-    "Mileage deduction — 72.5¢/mile (Jan–Jun 2026), 76¢/mile (Jul–Dec 2026)",
+    "Mileage deduction — 72.5¢/mile for all of 2026",
     "Pet supplies, treats & toys for client dogs",
     "Leash, harness & walking equipment",
     "Waste bags & sanitation supplies",
@@ -250,7 +253,7 @@ export const DEDUCTIONS = {
     "Business bank account fees",
   ],
   taskrabbit: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Tools & equipment purchases',
     'Work gloves & safety gear',
     'Uniforms & work clothing',
@@ -292,7 +295,7 @@ export const DEDUCTIONS = {
     'Cloud storage & SaaS tools',
   ],
   shipt: [
-    'Mileage deduction — 72.5¢/mile (Jan–Jun), 76¢/mile (Jul–Dec) 2026',
+    'Mileage deduction — 72.5¢/mile for all of 2026',
     'Insulated grocery bags & coolers',
     'Phone bill — Shipt app business use percentage',
     'Auto insurance — business use percentage',
