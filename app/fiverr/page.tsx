@@ -258,10 +258,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {isPlatformDriver && (
                   <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid rgba(3,105,161,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: 72.5¢ (Jan–Jun) / 76¢ (Jul–Dec) per mile</div>
+                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: 72.5¢ (Jan–Jun) / 72.5¢ (Jul–Dec) per mile</div>
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       The 2026 standard mileage rate is <strong>${MILEAGE_RATE_2026} per mile</strong>.
-                      Track every mile driven for {platform.name} using a mileage app. On 10,000 miles, that's roughly a <strong>$7,250–$7,600 deduction</strong> depending on when you drove (72.5¢/mile before July 1, 76¢/mile after) — reducing your taxable income significantly.
+                      Track every mile driven for {platform.name} using a mileage app. On 10,000 miles, that's roughly a <strong>$7,250–$7,600 deduction</strong> depending on when you drove (72.5¢/mile before July 1, 72.5¢/mile after) — reducing your taxable income significantly.
                       Use the actual expense method if your vehicle costs exceed the standard rate.
                     </p>
                   </div>

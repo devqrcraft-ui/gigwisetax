@@ -102,7 +102,7 @@ export default function GigCalculator({
               <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
             <div>
-              <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
+              <label style={lbl}> Miles Driven Jul–Dec (72.5¢/mi)</label>
               <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
             <div style={{ gridColumn: '1 / -1' }}>
@@ -133,7 +133,7 @@ export default function GigCalculator({
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
-              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: '72.5¢/76¢ split rate', hi: false } : null,
+              result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: '72.5¢/72.5¢ split rate', hi: false } : null,
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },

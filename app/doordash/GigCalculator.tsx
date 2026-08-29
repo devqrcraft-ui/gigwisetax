@@ -117,7 +117,7 @@ export default function GigCalculator({
               <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
             <div>
-              <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
+              <label style={lbl}> Miles Driven Jul–Dec (72.5¢/mi)</label>
               <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 5,000"/>
             </div>
           </div>
