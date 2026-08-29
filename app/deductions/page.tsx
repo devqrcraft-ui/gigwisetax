@@ -17,9 +17,9 @@ const DEDUCTIONS = [
   { id: 10, category: ' Business', title: 'Business Meals (50%)', desc: 'Client meetings, business discussions', savings: 'Avg $400/yr', checked: false },
   { id: 11, category: ' Business', title: 'Marketing & Advertising', desc: 'Website, ads, business cards', savings: 'Avg $600/yr', checked: false },
   { id: 12, category: ' Health', title: 'Health Insurance Premium', desc: '100% deductible if self-employed and not eligible for employer plan', savings: 'Avg $3,000/yr', checked: false },
-  { id: 13, category: ' Health', title: 'HSA Contributions', desc: 'Up to $4,150 single / $8,300 family (2025)', savings: 'Up to $4,150/yr', checked: false },
-  { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $69,000 (2025)', savings: 'Up to $69,000/yr', checked: false },
-  { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Up to $69,000 total contributions (2025)', savings: 'Up to $69,000/yr', checked: false },
+  { id: 13, category: ' Health', title: 'HSA Contributions', desc: 'Up to $4,400 single / $8,750 family (2026)', savings: 'Up to $4,400/yr', checked: false },
+  { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $72,000 (2026)', savings: 'Up to $72,000/yr', checked: false },
+  { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Up to $72,000 total contributions (2026)', savings: 'Up to $72,000/yr', checked: false },
   { id: 16, category: ' Education', title: 'Business Education', desc: 'Courses, books, webinars related to your work', savings: 'Avg $300/yr', checked: false },
   { id: 17, category: ' Education', title: 'Industry Memberships', desc: 'Professional associations, trade publications', savings: 'Avg $200/yr', checked: false },
   { id: 18, category: ' Tax', title: 'SE Tax Deduction (50%)', desc: 'Deduct half of self-employment tax from income — automatic', savings: 'Avg $2,000/yr', checked: false },
@@ -58,7 +58,7 @@ export default function DeductionsChecklist() {
           FREE CHECKLIST
         </div>
         <h1 style={{ color: '#fff', fontSize: 28, fontWeight: 900, margin: '0 0 10px', lineHeight: 1.2 }}>
-          Gig Worker Tax Deductions 2025
+          Gig Worker Tax Deductions 2026
         </h1>
         <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 15, margin: 0 }}>
           Check every deduction you qualify for — see your estimated tax savings instantly
@@ -127,7 +127,7 @@ export default function DeductionsChecklist() {
       {/* DEDUCTIONS LIST */}
       <div style={card}>
         <div style={hdr}>
-          <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>GIGWISETAX — DEDUCTIONS CHECKLIST 2025</div>
+          <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>GIGWISETAX — DEDUCTIONS CHECKLIST 2026</div>
           <div style={{ color: '#fff', fontSize: 16, fontWeight: 800 }}>
             {category === 'All' ? `All ${DEDUCTIONS.length} Deductions` : category} — check what applies to you
           </div>

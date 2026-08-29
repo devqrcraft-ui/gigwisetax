@@ -166,7 +166,7 @@ export default function DeadlinesPage() {
             <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 10, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const }}>Sponsored — 300×250</div>
             <div style={{ padding: 16 }}>
               <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 4, height: 80, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-                <span style={{ fontSize: 12, color: '#7a9abf', fontStyle: 'italic' }}>Ad image here</span>
+                <span style={{ fontSize: 20, fontWeight: 800, color: '#7a9abf' }}>QB</span>
               </div>
               <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>QuickBooks Self-Employed</div>
               <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', marginBottom: 14, lineHeight: 1.6 }}>Automatically calculates and reminds you of quarterly tax deadlines. Built for gig workers.</div>
