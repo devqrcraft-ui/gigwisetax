@@ -74,6 +74,23 @@ export const STATES = [
   { slug: 'washington-dc', name: 'Washington D.C.', abbr: 'DC', rate: 0.0895, hasLocalTax: false },
 ]
 
+
+// Рахує реальний статус кожного дедлайну відносно СЬОГОДНІШНЬОЇ дати —
+// замінює раніше захардкоджені 'days'/'now' поля, які не оновлювались.
+export function getDeadlineStatus() {
+  const now = new Date();
+  const withDays = DEADLINES_2026.map(d => {
+    const due = new Date(d.due + ' 23:59:59');
+    const daysUntil = Math.ceil((due.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+    return { ...d, daysUntil, isPast: daysUntil < 0 };
+  });
+  const upcoming = withDays.filter(d => d.daysUntil >= 0);
+  const currentQ = upcoming.length > 0
+    ? upcoming.reduce((min, d) => d.daysUntil < min.daysUntil ? d : min, upcoming[0]).q
+    : withDays[withDays.length - 1].q;
+  return withDays.map(d => ({ ...d, isCurrent: d.q === currentQ }));
+}
+
 export const DEADLINES_2026 = [
   { q: 'Q1', period: 'January 1 – March 31',   due: 'April 15, 2026',  form: '1040-ES', days: 45  },
   { q: 'Q2', period: 'April 1 – May 31',       due: 'June 16, 2026',   form: '1040-ES', days: 107 },

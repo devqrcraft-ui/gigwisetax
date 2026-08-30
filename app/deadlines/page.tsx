@@ -4,7 +4,7 @@
 
 import type { Metadata } from 'next'
 import AuthorBox from '@/app/components/AuthorBox'
-import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
+import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: '2026 Quarterly Tax Deadlines — All 50 States + DC | GigWiseTax',
@@ -84,18 +84,13 @@ export default function DeadlinesPage() {
               <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
-              {[
-                { q: 'Q1 2026', period: 'Jan 1 – Mar 31', due: 'April 15, 2026', days: 45, now: true },
-                { q: 'Q2 2026', period: 'Apr 1 – May 31', due: 'June 16, 2026', days: 107, now: false },
-                { q: 'Q3 2026', period: 'Jun 1 – Aug 31', due: 'Sept 15, 2026', days: 198, now: false },
-                { q: 'Q4 2026', period: 'Sep 1 – Dec 31', due: 'Jan 15, 2027', days: 320, now: false },
-              ].map((d, i) => (
-                <div key={d.q} style={{ padding: '12px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.now ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.now ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
-                  {d.now && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
-                  <div style={{ marginTop: d.now ? 16 : 0, fontSize: 16, fontWeight: 800, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 3 }}>{d.q}</div>
+              {getDeadlineStatus().map((d, i) => (
+                <div key={d.q} style={{ padding: '12px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.isCurrent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.isCurrent ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
+                  {d.isCurrent && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
+                  <div style={{ marginTop: d.isCurrent ? 16 : 0, fontSize: 16, fontWeight: 800, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 3 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
-                  <div style={{ fontSize: 18, fontWeight: 900, color: d.now ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
-                  <div style={{ background: d.now ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.now ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.days} days</div>
+                  <div style={{ fontSize: 18, fontWeight: 900, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
+                  <div style={{ background: d.isCurrent ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.daysUntil >= 0 ? d.daysUntil : 0} days</div>
                   <div style={btnRed}> + Calendar</div>
                 </div>
               ))}

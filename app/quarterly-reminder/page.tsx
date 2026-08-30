@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { getDeadlineStatus } from '@/lib/data'
 import Link from 'next/link'
 
 const DEADLINES = [
@@ -12,6 +13,9 @@ const DEADLINES = [
 
 const PLATFORMS = ['DoorDash','Uber','Lyft','Etsy','Airbnb','OnlyFans','Instacart','Amazon Flex','Grubhub','Walmart Spark','Other']
 export default function QuarterlyReminder() {
+  const _deadlines = getDeadlineStatus();
+  const _current = _deadlines.find(d => d.isCurrent) || _deadlines[0];
+
   const [step, setStep]         = useState<'form'|'success'>('form')
   const [name, setName]         = useState('')
   const [email, setEmail]       = useState('')
@@ -96,7 +100,7 @@ export default function QuarterlyReminder() {
       <div style={{ background: 'linear-gradient(135deg,#B22234,#8b1a27)', borderRadius: 8, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 14, alignItems: 'center' }}>
         <span style={{ fontSize: 28, flexShrink: 0 }}></span>
         <div>
-          <div style={{ color: '#fff', fontSize: 15, fontWeight: 800, marginBottom: 3 }}>Q1 2026 Deadline: April 15, 2026 — 42 days away</div>
+          <div style={{ color: '#fff', fontSize: 15, fontWeight: 800, marginBottom: 3 }}>{_current.q} 2026 Deadline: {_current.due} — {_current.daysUntil >= 0 ? _current.daysUntil : 0} days away</div>
           <div style={{ color: 'rgba(255,255,255,.8)', fontSize: 13 }}>Missing this payment = IRS underpayment penalty. Sign up now to get reminded.</div>
         </div>
       </div>
