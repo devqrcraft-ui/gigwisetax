@@ -44,6 +44,7 @@ const nextConfig: NextConfig = {
       { source: '/compress-for-wordpress', destination: '/', permanent: true },
       { source: '/visa-photo-compressor', destination: '/', permanent: true },
       // ── other ──
+      { source: '/1099-tax-calculator', destination: '/1099-tax-calculator-2026', permanent: true },
       { source: '/year', destination: '/', permanent: true },
     ];
   },
