@@ -42,8 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
     "name": "GigWiseTax Calculator",
     "operatingSystem": "Any",
     "applicationCategory": "FinanceApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "128" }
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   };
   
   const breadcrumbSchema = {

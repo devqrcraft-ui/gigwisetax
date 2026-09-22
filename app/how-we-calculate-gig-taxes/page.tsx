@@ -113,7 +113,7 @@ export default function HowWeCalculatePage() {
             <div className="source-label">Source</div>
             <div className="source-text">
               <a href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" target="_blank" rel="noopener noreferrer" className="source-link">IRS Revenue Procedure — 2026 inflation adjustments</a>.
-              Standard deduction 2026: $15,000 (single), $30,000 (married filing jointly).
+              Standard deduction 2026: $16,100 (single), $32,200 (married filing jointly).
             </div>
           </div>
           <p style={{fontSize:12,color:'rgba(255,255,255,0.5)',marginTop:8,lineHeight:1.6}}>

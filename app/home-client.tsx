@@ -463,7 +463,7 @@ export default function HomeClient() {
                 <div style={{ padding: '12px 16px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }} className="form-grid">
                   {[
                     { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
-                    { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($15,000 single / $30,000 married). Rates from 10% to 37%.' },
+                    { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($16,100 single / $32,200 married). Rates from 10% to 37%.' },
                     { label: 'State income tax', detail: '2026 state rates for all 50 states + DC — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
                   ].map(item => (
                     <div key={item.label} style={{ borderLeft: '3px solid #e8b84b', paddingLeft: 12 }}>
