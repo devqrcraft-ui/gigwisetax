@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'etsy')
   if (!p) return {}
   return {
-    title: `Etsy Seller Tax Calculator 2026 — $30K Income = $6,448 Tax Owed`,
+    title: `Etsy Seller Tax Calculator 2026 — $30K Income = $6,439 Tax Owed`,
     description: `Etsy sellers: $30K net = $4,239 SE tax + federal. Supplies, shipping, and home office deductions save $1,500+. Free 2026 calculator, all 50 states + DC.`,
     keywords: `etsy seller tax calculator, etsy self employment tax 2026, etsy quarterly taxes, etsy 1099 taxes, how much tax do etsy sellers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
@@ -162,8 +162,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Etsy sellers owe approximately <strong>$6,448 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,612</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Etsy sellers owe approximately <strong>$6,439 total tax</strong> in 2026'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,610</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Supplies, materials, home studio, and shipping costs are <strong>fully deductible</strong> Etsy business expenses'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Etsy sends a <strong>1099-K</strong> if gross sales exceed $5,000 — all income is taxable regardless'}}/>
           <li dangerouslySetInnerHTML={{__html: 'The <strong>20% QBI deduction</strong> may apply, significantly reducing federal income tax for Etsy sellers'}}/>
@@ -173,7 +173,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Etsy</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Etsy workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,248 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$6,448 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,612</strong>. Set aside 25% of every payment. Materials, shipping, and home office deductions reduce Etsy taxable income.
+              Etsy workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$6,439 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,610</strong>. Set aside 25% of every payment. Materials, shipping, and home office deductions reduce Etsy taxable income.
             </p>
           </div>
 
