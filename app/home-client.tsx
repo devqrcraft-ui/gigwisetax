@@ -679,11 +679,11 @@ export default function HomeClient() {
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 50 states + DC, and quarterly payment schedule.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
-              { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$29k after tax'},
-              { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$35k after tax'},
-              { name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$22k after tax'},
-              { name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$41k after tax'},
-              { name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25k after tax'},
+              { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$27,350 after tax'},
+              { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$37,435 after tax'},
+              { name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$21,161 after tax'},
+              { name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$44,322 after tax'},
+              { name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25,154 after tax'},
               { name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
               { name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
               { name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
