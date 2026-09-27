@@ -30,7 +30,7 @@ export default function BlogPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Grubhub 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Grubhub drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: approximately $4,950 SE tax + $2,800 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every Grubhub payment. Mileage at 72.5¢/mile and insulated bags are key deductions.
+          Grubhub drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: approximately $4,944 SE tax + $2,806 federal income tax = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Set aside 25% of every Grubhub payment. Mileage at 72.5¢/mile and insulated bags are key deductions.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>

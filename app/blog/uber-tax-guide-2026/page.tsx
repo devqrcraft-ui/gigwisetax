@@ -54,7 +54,7 @@ export default function UberTaxGuide() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              {'Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,950 SE tax + $2,800 federal income tax = $7,750 total. Quarterly estimated payment: $1,938. Set aside 25% of every Uber payment. The 2026 mileage rate is 72.5 cents per mile and the OBBBA tips deduction (up to $25,000) are your two largest savings.'}
+              {'Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,944 SE tax + $2,806 federal income tax = $7,750 total. Quarterly estimated payment: $1,938. Set aside 25% of every Uber payment. The 2026 mileage rate is 72.5 cents per mile and the OBBBA tips deduction (up to $25,000) are your two largest savings.'}
             </p>
           </div>
         </section>
