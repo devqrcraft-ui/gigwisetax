@@ -46,6 +46,7 @@ const nextConfig: NextConfig = {
       // ── other ──
       { source: '/1099-tax-calculator', destination: '/1099-tax-calculator-2026', permanent: true },
       { source: '/year', destination: '/', permanent: true },
+      { source: '/quarterly-reminder', destination: '/deadlines', permanent: true },
     ];
   },
   compress: true,

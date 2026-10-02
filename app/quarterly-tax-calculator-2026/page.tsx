@@ -343,7 +343,7 @@ export default function QuarterlyTaxCalculator() {
           <div style={{ display: 'grid', gap: 12 }}>
             {[
               { href: '/safe-harbor-quarterly-taxes', title: 'Safe Harbor Rule — Avoid IRS Underpayment Penalties' },
-              { href: '/quarterly-reminder', title: 'Quarterly Tax Deadline Reminders 2026' },
+              { href: '/deadlines', title: 'Quarterly Tax Deadlines 2026: Federal and State Due Dates' },
               { href: '/deductions', title: 'Top Tax Deductions for Gig Workers 2026' },
             ].map(({ href, title }) => (
               <Link key={href} href={href} style={{ background: '#0d1f35', border: '1px solid #1e3a5f', borderRadius: 8, padding: '14px 18px', color: '#e8b84b', textDecoration: 'none', fontSize: 15, display: 'block' }}>

@@ -25,7 +25,6 @@ const NAV = [
       { label: ' Tax Penalty Finder',           href: '/tax-penalty-finder',        sub: 'NEW'  },
       { label: ' S-Corp vs Sole Prop',          href: '/s-corp-calculator',         sub: 'NEW'  },
       { label: ' Deductions Checklist',          href: '/deductions',                sub: 'NEW'  },
-      { label: ' Quarterly Reminders',          href: '/quarterly-reminder',        sub: 'FREE' },
       { label: '▸ Multi-App Gig Taxes',          href: '/multi-app-gig-taxes-2026',  sub: 'NEW'  },
       { label: ' Safe Harbor Guide',            href: '/safe-harbor-quarterly-taxes', sub: 'NEW' },
       { label: ' How We Calculate',             href: '/how-we-calculate-gig-taxes', sub: 'NEW'  },
