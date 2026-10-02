@@ -77,7 +77,7 @@ export default function TermsPage() {
 
           <div style={section}>
             <h2 style={h2}>7. Third-Party Links & Sponsors</h2>
-            <p style={p}>GigWiseTax.com displays sponsored links to third-party services (TurboTax, QuickBooks, H&R Block, etc.). We may earn affiliate commissions from these links. We are not responsible for the accuracy, policies, or services of any third-party website.</p>
+            <p style={p}>GigWiseTax.com may display sponsored links to third-party services. We may earn affiliate commissions from these links. When you click an affiliate link, the partner's affiliate network may set cookies on your device to credit the referral; those cookies are governed by the partner's own privacy policy. We are not responsible for the accuracy, policies, or services of any third-party website.</p>
           </div>
 
           <div style={section}>

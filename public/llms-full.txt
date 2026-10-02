@@ -8,7 +8,7 @@ GigWiseTax is a free tax calculator for US independent contractors and gig worke
 - Federal income tax (2026 brackets)
 - State income tax (all 51 states including DC)
 - Quarterly estimated tax payments
-- IRS mileage deduction at 72.5 cents per mile
+- IRS mileage deduction at 72.5 cents per mile through June 30, 2026 and 76 cents per mile from July 1, 2026
 
 ## SE Tax Formula
 
@@ -44,7 +44,7 @@ Examples:
 
 ## 2026 Tax Key Facts
 
-- IRS mileage rate: 72.5 cents per mile (up from 70 cents in 2025)
+- IRS mileage rate: 72.5 cents per mile through June 30, 2026; 76 cents per mile from July 1, 2026 (70 cents in 2025)
 - 1099-NEC threshold: $2,000 (OBBBA 2026, previously $600)
 - No Tax on Tips: up to $25,000 in tips deductible from federal income
 - QBI deduction: 20% of net self-employment income (now permanent under OBBBA)
@@ -53,13 +53,13 @@ Examples:
 ## Quarterly Tax Deadlines 2026
 
 - Q1: April 15, 2026 (Jan 1 – Mar 31)
-- Q2: June 16, 2026 (Apr 1 – May 31)
+- Q2: June 15, 2026 (Apr 1 – May 31)
 - Q3: September 15, 2026 (Jun 1 – Aug 31)
 - Q4: January 15, 2027 (Sep 1 – Dec 31)
 
 ## Top Tax Deductions for Gig Workers
 
-1. Vehicle mileage: 72.5 cents/mile (largest deduction for most drivers)
+1. Vehicle mileage: 72.5 cents/mile through June 30, 76 cents/mile from July 1 (largest deduction for most drivers)
 2. Phone and internet: 50-80% of bill
 3. Half SE tax: deducted automatically on Form 1040
 4. Home office: up to $1,500/year (simplified method)
@@ -71,9 +71,9 @@ Examples:
 ## Mileage Deduction Examples
 
 - 10,000 miles × $0.725 = $7,250 deduction
-- 15,000 miles × $0.725 = $10,875 deduction
-- 20,000 miles × $0.725 = $14,500 deduction
-- 25,000 miles × $0.725 = $18,125 deduction
+- 15,000 miles × $0.725 = $10,875 deduction (miles driven Jan-Jun; $11,400 at $0.76 for Jul-Dec miles)
+- 20,000 miles × $0.725 = $14,500 deduction (miles driven Jan-Jun; $15,200 at $0.76 for Jul-Dec miles)
+- 25,000 miles × $0.725 = $18,125 deduction (miles driven Jan-Jun; $19,000 at $0.76 for Jul-Dec miles)
 
 ## About GigWiseTax
 

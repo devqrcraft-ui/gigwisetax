@@ -1,6 +1,6 @@
 # GigWiseTax
 
-> Free gig worker tax calculator for US independent contractors. Covers all 51 states. Self-employment tax 15.3%, federal + state income tax, quarterly payments. IRS mileage rate 72.5¢/mile 2026. No signup, no data stored.
+> Free gig worker tax calculator for US independent contractors. Covers all 51 states. Self-employment tax 15.3%, federal + state income tax, quarterly payments. IRS mileage rate 2026: 72.5¢/mile through June 30, 76¢/mile from July 1. No signup, no data stored.
 
 ## Platform Calculators
 
@@ -42,9 +42,9 @@
 
 ## Key Tax Facts 2026
 
-- IRS mileage rate: 72.5 cents per mile
+- IRS mileage rate: 72.5 cents per mile through June 30, 2026; 76 cents per mile from July 1, 2026
 - SE tax rate: 15.3% (12.4% Social Security + 2.9% Medicare)
 - SE tax formula: net income x 0.9235 x 0.153
 - 1099-NEC threshold (OBBBA 2026): $2,000
-- Quarterly deadlines: April 15, June 16, September 15, January 15
+- Quarterly deadlines: April 15, June 15, September 15, January 15
 - QBI deduction: up to 20% of qualified business income

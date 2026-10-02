@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 8, padding: 32, boxShadow: '0 2px 12px rgba(0,0,0,0.3)', marginBottom: 24 }}>
           <h2 style={{ fontSize: 20, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16, marginTop: 0 }}>How We Stay Free</h2>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 14 }}>
-            GigWiseTax.com is supported by clearly labeled <strong>affiliate partnerships</strong> with tax software companies like TurboTax, QuickBooks, and H&R Block. When you click a sponsored link and make a purchase, we may earn a commission — at no extra cost to you.
+            GigWiseTax.com is supported by clearly labeled <strong>affiliate partnerships</strong> with third-party services that are relevant to gig workers (for example, tools for paying contractors or preparing tax returns). When you click a sponsored link and sign up or make a purchase, we may earn a commission — at no extra cost to you.
           </p>
           <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.9, marginBottom: 0 }}>
             Our calculators, content, and tools are completely independent and not influenced by these partnerships. We recommend products we believe are genuinely useful for gig workers.

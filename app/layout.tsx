@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
   themeColor: '#0a0f1e',
@@ -54,7 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema ) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
@@ -89,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
             <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",paddingTop:10,fontSize:11,color:"rgba(255,255,255,0.35)"}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
           </div>
         </footer>
+        <Analytics />
       </body>
     </html>
    );
