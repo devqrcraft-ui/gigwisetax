@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 const DEADLINES = [
   { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026',   daysLeft: 42,  urgent: true  },
-  { q: 'Q2 2026', period: 'Apr – May', due: 'June 16, 2026',    daysLeft: 104, urgent: false },
+  { q: 'Q2 2026', period: 'Apr – May', due: 'June 15, 2026',    daysLeft: 104, urgent: false },
   { q: 'Q3 2026', period: 'Jun – Aug', due: 'Sept 15, 2026',    daysLeft: 195, urgent: false },
   { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027',     daysLeft: 317, urgent: false },
 ]

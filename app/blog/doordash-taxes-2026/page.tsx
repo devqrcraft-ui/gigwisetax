@@ -205,7 +205,7 @@ export default function DoorDashTaxGuide() {
               <tbody>
                 {[
                   ['Q1 2026', 'Jan – Mar', 'April 15, 2026'],
-                  ['Q2 2026', 'Apr – May', 'June 16, 2026'],
+                  ['Q2 2026', 'Apr – May', 'June 15, 2026'],
                   ['Q3 2026', 'Jun – Aug', 'September 15, 2026'],
                 ].map(([q, period, due], i) => (
                   <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>

@@ -86,7 +86,7 @@ export default function W9MistakesBlog() {
           <div style={warn}> <strong>The Fix:</strong> If you're a solo gig worker with no formal business entity, select "Individual/sole proprietor or single-member LLC." If you've formed an actual LLC or S-Corp, select the appropriate box and add your EIN.</div>
 
           <h2 style={h2}>Mistake #3: Not Reporting Income Under $600</h2>
-          <p style={p}>The $600 threshold only determines whether a platform must send you a 1099-NEC form. You must report ALL self-employment income to the IRS — even $50, even $1 — if your total self-employment profit exceeds $400 for the year.</p>
+          <p style={p}>The $2,000 threshold (for 2026 payments) only determines whether a platform must send you a 1099-NEC form. You must report ALL self-employment income to the IRS — even $50, even $1 — if your total self-employment profit exceeds $400 for the year.</p>
           <div style={warn}> <strong>The Penalty:</strong> Failing to report income = 20% accuracy penalty on understated tax + interest. On $5,000 of unreported income, that's $1,000+ in penalties before interest.</div>
           <div style={tip}> <strong>Track everything:</strong> Use a spreadsheet or QuickBooks Self-Employed to log every payment from every platform, regardless of whether you receive a 1099.</div>
 

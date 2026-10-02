@@ -34,7 +34,7 @@ const STATES = [
 
 const DEADLINES = [
   { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026',   days: 45,  now: true  },
-  { q: 'Q2 2026', period: 'Apr – May', due: 'June 16, 2026',    days: 107, now: false },
+  { q: 'Q2 2026', period: 'Apr – May', due: 'June 15, 2026',    days: 107, now: false },
   { q: 'Q3 2026', period: 'Jun – Aug', due: 'Sept 15, 2026',    days: 198, now: false },
   { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027',     days: 320, now: false },
 ]
@@ -83,7 +83,7 @@ function QuarterlyEstimator() {
 
   const DATES = [
     {q:'Q1 2026',due:'April 15, 2026'},
-    {q:'Q2 2026',due:'June 16, 2026'},
+    {q:'Q2 2026',due:'June 15, 2026'},
     {q:'Q3 2026',due:'September 15, 2026'},
     {q:'Q4 2026',due:'January 15, 2027'},
   ];
@@ -756,7 +756,7 @@ export default function HomeClient() {
           <div style={{display:'flex',flexDirection:'column' as const,gap:8}}>
             {[
               ['How much tax do gig workers pay?','Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10–22% for most) plus state tax. Total effective rate is typically 25–35%. A DoorDash driver earning $40,000 in California pays roughly $12,000–$14,000 in total taxes.'],
-              ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
+              ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
               ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is 72.5¢/mile through June 30, 76¢/mile from July 1 onward. A driver logging 15,000 business miles saves roughly $11,000-$11,400 in deductible expenses, which reduces SE tax and income tax.'],
               ['Do OnlyFans creators pay self-employment tax?','Yes. OnlyFans sends a 1099-NEC for earnings over $600. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses.'],
               ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 50 states + DC.'],

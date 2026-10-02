@@ -5,13 +5,13 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates | GigWiseTax',
-  description: 'All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 16, September 15, January 15 2027. Miss one and pay a 7% penalty.',
+  description: 'All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 15, September 15, January 15 2027. Miss one and pay a 7% penalty.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026' },
 }
 
 const DEADLINES = [
   { q: 'Q1 2026', period: 'January – March 2026',   due: 'April 15, 2026',    form: 'Form 1040-ES' },
-  { q: 'Q2 2026', period: 'April – May 2026',        due: 'June 16, 2026',     form: 'Form 1040-ES' },
+  { q: 'Q2 2026', period: 'April – May 2026',        due: 'June 15, 2026',     form: 'Form 1040-ES' },
   { q: 'Q3 2026', period: 'June – August 2026',      due: 'September 15, 2026',form: 'Form 1040-ES' },
   { q: 'Q4 2026', period: 'September – December 2026',due: 'January 15, 2027', form: 'Form 1040-ES' },
 ]
@@ -19,9 +19,9 @@ const DEADLINES = [
 export default function Page() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are gig worker quarterly tax payments due in 2026?","acceptedAnswer":{"@type":"Answer","text":"Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027."}},{"@type":"Question","name":"What happens if I miss a quarterly estimated tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed."}},{"@type":"Question","name":"How do I calculate how much to pay each quarter?","acceptedAnswer":{"@type":"Answer","text":"Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add federal income tax, then divide by 4. Use the GigWiseTax calculator for an instant result."}}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are gig worker quarterly tax payments due in 2026?","acceptedAnswer":{"@type":"Answer","text":"Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027."}},{"@type":"Question","name":"What happens if I miss a quarterly estimated tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed."}},{"@type":"Question","name":"How do I calculate how much to pay each quarter?","acceptedAnswer":{"@type":"Answer","text":"Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add federal income tax, then divide by 4. Use the GigWiseTax calculator for an instant result."}}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","item":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","description":"All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 16, September 15, January 15 2027. Miss one and pay a 7% penalty.","url":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","description":"All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 15, September 15, January 15 2027. Miss one and pay a 7% penalty.","url":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 20px 64px', fontFamily: 'system-ui,sans-serif', color: 'rgba(255,255,255,0.9)' }}>
 
@@ -36,7 +36,7 @@ export default function Page() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Gig Tax Deadlines 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          2026 quarterly tax deadlines: April 15, June 16, September 15, January 15 2027. On $35,000 net gig income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Each quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Use IRS Direct Pay to pay online in minutes.
+          2026 quarterly tax deadlines: April 15, June 15, September 15, January 15 2027. On $35,000 net gig income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Each quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Use IRS Direct Pay to pay online in minutes.
         </p>
       </div>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 32 }}>
@@ -110,7 +110,7 @@ export default function Page() {
         {/* FAQ */}
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>FAQ</h2>
         {[
-          ['When are gig worker quarterly tax payments due in 2026?', 'Q1: April 15 · Q2: June 16 · Q3: September 15 · Q4: January 15, 2027.'],
+          ['When are gig worker quarterly tax payments due in 2026?', 'Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027.'],
           ['What happens if I miss a quarterly estimated tax deadline?', 'The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed.'],
           ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 50 states + DC.'],
         ].map(([q, a]) => (

@@ -62,7 +62,7 @@ const PLATFORMS = [
 
 const QUARTERLY_DATES = [
   { label: 'Q1 2026', date: 'April 15, 2026' },
-  { label: 'Q2 2026', date: 'June 16, 2026' },
+  { label: 'Q2 2026', date: 'June 15, 2026' },
   { label: 'Q3 2026', date: 'September 15, 2026' },
   { label: 'Q4 2026', date: 'January 15, 2027' },
 ];

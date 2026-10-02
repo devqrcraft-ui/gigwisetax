@@ -71,7 +71,7 @@ const howToSchema = {
     { "@type": "HowToStep", "name": "Calculate combined deductions", "text": "Add mileage (all apps combined × $0.725), phone bill percentage, supplies, and other business costs. Do not count the same mile for two apps." },
     { "@type": "HowToStep", "name": "Report on Schedule C", "text": "Most gig workers report all delivery/driving income on one Schedule C. List total revenue and total deductions to arrive at net profit." },
     { "@type": "HowToStep", "name": "Calculate SE tax on net profit", "text": "Multiply net profit by 0.9235, then by 0.153. This is your self-employment tax. You deduct half of it on Form 1040." },
-    { "@type": "HowToStep", "name": "Pay quarterly if you owe $1,000+", "text": "If total tax owed exceeds $1,000, pay quarterly estimates by April 15, June 16, September 15, and January 15, 2027 to avoid underpayment penalties." }
+    { "@type": "HowToStep", "name": "Pay quarterly if you owe $1,000+", "text": "If total tax owed exceeds $1,000, pay quarterly estimates by April 15, June 15, September 15, and January 15, 2027 to avoid underpayment penalties." }
   ]
 };
 
@@ -284,7 +284,7 @@ export default function MultiAppPage() {
               ['Calculate combined deductions', 'Add all business miles across every app × $0.725 (2026 IRS rate). Add phone bill (% used for work), supplies, hot bags, car washes, and other costs. Do NOT count the same mile twice across apps.'],
               ['Report on Schedule C', 'Enter total revenue and total deductions. Net profit = revenue minus deductions. This is what SE tax is calculated on.'],
               ['Calculate SE tax', 'Net profit × 0.9235 × 0.153 = your SE tax. You deduct 50% of this on Form 1040 Line 15.'],
-              ['Pay quarterly to avoid penalties', 'If total tax owed exceeds $1,000, pay quarterly. Q1 due April 15 · Q2 June 16 · Q3 Sept 15 · Q4 Jan 15, 2027.'],
+              ['Pay quarterly to avoid penalties', 'If total tax owed exceeds $1,000, pay quarterly. Q1 due April 15 · Q2 June 15 · Q3 Sept 15 · Q4 Jan 15, 2027.'],
             ].map(([title, desc], i) => (
               <div className="step" key={i}>
                 <div className="step-num">{i+1}</div>

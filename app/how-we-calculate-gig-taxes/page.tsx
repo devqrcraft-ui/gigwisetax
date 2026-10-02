@@ -159,7 +159,7 @@ export default function HowWeCalculatePage() {
             <div className="formula-title">Quarterly Payment Formula</div>
             <div className="formula-line">Quarterly Payment = <span>(SE Tax + Federal Tax + State Tax) ÷ 4</span></div>
             <div className="formula-note">
-              2026 due dates: Q1 April 15 · Q2 June 16 · Q3 September 15 · Q4 January 15, 2027.
+              2026 due dates: Q1 April 15 · Q2 June 15 · Q3 September 15 · Q4 January 15, 2027.
               Source: <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener noreferrer" className="source-link">IRS Estimated Taxes</a>.
             </div>
           </div>

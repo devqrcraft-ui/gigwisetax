@@ -67,7 +67,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `When are ${platform.name} quarterly taxes due in 2026?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `For 2026: Q1 taxes are due April 15, 2026. Q2 is due June 16, 2026. Q3 is due September 15, 2026. Q4 is due January 15, 2027.`,
+          text: `For 2026: Q1 taxes are due April 15, 2026. Q2 is due June 15, 2026. Q3 is due September 15, 2026. Q4 is due January 15, 2027.`,
         },
       },
       {
@@ -75,7 +75,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `What is the ${platform.name} 1099 threshold for 2026?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `For 2026, ${platform.name} must issue a 1099-NEC if you earn $600 or more. However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
+          text: `For 2026, ${platform.name} generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
         },
       },
     ],
@@ -113,7 +113,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJson) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Instacart Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Instacart workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Instacart earnings. Download your annual tax summary or 1099-NEC from the Instacart app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 16, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Instacart income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Instacart Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Instacart workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Instacart earnings. Download your annual tax summary or 1099-NEC from the Instacart app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Instacart income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Instacart Shopper Tax Calculator 2026","item":"https://www.gigwisetax.com/instacart"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Instacart Shopper Tax Calculator 2026","url":"https://www.gigwisetax.com/instacart","dateModified":"2026-06-11","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -164,7 +164,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$35,000 net income</strong>, Instacart shoppers owe approximately <strong>$7,750 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,938</strong> due April 15, June 16, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,938</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Mileage at <strong>72.5¢/mile</strong> is the top deduction — full-service shoppers drive 20,000–35,000 miles/year'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Instacart issues a <strong>1099-NEC</strong> if you earn $600+ — all income is taxable regardless'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–27%</strong> of gross earnings each week for estimated taxes'}}/>
@@ -319,15 +319,15 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC (or 1099-K for some platforms) if you earn $600 or more in a calendar year. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
                     a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
                   },
                   {
-                    q: `Do I need to pay ${platform.name} taxes if I earn under $600?`,
-                    a: `Yes. The $600 threshold only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                    q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
+                    a: `Yes. The $2,000 threshold (for 2026 payments) only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>

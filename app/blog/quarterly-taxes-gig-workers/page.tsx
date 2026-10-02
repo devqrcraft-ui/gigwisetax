@@ -62,7 +62,7 @@ export default function QuarterlyTaxesGuide() {
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
           <li>Threshold: owe $1,000+ annually → quarterly payments required</li>
           <li>$35K gig income = $7,750 SE tax = $1,938 per quarter</li>
-          <li>Due dates: April 15 / June 16 / September 15 / January 15</li>
+          <li>Due dates: April 15 / June 15 / September 15 / January 15</li>
           <li>Safe harbor: pay 100% of last year's total tax to eliminate underpayment risk</li>
           <li>State estimated taxes also due on the same dates in most states</li>
             </ul>
@@ -73,7 +73,7 @@ export default function QuarterlyTaxesGuide() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A gig worker earning $35,000 net in 2026 owes roughly $7,750 in total tax — about $1,938 per quarter. Four deadlines apply: April 15, June 16, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
+            {'A gig worker earning $35,000 net in 2026 owes roughly $7,750 in total tax — about $1,938 per quarter. Four deadlines apply: April 15, June 15, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
           </p>
         </div>
 
@@ -83,7 +83,7 @@ export default function QuarterlyTaxesGuide() {
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'Pay quarterly if you expect to owe $1,000 or more in 2026 federal tax'}</li>
             <li>{'On $35,000 net gig income: $7,750 total tax = $1,938 per quarter'}</li>
-            <li>{'2026 deadlines: April 15 · June 16 · September 15 · January 15, 2027'}</li>
+            <li>{'2026 deadlines: April 15 · June 15 · September 15 · January 15, 2027'}</li>
             <li>{'Safe harbor: pay 100% of your 2025 tax to avoid all penalties'}</li>
             <li>{'IRS Direct Pay is free — no account, no fee, instant confirmation'}</li>
           </ul>
@@ -116,7 +116,7 @@ export default function QuarterlyTaxesGuide() {
             What Are the 2026 Quarterly Tax Deadlines for Gig Workers?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'The IRS splits the year into four payment periods. Each has a firm due date. Q1 covers January through March income — due April 15. Q2 covers April and May — due June 16 (Monday holiday shift). Q3 covers June through August — due September 15. Q4 covers September through December — due January 15, 2027.'}
+            {'The IRS splits the year into four payment periods. Each has a firm due date. Q1 covers January through March income — due April 15. Q2 covers April and May — due June 15 (Monday holiday shift). Q3 covers June through August — due September 15. Q4 covers September through December — due January 15, 2027.'}
           </p>
 
           <div style={{overflowX:'auto', marginBottom:24}}>
@@ -132,7 +132,7 @@ export default function QuarterlyTaxesGuide() {
               <tbody>
                 {[
                   {q:'Q1 2026', period:'Jan 1 – Mar 31', due:'April 15, 2026', amt:'$1,938'},
-                  {q:'Q2 2026', period:'Apr 1 – May 31', due:'June 16, 2026', amt:'$1,938'},
+                  {q:'Q2 2026', period:'Apr 1 – May 31', due:'June 15, 2026', amt:'$1,938'},
                   {q:'Q3 2026', period:'Jun 1 – Aug 31', due:'September 15, 2026', amt:'$1,938'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
@@ -319,7 +319,7 @@ export default function QuarterlyTaxesGuide() {
           {[
             {
               q:'When are quarterly estimated taxes due in 2026?',
-              a:'Q1: April 15. Q2: June 16. Q3: September 15. Q4: January 15, 2027. Pay via IRS Direct Pay at irs.gov/payments — free and instant.'
+              a:'Q1: April 15. Q2: June 15. Q3: September 15. Q4: January 15, 2027. Pay via IRS Direct Pay at irs.gov/payments — free and instant.'
             },
             {
               q:'How much does a gig worker on $35,000 pay per quarter?',

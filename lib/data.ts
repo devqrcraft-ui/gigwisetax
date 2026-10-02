@@ -93,7 +93,7 @@ export function getDeadlineStatus() {
 
 export const DEADLINES_2026 = [
   { q: 'Q1', period: 'January 1 – March 31',   due: 'April 15, 2026',  form: '1040-ES', days: 45  },
-  { q: 'Q2', period: 'April 1 – May 31',       due: 'June 16, 2026',   form: '1040-ES', days: 107 },
+  { q: 'Q2', period: 'April 1 – May 31',       due: 'June 15, 2026',   form: '1040-ES', days: 107 },
   { q: 'Q3', period: 'June 1 – August 31',     due: 'September 15, 2026', form: '1040-ES', days: 198 },
   { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
 ]

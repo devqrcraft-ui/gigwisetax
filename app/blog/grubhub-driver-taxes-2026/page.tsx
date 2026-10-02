@@ -130,7 +130,7 @@ export default function BlogPost() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 32 }}>
         {[
           { q: 'Q1 — April 15, 2026', urgent: true },
-          { q: 'Q2 — June 16, 2026', urgent: false },
+          { q: 'Q2 — June 15, 2026', urgent: false },
           { q: 'Q3 — September 15, 2026', urgent: false },
           { q: 'Q4 — January 15, 2027', urgent: false },
         ].map(d => (

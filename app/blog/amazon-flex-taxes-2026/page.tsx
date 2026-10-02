@@ -192,7 +192,7 @@ export default function AmazonFlexTaxesBlogPost() {
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
             {[
               { q: 'Q1 2026', period: 'Jan – Mar income', due: 'April 15, 2026', urgent: true },
-              { q: 'Q2 2026', period: 'Apr – May income', due: 'June 16, 2026', urgent: false },
+              { q: 'Q2 2026', period: 'Apr – May income', due: 'June 15, 2026', urgent: false },
               { q: 'Q3 2026', period: 'Jun – Aug income', due: 'September 15, 2026', urgent: false },
               { q: 'Q4 2026', period: 'Sep – Dec income', due: 'January 15, 2027', urgent: false },
             ].map(row => (

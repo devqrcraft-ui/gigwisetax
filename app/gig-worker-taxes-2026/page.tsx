@@ -147,7 +147,7 @@ export default function GigWorkerTaxCenter() {
         <div style={{ background: 'rgba(178,34,52,.08)', border: '1px solid rgba(178,34,52,.3)', borderRadius: 12, padding: '24px', marginBottom: 40 }}>
           <div style={{ fontSize: 16, fontWeight: 800, color: '#fff', marginBottom: 16 }}> 2026 Quarterly Tax Deadlines</div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
-            {[['Q1','April 15, 2026','URGENT'],['Q2','June 16, 2026',''],['Q3','Sept 15, 2026',''],['Q4','Jan 15, 2027','']].map(([q,d,u])=>(
+            {[['Q1','April 15, 2026','URGENT'],['Q2','June 15, 2026',''],['Q3','Sept 15, 2026',''],['Q4','Jan 15, 2027','']].map(([q,d,u])=>(
               <div key={q} style={{ background: 'rgba(255,255,255,.04)', borderRadius: 8, padding: '12px 14px' }}>
                 <div style={{ fontSize: 11, fontWeight: 800, color: u ? '#ef4444' : '#e8b84b', letterSpacing: '1px' }}>{q}{u ? ' — '+u : ''}</div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginTop: 4 }}>{d}</div>

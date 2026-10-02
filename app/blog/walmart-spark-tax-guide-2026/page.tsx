@@ -202,7 +202,7 @@ export default function WalmartSparkTaxGuide2026() {
               <tbody>
                 {[
                   ['Q1 2026', 'Jan 1 – Mar 31', 'April 15, 2026'],
-                  ['Q2 2026', 'Apr 1 – May 31', 'June 16, 2026'],
+                  ['Q2 2026', 'Apr 1 – May 31', 'June 15, 2026'],
                   ['Q3 2026', 'Jun 1 – Aug 31', 'September 15, 2026'],
                   ['Q4 2026', 'Sep 1 – Dec 31', 'January 15, 2027'],
                 ].map(([q, p, d]) => (

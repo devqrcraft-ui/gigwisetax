@@ -58,7 +58,7 @@ function calcFederalTax(taxable: number, status: string): number {
 
 const QUARTERS = [
   { label: 'Q1', period: 'Jan 1 – Mar 31', due: 'April 15, 2026' },
-  { label: 'Q2', period: 'Apr 1 – May 31', due: 'June 16, 2026' },
+  { label: 'Q2', period: 'Apr 1 – May 31', due: 'June 15, 2026' },
   { label: 'Q3', period: 'Jun 1 – Aug 31', due: 'September 15, 2026' },
   { label: 'Q4', period: 'Sep 1 – Dec 31', due: 'January 15, 2027' },
 ];
@@ -124,7 +124,7 @@ export default function QuarterlyTaxCalculator() {
         {/* Answer-First GEO block */}
         <div style={{ background: '#0d1f35', border: '1px solid #e8b84b33', borderRadius: 10, padding: '20px 24px', marginBottom: 32 }}>
           <p style={{ fontSize: 16, lineHeight: 1.7, margin: 0 }}>
-            <strong style={{ color: '#e8b84b' }}>Quick answer:</strong> Gig workers pay estimated taxes 4 times per year — April 15, June 16, September 15, and January 15. Each quarter you owe roughly <strong>25–30% of your net profit</strong>: ~15.3% self-employment tax + federal income tax minus the SE deduction. Use this calculator to get your exact quarterly payment for 2026.
+            <strong style={{ color: '#e8b84b' }}>Quick answer:</strong> Gig workers pay estimated taxes 4 times per year — April 15, June 15, September 15, and January 15. Each quarter you owe roughly <strong>25–30% of your net profit</strong>: ~15.3% self-employment tax + federal income tax minus the SE deduction. Use this calculator to get your exact quarterly payment for 2026.
           </p>
         </div>
 
@@ -246,7 +246,7 @@ export default function QuarterlyTaxCalculator() {
                 <tbody>
                   {[
                     ['Q1 2026', 'Jan 1 – Mar 31', 'April 15, 2026', 'Form 1040-ES'],
-                    ['Q2 2026', 'Apr 1 – May 31', 'June 16, 2026', 'Form 1040-ES'],
+                    ['Q2 2026', 'Apr 1 – May 31', 'June 15, 2026', 'Form 1040-ES'],
                     ['Q3 2026', 'Jun 1 – Aug 31', 'September 15, 2026', 'Form 1040-ES'],
                     ['Q4 2026', 'Sep 1 – Dec 31', 'January 15, 2027', 'Form 1040-ES'],
                   ].map((row, i) => (
