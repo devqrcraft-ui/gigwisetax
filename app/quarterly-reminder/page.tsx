@@ -1,21 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { getDeadlineStatus } from '@/lib/data'
 import Link from 'next/link'
 
-const DEADLINES = [
-  { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026',   daysLeft: 42,  urgent: true  },
-  { q: 'Q2 2026', period: 'Apr – May', due: 'June 15, 2026',    daysLeft: 104, urgent: false },
-  { q: 'Q3 2026', period: 'Jun – Aug', due: 'Sept 15, 2026',    daysLeft: 195, urgent: false },
-  { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027',     daysLeft: 317, urgent: false },
-]
 
 const PLATFORMS = ['DoorDash','Uber','Lyft','Etsy','Airbnb','OnlyFans','Instacart','Amazon Flex','Grubhub','Walmart Spark','Other']
 export default function QuarterlyReminder() {
   const _deadlines = getDeadlineStatus();
   const _current = _deadlines.find(d => d.isCurrent) || _deadlines[0];
 
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
   const [step, setStep]         = useState<'form'|'success'>('form')
   const [name, setName]         = useState('')
   const [email, setEmail]       = useState('')
@@ -50,20 +46,20 @@ export default function QuarterlyReminder() {
         <div style={body}>
           <div style={{ marginBottom: 20 }}>
             <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 14 }}> You'll receive reminders before:</div>
-            {DEADLINES.map((d, i) => (
-              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 6, marginBottom: 8, border: d.urgent ? '1px solid rgba(178,34,52,0.5)' : '1px solid rgba(255,255,255,0.12)' }}>
+            {_deadlines.map((d, i) => (
+              <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 14px', background: d.isCurrent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 6, marginBottom: 8, border: d.isCurrent ? '1px solid rgba(178,34,52,0.5)' : '1px solid rgba(255,255,255,0.12)' }}>
                 <div>
-                  <span style={{ fontSize: 14, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q}</span>
+                  <span style={{ fontSize: 14, fontWeight: 700, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q} 2026</span>
                   <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginLeft: 8 }}>{d.period}</span>
                 </div>
-                <span style={{ fontSize: 13, fontWeight: 700, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</span>
               </div>
             ))}
           </div>
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 20, textAlign: 'center', marginBottom: 16 }}>
-            <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>Q1 DEADLINE IS COMING — APRIL 15, 2026</div>
-            <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 14, margin: '0 0 16px', lineHeight: 1.6 }}>File your taxes now and avoid IRS penalties</p>
+            <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>{_current.q} DEADLINE: {_current.due.toUpperCase()}</div>
+            <p style={{ color: 'rgba(255,255,255,.8)', fontSize: 14, margin: '0 0 16px', lineHeight: 1.6 }}>Pay your next estimated payment on time to avoid underpayment penalties</p>
             <a href="https://1099deductions.com" target="_blank" rel="noopener"
               style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '13px', fontSize: 15, fontWeight: 800, textDecoration: 'none' }}>
               File Now with TurboTax Self-Employed →
@@ -100,7 +96,7 @@ export default function QuarterlyReminder() {
       <div style={{ background: 'linear-gradient(135deg,#B22234,#8b1a27)', borderRadius: 8, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 14, alignItems: 'center' }}>
         <span style={{ fontSize: 28, flexShrink: 0 }}></span>
         <div>
-          <div style={{ color: '#fff', fontSize: 15, fontWeight: 800, marginBottom: 3 }}>{_current.q} 2026 Deadline: {_current.due} — {_current.daysUntil >= 0 ? _current.daysUntil : 0} days away</div>
+          <div style={{ color: '#fff', fontSize: 15, fontWeight: 800, marginBottom: 3 }}>{_current.q} 2026 Deadline: {_current.due} — {mounted ? Math.max(_current.daysUntil, 0) + ' days away' : 'coming up'}</div>
           <div style={{ color: 'rgba(255,255,255,.8)', fontSize: 13 }}>Missing this payment = IRS underpayment penalty. Sign up now to get reminded.</div>
         </div>
       </div>
@@ -112,18 +108,18 @@ export default function QuarterlyReminder() {
           <div style={{ color: '#fff', fontSize: 18, fontWeight: 800 }}>All 4 IRS Payment Deadlines</div>
         </div>
         <div style={body}>
-          {DEADLINES.map((d, i) => (
-            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', background: d.urgent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 8, marginBottom: 10, border: d.urgent ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.12)' }}>
+          {_deadlines.map((d, i) => (
+            <div key={i} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '14px 16px', background: d.isCurrent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderRadius: 8, marginBottom: 10, border: d.isCurrent ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.12)' }}>
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 3 }}>
-                  {d.urgent && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '2px 6px', borderRadius: 3 }}>URGENT</span>}
-                  <span style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q}</span>
+                  {d.isCurrent && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, fontWeight: 800, padding: '2px 6px', borderRadius: 3 }}>NEXT</span>}
+                  <span style={{ fontSize: 15, fontWeight: 800, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.q} 2026</span>
                 </div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)' }}>Income period: {d.period}</div>
               </div>
               <div style={{ textAlign: 'right' as const }}>
-                <div style={{ fontSize: 15, fontWeight: 800, color: d.urgent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</div>
-                <div style={{ fontSize: 12, color: d.urgent ? '#B22234' : '#9ca3af', fontWeight: 600 }}>{d.daysLeft} days left</div>
+                <div style={{ fontSize: 15, fontWeight: 800, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)' }}>{d.due}</div>
+                <div style={{ fontSize: 12, color: d.isCurrent ? '#B22234' : '#9ca3af', fontWeight: 600 }}>{d.isPast ? 'Due date passed' : mounted ? d.daysUntil + ' days left' : ''}</div>
               </div>
             </div>
           ))}
