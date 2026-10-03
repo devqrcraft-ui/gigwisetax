@@ -1,10 +1,4 @@
-const reviews = [
-  { initials: 'MR', name: 'Marcus R.', location: 'Texas', platform: 'DoorDash', rating: 5, date: 'April 14, 2026', text: 'Used this before filing my 2025 return. Calculator was spot on — my CPA confirmed the SE tax number. Way better than TaxAct which tried to charge me $90 just to see my estimate.' },
-  { initials: 'JL', name: 'Jamie L.', location: 'California', platform: 'Uber Eats', rating: 5, date: 'March 28, 2026', text: 'Finally a calculator that actually breaks down SE tax, federal AND state. No sign-up, no email required, just got my number in 30 seconds.' },
-  { initials: 'ST', name: 'Sarah T.', location: 'Florida', platform: 'Instacart', rating: 5, date: 'February 9, 2026', text: 'First year doing gig taxes and I was terrified. This calculator explained everything — SE tax, mileage deduction, quarterly deadlines. Set aside 27% and had exactly enough when Q1 was due.' },
-  { initials: 'DK', name: 'Derek K.', location: 'New York', platform: 'Amazon Flex', rating: 4, date: 'January 22, 2026', text: 'Solid tool, completely free which is rare. I checked against TurboTax and the numbers matched. Would love a PDF export but for a free tool this is excellent.' },
-  { initials: 'AC', name: 'Ashley C.', location: 'Illinois', platform: 'DoorDash + Lyft', rating: 5, date: 'May 3, 2026', text: 'I work two gig platforms and this was the only free calculator that let me combine income. No hidden upgrade, no premium plan required.' },
-]
+const reviews: { initials: string; name: string; location: string; platform: string; rating: number; date: string; text: string }[] = []
 
 function StarRating({ count }: { count: number }) {
   return (
@@ -17,6 +11,7 @@ function StarRating({ count }: { count: number }) {
 }
 
 export function ReviewsSection() {
+  if (reviews.length === 0) return null
   return (
     <section id="reviews" style={{ marginBottom: 36 }}>
       <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '0 0 6px' }}>What Gig Workers Say</h2>
