@@ -167,7 +167,7 @@ export default function GigCalculator({
                 <button style={{...btnRed, border:'none', cursor:'pointer'}} onClick={() => {
                   const dates = [
                     {q:'Q1 2026',date:'20260415'},
-                    {q:'Q2 2026',date:'20260616'},
+                    {q:'Q2 2026',date:'20260615'},
                     {q:'Q3 2026',date:'20260915'},
                     {q:'Q4 2026',date:'20270115'},
                   ];
@@ -206,7 +206,7 @@ export default function GigCalculator({
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 4 }}>{d.due}</div>
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
                   <button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
-                    const calDates = ['20260415','20260616','20260915','20270115'];
+                    const calDates = ['20260415','20260615','20260915','20270115'];
                     const title = encodeURIComponent(d.q + ' 2026 Estimated Tax — ' + fmt(result.quarterly));
                     const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + calDates[i] + '/' + calDates[i];
                     window.open(url, '_blank');
