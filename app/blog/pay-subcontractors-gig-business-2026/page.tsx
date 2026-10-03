@@ -111,7 +111,7 @@ export default function PaySubcontractorsGuide() {
               {'If you are paying more than one or two helpers regularly, a dedicated tool beats manual Venmo/Zelle tracking — it keeps a clean record for 1099-NEC time and lets each person choose ACH, check, or wire.'}
             </p>
             <a
-              href="https://www.awin1.com/cread.php?awinmid=24005&awinaffid=2898033&ued=https%3A%2F%2Fonlinecheckwriter.com%2Fdirect-deposit%2F"
+              href="https://www.awin1.com/cread.php?awinmid=24005&awinaffid=2898033&clickref=pay-subcontractors&ued=https%3A%2F%2Fonlinecheckwriter.com%2Fdirect-deposit%2F"
               rel="nofollow sponsored"
               target="_blank"
               className="cta-btn"
