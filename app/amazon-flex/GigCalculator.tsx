@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import PartnerCTA from '@/app/PartnerCTA'
 import { MILEAGE_RATE_H1_2026, MILEAGE_RATE_H2_2026 } from '@/lib/data'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
@@ -23,6 +24,7 @@ export default function GigCalculator({
   const [result, setResult]     = useState<any>(null)
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
+  const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
 
   const calculate = () => {
     const gross = parseFloat(income) || 0
@@ -165,7 +167,7 @@ export default function GigCalculator({
                     {q:'Q3 2026',date:'20260915'},
                     {q:'Q4 2026',date:'20270115'},
                   ];
-                  dates.forEach(d => {
+                  (nextIdx === -1 ? [] : dates.slice(nextIdx)).forEach(d => {
                     const title = encodeURIComponent(d.q + ' Estimated Tax — ' + fmt(result.quarterly));
                     const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + d.date + '/' + d.date;
                     window.open(url, '_blank');
@@ -194,23 +196,24 @@ export default function GigCalculator({
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 8 }} className="q-grid">
               {deadlines.map((d, i) => (
-                <div key={d.q} style={{ border: i === 0 ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
-                  {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
+                <div key={d.q} style={{ border: i === nextIdx ? '2px solid #B22234' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === nextIdx ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
+                  {i === nextIdx && <div style={{ position: 'absolute', top: -10, left: 8, background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                   <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{d.q} 2026</div>
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 4 }}>{d.due}</div>
-                  <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
-                  <button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
+                  <div style={{ fontSize: 20, fontWeight: 900, color: i === nextIdx ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
+                  {nextIdx !== -1 && i >= nextIdx && (<button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
                     const calDates = ['20260415','20260615','20260915','20270115'];
                     const title = encodeURIComponent(d.q + ' 2026 Estimated Tax — ' + fmt(result.quarterly));
                     const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + calDates[i] + '/' + calDates[i];
                     window.open(url, '_blank');
-                  }}>+ Calendar</button>
+                  }}>+ Calendar</button>)}
                 </div>
               ))}
             </div>
             <div style={{ marginTop: 14, background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 4, padding: '10px 14px', fontSize: 14, color: '#fcd34d', lineHeight: 1.6 }}>
                <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
             </div>
+          <PartnerCTA sid="amazon-flex" />
           </div>
         </div>
       )}
