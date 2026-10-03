@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-# Block Next.js internal assets
-Disallow: /_next/static/
-Disallow: /_next/image/
 Disallow: /api/
 # AI bots — allow all
 User-agent: GPTBot
