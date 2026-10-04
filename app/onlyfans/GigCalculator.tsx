@@ -99,7 +99,7 @@ export default function GigCalculator({
               </div>
             </div>
           </div>
-          <div style={{...btnDark, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
+          <button type="button" style={{...btnDark, border: 'none', fontFamily: 'inherit', minHeight: 44, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</button>
         </div>
       </div>
 
