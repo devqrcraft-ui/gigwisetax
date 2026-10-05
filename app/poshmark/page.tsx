@@ -303,7 +303,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($2,000 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
