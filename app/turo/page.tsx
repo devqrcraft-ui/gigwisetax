@@ -1,6 +1,8 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
 import { useState } from 'react'
+import PartnerCTA from '@/app/PartnerCTA'
+import { DEADLINES_2026 } from '@/lib/data'
 import Link from 'next/link'
 
 const STATES = [
@@ -141,9 +143,9 @@ export default function TuroPage() {
                   </select>
                 </div>
               </div>
-              <div onClick={calculate} style={{ background: income ? '#4CAF50' : '#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const, transition:'background 0.2s' }}>
+              <button type="button" onClick={calculate} style={{ display:'block', width:'100%', border:'none', fontFamily:'inherit', minHeight:44, background: income ? '#4CAF50' : '#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const, transition:'background 0.2s' }}>
                  Calculate My Turo Taxes
-              </div>
+              </button>
             </div>
 
             {result && (
@@ -170,11 +172,12 @@ export default function TuroPage() {
                 <div style={{ background:'#1a1a2e', borderRadius:6, padding:'16px 20px', marginBottom:16 }}>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}> QUARTERLY PAYMENT</div>
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
-                  <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
+                  <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>{(() => { const d = DEADLINES_2026.find(x => new Date(x.due + ' 23:59:59').getTime() >= Date.now()); return d ? d.q + ' — ' + d.due : 'January 15, 2027' })()}</strong></div>
                 </div>
                 <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
                   <strong> Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
                 </div>
+              <PartnerCTA sid="turo" />
               </div>
             )}
           </div>
