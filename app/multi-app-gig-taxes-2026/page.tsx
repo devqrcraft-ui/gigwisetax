@@ -66,7 +66,7 @@ const howToSchema = {
   "name": "How to File Taxes Working Multiple Gig Apps in 2026",
   "description": "Step-by-step guide to combining income from DoorDash, Uber, Instacart and other gig platforms for your 2026 tax return.",
   "step": [
-    { "@type": "HowToStep", "name": "Gather all 1099-NEC forms", "text": "Collect 1099-NEC from every platform that paid you $600 or more. Platforms below $600 still require you to report income — just without a 1099." },
+    { "@type": "HowToStep", "name": "Gather all 1099-NEC forms", "text": "Collect 1099-NEC from every platform that paid you $2,000 or more. Platforms below $2,000 still require you to report income — just without a 1099." },
     { "@type": "HowToStep", "name": "Total all platform income", "text": "Add gross income from every app. This is your total self-employment revenue before deductions." },
     { "@type": "HowToStep", "name": "Calculate combined deductions", "text": "Add mileage (all apps combined × $0.725), phone bill percentage, supplies, and other business costs. Do not count the same mile for two apps." },
     { "@type": "HowToStep", "name": "Report on Schedule C", "text": "Most gig workers report all delivery/driving income on one Schedule C. List total revenue and total deductions to arrive at net profit." },
@@ -279,7 +279,7 @@ export default function MultiAppPage() {
           <h2>How to File Taxes With Multiple Gig Apps (Step by Step)</h2>
           <div className="steps">
             {[
-              ['Collect all 1099-NEC forms', 'Every platform that paid you $600+ sends a 1099-NEC by January 31. Uber, DoorDash, Instacart, Amazon all send these. Even if you earned under $600 on one app, you must still report that income.'],
+              ['Collect all 1099-NEC forms', 'Every platform that paid you $2,000+ sends a 1099-NEC by January 31. Uber, DoorDash, Instacart, Amazon all send these. Even if you earned under $2,000 on one app, you must still report that income.'],
               ['Add up all platform income', 'Total gross revenue from every app. Do not subtract expenses yet — that comes next.'],
               ['Calculate combined deductions', 'Add all business miles across every app × $0.725 (2026 IRS rate). Add phone bill (% used for work), supplies, hot bags, car washes, and other costs. Do NOT count the same mile twice across apps.'],
               ['Report on Schedule C', 'Enter total revenue and total deductions. Net profit = revenue minus deductions. This is what SE tax is calculated on.'],

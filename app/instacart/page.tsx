@@ -166,7 +166,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$35,000 net income</strong>, Instacart shoppers owe approximately <strong>$7,750 total tax</strong> in 2026'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,938</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Mileage at <strong>72.5¢/mile</strong> is the top deduction — full-service shoppers drive 20,000–35,000 miles/year'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Instacart issues a <strong>1099-NEC</strong> if you earn $600+ — all income is taxable regardless'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Instacart issues a <strong>1099-NEC</strong> if you earn $2,000+ — all income is taxable regardless'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–27%</strong> of gross earnings each week for estimated taxes'}}/>
             </ul>
           </div>
@@ -319,7 +319,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($2,000 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,

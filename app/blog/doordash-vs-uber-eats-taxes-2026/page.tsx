@@ -68,7 +68,7 @@ export default function DoorDashVsUberEatsPost() {
             </cite>
           </blockquote>
         <h2 style={h2}>Tax Treatment: DoorDash vs Uber Eats</h2>
-        <p style={p}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $600) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
+        <p style={p}>Both DoorDash and Uber Eats classify delivery drivers as <strong>independent contractors</strong>. You receive a 1099-NEC (for earnings over $2,000) and report income on Schedule C. There is no difference in how the IRS treats income from either platform.</p>
         <p style={p}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>
 
         <h2 style={h2}>2026 Tax Comparison: $40K DoorDash vs $35K Uber Eats</h2>
@@ -124,7 +124,7 @@ export default function DoorDashVsUberEatsPost() {
             { q: 'Do DoorDash and Uber Eats drivers pay the same taxes?', a: 'Yes. Both are 1099 self-employment income. SE tax is 15.3% on net profit for both platforms.' },
             { q: 'How much tax on $40,000 DoorDash income?', a: 'After mileage deduction (~$14,500) and standard deduction ($16,100), total federal tax is approximately $4,500 for a single filer in 2026.' },
             { q: 'Can I deduct mileage for both platforms?', a: 'Yes. Track miles separately per platform but deduct total business miles at 72.5¢/mile on one Schedule C (or two if you keep separate books).' },
-            { q: 'Do I get a 1099 from both DoorDash and Uber Eats?', a: 'Yes, if you earn over $600 from each platform. Both issue 1099-NEC forms by January 31 of the following year.' },
+            { q: 'Do I get a 1099 from both DoorDash and Uber Eats?', a: 'Yes, if you earn over $2,000 from each platform. Both issue 1099-NEC forms by January 31 of the following year.' },
             { q: 'Should I drive for both DoorDash and Uber Eats?', a: 'Dual-apping is legal and common. It maximizes hourly earnings. Both income streams go on the same Schedule C as self-employment income.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 8, padding: '14px 18px', border: '1px solid rgba(255,255,255,0.08)' }}>

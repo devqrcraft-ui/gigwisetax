@@ -165,7 +165,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Etsy sellers owe approximately <strong>$6,439 total tax</strong> in 2026'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,610</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Supplies, materials, home studio, and shipping costs are <strong>fully deductible</strong> Etsy business expenses'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Etsy sends a <strong>1099-K</strong> if gross sales exceed $5,000 — all income is taxable regardless'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Etsy sends a <strong>1099-K</strong> if gross sales exceed $20,000 across more than 200 transactions — all income is taxable regardless'}}/>
           <li dangerouslySetInnerHTML={{__html: 'The <strong>20% QBI deduction</strong> may apply, significantly reducing federal income tax for Etsy sellers'}}/>
             </ul>
           </div>
@@ -317,7 +317,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($2,000 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,

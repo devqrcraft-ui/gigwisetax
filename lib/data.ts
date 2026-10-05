@@ -236,7 +236,7 @@ export const DEDUCTIONS = {
     "Rain gear & cold-weather gear",
     "Pet first aid kit & certifications",
     "Phone bill — Wag app business use percentage",
-    "Sub-walker payments (1099-NEC required at $600+)",
+    "Sub-walker payments (1099-NEC required at $2,000+)",
     "Liability insurance for your dog-walking business",
     "Self-employed health insurance premiums",
     "Half of self-employment tax (SE tax deduction)",

@@ -236,7 +236,7 @@ export default function AirbnbTaxDeductions2026() {
 
             <h2 id="faq" style={h2}>FAQ — Airbnb Taxes 2026</h2>
             {[
-              { q: 'Does Airbnb report my income to the IRS?', a: 'Yes. Airbnb sends a 1099-K to the IRS if you process more than $600 in payments in 2026 (the new threshold under IRS rules). Even if you do not receive a 1099-K, you are still required to report rental income.' },
+              { q: 'Does Airbnb report my income to the IRS?', a: 'Yes. Airbnb sends a 1099-K to the IRS if you process more than $20,000 in payments across more than 200 transactions in 2026. Even if you do not receive a 1099-K, you are still required to report rental income.' },
               { q: 'Can I deduct a home office as an Airbnb host?', a: 'Only if you have a dedicated space used exclusively and regularly for managing your Airbnb business (recordkeeping, guest communication, etc.). The space cannot be a guest bedroom. The deduction is calculated based on square footage percentage.' },
               { q: 'What records should Airbnb hosts keep in 2026?', a: 'Keep receipts for all expenses, mileage logs if you drive to the property, bank statements showing rental deposits, Airbnb payout statements, and records of days rented vs. personal use. Keep records for at least 3 years (7 years for depreciation claims).' },
             ].map((item, i) => (

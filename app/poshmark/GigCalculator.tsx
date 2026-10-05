@@ -113,7 +113,7 @@ export default function GigCalculator({
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>What you originally paid for the items you sold — thrift, wholesale, or clearance receipts. This is not on your 1099-K but it reduces your taxable profit.</div>
             </div>
           </div>
-          <div style={{...btnDark, background: grossSales ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</div>
+          <button type="button" style={{...btnDark, border: 'none', fontFamily: 'inherit', minHeight: 44, background: grossSales ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</button>
         </div>
       </div>
 

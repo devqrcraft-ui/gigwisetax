@@ -12,7 +12,7 @@ export default function BlogPost() {
   return (
     <div style={{ background: "#07111F", minHeight: "100vh" }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Airbnb hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends. Hosts who provide hotel-like services (daily cleaning, concierge) may owe SE tax on Schedule C. Most Airbnb hosts report on Schedule E as passive rental income and do not owe SE tax."}},{"@type":"Question","name":"What is the 14-day rule for Airbnb taxes?","acceptedAnswer":{"@type":"Answer","text":"If you rent your property for 14 days or fewer per year, rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case."}},{"@type":"Question","name":"How do I report Airbnb income on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Most Airbnb hosts report on Schedule E (Supplemental Income). If you provide substantial services, use Schedule C. Airbnb issues a 1099-K for earnings over $600 and reports this to the IRS."}}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do Airbnb hosts pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"It depends. Hosts who provide hotel-like services (daily cleaning, concierge) may owe SE tax on Schedule C. Most Airbnb hosts report on Schedule E as passive rental income and do not owe SE tax."}},{"@type":"Question","name":"What is the 14-day rule for Airbnb taxes?","acceptedAnswer":{"@type":"Answer","text":"If you rent your property for 14 days or fewer per year, rental income is completely tax-free and does not need to be reported. You also cannot deduct rental expenses in this case."}},{"@type":"Question","name":"How do I report Airbnb income on my taxes?","acceptedAnswer":{"@type":"Answer","text":"Most Airbnb hosts report on Schedule E (Supplemental Income). If you provide substantial services, use Schedule C. Airbnb issues a 1099-K for earnings over $20,000 across more than 200 transactions and reports this to the IRS."}}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Host Taxes 2026 — Complete Guide","item":"https://www.gigwisetax.com/blog/airbnb-host-taxes-2026"}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026 — Complete Guide","description":"How Airbnb hosts file taxes in 2026. Schedule E vs Schedule C, deductions, occupancy tax. Free calculator.","url":"https://www.gigwisetax.com/blog/airbnb-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
@@ -35,7 +35,7 @@ export default function BlogPost() {
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
-          Airbnb sends you a 1099-K if you earned $600 or more. As a host you can deduct mortgage interest, cleaning, repairs, and depreciation. Here is the complete 2026 guide.
+          Airbnb sends you a 1099-K if you earned $20,000 or more across more than 200 transactions. As a host you can deduct mortgage interest, cleaning, repairs, and depreciation. Here is the complete 2026 guide.
         </p>
       </div>
 
@@ -49,7 +49,7 @@ export default function BlogPost() {
           <li>Airbnb hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
           <li>The <strong>14-day rule</strong> — rent your home 14 days or fewer per year and income is <strong>100% tax-free</strong></li>
           <li>Mortgage interest, depreciation, cleaning, and repairs are <strong>fully deductible</strong> for rental portion</li>
-          <li>Airbnb sends <strong>1099-K</strong> if you process $5,000+ in payments in 2026</li>
+          <li>Airbnb sends <strong>1099-K</strong> if you process $20,000+ in payments across more than 200 transactions in 2026</li>
           <li>Set aside <strong>30%</strong> of every payout — Airbnb does not withhold taxes</li>
         </ul>
       </div>
