@@ -7,8 +7,8 @@ import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: '2026 Quarterly Tax Deadlines — All 50 States + DC | GigWiseTax',
-  description: 'Complete 2026 quarterly estimated tax deadlines for gig workers. Q1: April 15 · Q2: June 15 · Q3: Sept 15 · Q4: Jan 15. Federal and all 50 state deadlines. Google Calendar export.',
+  title: '2026 Quarterly Tax Deadlines — Federal + 12 States | GigWiseTax',
+  description: 'Federal 2026 quarterly estimated tax due dates for gig workers: April 15, June 15, Sept 15 and Jan 15, 2027. Includes 12 states, with California 30/40/0/30 split.',
   keywords: '2026 quarterly tax deadlines, estimated tax deadlines 2026, IRS 1040-ES due dates 2026, gig worker tax deadlines',
   alternates: { canonical: 'https://www.gigwisetax.com/deadlines' },
 }
@@ -44,12 +44,12 @@ export default function DeadlinesPage() {
           <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 14 }}>
             <div style={{ width: 4, height: 34, background: '#B22234', borderRadius: 2, flexShrink: 0, marginTop: 4 }}/>
             <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}>
-               2026 Quarterly Estimated Tax Deadlines — All 50 States + DC
+               2026 Quarterly Estimated Tax Deadlines — Federal and 12 States
             </h1>
           </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 760, textAlign: 'justify' }}>
             Official IRS quarterly estimated tax payment deadlines for gig workers in 2026.
-            Includes federal deadlines and state-level payment portals for all 50 states + DC.
+            Includes federal deadlines plus payment dates and portals for 12 states. Other states set their own schedules, so check your state tax agency before paying.
             Export any deadline directly to Google Calendar — free, no signup required.
           </p>
         </div>
