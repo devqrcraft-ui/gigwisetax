@@ -15,7 +15,7 @@ export default function DoorDashInlineCalc() {
     const mileDeduct = mi * 0.725;
     const netIncome = Math.max(0, gross - mileDeduct);
     const seBase = netIncome * 0.9235;
-    const seTax = seBase * 0.153;
+    const seTax = Math.min(seBase, 184500) * 0.124 + seBase * 0.029;
     const seDeduct = seTax * 0.5;
     const fedTaxable = Math.max(0, netIncome - seDeduct - 15000);
     let fed = 0;

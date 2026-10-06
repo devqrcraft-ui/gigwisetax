@@ -94,7 +94,7 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 
 function calcTax(income: number, stateRate: number, filing: string) {
   const seBase = income * 0.9235;
-  const seTax = seBase * 0.153;
+  const seTax = Math.min(seBase, 184500) * 0.124 + seBase * 0.029;
   const taxable = income - seTax * 0.5;
   const fedRate = filing === "single" ? (taxable < 47000 ? 0.12 : 0.22) : 0.12;
   const federal = Math.max(0, taxable - (filing === "single" ? 14600 : 29200)) * fedRate;

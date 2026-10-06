@@ -27,7 +27,7 @@ export default function GigCalculator({
     if (!net) return
     const st = states.find(s => s.slug === stateSlug)
     const seBase   = net * 0.9235
-    const seTax    = seBase * 0.153
+    const seTax    = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const seDeduct = seTax * 0.5
     const std = filing === 'married' ? 32200 : 16100
     const taxable  = Math.max(0, net - seDeduct - std)

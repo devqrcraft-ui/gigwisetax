@@ -64,7 +64,7 @@ export default function WalmartSparkPage() {
     const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
-    const seTax   = seBase * 0.153
+    const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const ssSplit = seBase * 0.124
     const medSplit= seBase * 0.029
     const taxable = net - seTax * 0.5

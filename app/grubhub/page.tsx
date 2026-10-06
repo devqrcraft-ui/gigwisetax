@@ -62,7 +62,7 @@ export default function GrubhubPage() {
     const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
-    const seTax   = seBase * 0.153
+    const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const taxable = net - seTax * 0.5
     const fedRate = filing === 'single' ? 0.22 : 0.12
     const federal = taxable * fedRate
