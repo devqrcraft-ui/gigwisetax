@@ -110,7 +110,7 @@ export default function Page() {
               <tbody>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$15,000</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$2,120</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$2,119</td>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$530</td>
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -120,13 +120,13 @@ export default function Page() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$30,000</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$6,439</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,610</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$4,239</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,060</td>
                 </tr>
                 <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
                   <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$50,000</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$11,565</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$2,891</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$7,065</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$1,766</td>
                 </tr>
               </tbody>
             </table>
@@ -270,7 +270,7 @@ export default function Page() {
         <section>
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>Related Articles</h2>
           <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
-            <li><a href="/blog/fiverr-taxes-2026" style={{ color: '#e8b84b' }}>Fiverr Seller Taxes 2026: $50K = $11,565 SE Tax</a></li>
+            <li><a href="/blog/fiverr-taxes-2026" style={{ color: '#e8b84b' }}>Fiverr Seller Taxes 2026: $50K = $7,065 SE Tax</a></li>
             <li><a href="/blog/instacart-shopper-taxes-2026" style={{ color: '#e8b84b' }}>Instacart Shopper Taxes 2026: Full Breakdown</a></li>
             <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash Driver Taxes 2026: Complete Guide</a></li>
             <li><a href="/blog/uber-eats-tax-guide-2026" style={{ color: '#e8b84b' }}>Uber Eats Driver Taxes 2026</a></li>

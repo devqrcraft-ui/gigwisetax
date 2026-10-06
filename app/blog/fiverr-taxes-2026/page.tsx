@@ -120,13 +120,13 @@ export default function Page() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$50,000</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$11,565</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$2,891</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$7,065</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,766</td>
                 </tr>
                 <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
                   <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$60,000</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$14,278</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$3,570</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$8,478</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$2,119</td>
                 </tr>
               </tbody>
             </table>
