@@ -287,7 +287,7 @@ export default function AirbnbTaxCalculator2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Report all income even if Airbnb does not send a 1099 — the IRS requires you to report rental income over $400. Keep your own records via the Airbnb host dashboard and a separate accounting spreadsheet.
+            Report all income even if Airbnb does not send a 1099 — the IRS requires you to report all rental income, with no minimum. Keep your own records via the Airbnb host dashboard and a separate accounting spreadsheet.
           </p>
         </section>
 

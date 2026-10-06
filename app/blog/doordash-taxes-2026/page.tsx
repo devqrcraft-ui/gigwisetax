@@ -113,7 +113,7 @@ export default function DoorDashTaxGuide() {
 
           <ul style={{ margin: '0 0 28px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
             <li>{'DoorDash does NOT withhold taxes — you are fully responsible'}</li>
-            <li>{'SE tax applies on net profit above $400 per year'}</li>
+            <li>{'SE tax applies once net earnings from self-employment reach $400 per year, and then to all of it'}</li>
             <li>{'You can deduct 50% of SE tax on Schedule 1, reducing taxable income'}</li>
             <li>{'NAICS Code 492000 — Couriers and Messengers for Schedule C'}</li>
           </ul>
