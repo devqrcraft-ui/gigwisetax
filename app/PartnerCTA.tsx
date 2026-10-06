@@ -62,19 +62,12 @@ export default function PartnerCTA({ sid }: Props) {
         target="_blank"
         rel="sponsored nofollow noopener"
         style={{
-          display: 'inline-block',
-          background: '#e8b84b',
-          color: '#07111F',
-          fontWeight: 800,
-          fontSize: 14,
-          padding: '10px 18px',
-          borderRadius: 6,
-          textDecoration: 'none',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', minHeight: 48, maxWidth: 420, background: '#e8b84b', color: '#07111F', fontWeight: 800, fontSize: 15, lineHeight: 1.3, padding: '12px 18px', borderRadius: 8, textDecoration: 'none',
         }}
       >
         {PARTNER_LINK_TEXT}
       </a>
-      <p style={{ margin: '10px 0 0', fontSize: 11, color: 'rgba(255,255,255,0.55)', lineHeight: 1.5 }}>
+      <p style={{ margin: '12px 0 0', fontSize: 12, color: 'rgba(255,255,255,0.72)', lineHeight: 1.55 }}>
         Sponsored link. We may earn a commission if you use it, at no extra cost to you.
         GigWiseTax is an independent site and is not operated by Liberty Tax.{' '}
         <a href="/about" style={{ color: 'rgba(255,255,255,0.7)' }}>How we stay free</a>
