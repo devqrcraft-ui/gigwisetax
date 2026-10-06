@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
               <a href="/contact" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Contact</a>
               <a href="/privacy" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Privacy</a>
               <a href="/terms" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Terms</a>
-              <span style={{marginLeft:"auto",fontSize:11,fontWeight:800,color:"#e8b84b"}}>★ PROFESSIONAL TAX NETWORK</span>
+              <span style={{marginLeft:"auto",fontSize:12,fontWeight:700,color:"rgba(255,255,255,0.55)"}}>Our other sites</span>
               <a href="https://www.privatepaycheck.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>PrivatePaycheck ➔</a>
               <a href="https://www.ukgigtax.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>UKGigTax ➔</a>
               <a href="https://www.compressto20kb.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>CompressTo20KB ➔</a>
