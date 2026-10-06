@@ -3,6 +3,8 @@ import AuthorBox from '@/app/components/AuthorBox'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
 import Link from 'next/link'
+import PartnerCTA from '@/app/PartnerCTA'
+import { getDeadlineStatus } from '@/lib/data'
 
 const STATES = [
   { code:'CA', name:'California',     rate:0.093  },
@@ -185,12 +187,13 @@ export default function WalmartSparkPage() {
                 <div style={{ background:'#1a1a2e', borderRadius:6, padding:'16px 20px', marginBottom:16 }}>
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.5)', marginBottom:8 }}> QUARTERLY PAYMENT (set aside each quarter)</div>
                   <div style={{ fontSize:32, fontWeight:900, color:'#e8b84b' }}>{fmt(result.quarterly)}</div>
-                  <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next deadline: <strong style={{ color:'#fff' }}>Q1 — April 15, 2026</strong></div>
+                  <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next deadline: <strong style={{ color:'#fff' }}>{(() => { const nd = getDeadlineStatus().find(x => !x.isPast); return nd ? nd.q + ' — ' + nd.due : 'see IRS Form 1040-ES' })()}</strong></div>
                 </div>
 
                 <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid rgba(232,184,75,0.35)', borderRadius:6, padding:'12px 16px', fontSize:12, color:'rgba(232,184,75,0.9)' }}>
                   <strong> Disclaimer:</strong> These are estimates only. Not tax advice. Consult a CPA or use IRS Form 1040-ES for official calculations. Individual circumstances vary.
                 </div>
+                <PartnerCTA sid="walmart-spark" />
               </div>
             )}
           </div>
