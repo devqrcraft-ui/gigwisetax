@@ -2,16 +2,16 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Etsy Seller Taxes 2026: $30K Income = $6,439 SE Tax Owed',
-  description: 'Etsy sellers earning $30K owe $6,439 in self-employment tax in 2026. Deduct supplies, shipping, home studio, and Etsy fees. Complete filing guide.',
+  title: 'Etsy Seller Taxes 2026: $30K Income = $6,439 Tax Owed',
+  description: 'Etsy sellers earning $30K owe about $6,439 in 2026 federal tax ($4,239 SE tax + income tax). Deduct supplies, shipping, studio, and Etsy fees.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/etsy-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Etsy seller pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Etsy seller earning $30,000 owes approximately $6,439 in self-employment tax in 2026, before deductions. After supplies, shipping, home studio, and Etsy fees, most sellers reduce their taxable income by $5,000–$10,000."}},{"@type":"Question","name":"Does Etsy send a 1099 in 2026?","acceptedAnswer":{"@type":"Answer","text":"Etsy sends a 1099-K if your gross sales exceed $20,000 across more than 200 transactions. Even without a 1099, all Etsy income is taxable and must be reported on Schedule C."}},{"@type":"Question","name":"Can Etsy sellers deduct supplies and materials?","acceptedAnswer":{"@type":"Answer","text":"Yes. The cost of materials used to create your products is fully deductible on Schedule C under Cost of Goods Sold. Keep all receipts from craft stores, fabric suppliers, and online vendors."}},{"@type":"Question","name":"Are Etsy fees tax deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy listing fees (20 cents per item), transaction fees (6.5% of sale price), and payment processing fees are all deductible as business expenses on Schedule C."}},{"@type":"Question","name":"Can Etsy sellers deduct a home studio?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you use a dedicated space exclusively for creating, photographing, and shipping your products. Use the IRS simplified method: $5 per square foot, up to 300 sq ft."}},{"@type":"Question","name":"Do Etsy sellers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, make quarterly estimated payments. Due dates in 2026 are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Is Etsy income subject to self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your net Etsy profit is $400 or more, you owe self-employment tax at 15.3% on 92.35% of net profit. This is in addition to federal income tax."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Etsy seller pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Etsy seller earning $30,000 owes approximately $6,439 in federal tax in 2026 ($4,239 self-employment tax plus federal income tax), before deductions. After supplies, shipping, home studio, and Etsy fees, most sellers reduce their taxable income by $5,000–$10,000."}},{"@type":"Question","name":"Does Etsy send a 1099 in 2026?","acceptedAnswer":{"@type":"Answer","text":"Etsy sends a 1099-K if your gross sales exceed $20,000 across more than 200 transactions. Even without a 1099, all Etsy income is taxable and must be reported on Schedule C."}},{"@type":"Question","name":"Can Etsy sellers deduct supplies and materials?","acceptedAnswer":{"@type":"Answer","text":"Yes. The cost of materials used to create your products is fully deductible on Schedule C under Cost of Goods Sold. Keep all receipts from craft stores, fabric suppliers, and online vendors."}},{"@type":"Question","name":"Are Etsy fees tax deductible?","acceptedAnswer":{"@type":"Answer","text":"Yes. Etsy listing fees (20 cents per item), transaction fees (6.5% of sale price), and payment processing fees are all deductible as business expenses on Schedule C."}},{"@type":"Question","name":"Can Etsy sellers deduct a home studio?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you use a dedicated space exclusively for creating, photographing, and shipping your products. Use the IRS simplified method: $5 per square foot, up to 300 sq ft."}},{"@type":"Question","name":"Do Etsy sellers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, make quarterly estimated payments. Due dates in 2026 are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Is Etsy income subject to self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. If your net Etsy profit is $400 or more, you owe self-employment tax at 15.3% on 92.35% of net profit. This is in addition to federal income tax."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Etsy Seller Taxes 2026","item":"https://www.gigwisetax.com/blog/etsy-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Etsy Seller Taxes 2026: $30K Income = $6,439 SE Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/etsy-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Etsy Seller Taxes 2026: $30K Income = $6,439 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/etsy-taxes-2026"}}'
 
 export default function Page() {
   return (
@@ -30,7 +30,7 @@ export default function Page() {
             <span>Etsy Seller Taxes 2026</span>
           </nav>
           <h1 itemProp="headline" style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}>
-            Etsy Seller Taxes 2026: $30K Income = $6,439 SE Tax Owed
+            Etsy Seller Taxes 2026: $30K Income = $6,439 Tax Owed
           </h1>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -41,7 +41,7 @@ export default function Page() {
 
         <section id="answer-first">
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#C8D8EC', marginBottom: 24 }}>
-            An Etsy seller earning <strong style={{ color: '#e8edf8' }}>$30,000 in 2026 owes $6,439 in self-employment tax</strong> before deductions. Etsy sellers have access to powerful write-offs — materials, shipping supplies, Etsy fees, and a home studio — that can reduce taxable income by <strong style={{ color: '#e8edf8' }}>$5,000–$10,000</strong>. This guide covers every deduction and the exact steps to file.
+            An Etsy seller earning <strong style={{ color: '#e8edf8' }}>$30,000 in 2026 owes about $6,439 in federal tax ($4,239 self-employment tax plus income tax)</strong> before deductions. Etsy sellers have access to powerful write-offs — materials, shipping supplies, Etsy fees, and a home studio — that can reduce taxable income by <strong style={{ color: '#e8edf8' }}>$5,000–$10,000</strong>. This guide covers every deduction and the exact steps to file.
           </p>
         </section>
 
@@ -50,7 +50,7 @@ export default function Page() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginBottom: 12, marginTop: 0 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
               <li>SE tax rate is 15.3% on 92.35% of net profit — applied after all deductions</li>
-              <li>$30K gross = $6,439 SE tax before deductions; actual bill is often $2,000–$3,500 lower</li>
+              <li>$30K gross = $6,439 total federal tax ($4,239 SE tax + income tax) before deductions; actual bill is often $2,000–$3,500 lower</li>
               <li>Etsy fees (listing + transaction + processing) are 100% deductible on Schedule C</li>
               <li>Materials and supplies are deductible under Cost of Goods Sold — keep every receipt</li>
               <li>1099-K threshold is $20,000 across more than 200 transactions — you may not receive one below that level, but the income is still taxable</li>
@@ -252,7 +252,7 @@ export default function Page() {
             Frequently Asked Questions
           </h2>
           {[
-            { q: 'How much tax does an Etsy seller pay in 2026?', a: 'An Etsy seller earning $30,000 owes approximately $6,439 in SE tax before deductions. After materials, fees, and home studio, most sellers reduce this by $1,000–$2,500.' },
+            { q: 'How much tax does an Etsy seller pay in 2026?', a: 'An Etsy seller earning $30,000 owes approximately $6,439 in total federal tax ($4,239 SE tax + income tax) before deductions. After materials, fees, and home studio, most sellers reduce this by $1,000–$2,500.' },
             { q: 'Does Etsy send a 1099 in 2026?', a: 'Etsy sends a 1099-K if gross sales exceed $20,000 across more than 200 transactions. All income is taxable even without a 1099.' },
             { q: 'Can Etsy sellers deduct supplies and materials?', a: 'Yes. Materials used to produce sold products are deductible as Cost of Goods Sold on Schedule C. Keep all receipts.' },
             { q: 'Are Etsy fees tax deductible?', a: 'Yes. Listing fees ($0.20/item), transaction fees (6.5%), and payment processing fees (3% + $0.25) are all deductible business expenses.' },
