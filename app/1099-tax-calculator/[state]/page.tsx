@@ -142,12 +142,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               </thead>
               <tbody>
                 {DEADLINES_2026.map((d, i) => (
-                  <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: i === 0 ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
-                    <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
-                          {i === 0 && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NOW</span>}
+                  <tr key={d.q} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', background: d.isNext ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.03)' }}>
+                    <td style={{ padding: '12px 14px', fontWeight: 800, color: d.isNext ? '#B22234' : 'rgba(255,255,255,0.85)' }}>
+                          {d.isNext && <span style={{ background: '#B22234', color: '#fff', fontSize: 9, padding: '2px 4px', borderRadius: 2, marginRight: 5 }}>NEXT</span>}
                       {d.q} 2026
                     </td>
-                    <td style={{ padding: '12px 14px', fontWeight: 700, color: i === 0 ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
+                    <td style={{ padding: '12px 14px', fontWeight: 700, color: d.isNext ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
                     <td style={{ padding: '12px 14px', color: '#059669', fontWeight: 600 }}>✓ Required</td>
                     <td style={{ padding: '12px 14px' }}>
                       {noStateTax

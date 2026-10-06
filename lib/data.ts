@@ -91,12 +91,23 @@ export function getDeadlineStatus() {
   return withDays.map(d => ({ ...d, isCurrent: d.q === currentQ }));
 }
 
-export const DEADLINES_2026 = [
-  { q: 'Q1', period: 'January 1 – March 31',   due: 'April 15, 2026',  form: '1040-ES', days: 45  },
-  { q: 'Q2', period: 'April 1 – May 31',       due: 'June 15, 2026',   form: '1040-ES', days: 107 },
-  { q: 'Q3', period: 'June 1 – August 31',     due: 'September 15, 2026', form: '1040-ES', days: 198 },
-  { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES', days: 320 },
+const DEADLINES_2026_BASE = [
+  { q: 'Q1', period: 'January 1 – March 31',   due: 'April 15, 2026',  form: '1040-ES' },
+  { q: 'Q2', period: 'April 1 – May 31',       due: 'June 15, 2026',   form: '1040-ES' },
+  { q: 'Q3', period: 'June 1 – August 31',     due: 'September 15, 2026', form: '1040-ES' },
+  { q: 'Q4', period: 'September 1 – December 31', due: 'January 15, 2027', form: '1040-ES' },
 ]
+
+// days / isPast / isNext рахуються від поточної дати при збірці або старті сервера (не захардкоджені).
+export const DEADLINES_2026 = (() => {
+  const now = new Date()
+  const rows = DEADLINES_2026_BASE.map(d => {
+    const diff = Math.ceil((new Date(d.due + ' 23:59:59').getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+    return { ...d, days: Math.max(diff, 0), isPast: diff < 0 }
+  })
+  const nextIdx = rows.findIndex(r => !r.isPast)
+  return rows.map((r, i) => ({ ...r, isNext: i === nextIdx }))
+})()
 
 export const MILEAGE_RATE_2026 = 0.725 // $0.725 per mile (IRS 2026) — DEPRECATED, use H1/H2 below
 export const MILEAGE_RATE_H1_2026 = 0.725 // Jan 1 – Jun 30, 2026
