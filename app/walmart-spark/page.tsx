@@ -151,9 +151,9 @@ export default function WalmartSparkPage() {
                   </select>
                 </div>
               </div>
-              <div onClick={calculate} style={{ background: income ? '#4CAF50' : '#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const, letterSpacing:'0.3px', transition:'background 0.2s' }}>
+              <button type="button" onClick={calculate} style={{ background: income ? '#4CAF50' : '#B22234', color:'#fff', padding:'14px 0', borderRadius:4, fontSize:15, fontWeight:800, cursor:'pointer', textAlign:'center' as const, letterSpacing:'0.3px', transition:'background 0.2s', border:'none', width:'100%', minHeight:48, fontFamily:'inherit' }}>
                  Calculate My Spark Taxes
-              </div>
+              </button>
             </div>
 
             {result && (
