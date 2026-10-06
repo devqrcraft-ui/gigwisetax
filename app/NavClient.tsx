@@ -57,7 +57,7 @@ const NAV = [
       { label: '▸ Amazon Flex Taxes 2026',  href: '/blog/amazon-flex-taxes-2026'         },
       { label: '▸ Mileage Rate 2026',       href: '/blog/mileage-rate-2026'              },
       { label: '▸ Grubhub vs DoorDash',     href: '/blog/grubhub-vs-doordash-taxes-2026' },
-      { label: ' W-2 vs 1099 Guide',       href: '/blog/w2-vs-1099-guide-2026'          },
+      { label: ' W-2 vs 1099 Guide',       href: '/blog/1099-vs-w2-taxes-2026'          },
       { label: ' Quarterly Taxes Guide',   href: '/blog/quarterly-taxes-gig-workers'    },
       { label: ' All Blog Posts',          href: '/blog'                                },
     ],

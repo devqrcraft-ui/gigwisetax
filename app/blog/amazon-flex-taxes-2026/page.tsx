@@ -271,7 +271,7 @@ export default function AmazonFlexTaxesBlogPost() {
             {[
               ['Mileage Rate 2026 Guide', '/blog/mileage-rate-2026'],
               ['Quarterly Taxes Guide', '/blog/quarterly-taxes-gig-workers'],
-              ['W-2 vs 1099 Explained', '/blog/w2-vs-1099-guide-2026'],
+              ['W-2 vs 1099 Explained', '/blog/1099-vs-w2-taxes-2026'],
               ['DoorDash vs Grubhub Taxes', '/blog/grubhub-vs-doordash-taxes-2026'],
             ].map(([l, h]) => (
               <Link key={l} href={h} style={{ textDecoration: 'none' }}>

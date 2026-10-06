@@ -63,7 +63,7 @@ export default function SelfEmploymentTaxRate2026() {
           <li>SS wage base: $184,500 in 2026 — income above this cap pays only 2.9% Medicare</li>
           <li>SE tax applies to 92.35% of net profit — not your gross earnings</li>
           <li>Deduct half of SE tax on Schedule 1 Line 15 — reduces federal income tax</li>
-          <li>$50K net profit = $11,565 SE tax | $35K = $7,750 | $40K = $8,852</li>
+          <li>$50K net profit = $7,065 SE tax | $35K = $4,945 | $40K = $5,652</li>
             </ul>
           </div>
         </section>

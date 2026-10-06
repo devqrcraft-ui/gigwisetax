@@ -300,7 +300,7 @@ export default function TuroPage() {
               <a href="/etsy" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}>▸ Etsy Seller Taxes</a>
               <a href="/deadlines" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
               <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> Quarterly Tax Guide</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
+              <a href="/blog/1099-vs-w2-taxes-2026" style={{ textDecoration:"none", background:'#0a1e35', border:'1px solid #1e3a5a', borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color: "rgba(255,255,255,0.9)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 

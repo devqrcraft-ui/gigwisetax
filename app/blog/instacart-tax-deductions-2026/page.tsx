@@ -271,7 +271,7 @@ export default function InstacartTaxDeductions2026() {
               ['/instacart', 'Instacart Tax Calculator 2026', 'CALCULATOR'],
               ['/blog/doordash-taxes-2026', 'DoorDash Driver Taxes 2026', 'GUIDE'],
               ['/blog/lyft-driver-taxes-2026', 'Lyft Driver Taxes 2026', 'GUIDE'],
-              ['/blog/quarterly-tax-calculator-2026', 'Quarterly Tax Calculator 2026', 'CALCULATOR'],
+              ['/quarterly-tax-calculator-2026', 'Quarterly Tax Calculator 2026', 'CALCULATOR'],
             ].map(([href, title, tag]) => (
               <a key={href} href={href} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: 16, textDecoration: 'none', display: 'block' }}>
                 <div style={{ fontSize: 10, color: '#e8b84b', fontFamily: 'monospace', letterSpacing: '0.04em', marginBottom: 6 }}>{tag}</div>

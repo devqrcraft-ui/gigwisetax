@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
       { source: '/blog/doordash-taxes-2025-guide', destination: '/blog/doordash-taxes-2026', permanent: true },
       { source: '/blog/etsy-seller-tax-deductions-2025', destination: '/blog/etsy-seller-taxes-2026', permanent: true },
       { source: '/blog/1099-deadlines-2025', destination: '/blog/gig-worker-tax-deadlines-2026', permanent: true },
+      { source: '/blog/w2-vs-1099-guide-2026', destination: '/blog/1099-vs-w2-taxes-2026', permanent: true },
+      { source: '/blog/quarterly-tax-calculator-2026', destination: '/quarterly-tax-calculator-2026', permanent: true },
       // ── /district-of-columbia → /washington-dc (all platforms) ──
       { source: '/onlyfans/district-of-columbia', destination: '/onlyfans/washington-dc', permanent: true },
       { source: '/instacart/district-of-columbia', destination: '/instacart/washington-dc', permanent: true },

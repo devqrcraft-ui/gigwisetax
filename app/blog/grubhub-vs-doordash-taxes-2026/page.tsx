@@ -195,7 +195,7 @@ export default function GrubhubVsDoorDashPost() {
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '12px 16px' }}>
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> More Guides</span>
             </div>
-            {[['Mileage Rate 2026','/blog/mileage-rate-2026'],['Amazon Flex Taxes','/blog/amazon-flex-taxes-2026'],['Quarterly Taxes','/blog/quarterly-taxes-gig-workers'],['W-2 vs 1099','/blog/w2-vs-1099-guide-2026']].map(([l,h]) => (
+            {[['Mileage Rate 2026','/blog/mileage-rate-2026'],['Amazon Flex Taxes','/blog/amazon-flex-taxes-2026'],['Quarterly Taxes','/blog/quarterly-taxes-gig-workers'],['W-2 vs 1099','/blog/1099-vs-w2-taxes-2026']].map(([l,h]) => (
               <Link key={l as string} href={h as string} style={{ textDecoration: 'none' }}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13, color: 'rgba(255,255,255,0.9)', fontWeight: 500 }}>→ {l as string}</div>
               </Link>

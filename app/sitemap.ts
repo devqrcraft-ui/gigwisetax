@@ -17,7 +17,7 @@ const blogPosts = [
   'gig-worker-tax-deadlines-2026',
   'turo-host-taxes-2026',
   'walmart-spark-driver-taxes-2026','walmart-spark-tax-guide-2026','walmart-spark-taxes-2026',
-  'w9-mistakes-gig-workers','w2-vs-1099-guide-2026',
+  'w9-mistakes-gig-workers',
   'airbnb-host-taxes-2026','airbnb-tax-calculator-2026','airbnb-tax-deductions-2026',
   'amazon-flex-taxes-2026',
   'grubhub-driver-taxes-2026','grubhub-vs-doordash-taxes-2026','doordash-vs-uber-eats-taxes-2026',
@@ -36,7 +36,7 @@ const blogPosts = [
   'etsy-taxes-2026',
   'best-tax-software-for-gig-workers-2026',
   'self-employment-tax-rate-2026',
-  '1099-vs-w2-taxes-2026','quarterly-tax-calculator-2026',
+  '1099-vs-w2-taxes-2026',
   'doordash-tax-calculator-2026','shipt-taxes-2026',
 ];
 

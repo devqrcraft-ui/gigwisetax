@@ -311,7 +311,7 @@ export default function AirbnbTaxCalculator2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            See the <a href="/blog/self-employment-tax-deductions-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>self-employment tax deductions guide</a> and the <a href="/blog/quarterly-tax-calculator-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax calculator</a> to plan your payments.
+            See the <a href="/blog/self-employment-tax-deductions-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>self-employment tax deductions guide</a> and the <a href="/quarterly-tax-calculator-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax calculator</a> to plan your payments.
           </p>
         </section>
 
@@ -344,7 +344,7 @@ export default function AirbnbTaxCalculator2026() {
               ['/airbnb', 'Airbnb Tax Calculator 2026', 'CALCULATOR'],
               ['/blog/turo-host-taxes-2026', 'Turo Host Taxes 2026', 'GUIDE'],
               ['/blog/self-employment-tax-deductions-2026', 'Self-Employment Tax Deductions', 'GUIDE'],
-              ['/blog/quarterly-tax-calculator-2026', 'Quarterly Tax Calculator 2026', 'CALCULATOR'],
+              ['/quarterly-tax-calculator-2026', 'Quarterly Tax Calculator 2026', 'CALCULATOR'],
             ].map(([href, title, tag]) => (
               <a key={href} href={href} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 6, padding: 16, textDecoration: 'none', display: 'block' }}>
                 <div style={{ fontSize: 10, color: '#e8b84b', fontFamily: 'monospace', letterSpacing: '0.04em', marginBottom: 6 }}>{tag}</div>

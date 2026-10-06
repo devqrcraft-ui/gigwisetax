@@ -104,14 +104,6 @@ const posts = [
     "tag": "Comparison",
     "tagColor": "#a5b4fc",
     "date": "Jan 2026"
-  },
-  {
-    "slug": "w2-vs-1099-guide-2026",
-    "title": "W-2 vs 1099 Tax Differences 2026",
-    "desc": "How 1099 gig work affects your taxes vs W-2.",
-    "tag": "Basics",
-    "tagColor": "#fca5a5",
-    "date": "Jan 2026"
   }
 ]
 

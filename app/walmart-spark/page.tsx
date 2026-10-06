@@ -349,7 +349,7 @@ export default function WalmartSparkPage() {
               <a href="/instacart" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}>▸ Instacart Tax Calculator</a>
               <a href="/blog/mileage-rate-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}>▸ IRS Mileage Rate 2026</a>
               <a href="/deadlines" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}> 2026 Quarterly Deadlines</a>
-              <a href="/blog/w2-vs-1099-guide-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
+              <a href="/blog/1099-vs-w2-taxes-2026" style={{ textDecoration:"none", background:"rgba(255,255,255,0.05)", border:"1px solid rgba(255,255,255,0.12)", borderRadius:6, padding:"12px 14px", display:"block", fontSize:13, color:"rgba(255,255,255,0.85)", fontWeight:600 }}> W-2 vs 1099 Guide</a>
             </div>
           </div>
 
