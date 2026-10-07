@@ -435,3 +435,15 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
   button { min-height: 44px; }
   footer a { display: inline-flex; align-items: center; min-height: 44px; }
 }
+/* gw-mobile-text-v2 */
+@media (max-width: 768px) {
+  [style*="font-size:9px"], [style*="font-size: 9px"],
+  [style*="font-size:10px"], [style*="font-size: 10px"],
+  [style*="font-size:11px"], [style*="font-size: 11px"] { font-size: 13px !important; }
+  [style*="font-size:12px"], [style*="font-size: 12px"],
+  [style*="font-size:13px"], [style*="font-size: 13px"] { font-size: 14px !important; }
+  #all-states { display: none !important; }
+  #all-states:target { display: grid !important; }
+  #all-states a { display: flex; align-items: center; min-height: 40px; font-size: 14px !important; }
+  p, li { line-height: 1.6; }
+}
