@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'instacart')
   if (!p) return {}
   return {
-    title: `Instacart Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
-    description: `Instacart shoppers: $35K net = $4,944 SE tax + federal. Mileage deduction 72.5¢/mile. Free 2026 calculator, quarterly payment dates, all 50 states + DC.`,
+    title: `Instacart Tax Calculator 2026 — Free Estimate of What You Owe`,
+    description: `Enter your Instacart earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $35K net = $4,945 SE tax.`,
     keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

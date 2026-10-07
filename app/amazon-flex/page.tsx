@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'amazon-flex')
   if (!p) return {}
   return {
-    title: `Amazon Flex Tax Calculator 2026 — $40K Income = $8,074 Tax Owed`,
-    description: `Amazon Flex drivers: $40K net = $5,652 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,900+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    title: `Amazon Flex Tax Calculator 2026 — Free Estimate of What You Owe`,
+    description: `Enter your Amazon Flex earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $40K net = $5,652 SE tax.`,
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {

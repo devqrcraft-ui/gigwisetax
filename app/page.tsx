@@ -2,11 +2,11 @@ import HomeClient from './home-client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 50 States + DC Free',
-  description: 'Free 1099 tax calculator 2026. DoorDash $40K = $5,652 SE tax. Uber, Instacart, Airbnb, OnlyFans. Quarterly deadlines, mileage 72.5¢/mile. All 50 States + DC, no signup.',
+  title: 'Gig Worker Tax Calculator 2026 — Free 1099 Tax Estimator',
+  description: 'Free 1099 tax calculator for gig workers: estimate 2026 SE tax, federal and state tax, and quarterly payments for DoorDash, Uber, Etsy and more. No signup.',
   alternates: { canonical: 'https://www.gigwisetax.com' },
   openGraph: {
-    title: 'Gig Worker Tax Calculator 2026 — SE Tax 15.3%, All 50 States + DC Free',
+    title: 'Gig Worker Tax Calculator 2026 — Free 1099 Tax Estimator',
     description: 'Calculate SE tax, federal and state taxes for any gig platform. Free, private, no signup.',
     url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',

@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'uber')
   if (!p) return {}
   return {
-    title: `Uber Driver Tax Calculator 2026 — $35K Income = $7,750 Tax Owed`,
-    description: `Uber drivers: $35K net = $4,944 SE tax + federal. Mileage deduction 72.5¢/mile saves $2,538+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    title: `Uber Driver Tax Calculator 2026 — Free Estimate of What You Owe`,
+    description: `Enter your Uber earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $35K net = $4,945 SE tax.`,
     keywords: `uber driver tax calculator, uber self employment tax 2026, uber driver quarterly taxes, uber 1099 taxes, how much tax do uber drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
