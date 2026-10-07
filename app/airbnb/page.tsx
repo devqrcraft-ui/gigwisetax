@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'airbnb')
   if (!p) return {}
   return {
-    title: `Airbnb Tax Calculator 2026 — $50K Income = $11,565 Tax Owed + Deductions`,
-    description: `Airbnb hosts: $50K net = ~$7,065 SE tax + federal. Depreciation and expense deductions save $3,000+. Free 2026 calculator, all 50 states + DC, no signup.`,
+    title: `Airbnb Tax Calculator 2026 — Free Estimate of What You Owe`,
+    description: `Enter your Airbnb income and expenses: see 2026 taxes, quarterly payments and whether self-employment tax applies (Schedule E vs C). Free, no signup.`,
     keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
@@ -166,14 +166,14 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,891</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Depreciation, mortgage interest, utilities, and cleaning fees are <strong>top Airbnb deductions</strong>'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Short-term rental income under 14 days/year may be <strong>tax-free</strong> under the Augusta Rule'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Airbnb collects occupancy taxes in some states — you still owe <strong>federal SE tax</strong> on net profit'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Airbnb collects occupancy taxes in some states — you still report rental income (Schedule E, or Schedule C with SE tax if you provide hotel-like services)'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Airbnb workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 25% of every payment. Depreciation, mortgage interest, and utilities are key Airbnb deductions.
+              Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings, plus federal income tax. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 25% of every payment. Depreciation, mortgage interest, and utilities are key Airbnb deductions.
             </p>
           </div>
 

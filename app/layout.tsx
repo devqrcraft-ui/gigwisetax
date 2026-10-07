@@ -86,7 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
               <a href="https://www.ukgigtax.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>UKGigTax ➔</a>
               <a href="https://www.compressto20kb.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>CompressTo20KB ➔</a>
             </div>
-            <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",paddingTop:10,fontSize:11,color:"rgba(255,255,255,0.35)"}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
+            <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",paddingTop:10,fontSize:12,color:"rgba(255,255,255,0.6)"}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
           </div>
         </footer>
         <Analytics />

@@ -31,7 +31,7 @@ export default function BlogPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Airbnb hosts pay 15.3% self-employment tax on net rental earnings. On $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 28% of every payout. Depreciation and mortgage interest are your biggest deductions.
+          Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 28% of every payout. Depreciation and mortgage interest are your biggest deductions.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>

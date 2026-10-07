@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Walmart Spark Tax Calculator 2026 — $30K Net = $4,239 SE Tax',
-  description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage 72.5¢/mile saves $2,175+. Free calculator, all 50 states + DC, no signup.',
+  description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage deduction included. Free calculator, all 50 states + DC, no signup.',
   keywords: 'walmart spark tax calculator 2026, spark driver self employment tax, walmart spark 1099 taxes, spark driver quarterly taxes',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/walmart-spark' },
   openGraph: {
     title: 'Walmart Spark Tax Calculator 2026 — $30K Net = $4,239 SE Tax',
-    description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage 72.5¢/mile saves $2,175+. Free calculator, all 50 states + DC.',
+    description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage deduction included. Free calculator, all 50 states + DC.',
     url: 'https://www.gigwisetax.com/walmart-spark',
     siteName: 'GigWiseTax',
     type: 'website',
