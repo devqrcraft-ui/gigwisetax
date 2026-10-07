@@ -33,11 +33,24 @@ const STATES = [
 ]
 
 const DEADLINES = [
-  { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026',   days: 45,  now: true  },
-  { q: 'Q2 2026', period: 'Apr – May', due: 'June 15, 2026',    days: 107, now: false },
-  { q: 'Q3 2026', period: 'Jun – Aug', due: 'Sept 15, 2026',    days: 198, now: false },
-  { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027',     days: 320, now: false },
+  { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026' },
+  { q: 'Q2 2026', period: 'Apr – May', due: 'June 15, 2026' },
+  { q: 'Q3 2026', period: 'Jun – Aug', due: 'Sept 15, 2026' },
+  { q: 'Q4 2026', period: 'Sep – Dec', due: 'Jan 15, 2027' },
 ]
+
+// Реальні дедлайни від поточної дати (рахується в браузері, не захардкожено)
+function dueDate(due: string): Date {
+  return new Date(due.replace('Sept ', 'September ') + ' 23:59:59')
+}
+function nextDeadlineIdx(): number {
+  const now = Date.now()
+  return DEADLINES.findIndex(d => dueDate(d.due).getTime() >= now)
+}
+function dueLabel(due: string): string {
+  const diff = Math.ceil((dueDate(due).getTime() - Date.now()) / 86400000)
+  return diff < 0 ? 'Passed' : diff === 0 ? 'Due today' : diff + ' days left'
+}
 
 const QUICK_EXAMPLES = [
   { label: 'Uber driver',          platform: 'Uber',     income: '30000', state: 'CA', filing: 'single',  tag: '$30k · California', href: '/uber' },
@@ -134,8 +147,8 @@ function QuarterlyEstimator() {
           </div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:10,marginBottom:16}}>
             {DATES.map((d,i)=>(
-              <div key={d.q} style={{background:'#07111F',border: i===0 ? '2px solid #e8b84b' : '1px solid #1a2d45',borderRadius:10,padding:'12px',textAlign:'center',position:'relative'}}>
-                {i===0 && <div style={{position:'absolute',top:-10,left:'50%',transform:'translateX(-50%)',background:'#e8b84b',color:'#07111F',fontSize:10,fontWeight:800,padding:'2px 8px',borderRadius:4,whiteSpace:'nowrap'}}>NEXT DUE</div>}
+              <div key={d.q} style={{background:'#07111F',border: i === nextDeadlineIdx() ? '2px solid #e8b84b' : '1px solid #1a2d45',borderRadius:10,padding:'12px',textAlign:'center',position:'relative'}}>
+                {i === nextDeadlineIdx() && <div style={{position:'absolute',top:-10,left:'50%',transform:'translateX(-50%)',background:'#e8b84b',color:'#07111F',fontSize:10,fontWeight:800,padding:'2px 8px',borderRadius:4,whiteSpace:'nowrap'}}>NEXT DUE</div>}
                 <p style={{color:'#e8b84b',fontSize:11,fontWeight:700,margin:'0 0 4px'}}>{d.q}</p>
                 <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
                 <p style={{color:'#C8D8EC',fontSize:10,margin:0,opacity:.6}}>Due {d.due}</p>
@@ -432,11 +445,11 @@ export default function HomeClient() {
 
                     <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, minWidth: 0 }} className="q-grid">
                       {DEADLINES.map((d, i) => (
-                        <div key={d.q} style={{ border: i === 0 ? '2px solid #e8b84b' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === 0 ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
-                          {i === 0 && <div style={{ position: 'absolute', top: -10, left: 8, background:'#e8b84b',color:'#1a1a2e', fontSize: 13, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
+                        <div key={d.q} style={{ border: i === nextDeadlineIdx() ? '2px solid #e8b84b' : '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, background: i === nextDeadlineIdx() ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.04)', position: 'relative' as const }}>
+                          {i === nextDeadlineIdx() && <div style={{ position: 'absolute', top: -10, left: 8, background:'#e8b84b',color:'#1a1a2e', fontSize: 13, padding: '2px 6px', borderRadius: 3, fontWeight: 800 }}> NEXT</div>}
                           <div style={{ fontSize: 12, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 3 }}>{d.q}</div>
                           <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 8 }}>{d.due}</div>
-                          <div style={{ fontSize: 20, fontWeight: 900, color: i === 0 ? '#e8b84b' : 'rgba(255,255,255,0.75)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
+                          <div style={{ fontSize: 20, fontWeight: 900, color: i === nextDeadlineIdx() ? '#e8b84b' : 'rgba(255,255,255,0.75)', marginBottom: 10 }}>{fmt(result.quarterly)}</div>
                           <div style={{...btnRed({ fontSize: 13, padding: '6px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260615/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
                         </div>
                       ))}
@@ -570,18 +583,18 @@ export default function HomeClient() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: '4px 0' }}>
                 {DEADLINES.map((d,i) => (
-                  <div key={d.q} style={{ background: i===0 ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.03)', border: i===0 ? '1px solid rgba(232,184,75,0.35)' : '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: '14px 16px' }}>
+                  <div key={d.q} style={{ background: i === nextDeadlineIdx() ? 'rgba(232,184,75,0.12)' : 'rgba(255,255,255,0.03)', border: i === nextDeadlineIdx() ? '1px solid rgba(232,184,75,0.35)' : '1px solid rgba(255,255,255,0.08)', borderRadius: 10, padding: '14px 16px' }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                       <span style={{ fontWeight: 800, fontSize: 15, color: 'rgba(255,255,255,0.95)' }}>
-                        {i===0 && <span style={{ background:'#e8b84b', color:'#1a1a2e', fontSize: 9, padding: '2px 6px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NOW</span>}
+                        {i === nextDeadlineIdx() && <span style={{ background:'#e8b84b', color:'#1a1a2e', fontSize: 9, padding: '2px 6px', borderRadius: 2, marginRight: 8, fontWeight: 800 }}>NEXT</span>}
                         {d.q}
                       </span>
                       <span style={{ color: '#8fa8c8', fontSize: 13 }}>{d.period}</span>
                     </div>
                     <div style={{ textAlign: 'center', margin: '8px 0' }}>
-                      <div style={{ fontSize: 18, fontWeight: 800, color: i===0 ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>{d.due}</div>
+                      <div style={{ fontSize: 18, fontWeight: 800, color: i === nextDeadlineIdx() ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>{d.due}</div>
                       <div style={{ marginTop: 4 }}>
-                        <span style={{ background: i===0 ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.08)', color: i===0 ? '#ff8080' : '#c8d8ec', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{d.days} days</span>
+                        <span style={{ background: i === nextDeadlineIdx() ? 'rgba(232,184,75,0.2)' : 'rgba(255,255,255,0.08)', color: i === nextDeadlineIdx() ? '#ff8080' : '#c8d8ec', padding: '3px 12px', borderRadius: 12, fontSize: 12, fontWeight: 700 }}>{dueLabel(d.due)}</span>
                       </div>
                     </div>
                     <div style={{...btnRed({ fontSize: 13, padding: '9px 0' }), cursor:'pointer'}} onClick={()=>{ const urls = {'Q1 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q1%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260415/20260416&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q2 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q2%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260615/20260617&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q3 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q3%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20260915/20260916&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml','Q4 2026':'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Q4%202026%20IRS%20Estimated%20Tax%20Payment%20Due&dates=20270115/20270116&details=IRS%20quarterly%20estimated%20tax%20payment%20due.%20Pay%20at%3A%20https%3A%2F%2Fwww.irs.gov%2Fpayments&sf=true&output=xml'}; window.open(urls[d.q],'_blank'); }}>+ Calendar</div>
