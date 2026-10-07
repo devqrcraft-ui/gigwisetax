@@ -52,7 +52,7 @@ export default function SelfEmploymentTaxRate2026() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            The self-employment tax rate in 2026 is 15.3% — 12.4% for Social Security on income up to $184,500, and 2.9% for Medicare with no cap. SE tax applies to 92.35% of net profit, not gross income. On $50,000 net profit, SE tax is $11,565. You deduct half ($5,783) from gross income before calculating federal income tax.
+            The self-employment tax rate in 2026 is 15.3% — 12.4% for Social Security on income up to $184,500, and 2.9% for Medicare with no cap. SE tax applies to 92.35% of net profit, not gross income. On $50,000 net profit, SE tax is $7,065. You deduct half ($3,532) from gross income before calculating federal income tax.
           </p>
         </section>
         <section id="key-takeaways">

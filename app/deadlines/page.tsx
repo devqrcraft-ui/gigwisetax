@@ -32,6 +32,17 @@ export default function DeadlinesPage() {
   const card = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 20, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '13px 20px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
+  // Посилання 'Add to Google Calendar': всю-денна подія в день дедлайну
+  const gcalUrl = (q: string, due: string) => {
+    const dt = new Date(due + ' 12:00:00')
+    const pad = (n: number) => String(n).padStart(2, '0')
+    const f = (x: Date) => '' + x.getFullYear() + pad(x.getMonth() + 1) + pad(x.getDate())
+    const end = new Date(dt.getTime() + 24 * 60 * 60 * 1000)
+    return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' +
+      encodeURIComponent('Federal estimated tax payment due (' + q + ' 2026, Form 1040-ES)') +
+      '&dates=' + f(dt) + '/' + f(end) +
+      '&details=' + encodeURIComponent('Pay at irs.gov/payments. Estimate your payment: https://www.gigwisetax.com/quarterly-tax-calculator-2026')
+  }
   const btnRed = { background: '#B22234', color: '#fff', padding: '8px 14px', borderRadius: 4, fontSize: 14, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, whiteSpace: 'nowrap' as const }
 
   return (
@@ -91,7 +102,7 @@ export default function DeadlinesPage() {
                   <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
                   <div style={{ fontSize: 18, fontWeight: 900, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
                   <div style={{ background: d.isCurrent ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.daysUntil >= 0 ? d.daysUntil : 0} days</div>
-                  <div style={btnRed}> + Calendar</div>
+                  <a href={gcalUrl(d.q, d.due)} target="_blank" rel="noopener noreferrer" style={{ ...btnRed, display: 'inline-block', textDecoration: 'none', padding: '12px 16px' }}> + Calendar</a>
                 </div>
               ))}
             </div>
