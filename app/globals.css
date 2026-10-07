@@ -426,3 +426,12 @@ a.cta-link,button.cta-btn{transition:all 0.2s ease;}
 .btn-3d-pro:active { transform: translateY(2px); box-shadow: 0 2px 0 #5a0000; }
 .glow-gold { animation: glow-gold-anim 3s infinite alternate; }
 @keyframes glow-gold-anim { from { box-shadow: 0 0 5px rgba(232,184,75,0.3); } to { box-shadow: 0 0 25px rgba(232,184,75,0.6); } }
+/* gw-mobile-tap-and-readability */
+@media (max-width: 768px) {
+  [style*="font-size:9px"], [style*="font-size: 9px"],
+  [style*="font-size:10px"], [style*="font-size: 10px"],
+  [style*="font-size:11px"], [style*="font-size: 11px"] { font-size: 12px !important; }
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea { min-height: 48px; font-size: 16px !important; }
+  button { min-height: 44px; }
+  footer a { display: inline-flex; align-items: center; min-height: 44px; }
+}
