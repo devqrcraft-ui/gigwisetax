@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES as ALL_STATES, DEADLINES_2026 } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -328,8 +329,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Turo ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Turo ${s.name} Taxes 2026 — $50K Earner Owes $${(11565 + Math.round(50000 * s.rate)).toLocaleString()} Total`,
-    description: `Turo ${s.name} 2026: $50K net = ~$7,065 SE tax + $4,500 fed. ${rateStr}. Quarterly: ~$2,891. Free calculator, no signup.`,
+      : `Turo ${s.name} Taxes 2026 — $50K Earner Owes $${estimateTax(50000, s.rate).total.toLocaleString()} Total`,
+    description: `Turo ${s.name} 2026: $50K net = ~$7,065 SE tax + $4,500 fed. ${rateStr}. Quarterly: ~$2,615. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/turo/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -377,15 +378,15 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Turo Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Turo hosts in ' + state.name + ' earning $50,000 net owe approximately $' + (11565 + Math.round(50000 * state.rate)).toLocaleString() + ' total — $7,065 self-employment tax (15.3%) + $4,500 federal income tax' + (noTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + rateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round((11565 + Math.round(50000 * state.rate)) / 4).toLocaleString() + '. Top deductions: vehicle depreciation, insurance, Turo fees, mileage at 72.5¢/mile.'}
+              {'Turo hosts in ' + state.name + ' earning $50,000 net owe approximately $' + estimateTax(50000, state.rate).total.toLocaleString() + ' total — $7,065 self-employment tax (15.3%) + $3,396 federal income tax' + (noTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + rateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(50000, state.rate).total / 4).toLocaleString() + '. Top deductions: vehicle depreciation, insurance, Turo fees, mileage at 72.5¢–76¢/mile.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Turo hosts are independent contractors — Turo withholds zero taxes</li>
-              <li>{'On $50,000 net income: ~$7,065 SE tax + ~$4,500 federal = ~$11,565 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$2,891 each'}</li>
+              <li>{'On $50,000 net income: ~$7,065 SE tax + ~$3,396 federal = ~$10,461 total in ' + state.name}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$2,615 each'}</li>
               <li>Vehicle depreciation is the largest deduction — up to $12,400/year</li>
               <li>Deduct Turo service fees (25-35% of revenue), insurance, cleaning, repairs</li>
               <li>File Schedule C — report all Turo income on your federal tax return</li>

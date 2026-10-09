@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026' },
   title: 'DoorDash vs Uber Eats Taxes 2026: Which Platform Pays More After Tax?',
-  description: 'DoorDash driver: $40K income → $8,852 SE tax → keep $2,213 after deductions. Uber Eats: $35K → $7,750 → $1,938. Full 2026 tax comparison with mileage and deduction breakdown.',
+  description: 'DoorDash driver: $40K income → $7,933 SE tax → keep $1,983 after deductions. Uber Eats: $35K → $6,669 → $1,667. Full 2026 tax comparison with mileage and deduction breakdown.',
   openGraph: { title: 'DoorDash vs Uber Eats Taxes 2026', description: 'Which platform pays more after taxes? Full 2026 comparison.', type: 'article', url: 'https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026' },
 }
 
@@ -17,7 +17,7 @@ export default function DoorDashVsUberEatsPost() {
   const RELATED = [
     { href:'/blog/doordash-taxes-2026', tag:'DOORDASH', title:'DoorDash Taxes 2026: Full Guide' },
     { href:'/platform/uber-eats', tag:'UBER EATS', title:'Uber Eats Tax Calculator 2026' },
-    { href:'/blog/mileage-rate-2026', tag:'MILEAGE', title:'IRS Mileage Rate 2026: 72.5¢/mile' },
+    { href:'/blog/mileage-rate-2026', tag:'MILEAGE', title:'IRS Mileage Rate 2026: 72.5¢–76¢/mile' },
   ]
 
   return (
@@ -47,7 +47,7 @@ export default function DoorDashVsUberEatsPost() {
 
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
           <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.75 }}>
-            <strong style={{ color: accent }}>Quick answer:</strong> DoorDash and Uber Eats have <strong>identical tax treatment</strong> — both are 1099 self-employment income taxed at 15.3% SE tax + income tax. DoorDash drivers average <strong>$40K/year → ~$2,213 net federal tax</strong> after deductions. Uber Eats drivers average <strong>$35K/year → ~$1,938 net federal tax</strong>. The mileage deduction (72.5¢/mile in 2026) is your biggest lever on both platforms.
+            <strong style={{ color: accent }}>Quick answer:</strong> DoorDash and Uber Eats have <strong>identical tax treatment</strong> — both are 1099 self-employment income taxed at 15.3% SE tax + income tax. DoorDash drivers average <strong>$40K/year → ~$1,983 net federal tax</strong> after deductions. Uber Eats drivers average <strong>$35K/year → ~$1,667 net federal tax</strong>. The mileage deduction (72.5¢–76¢/mile in 2026) is your biggest lever on both platforms.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function DoorDashVsUberEatsPost() {
             <li>Both DoorDash and Uber Eats classify drivers as <strong>1099 contractors</strong> — same 15.3% SE tax</li>
             <li>DoorDash pays via <strong>Stripe Express</strong>; Uber Eats via <strong>Uber Pro card or bank transfer</strong></li>
             <li>Both platforms send <strong>1099-NEC</strong> for earnings $2,000+ in 2026</li>
-            <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for both platforms</li>
+            <li>Mileage at <strong>72.5¢–76¢/mile</strong> is the largest deduction for both platforms</li>
             <li>Tips up to <strong>$25,000</strong> are federally deductible from both platforms under OBBBA 2026</li>
           </ul>
         </div>
@@ -123,7 +123,7 @@ export default function DoorDashVsUberEatsPost() {
           {[
             { q: 'Do DoorDash and Uber Eats drivers pay the same taxes?', a: 'Yes. Both are 1099 self-employment income. SE tax is 15.3% on net profit for both platforms.' },
             { q: 'How much tax on $40,000 DoorDash income?', a: 'After mileage deduction (~$14,500) and standard deduction ($16,100), total federal tax is approximately $4,500 for a single filer in 2026.' },
-            { q: 'Can I deduct mileage for both platforms?', a: 'Yes. Track miles separately per platform but deduct total business miles at 72.5¢/mile on one Schedule C (or two if you keep separate books).' },
+            { q: 'Can I deduct mileage for both platforms?', a: 'Yes. Track miles separately per platform but deduct total business miles at 72.5¢–76¢/mile on one Schedule C (or two if you keep separate books).' },
             { q: 'Do I get a 1099 from both DoorDash and Uber Eats?', a: 'Yes, if you earn over $2,000 from each platform. Both issue 1099-NEC forms by January 31 of the following year.' },
             { q: 'Should I drive for both DoorDash and Uber Eats?', a: 'Dual-apping is legal and common. It maximizes hourly earnings. Both income streams go on the same Schedule C as self-employment income.' },
           ].map(({ q, a }) => (

@@ -47,7 +47,7 @@ export default function InstacartTaxDeductions2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,533 SE tax + $1,500 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,033 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Mileage at 72.5¢/mile is the largest deduction — 10,000 miles eliminates $7,250 from taxable income.
+              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,533 SE tax + $1,500 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,033 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Mileage at 72.5¢–76¢/mile is the largest deduction — 10,000 miles eliminates $7,250 from taxable income.
             </p>
           </div>
         </section>

@@ -45,7 +45,7 @@ export default function W9MistakesBlog() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — W-9 Mistakes</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          A correctly filed W-9 prevents 24% backup withholding on all your gig payments. On $35,000 gig income, 24% withholding = $8,400 unnecessarily withheld. Your actual SE tax: approximately $4,950 + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Most common mistake: wrong TIN or not updating after address change.
+          A correctly filed W-9 prevents 24% backup withholding on all your gig payments. On $35,000 gig income, 24% withholding = $8,400 unnecessarily withheld. Your actual SE tax: approximately $4,950 + $1,723 federal = <strong style={{ color:'#fff' }}>$6,669 total tax</strong>. Most common mistake: wrong TIN or not updating after address change.
         </p>
       </div>
           <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0 }}>Updated January 2025 · 9 min read · GigWiseTax.com</p>

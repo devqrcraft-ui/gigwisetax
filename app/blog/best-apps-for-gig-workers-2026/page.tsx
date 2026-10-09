@@ -22,7 +22,7 @@ export default function BestAppsGigWorkers() {
       { name: 'Everlance', desc: 'Free tier tracks 40 trips/month. Premium adds expense tracking and 1099 income logging. Good for part-time gig workers under 500 miles/month.' },
     ]},
     { cat: '2. Tax Calculation', items: [
-      { name: 'GigWiseTax.com — Free', desc: 'Enter platform + income + state. Instantly see SE tax, federal tax, state tax, and quarterly payment. All 50 States + DC. No signup. On $35K Uber income: $7,750 SE tax, $1,938/quarter.' },
+      { name: 'GigWiseTax.com — Free', desc: 'Enter platform + income + state. Instantly see SE tax, federal tax, state tax, and quarterly payment. All 50 States + DC. No signup. On $35K Uber income: $6,669 total tax, $1,667/quarter.' },
       { name: 'QuickBooks Self-Employed', desc: 'Syncs bank accounts, auto-categorizes expenses, calculates quarterly taxes, exports Schedule C data. Best for gig workers earning $60K+ across multiple platforms. Cost: $15/month.' },
     ]},
     { cat: '3. Expense Tracking', items: [
@@ -36,20 +36,20 @@ export default function BestAppsGigWorkers() {
   ]
   const faqs = [
     { q: 'What is the best mileage tracking app for gig workers in 2026?', a: 'MileIQ and Everlance are the top choices. At 72.5c/mile in 2026, tracking 15,000 miles saves $10,875 in deductions. Both auto-track via GPS and export IRS-compliant logs.' },
-    { q: 'Do gig workers need a separate app for taxes?', a: 'Yes. Apps like GigWiseTax calculate SE tax (15.3%), federal, and state taxes in real time. On $40K DoorDash income, SE tax alone is $8,852 — knowing this quarterly prevents underpayment penalties.' },
+    { q: 'Do gig workers need a separate app for taxes?', a: 'Yes. Apps like GigWiseTax calculate SE tax (15.3%), federal, and state taxes in real time. On $40K DoorDash income, SE tax alone is $5,652 — knowing this quarterly prevents underpayment penalties.' },
     { q: 'What expense tracking app is best for 1099 workers?', a: 'Keeper and Hurdlr are designed for 1099 workers. They auto-categorize bank transactions as Schedule C deductions — phone, supplies, subscriptions — saving 3-5 hours at tax time.' },
     { q: 'Is there a free app for gig worker tax calculations?', a: 'GigWiseTax.com is 100% free. Enter your platform income and state — it calculates SE tax, federal tax, quarterly payments, and top deductions instantly. No signup required.' },
     { q: 'How do I track income from multiple gig platforms?', a: 'Use Hurdlr to combine DoorDash, Uber, and Instacart income. All goes on one Schedule C. On $75K total, expect $16,478 in SE tax.' },
   ]
   const taxNums = [
-    ['DoorDash $40K', 'SE tax: $8,852', 'Quarterly: $2,213'],
-    ['Uber $35K', 'SE tax: $7,750', 'Quarterly: $1,938'],
-    ['Instacart $35K', 'SE tax: $7,750', 'Quarterly: $1,938'],
-    ['Upwork $60K', 'SE tax: $14,278', 'Quarterly: $3,570'],
+    ['DoorDash $40K', 'SE tax: $7,933', 'Quarterly: $1,983'],
+    ['Uber $35K', 'SE tax: $6,669', 'Quarterly: $1,667'],
+    ['Instacart $35K', 'SE tax: $6,669', 'Quarterly: $1,667'],
+    ['Upwork $60K', 'SE tax: $12,989', 'Quarterly: $3,247'],
   ]
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best mileage tracking app for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"MileIQ and Everlance are the top choices. At 72.5c/mile in 2026, tracking 15,000 miles saves $10,875 in deductions."}},{"@type":"Question","name":"Do gig workers need a separate app for taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Apps like GigWiseTax calculate SE tax (15.3%), federal, and state taxes in real time. On $40K DoorDash income, SE tax alone is $8,852."}},{"@type":"Question","name":"What expense tracking app is best for 1099 workers?","acceptedAnswer":{"@type":"Answer","text":"Keeper and Hurdlr are designed for 1099 workers. They auto-categorize bank transactions as Schedule C deductions."}},{"@type":"Question","name":"Is there a free app for gig worker tax calculations?","acceptedAnswer":{"@type":"Answer","text":"GigWiseTax.com is 100% free. Enter your platform income and state to see SE tax, federal tax, quarterly payments instantly."}},{"@type":"Question","name":"How do I track income from multiple gig platforms?","acceptedAnswer":{"@type":"Answer","text":"Use Hurdlr to combine DoorDash, Uber, and Instacart income. All goes on one Schedule C. On $75K total, expect $16,478 in SE tax."}}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the best mileage tracking app for gig workers in 2026?","acceptedAnswer":{"@type":"Answer","text":"MileIQ and Everlance are the top choices. At 72.5c/mile in 2026, tracking 15,000 miles saves $10,875 in deductions."}},{"@type":"Question","name":"Do gig workers need a separate app for taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes. Apps like GigWiseTax calculate SE tax (15.3%), federal, and state taxes in real time. On $40K DoorDash income, SE tax alone is $5,652."}},{"@type":"Question","name":"What expense tracking app is best for 1099 workers?","acceptedAnswer":{"@type":"Answer","text":"Keeper and Hurdlr are designed for 1099 workers. They auto-categorize bank transactions as Schedule C deductions."}},{"@type":"Question","name":"Is there a free app for gig worker tax calculations?","acceptedAnswer":{"@type":"Answer","text":"GigWiseTax.com is 100% free. Enter your platform income and state to see SE tax, federal tax, quarterly payments instantly."}},{"@type":"Question","name":"How do I track income from multiple gig platforms?","acceptedAnswer":{"@type":"Answer","text":"Use Hurdlr to combine DoorDash, Uber, and Instacart income. All goes on one Schedule C. On $75K total, expect $16,478 in SE tax."}}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Best Apps for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/best-apps-for-gig-workers-2026"}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Apps for Gig Workers 2026 — Track Miles, Taxes & Income","description":"Top 8 apps every gig worker needs in 2026.","url":"https://www.gigwisetax.com/blog/best-apps-for-gig-workers-2026","datePublished":"2026-05-14","dateModified":"2026-05-14","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ minHeight: '100vh', background: '#07111F', color: 'white', fontFamily: 'system-ui,sans-serif' }}>
@@ -59,12 +59,12 @@ export default function BestAppsGigWorkers() {
           <h1 style={{ fontSize: 'clamp(24px,4vw,40px)', fontWeight: 900, lineHeight: 1.2, marginBottom: 8, color: 'white' }}>Best Apps for Gig Workers 2026</h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>Last updated: May 2026 · By the GigWiseTax Team</div>
           <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 20, fontSize: 14, lineHeight: 1.8, color: 'rgba(255,255,255,0.9)' }}>
-            <strong style={{ color: '#e8b84b' }}>Bottom line:</strong> The right apps save gig workers $3,000–$11,000/year. A mileage tracker at 72.5¢/mile on 15,000 miles = $10,875 deduction. A tax calculator prevents $500+ underpayment penalties. Use all 4 categories below.
+            <strong style={{ color: '#e8b84b' }}>Bottom line:</strong> The right apps save gig workers $3,000–$11,000/year. A mileage tracker at 72.5¢–76¢/mile on 15,000 miles = $10,875 deduction. A tax calculator prevents $500+ underpayment penalties. Use all 4 categories below.
           </div>
           <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
             <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 10, fontSize: 13 }}>✅ KEY TAKEAWAYS</div>
             <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
-              <li>A mileage tracker at <strong>72.5¢/mile</strong> on 15,000 miles = $10,875 deduction in 2026</li>
+              <li>A mileage tracker at <strong>72.5¢–76¢/mile</strong> on 15,000 miles = $10,875 deduction in 2026</li>
               <li>Quarterly tax tools prevent <strong>$500+ underpayment penalties</strong> from the IRS</li>
               <li>Expense tracking apps catch deductions most gig workers miss — saving <strong>$1,500–$3,000/year</strong></li>
               <li>Self-employment tax is <strong>15.3%</strong> — apps that auto-set aside 25–30% prevent cash shortfalls</li>
@@ -110,11 +110,11 @@ export default function BestAppsGigWorkers() {
           <div style={{ marginTop: 28, display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 12 }}>
             <a href="/doordash" style={{ display: 'block', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 10, padding: '14px 16px', color: 'white', textDecoration: 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#e8b84b' }}>DoorDash Tax Calculator</div>
-              <div style={{ fontSize: 11, opacity: 0.7, marginTop: 4 }}>$40K → $8,852 SE tax →</div>
+              <div style={{ fontSize: 11, opacity: 0.7, marginTop: 4 }}>$40K → $7,933 SE tax →</div>
             </a>
             <a href="/uber" style={{ display: 'block', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 10, padding: '14px 16px', color: 'white', textDecoration: 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#e8b84b' }}>Uber Tax Calculator</div>
-              <div style={{ fontSize: 11, opacity: 0.7, marginTop: 4 }}>$35K → $7,750 SE tax →</div>
+              <div style={{ fontSize: 11, opacity: 0.7, marginTop: 4 }}>$35K → $6,669 SE tax →</div>
             </a>
             <a href="/blog/doordash-vs-uber-eats-taxes-2026" style={{ display: 'block', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 10, padding: '14px 16px', color: 'white', textDecoration: 'none' }}>
               <div style={{ fontWeight: 700, fontSize: 13, color: '#e8b84b' }}>DoorDash vs Uber Eats Taxes</div>

@@ -64,7 +64,7 @@ export default function Calculator1099HubPage() {
         <h1 className="k99-h1">1099 Tax Calculator <em>2026</em></h1>
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          1099 workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> on net profit plus federal and state income tax. On $40,000 net income, total tax is roughly <strong style={{color:'#e8b84b'}}>$8,852</strong> — about $2,213 per quarter. Pick your platform below for a precise estimate.
+          1099 workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> on net profit plus federal and state income tax. On $40,000 net income, total tax is roughly <strong style={{color:'#e8b84b'}}>$7,933</strong> — about $1,983 per quarter. Pick your platform below for a precise estimate.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
           Last updated: May 2026 · By the GigWiseTax Team
@@ -80,8 +80,8 @@ export default function Calculator1099HubPage() {
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>1099 workers pay <strong>15.3% SE tax</strong> on top of federal income tax — no employer to split it with</li>
-            <li>On $40,000 net income, total federal tax is roughly <strong>$8,852</strong> — set aside 25-30% each month</li>
-            <li>IRS mileage deduction is <strong>72.5¢/mile</strong> in 2026 — the biggest write-off for delivery and rideshare drivers</li>
+            <li>On $40,000 net income, total federal tax is roughly <strong>$7,933</strong> — set aside 25-30% each month</li>
+            <li>IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> in 2026 — the biggest write-off for delivery and rideshare drivers</li>
             <li>Quarterly payments due: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if you owe $1,000+</li>
             <li>1099-K threshold in 2026 is <strong>$20,000 across more than 200 transactions</strong> — all income is taxable regardless of which form you receive</li>
           </ul>

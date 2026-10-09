@@ -50,7 +50,7 @@ export default function DeductionsGuide() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — SE Tax Deductions 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Self-employed workers pay 15.3% SE tax (12.4% Social Security + 2.9% Medicare) on net earnings. On $35,000 net: approximately $4,944 SE tax + $2,806 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. You can deduct half of SE tax on your 1040 — reducing your federal income tax automatically.
+          Self-employed workers pay 15.3% SE tax (12.4% Social Security + 2.9% Medicare) on net earnings. On $35,000 net: approximately $4,945 SE tax + $1,723 federal = <strong style={{ color:'#fff' }}>$6,669 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,667</strong>. You can deduct half of SE tax on your 1040 — reducing your federal income tax automatically.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
@@ -67,7 +67,7 @@ export default function DeductionsGuide() {
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>Mileage at <strong>72.5¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
+          <li>Mileage at <strong>72.5¢–76¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
           <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA — saves thousands per year</li>
           <li>Health insurance premiums are <strong>100% deductible</strong> for self-employed workers</li>
           <li>SEP-IRA contributions up to <strong>$69,000</strong> reduce taxable income dollar-for-dollar</li>

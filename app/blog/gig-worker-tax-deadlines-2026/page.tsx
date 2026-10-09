@@ -36,7 +36,7 @@ export default function Page() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Gig Tax Deadlines 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          2026 quarterly tax deadlines: April 15, June 15, September 15, January 15 2027. On $35,000 net gig income: approximately $4,950 SE tax + $2,800 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Each quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Use IRS Direct Pay to pay online in minutes.
+          2026 quarterly tax deadlines: April 15, June 15, September 15, January 15 2027. On $35,000 net gig income: approximately $4,945 SE tax + $1,723 federal = <strong style={{ color:'#fff' }}>$6,669 total tax</strong>. Each quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,667</strong>. Use IRS Direct Pay to pay online in minutes.
         </p>
       </div>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 32 }}>

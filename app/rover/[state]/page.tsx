@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -16,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Rover ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Rover ${s.name} Taxes 2026 — $25K Earner Owes $${(5340 + Math.round(25000 * s.rate)).toLocaleString()} Total`,
-    description: `Rover ${s.name} 2026: $25K net = ~$3,532 SE tax + $1,800 fed. ${stateStr}. Quarterly: ~$1,335. Free calculator, no signup.`,
+      : `Rover ${s.name} Taxes 2026 — $25K Earner Owes $${estimateTax(25000, s.rate).total.toLocaleString()} Total`,
+    description: `Rover ${s.name} 2026: $25K net = ~$${estimateTax(25000, s.rate).se.toLocaleString()} SE tax + $${estimateTax(25000, s.rate).federal.toLocaleString()} fed. ${stateStr}. Quarterly: ~$${estimateTax(25000, s.rate).quarterly.toLocaleString()}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', rover pet sitter taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -77,7 +78,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Rover Taxes {'{state.name}'} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $' + (5340 + Math.round(25000 * state.rate)).toLocaleString() + ' total — $3,532 self-employment tax (15.3%) + $1,808 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round((5340 + Math.round(25000 * state.rate)) / 4).toLocaleString() + '. Deduct mileage at 72.5¢/mile, pet supplies, and home office.'}
+              {'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $' + estimateTax(25000, state.rate).total.toLocaleString() + ' total — $3,532 self-employment tax (15.3%) + $1,808 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(25000, state.rate).total / 4).toLocaleString() + '. Deduct mileage at 72.5¢–76¢/mile, pet supplies, and home office.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
@@ -86,7 +87,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <li>Rover sitters are independent contractors — Rover withholds zero taxes</li>
               <li>{'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name}</li>
               <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$1,335 each'}</li>
-              <li>IRS mileage deduction: 72.5¢/mile for driving to client homes in 2026</li>
+              <li>IRS mileage deduction: 72.5¢–76¢/mile for driving to client homes in 2026</li>
               <li>Deduct pet supplies, leashes, dog food used for clients, home office</li>
               <li>File Schedule C — report all Rover income even without a 1099 form</li>
             </ul>

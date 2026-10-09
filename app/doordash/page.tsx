@@ -161,7 +161,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, DoorDash drivers owe approximately <strong>$8,074 total tax</strong> in 2026 — $5,652 SE tax + ~$2,422 federal'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, DoorDash drivers owe approximately <strong>$7,933 total tax</strong> in 2026 — $5,652 SE tax + ~$2,281 federal'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,019</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July 2026</strong> — one of the largest deductions available to drivers'}}/>
           <li dangerouslySetInnerHTML={{__html: 'DoorDash does <strong>not withhold taxes</strong> — you owe 15.3% SE tax on every dollar of net profit'}}/>
@@ -172,7 +172,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — DoorDash</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              DoorDash workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,422 federal income tax = <strong style={{ color:'#fff' }}>$8,074 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,019</strong>. Set aside 25% of every payment. Mileage deduction — 72.5¢/mile through June 30, 76¢/mile from July 1 — is one of the largest deductions available.
+              DoorDash workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,281 federal income tax = <strong style={{ color:'#fff' }}>$7,933 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,019</strong>. Set aside 25% of every payment. Mileage deduction — 72.5¢/mile through June 30, 76¢/mile from July 1 — is one of the largest deductions available.
             </p>
           </div>
 

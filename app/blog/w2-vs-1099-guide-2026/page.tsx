@@ -28,7 +28,7 @@ export default function W2vs1099Guide() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — W-2 vs 1099 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          W-2 employees have taxes withheld automatically. 1099 contractors pay 15.3% SE tax themselves. On $35,000 net 1099 income: approximately $4,944 SE tax + $2,806 federal = <strong style={{ color:'#fff' }}>$7,750 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,938</strong>. Key 1099 advantage: deduct mileage, home office, equipment.
+          W-2 employees have taxes withheld automatically. 1099 contractors pay 15.3% SE tax themselves. On $35,000 net 1099 income: approximately $4,945 SE tax + $1,723 federal = <strong style={{ color:'#fff' }}>$6,669 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$1,667</strong>. Key 1099 advantage: deduct mileage, home office, equipment.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
@@ -70,7 +70,7 @@ export default function W2vs1099Guide() {
           <li>W-2 employees have taxes withheld automatically — 1099 workers pay quarterly</li>
           <li>1099 workers can deduct <strong>50% of SE tax</strong> from gross income</li>
           <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA 2026 for 1099 workers</li>
-          <li>Mileage at <strong>72.5¢/mile</strong>, home office, and equipment reduce 1099 tax significantly</li>
+          <li>Mileage at <strong>72.5¢–76¢/mile</strong>, home office, and equipment reduce 1099 tax significantly</li>
         </ul>
       </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>

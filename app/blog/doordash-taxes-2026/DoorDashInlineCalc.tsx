@@ -17,10 +17,14 @@ export default function DoorDashInlineCalc() {
     const seBase = netIncome * 0.9235;
     const seTax = Math.min(seBase, 184500) * 0.124 + seBase * 0.029;
     const seDeduct = seTax * 0.5;
-    const fedTaxable = Math.max(0, netIncome - seDeduct - 15000);
+    const fedTaxable = Math.max(0, netIncome - seDeduct - 16100);
     let fed = 0;
-    if (fedTaxable > 48475) fed = 4807.5 + (fedTaxable - 48475) * 0.22;
-    else if (fedTaxable > 11925) fed = 1190.5 + (fedTaxable - 11925) * 0.12;
+    if (fedTaxable > 640600) fed = 192979.25 + (fedTaxable - 640600) * 0.37;
+    else if (fedTaxable > 256225) fed = 58448 + (fedTaxable - 256225) * 0.35;
+    else if (fedTaxable > 201775) fed = 41024 + (fedTaxable - 201775) * 0.32;
+    else if (fedTaxable > 105700) fed = 17966 + (fedTaxable - 105700) * 0.24;
+    else if (fedTaxable > 50400) fed = 5800 + (fedTaxable - 50400) * 0.22;
+    else if (fedTaxable > 12400) fed = 1240 + (fedTaxable - 12400) * 0.12;
     else fed = fedTaxable * 0.10;
     const total = seTax + fed;
     const quarterly = total / 4;

@@ -2,16 +2,16 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Upwork Taxes 2026: $60K Income = $14,278 Tax Owed',
-  description: 'Upwork freelancers on $60K owe $14,278 in 2026 taxes. Free calculator — home office, software, mileage deductible. All 50 states.',
+  title: 'Upwork Taxes 2026: $60K Income = $12,989 Tax Owed',
+  description: 'Upwork freelancers on $60K owe $12,989 in 2026 taxes. Free calculator — home office, software, mileage deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/upwork-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Upwork freelancers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like home office and software, and pay self-employment tax on net profit."}},{"@type":"Question","name":"How much self-employment tax does an Upwork freelancer pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $60,000 net income that is approximately $8,478 in SE tax."}},{"@type":"Question","name":"Does Upwork send a 1099 form to freelancers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upwork sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions, or a 1099-NEC for other payments. Forms are available in your Upwork account by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does an Upwork freelancer pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $60,000 net income, quarterly estimated payments are approximately $3,570 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What can Upwork freelancers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers can deduct home office, software subscriptions, hardware, internet, phone business use, professional development, and the Upwork service fee (10% on earnings over $10K). All deductions go on Schedule C."}},{"@type":"Question","name":"Is the Upwork service fee tax deductible in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Upwork service fee — 20% on first $500, 10% on $500.01 to $10,000, and 5% above $10,000 per client — is a business expense deductible on Schedule C as a platform fee."}},{"@type":"Question","name":"Can Upwork freelancers deduct a home office in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you work from a dedicated home space used exclusively for freelance work, deduct it using the simplified method at $5 per sq ft up to 300 sq ft, or actual expenses proportional to business use."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Upwork freelancers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like home office and software, and pay self-employment tax on net profit."}},{"@type":"Question","name":"How much self-employment tax does an Upwork freelancer pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $60,000 net income that is approximately $8,478 in SE tax."}},{"@type":"Question","name":"Does Upwork send a 1099 form to freelancers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upwork sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions, or a 1099-NEC for other payments. Forms are available in your Upwork account by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does an Upwork freelancer pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $60,000 net income, quarterly estimated payments are approximately $3,247 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What can Upwork freelancers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Upwork freelancers can deduct home office, software subscriptions, hardware, internet, phone business use, professional development, and the Upwork service fee (10% on earnings over $10K). All deductions go on Schedule C."}},{"@type":"Question","name":"Is the Upwork service fee tax deductible in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. The Upwork service fee — 20% on first $500, 10% on $500.01 to $10,000, and 5% above $10,000 per client — is a business expense deductible on Schedule C as a platform fee."}},{"@type":"Question","name":"Can Upwork freelancers deduct a home office in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you work from a dedicated home space used exclusively for freelance work, deduct it using the simplified method at $5 per sq ft up to 300 sq ft, or actual expenses proportional to business use."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Upwork Taxes 2026","item":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Upwork Taxes 2026: $60K Income = $14,278 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Upwork Taxes 2026: $60K Income = $12,989 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}}'
 
 export default function UpworkTaxes2026() {
   return (
@@ -35,7 +35,7 @@ export default function UpworkTaxes2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            Upwork Taxes 2026: $60K Income = $14,278 Tax Owed
+            Upwork Taxes 2026: $60K Income = $12,989 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -47,7 +47,7 @@ export default function UpworkTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Upwork freelancers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$60,000 net income</strong> in 2026: approximately $8,478 SE tax + $5,800 federal income tax = <strong style={{ color: '#e8edf8' }}>$14,278 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$3,570</strong>. Home office, software subscriptions, and the Upwork service fee are the top deductions for remote freelancers.
+              Upwork freelancers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$60,000 net income</strong> in 2026: approximately $8,478 SE tax + $5,800 federal income tax = <strong style={{ color: '#e8edf8' }}>$12,989 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$3,247</strong>. Home office, software subscriptions, and the Upwork service fee are the top deductions for remote freelancers.
             </p>
           </div>
         </section>
@@ -57,7 +57,7 @@ export default function UpworkTaxes2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$60K net income = $14,278 total tax owed in 2026 ($3,570/quarter)',
+                '$60K net income = $12,989 total tax owed in 2026 ($3,247/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
                 'Upwork service fee (5–20%) is fully deductible as a platform expense on Schedule C',
                 'Home office deduction: $5/sq ft up to 300 sq ft — $1,500 max simplified method',
@@ -114,7 +114,7 @@ export default function UpworkTaxes2026() {
                   ['$30,000', '$4,239', '$2,400', '$6,639', '$1,660'],
                   ['$40,000', '$5,652', '$3,400', '$9,052', '$2,263'],
                   ['$50,000', '$7,065', '$4,600', '$11,665', '$2,916'],
-                  ['$60,000', '$8,478', '$5,800', '$14,278', '$3,570'],
+                  ['$60,000', '$8,478', '$5,800', '$12,989', '$3,247'],
                   ['$80,000', '$11,304', '$8,800', '$20,104', '$5,026'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -227,7 +227,7 @@ export default function UpworkTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            On $60,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$3,570</strong>. After deductions, your actual payment will be lower. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide</a> to calculate your exact amount.
+            On $60,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$3,247</strong>. After deductions, your actual payment will be lower. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide</a> to calculate your exact amount.
           </p>
         </section>
 
@@ -280,7 +280,7 @@ export default function UpworkTaxes2026() {
             ['How do Upwork freelancers file taxes in 2026?', 'Upwork freelancers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K, subtract deductions like home office and software, and pay self-employment tax on net profit.'],
             ['How much SE tax does an Upwork freelancer pay?', 'Upwork freelancers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $60,000 net income that is approximately $8,478 in SE tax.'],
             ['Does Upwork send a 1099 form?', 'Yes. Upwork sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your Upwork account by January 31 each year.'],
-            ['What quarterly payment does an Upwork freelancer owe?', 'On $60,000 net income, quarterly estimated payments are approximately $3,570. IRS due dates are April 15, June 15, September 15, and January 15.'],
+            ['What quarterly payment does an Upwork freelancer owe?', 'On $60,000 net income, quarterly estimated payments are approximately $3,247. IRS due dates are April 15, June 15, September 15, and January 15.'],
             ['What can Upwork freelancers deduct in 2026?', 'Deduct home office, software, hardware, internet, phone business use, the Upwork service fee, professional development, and health insurance premiums on Schedule C.'],
             ['Is the Upwork service fee tax deductible in 2026?', 'Yes. The Upwork service fee — 20% on first $500, 10% on $500–$10K, 5% above $10K per client — is a deductible business expense on Schedule C.'],
             ['Can Upwork freelancers deduct a home office in 2026?', 'Yes. Use the simplified method at $5 per sq ft up to 300 sq ft for a max $1,500 deduction, or actual expenses proportional to business use of your home.'],

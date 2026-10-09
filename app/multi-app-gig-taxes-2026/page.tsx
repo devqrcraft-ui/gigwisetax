@@ -217,7 +217,7 @@ export default function MultiAppPage() {
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>Same type of gig work across apps = <strong>one Schedule C</strong> — DoorDash + Instacart + Amazon Flex all go together</li>
             <li>Truly different businesses (driving + Etsy) may need <strong>two Schedule C forms</strong> — check with a CPA</li>
-            <li>Combine all business miles across every app — <strong>72.5¢/mile</strong> in 2026, never count the same mile twice</li>
+            <li>Combine all business miles across every app — <strong>72.5¢–76¢/mile</strong> in 2026, never count the same mile twice</li>
             <li>Set aside <strong>25–30%</strong> of combined net income — SE tax 15.3% + federal + state</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if combined tax owed exceeds $1,000</li>
           </ul>

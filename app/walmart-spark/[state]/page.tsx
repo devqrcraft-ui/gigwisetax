@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
 
@@ -326,7 +327,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${(6448 + Math.round(30000 * s.rate)).toLocaleString()} Total`,
+      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString()} Total`,
     description: `Walmart Spark ${s.name} 2026: $30K net = ~$4,239 SE tax + $2,200 fed. ${rateStr}. Quarterly: ~$1,612. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,

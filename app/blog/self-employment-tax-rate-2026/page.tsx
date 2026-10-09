@@ -201,7 +201,7 @@ export default function SelfEmploymentTaxRate2026() {
                   {inc:'$20,000', se:'$2,825', fed:'$0', total:'$2,825'},
                   {inc:'$25,000', se:'$3,532', fed:'$883', total:'$4,415'},
                   {inc:'$30,000', se:'$4,239', fed:'$1,060', total:'$5,299'},
-                  {inc:'$35,000', se:'$4,945', fed:'$2,805', total:'$7,750'},
+                  {inc:'$35,000', se:'$4,945', fed:'$2,805', total:'$6,669'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)'}}>{row.inc}</td>
@@ -213,7 +213,7 @@ export default function SelfEmploymentTaxRate2026() {
                 <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$40,000 (avg)'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$5,652'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$2,213'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,983'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$7,863'}</td>
                 </tr>
               </tbody>
@@ -224,7 +224,7 @@ export default function SelfEmploymentTaxRate2026() {
           <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
             <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'SE tax is the single largest tax bill for most gig workers — larger than federal income tax at every income level below $60,000. At $40,000 net income, SE tax ($5,652) exceeds federal income tax ($2,213) by 155%. This gap closes only above $80,000 where the 22% bracket kicks in fully.'}
+              {'SE tax is the single largest tax bill for most gig workers — larger than federal income tax at every income level below $60,000. At $40,000 net income, SE tax ($5,652) exceeds federal income tax ($1,983) by 155%. This gap closes only above $80,000 where the 22% bracket kicks in fully.'}
             </p>
           </div>
         </section>
@@ -297,7 +297,7 @@ export default function SelfEmploymentTaxRate2026() {
                 <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>On $40K net</td>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$5,652'}</td>
-                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$2,213'}</td>
+                  <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$1,983'}</td>
                 </tr>
               </tbody>
             </table>

@@ -67,7 +67,7 @@ export default function DeductionsChecklist() {
 
       {/* ANSWER-FIRST */}
       <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-        Gig workers can deduct <strong style={{color:'#e8b84b'}}>mileage at 72.5¢/mile</strong>, phone bill, home office, equipment, and health insurance. The <strong style={{color:'#e8b84b'}}>QBI deduction</strong> (up to 20% of net income) and <strong style={{color:'#e8b84b'}}>50% SE tax deduction</strong> are automatic — no itemizing needed.
+        Gig workers can deduct <strong style={{color:'#e8b84b'}}>mileage at 72.5¢–76¢/mile</strong>, phone bill, home office, equipment, and health insurance. The <strong style={{color:'#e8b84b'}}>QBI deduction</strong> (up to 20% of net income) and <strong style={{color:'#e8b84b'}}>50% SE tax deduction</strong> are automatic — no itemizing needed.
       </div>
       <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
         Last updated: May 2026 · By the GigWiseTax Team
@@ -76,7 +76,7 @@ export default function DeductionsChecklist() {
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>IRS mileage rate is <strong>72.5¢/mile</strong> in 2026 — the single biggest deduction for delivery and rideshare drivers</li>
+          <li>IRS mileage rate is <strong>72.5¢–76¢/mile</strong> in 2026 — the single biggest deduction for delivery and rideshare drivers</li>
           <li><strong>50% of SE tax</strong> is automatically deductible above-the-line — reduces federal taxable income</li>
           <li>QBI deduction allows up to <strong>20% of net income</strong> to be deducted — most gig workers qualify</li>
           <li>Health insurance premiums are <strong>100% deductible</strong> if you are self-employed and not covered by an employer plan</li>
