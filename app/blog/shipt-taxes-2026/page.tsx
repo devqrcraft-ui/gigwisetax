@@ -3,14 +3,14 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Shipt Shopper Taxes 2026 — Free Tax Calculator + Guide',
-  description: 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35K net: $7,750 total tax. Free calculator, mileage 72.5¢/mile, quarterly deadlines. All 50 States + DC.',
+  description: 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35K net: $6,669 total tax. Free calculator, mileage 72.5¢–76¢/mile, quarterly deadlines. All 50 States + DC.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/shipt-taxes-2026' },
   keywords: 'shipt taxes 2026, shipt shopper tax calculator, shipt 1099 tax, shipt self employment tax, shipt quarterly tax',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 }
 
-const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Shipt shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers pay 15.3% self-employment tax on net earnings. On $35,000 net income: SE tax is $4,944 + federal income tax $2,806 = $7,750 total. Quarterly payment: $1,938."}},{"@type":"Question","name":"Does Shipt send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shipt sends a 1099-NEC for earnings over $2,000 under the OBBBA 2026 threshold (previously $600). You receive it by January 31, 2027 via the Shipt app or email."}},{"@type":"Question","name":"What mileage can Shipt shoppers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers can deduct 72.5 cents per mile for business driving. This includes miles from home to the store, during shopping, and to the delivery address. Track every mile."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Shipt shopper?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, you must pay quarterly. Deadlines are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Are Shipt tips taxable?","acceptedAnswer":{"@type":"Answer","text":"Under OBBBA 2026, Shipt shoppers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax but not income tax up to the $25,000 cap."}},{"@type":"Question","name":"What percentage should Shipt shoppers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25% of net Shipt income. In high-tax states like California, set aside 30-35%. This covers SE tax (15.3%) plus federal and state income tax."}},{"@type":"Question","name":"Can I deduct my car for Shipt deliveries?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use the standard mileage rate (72.5 cents/mile) or actual vehicle expenses (gas, insurance, depreciation). Most shoppers benefit more from the standard mileage rate."}}]})
+const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Shipt shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers pay 15.3% self-employment tax on net earnings. On $35,000 net income: SE tax is $4,945 + federal income tax $1,723 = $6,669 total. Quarterly payment: $1,667."}},{"@type":"Question","name":"Does Shipt send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shipt sends a 1099-NEC for earnings over $2,000 under the OBBBA 2026 threshold (previously $600). You receive it by January 31, 2027 via the Shipt app or email."}},{"@type":"Question","name":"What mileage can Shipt shoppers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers can deduct 72.5 cents per mile for business driving. This includes miles from home to the store, during shopping, and to the delivery address. Track every mile."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Shipt shopper?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, you must pay quarterly. Deadlines are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Are Shipt tips taxable?","acceptedAnswer":{"@type":"Answer","text":"Under OBBBA 2026, Shipt shoppers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax but not income tax up to the $25,000 cap."}},{"@type":"Question","name":"What percentage should Shipt shoppers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25% of net Shipt income. In high-tax states like California, set aside 30-35%. This covers SE tax (15.3%) plus federal and state income tax."}},{"@type":"Question","name":"Can I deduct my car for Shipt deliveries?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use the standard mileage rate (72.5 cents/mile) or actual vehicle expenses (gas, insurance, depreciation). Most shoppers benefit more from the standard mileage rate."}}]})
 
 const breadcrumbSchema = JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Shipt Taxes 2026","item":"https://www.gigwisetax.com/blog/shipt-taxes-2026"}]})
 
@@ -60,7 +60,7 @@ export default function ShiptTaxes2026() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              Shipt shoppers are 1099 contractors and pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,944 SE tax + $2,806 federal income tax = $7,750 total. Quarterly payment: $1,938. The 2026 IRS mileage rate is 72.5 cents per mile — your largest deduction.
+              Shipt shoppers are 1099 contractors and pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,945 SE tax + $1,723 federal income tax = $6,669 total. Quarterly payment: $1,667. The 2026 IRS mileage rate is 72.5 cents per mile — your largest deduction.
             </p>
           </div>
         </section>
@@ -69,7 +69,7 @@ export default function ShiptTaxes2026() {
         <section id="key-takeaways">
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8b84b', margin: '0 0 14px' }}>Key Takeaways</h2>
           <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
-            <li>Shipt shoppers on $35,000 net income owe approximately $7,750 in total federal tax</li>
+            <li>Shipt shoppers on $35,000 net income owe approximately $6,669 in total federal tax</li>
             <li>SE tax formula: net income x 0.9235 x 0.153 = SE tax owed</li>
             <li>2026 IRS mileage rate: 72.5 cents per mile — deduct every mile driven for orders</li>
             <li>Tips up to $25,000 are federally deductible under OBBBA 2026</li>
@@ -114,7 +114,7 @@ export default function ShiptTaxes2026() {
             Shipt classifies all shoppers as independent contractors. You receive a 1099-NEC at year end. Unlike W-2 employees who split FICA taxes with their employer, Shipt shoppers pay the full 15.3% SE tax — 12.4% Social Security plus 2.9% Medicare on net earnings.
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            SE tax calculation: multiply net Shipt income by 0.9235 (SE tax base), then by 0.153. On $35,000 net: $35,000 x 0.9235 x 0.153 = $4,944 SE tax. You also deduct 50% of SE tax on Form 1040, which reduces your adjusted gross income.
+            SE tax calculation: multiply net Shipt income by 0.9235 (SE tax base), then by 0.153. On $35,000 net: $35,000 x 0.9235 x 0.153 = $4,945 SE tax. You also deduct 50% of SE tax on Form 1040, which reduces your adjusted gross income.
           </p>
 
           <div style={{ overflowX: 'auto' as const, marginBottom: 24 }}>
@@ -132,7 +132,7 @@ export default function ShiptTaxes2026() {
                 {[
                   ['$20,000','$2,826','$1,200','$4,026','$1,007'],
                   ['$30,000','$4,239','$2,100','$6,339','$1,585'],
-                  ['$35,000','$4,944','$2,806','$7,750','$1,938'],
+                  ['$35,000','$4,945','$1,723','$6,669','$1,667'],
                   ['$45,000','$6,357','$4,000','$10,357','$2,589'],
                   ['$55,000','$7,771','$5,500','$13,271','$3,318'],
                 ].map(([inc,se,fed,tot,q]) => (
@@ -159,7 +159,7 @@ export default function ShiptTaxes2026() {
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
-              <strong style={{ color: '#e8b84b' }}>Example:</strong> 15,000 miles x $0.725 = <strong style={{ color: '#e8b84b' }}>$10,875 deduction</strong>. This reduces net income by $10,875, saving approximately $2,700 in taxes.
+              <strong style={{ color: '#e8b84b' }}>Example:</strong> 15,000 miles x 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b' }}>$10,875 deduction</strong>. This reduces net income by $10,875, saving approximately $2,700 in taxes.
             </p>
           </div>
           <blockquote style={{ borderLeft: '3px solid #e8b84b', paddingLeft: 16, margin: '0 0 24px', color: 'rgba(255,255,255,0.7)', fontSize: 13, lineHeight: 1.7 }}>
@@ -183,7 +183,7 @@ export default function ShiptTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['Vehicle mileage','$7,250–$14,500','72.5¢/mile × 10k–20k miles'],
+                  ['Vehicle mileage','$7,250–$14,500','72.5¢–76¢/mile × 10k–20k miles'],
                   ['Insulated bags & coolers','$50–$200','Required for grocery delivery'],
                   ['Phone (50-80%)','$300–$600','Business portion only'],
                   ['Half SE tax deduction','$2,472','Auto-deducted on Form 1040'],
@@ -266,13 +266,13 @@ export default function ShiptTaxes2026() {
             Frequently Asked Questions
           </h2>
           {[
-            ['How much tax do Shipt shoppers pay in 2026?', 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35,000 net: SE tax $4,944 + federal income tax $2,806 = $7,750 total. Quarterly payment: $1,938.'],
+            ['How much tax do Shipt shoppers pay in 2026?', 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35,000 net: SE tax $4,945 + federal income tax $1,723 = $6,669 total. Quarterly payment: $1,667.'],
             ['Does Shipt send a 1099 form?', 'Yes. Shipt sends a 1099-NEC for earnings over $2,000 under OBBBA 2026. You receive it by January 31, 2027 via the Shipt app or email.'],
             ['What mileage can Shipt shoppers deduct?', 'Deduct 72.5 cents per mile for all business driving — home to store, store to delivery address. Track every mile with a mileage app.'],
             ['Do I need to pay quarterly taxes as a Shipt shopper?', 'Yes, if you expect to owe $1,000 or more. Deadlines: April 15, June 15, September 15, January 15.'],
             ['Are Shipt tips taxable in 2026?', 'Under OBBBA 2026, deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax.'],
             ['What percentage should I set aside for Shipt taxes?', 'Set aside 25% of net income. In high-tax states like California, set aside 30-35%.'],
-            ['Can I deduct my car for Shipt deliveries?', 'Yes — use the standard mileage rate (72.5¢/mile) or actual vehicle expenses. Most shoppers benefit more from the standard rate.'],
+            ['Can I deduct my car for Shipt deliveries?', 'Yes — use the standard mileage rate (72.5¢–76¢/mile) or actual vehicle expenses. Most shoppers benefit more from the standard rate.'],
           ].map(([q, a]) => (
             <div key={q} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 20, marginBottom: 20 }}>
               <h3 style={{ fontSize: 14, fontWeight: 700, color: '#e8edf8', margin: '0 0 8px' }}>{q}</h3>

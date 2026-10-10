@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Rover Taxes 2026: $25K Income = $5,340 Tax Owed',
-  description: 'Rover pet sitters on $25K owe $5,340 in 2026 taxes. Free calculator — mileage 72.5¢/mi, tips up to $25K deductible. All 50 states.',
+  description: 'Rover pet sitters on $25K owe $5,340 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tips up to $25K deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/rover-taxes-2026' },
 }
 
@@ -47,7 +47,7 @@ export default function RoverTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Rover pet sitters and dog walkers are independent contractors. On <strong style={{ color: '#e8edf8' }}>$25,000 net income</strong> in 2026: approximately $3,533 SE tax + $1,807 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,340 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,335</strong>. Mileage at 72.5¢/mile and home-office deductions are the two biggest write-offs for Rover sitters.
+              Rover pet sitters and dog walkers are independent contractors. On <strong style={{ color: '#e8edf8' }}>$25,000 net income</strong> in 2026: approximately $3,533 SE tax + $1,807 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,340 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,335</strong>. Mileage at 72.5¢–76¢/mile and home-office deductions are the two biggest write-offs for Rover sitters.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function RoverTaxes2026() {
               {[
                 '$25K net income = $5,340 total tax owed in 2026 ($1,335/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
-                'IRS mileage deduction: 72.5¢/mile — deduct drives to client homes and vet visits',
+                'IRS mileage deduction: 72.5¢–76¢/mile — deduct drives to client homes and vet visits',
                 'Rover sends 1099-K (bookings over $20,000 across more than 200 transactions) by January 31',
                 'Home office deduction applies if you board pets in a dedicated space',
                 'Supplies — food, treats, leashes, waste bags — fully deductible on Schedule C',
@@ -142,7 +142,7 @@ export default function RoverTaxes2026() {
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Mileage — 72.5¢/mile for drives to client homes, vet visits, supply runs',
+              'Mileage — 72.5¢–76¢/mile for drives to client homes, vet visits, supply runs',
               'Pet supplies — food, treats, leashes, waste bags, kennels, first-aid kits',
               'Home office — dedicated boarding space deductible at $5/sq ft (up to 300 sq ft)',
               'Phone — business-use portion of your monthly plan',
@@ -173,7 +173,7 @@ export default function RoverTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Example: 4,000 business miles × $0.725 = <strong style={{ color: '#e8edf8' }}>$2,900 deduction</strong>. That eliminates $2,900 from taxable income and saves roughly $444 in SE tax alone.
+            Example: 4,000 business miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8edf8' }}>$2,900 deduction</strong>. That eliminates $2,900 from taxable income and saves roughly $444 in SE tax alone.
           </p>
         </section>
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/1099-tax-calculator-2026' },
 };
 
-const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What taxes do 1099 workers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"1099 workers pay self-employment tax (15.3% on net income) plus federal income tax (10%-37% based on brackets). Most states also tax 1099 income. After the mileage deduction, QBI deduction, and 50% SE tax deduction, effective rates for gig workers are typically 18-28%."}},{"@type":"Question","name":"What is the difference between a 1099-NEC and 1099-K?","acceptedAnswer":{"@type":"Answer","text":"A 1099-NEC reports nonemployee compensation (direct payments from platforms like DoorDash, Uber, Lyft). A 1099-K reports payment card and third-party network transactions. The 2026 1099-K threshold is $20,000 across more than 200 transactions. You owe tax on all 1099 income regardless of which form you receive."}},{"@type":"Question","name":"How much should I set aside for 1099 taxes?","acceptedAnswer":{"@type":"Answer","text":"A common guideline is 25-30% of net income. This covers self-employment tax (15.3%) and federal income tax (typically 10-22% for most gig workers after deductions). Use our calculator for a precise figure based on your platform, income, and state."}},{"@type":"Question","name":"Do 1099 workers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you expect to owe $1,000 or more in federal taxes for the year. Quarterly estimated payments are due April 15, June 15, September 15, and January 15. Underpayment results in a penalty from the IRS."}},{"@type":"Question","name":"What deductions can 1099 gig workers claim?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage ($0.725/mile in 2026), phone plan (business portion), home office, equipment, platform fees, and business supplies. The QBI deduction (up to 20% of net income) is also available to most self-employed workers."}}]};
+const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What taxes do 1099 workers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"1099 workers pay self-employment tax (15.3% on net income) plus federal income tax (10%-37% based on brackets). Most states also tax 1099 income. After the mileage deduction, QBI deduction, and 50% SE tax deduction, effective rates for gig workers are typically 18-28%."}},{"@type":"Question","name":"What is the difference between a 1099-NEC and 1099-K?","acceptedAnswer":{"@type":"Answer","text":"A 1099-NEC reports nonemployee compensation (direct payments from platforms like DoorDash, Uber, Lyft). A 1099-K reports payment card and third-party network transactions. The 2026 1099-K threshold is $20,000 across more than 200 transactions. You owe tax on all 1099 income regardless of which form you receive."}},{"@type":"Question","name":"How much should I set aside for 1099 taxes?","acceptedAnswer":{"@type":"Answer","text":"A common guideline is 25-30% of net income. This covers self-employment tax (15.3%) and federal income tax (typically 10-22% for most gig workers after deductions). Use our calculator for a precise figure based on your platform, income, and state."}},{"@type":"Question","name":"Do 1099 workers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if you expect to owe $1,000 or more in federal taxes for the year. Quarterly estimated payments are due April 15, June 15, September 15, and January 15. Underpayment results in a penalty from the IRS."}},{"@type":"Question","name":"What deductions can 1099 gig workers claim?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026), phone plan (business portion), home office, equipment, platform fees, and business supplies. The QBI deduction (up to 20% of net income) is also available to most self-employed workers."}}]};
 
 const CSS = `
   body{background:#0f1117;}
@@ -64,7 +64,7 @@ export default function Calculator1099HubPage() {
         <h1 className="k99-h1">1099 Tax Calculator <em>2026</em></h1>
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          1099 workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> on net profit plus federal and state income tax. On $40,000 net income, total tax is roughly <strong style={{color:'#e8b84b'}}>$8,852</strong> — about $2,213 per quarter. Pick your platform below for a precise estimate.
+          1099 workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> on net profit plus federal and state income tax. On $40,000 net income, total tax is roughly <strong style={{color:'#e8b84b'}}>$7,933</strong> — about $1,983 per quarter. Pick your platform below for a precise estimate.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
           Last updated: May 2026 · By the GigWiseTax Team
@@ -80,8 +80,8 @@ export default function Calculator1099HubPage() {
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>1099 workers pay <strong>15.3% SE tax</strong> on top of federal income tax — no employer to split it with</li>
-            <li>On $40,000 net income, total federal tax is roughly <strong>$8,852</strong> — set aside 25-30% each month</li>
-            <li>IRS mileage deduction is <strong>72.5¢/mile</strong> in 2026 — the biggest write-off for delivery and rideshare drivers</li>
+            <li>On $40,000 net income, total federal tax is roughly <strong>$7,933</strong> — set aside 25-30% each month</li>
+            <li>IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> in 2026 — the biggest write-off for delivery and rideshare drivers</li>
             <li>Quarterly payments due: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if you owe $1,000+</li>
             <li>1099-K threshold in 2026 is <strong>$20,000 across more than 200 transactions</strong> — all income is taxable regardless of which form you receive</li>
           </ul>
@@ -100,7 +100,7 @@ export default function Calculator1099HubPage() {
             <div className="diff-row"><span>SE tax burden</span><span>15.3% (you pay both sides)</span></div>
             <div className="diff-row"><span>Tax withheld</span><span>Nothing — you pay quarterly</span></div>
             <div className="diff-row"><span>Quarterly filing</span><span>Required if owe $1,000+</span></div>
-            <div className="diff-row"><span>Mileage deduction</span><span>$0.725/mile (2026)</span></div>
+            <div className="diff-row"><span>Mileage deduction</span><span>72.5¢ (Jan–Jun) / 76¢ (Jul–Dec) per mile (2026)</span></div>
             <div className="diff-row"><span>QBI deduction</span><span>Up to 20% of net income</span></div>
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function Calculator1099HubPage() {
         <div className="deductions-box">
           <h2>Top Deductions for 1099 Workers in 2026</h2>
           <div className="ded-grid">
-            <div className="ded-item"><span className="ded-check">✓</span><span>Mileage — $0.725/mile (IRS 2026 rate)</span></div>
+            <div className="ded-item"><span className="ded-check">✓</span><span>Mileage — 72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec (IRS 2026 rates)</span></div>
             <div className="ded-item"><span className="ded-check">✓</span><span>QBI deduction — up to 20% of net income</span></div>
             <div className="ded-item"><span className="ded-check">✓</span><span>50% of SE tax — automatic above-the-line</span></div>
             <div className="ded-item"><span className="ded-check">✓</span><span>Phone plan — business-use percentage</span></div>
@@ -146,7 +146,7 @@ export default function Calculator1099HubPage() {
           <div className="faq-q"><div className="faq-qt">What is the difference between a 1099-NEC and 1099-K?</div><div className="faq-qa">1099-NEC reports nonemployee compensation (DoorDash, Uber, Lyft payments). 1099-K reports payment network transactions — threshold is $20,000 across more than 200 transactions. All 1099 income is taxable regardless of which form you receive.</div></div>
           <div className="faq-q"><div className="faq-qt">How much should I set aside for 1099 taxes?</div><div className="faq-qa">25-30% of net income covers SE tax (15.3%) plus federal income tax for most gig workers. Use a platform calculator above for a precise number based on your actual income and state.</div></div>
           <div className="faq-q"><div className="faq-qt">Do 1099 workers pay quarterly taxes?</div><div className="faq-qa">Yes, if you expect to owe $1,000 or more. Due dates: April 15 · June 15 · September 15 · January 15. Underpayment triggers an IRS penalty.</div></div>
-          <div className="faq-q"><div className="faq-qt">What deductions can 1099 gig workers claim?</div><div className="faq-qa">Mileage ($0.725/mile), phone plan, home office, equipment, platform fees, QBI deduction (up to 20% of net), and health insurance premiums for self-employed workers.</div></div>
+          <div className="faq-q"><div className="faq-qt">What deductions can 1099 gig workers claim?</div><div className="faq-qa">Mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec), phone plan, home office, equipment, platform fees, QBI deduction (up to 20% of net), and health insurance premiums for self-employed workers.</div></div>
         </div>
 
         <div className="cta-box">

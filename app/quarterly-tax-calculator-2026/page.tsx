@@ -11,23 +11,23 @@ const FILING_STATUSES = [
 ];
 
 const TAX_BRACKETS_SINGLE = [
-  { min: 0, max: 11925, rate: 0.10 },
-  { min: 11925, max: 48475, rate: 0.12 },
-  { min: 48475, max: 103350, rate: 0.22 },
-  { min: 103350, max: 197300, rate: 0.24 },
-  { min: 197300, max: 250525, rate: 0.32 },
-  { min: 250525, max: 626350, rate: 0.35 },
-  { min: 626350, max: Infinity, rate: 0.37 },
+  { min: 0, max: 12400, rate: 0.10 },
+  { min: 12400, max: 50400, rate: 0.12 },
+  { min: 50400, max: 105700, rate: 0.22 },
+  { min: 105700, max: 201775, rate: 0.24 },
+  { min: 201775, max: 256225, rate: 0.32 },
+  { min: 256225, max: 640600, rate: 0.35 },
+  { min: 640600, max: Infinity, rate: 0.37 },
 ];
 
 const TAX_BRACKETS_MFJ = [
-  { min: 0, max: 23850, rate: 0.10 },
-  { min: 23850, max: 96950, rate: 0.12 },
-  { min: 96950, max: 206700, rate: 0.22 },
-  { min: 206700, max: 394600, rate: 0.24 },
-  { min: 394600, max: 501050, rate: 0.32 },
-  { min: 501050, max: 751600, rate: 0.35 },
-  { min: 751600, max: Infinity, rate: 0.37 },
+  { min: 0, max: 24800, rate: 0.10 },
+  { min: 24800, max: 100800, rate: 0.12 },
+  { min: 100800, max: 211400, rate: 0.22 },
+  { min: 211400, max: 403550, rate: 0.24 },
+  { min: 403550, max: 512450, rate: 0.32 },
+  { min: 512450, max: 768700, rate: 0.35 },
+  { min: 768700, max: Infinity, rate: 0.37 },
 ];
 
 const TAX_BRACKETS_HOH = [
@@ -136,7 +136,7 @@ export default function QuarterlyTaxCalculator() {
             <li>Self-employment tax is <strong>15.3%</strong> on 92.35% of net profit (SS cap: $184,500)</li>
             <li>Deduct <strong>half of SE tax</strong> before calculating federal income tax</li>
             <li>Standard deduction 2026: <strong>$16,100</strong> single / <strong>$32,200</strong> MFJ</li>
-            <li>IRS mileage rate 2026: <strong>72.5¢/mile</strong> — track every trip</li>
+            <li>IRS mileage rate 2026: <strong>72.5¢–76¢/mile</strong> — track every trip</li>
           </ul>
         </div>
 
@@ -293,7 +293,7 @@ export default function QuarterlyTaxCalculator() {
           <section>
             <h2 style={{ fontSize: 22, color: '#e8b84b', marginBottom: 14 }}>Top Deductions to Reduce Your Quarterly Tax Bill</h2>
             <ul style={{ lineHeight: 1.9, fontSize: 15, paddingLeft: 20 }}>
-              <li><strong>Mileage:</strong> 72.5¢/mile in 2026 (IRS rate) — track every business trip</li>
+              <li><strong>Mileage:</strong> 72.5¢–76¢/mile in 2026 (IRS rate) — track every business trip</li>
               <li><strong>Phone &amp; internet:</strong> business-use percentage</li>
               <li><strong>Home office:</strong> $5/sq ft up to 300 sq ft ($1,500 max)</li>
               <li><strong>Health insurance premiums</strong> — 100% deductible if self-employed</li>

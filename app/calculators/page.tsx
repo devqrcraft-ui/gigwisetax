@@ -9,14 +9,14 @@ export const metadata = {
 };
 
 const PLATFORMS = [
-  { slug: "doordash", name: "DoorDash", emoji: "", searches: "400K/mo" },
-  { slug: "uber", name: "Uber", emoji: "", searches: "300K/mo" },
-  { slug: "etsy", name: "Etsy", emoji: "", searches: "200K/mo" },
-  { slug: "onlyfans", name: "OnlyFans", emoji: "", searches: "150K/mo" },
-  { slug: "instacart", name: "Instacart", emoji: "", searches: "150K/mo" },
-  { slug: "airbnb", name: "Airbnb", emoji: "", searches: "120K/mo" },
-  { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "80K/mo" },
-  { slug: "lyft", name: "Lyft", emoji: "", searches: "70K/mo" },
+  { slug: "doordash", name: "DoorDash", emoji: "", searches: "Free" },
+  { slug: "uber", name: "Uber", emoji: "", searches: "Free" },
+  { slug: "etsy", name: "Etsy", emoji: "", searches: "Free" },
+  { slug: "onlyfans", name: "OnlyFans", emoji: "", searches: "Free" },
+  { slug: "instacart", name: "Instacart", emoji: "", searches: "Free" },
+  { slug: "airbnb", name: "Airbnb", emoji: "", searches: "Free" },
+  { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "Free" },
+  { slug: "lyft", name: "Lyft", emoji: "", searches: "Free" },
 ];
 
 const TOP_STATES = [

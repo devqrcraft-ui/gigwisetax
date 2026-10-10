@@ -4,7 +4,7 @@ import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: 'Gig Worker Taxes 2026: SE Tax 15.3% — Free Calculator All Platforms',
-  description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $3,200 federal = $8,852. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 50 states + DC.',
+  description: 'Gig workers pay 15.3% SE tax in 2026. On $40K net: $5,652 SE tax + $2,281 federal = $7,933. Free calculator for DoorDash, Uber, Instacart, Airbnb, all 50 states + DC.',
   keywords: 'gig worker taxes 2026, gig economy tax calculator, self employment tax gig workers, gig worker tax deductions 2026',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
@@ -92,7 +92,7 @@ export default function GigWorkerTaxCenter() {
           </h1>
           {/* ANSWER-FIRST */}
           <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:20,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-            Gig workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> plus federal income tax on net profit. On $40,000 income, expect to owe around <strong style={{color:'#e8b84b'}}>$8,852 total</strong> — roughly $2,213/quarter. Use a calculator below to get your exact number by platform and state.
+            Gig workers pay <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong> plus federal income tax on net profit. On $40,000 income, expect to owe around <strong style={{color:'#e8b84b'}}>$7,933 total</strong> — roughly $1,983/quarter. Use a calculator below to get your exact number by platform and state.
           </div>
           <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
             Last updated: May 2026 · By the GigWiseTax Team
@@ -114,8 +114,8 @@ export default function GigWorkerTaxCenter() {
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>Self-employment tax is <strong>15.3%</strong> on net profit — 12.4% Social Security + 2.9% Medicare</li>
-            <li>DoorDash driver earning <strong>$40,000</strong> owes ~$8,852 in total taxes — about $2,213 per quarter</li>
-            <li>Uber driver at <strong>$50,000</strong> owes ~$11,565 — mileage deduction at 72.5¢/mile reduces that significantly</li>
+            <li>DoorDash driver earning <strong>$40,000</strong> owes ~$7,933 in total taxes — about $1,983 per quarter</li>
+            <li>Uber driver at <strong>$50,000</strong> owes ~$10,461 — mileage deduction at 72.5¢–76¢/mile reduces that significantly</li>
             <li>IRS mileage rate for 2026 is <strong>72.5 cents per mile</strong> — the highest deduction for rideshare and delivery drivers</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — miss one and face an underpayment penalty</li>
           </ul>

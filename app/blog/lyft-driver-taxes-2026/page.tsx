@@ -2,16 +2,16 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Lyft Driver Taxes 2026: $35K Income = $7,750 Tax Owed',
-  description: 'Lyft drivers on $35K owe $7,750 in 2026 taxes. Free calculator — mileage 72.5¢/mi, tips up to $25K deductible. All 50 states.',
+  title: 'Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed',
+  description: 'Lyft drivers on $35K owe $6,669 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tips up to $25K deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/lyft-driver-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Lyft drivers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage, and pay self-employment tax on the net profit."}},{"@type":"Question","name":"What is the Lyft mileage deduction rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile. Lyft drivers can deduct miles driven with passengers, en route to pickups, and while waiting in designated areas."}},{"@type":"Question","name":"How much self-employment tax does a Lyft driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $35,000 net income that is approximately $4,944 in SE tax."}},{"@type":"Question","name":"Does Lyft send a 1099 form to drivers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lyft sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions, or a 1099-NEC for referral bonuses and other non-ride income. Forms are available in the Lyft driver app by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a Lyft driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 net income, quarterly estimated payments are approximately $1,938 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Can Lyft drivers deduct vehicle expenses in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lyft drivers can use the standard mileage rate of 72.5 cents per mile or deduct actual vehicle expenses (gas, insurance, depreciation, repairs) proportional to business use. You must choose one method at the start."}},{"@type":"Question","name":"What is the tips deduction for Lyft drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"The No Tax on Tips provision for 2026 allows up to $25,000 in tip income to be excluded from federal income tax for qualifying workers. Lyft drivers who receive tips may benefit from this deduction."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Lyft drivers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage, and pay self-employment tax on the net profit."}},{"@type":"Question","name":"What is the Lyft mileage deduction rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile. Lyft drivers can deduct miles driven with passengers, en route to pickups, and while waiting in designated areas."}},{"@type":"Question","name":"How much self-employment tax does a Lyft driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Lyft drivers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $35,000 net income that is approximately $4,945 in SE tax."}},{"@type":"Question","name":"Does Lyft send a 1099 form to drivers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lyft sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions, or a 1099-NEC for referral bonuses and other non-ride income. Forms are available in the Lyft driver app by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a Lyft driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 net income, quarterly estimated payments are approximately $1,667 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Can Lyft drivers deduct vehicle expenses in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Lyft drivers can use the standard mileage rate of 72.5 cents per mile or deduct actual vehicle expenses (gas, insurance, depreciation, repairs) proportional to business use. You must choose one method at the start."}},{"@type":"Question","name":"What is the tips deduction for Lyft drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"The No Tax on Tips provision for 2026 allows up to $25,000 in tip income to be excluded from federal income tax for qualifying workers. Lyft drivers who receive tips may benefit from this deduction."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Lyft Driver Taxes 2026","item":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lyft Driver Taxes 2026: $35K Income = $7,750 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}}'
 
 export default function LyftTaxes2026() {
   return (
@@ -35,7 +35,7 @@ export default function LyftTaxes2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            Lyft Driver Taxes 2026: $35K Income = $7,750 Tax Owed
+            Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -48,7 +48,7 @@ export default function LyftTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Lyft drivers owe self-employment tax plus federal income tax as independent contractors. On $35,000 net income in 2026: approximately $4,944 SE tax + $2,806 federal income tax = <strong style={{ color: '#e8edf8' }}>$7,750 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,938</strong>. The mileage deduction at 72.5¢/mile is the largest available write-off — 10,000 miles eliminates $7,250 from taxable income.
+              Lyft drivers owe self-employment tax plus federal income tax as independent contractors. On $35,000 net income in 2026: approximately $4,945 SE tax + $1,723 federal income tax = <strong style={{ color: '#e8edf8' }}>$6,669 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,667</strong>. The mileage deduction at 72.5¢–76¢/mile is the largest available write-off — 10,000 miles eliminates $7,250 from taxable income.
             </p>
           </div>
         </section>
@@ -59,9 +59,9 @@ export default function LyftTaxes2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$35K net income = $7,750 total tax owed in 2026 ($1,938/quarter)',
+                '$35K net income = $6,669 total tax owed in 2026 ($1,667/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
-                'IRS mileage deduction: 72.5¢/mile — biggest write-off for Lyft drivers',
+                'IRS mileage deduction: 72.5¢–76¢/mile — biggest write-off for Lyft drivers',
                 'Lyft sends 1099-K (rides) and 1099-NEC (bonuses) by January 31',
                 'Tips up to $25,000 may qualify for the No Tax on Tips deduction in 2026',
               ].map((t, i) => (
@@ -114,10 +114,10 @@ export default function LyftTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['Self-employment tax', '15.3%', '$4,944'],
+                  ['Self-employment tax', '15.3%', '$4,945'],
                   ['SE tax deduction (50%)', '−7.65%', '−$2,475'],
-                  ['Federal income tax (22%)', '22%', '$2,806'],
-                  ['Total tax owed', '', '$7,750'],
+                  ['Federal income tax (22%)', '22%', '$1,723'],
+                  ['Total tax owed', '', '$6,669'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
@@ -147,7 +147,7 @@ export default function LyftTaxes2026() {
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Mileage: 72.5¢/mile (IRS 2026 rate) — rides, deadhead, en-route pickup miles',
+              'Mileage: 72.5¢–76¢/mile (IRS 2026 rate) — rides, deadhead, en-route pickup miles',
               'Phone: business-use percentage of your monthly bill',
               'Phone mount, dashcam, car charger, accessories',
               'Water bottles, mints, tissues provided to passengers',
@@ -208,7 +208,7 @@ export default function LyftTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Rule of thumb: set aside 25–28% of every Lyft payment. Pay via IRS Direct Pay or EFTPS. On $35K net income, each quarterly payment is approximately <strong style={{ color: '#e8b84b' }}>$1,938</strong>.
+            Rule of thumb: set aside 25–28% of every Lyft payment. Pay via IRS Direct Pay or EFTPS. On $35K net income, each quarterly payment is approximately <strong style={{ color: '#e8b84b' }}>$1,667</strong>.
           </p>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
             Use the <a href="/lyft" style={{ color: '#e8b84b', textDecoration: 'none' }}>Lyft tax calculator</a> to get a precise quarterly estimate based on your actual mileage and income.
@@ -266,10 +266,10 @@ export default function LyftTaxes2026() {
           {[
             ['How do Lyft drivers file taxes in 2026?', 'Lyft drivers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage, and pay self-employment tax on net profit.'],
             ['What is the Lyft mileage deduction rate in 2026?', 'The 2026 IRS standard mileage rate is 72.5 cents per mile. Lyft drivers can deduct miles driven with passengers, en route to pickups, and while waiting in designated areas.'],
-            ['How much SE tax does a Lyft driver pay?', 'Lyft drivers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $35,000 net income that is approximately $4,944 in SE tax.'],
+            ['How much SE tax does a Lyft driver pay?', 'Lyft drivers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $35,000 net income that is approximately $4,945 in SE tax.'],
             ['Does Lyft send a 1099 form to drivers?', 'Yes. Lyft sends a 1099-K for ride income when gross exceeds $20,000 across more than 200 transactions, or a 1099-NEC for bonuses. Forms are available in the Lyft driver app by January 31 each year.'],
-            ['What quarterly payment does a Lyft driver owe?', 'On $35,000 net income, quarterly estimated payments are approximately $1,938. IRS due dates are April 15, June 15, September 15, and January 15.'],
-            ['Can Lyft drivers deduct vehicle expenses?', 'Yes. Use the standard mileage rate (72.5¢/mile) or actual expenses (gas, insurance, depreciation). You must choose a method at the start and stick with it for that vehicle.'],
+            ['What quarterly payment does a Lyft driver owe?', 'On $35,000 net income, quarterly estimated payments are approximately $1,667. IRS due dates are April 15, June 15, September 15, and January 15.'],
+            ['Can Lyft drivers deduct vehicle expenses?', 'Yes. Use the standard mileage rate (72.5¢–76¢/mile) or actual expenses (gas, insurance, depreciation). You must choose a method at the start and stick with it for that vehicle.'],
             ['What is the tips deduction for Lyft drivers in 2026?', 'The No Tax on Tips provision allows up to $25,000 in tip income to be excluded from federal income tax. Lyft in-app tips from passengers may qualify.'],
           ].map(([q, a], i, arr) => (
             <div key={i} style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding: '18px 0' }}>

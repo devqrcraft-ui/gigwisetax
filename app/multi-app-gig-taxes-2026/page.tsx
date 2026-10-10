@@ -38,7 +38,7 @@ const faqSchema = {
       "name": "Can I deduct mileage for both Uber and DoorDash?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes — you can deduct all business miles driven across all platforms, but you cannot count the same mile twice. Track miles per platform using a mileage app (Stride, Everlance) and combine the totals on Schedule C. The 2026 IRS rate is $0.725 per mile."
+        "text": "Yes — you can deduct all business miles driven across all platforms, but you cannot count the same mile twice. Track miles per platform using a mileage app (Stride, Everlance) and combine the totals on Schedule C. The 2026 IRS rate is 72.5¢ per mile (Jan–Jun) / 76¢ (Jul–Dec)."
       }
     },
     {
@@ -68,7 +68,7 @@ const howToSchema = {
   "step": [
     { "@type": "HowToStep", "name": "Gather all 1099-NEC forms", "text": "Collect 1099-NEC from every platform that paid you $2,000 or more. Platforms below $2,000 still require you to report income — just without a 1099." },
     { "@type": "HowToStep", "name": "Total all platform income", "text": "Add gross income from every app. This is your total self-employment revenue before deductions." },
-    { "@type": "HowToStep", "name": "Calculate combined deductions", "text": "Add mileage (all apps combined × $0.725), phone bill percentage, supplies, and other business costs. Do not count the same mile for two apps." },
+    { "@type": "HowToStep", "name": "Calculate combined deductions", "text": "Add mileage (all apps combined × 72.5¢ Jan–Jun / 76¢ Jul–Dec), phone bill percentage, supplies, and other business costs. Do not count the same mile for two apps." },
     { "@type": "HowToStep", "name": "Report on Schedule C", "text": "Most gig workers report all delivery/driving income on one Schedule C. List total revenue and total deductions to arrive at net profit." },
     { "@type": "HowToStep", "name": "Calculate SE tax on net profit", "text": "Multiply net profit by 0.9235, then by 0.153. This is your self-employment tax. You deduct half of it on Form 1040." },
     { "@type": "HowToStep", "name": "Pay quarterly if you owe $1,000+", "text": "If total tax owed exceeds $1,000, pay quarterly estimates by April 15, June 15, September 15, and January 15, 2027 to avoid underpayment penalties." }
@@ -217,7 +217,7 @@ export default function MultiAppPage() {
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>Same type of gig work across apps = <strong>one Schedule C</strong> — DoorDash + Instacart + Amazon Flex all go together</li>
             <li>Truly different businesses (driving + Etsy) may need <strong>two Schedule C forms</strong> — check with a CPA</li>
-            <li>Combine all business miles across every app — <strong>72.5¢/mile</strong> in 2026, never count the same mile twice</li>
+            <li>Combine all business miles across every app — <strong>72.5¢–76¢/mile</strong> in 2026, never count the same mile twice</li>
             <li>Set aside <strong>25–30%</strong> of combined net income — SE tax 15.3% + federal + state</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if combined tax owed exceeds $1,000</li>
           </ul>
@@ -281,7 +281,7 @@ export default function MultiAppPage() {
             {[
               ['Collect all 1099-NEC forms', 'Every platform that paid you $2,000+ sends a 1099-NEC by January 31. Uber, DoorDash, Instacart, Amazon all send these. Even if you earned under $2,000 on one app, you must still report that income.'],
               ['Add up all platform income', 'Total gross revenue from every app. Do not subtract expenses yet — that comes next.'],
-              ['Calculate combined deductions', 'Add all business miles across every app × $0.725 (2026 IRS rate). Add phone bill (% used for work), supplies, hot bags, car washes, and other costs. Do NOT count the same mile twice across apps.'],
+              ['Calculate combined deductions', 'Add all business miles across every app × 72.5¢ (Jan–Jun) or 76¢ (Jul–Dec), 2026 IRS rates. Add phone bill (% used for work), supplies, hot bags, car washes, and other costs. Do NOT count the same mile twice across apps.'],
               ['Report on Schedule C', 'Enter total revenue and total deductions. Net profit = revenue minus deductions. This is what SE tax is calculated on.'],
               ['Calculate SE tax', 'Net profit × 0.9235 × 0.153 = your SE tax. You deduct 50% of this on Form 1040 Line 15.'],
               ['Pay quarterly to avoid penalties', 'If total tax owed exceeds $1,000, pay quarterly. Q1 due April 15 · Q2 June 15 · Q3 Sept 15 · Q4 Jan 15, 2027.'],
@@ -305,13 +305,13 @@ export default function MultiAppPage() {
             <div className="warn-desc">
               Use Stride, Everlance, or a simple mileage log. Record which app you were active on per trip.
               At tax time, add all business miles together and enter one total on Schedule C.
-              The 2026 IRS standard mileage rate is <strong>$0.725 per mile</strong>.
+              The 2026 IRS standard mileage rate is <strong>72.5¢ per mile (Jan–Jun) / 76¢ (Jul–Dec)</strong>.
             </div>
           </div>
           <div className="rule-box" style={{marginTop:12}}>
             <div className="rule-title">Example: Uber + DoorDash driver, 18,000 miles/year</div>
             <div className="rule-desc">
-              18,000 × $0.725 = <strong>$12,600 mileage deduction</strong>. This reduces your taxable net profit by $12,600,
+              18,000 × 72.5¢ (Jan–Jun rate) = <strong>$13,050 mileage deduction</strong>. This reduces your taxable net profit by $13,050,
               saving roughly $1,900 in SE tax alone — plus federal and state income tax savings.
             </div>
           </div>
@@ -323,7 +323,7 @@ export default function MultiAppPage() {
           {[
             ['Do I file separate Schedule C forms for each gig app?', 'Generally no. If all your gig work falls under one business activity (delivery driving for DoorDash + Instacart + Amazon Flex), combine everything on one Schedule C. If your activities are truly separate businesses (driving + Etsy seller), you may need two. Most gig workers use one Schedule C.'],
             ['How do I calculate quarterly taxes working multiple apps?', 'Add up all net income from every platform for the quarter, subtract business expenses, then apply 15.3% SE tax + estimated federal income tax. Divide the annual estimate by 4 for equal quarterly payments.'],
-            ['Can I deduct mileage for both Uber and DoorDash?', 'Yes — combine all business miles across platforms. You cannot count the same mile twice. Track with a mileage app and enter one total on Schedule C. The 2026 rate is $0.725/mile.'],
+            ['Can I deduct mileage for both Uber and DoorDash?', 'Yes — combine all business miles across platforms. You cannot count the same mile twice. Track with a mileage app and enter one total on Schedule C. The 2026 rate is 72.5¢/mile (Jan–Jun; 76¢ from Jul 1).'],
             ['What if I worked in two states for different apps?', 'You may need to file part-year or non-resident returns in each state. Each state has different rules. For example, a driver who worked in California and Nevada owes CA state tax on CA earnings only — Nevada has no state income tax.'],
             ['How much should I set aside working 3 gig apps?', 'Set aside 25–30% of combined net income. Total revenue minus deductions (mileage, phone, supplies) = taxable net. Apply 15.3% SE + 10–22% federal + state. Use the calculator for your exact state.'],
           ].map(([q, a], i) => (

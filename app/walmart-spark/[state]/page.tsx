@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
 
@@ -315,7 +316,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = [" Mileage ($0.725/mile)"," Phone & data plan"," Insulated grocery bags"," Vehicle maintenance"," Parking & tolls"," Delivery apps"]
+const DEDUCTIONS = [" Mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)"," Phone & data plan"," Insulated grocery bags"," Vehicle maintenance"," Parking & tolls"," Delivery apps"]
 
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
@@ -326,7 +327,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${(6448 + Math.round(30000 * s.rate)).toLocaleString()} Total`,
+      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
     description: `Walmart Spark ${s.name} 2026: $30K net = ~$4,239 SE tax + $2,200 fed. ${rateStr}. Quarterly: ~$1,612. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
@@ -384,7 +385,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
           { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
-          { label: 'Mileage Deduction', value: '$0.725/mi', note: '2026 IRS Rate' },
+          { label: 'Mileage Deduction', value: '72.5¢ Jan–Jun / 76¢ Jul–Dec', note: '2026 IRS rates' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 6 }}>{c.label}</div>
@@ -424,11 +425,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               const total = se + st + fed
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString()}</td>
-                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString()}</td>}
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString()}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString('en-US')}</td>
+                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString('en-US')}</td>}
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString('en-US')}</td>
                 </tr>
               )
             })}

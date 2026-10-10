@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 }
 
-const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do DoorDash drivers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers pay 15.3% self-employment tax on net earnings. On $40,000 net income: SE tax is $5,652 + federal income tax $3,200 = $8,852 total. Quarterly payment: $2,213."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate is 72.5 cents per mile for 2026. Driving 20,000 miles gives a $14,500 deduction — the largest single deduction for most DoorDash drivers."}},{"@type":"Question","name":"When are DoorDash quarterly taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"Quarterly estimated tax deadlines for 2026: April 15, June 15, September 15, and January 15, 2027."}},{"@type":"Question","name":"Does DoorDash withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. DoorDash pays you as a 1099 contractor with no tax withheld. You are responsible for paying SE tax and income tax directly to the IRS each quarter."}},{"@type":"Question","name":"How do I calculate DoorDash SE tax?","acceptedAnswer":{"@type":"Answer","text":"Multiply net DoorDash income by 0.9235, then multiply by 0.153. Example: $40,000 x 0.9235 x 0.153 = $5,652 SE tax."}},{"@type":"Question","name":"Are DoorDash tips taxable in 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the OBBBA 2026, DoorDash drivers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax."}},{"@type":"Question","name":"What percentage should DoorDash drivers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of net DoorDash income. In high-tax states like California or New York, set aside 30-35%. This covers SE tax plus federal and state income tax."}}]})
+const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do DoorDash drivers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash drivers pay 15.3% self-employment tax on net earnings. On $40,000 net income: SE tax is $5,652 + federal income tax $2,281 = $7,933 total. Quarterly payment: $1,983."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate is 72.5 cents per mile for 2026. Driving 20,000 miles gives a $14,500 deduction — the largest single deduction for most DoorDash drivers."}},{"@type":"Question","name":"When are DoorDash quarterly taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"Quarterly estimated tax deadlines for 2026: April 15, June 15, September 15, and January 15, 2027."}},{"@type":"Question","name":"Does DoorDash withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. DoorDash pays you as a 1099 contractor with no tax withheld. You are responsible for paying SE tax and income tax directly to the IRS each quarter."}},{"@type":"Question","name":"How do I calculate DoorDash SE tax?","acceptedAnswer":{"@type":"Answer","text":"Multiply net DoorDash income by 0.9235, then multiply by 0.153. Example: $40,000 x 0.9235 x 0.153 = $5,652 SE tax."}},{"@type":"Question","name":"Are DoorDash tips taxable in 2026?","acceptedAnswer":{"@type":"Answer","text":"Under the OBBBA 2026, DoorDash drivers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax."}},{"@type":"Question","name":"What percentage should DoorDash drivers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of net DoorDash income. In high-tax states like California or New York, set aside 30-35%. This covers SE tax plus federal and state income tax."}}]})
 
 const breadcrumbSchema = JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"DoorDash Tax Calculator 2026","item":"https://www.gigwisetax.com/blog/doordash-tax-calculator-2026"}]})
 
@@ -62,7 +62,7 @@ export default function DoorDashTaxCalculator2026() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              The DoorDash tax calculator shows your exact 2026 tax bill in seconds. On $40,000 net income: $5,652 SE tax + $3,200 federal income tax = $8,852 total owed. Set aside 25% of every payment. The 2026 IRS mileage rate is 72.5 cents per mile — 20,000 miles = $14,500 deduction.
+              The DoorDash tax calculator shows your exact 2026 tax bill in seconds. On $40,000 net income: $5,652 SE tax + $2,281 federal income tax = $7,933 total owed. Set aside 25% of every payment. The 2026 IRS mileage rate is 72.5 cents per mile — 20,000 miles = $14,500 deduction.
             </p>
           </div>
         </section>
@@ -71,7 +71,7 @@ export default function DoorDashTaxCalculator2026() {
         <section id="key-takeaways">
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8b84b', margin: '0 0 14px' }}>Key Takeaways</h2>
           <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
-            <li>DoorDash drivers on $40,000 net income owe approximately $8,852 in total federal tax</li>
+            <li>DoorDash drivers on $40,000 net income owe approximately $7,933 in total federal tax</li>
             <li>SE tax formula: net income x 0.9235 x 0.153 = SE tax owed</li>
             <li>2026 IRS mileage rate: 72.5 cents per mile — largest deduction for most Dashers</li>
             <li>Tips up to $25,000 are federally deductible under the OBBBA 2026</li>
@@ -116,7 +116,7 @@ export default function DoorDashTaxCalculator2026() {
             DoorDash classifies all Dashers as independent contractors. You receive a 1099-NEC, not a W-2. That means you pay the full 15.3% self-employment tax on net earnings — 12.4% Social Security plus 2.9% Medicare.
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            The SE tax formula: multiply net income by 0.9235, then by 0.153. On $40,000 net: $40,000 x 0.9235 x 0.153 = $5,652 SE tax. Add federal income tax of approximately $3,200 and your total bill is $8,852.
+            The SE tax formula: multiply net income by 0.9235, then by 0.153. On $40,000 net: $40,000 x 0.9235 x 0.153 = $5,652 SE tax. Add federal income tax of approximately $2,281 and your total bill is $7,933.
           </p>
 
           <div style={{ overflowX: 'auto' as const, marginBottom: 24 }}>
@@ -134,8 +134,8 @@ export default function DoorDashTaxCalculator2026() {
                 {[
                   ['$20,000','$2,826','$1,200','$4,026','$1,007'],
                   ['$30,000','$4,239','$2,100','$6,339','$1,585'],
-                  ['$40,000','$5,652','$3,200','$8,852','$2,213'],
-                  ['$50,000','$7,065','$4,500','$11,565','$2,891'],
+                  ['$40,000','$5,652','$3,200','$7,933','$1,983'],
+                  ['$50,000','$7,065', '$3,396', '$10,461', '$2,615'],
                   ['$60,000','$8,478','$6,000','$14,478','$3,620'],
                 ].map(([inc,se,fed,tot,q]) => (
                   <tr key={inc} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -161,7 +161,7 @@ export default function DoorDashTaxCalculator2026() {
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
-              <strong style={{ color: '#e8b84b' }}>Example:</strong> 20,000 miles x $0.725 = <strong style={{ color: '#e8b84b' }}>$14,500 deduction</strong>. On a 25% effective tax rate this saves $3,625 in taxes.
+              <strong style={{ color: '#e8b84b' }}>Example:</strong> 20,000 miles x 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b' }}>$14,500 deduction</strong>. On a 25% effective tax rate this saves $3,625 in taxes.
             </p>
           </div>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
@@ -226,7 +226,7 @@ export default function DoorDashTaxCalculator2026() {
               </thead>
               <tbody>
                 {[
-                  ['Vehicle mileage','$10,875–$18,125','72.5¢/mile × 15k–25k miles'],
+                  ['Vehicle mileage','$10,875–$18,125','72.5¢–76¢/mile × 15k–25k miles'],
                   ['Phone (50-80%)','$300–$600','Business use portion only'],
                   ['Hot bags & equipment','$100–$400','Required for delivery'],
                   ['Half SE tax deduction','$1,413–$4,239','Deducted on Form 1040'],
@@ -264,7 +264,7 @@ export default function DoorDashTaxCalculator2026() {
             Frequently Asked Questions
           </h2>
           {[
-            ['How much tax do DoorDash drivers pay in 2026?', 'DoorDash drivers pay 15.3% SE tax on net earnings. On $40,000 net income: SE tax is $5,652 + federal income tax $3,200 = $8,852 total. Quarterly payment: $2,213.'],
+            ['How much tax do DoorDash drivers pay in 2026?', 'DoorDash drivers pay 15.3% SE tax on net earnings. On $40,000 net income: SE tax is $5,652 + federal income tax $2,281 = $7,933 total. Quarterly payment: $1,983.'],
             ['What is the DoorDash mileage deduction for 2026?', 'The IRS standard mileage rate is 72.5 cents per mile. Driving 20,000 miles gives a $14,500 deduction — the largest single deduction for most DoorDash drivers.'],
             ['When are DoorDash quarterly taxes due?', 'Q1: April 15 | Q2: June 15 | Q3: September 15 | Q4: January 15, 2027.'],
             ['Does DoorDash withhold taxes?', 'No. DoorDash pays you as a 1099 contractor with no tax withheld. You are responsible for paying SE tax and income tax to the IRS each quarter.'],

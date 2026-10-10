@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -25,7 +26,7 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (72.5¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
+  { icon:'▸', label:'Mileage (72.5¢–76¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
   { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
   { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
   { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
@@ -46,7 +47,7 @@ const FAQ = [
 
 const _faqSchemaFromFAQ_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity": FAQ.map(f => ({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))};
 const _webAppSchema_walmart_spark = {"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Tax Calculator 2026","description":"Tax calculator for Walmart Spark drivers. Self-employment tax, mileage deduction, and quarterly estimated payments for 2026.","url":"https://www.gigwisetax.com/walmart-spark","operatingSystem":"Web"};
-const _faqSchema_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Walmart Spark drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. The mileage deduction ($0.725/mile in 2026) is the largest available deduction and can significantly reduce taxable income."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn $2,000 or more. All delivery income is taxable even without a 1099."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage ($0.725/mile) for active delivery miles, phone plan (business portion), insulated bags or delivery equipment, tolls and parking fees during deliveries, and any required app subscriptions."}},{"@type":"Question","name":"Do Walmart Spark drivers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if expected annual tax liability is $1,000 or more. Quarterly due dates: April 15, June 15, September 15, January 15. Use our calculator to estimate your quarterly payment amount."}}]};
+const _faqSchema_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Walmart Spark drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. The mileage deduction (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026) is the largest available deduction and can significantly reduce taxable income."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn $2,000 or more. All delivery income is taxable even without a 1099."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec) for active delivery miles, phone plan (business portion), insulated bags or delivery equipment, tolls and parking fees during deliveries, and any required app subscriptions."}},{"@type":"Question","name":"Do Walmart Spark drivers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if expected annual tax liability is $1,000 or more. Quarterly due dates: April 15, June 15, September 15, January 15. Use our calculator to estimate your quarterly payment amount."}}]};
 export default function WalmartSparkPage() {
   const [income, setIncome]   = useState('')
   const [miles,  setMiles]    = useState('')
@@ -67,9 +68,9 @@ export default function WalmartSparkPage() {
     const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const ssSplit = seBase * 0.124
     const medSplit= seBase * 0.029
-    const taxable = net - seTax * 0.5
-    const fedRate = filing === 'single' ? 0.22 : 0.12
-    const federal = taxable * fedRate
+    const fl = filing === 'mfj' ? 'married' : 'single'
+    const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
+    const federal = federalTax(taxable, fl)
     const stateTax= taxable * (st?.rate ?? 0.05)
     const total   = federal + seTax + stateTax
     const qbi     = taxable * 0.20
@@ -136,7 +137,7 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢/mile for 2026</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢–76¢/mile for 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
@@ -206,7 +207,7 @@ export default function WalmartSparkPage() {
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Walmart Spark drivers owe approximately <strong>$5,417 total tax</strong> in 2026'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,354</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢/mile</strong> — Spark drivers average 20,000–30,000 miles/year'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — Spark drivers average 20,000–30,000 miles/year'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Walmart Spark does <strong>not withhold taxes</strong> — all drivers are 1099 independent contractors'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Delivery bags, phone accessories, and car maintenance are <strong>deductible</strong> Spark expenses'}}/>
             </ul>
@@ -215,7 +216,7 @@ export default function WalmartSparkPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Walmart Spark</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Walmart Spark workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $1,178 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,354</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile applies to all active Spark delivery miles.
+              Walmart Spark workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $1,178 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,354</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢–76¢/mile applies to all active Spark delivery miles.
             </p>
           </div>
           {/* DEDUCTIONS */}
@@ -238,7 +239,7 @@ export default function WalmartSparkPage() {
                 ))}
               </div>
               <div style={{ marginTop:16, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', fontSize:13, color: '#4ade80' }}>
-                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢/mile often saves more than actual expenses.
+                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢–76¢/mile often saves more than actual expenses.
               </div>
             </div>
           </div>

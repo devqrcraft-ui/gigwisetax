@@ -4,18 +4,18 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const PLATFORMS = [
-  { slug: "doordash", name: "DoorDash", emoji: "", searches: "400K/mo", type: "delivery" },
-  { slug: "uber", name: "Uber", emoji: "", searches: "300K/mo", type: "rideshare" },
-  { slug: "uber-eats", name: "Uber Eats", emoji: "", searches: "180K/mo", type: "delivery" },
-  { slug: "etsy", name: "Etsy", emoji: "", searches: "200K/mo", type: "ecommerce" },
-  { slug: "onlyfans", name: "OnlyFans", emoji: "", searches: "150K/mo", type: "creator" },
-  { slug: "instacart", name: "Instacart", emoji: "", searches: "150K/mo", type: "delivery" },
-  { slug: "airbnb", name: "Airbnb", emoji: "", searches: "120K/mo", type: "rental" },
-  { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "80K/mo", type: "delivery" },
-  { slug: "lyft", name: "Lyft", emoji: "", searches: "70K/mo", type: "rideshare" },
-  { slug: "fiverr", name: "Fiverr", emoji: "", searches: "60K/mo", type: "freelance" },
-  { slug: "upwork", name: "Upwork", emoji: "", searches: "55K/mo", type: "freelance" },
-  { slug: "rover", name: "Rover", emoji: "", searches: "40K/mo", type: "services" },
+  { slug: "doordash", name: "DoorDash", emoji: "", searches: "Free", type: "delivery" },
+  { slug: "uber", name: "Uber", emoji: "", searches: "Free", type: "rideshare" },
+  { slug: "uber-eats", name: "Uber Eats", emoji: "", searches: "Free", type: "delivery" },
+  { slug: "etsy", name: "Etsy", emoji: "", searches: "Free", type: "ecommerce" },
+  { slug: "onlyfans", name: "OnlyFans", emoji: "", searches: "Free", type: "creator" },
+  { slug: "instacart", name: "Instacart", emoji: "", searches: "Free", type: "delivery" },
+  { slug: "airbnb", name: "Airbnb", emoji: "", searches: "Free", type: "rental" },
+  { slug: "amazon-flex", name: "Amazon Flex", emoji: "", searches: "Free", type: "delivery" },
+  { slug: "lyft", name: "Lyft", emoji: "", searches: "Free", type: "rideshare" },
+  { slug: "fiverr", name: "Fiverr", emoji: "", searches: "Free", type: "freelance" },
+  { slug: "upwork", name: "Upwork", emoji: "", searches: "Free", type: "freelance" },
+  { slug: "rover", name: "Rover", emoji: "", searches: "Free", type: "services" },
 ];
 
 const STATES = [
@@ -227,7 +227,7 @@ export default function CalculatorPage({ params }) {
               <p style={S.p}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
-                  { title: " Mileage", val: "72.5¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
+                  { title: " Mileage", val: "72.5¢–76¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },
                   { title: " Phone & Data", val: "Business % deductible", desc: "App usage qualifies" },
                   { title: " Home Office", val: "Dedicated space only", desc: "For remote gig workers" },
                   { title: " Half of SE Tax", val: "7.65% deduction", desc: "Above-the-line deduction" },

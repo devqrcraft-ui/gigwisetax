@@ -64,7 +64,7 @@ export default function HowWeCalculatePage() {
           <div className="formula-box">
             <div className="formula-title">IRS Schedule SE Formula</div>
             <div className="formula-line">1. SE Base = Net Profit × <span>0.9235</span></div>
-            <div className="formula-line">2. SE Tax = SE Base × <span>0.153</span></div>
+            <div className="formula-line">2. SE Tax = <span>12.4%</span> × min(SE Base, <span>$184,500</span>) + <span>2.9%</span> × SE Base</div>
             <div className="formula-line">3. SE Deduction = SE Tax × <span>0.5</span> (deducted on Form 1040)</div>
             <div className="formula-note">
               Source: <a href="https://www.irs.gov/forms-pubs/about-schedule-se-form-1040" target="_blank" rel="noopener noreferrer" className="source-link">IRS Schedule SE (Form 1040)</a>.
@@ -75,7 +75,7 @@ export default function HowWeCalculatePage() {
           <div className="example-box">
             <div className="example-title">Example: DoorDash driver, $40,000 net profit</div>
             <div className="ex-row"><span className="ex-label">SE Base</span><span className="ex-val">$40,000 × 0.9235 = $36,940</span></div>
-            <div className="ex-row"><span className="ex-label">SE Tax</span><span className="ex-val">$36,940 × 0.153 = $5,652</span></div>
+            <div className="ex-row"><span className="ex-label">SE Tax</span><span className="ex-val">$36,940 × 15.3% = $5,652 (below the Social Security cap)</span></div>
             <div className="ex-row"><span className="ex-label">SE Deduction (half)</span><span className="ex-val">$5,652 × 0.5 = $2,826</span></div>
           </div>
         </div>
@@ -93,13 +93,13 @@ export default function HowWeCalculatePage() {
             </thead>
             <tbody>
               {[
-                ['10%','$0 – $11,925','$0 – $23,850'],
-                ['12%','$11,926 – $48,475','$23,851 – $96,950'],
-                ['22%','$48,476 – $103,350','$96,951 – $206,700'],
-                ['24%','$103,351 – $197,300','$206,701 – $394,600'],
-                ['32%','$197,301 – $250,525','$394,601 – $501,050'],
-                ['35%','$250,526 – $626,350','$501,051 – $751,600'],
-                ['37%','Over $626,350','Over $751,600'],
+                ['10%','$0 – $12,400','$0 – $24,800'],
+                ['12%','$12,401 – $50,400','$24,801 – $100,800'],
+                ['22%','$50,401 – $105,700','$100,801 – $211,400'],
+                ['24%','$105,701 – $201,775','$211,401 – $403,550'],
+                ['32%','$201,776 – $256,225','$403,551 – $512,450'],
+                ['35%','$256,226 – $640,600','$512,451 – $768,700'],
+                ['37%','Over $640,600','Over $768,700'],
               ].map(([rate,single,married])=>(
                 <tr key={rate}>
                   <td className="td-rate">{rate}</td>
@@ -117,7 +117,7 @@ export default function HowWeCalculatePage() {
             </div>
           </div>
           <p style={{fontSize:12,color:'rgba(255,255,255,0.5)',marginTop:8,lineHeight:1.6}}>
-            Note: Our calculator uses a simplified effective rate based on the most common bracket for the entered income level.
+            Note: Our calculator applies the 2026 progressive federal brackets, the standard deduction, and the Social Security wage cap. State tax is estimated as a flat rate on taxable income, so results are planning estimates, not a tax return.
             Actual federal tax depends on additional deductions, credits, and other income.
           </p>
         </div>

@@ -1,19 +1,20 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import Link from 'next/link'
 
 const PLATFORMS = [
-  { name: 'DoorDash',    searches: '400K/mo', href: '/doordash'     },
-  { name: 'Uber',        searches: '300K/mo', href: '/uber'         },
-  { name: 'Etsy',        searches: '200K/mo', href: '/etsy'         },
-  { name: 'OnlyFans',    searches: '150K/mo', href: '/onlyfans'     },
-  { name: 'Instacart',   searches: '150K/mo', href: '/instacart'    },
-  { name: 'Airbnb',      searches: '120K/mo', href: '/airbnb'       },
-  { name: 'Amazon Flex', searches: '80K/mo',  href: '/amazon-flex'  },
-  { name: 'Lyft',        searches: '70K/mo',  href: '/lyft'         },
-  { name: 'Grubhub',     searches: '60K/mo',  href: '/grubhub'      },
-  { name: 'Walmart Spark',searches: '55K/mo', href: '/walmart-spark' },
+  { name: 'DoorDash',    searches: 'Free', href: '/doordash'     },
+  { name: 'Uber',        searches: 'Free', href: '/uber'         },
+  { name: 'Etsy',        searches: 'Free', href: '/etsy'         },
+  { name: 'OnlyFans',    searches: 'Free', href: '/onlyfans'     },
+  { name: 'Instacart',   searches: 'Free', href: '/instacart'    },
+  { name: 'Airbnb',      searches: 'Free', href: '/airbnb'       },
+  { name: 'Amazon Flex', searches: 'Free',  href: '/amazon-flex'  },
+  { name: 'Lyft',        searches: 'Free',  href: '/lyft'         },
+  { name: 'Grubhub',     searches: 'Free',  href: '/grubhub'      },
+  { name: 'Walmart Spark',searches: 'Free', href: '/walmart-spark' },
 ]
 
 const STATES = [
@@ -71,9 +72,9 @@ function QuarterlyEstimator() {
     'Massachusetts':5.0,'Pennsylvania':3.07,'Ohio':3.99,'Michigan':4.25,
     'Minnesota':9.85,'Wisconsin':7.65,'Maryland':5.75,'Other state (avg 5%)':5.0,
   };
-  const STD = { single:15000, married:30000, hoh:22500 };
-  const BRACKETS_S = [{max:11925,r:.10},{max:48475,r:.12},{max:103350,r:.22},{max:197300,r:.24},{max:Infinity,r:.32}];
-  const BRACKETS_M = [{max:23850,r:.10},{max:96950,r:.12},{max:206700,r:.22},{max:394600,r:.24},{max:Infinity,r:.32}];
+  const STD = { single:16100, married:32200, hoh:24150 };
+  const BRACKETS_S = [{max:12400,r:.10},{max:50400,r:.12},{max:105700,r:.22},{max:201775,r:.24},{max:256225,r:.32},{max:640600,r:.35},{max:Infinity,r:.37}];
+  const BRACKETS_M = [{max:24800,r:.10},{max:100800,r:.12},{max:211400,r:.22},{max:403550,r:.24},{max:512450,r:.32},{max:768700,r:.35},{max:Infinity,r:.37}];
 
   function fedTax(taxable) {
     const br = qFiling === 'married' ? BRACKETS_M : BRACKETS_S;
@@ -84,10 +85,10 @@ function QuarterlyEstimator() {
 
   const w = parseFloat(weekly) || 0;
   const annual = w * 52;
-  const seTax = annual * 0.9235 * 0.153;
+  const seTax = Math.min(annual * 0.9235, 184500) * 0.124 + annual * 0.9235 * 0.029;
   const seDeduct = seTax / 2;
   const stateRate = (STATE_RATES[qState] ?? 5) / 100;
-  const taxable = Math.max(0, annual - seDeduct - (STD[qFiling] ?? 15000));
+  const taxable = Math.max(0, annual - seDeduct - (STD[qFiling] ?? 16100));
   const fed = fedTax(taxable);
   const state = taxable * stateRate;
   const total = seTax + fed + state;
@@ -118,7 +119,7 @@ function QuarterlyEstimator() {
               onChange={e=>setWeekly(e.target.value.replace(/[^0-9.]/g,''))}
               style={{...inp2,paddingLeft:28}} />
           </div>
-          {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString()}</p>}
+          {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString('en-US')}</p>}
         </div>
         <div>
           <label htmlFor="qe-state" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
@@ -140,8 +141,8 @@ function QuarterlyEstimator() {
         <>
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:12,padding:'16px 20px',marginBottom:16}}>
             <p style={{color:'#C8D8EC',fontSize:13,margin:'0 0 4px',opacity:.7}}>Estimated quarterly payment</p>
-            <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
-            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString()} (SE: ${Math.round(seTax).toLocaleString()} + Fed: ${Math.round(fed).toLocaleString()} + State: ${Math.round(state).toLocaleString()})</p>
+            <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString('en-US')}</p>
+            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString('en-US')} (SE: ${Math.round(seTax).toLocaleString('en-US')} + Fed: ${Math.round(fed).toLocaleString('en-US')} + State: ${Math.round(state).toLocaleString('en-US')})</p>
             {total < 1000 && <p style={{color:'#4ade80',fontSize:12,margin:'8px 0 0',fontWeight:600}}>Under $1,000 — quarterly payments likely not required.</p>}
             {total >= 1000 && <p style={{color:'#e8b84b',fontSize:12,margin:'8px 0 0',fontWeight:600}}>IRS requires quarterly payments when you expect to owe $1,000+.</p>}
           </div>
@@ -150,7 +151,7 @@ function QuarterlyEstimator() {
               <div key={d.q} style={{background:'#07111F',border: i === nextDeadlineIdx() ? '2px solid #e8b84b' : '1px solid #1a2d45',borderRadius:10,padding:'12px',textAlign:'center',position:'relative'}}>
                 {i === nextDeadlineIdx() && <div style={{position:'absolute',top:-10,left:'50%',transform:'translateX(-50%)',background:'#e8b84b',color:'#07111F',fontSize:10,fontWeight:800,padding:'2px 8px',borderRadius:4,whiteSpace:'nowrap'}}>NEXT DUE</div>}
                 <p style={{color:'#e8b84b',fontSize:11,fontWeight:700,margin:'0 0 4px'}}>{d.q}</p>
-                <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
+                <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString('en-US')}</p>
                 <p style={{color:'#C8D8EC',fontSize:10,margin:0,opacity:.6}}>Due {d.due}</p>
               </div>
             ))}
@@ -160,11 +161,11 @@ function QuarterlyEstimator() {
           </a>
         </>
       ) : (
-        <div style={{textAlign:'center',padding:'24px 0',color:'#C8D8EC',opacity:.5,fontSize:14}}>
+        <div style={{textAlign:'center',padding:'24px 0',color:'#C8D8EC',opacity:.8,fontSize:14}}>
           Enter your weekly earnings above to see your quarterly schedule.
         </div>
       )}
-      <p style={{color:'#C8D8EC',fontSize:12,margin:'14px 0 0',opacity:.55,lineHeight:1.6}}>
+      <p style={{color:'#C8D8EC',fontSize:12,margin:'14px 0 0',opacity:.8,lineHeight:1.6}}>
         Estimates only. Based on 2026 IRS brackets, standard deduction, and simplified state rate. Not tax advice.
       </p>
     </div>
@@ -182,6 +183,9 @@ export default function HomeClient() {
   }, [])
   const [platform, setPlatform] = useState('DoorDash')
   const [income, setIncome]   = useState('')
+  const [milesH1, setMilesH1] = useState('')
+  const [milesH2, setMilesH2] = useState('')
+  const [expenses, setExpenses] = useState('')
   const [stateCode, setStateCode] = useState('CA')
   const [filing, setFiling]   = useState('single')
   const [result, setResult]   = useState<any>(null)
@@ -217,15 +221,11 @@ export default function HomeClient() {
   const calculate = () => {
     const net = parseFloat(income) || 0
     if (!net) return
+    const deductions = (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
     const st = STATES.find(s => s.code === stateCode)
-    const seBase   = net * 0.9235
-    const seTax    = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const taxable  = net - seTax * 0.5
-    const fedRate  = filing === 'single' ? 0.22 : 0.12
-    const federal  = taxable * fedRate
-    const stateTax = taxable * (st?.rate ?? 0.05)
-    const total    = federal + seTax + stateTax
-    setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: net > 0 ? ((total / net) * 100).toFixed(1) : '0.0' })
+    // Єдине джерело правил: lib/tax-rules.ts (відрахування, прогресивні брекети, стеля SS). HOH = single, як у platform-калькуляторах.
+    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : 'single', deductions)
+    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1) })
   }
 
   /* ── shared style tokens ── */
@@ -373,15 +373,14 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={label}>▸ Business Miles Driven</label>
-                      <input style={inp} type="number" min="0" placeholder="e.g. 10,000 miles"/>
-                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
+                      <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder="Jan–Jun miles (72.5¢)" aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder="Jul–Dec miles (76¢)" aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec (IRS 2026 rates)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000"/>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000" aria-label="Other business expenses" value={expenses} onChange={e => setExpenses(e.target.value)}/>
                       </div>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
                     </div>
@@ -408,7 +407,7 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  <div style={{ ...btnDark, fontSize: 16, background: income ? "#4CAF50" : "#e8b84b", transition: "background 0.2s" }} onClick={calculate}> <span className="btn-arrow">Calculate My Gig Taxes <span className="arr">→</span></span></div>
+                  <button type="button" style={{ ...btnDark, fontSize: 16, background: income ? "#4CAF50" : "#e8b84b", transition: "background 0.2s", border: "none", fontFamily: "inherit" }} onClick={calculate}> <span className="btn-arrow">Calculate My Gig Taxes <span className="arr">→</span></span></button>
                 </div>
               </div>
 
@@ -536,27 +535,27 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={accent}/>
-                  <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> How We Compare to Competitors</span>
+                  <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> What You Get With GigWiseTax</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 480, borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
-                        {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
+                        {['Feature','GigWiseTax ✓'].map((h,i) => (
                           <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(232,184,75,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #e8b84b' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       {[
-                        [' Free to use',               true,  false, false, true ],
-                        [' No registration required',  true,  false, false, true ],
-                        [' All 50 States + DC included',    true,  false, false, false],
-                        ['▸ OnlyFans tax calculator',    true,  false, false, false],
-                        [' Google Calendar export',    true,  false, false, false],
-                        [' Interactive tool',          true,  false, false, false],
-                        [' No app required',           true,  false, false, true ],
-                        [' 100% private — calculations stay in your browser', true, false, false, false],
+                        [' Free to use',               true ],
+                        [' No registration required',  true ],
+                        [' All 50 States + DC included',    true ],
+                        ['▸ OnlyFans tax calculator',    true ],
+                        [' Google Calendar export',    true ],
+                        [' Interactive tool',          true ],
+                        [' No app required',           true ],
+                        [' 100% private — calculations stay in your browser', true ],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
@@ -615,7 +614,7 @@ export default function HomeClient() {
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
                     <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
-                      {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
+                      {['Platform','Cost','SE Tax Rate','State Tax','Competition'].map(h => (
                         <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
@@ -692,14 +691,14 @@ export default function HomeClient() {
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13,maxWidth:640}}>Each calculator includes SE tax (15.3%), federal brackets, state tax for all 50 states + DC, and quarterly payment schedule.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
-              { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$27,350 after tax'},
-              { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$37,435 after tax'},
-              { name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$21,161 after tax'},
-              { name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$44,322 after tax'},
-              { name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$25,154 after tax'},
-              { name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'$45k → ~$32k after tax'},
-              { name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$27k after tax'},
-              { name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$30k after tax'},
+              { name:'DoorDash',desc:'Mileage + SE tax + deductions',href:'/doordash',ex:'$40k → ~$30,107 after tax'},
+              { name:'Uber / Lyft',desc:'Rideshare SE tax calculator',href:'/uber',ex:'$50k → ~$39,539 after tax'},
+              { name:'Etsy',desc:'Seller income + Schedule C',href:'/etsy',ex:'$30k → ~$23,776 after tax'},
+              { name:'OnlyFans',desc:'Creator 1099 tax estimator',href:'/onlyfans',ex:'$60k → ~$47,011 after tax'},
+              { name:'Instacart',desc:'Shopper quarterly taxes',href:'/instacart',ex:'$35k → ~$27,518 after tax'},
+              { name:'Airbnb',desc:'Host Schedule E + SE tax',href:'/airbnb',ex:'Schedule E or C: estimate yours'},
+              { name:'Amazon Flex',desc:'Driver deductions + quarterly',href:'/amazon-flex',ex:'$38k → ~$30,573 after tax (no state tax)'},
+              { name:'Lyft',desc:'Driver SE tax + state',href:'/lyft',ex:'$42k → ~$33,562 after tax (no state tax)'},
             ].map((p,i)=>(
               <a key={i} href={p.href} className="plat-row" style={{background:'rgba(255,255,255,0.04)',border:'1px solid rgba(255,255,255,0.09)',borderRadius:8,padding:'16px',textDecoration:'none',display:'flex',alignItems:'center',gap:12,transition:'all .2s'}}
                 onMouseEnter={e=>{(e.currentTarget as HTMLElement).style.borderColor='rgba(232,184,75,0.5)';(e.currentTarget as HTMLElement).style.background='rgba(232,184,75,0.07)';}}
@@ -736,12 +735,12 @@ export default function HomeClient() {
           <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
-              {label:'DoorDash $40,000 — California',se:'$5,651',fed:'$4,200',state:'$2,800',net:'~$27,350',href:'/doordash/california'},
-              {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$5,500',state:'$0',net:'~$37,435',href:'/uber/texas'},
-              {label:'OnlyFans $60,000 — Florida',se:'$8,478',fed:'$7,200',state:'$0',net:'~$44,322',href:'/onlyfans/florida'},
-              {label:'Etsy $30,000 — New York',se:'$4,239',fed:'$2,800',state:'$1,800',net:'~$21,161',href:'/etsy/new-york'},
-              {label:'Instacart $35,000 — Illinois',se:'$4,946',fed:'$3,400',state:'$1,500',net:'~$25,154',href:'/instacart/illinois'},
-              {label:'Airbnb $55,000 — Washington',se:'$7,771',fed:'$6,300',state:'$0',net:'~$40,929',href:'/airbnb/washington'},
+              {label:'DoorDash $40,000 — California',se:'$5,652',fed:'$2,281',state:'$1,960',net:'~$30,107',href:'/doordash/california'},
+              {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$3,396',state:'$0',net:'~$39,539',href:'/uber/texas'},
+              {label:'OnlyFans $60,000 — Florida',se:'$8,478',fed:'$4,511',state:'$0',net:'~$47,011',href:'/onlyfans/florida'},
+              {label:'Etsy $30,000 — New York',se:'$4,239',fed:'$1,178',state:'$807',net:'~$23,776',href:'/etsy/new-york'},
+              {label:'Instacart $35,000 — Illinois',se:'$4,945',fed:'$1,723',state:'$813',net:'~$27,518',href:'/instacart/illinois'},
+              {label:'Airbnb $55,000 (Schedule C host) — Washington',se:'$7,771',fed:'$3,954',state:'$0',net:'~$43,275',href:'/airbnb/washington'},
             ].map((ex,i)=>(
               <a key={i} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '2px solid rgba(232,184,75,0.25)',padding:'16px 16px',textDecoration:'none',display:'block'}}>
                 <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.label}</div>
@@ -768,8 +767,8 @@ export default function HomeClient() {
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:20,marginLeft:13}}>Gig Worker Tax Questions 2026</h2>
           <div style={{display:'flex',flexDirection:'column' as const,gap:8}}>
             {[
-              ['How much tax do gig workers pay?','Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10–22% for most) plus state tax. Total effective rate is typically 25–35%. A DoorDash driver earning $40,000 in California pays roughly $12,000–$14,000 in total taxes.'],
-              ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS charges a 7% underpayment penalty on the amount owed.'],
+              ['How much tax do gig workers pay?','Gig workers pay SE tax (15.3%) on net earnings plus federal income tax (10–22% for most) plus state tax. Total effective rate is typically 25–35%. A DoorDash driver earning $40,000 in California pays roughly $9,000–$10,000 in total taxes.'],
+              ['What is the quarterly tax deadline for 2026?','Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027. Miss a deadline and the IRS can charge an underpayment penalty, calculated at its underpayment interest rate (7% per year, compounded daily, for Q4 2026) on the amount you underpaid.'],
               ['Can I deduct mileage as a DoorDash or Uber driver?','Yes — the 2026 IRS standard mileage rate is 72.5¢/mile through June 30, 76¢/mile from July 1 onward. A driver logging 15,000 business miles saves roughly $11,000-$11,400 in deductible expenses, which reduces SE tax and income tax.'],
               ['Do OnlyFans creators pay self-employment tax?','Yes. OnlyFans sends a 1099-NEC for earnings over $2,000. Creators pay 15.3% SE tax on net profit plus income tax. The platform fee (20%) is deductible, as are equipment, internet, and home office expenses.'],
               ['How do I calculate quarterly estimated taxes?','Take your expected annual net income, multiply by 0.9235 for the SE base, apply 15.3% for SE tax, add federal income tax estimate, divide total by 4. Our calculator does this automatically for all 50 states + DC.'],

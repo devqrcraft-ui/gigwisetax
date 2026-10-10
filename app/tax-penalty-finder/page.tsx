@@ -42,7 +42,7 @@ export default function TaxPenaltyFinder() {
     const sCorpSavings = inc > 60000 && entity !== 's-corp' ? Math.round((inc - 40000) * 0.153 * 0.5) : 0
     const overpaying   = Math.round(taxSaved + penalty)
     const tips: string[] = []
-    if (hasMileage && mi > 0) tips.push(`Track ${Math.round(mi).toLocaleString()} miles → save ${fmt(mileageDed * 0.28)}/yr`)
+    if (hasMileage && mi > 0) tips.push(`Track ${Math.round(mi).toLocaleString('en-US')} miles → save ${fmt(mileageDed * 0.28)}/yr`)
     if (homeOffice) tips.push(`Home office deduction → save up to ${fmt(homeOfficeDed * 0.28)}/yr`)
     if (phone) tips.push(`Phone/internet deduction → save ${fmt(phoneDed * 0.28)}/yr`)
     if (quarterly === false) tips.push(`Start quarterly payments → avoid ${fmt(penalty)} IRS penalty`)
@@ -67,7 +67,7 @@ export default function TaxPenaltyFinder() {
         <div style={hdr}>
           <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:6 }}>GIGWISETAX — FREE ANALYSIS</div>
           <div style={{ color:'#fff', fontSize:22, fontWeight:800 }}>Your Tax Penalty Report</div>
-          <div style={{ color:'rgba(255,255,255,.6)', fontSize:13, marginTop:4 }}>{platform} • ${parseFloat(income).toLocaleString()} income</div>
+          <div style={{ color:'rgba(255,255,255,.6)', fontSize:13, marginTop:4 }}>{platform} • ${parseFloat(income).toLocaleString('en-US')} income</div>
         </div>
         <div style={body}>
           <div style={{ background:'rgba(178,34,52,0.12)', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
@@ -181,10 +181,10 @@ export default function TaxPenaltyFinder() {
           {step === 3 && hasMileage && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2026</strong> — your biggest deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background: "#07111F"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#4ade80', fontWeight:600 }}>
-                 Potential deduction: ${(parseFloat(miles)*0.725).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.725*0.28).toLocaleString()} in taxes
+                 Potential deduction: ${(parseFloat(miles)*0.725).toLocaleString('en-US')} → saves ~${Math.round(parseFloat(miles)*0.725*0.28).toLocaleString('en-US')} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>

@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import { STATES, DEADLINES_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 
@@ -12,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `${s.name} 1099 Tax Calculator 2026 — No State Tax + Free SE Calculator`
-      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${(8852 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
+      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
     description: noTax
       ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
       : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
@@ -29,8 +30,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const rateStr = noStateTax ? '0%' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
   const stateRateText = noStateTax ? 'no state income tax' : `${rateStr} state income tax`
 
-  const net40k = Math.round(40000 * (1 - 0.153 * 0.9235 - 0.12 - (noStateTax ? 0 : state.rate)))
-  const net80k = Math.round(80000 * (1 - 0.153 * 0.9235 - 0.22 - (noStateTax ? 0 : state.rate)))
+  const net40k = estimateTax(40000, noStateTax ? 0 : state.rate).takeHome
+  const net80k = estimateTax(80000, noStateTax ? 0 : state.rate).takeHome
 
   return (
     <>
@@ -91,7 +92,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               }
             </p>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, margin: 0 }}>
-              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage ($0.725/mile in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
+              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
             </p>
           </div>
         </div>
@@ -111,10 +112,10 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
                   <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>{ex.label}</div>
                   <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.7 }}>
-                    SE tax (15.3%): ~${Math.round(ex.gross * 0.9235 * 0.153).toLocaleString()}<br/>
-                    Federal tax: ~${Math.round(ex.gross * (ex.gross > 44000 ? 0.22 : 0.12)).toLocaleString()}<br/>
-                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${Math.round(ex.gross * state.rate).toLocaleString()}`}<br/>
-                    <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString()}</strong>
+                    SE tax (15.3%): ~${estimateTax(ex.gross, 0).se.toLocaleString('en-US')}<br/>
+                    Federal tax: ~${estimateTax(ex.gross, 0).federal.toLocaleString('en-US')}<br/>
+                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTax(ex.gross, state.rate).state.toLocaleString('en-US')}`}<br/>
+                    <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString('en-US')}</strong>
                   </div>
                 </div>
               ))}

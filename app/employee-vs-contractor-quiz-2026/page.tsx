@@ -32,7 +32,7 @@ export default function EmployeeContractorQuizPage() {
       {/* ANSWER-FIRST */}
       <div style={{maxWidth:860,margin:'0 auto',padding:'32px 20px 0'}}>
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          Most gig platform workers — DoorDash, Uber, Instacart — are classified as <strong style={{color:'#e8b84b'}}>independent contractors</strong>. They receive a 1099-NEC, pay <strong style={{color:'#e8b84b'}}>15.3% SE tax</strong> on net earnings, and can deduct mileage at 72.5¢/mile. This quiz helps you understand your classification.
+          Most gig platform workers — DoorDash, Uber, Instacart — are classified as <strong style={{color:'#e8b84b'}}>independent contractors</strong>. They receive a 1099-NEC, pay <strong style={{color:'#e8b84b'}}>15.3% SE tax</strong> on net earnings, and can deduct mileage at 72.5¢–76¢/mile. This quiz helps you understand your classification.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
           Last updated: May 2026 · By the GigWiseTax Team
@@ -45,7 +45,7 @@ export default function EmployeeContractorQuizPage() {
             <li>Gig workers receive <strong>1099-NEC</strong> (not W-2) and must pay estimated taxes quarterly</li>
             <li>The IRS ABC test: free from control, outside usual business, independently established trade</li>
             <li>Net self-employment income of <strong>$400+</strong> triggers SE tax — no threshold exemption</li>
-            <li>Contractors can deduct <strong>72.5¢/mile</strong>, phone, equipment — employees generally cannot post-2017</li>
+            <li>Contractors can deduct <strong>72.5¢–76¢/mile</strong>, phone, equipment — employees generally cannot post-2017</li>
           </ul>
         </div>
       </div>

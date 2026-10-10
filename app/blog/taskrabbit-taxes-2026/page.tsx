@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'TaskRabbit Taxes 2026: $45K Income = $10,160 Tax Owed',
-  description: 'TaskRabbit Taskers on $45K owe $10,160 in 2026 taxes. Free calculator — mileage 72.5¢/mi, tools deductible. All 50 states.',
+  description: 'TaskRabbit Taskers on $45K owe $10,160 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tools deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/taskrabbit-taxes-2026' },
 }
 
@@ -47,7 +47,7 @@ export default function TaskRabbitTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              TaskRabbit Taskers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$45,000 net income</strong> in 2026: approximately $6,358 SE tax + $3,802 federal income tax = <strong style={{ color: '#e8edf8' }}>$10,160 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$2,540</strong>. Mileage at 72.5¢/mile and tool deductions under 100% bonus depreciation are the biggest write-offs for Taskers.
+              TaskRabbit Taskers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$45,000 net income</strong> in 2026: approximately $6,358 SE tax + $3,802 federal income tax = <strong style={{ color: '#e8edf8' }}>$10,160 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$2,540</strong>. Mileage at 72.5¢–76¢/mile and tool deductions under 100% bonus depreciation are the biggest write-offs for Taskers.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function TaskRabbitTaxes2026() {
               {[
                 '$45K net income = $10,160 total tax owed in 2026 ($2,540/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
-                'IRS mileage deduction: 72.5¢/mile — deduct every drive to job sites',
+                'IRS mileage deduction: 72.5¢–76¢/mile — deduct every drive to job sites',
                 'Tools and equipment: 100% bonus depreciation in 2026 — deduct full cost year one',
                 'TaskRabbit sends 1099-K for earnings over $20,000 across more than 200 transactions by January 31',
                 'TaskRabbit service fee (15%) charged to clients is not your deduction — track your net payout',
@@ -142,7 +142,7 @@ export default function TaskRabbitTaxes2026() {
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Mileage — 72.5¢/mile to job sites, hardware stores, supply runs',
+              'Mileage — 72.5¢–76¢/mile to job sites, hardware stores, supply runs',
               'Tools and equipment — drills, levels, ladders, cleaning supplies (100% bonus depreciation)',
               'Phone — business-use portion of your monthly plan',
               'Work clothing — uniforms or protective gear required for jobs',
@@ -173,7 +173,7 @@ export default function TaskRabbitTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Example: 6,000 business miles × $0.725 = <strong style={{ color: '#e8edf8' }}>$4,350 deduction</strong>. That saves roughly $665 in SE tax alone.
+            Example: 6,000 business miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8edf8' }}>$4,350 deduction</strong>. That saves roughly $665 in SE tax alone.
           </p>
         </section>
 

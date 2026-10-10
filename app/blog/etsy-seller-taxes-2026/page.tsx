@@ -33,7 +33,7 @@ export default function EtsyTaxGuide() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Etsy 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Etsy sellers pay 15.3% self-employment tax on net profit. On $30,000 net income: approximately $4,239 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$6,439 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,610</strong>. Set aside 22% of every Etsy payment. Materials, shipping, and Etsy listing fees are fully deductible.
+          Etsy sellers pay 15.3% self-employment tax on net profit. On $30,000 net income: approximately $4,239 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,610</strong>. Set aside 22% of every Etsy payment. Materials, shipping, and Etsy listing fees are fully deductible.
         </p>
       </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
@@ -62,7 +62,7 @@ export default function EtsyTaxGuide() {
             <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
               <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
               <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-                <li>Etsy sellers on <strong>$30,000</strong> net income owe approximately <strong>$6,439</strong> in total federal tax</li>
+                <li>Etsy sellers on <strong>$30,000</strong> net income owe approximately <strong>$5,417</strong> in total federal tax</li>
                 <li>Etsy sends <strong>1099-K</strong> if you process $20,000+ in payments across more than 200 transactions in 2026</li>
                 <li>Cost of goods sold, shipping supplies, and Etsy fees are <strong>fully deductible</strong></li>
                 <li>Home office deduction available if you use space exclusively for your Etsy business</li>
@@ -169,7 +169,7 @@ export default function EtsyTaxGuide() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px', transition:'border-color 0.2s' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
 

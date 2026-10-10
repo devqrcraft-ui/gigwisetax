@@ -37,7 +37,7 @@ export default function GrubhubVsDoorDashPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Grubhub vs DoorDash 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Both platforms classify drivers as independent contractors paying 15.3% SE tax. Grubhub at $35,000 net: <strong style={{ color:'#fff' }}>$7,750 total tax</strong> ($1,938/quarter). DoorDash at $40,000 net: <strong style={{ color:'#fff' }}>$8,852 total tax</strong> ($2,213/quarter). Mileage deduction at 72.5¢/mile applies equally to both.
+          Both platforms classify drivers as independent contractors paying 15.3% SE tax. Grubhub at $35,000 net: <strong style={{ color:'#fff' }}>$6,669 total tax</strong> ($1,667/quarter). DoorDash at $40,000 net: <strong style={{ color:'#fff' }}>$7,933 total tax</strong> ($1,983/quarter). Mileage deduction at 72.5¢–76¢/mile applies equally to both.
         </p>
       </div>
           <div style={{ display: 'flex', gap: 16 }}>
@@ -46,7 +46,7 @@ export default function GrubhubVsDoorDashPost() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            GrubHub and DoorDash drivers pay identical SE tax rates in 2026 — 15.3% on 92.35% of net profit. On $35,000, both owe $7,750 before deductions. Both platforms now use the $2,000 1099-NEC threshold under OBBBA 2026. Mileage at 72.5¢/mile is the primary deduction for both.
+            GrubHub and DoorDash drivers pay identical SE tax rates in 2026 — 15.3% on 92.35% of net profit. On $35,000, both owe $6,669 before deductions. Both platforms now use the $2,000 1099-NEC threshold under OBBBA 2026. Mileage at 72.5¢–76¢/mile is the primary deduction for both.
           </p>
         </section>
         <section id="key-takeaways">
@@ -54,9 +54,9 @@ export default function GrubhubVsDoorDashPost() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
           <li>Both platforms: 15.3% SE tax on 92.35% of net profit — same calculation</li>
-          <li>$35K income = $7,750 SE tax = $1,938 per quarter on both platforms</li>
+          <li>$35K income = $6,669 SE tax = $1,667 per quarter on both platforms</li>
           <li>Both use $2,000 1099-NEC threshold in 2026 under OBBBA</li>
-          <li>Mileage at 72.5¢/mile applies equally to GrubHub and DoorDash</li>
+          <li>Mileage at 72.5¢–76¢/mile applies equally to GrubHub and DoorDash</li>
           <li>If you drive both: combine miles in one mileage log — separate income on Schedule C</li>
             </ul>
           </div>
@@ -89,7 +89,7 @@ export default function GrubhubVsDoorDashPost() {
               <li>Both Grubhub and DoorDash classify drivers as <strong>1099 contractors</strong> — same 15.3% SE tax</li>
               <li>Grubhub pays weekly via <strong>direct deposit</strong>; DoorDash offers <strong>Fast Pay</strong> daily for $1.99</li>
               <li>Both send <strong>1099-NEC</strong> for earnings $2,000+ in 2026</li>
-              <li>Mileage at <strong>72.5¢/mile</strong> is the largest deduction for both platforms</li>
+              <li>Mileage at <strong>72.5¢–76¢/mile</strong> is the largest deduction for both platforms</li>
               <li>Tips up to <strong>$25,000</strong> are federally deductible from both platforms under OBBBA 2026</li>
             </ul>
           </div>
@@ -109,7 +109,7 @@ export default function GrubhubVsDoorDashPost() {
             {[
               ['Worker Classification', '1099 Contractor', '1099 Contractor'],
               ['SE Tax Rate', '15.3%', '15.3%'],
-              ['Mileage Deduction 2026', '72.5¢/mile', '72.5¢/mile'],
+              ['Mileage Deduction 2026', '72.5¢–76¢/mile', '72.5¢–76¢/mile'],
               ['1099 Form Type', '1099-NEC', '1099-NEC'],
               ['1099 Threshold', '$2,000+', '$2,000+'],
               ['Quarterly Tax Req.', 'If owe $1,000+', 'If owe $1,000+'],

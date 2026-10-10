@@ -315,7 +315,7 @@ const STATES = [
   }
 ]
 
-const DEDUCTIONS = [" Mileage ($0.725/mile)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
+const DEDUCTIONS = [" Mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)"," Phone & data plan"," Insulated delivery bags"," Vehicle maintenance"," Gig apps & software"," Home office (if applicable)"]
 
 
 export async function generateMetadata({ params }: { params: Promise<{ state: string }> }): Promise<Metadata> {
@@ -325,7 +325,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
   return {
     title: `${PLATFORM_NAME} Tax Calculator — ${s.name} 2026 | GigWiseTax`,
-    description: `Grubhub ${s.name} 2026: $35K net = ~$4,944 SE tax + $2,806 fed. ${rateStr}. Quarterly: ~$1,938. Free calculator, no signup.`,
+    description: `Grubhub ${s.name} 2026: $35K net = ~$4,945 SE tax + $1,723 fed. ${rateStr}. Quarterly: ~$1,667. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/grubhub/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -382,7 +382,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
           { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
-          { label: 'Mileage Deduction', value: '$0.725/mi', note: '2026 IRS Rate' },
+          { label: 'Mileage Deduction', value: '72.5¢ Jan–Jun / 76¢ Jul–Dec', note: '2026 IRS rates' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)', marginBottom: 6 }}>{c.label}</div>
@@ -422,11 +422,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               const total = se + st + fed
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString()}</td>
-                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString()}</td>}
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString()}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString('en-US')}</td>
+                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString('en-US')}</td>}
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString('en-US')}</td>
                 </tr>
               )
             })}

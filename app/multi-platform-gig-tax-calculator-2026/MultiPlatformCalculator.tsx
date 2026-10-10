@@ -4,24 +4,24 @@ import Link from 'next/link';
 
 // 2026 federal brackets
 const BRACKETS_SINGLE = [
-  { max: 11925, rate: 0.10 },
-  { max: 48475, rate: 0.12 },
-  { max: 103350, rate: 0.22 },
-  { max: 197300, rate: 0.24 },
-  { max: 250525, rate: 0.32 },
-  { max: 626350, rate: 0.35 },
+  { max: 12400, rate: 0.10 },
+  { max: 50400, rate: 0.12 },
+  { max: 105700, rate: 0.22 },
+  { max: 201775, rate: 0.24 },
+  { max: 256225, rate: 0.32 },
+  { max: 640600, rate: 0.35 },
   { max: Infinity, rate: 0.37 },
 ];
 const BRACKETS_MFJ = [
-  { max: 23850, rate: 0.10 },
-  { max: 96950, rate: 0.12 },
-  { max: 206700, rate: 0.22 },
-  { max: 394600, rate: 0.24 },
-  { max: 501050, rate: 0.32 },
-  { max: 751600, rate: 0.35 },
+  { max: 24800, rate: 0.10 },
+  { max: 100800, rate: 0.12 },
+  { max: 211400, rate: 0.22 },
+  { max: 403550, rate: 0.24 },
+  { max: 512450, rate: 0.32 },
+  { max: 768700, rate: 0.35 },
   { max: Infinity, rate: 0.37 },
 ];
-const STD_DEDUCTION = { single: 15000, married: 30000, hoh: 22500 };
+const STD_DEDUCTION = { single: 16100, married: 32200, hoh: 24150 };
 
 const STATE_TAXES: Record<string, number> = {
   'No state tax (AK, FL, NV, NH, SD, TN, TX, WA, WY)': 0,
@@ -104,7 +104,7 @@ export default function MultiPlatformCalculator() {
     if (net === 0) return null;
 
     const seTaxBase = net * 0.9235;
-    const seTax     = seTaxBase * 0.153;
+    const seTax = Math.min(seTaxBase, 184500) * 0.124 + seTaxBase * 0.029;
     const seDeduct  = seTax / 2;
     const stdDeduct = STD_DEDUCTION[filing];
     const taxable   = Math.max(0, net - seDeduct - stdDeduct);
@@ -200,7 +200,7 @@ export default function MultiPlatformCalculator() {
                 />
               </div>
               <p style={{ color: '#C8D8EC', fontSize: '12px', margin: '6px 0 0', opacity: 0.6 }}>
-                Mileage: 72.5¢/mile × business miles driven
+                Mileage: 72.5¢–76¢/mile × business miles driven
               </p>
             </div>
           </div>

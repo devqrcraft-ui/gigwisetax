@@ -111,7 +111,7 @@ export default function MileageRate2026Post() {
           <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>IRS Standard Mileage Rates 2020–2026</div>
             {[
-              ['2026', '72.5¢/mile', true],
+              ['2026', '72.5¢–76¢/mile', true],
               ['2025', '70.0¢/mile', false],
               ['2024', '67.0¢/mile', false],
               ['2023', '65.5¢/mile', false],
@@ -129,7 +129,7 @@ export default function MileageRate2026Post() {
 
           <h2 id="how-much-save" style={h2}>How Much Can You Save? (By Miles Driven)</h2>
           <div style={{ background: '#07111F', border: '1px solid #d8dce6', borderRadius: 6, overflow: 'hidden', marginBottom: 20 }}>
-            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (72.5¢/mile, 2026)</div>
+            <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Mileage Deduction Calculator (72.5¢–76¢/mile, 2026)</div>
             {[
               ['5,000 miles', '$3,625', '$1,087'],
               ['10,000 miles', '$7,250', '$2,175'],

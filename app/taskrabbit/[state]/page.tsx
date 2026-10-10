@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -16,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `TaskRabbit ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `TaskRabbit ${s.name} Taxes 2026 — $45K Earner Owes $${(10160 + Math.round(45000 * s.rate)).toLocaleString()} Total`,
-    description: `TaskRabbit ${s.name} 2026: $45K net = ~$6,357 SE tax + $3,800 fed. ${stateStr}. Quarterly: ~$2,540. Free calculator, no signup.`,
+      : `TaskRabbit ${s.name} Taxes 2026 — $45K Earner Owes $${estimateTax(45000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `TaskRabbit ${s.name} 2026: $45K net = ~$${estimateTax(45000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(45000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(45000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', taskrabbit 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }

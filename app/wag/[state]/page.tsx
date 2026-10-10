@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -15,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Wag ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Wag ${s.name} Taxes 2026 — $20K Earner Owes $${(3185 + Math.round(20000 * s.rate)).toLocaleString()} Total`,
-    description: `Wag ${s.name} 2026: $20K net = ~$2,826 SE tax + $359 fed. ${stateStr}. Quarterly: ~$796. Free calculator, no signup.`,
+      : `Wag ${s.name} Taxes 2026 — $20K Earner Owes $${estimateTax(20000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `Wag ${s.name} 2026: $20K net = ~$${estimateTax(20000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(20000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(20000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', wag dog walker taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -76,7 +77,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Wag Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Wag walkers in ' + state.name + ' earning $20,000 net owe approximately $' + (3185 + Math.round(20000 * state.rate)).toLocaleString() + ' total — $2,826 self-employment tax (15.3%) + $359 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round((3185 + Math.round(20000 * state.rate)) / 4).toLocaleString() + '. Wag pays through Stripe Express, not directly — your 1099 comes from Stripe if you meet the reporting threshold.'}
+              {'Wag walkers in ' + state.name + ' earning $20,000 net owe approximately $' + estimateTax(20000, state.rate).total.toLocaleString('en-US') + ' total — $2,826 self-employment tax (15.3%) + $359 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(20000, state.rate).total / 4).toLocaleString('en-US') + '. Wag pays through Stripe Express, not directly — your 1099 comes from Stripe if you meet the reporting threshold.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>

@@ -2,16 +2,16 @@ import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed',
-  description: 'Uber Eats drivers on $35K owe $7,750 in self-employment tax in 2026. Free calculator — mileage 72.5¢/mi. How to file, deduct, and save.',
+  title: 'Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed',
+  description: 'Uber Eats drivers on $35K owe $6,669 in self-employment tax in 2026. Free calculator — mileage 72.5¢–76¢/mi. How to file, deduct, and save.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber Eats driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Uber Eats driver earning $35,000 owes approximately $7,750 in self-employment tax in 2026. This covers 15.3% SE tax on 92.35% of net profit after deductions."}},{"@type":"Question","name":"What is the self-employment tax rate for Uber Eats in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% — 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare. You deduct half of SE tax from gross income."}},{"@type":"Question","name":"Can Uber Eats drivers deduct mileage in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS standard mileage rate is 72.5 cents per mile. Track every delivery mile from the moment you go online to the moment you go offline."}},{"@type":"Question","name":"Does Uber Eats send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Uber Eats sends a 1099-K if you earn over $20,000 across more than 200 transactions, or a 1099-NEC for certain other payments. Either way, all income is taxable and must be reported."}},{"@type":"Question","name":"What deductions can Uber Eats drivers claim in 2026?","acceptedAnswer":{"@type":"Answer","text":"Top deductions include mileage at 72.5¢/mile, phone bill (business portion), insulated delivery bags, hot bags, and half of your self-employment tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as an Uber Eats driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. Due dates in 2026 are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What is the Uber Eats tax rate by state?","acceptedAnswer":{"@type":"Answer","text":"Federal SE tax applies to all drivers. State income tax varies: California adds up to 13.3%, Texas and Florida have no state income tax, New York adds up to 10.9%."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber Eats driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Uber Eats driver earning $35,000 owes approximately $4,945 in self-employment tax in 2026. This covers 15.3% SE tax on 92.35% of net profit after deductions."}},{"@type":"Question","name":"What is the self-employment tax rate for Uber Eats in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% — 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare. You deduct half of SE tax from gross income."}},{"@type":"Question","name":"Can Uber Eats drivers deduct mileage in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS standard mileage rate is 72.5 cents per mile. Track every delivery mile from the moment you go online to the moment you go offline."}},{"@type":"Question","name":"Does Uber Eats send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Uber Eats sends a 1099-K if you earn over $20,000 across more than 200 transactions, or a 1099-NEC for certain other payments. Either way, all income is taxable and must be reported."}},{"@type":"Question","name":"What deductions can Uber Eats drivers claim in 2026?","acceptedAnswer":{"@type":"Answer","text":"Top deductions include mileage at 72.5¢/mile, phone bill (business portion), insulated delivery bags, hot bags, and half of your self-employment tax."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as an Uber Eats driver?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. Due dates in 2026 are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What is the Uber Eats tax rate by state?","acceptedAnswer":{"@type":"Answer","text":"Federal SE tax applies to all drivers. State income tax varies: California adds up to 13.3%, Texas and Florida have no state income tax, New York adds up to 10.9%."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Eats Driver Taxes 2026","item":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}}'
 
 export default function Page() {
   return (
@@ -30,7 +30,7 @@ export default function Page() {
             <span>Uber Eats Taxes 2026</span>
           </nav>
           <h1 itemProp="headline" style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}>
-            Uber Eats Driver Taxes 2026: $35K Income = $7,750 Tax Owed
+            Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed
           </h1>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -41,7 +41,7 @@ export default function Page() {
 
         <section id="answer-first">
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#C8D8EC', marginBottom: 24 }}>
-            An Uber Eats driver earning <strong style={{ color: '#e8edf8' }}>$35,000 in 2026 owes approximately $7,750 in self-employment tax</strong> before deductions. After claiming mileage at 72.5¢/mile, your phone bill, and delivery equipment, taxable income drops — most full-time drivers reduce their bill by <strong style={{ color: '#e8edf8' }}>$1,500–$3,000</strong>. This guide shows the exact math.
+            An Uber Eats driver earning <strong style={{ color: '#e8edf8' }}>$35,000 in 2026 owes approximately $4,945 in self-employment tax</strong> before deductions. After claiming mileage at 72.5¢–76¢/mile, your phone bill, and delivery equipment, taxable income drops — most full-time drivers reduce their bill by <strong style={{ color: '#e8edf8' }}>$1,500–$3,000</strong>. This guide shows the exact math.
           </p>
         </section>
 
@@ -50,7 +50,7 @@ export default function Page() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginBottom: 12, marginTop: 0 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
               <li>SE tax rate is 15.3% applied to 92.35% of net profit — not gross earnings</li>
-              <li>$35K income = ~$7,750 SE tax; $40K = ~$8,852 before deductions</li>
+              <li>$35K income = ~$6,669 SE tax; $40K = ~$7,933 before deductions</li>
               <li>2026 mileage rate: 72.5¢ per mile — track every delivery mile</li>
               <li>Quarterly payments due April 15, June 15, Sept 15, Jan 15 — miss one and pay a ~7% annualized underpayment penalty</li>
               <li>1099-K threshold is $20,000 across more than 200 transactions — you may not receive one below that level, but the income is still taxable</li>
@@ -125,13 +125,13 @@ export default function Page() {
                 </tr>
                 <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$35,000</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$7,750</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,938</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$6,669</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>$1,667</td>
                 </tr>
                 <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
                   <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$40,000</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$8,852</td>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$2,213</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$7,933</td>
+                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>$1,983</td>
                 </tr>
               </tbody>
             </table>
@@ -149,7 +149,7 @@ export default function Page() {
             Business deductions reduce your net profit, which directly cuts your SE tax. These are the deductions the IRS allows for delivery drivers.
           </p>
           <ul style={{ paddingLeft: 20, lineHeight: 1.9, fontSize: 14, marginBottom: 16 }}>
-            <li><strong style={{ color: '#e8edf8' }}>Mileage:</strong> 72.5¢/mile for every business mile driven in 2026</li>
+            <li><strong style={{ color: '#e8edf8' }}>Mileage:</strong> 72.5¢–76¢/mile for every business mile driven in 2026</li>
             <li><strong style={{ color: '#e8edf8' }}>Phone:</strong> the business-use percentage of your monthly bill</li>
             <li><strong style={{ color: '#e8edf8' }}>Insulated bags and hot bags:</strong> full cost if used only for deliveries</li>
             <li><strong style={{ color: '#e8edf8' }}>Half of SE tax:</strong> deducted directly from gross income on Schedule 1</li>
@@ -261,11 +261,11 @@ export default function Page() {
             Frequently Asked Questions
           </h2>
           {[
-            { q: 'How much tax does an Uber Eats driver pay in 2026?', a: 'An Uber Eats driver earning $35,000 owes approximately $7,750 in self-employment tax in 2026. After mileage and other deductions, most drivers reduce this by $1,000–$2,000.' },
+            { q: 'How much tax does an Uber Eats driver pay in 2026?', a: 'An Uber Eats driver earning $35,000 owes approximately $4,945 in self-employment tax in 2026. After mileage and other deductions, most drivers reduce this by $1,000–$2,000.' },
             { q: 'What is the self-employment tax rate for Uber Eats in 2026?', a: 'The self-employment tax rate is 15.3% — 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare. It applies to 92.35% of net profit.' },
             { q: 'Can Uber Eats drivers deduct mileage in 2026?', a: 'Yes. The 2026 IRS standard mileage rate is 72.5 cents per mile. Track every mile from the moment you go online.' },
             { q: 'Does Uber Eats send a 1099 form?', a: 'Uber Eats sends a 1099-K if you earn over $20,000 across more than 200 transactions, or a 1099-NEC for certain other payments. All income is taxable regardless of which form you receive.' },
-            { q: 'What deductions can Uber Eats drivers claim in 2026?', a: 'Top deductions include mileage at 72.5¢/mile, phone bill (business portion), insulated delivery bags, and half of your self-employment tax.' },
+            { q: 'What deductions can Uber Eats drivers claim in 2026?', a: 'Top deductions include mileage at 72.5¢–76¢/mile, phone bill (business portion), insulated delivery bags, and half of your self-employment tax.' },
             { q: 'Do I need to pay quarterly taxes as an Uber Eats driver?', a: 'Yes, if you expect to owe $1,000 or more. Due dates are April 15, June 15, September 15, and January 15.' },
             { q: 'What is the Uber Eats tax rate by state?', a: 'Federal SE tax applies everywhere. California adds up to 13.3%. Texas and Florida have no state income tax. New York adds up to 10.9%.' },
           ].map(({ q, a }) => (
@@ -280,7 +280,7 @@ export default function Page() {
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', marginBottom: 16 }}>Related Articles</h2>
           <ul style={{ paddingLeft: 20, lineHeight: 2, fontSize: 14 }}>
             <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash Driver Taxes 2026: Complete Guide</a></li>
-            <li><a href="/blog/lyft-driver-taxes-2026" style={{ color: '#e8b84b' }}>Lyft Driver Taxes 2026: $35K Income = $7,750 SE Tax</a></li>
+            <li><a href="/blog/lyft-driver-taxes-2026" style={{ color: '#e8b84b' }}>Lyft Driver Taxes 2026: $35K Income = $6,669 SE Tax</a></li>
             <li><a href="/blog/instacart-shopper-taxes-2026" style={{ color: '#e8b84b' }}>Instacart Shopper Taxes 2026: Full Breakdown</a></li>
             <li><a href="/blog/grubhub-taxes-2026" style={{ color: '#e8b84b' }}>GrubHub Driver Taxes 2026</a></li>
           </ul>

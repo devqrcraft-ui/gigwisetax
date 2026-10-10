@@ -3,7 +3,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
-  description: 'Gig workers on $35K owe $1,938/quarter in 2026. Four deadlines: Apr 15, Jun 16, Sep 15, Jan 15. Free IRS payment guide + calculator.',
+  description: 'Gig workers on $35K owe $1,667/quarter in 2026. Four deadlines: Apr 15, Jun 16, Sep 15, Jan 15. Free IRS payment guide + calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
   openGraph: {
     title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 quarterly deadlines: Q1 — April 15, Q2 — June 15, Q3 — September 15, Q4 — January 15, 2027. You must pay if you expect to owe $1,000 or more for the year."}},{"@type":"Question","name":"How much should a gig worker pay each quarter in 2026?","acceptedAnswer":{"@type":"Answer","text":"A gig worker earning $35,000 net owes roughly $1,938 per quarter — $7,750 total for the year. Set aside 25-30% of each payment you receive to cover this."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (irs.gov/payments) — free, no account needed. Select Estimated Tax and tax year 2026. You can also use EFTPS for automatic scheduling."}},{"@type":"Question","name":"What is the safe harbor rule for quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay 100% of your 2025 tax liability (or 110% if your 2025 AGI exceeded $150,000). This guarantees no underpayment penalty regardless of your 2026 income."}},{"@type":"Question","name":"What happens if I miss a quarterly tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty — currently around 7% annualized on the amount you should have paid. The penalty applies per quarter, not just at year-end."}},{"@type":"Question","name":"Do I owe quarterly taxes if I made less than $400?","acceptedAnswer":{"@type":"Answer","text":"No. If your net self-employment income is under $400 for the year, you do not owe self-employment tax and do not need to make quarterly payments."}},{"@type":"Question","name":"Can I deduct mileage to reduce my quarterly payment?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS mileage rate is 72.5 cents per mile. A DoorDash driver with 500 delivery miles per month deducts $362.50 monthly, reducing their taxable income by $4,350 per year."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 quarterly deadlines: Q1 — April 15, Q2 — June 15, Q3 — September 15, Q4 — January 15, 2027. You must pay if you expect to owe $1,000 or more for the year."}},{"@type":"Question","name":"How much should a gig worker pay each quarter in 2026?","acceptedAnswer":{"@type":"Answer","text":"A gig worker earning $35,000 net owes roughly $1,667 per quarter — $6,669 total for the year. Set aside 25-30% of each payment you receive to cover this."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (irs.gov/payments) — free, no account needed. Select Estimated Tax and tax year 2026. You can also use EFTPS for automatic scheduling."}},{"@type":"Question","name":"What is the safe harbor rule for quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay 100% of your 2025 tax liability (or 110% if your 2025 AGI exceeded $150,000). This guarantees no underpayment penalty regardless of your 2026 income."}},{"@type":"Question","name":"What happens if I miss a quarterly tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty — currently around 7% annualized on the amount you should have paid. The penalty applies per quarter, not just at year-end."}},{"@type":"Question","name":"Do I owe quarterly taxes if I made less than $400?","acceptedAnswer":{"@type":"Answer","text":"No. If your net self-employment income is under $400 for the year, you do not owe self-employment tax and do not need to make quarterly payments."}},{"@type":"Question","name":"Can I deduct mileage to reduce my quarterly payment?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS mileage rate is 72.5 cents per mile. A DoorDash driver with 500 delivery miles per month deducts $362.50 monthly, reducing their taxable income by $4,350 per year."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Quarterly Taxes for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}]}'
 
@@ -53,7 +53,7 @@ export default function QuarterlyTaxesGuide() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,938 per quarter. Missing payments triggers a 7% underpayment penalty. Pay via IRS Direct Pay — free and takes under 5 minutes.
+            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,667 per quarter. Missing payments triggers a 7% underpayment penalty. Pay via IRS Direct Pay — free and takes under 5 minutes.
           </p>
         </section>
         <section id="key-takeaways">
@@ -61,7 +61,7 @@ export default function QuarterlyTaxesGuide() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
           <li>Threshold: owe $1,000+ annually → quarterly payments required</li>
-          <li>$35K gig income = $7,750 SE tax = $1,938 per quarter</li>
+          <li>$35K gig income = $6,669 SE tax = $1,667 per quarter</li>
           <li>Due dates: April 15 / June 15 / September 15 / January 15</li>
           <li>Safe harbor: pay 100% of last year's total tax to eliminate underpayment risk</li>
           <li>State estimated taxes also due on the same dates in most states</li>
@@ -73,7 +73,7 @@ export default function QuarterlyTaxesGuide() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A gig worker earning $35,000 net in 2026 owes roughly $7,750 in total tax — about $1,938 per quarter. Four deadlines apply: April 15, June 15, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
+            {'A gig worker earning $35,000 net in 2026 owes roughly $6,669 in total tax — about $1,667 per quarter. Four deadlines apply: April 15, June 15, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
           </p>
         </div>
 
@@ -82,7 +82,7 @@ export default function QuarterlyTaxesGuide() {
           <div style={{fontWeight:800, color:'#e8b84b', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
             <li>{'Pay quarterly if you expect to owe $1,000 or more in 2026 federal tax'}</li>
-            <li>{'On $35,000 net gig income: $7,750 total tax = $1,938 per quarter'}</li>
+            <li>{'On $35,000 net gig income: $6,669 total tax = $1,667 per quarter'}</li>
             <li>{'2026 deadlines: April 15 · June 15 · September 15 · January 15, 2027'}</li>
             <li>{'Safe harbor: pay 100% of your 2025 tax to avoid all penalties'}</li>
             <li>{'IRS Direct Pay is free — no account, no fee, instant confirmation'}</li>
@@ -131,9 +131,9 @@ export default function QuarterlyTaxesGuide() {
               </thead>
               <tbody>
                 {[
-                  {q:'Q1 2026', period:'Jan 1 – Mar 31', due:'April 15, 2026', amt:'$1,938'},
-                  {q:'Q2 2026', period:'Apr 1 – May 31', due:'June 15, 2026', amt:'$1,938'},
-                  {q:'Q3 2026', period:'Jun 1 – Aug 31', due:'September 15, 2026', amt:'$1,938'},
+                  {q:'Q1 2026', period:'Jan 1 – Mar 31', due:'April 15, 2026', amt:'$1,667'},
+                  {q:'Q2 2026', period:'Apr 1 – May 31', due:'June 15, 2026', amt:'$1,667'},
+                  {q:'Q3 2026', period:'Jun 1 – Aug 31', due:'September 15, 2026', amt:'$1,667'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)', fontWeight:600}}>{row.q}</td>
@@ -146,7 +146,7 @@ export default function QuarterlyTaxesGuide() {
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>Q4 2026</td>
                   <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.75)'}}>Sep 1 – Dec 31</td>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>January 15, 2027</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>$1,938</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>$1,667</td>
                 </tr>
               </tbody>
             </table>
@@ -195,7 +195,7 @@ export default function QuarterlyTaxesGuide() {
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$35,000 (avg)'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$4,945'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$2,805'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,938'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,667'}</td>
                 </tr>
               </tbody>
             </table>
@@ -298,7 +298,7 @@ export default function QuarterlyTaxesGuide() {
           <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
             <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $2,213 to $1,556 — saving $657 per quarter or $2,628 per year.'}
+              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $1,983 to $1,556 — saving $657 per quarter or $2,628 per year.'}
             </p>
           </div>
 
@@ -323,7 +323,7 @@ export default function QuarterlyTaxesGuide() {
             },
             {
               q:'How much does a gig worker on $35,000 pay per quarter?',
-              a:'A gig worker with $35,000 net income owes roughly $1,938 per quarter — $4,945 in SE tax plus $2,805 in federal income tax, split four ways.'
+              a:'A gig worker with $35,000 net income owes roughly $1,667 per quarter — $4,945 in SE tax plus $2,805 in federal income tax, split four ways.'
             },
             {
               q:'What is the safe harbor rule for quarterly taxes?',

@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -16,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `DoorDash ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `DoorDash ${s.name} Taxes 2026 — $40K Earner Owes $${(8852 + Math.round(40000 * s.rate)).toLocaleString()} Total`,
-    description: `DoorDash ${s.name} 2026: $40K net = ~$5,652 SE tax + $3,200 fed. ${stateStr}. Quarterly: ~$2,213. Free calculator, no signup.`,
+      : `DoorDash ${s.name} Taxes 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `DoorDash ${s.name} 2026: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(40000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(40000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -66,7 +67,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             on net profit plus federal income tax
             {noStateTax ? '.' : <span> and <strong style={{color:'#e8b84b'}}>{stateRateStr} {state.name} state tax</strong>.</span>}
             {' '}On <strong style={{color:'#e8b84b'}}>{'$40,000'}</strong> net income a DoorDash driver owes roughly{' '}
-            <strong style={{color:'#e8b84b'}}>{'$8,852'}</strong> total — about <strong style={{color:'#e8b84b'}}>{'$2,213'}</strong> per quarter.
+            <strong style={{color:'#e8b84b'}}>{'$7,933'}</strong> total — about <strong style={{color:'#e8b84b'}}>{'$1,983'}</strong> per quarter.
           </p>
         </div>
 
@@ -76,9 +77,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>{'DoorDash drivers on $40K net owe ~$8,852 in total 2026 taxes'}</li>
+            <li>{'DoorDash drivers on $40K net owe ~$7,933 in total 2026 taxes'}</li>
             <li>{'Self-employment tax is 15.3% on net profit — paid entirely by you'}</li>
-            <li>{'Mileage deduction: 72.5¢/mile — 10,000 miles = $7,250 deduction'}</li>
+            <li>{'Mileage deduction: 72.5¢–76¢/mile — 10,000 miles = $7,250 deduction'}</li>
             <li>{noStateTax ? state.name + ' has no state income tax — federal + SE tax only' : state.name + ' state tax up to ' + stateRateStr + ' — file state quarterly payments too'}</li>
             <li>{'Tip income up to $25,000 is federally deductible in 2026'}</li>
           </ul>
@@ -117,7 +118,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <li>On $40K net: SE tax $5,652 + federal ~$3,200 + CA state ~$1,700 = <strong style={{color:'#e8b84b'}}>~$10,552 total</strong></li>
               <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
               <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 16, Sep 15, Jan 15</strong></li>
-              <li>Mileage deduction 72.5¢/mile reduces both federal and CA taxable income</li>
+              <li>Mileage deduction 72.5¢–76¢/mile reduces both federal and CA taxable income</li>
             </ul>
             <blockquote style={{borderLeft:'3px solid #B22234',padding:'10px 14px',margin:'12px 0 0',background:'rgba(178,34,52,0.05)',borderRadius:'0 4px 4px 0'}}>
               <p style={{margin:0,fontSize:13,color:'rgba(255,255,255,0.7)',fontStyle:'italic',lineHeight:1.7}}>"App-based drivers who work under Proposition 22 are independent contractors and must pay self-employment tax on net earnings."</p>

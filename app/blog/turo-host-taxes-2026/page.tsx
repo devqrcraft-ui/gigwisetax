@@ -25,7 +25,7 @@ export default function BlogPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Turo 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Turo hosts pay 15.3% self-employment tax if renting is a business activity. On $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Depreciation, insurance, maintenance, and cleaning fees are fully deductible.
+          Turo hosts pay 15.3% self-employment tax if renting is a business activity. On $50,000 net income: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Depreciation, insurance, maintenance, and cleaning fees are fully deductible.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>Turo hosts report rental income on Schedule C (active) or Schedule E (passive). Deductions dramatically reduce your tax bill. Here is everything for 2026.</p>
@@ -33,7 +33,7 @@ export default function BlogPost() {
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>Turo hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
+          <li>Turo hosts on <strong>$50,000</strong> net income owe approximately <strong>$10,461</strong> in total federal tax</li>
           <li>Vehicle depreciation is the <strong>largest deduction</strong> — deduct business-use % of car value</li>
           <li>Insurance, maintenance, cleaning, and Turo fees are <strong>fully deductible</strong></li>
           <li>Turo sends <strong>1099-K</strong> if you process $20,000+ in payments across more than 200 transactions in 2026</li>
@@ -48,7 +48,7 @@ export default function BlogPost() {
           </blockquote>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Turo Host Tax Deductions 2026</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
-        {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage ($0.725/mile)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (
+        {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (
           <div key={t} style={card}><div style={{ fontWeight: 700, marginBottom: 4 }}>{t}</div><div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{d}</div></div>
         ))}
       </div>
@@ -93,7 +93,7 @@ export default function BlogPost() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
         </div>

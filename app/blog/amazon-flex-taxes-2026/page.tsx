@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' },
   title: 'Amazon Flex Taxes 2026: $40K = $5,652 SE Tax + Deductions',
-  description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢/mile), quarterly payments, and top deductions.',
+  description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢–76¢/mile), quarterly payments, and top deductions.',
 }
 
 export default function AmazonFlexTaxesBlogPost() {
@@ -20,7 +20,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does Amazon Flex report income for taxes?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex issues a 1099-NEC to drivers earning over $2,000. Income is reported on Schedule C as self-employment income. Amazon does not withhold taxes — drivers pay quarterly estimated taxes."}},{"@type":"Question","name":"What is the tax rate for Amazon Flex drivers?","acceptedAnswer":{"@type":"Answer","text":"Amazon Flex drivers pay 15.3% self-employment tax plus income tax. After mileage deductions, most drivers pay an effective rate of 18-25% on net earnings. Use our calculator for your exact amount."}},{"@type":"Question","name":"Can Amazon Flex drivers deduct car expenses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Amazon Flex drivers can deduct either standard mileage (72.5 cents/mile in 2026) or actual car expenses. Most drivers get a larger deduction using standard mileage. Keep a mileage log for every delivery block."}}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Taxes 2026: Complete Guide for Drivers","item":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Taxes 2026: Complete Guide for Drivers","description":"How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢/mile), quarterly payments, and top deductions.","url":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Taxes 2026: Complete Guide for Drivers","description":"How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢–76¢/mile), quarterly payments, and top deductions.","url":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -40,7 +40,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Amazon Flex drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $3,200 federal income tax = <strong style={{ color:'#fff' }}>$8,852 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,213</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢/mile is the top deduction for Amazon Flex drivers.
+              Amazon Flex drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,281 federal income tax = <strong style={{ color:'#fff' }}>$7,933 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,983</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢–76¢/mile is the top deduction for Amazon Flex drivers.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
@@ -81,8 +81,8 @@ export default function AmazonFlexTaxesBlogPost() {
                     <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-              <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$8,852</strong> in total federal tax</li>
-              <li>2026 IRS mileage rate is <strong>72.5¢/mile</strong> — driving 20,000 miles = <strong>$14,500</strong> deduction</li>
+              <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$7,933</strong> in total federal tax</li>
+              <li>2026 IRS mileage rate is <strong>72.5¢–76¢/mile</strong> — driving 20,000 miles = <strong>$14,500</strong> deduction</li>
               <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
               <li>Amazon sends <strong>1099-NEC</strong> if you earn $2,000+ in 2026</li>
               <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
@@ -153,7 +153,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
-              25,000 miles × $0.725 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$17,500 deduction</strong><br />
+              25,000 miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$18,125 deduction</strong><br />
               At 30% effective rate → saves you approximately <strong style={{ color: '#e8b84b' }}>$5,438 in taxes</strong>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <h2 id="top-deductions" style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {[
-              { icon: '', title: 'Mileage (72.5¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
+              { icon: '', title: 'Mileage (72.5¢–76¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
               { icon: '', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
               { icon: '', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
               { icon: '', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },

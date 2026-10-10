@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -16,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Shipt ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Shipt ${s.name} Taxes 2026 — $30K Earner Owes $${(6448 + Math.round(30000 * s.rate)).toLocaleString()} Total`,
-    description: 'Shipt ' + s.name + ' 2026: $30K net = ~$4,239 SE tax + federal. ' + stateStr + '. Mileage 72.5¢/mile. Free calculator, no signup.',
+      : `Shipt ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: 'Shipt ' + s.name + ' 2026: $30K net = ~$4,239 SE tax + federal. ' + stateStr + '. Mileage 72.5¢–76¢/mile. Free calculator, no signup.',
     keywords: 'Shipt taxes ' + s.name + ', shipt 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/shipt/' + s.slug },
   }
@@ -61,7 +62,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
           <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.7 }}>
             Shipt shoppers in <strong>{state.name}</strong> pay <strong>15.3% self-employment tax</strong> on net earnings plus federal income tax.
             {noStateTax ? ' ' + state.name + ' has no state income tax.' : ' ' + state.name + ' adds ' + stateRateStr + ' state income tax.'}
-            {' '}On $30K net: ~$4,239 SE tax. Mileage at 72.5¢/mile saves $2,175+ per year.
+            {' '}On $30K net: ~$4,239 SE tax. Mileage at 72.5¢–76¢/mile saves $2,175+ per year.
           </p>
         </div>
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
@@ -69,7 +70,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
           <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
             <li>Shipt shoppers owe 15.3% SE tax on all net earnings</li>
             <li>$30K net income = ~$4,239 SE tax + federal income tax</li>
-            <li>Mileage deduction: 72.5¢/mile — 3,000 miles = $2,175 saved</li>
+            <li>Mileage deduction: 72.5¢–76¢/mile — 3,000 miles = $2,175 saved</li>
             <li>{noStateTax ? state.name + ' has no state income tax' : state.name + ' state tax: ' + stateRateStr + ' — make quarterly payments'}</li>
             <li>Quarterly deadlines 2026: Apr 15, Jun 16, Sep 15, Jan 15 2027</li>
           </ul>

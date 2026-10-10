@@ -31,7 +31,7 @@ export default function BlogPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $4,500 federal income tax = <strong style={{ color:'#fff' }}>$11,565 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,891</strong>. Set aside 28% of every payout. Depreciation and mortgage interest are your biggest deductions.
+          Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Set aside 28% of every payout. Depreciation and mortgage interest are your biggest deductions.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
@@ -46,7 +46,7 @@ export default function BlogPost() {
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>Airbnb hosts on <strong>$50,000</strong> net income owe approximately <strong>$11,565</strong> in total federal tax</li>
+          <li>Airbnb hosts on <strong>$50,000</strong> net income owe approximately <strong>$10,461</strong> in total federal tax</li>
           <li>The <strong>14-day rule</strong> — rent your home 14 days or fewer per year and income is <strong>100% tax-free</strong></li>
           <li>Mortgage interest, depreciation, cleaning, and repairs are <strong>fully deductible</strong> for rental portion</li>
           <li>Airbnb sends <strong>1099-K</strong> if you process $20,000+ in payments across more than 200 transactions in 2026</li>
@@ -158,7 +158,7 @@ export default function BlogPost() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
         </div>

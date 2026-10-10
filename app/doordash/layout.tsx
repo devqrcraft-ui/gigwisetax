@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'DoorDash Tax Calculator 2026 — $40K Net = $5,652 SE Tax',
-  description: 'DoorDash dashers on $40K net owe $5,652 SE tax + $3,200 federal in 2026. Mileage 72.5¢/mile saves $2,900+. Free calculator, all 50 states + DC, no signup.',
+  description: 'DoorDash dashers on $40K net owe $5,652 SE tax + $2,281 federal in 2026. Mileage 72.5¢–76¢/mile saves $2,900+. Free calculator, all 50 states + DC, no signup.',
   keywords: 'doordash tax calculator 2026, dasher self employment tax, doordash 1099 taxes, doordash quarterly taxes',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/doordash' },
   openGraph: {
     title: 'DoorDash Tax Calculator 2026 — $40K Net = $5,652 SE Tax',
-    description: 'DoorDash dashers on $40K net owe $5,652 SE tax + federal in 2026. Mileage 72.5¢/mile saves $2,900+. Free calculator, all 50 states + DC.',
+    description: 'DoorDash dashers on $40K net owe $5,652 SE tax + federal in 2026. Mileage 72.5¢–76¢/mile saves $2,900+. Free calculator, all 50 states + DC.',
     url: 'https://www.gigwisetax.com/doordash',
     siteName: 'GigWiseTax',
     type: 'website',
