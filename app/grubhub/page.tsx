@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
 import { DEADLINES_2026 } from '@/lib/data'
@@ -63,9 +64,9 @@ export default function GrubhubPage() {
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
     const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const taxable = net - seTax * 0.5
-    const fedRate = filing === 'single' ? 0.22 : 0.12
-    const federal = taxable * fedRate
+    const fl = filing === 'mfj' ? 'married' : 'single'
+    const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
+    const federal = federalTax(taxable, fl)
     const stateTax= taxable * (st?.rate ?? 0.05)
     const total   = federal + seTax + stateTax
     setResult({ gross, net, mileDeduction, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1) })

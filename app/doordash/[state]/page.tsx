@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `DoorDash ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `DoorDash ${s.name} Taxes 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString()} Total`,
-    description: `DoorDash ${s.name} 2026: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString()} SE tax + $${estimateTax(40000, s.rate).federal.toLocaleString()} fed. ${stateStr}. Quarterly: ~$${estimateTax(40000, s.rate).quarterly.toLocaleString()}. Free calculator, no signup.`,
+      : `DoorDash ${s.name} Taxes 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `DoorDash ${s.name} 2026: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(40000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(40000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }

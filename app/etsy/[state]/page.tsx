@@ -71,8 +71,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Etsy ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Etsy ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString()} Total`,
-    description: `Etsy ${s.name} 2026: $30K net = ~$${estimateTax(30000, s.rate).se.toLocaleString()} SE tax + $${estimateTax(30000, s.rate).federal.toLocaleString()} fed. ${stateStr}. Quarterly: ~$${estimateTax(30000, s.rate).quarterly.toLocaleString()}. Free calculator, no signup.`,
+      : `Etsy ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `Etsy ${s.name} 2026: $30K net = ~$${estimateTax(30000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(30000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(30000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -275,7 +275,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $30,000 net income, expect to owe approximately $${estimateTax(30000, state.rate).total.toLocaleString()} total.`,
+                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $30,000 net income, expect to owe approximately $${estimateTax(30000, state.rate).total.toLocaleString('en-US')} total.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,

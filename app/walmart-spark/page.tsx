@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -67,9 +68,9 @@ export default function WalmartSparkPage() {
     const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const ssSplit = seBase * 0.124
     const medSplit= seBase * 0.029
-    const taxable = net - seTax * 0.5
-    const fedRate = filing === 'single' ? 0.22 : 0.12
-    const federal = taxable * fedRate
+    const fl = filing === 'mfj' ? 'married' : 'single'
+    const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
+    const federal = federalTax(taxable, fl)
     const stateTax= taxable * (st?.rate ?? 0.05)
     const total   = federal + seTax + stateTax
     const qbi     = taxable * 0.20

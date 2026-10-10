@@ -327,7 +327,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString()} Total`,
+      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
     description: `Walmart Spark ${s.name} 2026: $30K net = ~$4,239 SE tax + $2,200 fed. ${rateStr}. Quarterly: ~$1,612. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
@@ -425,11 +425,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               const total = se + st + fed
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString()}</td>
-                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString()}</td>}
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString()}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString('en-US')}</td>
+                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString('en-US')}</td>}
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString('en-US')}</td>
                 </tr>
               )
             })}

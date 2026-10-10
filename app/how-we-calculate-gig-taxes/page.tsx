@@ -64,7 +64,7 @@ export default function HowWeCalculatePage() {
           <div className="formula-box">
             <div className="formula-title">IRS Schedule SE Formula</div>
             <div className="formula-line">1. SE Base = Net Profit × <span>0.9235</span></div>
-            <div className="formula-line">2. SE Tax = SE Base × <span>0.153</span></div>
+            <div className="formula-line">2. SE Tax = <span>12.4%</span> × min(SE Base, <span>$184,500</span>) + <span>2.9%</span> × SE Base</div>
             <div className="formula-line">3. SE Deduction = SE Tax × <span>0.5</span> (deducted on Form 1040)</div>
             <div className="formula-note">
               Source: <a href="https://www.irs.gov/forms-pubs/about-schedule-se-form-1040" target="_blank" rel="noopener noreferrer" className="source-link">IRS Schedule SE (Form 1040)</a>.
@@ -75,7 +75,7 @@ export default function HowWeCalculatePage() {
           <div className="example-box">
             <div className="example-title">Example: DoorDash driver, $40,000 net profit</div>
             <div className="ex-row"><span className="ex-label">SE Base</span><span className="ex-val">$40,000 × 0.9235 = $36,940</span></div>
-            <div className="ex-row"><span className="ex-label">SE Tax</span><span className="ex-val">$36,940 × 0.153 = $5,652</span></div>
+            <div className="ex-row"><span className="ex-label">SE Tax</span><span className="ex-val">$36,940 × 15.3% = $5,652 (below the Social Security cap)</span></div>
             <div className="ex-row"><span className="ex-label">SE Deduction (half)</span><span className="ex-val">$5,652 × 0.5 = $2,826</span></div>
           </div>
         </div>

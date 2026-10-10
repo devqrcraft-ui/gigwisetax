@@ -5,16 +5,16 @@ import { estimateTaxRaw } from '@/lib/tax-rules'
 import Link from 'next/link'
 
 const PLATFORMS = [
-  { name: 'DoorDash',    searches: '400K/mo', href: '/doordash'     },
-  { name: 'Uber',        searches: '300K/mo', href: '/uber'         },
-  { name: 'Etsy',        searches: '200K/mo', href: '/etsy'         },
-  { name: 'OnlyFans',    searches: '150K/mo', href: '/onlyfans'     },
-  { name: 'Instacart',   searches: '150K/mo', href: '/instacart'    },
-  { name: 'Airbnb',      searches: '120K/mo', href: '/airbnb'       },
-  { name: 'Amazon Flex', searches: '80K/mo',  href: '/amazon-flex'  },
-  { name: 'Lyft',        searches: '70K/mo',  href: '/lyft'         },
-  { name: 'Grubhub',     searches: '60K/mo',  href: '/grubhub'      },
-  { name: 'Walmart Spark',searches: '55K/mo', href: '/walmart-spark' },
+  { name: 'DoorDash',    searches: 'Free', href: '/doordash'     },
+  { name: 'Uber',        searches: 'Free', href: '/uber'         },
+  { name: 'Etsy',        searches: 'Free', href: '/etsy'         },
+  { name: 'OnlyFans',    searches: 'Free', href: '/onlyfans'     },
+  { name: 'Instacart',   searches: 'Free', href: '/instacart'    },
+  { name: 'Airbnb',      searches: 'Free', href: '/airbnb'       },
+  { name: 'Amazon Flex', searches: 'Free',  href: '/amazon-flex'  },
+  { name: 'Lyft',        searches: 'Free',  href: '/lyft'         },
+  { name: 'Grubhub',     searches: 'Free',  href: '/grubhub'      },
+  { name: 'Walmart Spark',searches: 'Free', href: '/walmart-spark' },
 ]
 
 const STATES = [
@@ -119,7 +119,7 @@ function QuarterlyEstimator() {
               onChange={e=>setWeekly(e.target.value.replace(/[^0-9.]/g,''))}
               style={{...inp2,paddingLeft:28}} />
           </div>
-          {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString()}</p>}
+          {w>0 && <p style={{color:'#C8D8EC',fontSize:12,margin:'6px 0 0',opacity:.6}}>Annual: ${Math.round(annual).toLocaleString('en-US')}</p>}
         </div>
         <div>
           <label htmlFor="qe-state" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
@@ -141,8 +141,8 @@ function QuarterlyEstimator() {
         <>
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:12,padding:'16px 20px',marginBottom:16}}>
             <p style={{color:'#C8D8EC',fontSize:13,margin:'0 0 4px',opacity:.7}}>Estimated quarterly payment</p>
-            <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
-            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString()} (SE: ${Math.round(seTax).toLocaleString()} + Fed: ${Math.round(fed).toLocaleString()} + State: ${Math.round(state).toLocaleString()})</p>
+            <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString('en-US')}</p>
+            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString('en-US')} (SE: ${Math.round(seTax).toLocaleString('en-US')} + Fed: ${Math.round(fed).toLocaleString('en-US')} + State: ${Math.round(state).toLocaleString('en-US')})</p>
             {total < 1000 && <p style={{color:'#4ade80',fontSize:12,margin:'8px 0 0',fontWeight:600}}>Under $1,000 — quarterly payments likely not required.</p>}
             {total >= 1000 && <p style={{color:'#e8b84b',fontSize:12,margin:'8px 0 0',fontWeight:600}}>IRS requires quarterly payments when you expect to owe $1,000+.</p>}
           </div>
@@ -151,7 +151,7 @@ function QuarterlyEstimator() {
               <div key={d.q} style={{background:'#07111F',border: i === nextDeadlineIdx() ? '2px solid #e8b84b' : '1px solid #1a2d45',borderRadius:10,padding:'12px',textAlign:'center',position:'relative'}}>
                 {i === nextDeadlineIdx() && <div style={{position:'absolute',top:-10,left:'50%',transform:'translateX(-50%)',background:'#e8b84b',color:'#07111F',fontSize:10,fontWeight:800,padding:'2px 8px',borderRadius:4,whiteSpace:'nowrap'}}>NEXT DUE</div>}
                 <p style={{color:'#e8b84b',fontSize:11,fontWeight:700,margin:'0 0 4px'}}>{d.q}</p>
-                <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString()}</p>
+                <p style={{color:'#C8D8EC',fontSize:18,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString('en-US')}</p>
                 <p style={{color:'#C8D8EC',fontSize:10,margin:0,opacity:.6}}>Due {d.due}</p>
               </div>
             ))}
@@ -532,27 +532,27 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={{ padding: '10px 16px', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', gap: 8 }}>
                   <div style={accent}/>
-                  <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> How We Compare to Competitors</span>
+                  <span style={{ fontWeight: 700, fontSize: 16, color: '#C8D8EC' }}> What You Get With GigWiseTax</span>
                 </div>
                 <div style={{ overflowX: 'auto' as const }}>
                   <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><div style={{overflowX:'auto',WebkitOverflowScrolling:'touch',width:'100%'}}><table style={{ width: '100%', minWidth: 480, borderCollapse: 'collapse' as const }}>
                     <thead>
                       <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
-                        {['Feature','GigWiseTax ✓','FlyFin','Everlance','TurboTax Blog'].map((h,i) => (
+                        {['Feature','GigWiseTax ✓'].map((h,i) => (
                           <th key={h} style={{ padding: '8px 6px', fontWeight: 700, fontSize: 13, color: i===1 ? '#ffffff' : '#8fa8c8', textAlign: i===0 ? 'left' as const : 'center' as const, background: i===1 ? 'rgba(232,184,75,0.12)' : 'transparent', borderBottom: i===1 ? '3px solid #e8b84b' : 'none' }}>{h}</th>
                         ))}
                       </tr>
                     </thead>
                     <tbody>
                       {[
-                        [' Free to use',               true,  false, false, true ],
-                        [' No registration required',  true,  false, false, true ],
-                        [' All 50 States + DC included',    true,  false, false, false],
-                        ['▸ OnlyFans tax calculator',    true,  false, false, false],
-                        [' Google Calendar export',    true,  false, false, false],
-                        [' Interactive tool',          true,  false, false, false],
-                        [' No app required',           true,  false, false, true ],
-                        [' 100% private — calculations stay in your browser', true, false, false, false],
+                        [' Free to use',               true ],
+                        [' No registration required',  true ],
+                        [' All 50 States + DC included',    true ],
+                        ['▸ OnlyFans tax calculator',    true ],
+                        [' Google Calendar export',    true ],
+                        [' Interactive tool',          true ],
+                        [' No app required',           true ],
+                        [' 100% private — calculations stay in your browser', true ],
                       ].map(([feat,...vals]) => (
                         <tr key={feat as string} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
                           <td style={{ padding: '8px 6px', fontSize: 12, color: '#c8d8ec', fontWeight: 500 }}>{feat as string}</td>
@@ -611,7 +611,7 @@ export default function HomeClient() {
                 <div style={{overflowX:'auto',WebkitOverflowScrolling:'touch'}}><table style={{ width: '100%', borderCollapse: 'collapse' as const }}>
                   <thead>
                     <tr style={{ background: '#0d1f3c', borderBottom: '2px solid rgba(255,255,255,0.15)' }}>
-                      {['Platform','Monthly Searches','SE Tax Rate','State Tax','Competition'].map(h => (
+                      {['Platform','Cost','SE Tax Rate','State Tax','Competition'].map(h => (
                         <th key={h} style={{ padding: '11px 16px', fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>

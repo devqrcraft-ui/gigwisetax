@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `${s.name} 1099 Tax Calculator 2026 — No State Tax + Free SE Calculator`
-      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString()} Total`,
+      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
     description: noTax
       ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
       : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
@@ -112,10 +112,10 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
                   <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>{ex.label}</div>
                   <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.7 }}>
-                    SE tax (15.3%): ~${estimateTax(ex.gross, 0).se.toLocaleString()}<br/>
-                    Federal tax: ~${estimateTax(ex.gross, 0).federal.toLocaleString()}<br/>
-                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTax(ex.gross, state.rate).state.toLocaleString()}`}<br/>
-                    <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString()}</strong>
+                    SE tax (15.3%): ~${estimateTax(ex.gross, 0).se.toLocaleString('en-US')}<br/>
+                    Federal tax: ~${estimateTax(ex.gross, 0).federal.toLocaleString('en-US')}<br/>
+                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTax(ex.gross, state.rate).state.toLocaleString('en-US')}`}<br/>
+                    <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString('en-US')}</strong>
                   </div>
                 </div>
               ))}

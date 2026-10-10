@@ -103,7 +103,7 @@ export default function DeductionsChecklist() {
             {checkedCount > 0 ? `${checkedCount} DEDUCTIONS SELECTED` : 'CHECK DEDUCTIONS BELOW'}
           </div>
           <div style={{ color: '#fff', fontSize: 28, fontWeight: 900 }}>
-            {checkedCount > 0 ? `~$${estimatedSavings.toLocaleString()} estimated savings` : 'Start checking deductions →'}
+            {checkedCount > 0 ? `~$${estimatedSavings.toLocaleString('en-US')} estimated savings` : 'Start checking deductions →'}
           </div>
         </div>
         {checkedCount > 0 && (

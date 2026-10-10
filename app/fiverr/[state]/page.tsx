@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Fiverr ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Fiverr ${s.name} Taxes 2026 — $60K Earner Owes $${estimateTax(60000, s.rate).total.toLocaleString()} Total`,
-    description: `Fiverr ${s.name} 2026: $60K net = ~$${estimateTax(60000, s.rate).se.toLocaleString()} SE tax + $${estimateTax(60000, s.rate).federal.toLocaleString()} fed. ${stateStr}. Quarterly: ~$${estimateTax(60000, s.rate).quarterly.toLocaleString()}. Free calculator, no signup.`,
+      : `Fiverr ${s.name} Taxes 2026 — $60K Earner Owes $${estimateTax(60000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `Fiverr ${s.name} 2026: $60K net = ~$${estimateTax(60000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(60000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(60000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', fiverr freelancer taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }

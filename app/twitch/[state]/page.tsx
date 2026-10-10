@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Twitch ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Twitch ${s.name} Taxes 2026 — $30K Streamer Owes $${estimateTax(30000, s.rate).total.toLocaleString()} Total`,
+      : `Twitch ${s.name} Taxes 2026 — $30K Streamer Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
     description: `Twitch ${s.name} 2026: $30K net (subs+ads+bits) = ~$4,239 SE tax + $1,307 fed. ${stateStr}. Two 1099 forms explained. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', twitch streamer taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
@@ -71,7 +71,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Twitch Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Twitch streamers in ' + state.name + ' earning $30,000 net (combined subs, ads, bits, and donations) owe approximately $' + estimateTax(30000, state.rate).total.toLocaleString() + ' total — $4,239 self-employment tax (15.3%) + $1,307 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(30000, state.rate).total / 4).toLocaleString() + '. Subscription and ad revenue arrives on a 1099-MISC, while bits arrive on a separate 1099-NEC — both count as self-employment income.'}
+              {'Twitch streamers in ' + state.name + ' earning $30,000 net (combined subs, ads, bits, and donations) owe approximately $' + estimateTax(30000, state.rate).total.toLocaleString('en-US') + ' total — $4,239 self-employment tax (15.3%) + $1,307 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(30000, state.rate).total / 4).toLocaleString('en-US') + '. Subscription and ad revenue arrives on a 1099-MISC, while bits arrive on a separate 1099-NEC — both count as self-employment income.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>

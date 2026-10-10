@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Poshmark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Poshmark ${s.name} Taxes 2026 — $60K Seller Owes $${estimateTax(23000, s.rate).total.toLocaleString()} Total`,
-    description: `Poshmark ${s.name} 2026: $60K gross, $25K COGS = $23K net profit = ~$${estimateTax(23000, s.rate).se.toLocaleString()} SE tax + $${estimateTax(23000, s.rate).federal.toLocaleString()} fed. ${stateStr}. Free calculator with COGS, no signup.`,
+      : `Poshmark ${s.name} Taxes 2026 — $60K Seller Owes $${estimateTax(23000, s.rate).total.toLocaleString('en-US')} Total`,
+    description: `Poshmark ${s.name} 2026: $60K gross, $25K COGS = $23K net profit = ~$${estimateTax(23000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(23000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Free calculator with COGS, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', poshmark reseller taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -71,7 +71,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Poshmark Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Poshmark resellers in ' + state.name + ' with $60,000 gross sales and $25,000 in cost of goods sold owe approximately $' + estimateTax(23000, state.rate).total.toLocaleString() + ' total — net profit of $23,000, after Poshmark\'s 20% commission and cost of goods, taxed at $3,250 self-employment tax (15.3%) + $638 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(23000, state.rate).total / 4).toLocaleString() + '. The 1099-K reports gross sales, not this profit figure.'}
+              {'Poshmark resellers in ' + state.name + ' with $60,000 gross sales and $25,000 in cost of goods sold owe approximately $' + estimateTax(23000, state.rate).total.toLocaleString('en-US') + ' total — net profit of $23,000, after Poshmark\'s 20% commission and cost of goods, taxed at $3,250 self-employment tax (15.3%) + $638 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(23000, state.rate).total / 4).toLocaleString('en-US') + '. The 1099-K reports gross sales, not this profit figure.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>

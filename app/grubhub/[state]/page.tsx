@@ -422,11 +422,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               const total = se + st + fed
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString()}</td>
-                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString()}</td>}
-                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString()}</td>
-                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString()}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString('en-US')}</td>
+                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString('en-US')}</td>}
+                  <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString('en-US')}</td>
+                  <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString('en-US')}</td>
                 </tr>
               )
             })}
