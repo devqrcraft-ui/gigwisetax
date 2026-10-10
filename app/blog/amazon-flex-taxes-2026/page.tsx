@@ -153,7 +153,7 @@ export default function AmazonFlexTaxesBlogPost() {
           <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
-              25,000 miles × $0.725 = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$17,500 deduction</strong><br />
+              25,000 miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$18,125 deduction</strong><br />
               At 30% effective rate → saves you approximately <strong style={{ color: '#e8b84b' }}>$5,438 in taxes</strong>
             </div>
           </div>

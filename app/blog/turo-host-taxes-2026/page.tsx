@@ -48,7 +48,7 @@ export default function BlogPost() {
           </blockquote>
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Top Turo Host Tax Deductions 2026</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 32 }}>
-        {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage ($0.725/mile)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (
+        {([['Depreciation','Deduct car value over 5 years — largest single deduction'],['Turo Platform Fee','25-40% Turo fee is fully deductible'],['Insurance','Turo protection plan and personal auto — business portion'],['Cleaning and Detailing','All cleaning between rentals — 100% deductible'],['Mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)','Miles to/from airport, maintenance trips'],['Repairs and Maintenance','Oil changes, tires, any repair for the rental vehicle']] as [string,string][]).map(([t,d]) => (
           <div key={t} style={card}><div style={{ fontWeight: 700, marginBottom: 4 }}>{t}</div><div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>{d}</div></div>
         ))}
       </div>
@@ -93,7 +93,7 @@ export default function BlogPost() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
         </div>

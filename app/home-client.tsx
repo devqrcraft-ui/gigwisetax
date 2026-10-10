@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { estimateTaxRaw } from '@/lib/tax-rules'
 import Link from 'next/link'
 
 const PLATFORMS = [
@@ -218,14 +219,9 @@ export default function HomeClient() {
     const net = parseFloat(income) || 0
     if (!net) return
     const st = STATES.find(s => s.code === stateCode)
-    const seBase   = net * 0.9235
-    const seTax    = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const taxable  = net - seTax * 0.5
-    const fedRate  = filing === 'single' ? 0.22 : 0.12
-    const federal  = taxable * fedRate
-    const stateTax = taxable * (st?.rate ?? 0.05)
-    const total    = federal + seTax + stateTax
-    setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: net > 0 ? ((total / net) * 100).toFixed(1) : '0.0' })
+    // Єдине джерело правил: lib/tax-rules.ts (відрахування, прогресивні брекети, стеля SS). HOH = single, як у platform-калькуляторах.
+    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : 'single')
+    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1) })
   }
 
   /* ── shared style tokens ── */
@@ -375,7 +371,7 @@ export default function HomeClient() {
                     <div>
                       <label style={label}>▸ Business Miles Driven</label>
                       <input style={inp} type="number" min="0" placeholder="e.g. 10,000 miles"/>
-                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>$0.725/mile (IRS 2026 rate)</div>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec (IRS 2026 rates)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>

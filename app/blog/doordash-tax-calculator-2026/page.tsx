@@ -161,7 +161,7 @@ export default function DoorDashTaxCalculator2026() {
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
-              <strong style={{ color: '#e8b84b' }}>Example:</strong> 20,000 miles x $0.725 = <strong style={{ color: '#e8b84b' }}>$14,500 deduction</strong>. On a 25% effective tax rate this saves $3,625 in taxes.
+              <strong style={{ color: '#e8b84b' }}>Example:</strong> 20,000 miles x 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b' }}>$14,500 deduction</strong>. On a 25% effective tax rate this saves $3,625 in taxes.
             </p>
           </div>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>

@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function DeductionsGuide() {
   const deductions = [
-    { name: 'Standard Mileage Rate', amount: '$0.725 per mile', desc: 'Track every business mile. At 10,000 miles/year = $7,000 deduction. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
+    { name: 'Standard Mileage Rate', amount: '72.5¢ per mile (Jan–Jun) / 76¢ (Jul–Dec)', desc: 'Track every business mile. At 10,000 miles/year = $7,250 deduction. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
     { name: 'Home Office Deduction', amount: 'Up to $1,500/year', desc: 'Simplified: $5/sq ft (max 300 sq ft). Regular method: % of rent, utilities, internet. Must be used exclusively for business.', tag: '' },
     { name: 'Phone & Internet', amount: '50-100% of bill', desc: 'If your phone is used for gig work (DoorDash app, messaging, navigation), deduct the business-use percentage.', tag: '' },
     { name: 'Health Insurance Premiums', amount: '100% deductible', desc: "If you're self-employed and not eligible for employer coverage, deduct 100% of health, dental, and vision premiums paid for yourself and family.", tag: 'Big Savings' },
@@ -106,7 +106,7 @@ export default function DeductionsGuide() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
       <a href="/blog/quarterly-taxes-gig-workers" style={{ textDecoration:'none' }}>

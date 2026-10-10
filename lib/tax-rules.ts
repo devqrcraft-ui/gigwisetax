@@ -22,7 +22,7 @@ export const TAX_RULES_2026 = {
   underpaymentRateQ4_2026: 0.07,
 } as const
 
-type Filing = 'single' | 'married' | 'hoh'
+type Filing = 'single' | 'married'
 
 export function federalTax(taxable: number, filing: Filing = 'single'): number {
   const br = (filing === 'married' ? TAX_RULES_2026.bracketsMarried : TAX_RULES_2026.bracketsSingle) as readonly (readonly [number, number])[]

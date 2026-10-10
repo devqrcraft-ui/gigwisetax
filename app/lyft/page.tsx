@@ -88,7 +88,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     name: `Top Tax Deductions for Lyft Workers 2026`,
     numberOfItems: 12,
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: "Mileage deduction ($0.725/mile)" },
+      { '@type': 'ListItem', position: 1, name: "Mileage deduction (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)" },
       { '@type': 'ListItem', position: 2, name: "Phone bill" },
       { '@type': 'ListItem', position: 3, name: "Auto insurance" },
       { '@type': 'ListItem', position: 4, name: "Car washes & interior cleaning" },

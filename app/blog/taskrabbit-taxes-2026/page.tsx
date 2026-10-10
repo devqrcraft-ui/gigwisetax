@@ -173,7 +173,7 @@ export default function TaskRabbitTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Example: 6,000 business miles × $0.725 = <strong style={{ color: '#e8edf8' }}>$4,350 deduction</strong>. That saves roughly $665 in SE tax alone.
+            Example: 6,000 business miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8edf8' }}>$4,350 deduction</strong>. That saves roughly $665 in SE tax alone.
           </p>
         </section>
 

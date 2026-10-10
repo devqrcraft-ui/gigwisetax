@@ -92,7 +92,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               }
             </p>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, margin: 0 }}>
-              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage ($0.725/mile in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
+              You can deduct 50% of your SE tax from gross income, plus business expenses like mileage (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026), phone, equipment, and home office. Most gig workers in {state.name} end up with an effective total tax rate of <strong>18%–28%</strong> after deductions.
             </p>
           </div>
         </div>
@@ -112,9 +112,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <div key={ex.gross} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
                   <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>{ex.label}</div>
                   <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.7 }}>
-                    SE tax (15.3%): ~${Math.round(ex.gross * 0.9235 * 0.153).toLocaleString()}<br/>
-                    Federal tax: ~${Math.round(ex.gross * (ex.gross > 44000 ? 0.22 : 0.12)).toLocaleString()}<br/>
-                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${Math.round(ex.gross * state.rate).toLocaleString()}`}<br/>
+                    SE tax (15.3%): ~${estimateTax(ex.gross, 0).se.toLocaleString()}<br/>
+                    Federal tax: ~${estimateTax(ex.gross, 0).federal.toLocaleString()}<br/>
+                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTax(ex.gross, state.rate).state.toLocaleString()}`}<br/>
                     <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString()}</strong>
                   </div>
                 </div>

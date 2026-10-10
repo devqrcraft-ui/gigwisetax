@@ -48,7 +48,7 @@ export default function DoorDashInlineCalc() {
           <span style={{ fontSize:22 }}>🧮</span>
           <h3 style={{ color:'#e8b84b', margin:0, fontSize:18, fontWeight:800 }}>DoorDash Tax Calculator 2026</h3>
         </div>
-        <p style={{ color:'#7a9abf', fontSize:13, margin:'0 0 20px' }}>Estimate SE tax + federal. Includes mileage deduction at $0.725/mile.</p>
+        <p style={{ color:'#7a9abf', fontSize:13, margin:'0 0 20px' }}>Estimate SE tax + federal. Includes mileage deduction at 72.5¢/mile (Jan–Jun; 76¢ from Jul 1).</p>
 
         <div style={{ display:'grid', gap:12, marginBottom:16 }}>
           <div>
@@ -94,7 +94,7 @@ export default function DoorDashInlineCalc() {
               ))}
             </div>
             <p style={{ color:'#8899aa', fontSize:11, margin:'14px 0 0' }}>
-              * Single filer estimate. Mileage rate $0.725/mile (2026 IRS rate). Consult a tax pro for exact figures.
+              * Single filer estimate. Mileage rate 72.5¢/mile (Jan–Jun; 76¢ from Jul 1) (2026 IRS rate). Consult a tax pro for exact figures.
             </p>
           </div>
         )}

@@ -181,7 +181,7 @@ export default function TaxPenaltyFinder() {
           {step === 3 && hasMileage && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>$0.725/mile in 2026</strong> — your biggest deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background: "#07111F"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#4ade80', fontWeight:600 }}>
                  Potential deduction: ${(parseFloat(miles)*0.725).toLocaleString()} → saves ~${Math.round(parseFloat(miles)*0.725*0.28).toLocaleString()} in taxes

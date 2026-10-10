@@ -158,7 +158,7 @@ export default function BlogPost() {
       <a href="/blog/mileage-rate-2026" style={{ textDecoration:'none' }}>
         <div style={{ background:'rgba(255,255,255,0.04)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 18px' }}>
           <div style={{ fontSize:15, fontWeight:700, color:'#e8b84b', marginBottom:6, lineHeight:1.4 }}>IRS Mileage Rate 2026</div>
-          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rate is $0.725/mile. How to track and claim it.</div>
+          <div style={{ fontSize:13, color:'#94aabf', lineHeight:1.6 }}>2026 IRS mileage rates: 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec). How to track and claim it.</div>
         </div>
       </a>
         </div>

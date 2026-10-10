@@ -173,7 +173,7 @@ export default function RoverTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Example: 4,000 business miles × $0.725 = <strong style={{ color: '#e8edf8' }}>$2,900 deduction</strong>. That eliminates $2,900 from taxable income and saves roughly $444 in SE tax alone.
+            Example: 4,000 business miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8edf8' }}>$2,900 deduction</strong>. That eliminates $2,900 from taxable income and saves roughly $444 in SE tax alone.
           </p>
         </section>
 
