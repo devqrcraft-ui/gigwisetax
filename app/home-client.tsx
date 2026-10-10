@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { estimateTaxRaw } from '@/lib/tax-rules'
+import { estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import Link from 'next/link'
 
 const PLATFORMS = [
@@ -183,6 +183,9 @@ export default function HomeClient() {
   }, [])
   const [platform, setPlatform] = useState('DoorDash')
   const [income, setIncome]   = useState('')
+  const [milesH1, setMilesH1] = useState('')
+  const [milesH2, setMilesH2] = useState('')
+  const [expenses, setExpenses] = useState('')
   const [stateCode, setStateCode] = useState('CA')
   const [filing, setFiling]   = useState('single')
   const [result, setResult]   = useState<any>(null)
@@ -218,9 +221,10 @@ export default function HomeClient() {
   const calculate = () => {
     const net = parseFloat(income) || 0
     if (!net) return
+    const deductions = (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
     const st = STATES.find(s => s.code === stateCode)
     // Єдине джерело правил: lib/tax-rules.ts (відрахування, прогресивні брекети, стеля SS). HOH = single, як у platform-калькуляторах.
-    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : 'single')
+    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : 'single', deductions)
     setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1) })
   }
 
@@ -369,15 +373,14 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={label}>▸ Business Miles Driven</label>
-                      <input style={inp} type="number" min="0" placeholder="e.g. 10,000 miles"/>
+                      <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder="Jan–Jun miles (72.5¢)" aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder="Jul–Dec miles (76¢)" aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec (IRS 2026 rates)</div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000"/>
+                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" placeholder="e.g. 2,000" aria-label="Other business expenses" value={expenses} onChange={e => setExpenses(e.target.value)}/>
                       </div>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>Phone, supplies, equipment…</div>
                     </div>

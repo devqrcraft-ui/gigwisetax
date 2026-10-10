@@ -117,7 +117,7 @@ export default function HowWeCalculatePage() {
             </div>
           </div>
           <p style={{fontSize:12,color:'rgba(255,255,255,0.5)',marginTop:8,lineHeight:1.6}}>
-            Note: Our calculator uses a simplified effective rate based on the most common bracket for the entered income level.
+            Note: Our calculator applies the 2026 progressive federal brackets, the standard deduction, and the Social Security wage cap. State tax is estimated as a flat rate on taxable income, so results are planning estimates, not a tax return.
             Actual federal tax depends on additional deductions, credits, and other income.
           </p>
         </div>
