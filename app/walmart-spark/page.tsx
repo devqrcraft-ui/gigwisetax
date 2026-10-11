@@ -307,12 +307,12 @@ export default function WalmartSparkPage() {
               <span style={{ fontSize:11, fontWeight:700, color:'rgba(255,255,255,.55)', textTransform:'uppercase' as const, letterSpacing:'1px' }}> More Calculators</span>
             </div>
             {[
-              { name:'DoorDash', href:'/doordash', vol:'400K/mo' },
-              { name:'Instacart', href:'/instacart', vol:'150K/mo' },
-              { name:'Amazon Flex', href:'/amazon-flex', vol:'80K/mo' },
-              { name:'Uber', href:'/uber', vol:'300K/mo' },
-              { name:'Airbnb', href:'/airbnb', vol:'120K/mo' },
-              { name:'Etsy', href:'/etsy', vol:'200K/mo' },
+              { name:'DoorDash', href:'/doordash', vol:'Free' },
+              { name:'Instacart', href:'/instacart', vol:'Free' },
+              { name:'Amazon Flex', href:'/amazon-flex', vol:'Free' },
+              { name:'Uber', href:'/uber', vol:'Free' },
+              { name:'Airbnb', href:'/airbnb', vol:'Free' },
+              { name:'Etsy', href:'/etsy', vol:'Free' },
             ].map(p => (
               <Link key={p.name} href={p.href} style={{ textDecoration:'none' }}>
                 <div style={{ padding:'10px 16px', borderBottom: '1px solid rgba(255,255,255,0.08)', display:'flex', justifyContent:'space-between', alignItems:'center', cursor:'pointer' }}>
