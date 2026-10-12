@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -117,7 +118,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of CA minimum wage</strong> during active delivery time + 30¢/mile</li>
               <li>On $40K net: SE tax $5,652 + federal ~$3,200 + CA state ~$1,700 = <strong style={{color:'#e8b84b'}}>~$10,552 total</strong></li>
               <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
-              <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 16, Sep 15, Jan 15</strong></li>
+              <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 15, Sep 15, Jan 15</strong></li>
               <li>Mileage deduction 72.5¢–76¢/mile reduces both federal and CA taxable income</li>
             </ul>
             <blockquote style={{borderLeft:'3px solid #B22234',padding:'10px 14px',margin:'12px 0 0',background:'rgba(178,34,52,0.05)',borderRadius:'0 4px 4px 0'}}>
@@ -299,7 +300,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       </div>
 
       
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}@media(max-width:600px){.three-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
       `}</style>

@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
@@ -64,7 +65,7 @@ export default function GrubhubPage() {
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
     const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const fl = filing === 'mfj' ? 'married' : 'single'
+    const fl = filing === 'mfj' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
     const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
     const federal = federalTax(taxable, fl)
     const stateTax= taxable * (st?.rate ?? 0.05)
@@ -122,7 +123,7 @@ export default function GrubhubPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Net Income (USD)</label>
+                  <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Earnings Before Mileage (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
@@ -314,7 +315,8 @@ export default function GrubhubPage() {
           </div>
 
       
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 
@@ -82,7 +83,7 @@ export default function Calculator1099HubPage() {
             <li>1099 workers pay <strong>15.3% SE tax</strong> on top of federal income tax — no employer to split it with</li>
             <li>On $40,000 net income, total federal tax is roughly <strong>$7,933</strong> — set aside 25-30% each month</li>
             <li>IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> in 2026 — the biggest write-off for delivery and rideshare drivers</li>
-            <li>Quarterly payments due: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if you owe $1,000+</li>
+            <li>Quarterly payments due: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — required if you owe $1,000+</li>
             <li>1099-K threshold in 2026 is <strong>$20,000 across more than 200 transactions</strong> — all income is taxable regardless of which form you receive</li>
           </ul>
         </div>
@@ -155,7 +156,8 @@ export default function Calculator1099HubPage() {
           <Link href="/doordash" className="cta-btn">Calculate DoorDash Taxes →</Link>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </>
   );
 }

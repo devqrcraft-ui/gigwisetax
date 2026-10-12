@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $40,000 net income, total federal tax is approximately $7,933."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS standard mileage rate for 2026 is 72.5 cents per mile. A Dasher driving 20,000 miles earns a $14,500 deduction. This is typically the largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You receive a 1099-NEC if you earned over $2,000 under the OBBBA 2026 threshold. Access it via the DoorDash driver portal or Stripe Express."}},{"@type":"Question","name":"Does the No Tax on Tips law apply to DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under the OBBBA 2026, eligible delivery drivers can deduct up to $25,000 in tips from federal taxable income. If you earned $8,000 in tips, that amount is fully excluded from your federal taxable income."}},{"@type":"Question","name":"Is the QBI deduction available for DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes and it is now permanent under OBBBA. The 20% Qualified Business Income deduction lets you deduct 20% of net DoorDash profit. On $30,000 net income that is a $6,000 deduction."}},{"@type":"Question","name":"How much should I set aside for DoorDash taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25 to 30% of your net DoorDash income. In high-tax states like California or New York, set aside 30 to 35%. This covers 15.3% SE tax plus federal income tax."}},{"@type":"Question","name":"Does DoorDash report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN. The IRS matches this against your tax return. All income must be reported even without a 1099-NEC."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $40,000 net income, total federal tax is approximately $7,933."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. A Dasher driving 20,000 miles earns a $14,500 deduction. This is typically the largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You receive a 1099-NEC if you earned over $2,000 under the OBBBA 2026 threshold. Access it via the DoorDash driver portal or Stripe Express."}},{"@type":"Question","name":"Does the No Tax on Tips law apply to DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under the OBBBA 2026, eligible delivery drivers can deduct up to $25,000 in tips from federal taxable income. If you earned $8,000 in tips, that amount is fully excluded from your federal taxable income."}},{"@type":"Question","name":"Is the QBI deduction available for DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes and it is now permanent under OBBBA. The 20% Qualified Business Income deduction lets you deduct 20% of net DoorDash profit. On $30,000 net income that is a $6,000 deduction."}},{"@type":"Question","name":"How much should I set aside for DoorDash taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25 to 30% of your net DoorDash income. In high-tax states like California or New York, set aside 30 to 35%. This covers 15.3% SE tax plus federal income tax."}},{"@type":"Question","name":"Does DoorDash report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN. The IRS matches this against your tax return. All income must be reported even without a 1099-NEC."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"DoorDash Taxes 2026","item":"https://www.gigwisetax.com/blog/doordash-taxes-2026"}]}'
 
@@ -70,7 +71,7 @@ export default function DoorDashTaxGuide() {
             <li>{'2026 IRS mileage rate is 72.5 cents per mile — 20,000 miles = $14,500 deduction'}</li>
             <li>{'Tips up to $25,000 are federally deductible under the OBBBA 2026'}</li>
             <li>{'Set aside 25 to 30% of every payment for quarterly estimated taxes'}</li>
-            <li>{'Quarterly payments due: Apr 15, Jun 16, Sep 15, Jan 15'}</li>
+            <li>{'Quarterly payments due: Apr 15, Jun 15, Sep 15, Jan 15'}</li>
           </ul>
         </section>
 
@@ -310,7 +311,8 @@ export default function DoorDashTaxGuide() {
           </ul>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )

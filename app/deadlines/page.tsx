@@ -3,6 +3,7 @@
 // ================================================================
 
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
 
@@ -70,7 +71,7 @@ export default function DeadlinesPage() {
       {/* ANSWER-FIRST + KEY TAKEAWAYS */}
       <div style={{maxWidth:1200,margin:'0 auto',padding:'16px 16px 0'}}>
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~{UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
+          Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~{UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12}}>
           Last updated: May 2026 · By the GigWiseTax Team
@@ -78,7 +79,7 @@ export default function DeadlinesPage() {
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:16}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>2026 federal quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15, 2027</strong></li>
+            <li>2026 federal quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15, 2027</strong></li>
             <li>Required if you expect to owe <strong>$1,000+</strong> in federal taxes after withholding and credits</li>
             <li>Safe Harbor: pay <strong>100%</strong> of your 2025 tax liability (110% if AGI exceeded $150,000) — no penalty even if you owe more</li>
             <li>IRS underpayment penalty for 2026 is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the underpaid amount</li>
@@ -201,7 +202,8 @@ export default function DeadlinesPage() {
       </div>
       <style dangerouslySetInnerHTML={{__html:"@media(max-width:540px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}.state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(max-width:960px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}}@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}"}} />
       <div style={{maxWidth:1200,margin:'0 auto',padding:'0 16px'}}>
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -308,7 +309,8 @@ export default function RoverTaxes2026() {
           </div>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )

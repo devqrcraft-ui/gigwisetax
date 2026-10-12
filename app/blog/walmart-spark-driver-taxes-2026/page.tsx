@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Walmart Spark Driver Taxes 2026 — Complete Tax Guide | GigWiseTax',
@@ -105,7 +106,8 @@ export default function BlogPost() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       </article>
     </main>
   )

@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES as ALL_STATES, DEADLINES_2026 } from '@/lib/data'
@@ -386,7 +387,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Turo hosts are independent contractors — Turo withholds zero taxes</li>
               <li>{'On $50,000 net income: ~$7,065 SE tax + ~$3,396 federal = ~$10,461 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$2,615 each'}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$2,615 each'}</li>
               <li>Vehicle depreciation is the largest deduction — up to $12,400/year</li>
               <li>Deduct Turo service fees (25-35% of revenue), insurance, cleaning, repairs</li>
               <li>File Schedule C — report all Turo income on your federal tax return</li>
@@ -497,7 +498,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
         <div style={{ maxWidth:1200, margin:'0 auto', padding:'0 16px 40px' }}>
-          <AuthorBox />
+          <TaxFreshness />
+<AuthorBox />
         </div>
         <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}

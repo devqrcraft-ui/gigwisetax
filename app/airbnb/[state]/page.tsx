@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -192,7 +193,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Airbnb hosts are self-employed — Airbnb withholds zero taxes</li>
               <li>{'On $50,000 net income: ~$7,065 SE tax + ~$3,396 federal = ~$10,461 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$2,615 each'}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$2,615 each'}</li>
               <li>14-day rule: rent under 15 days per year = income is tax-free</li>
               <li>Top deductions: depreciation, cleaning fees, mortgage interest, utilities</li>
               <li>File Schedule E (passive) or Schedule C (hotel-like services)</li>
@@ -371,7 +372,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
 
         
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){
             .main-grid{grid-template-columns:1fr!important}

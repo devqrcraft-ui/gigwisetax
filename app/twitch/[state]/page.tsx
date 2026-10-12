@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -79,7 +80,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Twitch streamers are independent contractors — Twitch withholds zero taxes</li>
               <li>{'On $30,000 net income: ~$4,239 SE tax + ~$1,307 federal = ~$5,546 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$1,387 each'}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$1,387 each'}</li>
               <li>Twitch sends two separate 1099 forms — 1099-MISC for subs/ads, 1099-NEC for bits — both must be combined</li>
               <li>Streaming equipment, software, and internet percentage are deductible business expenses</li>
               <li>File Schedule C — report all Twitch income from both 1099 forms, even without either form</li>
@@ -177,7 +178,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
 
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){
             .main-grid{grid-template-columns:1fr!important}

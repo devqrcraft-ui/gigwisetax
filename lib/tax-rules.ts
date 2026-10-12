@@ -16,16 +16,17 @@ export const TAX_RULES_2026 = {
   // [верхня межа, ставка]
   bracketsSingle: [[12400, .10], [50400, .12], [105700, .22], [201775, .24], [256225, .32], [640600, .35], [Infinity, .37]],
   bracketsMarried: [[24800, .10], [100800, .12], [211400, .22], [403550, .24], [512450, .32], [768700, .35], [Infinity, .37]],
+  bracketsHoh: [[17700, .10], [67450, .12], [105700, .22], [201750, .24], [256200, .32], [640600, .35], [Infinity, .37]],
   mileage: { h1: 0.725, h2: 0.76, h2Starts: '2026-07-01' },
   form1099Threshold: { year2026: 2000, year2025AndEarlier: 600 },
   q2Deadline: 'June 15, 2026',
   underpaymentRateQ4_2026: 0.07,
 } as const
 
-type Filing = 'single' | 'married'
+type Filing = 'single' | 'married' | 'hoh'
 
 export function federalTax(taxable: number, filing: Filing = 'single'): number {
-  const br = (filing === 'married' ? TAX_RULES_2026.bracketsMarried : TAX_RULES_2026.bracketsSingle) as readonly (readonly [number, number])[]
+  const br = (filing === 'married' ? TAX_RULES_2026.bracketsMarried : filing === 'hoh' ? TAX_RULES_2026.bracketsHoh : TAX_RULES_2026.bracketsSingle) as readonly (readonly [number, number])[]
   let tax = 0, prev = 0
   for (const [max, rate] of br) {
     if (taxable > prev) tax += (Math.min(taxable, max) - prev) * rate

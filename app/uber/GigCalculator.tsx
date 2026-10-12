@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { estimateTaxRaw } from '@/lib/tax-rules'
 import { MILEAGE_RATE_H1_2026, MILEAGE_RATE_H2_2026 } from '@/lib/data'
 import PartnerCTA from '@/app/PartnerCTA'
 
@@ -20,7 +21,7 @@ export default function GigCalculator({
   const [milesH1, setMilesH1]   = useState('')
   const [milesH2, setMilesH2]   = useState('')
   const [stateSlug, setStateSlug] = useState('california')
-  const [filing, setFiling]     = useState<'single'|'married'>('single')
+  const [filing, setFiling]     = useState<'single'|'married'|'hoh'>('single')
   const [result, setResult]     = useState<any>(null)
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
@@ -34,31 +35,11 @@ export default function GigCalculator({
     const mileDeduct = (miH1 * MILEAGE_RATE_H1_2026) + (miH2 * MILEAGE_RATE_H2_2026)
     const net = Math.max(0, gross - mileDeduct)
     const st = states.find(s => s.slug === stateSlug)
-    const seBase   = net * 0.9235
-    const seTax    = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const seDeduct = seTax * 0.5
-    const std = filing === 'married' ? 32200 : 16100
-    const taxable  = Math.max(0, net - seDeduct - std)
-    let federal = 0
-    if (filing === 'married') {
-      if (taxable > 768700) federal = 206583.50 + (taxable - 768700) * 0.37
-      else if (taxable > 512450) federal = 116896.00 + (taxable - 512450) * 0.35
-      else if (taxable > 403550) federal = 82048.00 + (taxable - 403550) * 0.32
-      else if (taxable > 211400) federal = 35932.00 + (taxable - 211400) * 0.24
-      else if (taxable > 100800) federal = 11600.00 + (taxable - 100800) * 0.22
-      else if (taxable > 24800) federal = 2480.00 + (taxable - 24800) * 0.12
-      else federal = taxable * 0.10
-    } else {
-      if (taxable > 640600) federal = 192979.25 + (taxable - 640600) * 0.37
-      else if (taxable > 256225) federal = 58448.00 + (taxable - 256225) * 0.35
-      else if (taxable > 201775) federal = 41024.00 + (taxable - 201775) * 0.32
-      else if (taxable > 105700) federal = 17966.00 + (taxable - 105700) * 0.24
-      else if (taxable > 50400) federal = 5800.00 + (taxable - 50400) * 0.22
-      else if (taxable > 12400) federal = 1240.00 + (taxable - 12400) * 0.12
-      else federal = taxable * 0.10
-    }
-    const stateTax = taxable * (st?.rate ?? 0.05)
-    const total    = federal + seTax + stateTax
+    const taxRaw = estimateTaxRaw(gross, st?.rate ?? 0.05, filing === 'married' ? 'married' : filing === 'hoh' ? 'hoh' : 'single', mileDeduct)
+    const seTax = taxRaw.se
+    const federal = taxRaw.federal
+    const stateTax = taxRaw.state
+    const total = taxRaw.total
     const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
     setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
   }
@@ -83,7 +64,7 @@ export default function GigCalculator({
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
             <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
+              <label style={lbl}> Annual {platform.name} Earnings Before Mileage and Expenses (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
                 <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>

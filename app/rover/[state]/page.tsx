@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -86,7 +87,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Rover sitters are independent contractors — Rover withholds zero taxes</li>
               <li>{'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$1,335 each'}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$1,335 each'}</li>
               <li>IRS mileage deduction: 72.5¢–76¢/mile for driving to client homes in 2026</li>
               <li>Deduct pet supplies, leashes, dog food used for clients, home office</li>
               <li>File Schedule C — report all Rover income even without a 1099 form</li>
@@ -184,7 +185,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
         
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){
             .main-grid{grid-template-columns:1fr!important}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 
@@ -219,7 +220,7 @@ export default function MultiAppPage() {
             <li>Truly different businesses (driving + Etsy) may need <strong>two Schedule C forms</strong> — check with a CPA</li>
             <li>Combine all business miles across every app — <strong>72.5¢–76¢/mile</strong> in 2026, never count the same mile twice</li>
             <li>Set aside <strong>25–30%</strong> of combined net income — SE tax 15.3% + federal + state</li>
-            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — required if combined tax owed exceeds $1,000</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — required if combined tax owed exceeds $1,000</li>
           </ul>
         </div>
         {/* RULE 1 */}
@@ -363,7 +364,8 @@ export default function MultiAppPage() {
         </div>
 
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </>
   );
 }

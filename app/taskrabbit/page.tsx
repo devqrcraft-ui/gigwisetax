@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import PlatformStatesGrid from '@/app/components/PlatformStatesGrid'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
@@ -424,7 +425,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <li><a href="/blog/taskrabbit-taxes-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>TaskRabbit Taxes 2026: Complete Guide</a></li>
         </ul>
       </section>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
         `}</style>

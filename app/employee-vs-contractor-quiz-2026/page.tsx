@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import EmployeeContractorQuiz from './EmployeeContractorQuiz';
 import AuthorBox from '@/app/components/AuthorBox';
 
@@ -51,7 +52,8 @@ export default function EmployeeContractorQuizPage() {
       </div>
       <EmployeeContractorQuiz />
       <div style={{maxWidth:860,margin:'0 auto',padding:'0 20px'}}>
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </div>
     </>
   );

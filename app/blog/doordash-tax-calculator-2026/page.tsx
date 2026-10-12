@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import { ReviewsSection, ContactSection } from '@/app/components/ReviewsSection'
@@ -157,7 +158,7 @@ export default function DoorDashTaxCalculator2026() {
             IRS Mileage Deduction for DoorDash Drivers in 2026
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            The IRS standard mileage rate for 2026 is 72.5 cents per mile. This is the largest single deduction available to most DoorDash drivers. You can deduct miles driven from the moment you accept an order until delivery is complete — plus miles driven to the restaurant.
+            The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. This is the largest single deduction available to most DoorDash drivers. You can deduct miles driven from the moment you accept an order until delivery is complete — plus miles driven to the restaurant.
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
@@ -293,7 +294,8 @@ export default function DoorDashTaxCalculator2026() {
 
         <ReviewsSection />
         <ContactSection />
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )

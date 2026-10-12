@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata = {
@@ -120,7 +121,8 @@ export default function W2vs1099Guide() {
         <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
         <a href="/1099-tax-calculator-2026" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 vs W-2 Tax Calculator →</a>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       </article>
     </main>
     </div>

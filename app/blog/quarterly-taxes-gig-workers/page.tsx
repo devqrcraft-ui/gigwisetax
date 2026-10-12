@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
-  description: 'Gig workers on $35K owe $1,667/quarter in 2026. Four deadlines: Apr 15, Jun 16, Sep 15, Jan 15. Free IRS payment guide + calculator.',
+  description: 'Gig workers on $35K owe $1,667/quarter in 2026. Four deadlines: Apr 15, Jun 15, Sep 15, Jan 15. Free IRS payment guide + calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
   openGraph: {
     title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
@@ -373,7 +374,8 @@ export default function QuarterlyTaxesGuide() {
           </div>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
 
       </article>
     </>

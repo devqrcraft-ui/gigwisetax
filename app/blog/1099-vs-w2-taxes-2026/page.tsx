@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
@@ -380,7 +381,8 @@ export default function Page() {
           </ul>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )

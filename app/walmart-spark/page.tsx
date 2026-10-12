@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
@@ -26,21 +27,21 @@ const STATES = [
 ]
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (72.5¢–76¢/mile 2026)', desc:'Every mile delivering for Walmart Spark counts. Average driver logs 15,000–25,000 mi/year.' },
-  { icon:'', label:'Phone & Data Plan', desc:'Pro-rata portion used for the app, navigation, and customer contact. Typically 50–80%.' },
-  { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. Full deduction as business equipment.' },
+  { icon:'▸', label:'Mileage (72.5¢–76¢/mile 2026)', desc:'Business miles driven for Spark deliveries may be deductible. Personal and commuting miles generally are not, so keep a mileage log.' },
+  { icon:'', label:'Phone & Data Plan', desc:'Business-use portion only, based on a reasonable allocation supported by your records.' },
+  { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. The business-use portion may be deductible; keep receipts.' },
   { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
   { icon:'', label:'Supplemental Insurance', desc:'Rideshare/delivery insurance gaps not covered by Walmart Spark.' },
   { icon:'', label:'Car Cleaning & Supplies', desc:'Keep receipts — partial deduction for business use percentage.' },
   { icon:'', label:'Bank Fees & Apps', desc:'Any paid apps or tools used to manage your Spark business.' },
-  { icon:'▸', label:'Home Office (if applicable)', desc:'If you use a dedicated space for planning deliveries, tracking income, etc.' },
+  { icon:'▸', label:'Home Office (if applicable)', desc:'Only if a space is used regularly and exclusively for business and meets IRS requirements.' },
 ]
 
 const FAQ = [
-  { q:'Does Walmart Spark send a 1099?', a:'Yes. If you earn $2,000 or more in a calendar year, Walmart Spark (via DDX/branch) issues a 1099-NEC. You must report all income even if no 1099 is received.' },
+  { q:'Does Walmart Spark send a 1099?', a:'Walmart Spark drivers may receive a 1099-NEC or another tax form depending on the payment arrangement. For 2026 payments, the general 1099-NEC reporting threshold is $2,000 ($600 for 2025 and earlier). You must report all income even if you do not receive a form.' },
   { q:'What is the self-employment tax rate for Spark drivers?', a:'15.3% on 92.35% of your net earnings. This covers Social Security (12.4%) and Medicare (2.9%). You can deduct half of this SE tax from your gross income.' },
-  { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Yes. If you expect to owe $1,000 or more in taxes, the IRS requires quarterly estimated payments. Deadlines: Q1 Apr 15, Q2 Jun 16, Q3 Sep 15, Q4 Jan 15.' },
-  { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Track every mile from the moment you accept an order until you return home after the last delivery.' },
+  { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Usually, if you expect to owe $1,000 or more after withholding and credits. Exceptions and safe-harbor rules apply, such as paying at least 90% of the current-year tax or 100% of the prior-year tax (110% for higher earners). Deadlines: Q1 Apr 15, Q2 Jun 15, Q3 Sep 15, Q4 Jan 15.' },
+  { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Track the business miles driven for Spark deliveries (not personal or commuting miles) and keep a contemporaneous log.' },
   { q:'Can I deduct my car payment as a Spark driver?', a:'Not directly. You can use either the standard mileage rate OR actual expenses (depreciation, gas, insurance) — but not both. Most drivers find standard mileage simpler and more beneficial.' },
 ]
 
@@ -68,7 +69,7 @@ export default function WalmartSparkPage() {
     const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const ssSplit = seBase * 0.124
     const medSplit= seBase * 0.029
-    const fl = filing === 'mfj' ? 'married' : 'single'
+    const fl = filing === 'mfj' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
     const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
     const federal = federalTax(taxable, fl)
     const stateTax= taxable * (st?.rate ?? 0.05)
@@ -130,9 +131,9 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
-                  <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Net Income (USD)</label>
+                  <label style={lbl} htmlFor="annual-spark-net-income-usd-se-0"> Annual Spark Earnings Before Mileage (USD)</label>
                   <input style={inp} type="number" placeholder="e.g. 45000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total earnings after Spark's service fees</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Gross Spark earnings before mileage and other expenses</div>
                 </div>
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
@@ -207,9 +208,9 @@ export default function WalmartSparkPage() {
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Walmart Spark drivers owe approximately <strong>$5,417 total tax</strong> in 2026'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,354</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — Spark drivers average 20,000–30,000 miles/year'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — mileage varies by market and schedule, so enter your own documented business miles'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Walmart Spark does <strong>not withhold taxes</strong> — all drivers are 1099 independent contractors'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Delivery bags, phone accessories, and car maintenance are <strong>deductible</strong> Spark expenses'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Business-use portions of delivery bags, phone accessories and supplies may be <strong>deductible</strong>; do not count the same vehicle costs under both standard mileage and actual expenses'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
@@ -239,7 +240,7 @@ export default function WalmartSparkPage() {
                 ))}
               </div>
               <div style={{ marginTop:16, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', fontSize:13, color: '#4ade80' }}>
-                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢–76¢/mile often saves more than actual expenses.
+                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢–76¢/mile may be simpler than actual expenses; compare both methods and never count the same vehicle costs twice.
               </div>
             </div>
           </div>
@@ -356,7 +357,8 @@ export default function WalmartSparkPage() {
 
       
       <ReviewsSection />
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}

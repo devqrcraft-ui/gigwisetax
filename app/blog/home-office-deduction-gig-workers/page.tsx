@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -142,7 +143,8 @@ export default function HomeOfficeBlog() {
           <a href="/blog/self-employment-tax-deductions-2026" style={{ textDecoration:"none" }}><div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(232,184,75,0.15)", borderRadius:8, padding:"16px 18px" }}><div style={{ fontSize:15, fontWeight:700, color:"#e8b84b", marginBottom:6 }}>SE Tax Deductions 2026</div><div style={{ fontSize:13, color:"#94aabf", lineHeight:1.6 }}>Every deduction self-employed workers can claim.</div></div></a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
           </article>
 </div>
   )

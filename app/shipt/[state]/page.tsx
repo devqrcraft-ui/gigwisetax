@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -72,7 +73,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
             <li>$30K net income = ~$4,239 SE tax + federal income tax</li>
             <li>Mileage deduction: 72.5¢–76¢/mile — 3,000 miles = $2,175 saved</li>
             <li>{noStateTax ? state.name + ' has no state income tax' : state.name + ' state tax: ' + stateRateStr + ' — make quarterly payments'}</li>
-            <li>Quarterly deadlines 2026: Apr 15, Jun 16, Sep 15, Jan 15 2027</li>
+            <li>Quarterly deadlines 2026: Apr 15, Jun 15, Sep 15, Jan 15 2027</li>
           </ul>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }} className="main-grid">
@@ -155,7 +156,8 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
             </div>
           </div>
         </div>
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
         <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.three-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(3,1fr)!important}}
           @media(max-width:540px){.p-grid{grid-template-columns:repeat(2,1fr)!important}}

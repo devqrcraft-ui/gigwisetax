@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
@@ -159,7 +160,8 @@ export default function DoorDashVsUberEatsPost() {
         </p>
 
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
           </article>
 </div>
   )

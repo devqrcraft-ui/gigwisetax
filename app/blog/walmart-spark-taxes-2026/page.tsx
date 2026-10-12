@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata = {
@@ -172,7 +173,8 @@ export default function BlogPost() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       </article>
     </main>
   )

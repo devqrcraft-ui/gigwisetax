@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data';
@@ -102,7 +103,7 @@ export default function SafeHarborPage() {
             <li>IRS underpayment penalty is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the unpaid amount per quarter</li>
             <li>Missing <strong>Q1 (Apr 15)</strong> costs the most — penalty accrues for ~9 months; missing Q4 costs the least (~1 month)</li>
             <li>First-year gig workers with <strong>$0 prior year tax</strong> are exempt from underpayment penalties — applies once only</li>
-            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — owe $1,000+ and payments are required</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — owe $1,000+ and payments are required</li>
           </ul>
         </div>
         <div className="alert-box">
@@ -373,7 +374,8 @@ export default function SafeHarborPage() {
         </div>
 
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </>
   );
 }

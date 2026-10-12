@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import PlatformStatesGrid from '@/app/components/PlatformStatesGrid'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS, MILEAGE_RATE_2026 } from '@/lib/data'
@@ -425,7 +426,8 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         </div>
 
         
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
         `}</style>

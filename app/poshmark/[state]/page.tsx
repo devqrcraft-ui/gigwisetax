@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
@@ -79,7 +80,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Poshmark resellers are independent contractors — Poshmark withholds zero taxes</li>
               <li>{'On $60,000 gross sales with $25,000 COGS: net profit $23,000 → ~$3,250 SE tax + ~$638 federal = ~$3,888 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 16, Sep 15, Jan 15 — ~$972 each'}</li>
+              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$972 each'}</li>
               <li>The 1099-K reports gross sales — Poshmark commission and cost of goods come off before you owe tax</li>
               <li>Federal 1099-K threshold: $20,000 and 200+ transactions — some states set it far lower</li>
               <li>File Schedule C — report all Poshmark income even without a 1099-K</li>
@@ -177,7 +178,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </div>
         </div>
 
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
           @media(max-width:960px){
             .main-grid{grid-template-columns:1fr!important}

@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 export const metadata = {
   title: 'Walmart Spark Driver Tax Guide 2026: Deductions + Free Calculator',
   description: 'Walmart Spark driver taxes 2026: SE tax 15.3%, mileage 72.5c/mi, every deduction. Free calculator — exact taxes by state. No signup required.',
@@ -50,7 +51,8 @@ export default function WalmartSparkTaxGuide2026() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         .blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}
         @media(max-width:700px){.blog-grid{grid-template-columns:1fr!important}.blog-sidebar{order:2}}

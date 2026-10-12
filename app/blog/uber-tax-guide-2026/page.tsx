@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
@@ -125,7 +126,7 @@ export default function UberTaxGuide() {
             What Is the 2026 Mileage Deduction for Uber Drivers?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            {'The IRS standard mileage rate for 2026 is 72.5 cents per mile. Track every business mile — driving to the first pickup, trips between rides, and driving back after the last trip. Uber provides your online miles in the Tax Summary but it often undercounts. Use a mileage app for accuracy.'}
+            {'The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Track every business mile — driving to the first pickup, trips between rides, and driving back after the last trip. Uber provides your online miles in the Tax Summary but it often undercounts. Use a mileage app for accuracy.'}
           </p>
 
           <div style={{ overflowX: 'auto', marginBottom: 28 }}>
@@ -339,7 +340,8 @@ export default function UberTaxGuide() {
           </ul>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )
