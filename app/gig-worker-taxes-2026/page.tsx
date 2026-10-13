@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 
@@ -117,7 +118,7 @@ export default function GigWorkerTaxCenter() {
             <li>DoorDash driver earning <strong>$40,000</strong> owes ~$7,933 in total taxes — about $1,983 per quarter</li>
             <li>Uber driver at <strong>$50,000</strong> owes ~$10,461 — mileage deduction at 72.5¢–76¢/mile reduces that significantly</li>
             <li>IRS mileage rate for 2026 is <strong>72.5 cents per mile</strong> — the highest deduction for rideshare and delivery drivers</li>
-            <li>Quarterly deadlines: <strong>Apr 15 · Jun 16 · Sep 15 · Jan 15</strong> — miss one and face an underpayment penalty</li>
+            <li>Quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — miss one and face an underpayment penalty</li>
           </ul>
         </div>
         {CATEGORIES.map(cat => (
@@ -182,7 +183,8 @@ export default function GigWorkerTaxCenter() {
           <div style={{ background: '#B8924A', color: '#07111F', fontWeight: 800, padding: '12px 24px', borderRadius: 8, display: 'inline-block', fontSize: 14 }}>Find My Deductions →</div>
         </a>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </div>
   );
 }

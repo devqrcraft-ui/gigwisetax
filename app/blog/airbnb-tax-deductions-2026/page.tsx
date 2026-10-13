@@ -4,6 +4,7 @@
 // ================================================================
 
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 export const metadata = {
   title: 'Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator',
   description: 'Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see exactly how much you owe. All 50 states.',
@@ -55,7 +56,8 @@ export default function AirbnbTaxDeductions2026() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         .blog-grid{display:grid;grid-template-columns:1fr;max-width:780px;margin:0 auto}
         @media(max-width:700px){

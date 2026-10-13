@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 
@@ -176,7 +177,8 @@ export default function SECalculatorPage() {
         </div>
 
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </>
   );
 }

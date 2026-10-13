@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -121,7 +122,8 @@ export default function BestAppsGigWorkers() {
               <div style={{ fontSize: 11, opacity: 0.7, marginTop: 4 }}>Full comparison 2026 →</div>
             </a>
           </div>
-          <AuthorBox />
+          <TaxFreshness />
+<AuthorBox />
         </div>
       </article>
       </div>

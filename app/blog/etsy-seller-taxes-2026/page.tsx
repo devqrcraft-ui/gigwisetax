@@ -2,6 +2,7 @@
 // FILE: app/blog/etsy-seller-taxes-2026/page.tsx
 // ================================================================
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Etsy Seller Taxes 2026 — Complete 1099 Filing Guide | GigWiseTax',
@@ -181,7 +182,8 @@ export default function EtsyTaxGuide() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}}`}</style>
           </article>
 </div>

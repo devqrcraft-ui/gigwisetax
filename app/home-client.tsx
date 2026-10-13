@@ -224,7 +224,7 @@ export default function HomeClient() {
     const deductions = (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
     const st = STATES.find(s => s.code === stateCode)
     // Єдине джерело правил: lib/tax-rules.ts (відрахування, прогресивні брекети, стеля SS). HOH = single, як у platform-калькуляторах.
-    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : 'single', deductions)
+    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : filing === 'hoh' ? 'hoh' : 'single', deductions)
     setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1) })
   }
 
@@ -729,10 +729,10 @@ export default function HomeClient() {
         <div style={{marginBottom:48}}>
           <div style={{display:'flex',alignItems:'center',gap:10,marginBottom:8}}>
             <div style={{width:3,height:20,background:'#e8b84b',borderRadius:2}}/>
-            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Real Tax Examples</span>
+            <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Illustrative Examples</span>
           </div>
-          <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers Actually Pay</h2>
-          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Based on 2026 IRS brackets. SE tax 15.3% + federal + state included.</p>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers May Pay: Example Calculations</h2>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Illustrative single-filer examples using 2026 IRS brackets and the standard deduction, with no other income, credits or withholding. SE tax + federal + state included.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
               {label:'DoorDash $40,000 — California',se:'$5,652',fed:'$2,281',state:'$1,960',net:'~$30,107',href:'/doordash/california'},

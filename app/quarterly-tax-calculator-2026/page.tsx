@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react';
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data';
@@ -353,7 +354,8 @@ export default function QuarterlyTaxCalculator() {
           </div>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
 
       </div>
 

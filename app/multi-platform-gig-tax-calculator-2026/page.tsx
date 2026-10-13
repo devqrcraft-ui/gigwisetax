@@ -39,7 +39,7 @@ const faqSchema = {
       name: 'How do I calculate quarterly taxes for multiple gig apps?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Add your total net income from all platforms, calculate your annual tax liability (SE + federal + state), then divide by 4. Pay by Apr 15, Jun 16, Sep 15 2026, and Jan 15 2027. If you expect to owe $1,000 or more, quarterly payments are required by the IRS.',
+        text: 'Add your total net income from all platforms, calculate your annual tax liability (SE + federal + state), then divide by 4. Pay by Apr 15, Jun 15, Sep 15 2026, and Jan 15 2027. If you expect to owe $1,000 or more, quarterly payments are required by the IRS.',
       },
     },
     {

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import type { Metadata } from 'next'
 
@@ -233,7 +234,8 @@ export default function GrubhubVsDoorDashPost() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`@media(max-width:900px){.blog-grid{grid-template-columns:1fr!important}}`}</style>
     </div>
   )

@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
 import { DEADLINES_2026 } from '@/lib/data'
@@ -305,7 +306,8 @@ export default function TuroPage() {
           </div>
 
       
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.results-row{grid-template-columns:1fr 1fr!important}.ded-grid{grid-template-columns:1fr!important}}
         @media(max-width:540px){.results-row{grid-template-columns:1fr!important}}

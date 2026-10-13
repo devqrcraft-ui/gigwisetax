@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -73,7 +74,7 @@ export default function Page() {
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>2026 quarterly deadlines: <strong>Apr 15, Jun 16, Sep 15, Jan 15, 2027</strong></li>
+            <li>2026 quarterly deadlines: <strong>Apr 15, Jun 15, Sep 15, Jan 15, 2027</strong></li>
             <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>
             <li>Missing a deadline triggers a <strong>penalty of ~3–4%</strong> of the unpaid amount</li>
             <li>Use <strong>IRS Direct Pay</strong> — free, instant, no account required</li>
@@ -155,7 +156,8 @@ export default function Page() {
         <div style={{ fontSize:15, fontWeight:700, color:'#e8e8e8' }}>Calculate your exact tax bill — free, no signup</div>
         <a href="/1099-tax-calculator-2026" style={{ background:'#e8b84b', color:'#07111F', fontWeight:800, fontSize:14, padding:'10px 22px', borderRadius:7, textDecoration:'none', whiteSpace:'nowrap' as const }}>1099 Tax Calculator →</a>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </>
   )
 }

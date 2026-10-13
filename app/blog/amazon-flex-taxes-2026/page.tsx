@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
@@ -283,7 +284,8 @@ export default function AmazonFlexTaxesBlogPost() {
       </div>
 
       
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
       <style>{`
         @media(max-width:900px){.blog-grid{grid-template-columns:1fr!important}}
       `}</style>

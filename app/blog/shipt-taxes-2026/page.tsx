@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
@@ -155,7 +156,7 @@ export default function ShiptTaxes2026() {
             Mileage Deduction for Shipt Shoppers in 2026
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            The IRS standard mileage rate for 2026 is 72.5 cents per mile. For Shipt shoppers, deductible miles include driving from home to the store, driving within the store parking area, and driving from the store to the delivery address.
+            The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. For Shipt shoppers, deductible miles include driving from home to the store, driving within the store parking area, and driving from the store to the delivery address.
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
@@ -293,7 +294,8 @@ export default function ShiptTaxes2026() {
           </ul>
         </section>
 
-        <AuthorBox />
+        <TaxFreshness />
+<AuthorBox />
       </article>
     </>
   )

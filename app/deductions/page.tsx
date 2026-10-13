@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link'
 import AuthorBox from '@/app/components/AuthorBox'
 
@@ -177,7 +178,8 @@ export default function DeductionsChecklist() {
       <p style={{ color: 'rgba(255,255,255,.82)', fontSize: 11, textAlign: 'center', marginTop: 16 }}>
         For informational purposes only. Consult a licensed CPA. GigWiseTax.com
       </p>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
     </div></div>
   )
 }

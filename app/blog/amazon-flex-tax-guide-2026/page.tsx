@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -141,7 +142,8 @@ export default function AmazonFlexTaxGuide() {
       </a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
         <style>{`@media(max-width:760px){.blog-grid{grid-template-columns:1fr!important}}`}</style>
       </article>
       </div>

@@ -1,4 +1,5 @@
 import AuthorBox from '@/app/components/AuthorBox'
+import TaxFreshness from '@/app/components/TaxFreshness'
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 import Link from 'next/link'
@@ -92,7 +93,7 @@ export default function W9MistakesBlog() {
 
           <h2 style={h2}>Mistake #4: Missing the Quarterly Tax Deadline</h2>
           <p style={p}>W-9 and 1099 income has no withholding. That means you're responsible for paying taxes quarterly using IRS Form 1040-ES. Missing even one quarterly payment triggers an underpayment penalty — currently {UNDERPAYMENT_PENALTY_RATE_2026}% annually on the amount owed.</p>
-          <div style={warn}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 16 | Q3 — September 15 | Q4 — January 15, 2026</div>
+          <div style={warn}> <strong>2025 Deadlines:</strong> Q1 — April 15 | Q2 — June 15 | Q3 — September 15 | Q4 — January 15, 2026</div>
 
           <h2 style={h2}>Mistake #5: Using Your SSN When You Should Use an EIN</h2>
           <p style={p}>Many gig workers share their Social Security Number on W-9 forms without realizing they can use an Employer Identification Number (EIN) instead. An EIN is free, takes 5 minutes to get at IRS.gov, and protects your SSN from identity theft.</p>
@@ -126,7 +127,8 @@ export default function W9MistakesBlog() {
           <a href="/blog/self-employment-tax-deductions-2026" style={{ textDecoration:"none" }}><div style={{ background:"rgba(255,255,255,0.04)", border:"1px solid rgba(232,184,75,0.15)", borderRadius:8, padding:"16px 18px" }}><div style={{ fontSize:15, fontWeight:700, color:"#e8b84b", marginBottom:6 }}>SE Tax Deductions 2026</div><div style={{ fontSize:13, color:"#94aabf", lineHeight:1.6 }}>Every deduction self-employed workers can claim.</div></div></a>
         </div>
       </div>
-      <AuthorBox />
+      <TaxFreshness />
+<AuthorBox />
           </article>
 </div>
   )
