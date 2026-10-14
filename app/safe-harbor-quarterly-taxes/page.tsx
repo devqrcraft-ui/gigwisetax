@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
@@ -374,6 +375,7 @@ export default function SafeHarborPage() {
         </div>
 
       </div>
+      <BehindOnTaxes page="safe-harbor" />
       <TaxFreshness />
 <AuthorBox />
     </>

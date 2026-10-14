@@ -3,6 +3,7 @@
 // ================================================================
 
 import type { Metadata } from 'next'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
@@ -202,6 +203,7 @@ export default function DeadlinesPage() {
       </div>
       <style dangerouslySetInnerHTML={{__html:"@media(max-width:540px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}.state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(max-width:960px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}}@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}"}} />
       <div style={{maxWidth:1200,margin:'0 auto',padding:'0 16px'}}>
+        <BehindOnTaxes page="deadlines" />
         <TaxFreshness />
 <AuthorBox />
       </div>
