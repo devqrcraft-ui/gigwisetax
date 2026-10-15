@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
@@ -196,6 +197,7 @@ export default function WalmartSparkPage() {
                   <strong> Disclaimer:</strong> These are estimates only. Not tax advice. Consult a CPA or use IRS Form 1040-ES for official calculations. Individual circumstances vary.
                 </div>
                 <PartnerCTA sid="walmart-spark" />
+                <BehindOnTaxes page="walmart-spark" />
               </div>
             )}
           </div>

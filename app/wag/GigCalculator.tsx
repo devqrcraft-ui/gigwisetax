@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import { estimateTaxRaw } from '@/lib/tax-rules'
 import PartnerCTA from '@/app/PartnerCTA'
 interface State { slug: string; name: string; abbr: string; rate: number }
@@ -188,6 +189,7 @@ export default function GigCalculator({
                <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
             </div>
           <PartnerCTA sid="wag" />
+          <BehindOnTaxes page="wag" />
           </div>
         </div>
       )}

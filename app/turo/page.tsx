@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
@@ -179,6 +180,7 @@ export default function TuroPage() {
                   <strong> Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
                 </div>
               <PartnerCTA sid="turo" />
+              <BehindOnTaxes page="turo" />
               </div>
             )}
           </div>

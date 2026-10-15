@@ -1,5 +1,6 @@
 'use client'
 import AuthorBox from '@/app/components/AuthorBox'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { useState } from 'react'
@@ -184,6 +185,7 @@ export default function GrubhubPage() {
                   <strong> Disclaimer:</strong> Estimates only. Not tax advice. Consult a CPA or tax professional for your specific situation.
                 </div>
               <PartnerCTA sid="grubhub" />
+              <BehindOnTaxes page="grubhub" />
               </div>
             )}
           </div>
