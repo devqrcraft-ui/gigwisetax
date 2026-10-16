@@ -25,7 +25,7 @@ export interface AwinPartner {
 
 export const PARTNERS: { communityTax: AwinPartner } = {
   communityTax: {
-    enabled: false,
+    enabled: true,
     mid: '130537',
     affId: '2898033',
     gid: '615820',
