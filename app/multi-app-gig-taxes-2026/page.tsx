@@ -55,7 +55,7 @@ const faqSchema = {
       "name": "How much should I set aside for taxes working 3 gig apps?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Set aside 25–30% of combined net income from all platforms. The formula: combined net revenue minus all deductions (mileage, phone, supplies) equals taxable net. Apply 15.3% SE tax + 10–22% federal income tax + state tax. Use our calculator to get the exact number for your state."
+        "text": "Set aside 25–30% of combined net income from all platforms. The formula: combined net revenue minus all deductions (mileage, phone, supplies) equals taxable net. Apply 15.3% SE tax + 10–22% federal income tax + state tax. Use our calculator to get your estimate for your state."
       }
     }
   ]

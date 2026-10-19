@@ -136,7 +136,7 @@ export default function DoorDashVsUberEatsPost() {
         </div>
 
         <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
-          <p style={{ margin: '0 0 8px', fontWeight: 700, color: accent }}>Calculate your exact tax bill</p>
+          <p style={{ margin: '0 0 8px', fontWeight: 700, color: accent }}>Estimate your tax bill</p>
           <p style={{ margin: '0 0 12px', fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>Enter your DoorDash or Uber Eats income into the free GigWiseTax calculator — get quarterly payment amounts in 30 seconds.</p>
           <Link href="/platform/doordash" style={{ display: 'inline-block', background: accent, color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', marginRight: 10 }}>DoorDash Calculator</Link>
           <Link href="/platform/uber-eats" style={{ display: 'inline-block', background: 'transparent', color: accent, fontWeight: 700, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', border: '1px solid rgba(232,184,75,0.4)' }}>Uber Eats Calculator</Link>

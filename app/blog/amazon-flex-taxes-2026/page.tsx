@@ -247,7 +247,7 @@ export default function AmazonFlexTaxesBlogPost() {
               <span style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,.55)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}> Try the Calculator</span>
             </div>
             <div style={{ padding: 16 }}>
-              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, marginBottom: 12, marginTop: 0 }}>Estimate your exact Amazon Flex tax bill in 60 seconds.</p>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.6, marginBottom: 12, marginTop: 0 }}>Estimate your Amazon Flex tax bill in 60 seconds.</p>
               <Link href="/amazon-flex" style={{ textDecoration: 'none' }}>
                 <div style={{ background: '#B22234', color: '#fff', padding: '11px 0', borderRadius: 4, fontSize: 13, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}> Amazon Flex Calculator →</div>
               </Link>

@@ -32,13 +32,13 @@ const TAX_BRACKETS_MFJ = [
 ];
 
 const TAX_BRACKETS_HOH = [
-  { min: 0, max: 17000, rate: 0.10 },
-  { min: 17000, max: 64850, rate: 0.12 },
-  { min: 64850, max: 103350, rate: 0.22 },
-  { min: 103350, max: 197300, rate: 0.24 },
-  { min: 197300, max: 250500, rate: 0.32 },
-  { min: 250500, max: 626350, rate: 0.35 },
-  { min: 626350, max: Infinity, rate: 0.37 },
+  { min: 0, max: 17700, rate: 0.10 },
+  { min: 17700, max: 67450, rate: 0.12 },
+  { min: 67450, max: 105700, rate: 0.22 },
+  { min: 105700, max: 201750, rate: 0.24 },
+  { min: 201750, max: 256200, rate: 0.32 },
+  { min: 256200, max: 640600, rate: 0.35 },
+  { min: 640600, max: Infinity, rate: 0.37 },
 ];
 
 function getBrackets(status: string) {
@@ -125,7 +125,7 @@ export default function QuarterlyTaxCalculator() {
         {/* Answer-First GEO block */}
         <div style={{ background: '#0d1f35', border: '1px solid #e8b84b33', borderRadius: 10, padding: '20px 24px', marginBottom: 32 }}>
           <p style={{ fontSize: 16, lineHeight: 1.7, margin: 0 }}>
-            <strong style={{ color: '#e8b84b' }}>Quick answer:</strong> Gig workers pay estimated taxes 4 times per year — April 15, June 15, September 15, and January 15. Each quarter you owe roughly <strong>25–30% of your net profit</strong>: ~15.3% self-employment tax + federal income tax minus the SE deduction. Use this calculator to get your exact quarterly payment for 2026.
+            <strong style={{ color: '#e8b84b' }}>Quick answer:</strong> Gig workers pay estimated taxes 4 times per year — April 15, June 15, September 15, and January 15. Each quarter you owe roughly <strong>25–30% of your net profit</strong>: ~15.3% self-employment tax + federal income tax minus the SE deduction. Use this calculator to estimate your quarterly payment for 2026.
           </p>
         </div>
 

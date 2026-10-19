@@ -66,7 +66,7 @@ export default function SECalculatorPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
 
       <div className="se-wrap">
-        <div className="se-badge">2026 · IRS Compliant · Free</div>
+        <div className="se-badge">2026 · IRS-based estimate · Free</div>
         <h1 className="se-h1">Self-Employment Tax Calculator <em>2026</em></h1>
         <p className="se-lead">
           Calculate your exact SE tax as a gig worker, freelancer, or independent contractor.

@@ -107,7 +107,7 @@ export default function W9MistakesBlog() {
 
           <div style={{ background: '#1e2d5a', borderRadius: 8, padding: 24, margin: '32px 0', textAlign: 'center' as const }}>
             <div style={{ color: '#e8b84b', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 8 }}>FREE TAX TOOLS — GIGWISETAX.COM</div>
-            <p style={{ color: '#fff', fontSize: 16, fontWeight: 600, margin: '0 0 16px' }}>Calculate your exact tax bill and find every deduction</p>
+            <p style={{ color: '#fff', fontSize: 16, fontWeight: 600, margin: '0 0 16px' }}>Estimate your tax bill and find every deduction</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
               <Link href="/tax-penalty-finder" style={{ display: 'block', background: '#B22234', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none' }}> Tax Penalty Finder</Link>
               <Link href="/deductions" style={{ display: 'block', background: '#0d2340', color: '#fff', borderRadius: 6, padding: '12px', fontSize: 14, fontWeight: 700, textDecoration: 'none', border: '1px solid #2a6496' }}> Deductions Checklist</Link>

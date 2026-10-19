@@ -116,7 +116,7 @@ export default function OnlyFansTaxGuide() {
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 12, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>Do I Need to Pay Quarterly?</h2>
       <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 32 }}>
-        Yes — if you expect to owe <strong style={{ color: 'rgba(255,255,255,0.9)' }}>$1,000 or more</strong> in taxes for 2026, the IRS requires quarterly estimated payments. Missing them results in a penalty. Use our free calculator to find your exact quarterly amount.
+        Yes — if you expect to owe <strong style={{ color: 'rgba(255,255,255,0.9)' }}>$1,000 or more</strong> in taxes for 2026, the IRS requires quarterly estimated payments. Missing them results in a penalty. Use our free calculator to estimate your quarterly amount.
       </p>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: 24, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center' }}>
