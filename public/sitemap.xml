@@ -688,4 +688,10 @@
     <loc>https://www.gigwisetax.com/youtube</loc>
     <lastmod>2026-08-22</lastmod>
   </url>
+  <url>
+    <loc>https://www.gigwisetax.com/gig-worker-owes-irs</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

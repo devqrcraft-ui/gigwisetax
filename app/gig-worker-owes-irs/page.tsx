@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { TAX_RULES_2026 } from '@/lib/tax-rules'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
-import BehindOnTaxes from '@/app/components/BehindOnTaxes'
+import BehindOnTaxes, { SponsoredInline } from '@/app/components/BehindOnTaxes'
 import CommunityTaxBanner from '@/app/components/CommunityTaxBanner'
 
 const PAGE_URL = 'https://www.gigwisetax.com/gig-worker-owes-irs'
@@ -150,6 +150,9 @@ export default function GigWorkerOwesIrs() {
         <p style={p}>
           Paid help includes CPAs, enrolled agents, tax attorneys and tax resolution companies. Before you pay anyone, ask for a written fee schedule,
           ask exactly what is included, and be cautious about anyone who guarantees a settlement. Many options above can be requested directly from the IRS.
+        </p>
+        <p style={p}>
+          If you would rather have a professional handle the IRS contact, you can start with a free consultation: <SponsoredInline page="guide-inline" kind="consultation" />
         </p>
         <h3 style={{ fontSize: 18, fontWeight: 700, color: '#fff', margin: '18px 0 8px' }}>What a consultation with a tax resolution company involves</h3>
         <p style={p}>

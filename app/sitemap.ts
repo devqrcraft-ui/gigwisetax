@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   const core = [
+    { url: `${BASE_URL}/gig-worker-owes-irs`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: BASE_URL,                                      lastModified: now, changeFrequency: 'weekly'  as const, priority: 1.0 },
     { url: `${BASE_URL}/calculators`,                    lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },
     { url: `${BASE_URL}/deadlines`,                      lastModified: now, changeFrequency: 'monthly' as const, priority: 0.9 },

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import { estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import Link from 'next/link'
 
@@ -462,6 +463,7 @@ export default function HomeClient() {
                        <strong>Worried about penalties?</strong> Check if you are on track for 2026 quarterly payments.{' '}
                       <a href="/tax-penalty-finder" style={{ color: '#4ade80', fontWeight: 700 }}>→ Open Penalty Finder</a>
                     </div>
+                    <BehindOnTaxes page="home" />
                   </div>
                 </div>
               )}
