@@ -8,14 +8,16 @@ import { PARTNERS, awinClick, awinDeep } from '@/lib/partners'
  * Тексти посилань = схвалені креативи Awin (не змінювати). Анімація лише при prefers-reduced-motion: no-preference.
  */
 const CSS = [
-  '.gtx-cta{display:block;width:100%;box-sizing:border-box;text-align:center;background:#e8b84b;color:#07111F;font-weight:800;font-size:17px;line-height:1.3;padding:14px 18px;border-radius:8px;text-decoration:none;border:2px solid #e8b84b}',
-  '.gtx-cta:hover{background:#f3c95f;border-color:#f3c95f}',
+  '.gtx-cta{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;width:100%;box-sizing:border-box;text-align:center;background:#e8b84b;color:#07111F;font-weight:800;font-size:18px;line-height:1.3;padding:18px 20px;min-height:58px;border-radius:10px;text-decoration:none;border:2px solid #e8b84b;transition:transform .15s ease,background .15s ease}',
+  '.gtx-cta:hover{background:#f3c95f;border-color:#f3c95f;transform:translateY(-1px)}',
+  '.gtx-cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;pointer-events:none;opacity:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,0.5),transparent);transform:skewX(-20deg)}',
+  '@keyframes gtxshine{0%,55%{left:-60%}100%{left:140%}}',
   '.gtx-cta:focus-visible,.gtx-inline:focus-visible{outline:3px solid #ffffff;outline-offset:3px}',
   '.gtx-inline{color:#e8b84b;font-weight:700;text-decoration:underline;text-underline-offset:3px}',
   '.gtx-arrow{display:inline-block;margin-left:6px}',
   '@keyframes gtxpulse{0%,100%{box-shadow:0 0 0 0 rgba(232,184,75,0.55)}60%{box-shadow:0 0 0 10px rgba(232,184,75,0)}}',
   '@keyframes gtxnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}',
-  '@media (prefers-reduced-motion: no-preference){.gtx-cta{animation:gtxpulse 2.6s ease-in-out infinite}.gtx-arrow{animation:gtxnudge 1.6s ease-in-out infinite}}',
+  '@media (prefers-reduced-motion: no-preference){.gtx-cta{animation:gtxpulse 2.6s ease-in-out infinite}.gtx-cta::after{opacity:1;animation:gtxshine 4.5s ease-in-out infinite}.gtx-arrow{animation:gtxnudge 1.6s ease-in-out infinite}}',
 ].join('')
 
 function SponsoredStyles() {

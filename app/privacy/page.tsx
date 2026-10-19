@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Privacy Policy
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}> Privacy Policy</h1>
-          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: January 1, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
+          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: October 19, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
         </div>
       </div>
 
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
         <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', marginBottom: 6 }}> The Short Version</div>
           <div style={{ fontSize: 14, color: '#4ade80', lineHeight: 1.7 }}>
-            GigWiseTax.com does <strong>not</strong> collect, store, or transmit any personal data. All calculations run entirely in your browser. We have no user accounts. We cannot see your income or tax figures — ever.
+            GigWiseTax.com does <strong>not</strong> collect, store, or transmit any personal data. All calculations run entirely in your browser. We have no user accounts. If you click a sponsored link, that partner and its network, not GigWiseTax, may collect data such as your IP address (see Section 5). We cannot see your income or tax figures — ever.
           </div>
         </div>
 
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
 
           <div style={section}>
             <h2 style={h2}>1. Who We Are</h2>
-            <p style={p}>GigWiseTax.com is an independent, free tax estimation tool for U.S. gig economy workers. We are not affiliated with the IRS, any U.S. government agency, TurboTax, QuickBooks, or any tax preparation company.</p>
+            <p style={p}>GigWiseTax.com is an independent, free tax estimation tool for U.S. gig economy workers. We are not affiliated with the IRS or any U.S. government agency. Some links on this site are sponsored links to independent tax companies (see Section 5); GigWiseTax is not part of those companies and may earn a commission.</p>
           </div>
 
           <div style={section}>
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
 
           <div style={section}>
             <h2 style={h2}>4. Cookies</h2>
-            <p style={p}>We use only <strong>functional cookies</strong> that are strictly necessary for the website to operate. We do not use advertising cookies, tracking pixels, or any third-party profiling. The cookies we may use include:</p>
+            <p style={p}>We use only <strong>functional cookies</strong> that are strictly necessary for the website to operate. GigWiseTax itself does not set advertising cookies or use tracking pixels or third-party profiling. Partners you reach through sponsored links, and the Awin network that serves the banner on one guide page, may set their own cookies (see Section 5). The cookies we may use include:</p>
             <ul style={{ paddingLeft: 24 }}>
               <li style={li}><strong>Session cookies</strong> — temporary and deleted when you close your browser</li>
               <li style={li}><strong>Preference cookies</strong> — may store your selected state or filing status locally in your browser (not transmitted to us)</li>
