@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "verify": "npx tsx scripts/verify-tax.ts",
     "start": "next start"
   },
   "dependencies": {

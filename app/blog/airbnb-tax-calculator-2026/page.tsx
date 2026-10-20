@@ -305,7 +305,7 @@ export default function AirbnbTaxCalculator2026() {
               'Hosts on Schedule C (substantial services) qualify more easily than Schedule E',
               'Safe harbor: 250+ hours of rental services per year for Schedule E hosts',
               'On $50,000 net income, QBI deduction = $10,000 — saving $2,200 at 22% rate',
-              'Income limits may apply for high earners above $197,300 (single) in 2026',
+              'Income limits may apply for high earners above $201,750 (single taxable income) in 2026',
               'Combine QBI with depreciation for maximum tax reduction',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
