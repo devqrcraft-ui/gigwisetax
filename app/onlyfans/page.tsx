@@ -1,3 +1,4 @@
+import { example as gtxExample } from '@/lib/examples'
 import { notFound } from 'next/navigation'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
@@ -162,7 +163,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, OnlyFans creators owe approximately <strong>$7,933 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,019</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>' + gtxExample(40000).text.quarterly + '</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'OnlyFans takes a <strong>20% platform fee</strong> — deductible as a business expense on Schedule C'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Camera, lighting, home studio, and content creation tools are <strong>fully deductible</strong>'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–30%</strong> of every payout — OnlyFans does not withhold federal or state taxes'}}/>
@@ -172,7 +173,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — OnlyFans</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              OnlyFans workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,281 federal income tax = <strong style={{ color:'#fff' }}>$7,933 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,019</strong>. Set aside 25% of every payment. Equipment, internet, and home studio expenses are deductible.
+              OnlyFans workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately {gtxExample(40000).text.se} SE tax + {gtxExample(40000).text.federal} federal income tax = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>{gtxExample(40000).text.quarterly}</strong>. Set aside 25% of every payment. Equipment, internet, and home studio expenses may be deductible if you use them for your business.
             </p>
           </div>
 
