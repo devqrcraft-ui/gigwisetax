@@ -1,5 +1,6 @@
 'use client'
 
+import { mileageDeductEvenSplit } from '@/lib/examples'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -32,7 +33,7 @@ export default function TaxPenaltyFinder() {
   const calculate = () => {
     const inc = parseFloat(income) || 0
     const mi  = parseFloat(miles)  || 0
-    const mileageDed   = hasMileage ? mi * 0.725 : 0
+    const mileageDed   = hasMileage ? mileageDeductEvenSplit(mi) : 0
     const homeOfficeDed = homeOffice ? 1200 : 0
     const phoneDed     = phone ? inc * 0.04 : 0
     const totalMissed  = mileageDed + homeOfficeDed + phoneDed + 800
@@ -184,7 +185,7 @@ export default function TaxPenaltyFinder() {
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026</strong> — your biggest deduction</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background: "#07111F"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#4ade80', fontWeight:600 }}>
-                 Potential deduction: ${(parseFloat(miles)*0.725).toLocaleString('en-US')} → saves ~${Math.round(parseFloat(miles)*0.725*0.28).toLocaleString('en-US')} in taxes
+                 Potential deduction: ${(mileageDeductEvenSplit(parseFloat(miles))).toLocaleString('en-US')} → saves ~${Math.round(mileageDeductEvenSplit(parseFloat(miles))*0.28).toLocaleString('en-US')} in taxes
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>
