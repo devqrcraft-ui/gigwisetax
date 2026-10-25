@@ -58,7 +58,7 @@ export default function Calculator1099HubPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
+      
 
       <div className="k99-wrap">
         <div className="k99-badge">1099 · Gig Workers · Contractors · 2026</div>

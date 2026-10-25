@@ -117,7 +117,7 @@ export default function GigWorkerTaxCenter() {
             <li>Self-employment tax is <strong>15.3%</strong> on net profit — 12.4% Social Security + 2.9% Medicare</li>
             <li>DoorDash driver earning <strong>$40,000</strong> owes ~$7,933 in total taxes — about $1,983 per quarter</li>
             <li>Uber driver at <strong>$50,000</strong> owes ~$10,461 — mileage deduction at 72.5¢–76¢/mile reduces that significantly</li>
-            <li>IRS mileage rate for 2026 is <strong>72.5 cents per mile</strong> — the highest deduction for rideshare and delivery drivers</li>
+            <li>IRS mileage rate for 2026 is <strong>72.5 cents per mile (January–June; 76 cents from July 1)</strong> — the highest deduction for rideshare and delivery drivers</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — miss one and face an underpayment penalty</li>
           </ul>
         </div>

@@ -22,7 +22,7 @@ const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","h
 export default function SelfEmploymentTaxRate2026() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: faqSchema}} />
+      
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: breadcrumbSchema}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: articleSchema}} />
 

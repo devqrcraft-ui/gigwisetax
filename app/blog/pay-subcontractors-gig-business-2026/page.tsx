@@ -22,7 +22,7 @@ const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","h
 export default function PaySubcontractorsGuide() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: faqSchema}} />
+      
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: breadcrumbSchema}} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: articleSchema}} />
 

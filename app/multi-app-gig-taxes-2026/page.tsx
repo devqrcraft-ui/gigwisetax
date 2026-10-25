@@ -190,7 +190,7 @@ export default function MultiAppPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
+      
       <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(howToSchema)}} />
 
       <div className="wrap">

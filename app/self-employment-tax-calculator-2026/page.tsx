@@ -63,7 +63,7 @@ export default function SECalculatorPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
+      
 
       <div className="se-wrap">
         <div className="se-badge">2026 · IRS-based estimate · Free</div>

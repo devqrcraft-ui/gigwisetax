@@ -56,10 +56,7 @@ const faqSchema = {
 export default function MultiPlatformCalculatorPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      
       <MultiPlatformCalculator />
     </>
   );
