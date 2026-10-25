@@ -29,7 +29,7 @@ const faqSchema = {
 export default function EmployeeContractorQuizPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      
       {/* ANSWER-FIRST */}
       <div style={{maxWidth:860,margin:'0 auto',padding:'32px 20px 0'}}>
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>

@@ -60,7 +60,7 @@ const td = { padding: '10px 12px', fontSize: 15, lineHeight: 1.6, verticalAlign:
 export default function GigWorkerOwesIrs() {
   return (
     <main style={wrap}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqJsonLd }} />
+      
       <div style={col}>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', margin: '0 0 8px' }}>
           <Link href="/" style={a}>Home</Link> › Owe the IRS

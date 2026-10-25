@@ -24,7 +24,7 @@ const orgSchema = JSON.stringify({"@context":"https://schema.org","@type":"Organ
 export default function DoorDashTaxCalculator2026() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
+      
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: orgSchema }} />
