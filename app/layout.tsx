@@ -40,26 +40,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode } ) {
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "GigWiseTax Calculator",
-    "operatingSystem": "Any",
-    "applicationCategory": "FinanceApplication",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  };
-  
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.gigwisetax.com" }]
-  };
-
   return (
     <html lang="en">
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema ) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       </head>
       <body className="antialiased">
         <header style={{position:"sticky",top:0,zIndex:50,background:"#07111F",borderBottom:"1px solid rgba(232,184,75,0.2)",padding:"10px 20px"}}>
