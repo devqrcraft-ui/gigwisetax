@@ -17,7 +17,7 @@ export default function HubPage() {
       <h1 className="text-4xl font-bold mb-6">Uber Driver Tax Guide 2026</h1>
       <p className="text-xl mb-8 opacity-80">Everything Uber and Lyft drivers need to know about 1099 taxes, mileage, and deductions.</p>
       <div className="prose prose-invert max-w-none">
-        <p>Uber drivers face unique tax challenges. From tracking every mile to understanding the 1099-K vs 1099-NEC, this guide covers it all.</p><ul><li>Standard Mileage Rate: 72.5 cents/mile</li><li>Passenger amenities (water, chargers)</li><li>Phone and data plan deductions</li></ul>
+        <p>Uber drivers face unique tax challenges. From tracking every mile to understanding the 1099-K vs 1099-NEC, this guide covers it all.</p><ul><li>Standard Mileage Rate: 72.5 cents/mile (January–June; 76 cents from July 1)</li><li>Passenger amenities (water, chargers)</li><li>Phone and data plan deductions</li></ul>
       </div>
       <div className="mt-12 p-6 rounded-xl border border-blue-500/20 bg-blue-500/5">
         <h3 className="text-xl font-bold mb-2">Calculate Your Total Taxes</h3>

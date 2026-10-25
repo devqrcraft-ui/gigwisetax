@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
 }
 
-const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Shipt shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers pay 15.3% self-employment tax on net earnings. On $35,000 net income: SE tax is $4,945 + federal income tax $1,723 = $6,669 total. Quarterly payment: $1,667."}},{"@type":"Question","name":"Does Shipt send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shipt sends a 1099-NEC for earnings over $2,000 under the OBBBA 2026 threshold (previously $600). You receive it by January 31, 2027 via the Shipt app or email."}},{"@type":"Question","name":"What mileage can Shipt shoppers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers can deduct 72.5 cents per mile for business driving. This includes miles from home to the store, during shopping, and to the delivery address. Track every mile."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Shipt shopper?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, you must pay quarterly. Deadlines are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Are Shipt tips taxable?","acceptedAnswer":{"@type":"Answer","text":"Under OBBBA 2026, Shipt shoppers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax but not income tax up to the $25,000 cap."}},{"@type":"Question","name":"What percentage should Shipt shoppers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25% of net Shipt income. In high-tax states like California, set aside 30-35%. This covers SE tax (15.3%) plus federal and state income tax."}},{"@type":"Question","name":"Can I deduct my car for Shipt deliveries?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use the standard mileage rate (72.5 cents/mile) or actual vehicle expenses (gas, insurance, depreciation). Most shoppers benefit more from the standard mileage rate."}}]})
+const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do Shipt shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers pay 15.3% self-employment tax on net earnings. On $35,000 net income: SE tax is $4,945 + federal income tax $1,723 = $6,669 total. Quarterly payment: $1,667."}},{"@type":"Question","name":"Does Shipt send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Yes. Shipt sends a 1099-NEC for earnings over $2,000 under the OBBBA 2026 threshold (previously $600). You receive it by January 31, 2027 via the Shipt app or email."}},{"@type":"Question","name":"What mileage can Shipt shoppers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Shipt shoppers can deduct 72.5 cents per mile (January–June; 76 cents from July 1) for business driving. This includes miles from home to the store, during shopping, and to the delivery address. Track every mile."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a Shipt shopper?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you expect to owe $1,000 or more in federal taxes, you must pay quarterly. Deadlines are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"Are Shipt tips taxable?","acceptedAnswer":{"@type":"Answer","text":"Under OBBBA 2026, Shipt shoppers can deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax but not income tax up to the $25,000 cap."}},{"@type":"Question","name":"What percentage should Shipt shoppers set aside for taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25% of net Shipt income. In high-tax states like California, set aside 30-35%. This covers SE tax (15.3%) plus federal and state income tax."}},{"@type":"Question","name":"Can I deduct my car for Shipt deliveries?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can use the standard mileage rate (72.5 cents/mile for January–June, then 76 cents from July 1) or actual vehicle expenses (gas, insurance, depreciation). Most shoppers benefit more from the standard mileage rate."}}]})
 
 const breadcrumbSchema = JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Shipt Taxes 2026","item":"https://www.gigwisetax.com/blog/shipt-taxes-2026"}]})
 
@@ -61,7 +61,7 @@ export default function ShiptTaxes2026() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              Shipt shoppers are 1099 contractors and pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,945 SE tax + $1,723 federal income tax = $6,669 total. Quarterly payment: $1,667. The 2026 IRS mileage rate is 72.5 cents per mile — your largest deduction.
+              Shipt shoppers are 1099 contractors and pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,945 SE tax + $1,723 federal income tax = $6,669 total. Quarterly payment: $1,667. The 2026 IRS mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1) — your largest deduction.
             </p>
           </div>
         </section>
@@ -72,7 +72,7 @@ export default function ShiptTaxes2026() {
           <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
             <li>Shipt shoppers on $35,000 net income owe approximately $6,669 in total federal tax</li>
             <li>SE tax formula: net income x 0.9235 x 0.153 = SE tax owed</li>
-            <li>2026 IRS mileage rate: 72.5 cents per mile — deduct every mile driven for orders</li>
+            <li>2026 IRS mileage rate: 72.5 cents per mile (January–June; 76 cents from July 1) — deduct every mile driven for orders</li>
             <li>Tips up to $25,000 are federally deductible under OBBBA 2026</li>
             <li>Quarterly deadlines: April 15, June 15, September 15, January 15</li>
             <li>Set aside 25% of every Shipt payment for taxes</li>
@@ -160,11 +160,11 @@ export default function ShiptTaxes2026() {
           </p>
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '14px 18px', marginBottom: 16 }}>
             <p style={{ margin: 0, fontSize: 14, color: '#C8D8EC' }}>
-              <strong style={{ color: '#e8b84b' }}>Example:</strong> 15,000 miles x 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b' }}>$10,875 deduction</strong>. This reduces net income by $10,875, saving approximately $2,700 in taxes.
+              <strong style={{ color: '#e8b84b' }}>Example:</strong> 15,000 miles x 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b' }}>$10,875–$11,400 deduction</strong>. This reduces net income by $10,875, saving approximately $2,700 in taxes.
             </p>
           </div>
           <blockquote style={{ borderLeft: '3px solid #e8b84b', paddingLeft: 16, margin: '0 0 24px', color: 'rgba(255,255,255,0.7)', fontSize: 13, lineHeight: 1.7 }}>
-            Source: <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" rel="nofollow" style={{ color: '#e8b84b' }}>IRS Standard Mileage Rates</a> — 72.5 cents per mile for business use in 2026.
+            Source: <a href="https://www.irs.gov/tax-professionals/standard-mileage-rates" rel="nofollow" style={{ color: '#e8b84b' }}>IRS Standard Mileage Rates</a> — 72.5 cents per mile (January–June; 76 cents from July 1) for business use in 2026.
           </blockquote>
         </section>
 
@@ -184,7 +184,7 @@ export default function ShiptTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['Vehicle mileage','$7,250–$14,500','72.5¢–76¢/mile × 10k–20k miles'],
+                  ['Vehicle mileage','$7,250–$14,500–$15,200','72.5¢–76¢/mile × 10k–20k miles'],
                   ['Insulated bags & coolers','$50–$200','Required for grocery delivery'],
                   ['Phone (50-80%)','$300–$600','Business portion only'],
                   ['Half SE tax deduction','$2,472','Auto-deducted on Form 1040'],
@@ -269,7 +269,7 @@ export default function ShiptTaxes2026() {
           {[
             ['How much tax do Shipt shoppers pay in 2026?', 'Shipt shoppers pay 15.3% SE tax on net earnings. On $35,000 net: SE tax $4,945 + federal income tax $1,723 = $6,669 total. Quarterly payment: $1,667.'],
             ['Does Shipt send a 1099 form?', 'Yes. Shipt sends a 1099-NEC for earnings over $2,000 under OBBBA 2026. You receive it by January 31, 2027 via the Shipt app or email.'],
-            ['What mileage can Shipt shoppers deduct?', 'Deduct 72.5 cents per mile for all business driving — home to store, store to delivery address. Track every mile with a mileage app.'],
+            ['What mileage can Shipt shoppers deduct?', 'Deduct 72.5 cents per mile (January–June; 76 cents from July 1) for all business driving — home to store, store to delivery address. Track every mile with a mileage app.'],
             ['Do I need to pay quarterly taxes as a Shipt shopper?', 'Yes, if you expect to owe $1,000 or more. Deadlines: April 15, June 15, September 15, January 15.'],
             ['Are Shipt tips taxable in 2026?', 'Under OBBBA 2026, deduct up to $25,000 in tips from federal taxable income. Tips are still subject to SE tax.'],
             ['What percentage should I set aside for Shipt taxes?', 'Set aside 25% of net income. In high-tax states like California, set aside 30-35%.'],

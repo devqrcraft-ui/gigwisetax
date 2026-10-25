@@ -1,3 +1,4 @@
+import { example as gtxExample } from '@/lib/examples'
 import { notFound } from 'next/navigation'
 import { estimateTax } from '@/lib/tax-rules'
 import GigCalculator from '../GigCalculator'
@@ -328,7 +329,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: s.rate === 0
       ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
       : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Walmart Spark ${s.name} 2026: $30K net = ~$4,239 SE tax + $2,200 fed. ${rateStr}. Quarterly: ~$1,612. Free calculator, no signup.`,
+    description: `Walmart Spark ${s.name} 2026: $30K net = ~${gtxExample(30000,{stateRate:s.rate}).text.se} SE tax + ${gtxExample(30000,{stateRate:s.rate}).text.federal} fed. ${rateStr}. Quarterly: ~${gtxExample(30000,{stateRate:s.rate}).text.quarterly}. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -347,7 +348,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors who pay self-employment tax (15.3%) plus income tax. Spark sends a 1099-NEC for earnings over $2,000. Set aside 25-30% of earnings for taxes."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers can deduct mileage (72.5 cents/mile in 2026), insulated bags, phone costs, and any direct delivery expenses. The mileage deduction typically saves $3,000-$8,000 per year."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Spark drivers are independent contractors. No taxes are withheld from earnings. You must make quarterly IRS estimated payments to avoid underpayment penalties."}}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How are Walmart Spark drivers taxed?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are 1099 independent contractors who pay self-employment tax (15.3%) plus income tax. Spark sends a 1099-NEC for earnings over $2,000. Set aside 25-30% of earnings for taxes."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Spark drivers can deduct mileage (72.5 cents/mile for January–June, then 76 cents from July 1 in 2026), insulated bags, phone costs, and any direct delivery expenses. The mileage deduction typically saves $3,000-$8,000 per year."}},{"@type":"Question","name":"Does Walmart Spark withhold taxes?","acceptedAnswer":{"@type":"Answer","text":"No. Spark drivers are independent contractors. No taxes are withheld from earnings. You must make quarterly IRS estimated payments to avoid underpayment penalties."}}]}` }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>
         <span> › </span>

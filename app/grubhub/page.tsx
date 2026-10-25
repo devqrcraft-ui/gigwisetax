@@ -127,7 +127,7 @@ export default function GrubhubPage() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
                   <label style={lbl} htmlFor="annual-grubhub-net-income-usd--0"> Annual Grubhub Earnings Before Mileage (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <input id="annual-grubhub-net-income-usd--0" style={inp} type="number" placeholder="e.g. 38000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>From your 1099-NEC or app earnings summary</div>
                 </div>
                 <div>
@@ -136,8 +136,8 @@ export default function GrubhubPage() {
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>72.5¢–76¢/mile IRS standard rate 2026 · calculator assumes miles split evenly Jan–Jun / Jul–Dec</div>
                 </div>
                 <div>
-                  <label style={lbl}> State of Residence</label>
-                  <select style={inp}  id="annual-grubhub-net-income-usd--0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={lbl} htmlFor="gtx-state-grubhub"> State of Residence</label>
+                  <select style={inp}  id="gtx-state-grubhub" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>

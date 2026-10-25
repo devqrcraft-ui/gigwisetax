@@ -123,7 +123,7 @@ export default function TuroPage() {
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, marginBottom:16 }} className="form-grid">
                 <div>
                   <label style={lbl} htmlFor="annual-turo-host-income-usd-se-0"> Annual Turo Host Income (USD)</label>
-                  <input style={inp} type="number" placeholder="e.g. 24000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <input id="annual-turo-host-income-usd-se-0" style={inp} type="number" placeholder="e.g. 24000" value={income} onChange={e=>setIncome(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total payouts from Turo (before deductions)</div>
                 </div>
                 <div>
@@ -132,8 +132,8 @@ export default function TuroPage() {
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Used to calculate business-use % for deductions</div>
                 </div>
                 <div>
-                  <label style={lbl}> State of Residence</label>
-                  <select style={inp}  id="annual-turo-host-income-usd-se-0" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
+                  <label style={lbl} htmlFor="gtx-state-turo"> State of Residence</label>
+                  <select style={inp}  id="gtx-state-turo" value={stateCode} onChange={e=>setStateCode(e.target.value)}>
                     {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate===0?'(No State Tax)':`(${(s.rate*100).toFixed(1)}%)`}</option>)}
                   </select>
                 </div>

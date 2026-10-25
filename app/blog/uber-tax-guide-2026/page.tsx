@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/uber-tax-guide-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Uber drivers pay 15.3% self-employment tax plus federal income tax. On $35,000 net income after mileage deductions, total federal tax is approximately $6,669. Set aside 25 to 30% of each payment."}},{"@type":"Question","name":"Can Uber drivers deduct tips in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under OBBBA 2026, rideshare drivers can deduct qualified tips up to $25,000 from federal taxable income. You still report the tip income on Schedule C, then deduct it on Schedule 1."}},{"@type":"Question","name":"What is the 2026 mileage rate for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile. On 15,000 business miles, that is a $10,875 deduction — your largest single tax reduction."}},{"@type":"Question","name":"Does Uber report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Uber sends 1099-K and 1099-NEC forms directly to the IRS with your SSN. Even if you earn less than the 1099 threshold, you must report all income on Schedule C."}},{"@type":"Question","name":"What is the difference between 1099-K and 1099-NEC for Uber?","acceptedAnswer":{"@type":"Answer","text":"The 1099-K reports gross trip earnings — what riders paid before Uber fees. The 1099-NEC reports bonuses and referral payments over $2,000. Your actual taxable income is the net amount after Uber fees, shown in your Tax Summary."}},{"@type":"Question","name":"Standard mileage vs actual expense method — which is better for Uber?","acceptedAnswer":{"@type":"Answer","text":"Most Uber drivers benefit more from the standard mileage method at 72.5 cents per mile. It is simpler and requires no expense receipts. The actual expense method may yield more for drivers with expensive vehicles or high maintenance costs."}},{"@type":"Question","name":"When are the 2026 quarterly tax deadlines for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"Quarterly estimated tax deadlines for 2026 are: April 15 (Q1), June 15 (Q2), September 15 (Q3), and January 15 2027 (Q4). Pay online at IRS Direct Pay. Missing a deadline triggers an underpayment penalty of approximately 7% annualized."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Uber driver pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Uber drivers pay 15.3% self-employment tax plus federal income tax. On $35,000 net income after mileage deductions, total federal tax is approximately $6,669. Set aside 25 to 30% of each payment."}},{"@type":"Question","name":"Can Uber drivers deduct tips in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under OBBBA 2026, rideshare drivers can deduct qualified tips up to $25,000 from federal taxable income. You still report the tip income on Schedule C, then deduct it on Schedule 1."}},{"@type":"Question","name":"What is the 2026 mileage rate for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). On 15,000 business miles, that is a $10,875–$11,400 deduction — your largest single tax reduction."}},{"@type":"Question","name":"Does Uber report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. Uber sends 1099-K and 1099-NEC forms directly to the IRS with your SSN. Even if you earn less than the 1099 threshold, you must report all income on Schedule C."}},{"@type":"Question","name":"What is the difference between 1099-K and 1099-NEC for Uber?","acceptedAnswer":{"@type":"Answer","text":"The 1099-K reports gross trip earnings — what riders paid before Uber fees. The 1099-NEC reports bonuses and referral payments over $2,000. Your actual taxable income is the net amount after Uber fees, shown in your Tax Summary."}},{"@type":"Question","name":"Standard mileage vs actual expense method — which is better for Uber?","acceptedAnswer":{"@type":"Answer","text":"Most Uber drivers benefit more from the standard mileage method at 72.5 cents per mile (January–June; 76 cents from July 1). It is simpler and requires no expense receipts. The actual expense method may yield more for drivers with expensive vehicles or high maintenance costs."}},{"@type":"Question","name":"When are the 2026 quarterly tax deadlines for Uber drivers?","acceptedAnswer":{"@type":"Answer","text":"Quarterly estimated tax deadlines for 2026 are: April 15 (Q1), June 15 (Q2), September 15 (Q3), and January 15 2027 (Q4). Pay online at IRS Direct Pay. Missing a deadline triggers an underpayment penalty of approximately 7% annualized."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Driver Tax Guide 2026","item":"https://www.gigwisetax.com/blog/uber-tax-guide-2026"}]}'
 
@@ -55,7 +55,7 @@ export default function UberTaxGuide() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              {'Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,945 SE tax + $1,723 federal income tax = $6,669 total. Quarterly estimated payment: $1,667. Set aside 25% of every Uber payment. The 2026 mileage rate is 72.5 cents per mile and the OBBBA tips deduction (up to $25,000) are your two largest savings.'}
+              {'Uber drivers pay 15.3% self-employment tax on net earnings. On $35,000 net income: $4,945 SE tax + $1,723 federal income tax = $6,669 total. Quarterly estimated payment: $1,667. Set aside 25% of every Uber payment. The 2026 mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1) and the OBBBA tips deduction (up to $25,000) are your two largest savings.'}
             </p>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function UberTaxGuide() {
           </h2>
           <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
             <li>{'Uber drivers on $35,000 net income owe approximately $6,669 in total federal tax'}</li>
-            <li>{'2026 IRS mileage rate is 72.5 cents per mile — your single largest deduction'}</li>
+            <li>{'2026 IRS mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1) — your single largest deduction'}</li>
             <li>{'Tips up to $25,000 are federally deductible under OBBBA 2026'}</li>
             <li>{'Uber sends 1099-NEC for earnings over $2,000 and 1099-K for trip earnings'}</li>
             <li>{'Set aside 25 to 30% of every payment for quarterly estimated taxes'}</li>
@@ -171,7 +171,7 @@ export default function UberTaxGuide() {
           </p>
 
           <ol style={{ margin: '0 0 20px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage (72.5 cents/mile)'}</strong>{' — Every trip mile plus en-route miles between pickups. Your largest single deduction.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage (72.5 cents/mile for January–June, then 76 cents from July 1)'}</strong>{' — Every trip mile plus en-route miles between pickups. Your largest single deduction.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Tips deduction (up to $25,000)'}</strong>{' — New OBBBA 2026 law. Earn $8,000 in tips and deduct the full amount from federal taxable income.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Phone bill (business %)'}</strong>{' — Deduct 70 to 90% of your monthly plan. On $80/month that is $672 to $864 per year.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Car washes'}</strong>{' — Keeping your vehicle clean for passengers. 100% deductible as a business expense.'}</li>
@@ -282,7 +282,7 @@ export default function UberTaxGuide() {
             <li><strong style={{ color: '#C8D8EC' }}>{'No Tax on Tips — up to $25,000'}</strong>{' — Tips deductible from federal taxable income. Earn $10,000 in Uber tips? Full amount excluded.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'QBI Deduction — now permanent'}</strong>{' — Deduct 20% of net Uber profit. On $35,000 net that is $7,000 off taxable income.'}</li>
             <li><strong style={{ color: '#C8D8CE' }}>{'100% bonus depreciation restored'}</strong>{' — Phone mount, dash cam, accessories fully deductible in year of purchase.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage rate: 72.5 cents per mile'}</strong>{' — Up from 70 cents in 2025. Driving 15,000 miles = $10,875 deduction.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage rate: 72.5 cents per mile (January–June; 76 cents from July 1)'}</strong>{' — Up from 70 cents in 2025. Driving 15,000 miles = $10,875–$11,400 deduction.'}</li>
           </ul>
         </section>
 
@@ -302,7 +302,7 @@ export default function UberTaxGuide() {
             },
             {
               q: 'What is the 2026 mileage rate for Uber drivers?',
-              a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile. On 15,000 business miles that is a $10,875 deduction — your largest single tax reduction.',
+              a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). On 15,000 business miles that is a $10,875–$11,400 deduction — your largest single tax reduction.',
             },
             {
               q: 'Does Uber report my income to the IRS?',
@@ -314,7 +314,7 @@ export default function UberTaxGuide() {
             },
             {
               q: 'Standard mileage vs actual expense — which is better for Uber?',
-              a: 'Most Uber drivers benefit more from standard mileage at 72.5 cents per mile. It is simpler and requires no expense receipts. Actual expenses may yield more for high-cost vehicles.',
+              a: 'Most Uber drivers benefit more from standard mileage at 72.5 cents per mile (January–June; 76 cents from July 1). It is simpler and requires no expense receipts. Actual expenses may yield more for high-cost vehicles.',
             },
             {
               q: 'When are the 2026 quarterly tax deadlines for Uber drivers?',

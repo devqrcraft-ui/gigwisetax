@@ -1,3 +1,4 @@
+import { example as gtxExample } from '@/lib/examples'
 import { TAX_RULES_2026 as GTX_RULES } from '@/lib/tax-rules'
 import { notFound } from 'next/navigation'
 import TaxFreshness from '@/app/components/TaxFreshness'
@@ -165,7 +166,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Etsy sellers owe approximately <strong>$5,417 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,610</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>' + gtxExample(30000).text.quarterly + '</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Supplies, materials, home studio, and shipping costs are <strong>fully deductible</strong> Etsy business expenses'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Etsy sends a <strong>1099-K</strong> if gross sales exceed $20,000 across more than 200 transactions — all income is taxable regardless'}}/>
           <li dangerouslySetInnerHTML={{__html: 'The <strong>20% QBI deduction</strong> may apply, significantly reducing federal income tax for Etsy sellers'}}/>
@@ -175,7 +176,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Etsy</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Etsy workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $2,200 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,610</strong>. Set aside 25% of every payment. Materials, shipping, and home office deductions reduce Etsy taxable income.
+              Etsy workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately {gtxExample(30000).text.se} SE tax + {gtxExample(30000).text.federal} federal income tax = <strong style={{ color:'#fff' }}>{gtxExample(30000).text.total} total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>{gtxExample(30000).text.quarterly}</strong>. Set aside 25% of every payment. Materials, shipping, and home office deductions reduce Etsy taxable income.
             </p>
           </div>
 

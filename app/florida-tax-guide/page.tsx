@@ -17,7 +17,7 @@ export default function HubPage() {
       <h1 className="text-4xl font-bold mb-6 text-white">Florida Gig Tax Guide 2026</h1>
       <p className="text-xl mb-8 opacity-80">Maximize your gig earnings in Florida with our 2026 tax guide.</p>
       <div className="prose prose-invert max-w-none text-lg leading-relaxed">
-        <p>Florida freelancers benefit from no state income tax. However, federal compliance remains mandatory.</p><ul><li><b>Self-Employment Tax:</b> Still 15.3% of your net profit.</li><li><b>Standard Mileage:</b> 72.5 cents per mile for all delivery jobs.</li></ul>
+        <p>Florida freelancers benefit from no state income tax. However, federal compliance remains mandatory.</p><ul><li><b>Self-Employment Tax:</b> Still 15.3% of your net profit.</li><li><b>Standard Mileage:</b> 72.5 cents per mile (January–June; 76 cents from July 1) for all delivery jobs.</li></ul>
       </div>
       <div className="mt-12 p-8 rounded-2xl border border-blue-500/30 bg-blue-500/10 shadow-xl">
         <h3 className="text-2xl font-bold mb-3 text-white">Calculate Your Florida Taxes</h3>

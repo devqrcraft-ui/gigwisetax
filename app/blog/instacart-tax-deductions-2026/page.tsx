@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-tax-deductions-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Instacart shoppers deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated bags and coolers, parking and tolls, hot bags and equipment, and a portion of health insurance premiums. Mileage is typically the largest deduction for full-service shoppers."}},{"@type":"Question","name":"How much tax do Instacart shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers pay self-employment tax of 15.3% on net profit plus federal income tax. On $35,000 gross with $10,000 in deductions, net profit is $25,000. SE tax is approximately $3,533 and federal income tax approximately $1,500. Total owed: $5,033. Quarterly payment: $1,258."}},{"@type":"Question","name":"Does Instacart take taxes out of your pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Instacart does not withhold any taxes. Full-service shoppers are independent contractors who receive 1099-NEC forms and are responsible for paying their own SE tax and income tax. In-store shoppers who are W-2 employees do have taxes withheld automatically."}},{"@type":"Question","name":"What is the mileage deduction for Instacart in 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Instacart shoppers can deduct miles driven from home to the store, store to customer, and between stores. Commute miles (home to the first store of the day) are generally not deductible."}},{"@type":"Question","name":"What forms does Instacart send for taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart sends a 1099-NEC to full-service shoppers who earn $2,000 or more during the year. The form is available in the Instacart Shopper app by January 31. Report all income even if you do not receive a 1099."}},{"@type":"Question","name":"Can Instacart shoppers deduct phone expenses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart shoppers can deduct the business-use percentage of their phone and data plan. If you use your phone 60% for Instacart, you can deduct 60% of your monthly bill. Keep records showing business vs personal use."}},{"@type":"Question","name":"How do Instacart shoppers pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 gross income with $10,000 in deductions, quarterly estimated payments are approximately $1,258. IRS due dates are April 15, June 15, September 15, and January 15. Pay via IRS Direct Pay or EFTPS."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can Instacart shoppers deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers can deduct mileage at 72.5 cents per mile (January–June; 76 cents from July 1), phone and data plan (business %), insulated bags and coolers, parking and tolls, hot bags and equipment, and a portion of health insurance premiums. Mileage is typically the largest deduction for full-service shoppers."}},{"@type":"Question","name":"How much tax do Instacart shoppers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers pay self-employment tax of 15.3% on net profit plus federal income tax. On $35,000 gross with $10,000 in deductions, net profit is $25,000. SE tax is approximately $3,533 and federal income tax approximately $1,500. Total owed: $5,033. Quarterly payment: $1,258."}},{"@type":"Question","name":"Does Instacart take taxes out of your pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"No. Instacart does not withhold any taxes. Full-service shoppers are independent contractors who receive 1099-NEC forms and are responsible for paying their own SE tax and income tax. In-store shoppers who are W-2 employees do have taxes withheld automatically."}},{"@type":"Question","name":"What is the mileage deduction for Instacart in 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Instacart shoppers can deduct miles driven from home to the store, store to customer, and between stores. Commute miles (home to the first store of the day) are generally not deductible."}},{"@type":"Question","name":"What forms does Instacart send for taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Instacart sends a 1099-NEC to full-service shoppers who earn $2,000 or more during the year. The form is available in the Instacart Shopper app by January 31. Report all income even if you do not receive a 1099."}},{"@type":"Question","name":"Can Instacart shoppers deduct phone expenses?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart shoppers can deduct the business-use percentage of their phone and data plan. If you use your phone 60% for Instacart, you can deduct 60% of your monthly bill. Keep records showing business vs personal use."}},{"@type":"Question","name":"How do Instacart shoppers pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 gross income with $10,000 in deductions, quarterly estimated payments are approximately $1,258. IRS due dates are April 15, June 15, September 15, and January 15. Pay via IRS Direct Pay or EFTPS."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026","item":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}]}'
 
@@ -48,7 +48,7 @@ export default function InstacartTaxDeductions2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,533 SE tax + $1,500 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,033 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Mileage at 72.5¢–76¢/mile is the largest deduction — 10,000 miles eliminates $7,250 from taxable income.
+              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,533 SE tax + $1,500 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,033 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,258</strong>. Mileage at 72.5¢–76¢/mile is the largest deduction — 10,000 miles eliminates $7,250–$7,600 from taxable income.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function InstacartTaxDeductions2026() {
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
                 '$35K gross with $10K deductions = $5,033 total tax owed ($1,258/quarter)',
-                'Mileage deduction: 72.5 cents/mile — biggest write-off for full-service shoppers',
+                'Mileage deduction: 72.5 cents/mile (January–June; 76 cents from July 1) — biggest write-off for full-service shoppers',
                 'SE tax rate: 15.3% on net profit — 12.4% Social Security + 2.9% Medicare',
                 'Instacart sends 1099-NEC (not W-2) — no taxes withheld from your pay',
                 'In-store shoppers are W-2 employees — taxes withheld automatically',
@@ -100,7 +100,7 @@ export default function InstacartTaxDeductions2026() {
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Mileage: 72.5 cents per mile for all business driving in 2026',
+              'Mileage: 72.5 cents per mile (January–June; 76 cents from July 1) for all business driving in 2026',
               'Phone and data plan: deduct the business-use percentage',
               'Insulated bags, coolers, and hot bags for grocery delivery',
               'Parking fees and tolls incurred during deliveries',
@@ -123,7 +123,7 @@ export default function InstacartTaxDeductions2026() {
               </thead>
               <tbody>
                 {[
-                  ['Mileage (10,000 miles)', '$7,250', '$1,109'],
+                  ['Mileage (10,000 miles)', '$7,250–$7,600', '$1,109'],
                   ['Phone (60% business use)', '$480–$720', '$73–$110'],
                   ['Insulated bags and equipment', '$100–$300', '$15–$46'],
                   ['Parking and tolls', '$200–$600', '$31–$92'],
@@ -153,7 +153,7 @@ export default function InstacartTaxDeductions2026() {
             Mileage — The Biggest Instacart Deduction in 2026
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            The IRS standard mileage rate for 2026 is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile</strong>. For most Instacart shoppers, mileage is the single largest tax deduction — easily eliminating thousands of dollars from taxable income.
+            The IRS standard mileage rate for 2026 is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile (January–June; 76 cents from July 1)</strong>. For most Instacart shoppers, mileage is the single largest tax deduction — easily eliminating thousands of dollars from taxable income.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
@@ -167,7 +167,7 @@ export default function InstacartTaxDeductions2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Track every mile with an app like MileIQ or Stride. The IRS requires a mileage log with date, destination, and business purpose. On <strong style={{ color: '#e8b84b' }}>15,000 miles</strong>, your deduction is <strong style={{ color: '#e8edf8' }}>$10,875</strong> — saving over $1,600 in SE tax alone.
+            Track every mile with an app like MileIQ or Stride. The IRS requires a mileage log with date, destination, and business purpose. On <strong style={{ color: '#e8b84b' }}>15,000 miles</strong>, your deduction is <strong style={{ color: '#e8edf8' }}>$10,875–$11,400</strong> — saving over $1,600 in SE tax alone.
           </p>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
             Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Instacart tax calculator</a> to enter your mileage and get your exact tax estimate.
@@ -250,7 +250,7 @@ export default function InstacartTaxDeductions2026() {
             Frequently Asked Questions
           </h2>
           {[
-            ['What can Instacart shoppers deduct on taxes in 2026?', 'Instacart shoppers can deduct mileage at 72.5 cents per mile, phone and data plan (business %), insulated bags, parking, tolls, and health insurance premiums. Mileage is typically the largest deduction.'],
+            ['What can Instacart shoppers deduct on taxes in 2026?', 'Instacart shoppers can deduct mileage at 72.5 cents per mile (January–June; 76 cents from July 1), phone and data plan (business %), insulated bags, parking, tolls, and health insurance premiums. Mileage is typically the largest deduction.'],
             ['How much tax do Instacart shoppers pay in 2026?', 'On $35,000 gross with $10,000 in deductions, net profit is $25,000. SE tax is approximately $3,533 and federal income tax approximately $1,500. Total owed: $5,033. Quarterly payment: $1,258.'],
             ['Does Instacart take taxes out of your pay?', 'No. Full-service shoppers are independent contractors — Instacart does not withhold taxes. In-store shoppers are W-2 employees and do have taxes withheld automatically.'],
             ['What is the mileage deduction for Instacart in 2026?', 'The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Track miles from store to customer and between stores. Use a mileage tracking app to keep an accurate log.'],

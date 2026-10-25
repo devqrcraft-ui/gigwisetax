@@ -92,7 +92,7 @@ export default function BestTaxSoftware() {
         <h2 style={h2}>4. TaxAct Self-Employed — Best Audit Protection</h2>
         <p style={prose}>TaxAct includes audit protection in the $65 base price. Fully supports Schedule C, QBI deduction and the 2026 tips exclusion. Best for full-time gig workers earning over $50,000 who want audit cover without paying extra.</p>
         <h2 style={h2}>Key 2026 Tax Changes for Gig Workers</h2>
-        <p style={prose}>The OBBBA 2026 made three changes affecting every 1099 worker: the 20% QBI deduction is now permanent, tips up to $25,000 are deductible from federal taxable income, and the standard mileage rate increased to 72.5 cents per mile. All four software options handle these correctly.</p>
+        <p style={prose}>The OBBBA 2026 made three changes affecting every 1099 worker: the 20% QBI deduction is now permanent, tips up to $25,000 are deductible from federal taxable income, and the standard mileage rate increased to 72.5 cents per mile (January–June; 76 cents from July 1). All four software options handle these correctly.</p>
         <div style={{ marginTop: 32, padding: '20px 24px', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 12 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: '#e8b84b', marginBottom: 6 }}>Estimate your tax bill first</div>
           <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Use our free gig tax calculator to see your exact quarterly payment before you file. Takes 60 seconds.</div>

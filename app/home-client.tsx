@@ -354,7 +354,7 @@ export default function HomeClient() {
                       <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
-                        <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
+                        <input id="annual-gig-revenue-usd-setinco-1" style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
                       </div>
 
           {/* INCOME PRESETS */}
@@ -393,8 +393,8 @@ export default function HomeClient() {
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={label}> State of Residence</label>
-                      <select style={inp}  id="annual-gig-revenue-usd-setinco-1" value={stateCode} onChange={e => setStateCode(e.target.value)}>
+                      <label style={label} htmlFor="gtx-state-home"> State of Residence</label>
+                      <select style={inp}  id="gtx-state-home" value={stateCode} onChange={e => setStateCode(e.target.value)}>
                         {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>

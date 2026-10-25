@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/1099-vs-w2-taxes-2026' }
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do 1099 workers pay more taxes than W-2 employees?","acceptedAnswer":{"@type":"Answer","text":"Yes. 1099 workers pay the full 15.3% self-employment tax (Social Security + Medicare). W-2 employees pay only 7.65% because their employer covers the other half. On $50,000 income, that is $3,825 more in taxes for a 1099 worker."}},{"@type":"Question","name":"What is the self-employment tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% in 2026: 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare (no cap). You can deduct half of this tax on your federal return."}},{"@type":"Question","name":"Can a 1099 worker deduct the extra self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. The IRS allows you to deduct 50% of your self-employment tax from gross income on Schedule 1. On $50,000 net profit, your SE tax is about $7,065 and you can deduct $3,533 before calculating income tax."}},{"@type":"Question","name":"What deductions can reduce a 1099 worker\'s tax bill?","acceptedAnswer":{"@type":"Answer","text":"1099 workers can deduct business mileage (72.5 cents per mile in 2026), home office, health insurance premiums (100% deductible), retirement contributions (up to $23,500 in a Solo 401k), and business equipment under Section 179."}},{"@type":"Question","name":"Does a W-2 employee pay any self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"No. W-2 employees do not pay self-employment tax. Their employer withholds 7.65% (employee share of FICA) and pays a matching 7.65% (employer share). The employee never sees or pays the employer half."}},{"@type":"Question","name":"At what income does the 1099 tax burden become significant?","acceptedAnswer":{"@type":"Answer","text":"You owe self-employment tax once your net earnings from self-employment reach $400, and it then applies to all of that income from the first dollar. At $20,000 net profit, a 1099 worker owes about $2,826 in SE tax alone. At $50,000, that rises to $7,065. At $100,000, it is $14,130."}},{"@type":"Question","name":"How do quarterly taxes work for 1099 workers?","acceptedAnswer":{"@type":"Answer","text":"1099 workers must pay estimated taxes four times per year: April 15, June 15, September 15, and January 15. The IRS expects you to pay at least 90% of the current year\'s tax or 100% of last year\'s tax to avoid an underpayment penalty."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do 1099 workers pay more taxes than W-2 employees?","acceptedAnswer":{"@type":"Answer","text":"Yes. 1099 workers pay the full 15.3% self-employment tax (Social Security + Medicare). W-2 employees pay only 7.65% because their employer covers the other half. On $50,000 income, that is $3,825 more in taxes for a 1099 worker."}},{"@type":"Question","name":"What is the self-employment tax rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The self-employment tax rate is 15.3% in 2026: 12.4% for Social Security (on income up to $184,500) and 2.9% for Medicare (no cap). You can deduct half of this tax on your federal return."}},{"@type":"Question","name":"Can a 1099 worker deduct the extra self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. The IRS allows you to deduct 50% of your self-employment tax from gross income on Schedule 1. On $50,000 net profit, your SE tax is about $7,065 and you can deduct $3,533 before calculating income tax."}},{"@type":"Question","name":"What deductions can reduce a 1099 worker\'s tax bill?","acceptedAnswer":{"@type":"Answer","text":"1099 workers can deduct business mileage (72.5 cents per mile for January–June, then 76 cents from July 1 in 2026), home office, health insurance premiums (100% deductible), retirement contributions (up to $23,500 in a Solo 401k), and business equipment under Section 179."}},{"@type":"Question","name":"Does a W-2 employee pay any self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"No. W-2 employees do not pay self-employment tax. Their employer withholds 7.65% (employee share of FICA) and pays a matching 7.65% (employer share). The employee never sees or pays the employer half."}},{"@type":"Question","name":"At what income does the 1099 tax burden become significant?","acceptedAnswer":{"@type":"Answer","text":"You owe self-employment tax once your net earnings from self-employment reach $400, and it then applies to all of that income from the first dollar. At $20,000 net profit, a 1099 worker owes about $2,826 in SE tax alone. At $50,000, that rises to $7,065. At $100,000, it is $14,130."}},{"@type":"Question","name":"How do quarterly taxes work for 1099 workers?","acceptedAnswer":{"@type":"Answer","text":"1099 workers must pay estimated taxes four times per year: April 15, June 15, September 15, and January 15. The IRS expects you to pay at least 90% of the current year\'s tax or 100% of last year\'s tax to avoid an underpayment penalty."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"1099 vs W-2 Taxes 2026","item":"https://www.gigwisetax.com/blog/1099-vs-w2-taxes-2026"}]}'
 
@@ -88,7 +88,7 @@ export default function Page() {
             <li>{'1099 workers pay 15.3% SE tax vs 7.65% for W-2 — a gap of 7.65% on all earned income'}</li>
             <li>{'On $50,000, the extra SE tax burden is $3,825 before any deductions'}</li>
             <li>{'1099 workers can deduct 50% of SE tax, reducing their taxable income by up to $3,533 at $50K'}</li>
-            <li>{'Mileage deduction at 72.5 cents/mile (2026) can offset thousands in SE tax'}</li>
+            <li>{'Mileage deduction at 72.5 cents/mile (January–June; 76 cents from July 1) (2026) can offset thousands in SE tax'}</li>
             <li>{'Solo 401(k) contributions up to $23,500 slash taxable income significantly'}</li>
           </ul>
         </section>
@@ -219,7 +219,7 @@ export default function Page() {
           </p>
 
           <ol style={{ margin: '0 0 20px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage deduction'}</strong>{' — 72.5 cents per mile in 2026. Drive 10,000 miles for work and deduct $7,250 from gross income.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage deduction'}</strong>{' — 72.5 cents per mile (January–June; 76 cents from July 1) in 2026. Drive 10,000 miles for work and deduct $7,250–$7,600 from gross income.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Home office'}</strong>{' — $5 per square foot, up to $1,500 (simplified method). Or deduct actual expenses proportionally.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Health insurance'}</strong>{' — 100% of premiums deductible on Schedule 1 if you are not eligible for employer coverage.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Solo 401(k)'}</strong>{' — Contribute up to $23,500 as employee + 25% of net earnings as employer. Massive taxable income reduction.'}</li>
@@ -319,7 +319,7 @@ export default function Page() {
             </p>
             <ul style={{ margin: 0, paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
               <li>{'At $50K income, SE tax penalty after deduction: ~$2,759'}</li>
-              <li>{'Mileage deduction rate 2026: 72.5 cents/mile'}</li>
+              <li>{'Mileage deduction rate 2026: 72.5 cents/mile (January–June; 76 cents from July 1)'}</li>
               <li>{'Tax value per mile (22% bracket): ~15.9 cents'}</li>
               <li><strong style={{ color: '#C8D8EC' }}>{'Break-even: ~17,350 miles — roughly 47 miles per day'}</strong></li>
             </ul>
@@ -347,7 +347,7 @@ export default function Page() {
             },
             {
               q: 'What deductions can reduce a 1099 worker\'s tax bill?',
-              a: 'Business mileage (72.5 cents/mile), home office, 100% health insurance premiums, Solo 401(k) contributions up to $23,500, and business equipment under Section 179.',
+              a: 'Business mileage (72.5 cents/mile for January–June, then 76 cents from July 1), home office, 100% health insurance premiums, Solo 401(k) contributions up to $23,500, and business equipment under Section 179.',
             },
             {
               q: 'Does a W-2 employee pay any self-employment tax?',

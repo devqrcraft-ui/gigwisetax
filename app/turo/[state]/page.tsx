@@ -1,3 +1,4 @@
+import { example as gtxExample } from '@/lib/examples'
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
 import { estimateTax } from '@/lib/tax-rules'
@@ -331,7 +332,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: s.rate === 0
       ? `Turo ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
       : `Turo ${s.name} Taxes 2026 — $50K Earner Owes $${estimateTax(50000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Turo ${s.name} 2026: $50K net = ~$7,065 SE tax + $4,500 fed. ${rateStr}. Quarterly: ~$2,615. Free calculator, no signup.`,
+    description: `Turo ${s.name} 2026: $50K net = ~${gtxExample(50000,{stateRate:s.rate}).text.se} SE tax + ${gtxExample(50000,{stateRate:s.rate}).text.federal} fed. ${rateStr}. Quarterly: ~${gtxExample(50000,{stateRate:s.rate}).text.quarterly}. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/turo/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
