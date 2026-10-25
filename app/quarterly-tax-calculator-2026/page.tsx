@@ -201,7 +201,7 @@ export default function QuarterlyTaxCalculator() {
                   { label: 'Federal Income Tax', value: fmt(result.federalTax) },
                   { label: 'Total Annual Tax', value: fmt(result.totalAnnual), highlight: true },
                 ].map(({ label, value, highlight }) => (
-                  <div key={label} style={{ background: '#07111F', border: `1px solid ${highlight ? '#e8b84b' : '#1e3a5f'}}`, borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
+                  <div key={label} style={{ background: '#07111F', border: `1px solid ${highlight ? '#e8b84b' : '#1e3a5f'}`, borderRadius: 8, padding: '14px 16px', textAlign: 'center' }}>
                     <div style={{ fontSize: 13, color: '#8a9bb0', marginBottom: 6 }}>{label}</div>
                     <div style={{ fontSize: 22, fontWeight: 800, color: highlight ? '#e8b84b' : '#C8D8EC' }}>{value}</div>
                   </div>
