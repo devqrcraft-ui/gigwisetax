@@ -1,5 +1,4 @@
 'use client';
-import { mileageDeductEvenSplit } from '@/lib/examples'
 import { useState } from 'react';
 
 export default function DoorDashInlineCalc() {
@@ -13,7 +12,7 @@ export default function DoorDashInlineCalc() {
   function calc() {
     const gross = parseFloat(income.replace(/,/g,'')) || 0;
     const mi = parseFloat(miles.replace(/,/g,'')) || 0;
-    const mileDeduct = mileageDeductEvenSplit(mi);
+    const mileDeduct = mi * 0.725;
     const netIncome = Math.max(0, gross - mileDeduct);
     const seBase = netIncome * 0.9235;
     const seTax = Math.min(seBase, 184500) * 0.124 + seBase * 0.029;
@@ -95,7 +94,7 @@ export default function DoorDashInlineCalc() {
               ))}
             </div>
             <p style={{ color:'#8899aa', fontSize:11, margin:'14px 0 0' }}>
-              * Single filer estimate. Mileage rate 72.5¢/mile (Jan–Jun; 76¢ from Jul 1) (2026 IRS rate). Miles assumed split evenly between Jan–Jun and Jul–Dec. Consult a tax pro for exact figures.
+              * Single filer estimate. Mileage rate 72.5¢/mile (Jan–Jun; 76¢ from Jul 1) (2026 IRS rate). Consult a tax pro for exact figures.
             </p>
           </div>
         )}

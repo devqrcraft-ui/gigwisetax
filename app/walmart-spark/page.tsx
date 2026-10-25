@@ -1,5 +1,4 @@
 'use client'
-import { mileageDeductEvenSplit } from '@/lib/examples'
 import AuthorBox from '@/app/components/AuthorBox'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
@@ -64,7 +63,7 @@ export default function WalmartSparkPage() {
   const calculate = () => {
     const gross = parseFloat(income) || 0
     if (!gross) return
-    const mileDeduction = mileageDeductEvenSplit(parseFloat(miles)||0)
+    const mileDeduction = (parseFloat(miles)||0) * 0.725
     const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
     const seBase  = net * 0.9235
@@ -140,7 +139,7 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢–76¢/mile for 2026 · calculator assumes miles split evenly Jan–Jun / Jul–Dec</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢–76¢/mile for 2026</div>
                 </div>
                 <div>
                   <label style={lbl}> State of Residence</label>
