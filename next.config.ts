@@ -7,6 +7,8 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // ── /calculators duplicates → platform pages ──
+      { source: '/calculators/:platform(doordash|uber|etsy|onlyfans|instacart|airbnb|amazon-flex|lyft|fiverr|upwork|rover)/:state', destination: '/:platform/:state', permanent: true },
       // ── -2026 URL aliases ──
       { source: '/doordash-tax-calculator-2026', destination: '/doordash', permanent: true },
       { source: '/uber-tax-calculator-2026', destination: '/uber', permanent: true },
