@@ -74,6 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
               <a href="https://www.privatepaycheck.com">PrivatePaycheck</a>
               <a href="https://www.ukgigtax.com">UKGigTax</a>
               <a href="https://www.compressto20kb.com">CompressTo20KB</a>
+              <a href="https://1099deductions.com">1099Deductions</a>
             </div>
             <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",marginTop:6,paddingTop:8,fontSize:12,color:"rgba(255,255,255,0.7)",lineHeight:1.5}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
           </div>
