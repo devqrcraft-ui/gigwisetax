@@ -1,0 +1,23 @@
+name: IRS numbers watch
+
+on:
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Compare tax-rules.ts with IRS
+        run: npx tsx scripts/check-irs.ts
+      - name: Internal consistency (calculators, stale numbers)
+        run: npx tsx scripts/verify-tax.ts
