@@ -24,32 +24,6 @@ export default function Page() {
 
       <div style={{background:'#0a0f1e',color:'#e2e8f0',fontFamily:'system-ui,sans-serif'}}>
 
-        <section style={{maxWidth:'960px',margin:'0 auto',padding:'20px 16px 16px'}}>
-          <h2 style={{fontSize:'clamp(20px,3vw,28px)',fontWeight:800,color:'#ffffff',marginBottom:'8px'}}>Gig Worker Tax Center 2026</h2>
-          <p style={{fontSize:'14px',opacity:0.75,marginBottom:'12px'}}>Every major platform. Every tax question. Free calculators for all 50 states + DC.</p>
-          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:'10px'}}>
-            {[
-              {href:'/uber',       label:'Uber',         desc:'SE tax + quarterly estimates',   cta:'Open Uber Tax Calculator'},
-              {href:'/doordash',   label:'DoorDash',     desc:'Delivery driver deductions',     cta:'Open DoorDash Tax Calculator'},
-              {href:'/airbnb',     label:'Airbnb',       desc:'Host income + expenses',         cta:'Open Airbnb Tax Calculator'},
-              {href:'/instacart',  label:'Instacart',    desc:'Shopper tax guide',              cta:'Open Instacart Tax Calculator'},
-              {href:'/etsy',       label:'Etsy',         desc:'Seller income + deductions',     cta:'Open Etsy Tax Calculator'},
-              {href:'/amazon-flex',label:'Amazon Flex',  desc:'Delivery SE tax',                cta:'Open Amazon Flex Calculator'},
-              {href:'/onlyfans',   label:'OnlyFans',     desc:'Creator tax calculator',         cta:'Open OnlyFans Tax Calculator'},
-              {href:'/lyft',       label:'Lyft',         desc:'Rideshare tax guide',            cta:'Open Lyft Tax Calculator'},
-              {href:'/grubhub',    label:'Grubhub',      desc:'Delivery tax estimates',         cta:'Open Grubhub Tax Calculator'},
-              {href:'/walmart-spark',label:'Walmart Spark',desc:'Spark driver taxes',           cta:'Open Walmart Spark Calculator'},
-            ].map(p => (
-              <a key={p.href} href={p.href} className="hub-card" style={{display:'flex',flexDirection:'column',padding:'16px 14px',borderRadius:'12px',color:'#e2e8f0',textDecoration:'none',background:'#07111F',border:'1px solid rgba(255,255,255,0.1)'}}>
-                <div style={{fontSize:'16px',fontWeight:800,color:'#fff',marginBottom:'3px'}}>{p.label} Tax Calculator</div>
-                <div style={{fontSize:'14px',color:'rgba(255,255,255,0.7)',lineHeight:1.5,marginBottom:'6px',flexGrow:1}}>{p.desc}</div>
-                <div style={{background:'#B22234',color:'#fff',fontSize:'13px',fontWeight:700,padding:'7px 0',borderRadius:'6px',textAlign:'center'}}>{p.cta}</div>
-              </a>
-            ))}
-
-          </div>
-        </section>
-
         <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 16px 16px'}}>
           <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'8px'}}>Tax Calculators by Category</h2>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:'10px'}}>

@@ -2,6 +2,7 @@
 export default function AuthorBox() {
   return (
     <div
+      className="author-box"
       style={{
         display:'flex', alignItems:'flex-start', gap:16,
         background:'rgba(232,184,75,0.06)',

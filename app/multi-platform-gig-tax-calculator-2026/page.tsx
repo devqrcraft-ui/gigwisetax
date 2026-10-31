@@ -4,11 +4,11 @@ import MultiPlatformCalculator from './MultiPlatformCalculator';
 export const metadata: Metadata = {
   title: 'Multi-App Gig Tax Calculator 2026 — DoorDash, Uber, Instacart & More | GigWiseTax',
   description:
-    'Calculate combined 1099 taxes for multiple gig apps in 2026. Add income from DoorDash, Uber, Instacart, Amazon Flex and more. See SE tax, federal, state, and quarterly payments in seconds.',
+    'Reconcile annual income from multiple gig apps, enter eligible expenses once, and review one combined 2026 estimate and quarterly schedule. State tax is simplified.',
   alternates: { canonical: 'https://www.gigwisetax.com/multi-platform-gig-tax-calculator-2026' },
   openGraph: {
     title: 'Multi-App Gig Tax Calculator 2026 — DoorDash, Uber, Instacart & More',
-    description: 'Free combined 1099 tax calculator for gig workers using multiple platforms. SE tax 15.3%, federal, state, and quarterly estimates.',
+    description: 'Combine app-by-app annual income into one 2026 gig-tax estimate, enter eligible expenses once, and review a quarterly schedule.',
     url: 'https://www.gigwisetax.com/multi-platform-gig-tax-calculator-2026',
     type: 'website',
   },
@@ -20,10 +20,10 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Do I add up all gig app income for taxes?',
+      name: 'Why enter income from each app separately?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. The IRS considers all 1099 income together. Income from DoorDash, Uber, Instacart, Amazon Flex, and any other platform is combined on Schedule C (or multiple Schedule Cs) and subject to self-employment tax of 15.3% on 92.35% of your net earnings, plus federal and state income tax.',
+        text: 'Separate fields make it easier to reconcile platform statements. This estimator adds entered gross amounts, subtracts eligible business expenses entered once, and estimates a combined total. It is a planning tool, not tax-return preparation; do not count shared-trip miles twice.',
       },
     },
     {

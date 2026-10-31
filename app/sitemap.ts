@@ -54,7 +54,7 @@ const states = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const now = undefined;
 
   const core = [
     { url: `${BASE_URL}/gig-worker-owes-irs`, lastModified: now, changeFrequency: 'monthly' as const, priority: 0.8 },

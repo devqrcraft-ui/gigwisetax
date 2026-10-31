@@ -1,33 +1,17 @@
 'use client'
 import { TAX_RULES_2026 as GTX_RULES } from '@/lib/tax-rules'
-import { mileageDeductEvenSplit } from '@/lib/examples'
+import { example, mileageDeductEvenSplit } from '@/lib/examples'
 import AuthorBox from '@/app/components/AuthorBox'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
-import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
+import { estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { ReviewsSection } from '@/app/components/ReviewsSection'
 import { useState } from 'react'
 import Link from 'next/link'
 import PartnerCTA from '@/app/PartnerCTA'
-import { getDeadlineStatus } from '@/lib/data'
+import { getDeadlineStatus, STATES as ALL_STATES } from '@/lib/data'
 
-const STATES = [
-  { code:'CA', name:'California',     rate:0.093  },
-  { code:'TX', name:'Texas',          rate:0      },
-  { code:'FL', name:'Florida',        rate:0      },
-  { code:'NY', name:'New York',       rate:0.0685 },
-  { code:'IL', name:'Illinois',       rate:0.0495 },
-  { code:'WA', name:'Washington',     rate:0      },
-  { code:'NV', name:'Nevada',         rate:0      },
-  { code:'GA', name:'Georgia',        rate:0.055  },
-  { code:'NC', name:'North Carolina', rate:0.0525 },
-  { code:'OH', name:'Ohio',           rate:0.04   },
-  { code:'AZ', name:'Arizona',        rate:0.025  },
-  { code:'CO', name:'Colorado',       rate:0.044  },
-  { code:'PA', name:'Pennsylvania',   rate:0.0307 },
-  { code:'MI', name:'Michigan',       rate:0.0425 },
-  { code:'Other', name:'Other State', rate:0.05   },
-]
+const STATES = ALL_STATES.map(s => ({ code: s.abbr, name: s.name, rate: s.rate }))
 
 const DEDUCTIONS = [
   { icon:'▸', label:'Mileage (72.5¢–76¢/mile 2026)', desc:'Business miles driven for Spark deliveries may be deductible. Personal and commuting miles generally are not, so keep a mileage log.' },
@@ -53,6 +37,7 @@ const _faqSchemaFromFAQ_walmart_spark = {"@context":"https://schema.org","@type"
 const _webAppSchema_walmart_spark = {"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Tax Calculator 2026","description":"Tax calculator for Walmart Spark drivers. Self-employment tax, mileage deduction, and quarterly estimated payments for 2026.","url":"https://www.gigwisetax.com/walmart-spark","operatingSystem":"Web"};
 const _faqSchema_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Walmart Spark drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. The mileage deduction (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026) is the largest available deduction and can significantly reduce taxable income."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn $2,000 or more. All delivery income is taxable even without a 1099."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec) for active delivery miles, phone plan (business portion), insulated bags or delivery equipment, tolls and parking fees during deliveries, and any required app subscriptions."}},{"@type":"Question","name":"Do Walmart Spark drivers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if expected annual tax liability is $1,000 or more. Quarterly due dates: April 15, June 15, September 15, January 15. Use our calculator to estimate your quarterly payment amount."}}]};
 export default function WalmartSparkPage() {
+  const baseline30K = example(30000)
   const [income, setIncome]   = useState('')
   const [miles,  setMiles]    = useState('')
   const [stateCode, setStateCode] = useState('TX')
@@ -66,19 +51,14 @@ export default function WalmartSparkPage() {
     const gross = parseFloat(income) || 0
     if (!gross) return
     const mileDeduction = mileageDeductEvenSplit(parseFloat(miles)||0)
-    const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
-    const seBase  = net * 0.9235
-    const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const ssSplit = seBase * 0.124
-    const medSplit= seBase * 0.029
     const fl = filing === 'mfj' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
-    const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
-    const federal = federalTax(taxable, fl)
-    const stateTax= taxable * (st?.rate ?? 0.05)
-    const total   = federal + seTax + stateTax
-    const qbi     = taxable * 0.20
-    setResult({ gross, net, mileDeduction, seTax, ssSplit, medSplit, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1), qbi })
+    const estimate = estimateTaxRaw(gross, st?.rate ?? 0.05, fl, mileDeduction)
+    setResult({
+      gross, net: estimate.net, mileDeduction, seTax: estimate.se, federal: estimate.federal,
+      stateTax: estimate.state, total: estimate.total, quarterly: estimate.quarterly,
+      rate: ((estimate.total/gross)*100).toFixed(1),
+    })
   }
 
   const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color:'#e2e8f0', background:'#07111F', boxSizing:'border-box' as const }
@@ -107,7 +87,7 @@ export default function WalmartSparkPage() {
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
             Free self-employment tax calculator for Walmart Spark delivery drivers. Estimate your SE tax (15.3%),
-            federal income tax, state tax, and mileage deduction for all 50 states + DC. Instant results — no signup required.
+            federal income tax, a simplified state-rate estimate, and mileage deductions for all 50 states + DC. Instant results — no signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
             {[' IRS Schedule SE',' All 50 States + DC','▸ Mileage Deduction',' No Registration',' Instant Results'].map(b => (
@@ -178,7 +158,7 @@ export default function WalmartSparkPage() {
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
                     { label:'Federal Income Tax',  val:fmt(result.federal), color:'rgba(255,255,255,0.8)', sub:'After SE deduction' },
-                    { label:'State Income Tax',    val:fmt(result.stateTax), color:'rgba(255,255,255,0.8)', sub:STATES.find(s=>s.code===stateCode)?.name },
+                    { label:'Estimated State Tax', val:fmt(result.stateTax), color:'rgba(255,255,255,0.8)', sub:`Simplified ${((STATES.find(s=>s.code===stateCode)?.rate ?? 0.05)*100).toFixed(1)}% input` },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
                     <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
@@ -210,8 +190,8 @@ export default function WalmartSparkPage() {
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, Walmart Spark drivers owe approximately <strong>$5,417 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,354</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li>Baseline example: $30,000 net profit, single filer, no mileage or state tax = <strong>{baseline30K.text.total} SE + federal estimate</strong>, before state tax and credits.</li>
+          <li>Equal-quarter baseline: <strong>{baseline30K.text.quarterly}</strong>; actual estimated payments may differ with withholding, prior-year safe harbor, and uneven income.</li>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — mileage varies by market and schedule, so enter your own documented business miles'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Walmart Spark does <strong>not withhold taxes</strong> — all drivers are 1099 independent contractors'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Business-use portions of delivery bags, phone accessories and supplies may be <strong>deductible</strong>; do not count the same vehicle costs under both standard mileage and actual expenses'}}/>
@@ -221,7 +201,7 @@ export default function WalmartSparkPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Walmart Spark</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Walmart Spark workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $1,178 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,354</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢–76¢/mile applies to all active Spark delivery miles.
+              For a $30,000 net-profit baseline, single filer, no mileage and no state tax, this model estimates {baseline30K.text.se} SE tax plus {baseline30K.text.federal} federal income tax = <strong style={{ color:'#fff' }}>{baseline30K.text.total} before state tax</strong>. The calculator above lets you add documented miles and select a simplified state-rate input; it does not calculate a complete state return. IRS business mileage rates are 72.5¢/mile through June 30 and 76¢/mile from July 1, 2026.
             </p>
           </div>
           {/* DEDUCTIONS */}

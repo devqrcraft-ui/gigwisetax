@@ -11,7 +11,7 @@ import type { Metadata } from 'next'
 
 export async function generateStaticParams() { return [{ platform: 'doordash' }] }
 
-export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'doordash')
   if (!p) return {}
   return {
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export default function PlatformPage({ params }: { params: { platform: string } }) {
+export default function PlatformPage() {
   const platform = PLATFORMS.find(p => p.slug === 'doordash')
   if (!platform) return notFound()
 
@@ -164,18 +164,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, DoorDash drivers owe approximately <strong>$7,933 total tax</strong> in 2026 — $5,652 SE tax + ~$2,281 federal'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Baseline example: <strong>$40,000 net profit</strong> gives about <strong>$7,933 in SE + federal tax</strong> before state tax, mileage, credits, or other income'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>' + gtxExample(40000).text.quarterly + '</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July 2026</strong> — one of the largest deductions available to drivers'}}/>
           <li dangerouslySetInnerHTML={{__html: 'DoorDash does <strong>not withhold taxes</strong> — you owe 15.3% SE tax on every dollar of net profit'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Most DoorDash drivers should set aside <strong>25–27%</strong> of gross earnings for taxes'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Your reserve depends on filing status, withholding, deductions, credits, and state rules; this estimate is not a one-size-fits-all set-aside percentage'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — DoorDash</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              DoorDash workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately {gtxExample(40000).text.se} SE tax + {gtxExample(40000).text.federal} federal income tax = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>{gtxExample(40000).text.quarterly}</strong>. Set aside 25% of every payment. Mileage deduction — 72.5¢/mile through June 30, 76¢/mile from July 1 — is one of the largest deductions available.
+              This baseline uses $40,000 of net profit, single filing, no mileage or other deductions, and no state tax: about {gtxExample(40000).text.se} SE + {gtxExample(40000).text.federal} federal = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} before state tax</strong>. The calculator above lets you add mileage and choose a simplified state estimate; actual state liability depends on state rules. 2026 mileage rates are 72.5¢/mile through June 30 and 76¢/mile from July 1.
             </p>
           </div>
 

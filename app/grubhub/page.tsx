@@ -1,32 +1,16 @@
 'use client'
-import { TAX_RULES_2026 as GTX_RULES } from '@/lib/tax-rules'
+import { TAX_RULES_2026 as GTX_RULES, estimateTaxRaw } from '@/lib/tax-rules'
 import { mileageDeductEvenSplit } from '@/lib/examples'
 import AuthorBox from '@/app/components/AuthorBox'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
-import { federalTax, TAX_RULES_2026 } from '@/lib/tax-rules'
+import { STATES as TAX_STATES } from '@/lib/data'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
 import { DEADLINES_2026 } from '@/lib/data'
 import Link from 'next/link'
 
-const STATES = [
-  { code:'CA', name:'California',     rate:0.093  },
-  { code:'TX', name:'Texas',          rate:0      },
-  { code:'FL', name:'Florida',        rate:0      },
-  { code:'NY', name:'New York',       rate:0.0685 },
-  { code:'IL', name:'Illinois',       rate:0.0495 },
-  { code:'WA', name:'Washington',     rate:0      },
-  { code:'NV', name:'Nevada',         rate:0      },
-  { code:'GA', name:'Georgia',        rate:0.055  },
-  { code:'NC', name:'North Carolina', rate:0.0525 },
-  { code:'OH', name:'Ohio',           rate:0.04   },
-  { code:'AZ', name:'Arizona',        rate:0.025  },
-  { code:'CO', name:'Colorado',       rate:0.044  },
-  { code:'PA', name:'Pennsylvania',   rate:0.0307 },
-  { code:'MI', name:'Michigan',       rate:0.0425 },
-  { code:'Other', name:'Other State', rate:0.05   },
-]
+const STATES = TAX_STATES.map(({ abbr: code, name, rate }) => ({ code, name, rate }))
 
 const DEDUCTIONS = [
   { icon:'▸', label:'Mileage (72.5¢–76¢/mile)', desc:'Track every delivery mile. Grubhub drivers typically log 20,000–35,000 miles per year.' },
@@ -64,16 +48,10 @@ export default function GrubhubPage() {
     const gross = parseFloat(income) || 0
     if (!gross) return
     const mileDeduction = mileageDeductEvenSplit(parseFloat(miles)||0)
-    const net     = Math.max(0, gross - mileDeduction)
     const st      = STATES.find(s => s.code === stateCode)
-    const seBase  = net * 0.9235
-    const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
     const fl = filing === 'mfj' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
-    const taxable = Math.max(0, net - seTax * 0.5 - TAX_RULES_2026.standardDeduction[fl])
-    const federal = federalTax(taxable, fl)
-    const stateTax= taxable * (st?.rate ?? 0.05)
-    const total   = federal + seTax + stateTax
-    setResult({ gross, net, mileDeduction, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1) })
+    const tax = estimateTaxRaw(gross, st?.rate ?? 0.05, fl, mileDeduction)
+    setResult({ gross, net: tax.net, mileDeduction, seTax: tax.se, federal: tax.federal, stateTax: tax.state, total: tax.total, quarterly: tax.quarterly, rate: ((tax.total/gross)*100).toFixed(1) })
   }
 
   const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color:'#e2e8f0', background:'#07111F', boxSizing:'border-box' as const }

@@ -1,5 +1,6 @@
 import { example as gtxExample } from '@/lib/examples'
-import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+import { notFound } from 'next/navigation'
+import TaxFreshness from '@/app/components/TaxFreshness'
 
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
@@ -328,11 +329,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const s = STATES.find(x => x.slug === stateSlug)
   if (!s) return {}
   const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
+  const example50 = estimateTax(50000, s.rate)
   return {
     title: s.rate === 0
       ? `Turo ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
       : `Turo ${s.name} Taxes 2026 — $50K Earner Owes $${estimateTax(50000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Turo ${s.name} 2026: $50K net = ~${gtxExample(50000,{stateRate:s.rate}).text.se} SE tax + ${gtxExample(50000,{stateRate:s.rate}).text.federal} fed. ${rateStr}. Quarterly: ~${gtxExample(50000,{stateRate:s.rate}).text.quarterly}. Free calculator, no signup.`,
+    description: `Turo ${s.name} 2026 planning example: $50K net profit = ~$${example50.se} SE + $${example50.federal} federal + $${example50.state} simplified state estimate; ~$${example50.quarterly} quarterly. Not a tax return.`,
     alternates: { canonical: `https://www.gigwisetax.com/turo/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -345,8 +347,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const rateStr = state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
   const noTax = state.rate === 0
-  const fedRate = 0.22
-  const seRate = 0.153
+  const example50 = estimateTax(50000, state.rate)
 
   return (
     <>
@@ -367,7 +368,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               Turo Tax Calculator — {state.name} 2026
             </h1>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, maxWidth: 780, marginBottom: 8 }}>
-              {'Free Turo host tax calculator for ' + state.name + ' (' + state.abbr + '). ' + (noTax ? state.name + ' has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.' : 'Includes the ' + rateStr + ' ' + state.name + ' state income tax plus federal SE tax (15.3%).') + ' No signup required.'}
+              {'Free Turo host tax calculator for ' + state.name + ' (' + state.abbr + '). This planning model estimates federal SE and income tax plus ' + (noTax ? 'no state income tax' : 'a simplified ' + rateStr + ' state-rate input') + '; it does not calculate the full state tax schedule.'}
             </p>
           </div>
         </div>
@@ -380,15 +381,15 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Turo Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Turo hosts in ' + state.name + ' earning $50,000 net owe approximately $' + estimateTax(50000, state.rate).total.toLocaleString('en-US') + ' total — $7,065 self-employment tax (15.3%) + $3,396 federal income tax' + (noTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + rateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(50000, state.rate).total / 4).toLocaleString('en-US') + '. Top deductions: vehicle depreciation, insurance, Turo fees, mileage at 72.5¢–76¢/mile.'}
+              {'This simplified $50,000 net-profit example for ' + state.name + ' estimates $' + example50.se.toLocaleString('en-US') + ' SE tax + $' + example50.federal.toLocaleString('en-US') + ' federal + $' + example50.state.toLocaleString('en-US') + ' state = $' + example50.total.toLocaleString('en-US') + ' total. The state component is a simplified rate input, not a full state tax calculation. Estimated quarterly amount: $' + example50.quarterly.toLocaleString('en-US') + '. Vehicle depreciation and passive Schedule E treatment are not modeled.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Turo hosts are independent contractors — Turo withholds zero taxes</li>
-              <li>{'On $50,000 net income: ~$7,065 SE tax + ~$3,396 federal = ~$10,461 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$2,615 each'}</li>
+              <li>{'On $50,000 net profit: $' + example50.se.toLocaleString('en-US') + ' SE + $' + example50.federal.toLocaleString('en-US') + ' federal + $' + example50.state.toLocaleString('en-US') + ' simplified state estimate = $' + example50.total.toLocaleString('en-US') + ' total in ' + state.name}</li>
+              <li>{'Estimated quarterly amount: $' + example50.quarterly.toLocaleString('en-US') + '. Actual payments depend on your full tax situation.'}</li>
               <li>Vehicle depreciation is the largest deduction — up to $12,400/year</li>
               <li>Deduct Turo service fees (25-35% of revenue), insurance, cleaning, repairs</li>
               <li>File Schedule C — report all Turo income on your federal tax return</li>
@@ -424,10 +425,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   </thead>
                   <tbody>
                     {[10000,25000,50000,75000,100000].map((income,i,arr) => {
-                      const se = Math.round(income * seRate * 0.9235)
-                      const st = noTax ? 0 : Math.round(income * state.rate)
-                      const fed = Math.round((income - se/2) * fedRate * 0.6)
-                      const total = se + st + fed
+                      const { se, federal: fed, state: st, total } = estimateTax(income, state.rate)
                       const isLast = i === arr.length - 1
                       return (
                         <tr key={income} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)', ...(isLast ? { background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)' } : {}) }}>

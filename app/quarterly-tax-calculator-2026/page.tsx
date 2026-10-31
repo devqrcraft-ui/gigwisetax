@@ -4,58 +4,13 @@ import TaxFreshness from '@/app/components/TaxFreshness'
 import Link from 'next/link';
 import AuthorBox from '@/app/components/AuthorBox';
 import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data';
+import { estimateTaxRaw } from '@/lib/tax-rules'
 
 const FILING_STATUSES = [
-  { label: 'Single', value: 'single', stdDeduction: 16100 },
-  { label: 'Married Filing Jointly', value: 'mfj', stdDeduction: 32200 },
-  { label: 'Head of Household', value: 'hoh', stdDeduction: 24150 },
+  { label: 'Single', value: 'single' },
+  { label: 'Married Filing Jointly', value: 'mfj' },
+  { label: 'Head of Household', value: 'hoh' },
 ];
-
-const TAX_BRACKETS_SINGLE = [
-  { min: 0, max: 12400, rate: 0.10 },
-  { min: 12400, max: 50400, rate: 0.12 },
-  { min: 50400, max: 105700, rate: 0.22 },
-  { min: 105700, max: 201775, rate: 0.24 },
-  { min: 201775, max: 256225, rate: 0.32 },
-  { min: 256225, max: 640600, rate: 0.35 },
-  { min: 640600, max: Infinity, rate: 0.37 },
-];
-
-const TAX_BRACKETS_MFJ = [
-  { min: 0, max: 24800, rate: 0.10 },
-  { min: 24800, max: 100800, rate: 0.12 },
-  { min: 100800, max: 211400, rate: 0.22 },
-  { min: 211400, max: 403550, rate: 0.24 },
-  { min: 403550, max: 512450, rate: 0.32 },
-  { min: 512450, max: 768700, rate: 0.35 },
-  { min: 768700, max: Infinity, rate: 0.37 },
-];
-
-const TAX_BRACKETS_HOH = [
-  { min: 0, max: 17700, rate: 0.10 },
-  { min: 17700, max: 67450, rate: 0.12 },
-  { min: 67450, max: 105700, rate: 0.22 },
-  { min: 105700, max: 201750, rate: 0.24 },
-  { min: 201750, max: 256200, rate: 0.32 },
-  { min: 256200, max: 640600, rate: 0.35 },
-  { min: 640600, max: Infinity, rate: 0.37 },
-];
-
-function getBrackets(status: string) {
-  if (status === 'mfj') return TAX_BRACKETS_MFJ;
-  if (status === 'hoh') return TAX_BRACKETS_HOH;
-  return TAX_BRACKETS_SINGLE;
-}
-
-function calcFederalTax(taxable: number, status: string): number {
-  const brackets = getBrackets(status);
-  let tax = 0;
-  for (const b of brackets) {
-    if (taxable <= b.min) break;
-    tax += (Math.min(taxable, b.max) - b.min) * b.rate;
-  }
-  return Math.max(0, tax);
-}
 
 const QUARTERS = [
   { label: 'Q1', period: 'Jan 1 – Mar 31', due: 'April 15, 2026' },
@@ -77,30 +32,11 @@ export default function QuarterlyTaxCalculator() {
   }>(null);
 
   function calculate() {
-    const gross = parseFloat(income) || 0;
-    const exp = parseFloat(expenses) || 0;
-    const netProfit = Math.max(0, gross - exp);
-
-    // SE tax: 92.35% of net × 15.3% (SS cap $184,500)
-    const seBase = netProfit * 0.9235;
-    const ssTax = Math.min(seBase, 184500) * 0.124;
-    const medicareTax = seBase * 0.029;
-    const seTax = ssTax + medicareTax;
-
-    // SE deduction: half of SE tax
-    const seDeduction = seTax / 2;
-
-    // Standard deduction
-    const filing = FILING_STATUSES.find(f => f.value === status)!;
-    const stdDeduction = filing.stdDeduction;
-
-    // Taxable income
-    const taxable = Math.max(0, netProfit - seDeduction - stdDeduction);
-    const federalTax = calcFederalTax(taxable, status);
-    const totalAnnual = seTax + federalTax;
-    const perQuarter = totalAnnual / 4;
-
-    setResult({ netProfit, seTax, federalTax, totalAnnual, perQuarter });
+    const gross = Math.max(0, parseFloat(income) || 0);
+    const exp = Math.max(0, parseFloat(expenses) || 0);
+    const filing = status === 'mfj' ? 'married' : status === 'hoh' ? 'hoh' : 'single';
+    const tax = estimateTaxRaw(gross, 0, filing, exp);
+    setResult({ netProfit: tax.net, seTax: tax.se, federalTax: tax.federal, totalAnnual: tax.total, perQuarter: tax.quarterly });
   }
 
   const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');

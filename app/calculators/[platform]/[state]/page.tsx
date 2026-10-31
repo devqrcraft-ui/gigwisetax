@@ -1,5 +1,6 @@
 // @ts-nocheck
 import Link from "next/link";
+import { estimateTaxRaw } from "@/lib/tax-rules";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -72,42 +73,41 @@ const STATES = [
   { slug: "washington-dc", name: "Washington D.C.", abbr: "DC", rate: 0.0895, hasTax: true, note: "D.C. has a progressive income tax up to 8.95%." },
 ];
 
+type RouteProps = { params: Promise<{ platform: string; state: string }> };
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const p = PLATFORMS.find(x => x.slug === params.platform);
-  const s = STATES.find(x => x.slug === params.state);
+
+export async function generateMetadata({ params }: RouteProps): Promise<Metadata> {
+  const { platform, state } = await params;
+  const p = PLATFORMS.find(x => x.slug === platform);
+  const s = STATES.find(x => x.slug === state);
   if (!p || !s) return {
-    alternates: { canonical: `https://www.gigwisetax.com/calculators/${params.platform}/${params.state}` },
+    alternates: { canonical: `https://www.gigwisetax.com/calculators/${platform}/${state}` },
      title: "Not Found" };
 
   const noTax = !s.hasTax;
   const title = `${p.name} Tax Calculator ${s.name} 2026 — ${noTax ? "No State Tax" : `${(s.rate * 100).toFixed(1)}% State Rate`} | GigWiseTax`;
-  const description = `Free ${p.name} tax calculator for ${s.name} gig workers. ${noTax ? `${s.name} has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.` : `Includes ${(s.rate * 100).toFixed(1)}% ${s.name} state tax + 15.3% SE tax.`} Quarterly payment schedule included.`;
+  const description = `Free ${p.name} tax calculator for ${s.name} gig workers. Federal estimate plus ${noTax ? 'no state income-tax component' : `a simplified ${(s.rate * 100).toFixed(1)}% state-rate input, not a full state tax schedule`}. Quarterly estimate included.`;
 
   return {
     title,
     description,
     keywords: `${p.name.toLowerCase()} tax calculator ${s.name.toLowerCase()}, ${p.name.toLowerCase()} taxes ${s.abbr} 2026, gig worker taxes ${s.name.toLowerCase()}`,
-    openGraph: { title, description, url: `https://www.gigwisetax.com/calculators/${params.platform}/${params.state}` },
+    openGraph: { title, description, url: `https://www.gigwisetax.com/calculators/${platform}/${state}` },
   };
 }
 
 function calcTax(income: number, stateRate: number, filing: string) {
-  const seBase = income * 0.9235;
-  const seTax = Math.min(seBase, 184500) * 0.124 + seBase * 0.029;
-  const taxable = income - seTax * 0.5;
-  const fedRate = filing === "single" ? (taxable < 47000 ? 0.12 : 0.22) : 0.12;
-  const federal = Math.max(0, taxable - (filing === "single" ? 16100 : 32200)) * fedRate;
-  const stateTax = taxable * stateRate;
-  const total = federal + seTax + stateTax;
-  return { seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / income) * 100).toFixed(1) };
+  const filingStatus = filing === "married" || filing === "mfj" ? "married" : filing === "hoh" ? "hoh" : "single";
+  const tax = estimateTaxRaw(income, stateRate, filingStatus);
+  return { seTax: tax.se, federal: tax.federal, stateTax: tax.state, total: tax.total, quarterly: tax.quarterly, rate: ((tax.total / income) * 100).toFixed(1) };
 }
 
 const fmt = (n: number) => "$" + Math.round(n || 0).toLocaleString("en-US");
 
-export default function CalculatorPage({ params }) {
-  const p = PLATFORMS.find(x => x.slug === params.platform);
-  const s = STATES.find(x => x.slug === params.state);
+export default async function CalculatorPage({ params }: RouteProps) {
+  const { platform, state } = await params;
+  const p = PLATFORMS.find(x => x.slug === platform);
+  const s = STATES.find(x => x.slug === state);
   if (!p || !s) notFound();
 
   const examples = [30000, 50000, 75000, 100000];
@@ -160,8 +160,8 @@ export default function CalculatorPage({ params }) {
           </h1>
           <p style={{ color: "rgba(255,255,255,.55)", fontSize: 15, lineHeight: 1.7, maxWidth: 700 }}>
             {s.hasTax
-              ? `Free ${p.name} self-employment tax calculator for ${s.name} workers. Includes 15.3% federal SE tax, ${(s.rate * 100).toFixed(1)}% ${s.name} state income tax, and quarterly payment schedule.`
-              : `Free ${p.name} self-employment tax calculator for ${s.name} workers. ${s.name} has no state income tax — you only pay 15.3% SE tax and federal income tax. Great news for Dashers!`}
+              ? `Free ${p.name} self-employment tax calculator for ${s.name} workers. Includes federal SE and income tax plus a simplified ${(s.rate * 100).toFixed(1)}% state-rate input applied to the estimator's taxable base, not a full state tax schedule.`
+              : `Free ${p.name} self-employment tax calculator for ${s.name} workers. This estimate includes no state income-tax component; federal tax only. Local taxes and other state-specific taxes are not modeled.`}
           </p>
         </div>
       </div>
@@ -176,8 +176,8 @@ export default function CalculatorPage({ params }) {
               <p style={S.p}>{s.note}</p>
               <p style={S.p}>
                 {s.hasTax
-                  ? `As a ${p.name} driver in ${s.name}, you pay the standard 15.3% federal self-employment tax PLUS ${(s.rate * 100).toFixed(1)}% state income tax on your net profit. This means your total effective tax rate is typically between ${(15.3 + s.rate * 100 * 0.5).toFixed(0)}–${(15.3 + s.rate * 100 + 10).toFixed(0)}% depending on your total income.`
-                  : `${s.name} is one of the best states to be a ${p.name} driver from a tax perspective. Without state income tax, your only major tax obligations are the 15.3% federal self-employment tax and federal income tax. This typically saves ${s.name} gig workers $1,500–$5,000 per year compared to high-tax states.`}
+                  ? `This estimator models federal self-employment and income tax, then applies a simplified ${(s.rate * 100).toFixed(1)}% state-rate input to its taxable base. It does not calculate ${s.name}'s complete tax brackets, credits, or local taxes; your actual state liability may differ.`
+                  : `This estimator includes no state individual-income-tax component for ${s.name}. Federal obligations still depend on your full return; local taxes and other state-specific taxes are not modeled.`}
               </p>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function CalculatorPage({ params }) {
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 500 }}>
                 <thead>
                   <tr style={{ background: "rgba(255,255,255,0.05)", borderBottom: "2px solid rgba(255,255,255,0.15)" }}>
-                    {["Annual Income", "SE Tax (15.3%)", "Federal Tax", s.hasTax ? `${s.abbr} State Tax` : "State Tax", "Total Tax", "Quarterly", "Rate"].map(h => (
+                    {["Annual Income", "SE Tax (15.3%)", "Federal Tax", s.hasTax ? `${s.abbr} State Est.` : "State Component", "Total Tax", "Quarterly", "Rate"].map(h => (
                       <th key={h} style={{ padding: "10px 14px", fontSize: 11, fontWeight: 700, color: "#8fa8c8", textTransform: "uppercase" as const, letterSpacing: "0.7px", textAlign: "left" }}>{h}</th>
                     ))}
                   </tr>
@@ -216,7 +216,7 @@ export default function CalculatorPage({ params }) {
                   })}
                 </tbody>
               </table>
-              <div style={{ padding: "8px 14px", fontSize: 11, color: "#7a9abf" }}>*Single filer estimates. Actual tax may vary based on deductions.</div>
+              <div style={{ padding: "8px 14px", fontSize: 11, color: "#7a9abf" }}>*Single-filer planning estimates. State amounts use a simplified rate input, not a full state tax schedule; other income, credits, and deductions may change results.</div>
             </div>
           </div>
 
@@ -224,7 +224,7 @@ export default function CalculatorPage({ params }) {
           <div style={S.card}>
             <div style={{ padding: "18px 22px" }}>
               <h2 style={S.h2}> Top Deductions for {p.name} Workers in {s.name}</h2>
-              <p style={S.p}>Reducing your taxable income is your most powerful tool. Every dollar deducted saves you {s.hasTax ? `${(15.3 + s.rate * 100).toFixed(0)}¢` : "~25¢"} in taxes.</p>
+              <p style={S.p}>Eligible deductions may reduce taxable income, but the savings depend on your filing status, federal bracket, and full state tax rules.</p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 {[
                   { title: " Mileage", val: "72.5¢–76¢/mile (2026 IRS rate)", desc: "Track every mile for " + p.name },

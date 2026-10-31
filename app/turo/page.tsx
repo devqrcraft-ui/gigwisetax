@@ -1,30 +1,14 @@
 'use client'
-import { TAX_RULES_2026 as GTX_RULES } from '@/lib/tax-rules'
+import { TAX_RULES_2026 as GTX_RULES, estimateTaxRaw } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import { useState } from 'react'
 import PartnerCTA from '@/app/PartnerCTA'
-import { DEADLINES_2026 } from '@/lib/data'
+import { DEADLINES_2026, STATES as TAX_STATES } from '@/lib/data'
 import Link from 'next/link'
 
-const STATES = [
-  { code:'CA', name:'California',     rate:0.093  },
-  { code:'TX', name:'Texas',          rate:0      },
-  { code:'FL', name:'Florida',        rate:0      },
-  { code:'NY', name:'New York',       rate:0.0685 },
-  { code:'IL', name:'Illinois',       rate:0.0495 },
-  { code:'WA', name:'Washington',     rate:0      },
-  { code:'NV', name:'Nevada',         rate:0      },
-  { code:'GA', name:'Georgia',        rate:0.055  },
-  { code:'NC', name:'North Carolina', rate:0.0525 },
-  { code:'OH', name:'Ohio',           rate:0.04   },
-  { code:'AZ', name:'Arizona',        rate:0.025  },
-  { code:'CO', name:'Colorado',       rate:0.044  },
-  { code:'PA', name:'Pennsylvania',   rate:0.0307 },
-  { code:'MI', name:'Michigan',       rate:0.0425 },
-  { code:'Other', name:'Other State', rate:0.05   },
-]
+const STATES = TAX_STATES.map(({ abbr: code, name, rate }) => ({ code, name, rate }))
 
 const DEDUCTIONS = [
   { icon:'', label:'Depreciation (MACRS)', desc:'Cars depreciate over 5 years under MACRS. First-year bonus depreciation may allow up to 100% deduction in year one.' },
@@ -51,28 +35,25 @@ const _faqSchema_turo = {"@context":"https://schema.org","@type":"FAQPage","main
 export default function TuroPage() {
   const [income, setIncome]   = useState('')
   const [rentalDays, setRentalDays] = useState('')
+  const [vehicleExpenses, setVehicleExpenses] = useState('')
   const [stateCode, setStateCode] = useState('CA')
-  const [filing, setFiling]   = useState('single')
+  const [filing, setFiling]   = useState<'single'|'married'|'hoh'>('single')
   const [result, setResult]   = useState<any>(null)
   const [openFaq, setOpenFaq] = useState<number|null>(null)
 
   const fmt = (n: number) => '$' + Math.round(n||0).toLocaleString('en-US')
+  const baseline = estimateTaxRaw(50000, STATES.find(s => s.code === 'CA')?.rate ?? 0, 'single')
 
   const calculate = () => {
     const gross = parseFloat(income) || 0
     if (!gross) return
     const days = parseFloat(rentalDays) || 0
-    const businessPct = days > 0 ? Math.min(days / 365, 1) : 1
+    const businessPct = Math.min(days / 365, 1)
     const st      = STATES.find(s => s.code === stateCode)
-    const net     = gross
-    const seBase  = net * 0.9235
-    const seTax   = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const taxable = net - seTax * 0.5
-    const fedRate = filing === 'single' ? 0.22 : 0.12
-    const federal = taxable * fedRate
-    const stateTax= taxable * (st?.rate ?? 0.05)
-    const total   = federal + seTax + stateTax
-    setResult({ gross, seTax, federal, stateTax, total, quarterly: total/4, rate: ((total/gross)*100).toFixed(1), businessPct: (businessPct*100).toFixed(0) })
+    const vehicleExpenseDeduction = (parseFloat(vehicleExpenses) || 0) * businessPct
+    const netProfit = Math.max(0, gross - vehicleExpenseDeduction)
+    const tax = estimateTaxRaw(netProfit, st?.rate ?? 0.05, filing)
+    setResult({ gross, netProfit, vehicleExpenseDeduction, seTax: tax.se, federal: tax.federal, stateTax: tax.state, total: tax.total, quarterly: tax.quarterly, rate: ((tax.total/gross)*100).toFixed(1), businessPct: (businessPct*100).toFixed(0) })
   }
 
   const inp = { width:'100%', border:'1px solid #d1d5db', borderRadius:4, padding:'10px 12px', fontSize:14, color: 'rgba(255,255,255,0.9)', background: '#07111F', boxSizing:'border-box' as const }
@@ -127,9 +108,14 @@ export default function TuroPage() {
                   <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Total payouts from Turo (before deductions)</div>
                 </div>
                 <div>
-                  <label style={lbl}> Rental Days Per Year (Optional)</label>
-                  <input style={inp} type="number" placeholder="e.g. 180" value={rentalDays} onChange={e=>setRentalDays(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Used to calculate business-use % for deductions</div>
+                  <label style={lbl}> Rental Days Per Year</label>
+                  <input style={inp} type="number" placeholder="e.g. 180" value={rentalDays} onChange={e => setRentalDays(String(Math.min(365, Math.max(0, Number(e.target.value) || 0))))} min="0" max="365" />
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Used for a simplified vehicle-expense business-use share</div>
+                </div>
+                <div>
+                  <label style={lbl}>Annual Vehicle Expenses (USD)</label>
+                  <input style={inp} type="number" placeholder="e.g. 10000" value={vehicleExpenses} onChange={e=>setVehicleExpenses(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>Enter vehicle costs before business-use allocation; depreciation is not calculated</div>
                 </div>
                 <div>
                   <label style={lbl} htmlFor="gtx-state-turo"> State of Residence</label>
@@ -139,9 +125,9 @@ export default function TuroPage() {
                 </div>
                 <div>
                   <label style={lbl} htmlFor="filing-status-1"> Filing Status</label>
-                  <select style={inp}  id="filing-status-1" value={filing} onChange={e=>setFiling(e.target.value)}>
+                  <select style={inp}  id="filing-status-1" value={filing} onChange={e => setFiling(e.target.value as 'single'|'married'|'hoh')}>
                     <option value="single">Single</option>
-                    <option value="mfj">Married Filing Jointly</option>
+                    <option value="married">Married Filing Jointly</option>
                     <option value="hoh">Head of Household</option>
                   </select>
                 </div>
@@ -155,14 +141,14 @@ export default function TuroPage() {
               <div style={{ borderTop:'1px solid rgba(255,255,255,0.1)', padding:24 }}>
                 {result.businessPct && (
                   <div style={{ background:'rgba(3,105,161,0.12)', border:'1px solid rgba(125,211,252,0.25)', borderRadius:6, padding:'12px 16px', marginBottom:16 }}>
-                    <span style={{ fontSize:13, color:'#7dd3fc', fontWeight:600 }}> Business Use Percentage: <strong>{result.businessPct}%</strong> — apply to all vehicle expenses</span>
+                    <span style={{ fontSize:13, color:'#7dd3fc', fontWeight:600 }}> Simplified business use: <strong>{result.businessPct}%</strong>; vehicle-expense deduction included: <strong>{fmt(result.vehicleExpenseDeduction)}</strong></span>
                   </div>
                 )}
                 <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:12, marginBottom:20 }} className="results-row">
                   {[
                     { label:'Self-Employment Tax', val:fmt(result.seTax), color:'#B22234', sub:'15.3% of 92.35%' },
                     { label:'Federal Income Tax',  val:fmt(result.federal), color: 'rgba(255,255,255,0.9)', sub:'After SE deduction' },
-                    { label:'State Income Tax',    val:fmt(result.stateTax), color: 'rgba(255,255,255,0.85)', sub:STATES.find(s=>s.code===stateCode)?.name },
+                    { label:'State Estimate',      val:fmt(result.stateTax), color: 'rgba(255,255,255,0.85)', sub:'Simplified flat-rate input' },
                     { label:'TOTAL TAX DUE',       val:fmt(result.total), color:'#B22234', sub:`${result.rate}% effective rate` },
                   ].map(r => (
                     <div key={r.label} style={{ background:'rgba(255,255,255,0.05)', border:'1px solid rgba(255,255,255,0.1)', borderRadius:6, padding:'14px 12px', textAlign:'center' as const }}>
@@ -178,7 +164,7 @@ export default function TuroPage() {
                   <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', marginTop:4 }}>Next: <strong style={{ color:'#fff' }}>{(() => { const d = DEADLINES_2026.find(x => new Date(x.due + ' 23:59:59').getTime() >= Date.now()); return d ? d.q + ' — ' + d.due : 'January 15, 2027' })()}</strong></div>
                 </div>
                 <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid #fde68a', borderRadius:6, padding:'12px 16px', fontSize:12, color:'#78350f' }}>
-                  <strong> Note:</strong> Depreciation deductions can significantly reduce your actual tax bill. These estimates do not include vehicle depreciation. Consult a CPA for Schedule C filing with depreciation.
+                  <strong> Planning estimate:</strong> Assumes active Schedule C income; passive Schedule E treatment may differ. Only the entered vehicle expenses multiplied by rental days ÷ 365 are deducted. Depreciation, credits, local taxes, and full state tax schedules are not modeled.
                 </div>
               <PartnerCTA sid="turo" />
               <BehindOnTaxes page="turo" />
@@ -192,18 +178,18 @@ export default function TuroPage() {
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$50,000 net income</strong>, Turo hosts owe approximately <strong>$10,461 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,615</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li>Baseline example: $50,000 California payouts, single, no vehicle expenses entered: approximately <strong>{fmt(baseline.total)}</strong> total, including a simplified state estimate.</li>
+          <li>Baseline quarterly estimate: <strong>{fmt(baseline.quarterly)}</strong>; actual required payments depend on your full tax situation.</li>
           <li dangerouslySetInnerHTML={{__html: 'Depreciation, insurance, car maintenance, and cleaning fees are <strong>top Turo deductions</strong>'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Turo takes a <strong>10–35% platform fee</strong> — deductible as a business expense on Schedule C'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–28%</strong> of gross Turo revenue — you are a 1099 contractor paying self-employment tax'}}/>
+          <li>Tax set-aside varies with net profit, filing status, other income, and state; use the estimate above as a planning figure.</li>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Turo</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Turo hosts pay 15.3% self-employment tax on net rental income, plus federal income tax. On $50,000 net income: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Set aside 25% of every payout. Depreciation, insurance, and maintenance are key Turo host deductions.
+              This planning example assumes active Schedule C income, single filing status, $50,000 in California payouts, and no vehicle expenses entered: about {fmt(baseline.se)} SE tax + {fmt(baseline.federal)} federal income tax + {fmt(baseline.state)} simplified state estimate = <strong style={{ color:'#fff' }}>{fmt(baseline.total)} total</strong>. The quarterly estimate is <strong style={{ color:'#e8b84b' }}>{fmt(baseline.quarterly)}</strong>. Passive Schedule E treatment, depreciation, credits, and the full California tax schedule are not modeled.
             </p>
           </div>
 

@@ -1,4 +1,5 @@
-import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
+import { notFound } from 'next/navigation'
+import TaxFreshness from '@/app/components/TaxFreshness'
 
 import { estimateTax } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
@@ -14,12 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
+  const stateStr = s.rate === 0 ? 'No state income tax modeled' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% simplified state-rate input; not a full state tax calculation`
   return {
     title: s.rate === 0
       ? `DoorDash ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `DoorDash ${s.name} Taxes 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `DoorDash ${s.name} 2026: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(40000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(40000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+      : `DoorDash ${s.name} Taxes 2026 — $40K Planning Estimate $${estimateTax(40000, s.rate).total.toLocaleString('en-US')}`,
+    description: `DoorDash ${s.name} 2026 planning example: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString('en-US')} SE + $${estimateTax(40000, s.rate).federal.toLocaleString('en-US')} federal + simplified state estimate. ${stateStr}. Not a tax return.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -33,6 +34,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const noStateTax   = state.rate === 0
   const stateRateStr = state.rate === 0 ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const example40 = estimateTax(40000, state.rate)
+  const example50 = estimateTax(50000, state.rate)
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -63,12 +66,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {/* Answer-First */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'14px 18px',marginBottom:20,marginTop:8}}>
           <p style={{margin:0,fontSize:15,lineHeight:1.8,color:'rgba(255,255,255,0.88)'}}>
-            {platform.name}{' '}drivers in {state.name} pay{' '}
+            {platform.name}{' '}drivers report self-employment income in {state.name}; this estimator applies{' '}
             <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong>{' '}
-            on net profit plus federal income tax
-            {noStateTax ? '.' : <span> and <strong style={{color:'#e8b84b'}}>{stateRateStr} {state.name} state tax</strong>.</span>}
-            {' '}On <strong style={{color:'#e8b84b'}}>{'$40,000'}</strong> net income a DoorDash driver owes roughly{' '}
-            <strong style={{color:'#e8b84b'}}>{'$7,933'}</strong> total — about <strong style={{color:'#e8b84b'}}>{'$1,983'}</strong> per quarter.
+            on the estimator&apos;s net-profit base, plus federal tax
+            {noStateTax ? '.' : <span> and a simplified state estimate using <strong style={{color:'#e8b84b'}}>{stateRateStr}</strong>.</span>}
+            {' '}For a <strong style={{color:'#e8b84b'}}>$40,000</strong> net-profit example, this model estimates{' '}
+            <strong style={{color:'#e8b84b'}}>${example40.total.toLocaleString('en-US')}</strong> total — about <strong style={{color:'#e8b84b'}}>${example40.quarterly.toLocaleString('en-US')}</strong> per quarter. State results are not a full state-tax calculation.
           </p>
         </div>
 
@@ -78,11 +81,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>{'DoorDash drivers on $40K net owe ~$7,933 in total 2026 taxes'}</li>
+            <li>{`$40K net-profit example: this estimator returns ~$${example40.total.toLocaleString('en-US')} total (state component is simplified)`}</li>
             <li>{'Self-employment tax is 15.3% on net profit — paid entirely by you'}</li>
             <li>{'Mileage deduction: 72.5¢–76¢/mile — 10,000 miles = $7,250–$7,600 deduction'}</li>
-            <li>{noStateTax ? state.name + ' has no state income tax — federal + SE tax only' : state.name + ' state tax up to ' + stateRateStr + ' — file state quarterly payments too'}</li>
-            <li>{'Tip income up to $25,000 is federally deductible in 2026'}</li>
+            <li>{noStateTax ? state.name + ' has no state individual income tax in this estimate' : state.name + ' uses a simplified ' + stateRateStr + ' state-rate input; check state rules for your actual liability'}</li>
+            <li>{'Potential deductions and credits vary by eligibility and are not all included in this estimate'}</li>
           </ul>
         </div>
 
@@ -96,12 +99,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.3)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>
             <div style={{fontWeight:800,color:'#B22234',marginBottom:10,fontSize:13}}>{'🏛 CALIFORNIA DOORDASH: PROP 22 + AB5 — WHAT IT MEANS FOR YOUR TAXES'}</div>
             <p style={{margin:'0 0 12px',fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
-              California DoorDash drivers operate under <strong style={{color:'#e8b84b'}}>Proposition 22</strong> (passed Nov 2020), which classifies app-based delivery workers as independent contractors — not employees. This means you still owe <strong style={{color:'#e8b84b'}}>15.3% SE tax</strong> on net profit and must pay <strong style={{color:'#e8b84b'}}>California state income tax up to 9.3%</strong>.
+              California DoorDash drivers may be covered by <strong style={{color:'#e8b84b'}}>Proposition 22</strong> depending on their work. This page estimates federal self-employment tax and uses a simplified state-rate input; it does not calculate California brackets, credits, local taxes, or an individual state return.
             </p>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,marginBottom:12}}>
               {[
                 {label:'Prop 22 Status',value:'Active',sub:'IC classification maintained',color:'#059669'},
-                {label:'CA State Tax',value:'Up to 9.3%',sub:'On net earnings',color:'#B22234'},
+                {label:'State model input',value:stateRateStr,sub:'Simplified, not CA liability',color:'#B22234'},
                 {label:'Prop 22 Benefit',value:'~120%',sub:'Min earnings guarantee',color:'#e8b84b'},
                 {label:'Healthcare Subsidy',value:'≥15 hrs/wk',sub:'Stipend if eligible',color:'#e8b84b'},
               ].map(s => (
@@ -116,7 +119,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.82)'}}>
               <li>You remain an <strong style={{color:'#e8b84b'}}>independent contractor</strong> — DoorDash does not withhold taxes</li>
               <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of CA minimum wage</strong> during active delivery time + 30¢/mile</li>
-              <li>On $40K net: SE tax $5,652 + federal ~$3,200 + CA state ~$1,700 = <strong style={{color:'#e8b84b'}}>~$10,552 total</strong></li>
+              <li>On $40K net, this simplified estimator returns SE {`$${example40.se.toLocaleString('en-US')}`}, federal {`$${example40.federal.toLocaleString('en-US')}`}, and state {`$${example40.state.toLocaleString('en-US')}`} = <strong style={{color:'#e8b84b'}}>{`$${example40.total.toLocaleString('en-US')} estimated total`}</strong></li>
               <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
               <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 15, Sep 15, Jan 15</strong></li>
               <li>Mileage deduction 72.5¢–76¢/mile reduces both federal and CA taxable income</li>
@@ -146,13 +149,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {platform.name} Tax Calculator<br/>{state.name} 2026
               </h1>
               <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
-                Estimate your {platform.name} self-employment taxes in {state.name}. Includes SE tax (15.3%), federal income tax, {noStateTax ? 'no state income tax' : `${stateRateStr} ${state.name} state tax`}, and quarterly payment schedule.
+                Estimate your {platform.name} self-employment taxes in {state.name}. Includes SE tax (15.3%), federal income tax, and {noStateTax ? 'no state individual income tax in this model' : `a simplified ${stateRateStr} state-rate input`}. It does not calculate the full state tax schedule.
               </p>
             </div>
             <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
-              <div style={{ fontSize: 11, color: noStateTax ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Tax Rate</div>
+              <div style={{ fontSize: 11, color: noStateTax ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Model Input</div>
               <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax ? '#34d399' : '#f87171' }}>{noStateTax ? '0%' : stateRateStr}</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{noStateTax ? 'No state income tax' : 'Top marginal rate'}</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.65)', marginTop: 2 }}>{noStateTax ? 'No state income tax modeled' : 'Simplified rate, not full tax'}</div>
             </div>
           </div>
         </div>
@@ -173,7 +176,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8, marginBottom: 12 }} className="three-grid">
                   {[
                     { label: 'SE Tax Rate', value: '15.3%', sub: 'SS + Medicare', color: '#B22234' },
-                    { label: `${state.abbr} State Tax`, value: noStateTax ? '0%' : stateRateStr, sub: noStateTax ? 'No state tax' : 'Top rate', color: noStateTax ? '#059669' : '#B22234' },
+                    { label: `${state.abbr} State Estimate`, value: noStateTax ? '0%' : stateRateStr, sub: noStateTax ? 'No income tax modeled' : 'Simplified input', color: noStateTax ? '#059669' : '#B22234' },
                     { label: 'Quarterly Due', value: '4×/yr', sub: 'If owe $1,000+', color: '#e8b84b' },
                   ].map(s => (
                     <div key={s.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '14px 16px', textAlign: 'center' as const }}>
@@ -228,17 +231,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% SE tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state tax. On $50,000 net income expect to owe $17,000–$22,000 total.`,
+                      : `For a $50,000 net-profit example, this estimator returns about $${example50.total.toLocaleString('en-US')} combined, including a simplified ${stateRateStr} state-rate input. This is not the state's full tax schedule; actual liability depends on state brackets, deductions, credits, and local taxes.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, make federal quarterly estimated payments (Form 1040-ES) if you expect to owe $1,000+. No state quarterly payments required.`
-                      : `Yes. Make both federal (Form 1040-ES) and ${state.name} state quarterly payments if you expect to owe $1,000+.`,
+                      : `Federal estimated payments may be required if you expect to owe $1,000 or more after withholding and credits. State payment thresholds and timing differ; check the ${state.name} revenue department.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in ${state.name}?`,
-                    a: `Federal SE tax is 15.3% regardless of state. In ${state.name} you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
+                    a: `Federal SE tax is generally 15.3% on the applicable net earnings base, subject to the Social Security wage limit and other rules. This estimator ${noStateTax ? 'adds no state income tax' : `uses a simplified ${stateRateStr} state-rate input`}; it does not calculate the full state tax schedule.`,
                   },
                   {
                     q: `What mileage rate can DoorDash drivers deduct in ${state.name} in 2026?`,
@@ -246,7 +249,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   },
                   {
                     q: `Does the No Tax on Tips law apply to DoorDash drivers in ${state.name}?`,
-                    a: `Yes. Under the One Big Beautiful Budget Act 2026, tip income up to $25,000 is federally deductible for DoorDash drivers in ${state.name}, in addition to mileage and business expense deductions.`,
+                    a: `The calculator does not apply a tip-income deduction. Whether tips qualify for any federal deduction depends on current IRS rules and your circumstances; check the applicable IRS instructions before filing.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>

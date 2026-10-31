@@ -1,4 +1,5 @@
 import { example as gtxExample } from '@/lib/examples'
+import { estimateTax } from '@/lib/tax-rules'
 import { notFound } from 'next/navigation'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
@@ -339,9 +340,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const rateStr = state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
   const noTax = state.rate === 0
-  const fedRate = 0.22
-  const seRate = 0.153
-
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
 
@@ -417,10 +415,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           </thead>
           <tbody>
             {[10000,25000,50000,75000,100000].map(income => {
-              const se = Math.round(income * seRate * 0.9235)
-              const st = noTax ? 0 : Math.round(income * state.rate)
-              const fed = Math.round((income - se/2) * fedRate * 0.6)
-              const total = se + st + fed
+              const { se, state: st, federal: fed, total } = estimateTax(income, state.rate)
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
                   <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>

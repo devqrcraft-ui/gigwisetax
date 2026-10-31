@@ -8,7 +8,7 @@ import { PARTNERS, awinClick, awinDeep } from '@/lib/partners'
  * Тексти посилань = схвалені креативи Awin (не змінювати). Анімація лише при prefers-reduced-motion: no-preference.
  */
 const CSS = [
-  '.gtx-cta{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;width:100%;box-sizing:border-box;text-align:center;background:#e8b84b;color:#07111F;font-weight:800;font-size:18px;line-height:1.3;padding:18px 20px;min-height:58px;border-radius:10px;text-decoration:none;border:2px solid #e8b84b;transition:transform .15s ease,background .15s ease}',
+  '.gtx-cta{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;width:100%;box-sizing:border-box;text-align:center;background:#e8b84b;color:#07111F;font-weight:800;font-size:16px;line-height:1.3;padding:12px 16px;min-height:48px;border-radius:8px;text-decoration:none;border:2px solid #e8b84b;transition:transform .15s ease,background .15s ease}',
   '.gtx-cta:hover{background:#f3c95f;border-color:#f3c95f;transform:translateY(-1px)}',
   '.gtx-cta::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;pointer-events:none;opacity:0;background:linear-gradient(100deg,transparent,rgba(255,255,255,0.5),transparent);transform:skewX(-20deg)}',
   '@keyframes gtxshine{0%,55%{left:-60%}100%{left:140%}}',
@@ -18,6 +18,7 @@ const CSS = [
   '@keyframes gtxpulse{0%,100%{box-shadow:0 0 0 0 rgba(232,184,75,0.55)}60%{box-shadow:0 0 0 10px rgba(232,184,75,0)}}',
   '@keyframes gtxnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}',
   '@media (prefers-reduced-motion: no-preference){.gtx-cta{animation:gtxpulse 2.6s ease-in-out infinite}.gtx-cta::after{opacity:1;animation:gtxshine 4.5s ease-in-out infinite}.gtx-arrow{animation:gtxnudge 1.6s ease-in-out infinite}}',
+  '@media (max-width: 600px){.gtx-sponsored-card{margin-top:16px!important;padding:10px 8px!important;border:0!important;border-left:2px solid rgba(232,184,75,.45)!important;border-radius:0!important;background:rgba(255,255,255,.025)!important}.gtx-cta{font-size:15px;line-height:1.25;padding:10px 12px;min-height:44px;border-width:1px}}',
 ].join('')
 
 function SponsoredStyles() {
@@ -46,6 +47,7 @@ export default function BehindOnTaxes({ page, guideLink = true }: { page: string
   const a = { color: '#e8b84b', textDecoration: 'underline' } as const
   return (
     <aside
+      className="gtx-sponsored-card"
       aria-label="Sponsored: help with IRS tax debt"
       style={{ margin: '24px 0 0', padding: '16px 18px', borderRadius: 10, border: '1px solid rgba(232,184,75,0.45)', background: 'rgba(232,184,75,0.07)' }}
     >

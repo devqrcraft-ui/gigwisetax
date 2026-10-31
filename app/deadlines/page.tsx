@@ -4,6 +4,7 @@
 
 import type { Metadata } from 'next'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
+import CommunityTaxBanner from '@/app/components/CommunityTaxBanner'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
@@ -50,7 +51,7 @@ export default function DeadlinesPage() {
   return (
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the 2026 tax deadlines for gig workers?","acceptedAnswer":{"@type":"Answer","text":"2026 key dates: Q1 estimated tax — April 15, Q2 — June 15, Q3 — September 15, Q4 — January 15 2027. Tax return deadline — April 15 2027 (extension to October 15 2027). 1099-NEC receipt by January 31 2027."}},{"@type":"Question","name":"What is the penalty for missing quarterly estimated tax payments?","acceptedAnswer":{"@type":"Answer","text":"The IRS underpayment penalty for 2026 is based on the federal short-term rate plus 3 percentage points. On a $2,000 underpayment for one quarter, the penalty is roughly $30-$50. Penalties compound quarterly."}},{"@type":"Question","name":"When do I need to file my gig worker tax return for 2026?","acceptedAnswer":{"@type":"Answer","text":"Your 2026 federal tax return is due April 15, 2027. File Form 4868 for an automatic 6-month extension to October 15, 2027. An extension to file is NOT an extension to pay — any taxes owed are still due April 15."}}]}` }} />
+      
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
@@ -204,6 +205,7 @@ export default function DeadlinesPage() {
       <style dangerouslySetInnerHTML={{__html:"@media(max-width:540px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}.state-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}}@media(max-width:960px){.deadline-q-grid{grid-template-columns:repeat(2,1fr)!important}}@media(min-width:960px){.main-grid{grid-template-columns:1fr 300px!important}}.results-row{grid-template-columns:1fr 1fr}.main-grid{width:100%!important}"}} />
       <div style={{maxWidth:1200,margin:'0 auto',padding:'0 16px'}}>
         <BehindOnTaxes page="deadlines" />
+        <CommunityTaxBanner page="deadlines-banner" />
         <TaxFreshness />
 <AuthorBox />
       </div>

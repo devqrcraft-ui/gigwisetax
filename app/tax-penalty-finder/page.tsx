@@ -1,6 +1,7 @@
 'use client'
 
 import { mileageDeductEvenSplit } from '@/lib/examples'
+import { estimateTaxRaw } from '@/lib/tax-rules'
 import { useState } from 'react'
 import Link from 'next/link'
 
@@ -31,25 +32,22 @@ export default function TaxPenaltyFinder() {
   const hasMileage = PLATFORMS.find(p => p.name === platform)?.mileage ?? false
 
   const calculate = () => {
-    const inc = parseFloat(income) || 0
+    const inc = Math.max(0, parseFloat(income) || 0)
     const mi  = parseFloat(miles)  || 0
     const mileageDed   = hasMileage ? mileageDeductEvenSplit(mi) : 0
     const homeOfficeDed = homeOffice ? 1200 : 0
-    const phoneDed     = phone ? inc * 0.04 : 0
-    const totalMissed  = mileageDed + homeOfficeDed + phoneDed + 800
-    const taxSaved     = totalMissed * 0.28
-    const annualTax    = inc * 0.9235 * 0.153 + inc * 0.22
-    const penalty      = quarterly === false ? annualTax / 4 * 0.08 : 0
-    const sCorpSavings = inc > 60000 && entity !== 's-corp' ? Math.round((inc - 40000) * 0.153 * 0.5) : 0
-    const overpaying   = Math.round(taxSaved + penalty)
+    const modeledDeductions = mileageDed + homeOfficeDed
+    const baselineTax = estimateTaxRaw(inc, 0, 'single')
+    const taxAfterDeductions = estimateTaxRaw(inc, 0, 'single', modeledDeductions)
+    const potentialTaxSavings = Math.max(0, baselineTax.total - taxAfterDeductions.total)
     const tips: string[] = []
-    if (hasMileage && mi > 0) tips.push(`Track ${Math.round(mi).toLocaleString('en-US')} miles → save ${fmt(mileageDed * 0.28)}/yr`)
-    if (homeOffice) tips.push(`Home office deduction → save up to ${fmt(homeOfficeDed * 0.28)}/yr`)
-    if (phone) tips.push(`Phone/internet deduction → save ${fmt(phoneDed * 0.28)}/yr`)
-    if (quarterly === false) tips.push(`Start quarterly payments → avoid ${fmt(penalty)} IRS penalty`)
-    if (sCorpSavings > 0) tips.push(`Switch to S-Corp → save ${fmt(sCorpSavings)}/yr on SE tax`)
-    tips.push(`SEP-IRA contribution → save up to ${fmt(inc * 0.25 * 0.28)}/yr in taxes`)
-    setResult({ overpaying, missedDeductions: Math.round(totalMissed), sCorpSavings, quarterlyOwed: Math.round(annualTax / 4), tips })
+    if (hasMileage && mi > 0) tips.push(`Keep a contemporaneous log for ${Math.round(mi).toLocaleString('en-US')} business miles; modeled mileage deduction: ${fmt(mileageDed)}.`)
+    if (homeOffice) tips.push('Confirm exclusive and regular business use before claiming a home-office deduction; this illustration uses a $1,200 placeholder.')
+    if (phone) tips.push('Track the actual business-use share of phone and internet costs; no dollar amount is estimated without bill details.')
+    if (quarterly === false) tips.push('Review federal withholding and estimated-payment safe harbors. Any underpayment penalty depends on payment dates, withholding, and prior-year tax; no penalty amount is estimated here.')
+    if (inc > 60000 && entity !== 's-corp') tips.push('Consider a CPA review of S-Corporation eligibility and costs; no savings estimate is made without a reasonable-salary analysis.')
+    tips.push('Retirement-plan deductions depend on eligibility, plan rules, and contribution limits; confirm them before relying on tax savings.')
+    setResult({ potentialTaxSavings: Math.round(potentialTaxSavings), potentialDeductions: Math.round(modeledDeductions), estimatedQuarterly: Math.round(baselineTax.quarterly), tips })
   }
 
   const bg   = { minHeight: '100vh', background: '#0d1117', padding: '40px 20px' }
@@ -72,32 +70,24 @@ export default function TaxPenaltyFinder() {
         </div>
         <div style={body}>
           <div style={{ background:'rgba(178,34,52,0.12)', border:'2px solid #B22234', borderRadius:8, padding:'20px', textAlign:'center', marginBottom:20 }}>
-            <div style={{ fontSize:13, fontWeight:700, color:'#B22234', letterSpacing:1, marginBottom:4 }}>YOU ARE CURRENTLY OVERPAYING THE IRS</div>
-            <div style={{ fontSize:52, fontWeight:900, color:'#B22234', lineHeight:1 }}>{fmt(result.overpaying)}</div>
-            <div style={{ fontSize:13, color:'rgba(255,255,255,0.5)', marginTop:6 }}>per year in avoidable taxes & penalties</div>
+            <div style={{ fontSize:13, fontWeight:700, color:'#B22234', letterSpacing:1, marginBottom:4 }}>POTENTIAL FEDERAL TAX REDUCTION</div>
+            <div style={{ fontSize:52, fontWeight:900, color:'#B22234', lineHeight:1 }}>{fmt(result.potentialTaxSavings)}</div>
+            <div style={{ fontSize:13, color:'rgba(255,255,255,0.5)', marginTop:6 }}>single-filer illustration from selected deductions; not guaranteed</div>
           </div>
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:12, marginBottom:20 }}>
             <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid rgba(232,184,75,0.3)', borderRadius:8, padding:16, textAlign:'center' }}>
-              <div style={{ fontSize:11, fontWeight:700, color:'#f39c12', letterSpacing:1 }}>MISSED DEDUCTIONS</div>
-              <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.missedDeductions)}</div>
-              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>you could deduct</div>
+              <div style={{ fontSize:11, fontWeight:700, color:'#f39c12', letterSpacing:1 }}>MODELED DEDUCTIONS</div>
+              <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.potentialDeductions)}</div>
+              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>mileage and office placeholder; phone unpriced</div>
             </div>
-            {result.sCorpSavings > 0 ? (
-              <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:8, padding:16, textAlign:'center' }}>
-                <div style={{ fontSize:11, fontWeight:700, color:'#4ade80', letterSpacing:1 }}>S-CORP SAVINGS</div>
-                <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.sCorpSavings)}</div>
-                <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>per year if you switch</div>
-              </div>
-            ) : (
-              <div style={{ background:'rgba(99,102,241,0.12)', border:'1px solid rgba(99,102,241,0.35)', borderRadius:8, padding:16, textAlign:'center' }}>
-                <div style={{ fontSize:11, fontWeight:700, color:'#2563eb', letterSpacing:1 }}>QUARTERLY PAYMENT</div>
-                <div style={{ fontSize:20, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.quarterlyOwed)}</div>
-                <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>due Apr 15, 2026</div>
-              </div>
-            )}
+            <div style={{ background:'rgba(99,102,241,0.12)', border:'1px solid rgba(99,102,241,0.35)', borderRadius:8, padding:16, textAlign:'center' }}>
+              <div style={{ fontSize:11, fontWeight:700, color:'#2563eb', letterSpacing:1 }}>FEDERAL QUARTERLY ESTIMATE</div>
+              <div style={{ fontSize:20, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.estimatedQuarterly)}</div>
+              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>single-filer model; state tax omitted</div>
+            </div>
           </div>
           <div style={{ background:'rgba(255,255,255,0.05)', border:'1px solid #e2e8f0', borderRadius:8, padding:16, marginBottom:20 }}>
-            <div style={{ fontSize:13, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}> YOUR PERSONALIZED ACTION PLAN</div>
+            <div style={{ fontSize:13, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}>POTENTIAL NEXT STEPS</div>
             {result.tips.map((tip: string, i: number) => (
               <div key={i} style={{ display:'flex', gap:10, marginBottom:8 }}>
                 <span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>
@@ -106,7 +96,7 @@ export default function TaxPenaltyFinder() {
             ))}
           </div>
           <div style={{ background:'#1e2d5a', borderRadius:8, padding:20, textAlign:'center' }}>
-            <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:8 }}>READY TO STOP OVERPAYING?</div>
+            <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:8 }}>NEED HELP REVIEWING YOUR OPTIONS?</div>
             <a href="https://1099deductions.com" target="_blank" rel="noopener"
               style={{ display:'block', background:'#B22234', color:'#fff', borderRadius:6, padding:'14px', fontSize:15, fontWeight:800, textDecoration:'none', marginBottom:10 }}>
               File with TurboTax Self-Employed →
@@ -129,8 +119,8 @@ export default function TaxPenaltyFinder() {
     <div style={bg}><div style={wrap}>
       <div style={{ textAlign:'center', marginBottom:32 }}>
         <div style={{ display:'inline-block', background:'#B22234', color:'#fff', fontSize:11, fontWeight:800, letterSpacing:1.5, padding:'5px 14px', borderRadius:20, marginBottom:14 }}>FREE TAX ANALYSIS</div>
-        <h1 style={{ color:'#fff', fontSize:28, fontWeight:900, margin:'0 0 10px', lineHeight:1.2 }}>How Much Are You Overpaying the IRS?</h1>
-        <p style={{ color:'rgba(255,255,255,.6)', fontSize:15, margin:0 }}>Answer 7 quick questions — get your personalized penalty report in 60 seconds</p>
+        <h1 style={{ color:'#fff', fontSize:28, fontWeight:900, margin:'0 0 10px', lineHeight:1.2 }}>Estimate Potential Tax Savings</h1>
+        <p style={{ color:'rgba(255,255,255,.6)', fontSize:15, margin:0 }}>Answer a few questions for a federal-only planning illustration; no exact penalty or S-Corp savings is calculated</p>
       </div>
       <div style={card}>
         <div style={hdr}>
@@ -145,7 +135,7 @@ export default function TaxPenaltyFinder() {
             <div style={{ textAlign:'center' }}>
               <div style={{ fontSize:48, marginBottom:16 }}></div>
               <h2 style={{ fontSize:20, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 10px' }}>Find Your Tax Overpayment</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>Most gig workers overpay $2,000–$6,000/year. This free tool shows you exactly where your money is going.</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>This federal-only illustration uses simplified assumptions; eligibility and actual savings depend on your full tax return.</p>
               <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
                 {['Takes only 60 seconds','Personalized to your platform','Shows exact dollar savings','100% free — no signup needed'].map((t,i) => (
                   <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>

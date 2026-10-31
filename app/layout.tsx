@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
+import './mobile.css';
 import { Analytics } from '@vercel/analytics/next';
 
 export const viewport: Viewport = {
@@ -57,22 +58,24 @@ export default function RootLayout({ children }: { children: React.ReactNode } )
           </div>
         </header>
         {children}
-        <footer style={{padding:"18px 20px",background:"#07111F",borderTop:"1px solid rgba(232,184,75,0.2)"}}>
+        <footer style={{padding:"10px 12px 12px",background:"#07111F",borderTop:"1px solid rgba(232,184,75,0.2)",textAlign:"center" as const}}>
           <div style={{maxWidth:1200,margin:"0 auto"}}>
-            <div style={{display:"flex",flexWrap:"wrap" as const,alignItems:"center",gap:14,marginBottom:10,fontSize:13}}>
-              <a href="/calculators" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Calculators</a>
-              <a href="/blog" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Blog</a>
-              <a href="/deadlines" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Deadlines</a>
-              <a href="/about" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>About</a>
-              <a href="/contact" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Contact</a>
-              <a href="/privacy" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Privacy</a>
-              <a href="/terms" style={{color:"rgba(255,255,255,0.7)",fontWeight:600,textDecoration:"none"}}>Terms</a>
-              <span style={{marginLeft:"auto",fontSize:12,fontWeight:700,color:"rgba(255,255,255,0.55)"}}>Our other sites</span>
-              <a href="https://www.privatepaycheck.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>PrivatePaycheck ➔</a>
-              <a href="https://www.ukgigtax.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>UKGigTax ➔</a>
-              <a href="https://www.compressto20kb.com" style={{color:"#fff",textDecoration:"none",fontWeight:600}}>CompressTo20KB ➔</a>
+            <nav aria-label="Footer" className="gw-foot-nav">
+              <a href="/calculators">Calculators</a>
+              <a href="/blog">Blog</a>
+              <a href="/deadlines">Deadlines</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
+              <a href="/privacy">Privacy</a>
+              <a href="/terms">Terms</a>
+            </nav>
+            <div className="gw-foot-sites">
+              <span>Our sites:</span>
+              <a href="https://www.privatepaycheck.com">PrivatePaycheck</a>
+              <a href="https://www.ukgigtax.com">UKGigTax</a>
+              <a href="https://www.compressto20kb.com">CompressTo20KB</a>
             </div>
-            <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",paddingTop:10,fontSize:12,color:"rgba(255,255,255,0.6)"}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
+            <div style={{borderTop:"1px solid rgba(255,255,255,0.08)",marginTop:6,paddingTop:8,fontSize:12,color:"rgba(255,255,255,0.7)",lineHeight:1.5}}>© 2026 GigWiseTax.com · Not affiliated with the IRS or any government agency</div>
           </div>
         </footer>
         <Analytics />

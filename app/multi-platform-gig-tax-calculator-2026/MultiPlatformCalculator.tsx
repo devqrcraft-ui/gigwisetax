@@ -1,53 +1,14 @@
 'use client';
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
+import { STATES as ALL_STATES } from '@/lib/data';
+import { estimateTaxRaw } from '@/lib/tax-rules';
 
-// 2026 federal brackets
-const BRACKETS_SINGLE = [
-  { max: 12400, rate: 0.10 },
-  { max: 50400, rate: 0.12 },
-  { max: 105700, rate: 0.22 },
-  { max: 201775, rate: 0.24 },
-  { max: 256225, rate: 0.32 },
-  { max: 640600, rate: 0.35 },
-  { max: Infinity, rate: 0.37 },
-];
-const BRACKETS_MFJ = [
-  { max: 24800, rate: 0.10 },
-  { max: 100800, rate: 0.12 },
-  { max: 211400, rate: 0.22 },
-  { max: 403550, rate: 0.24 },
-  { max: 512450, rate: 0.32 },
-  { max: 768700, rate: 0.35 },
-  { max: Infinity, rate: 0.37 },
-];
-const STD_DEDUCTION = { single: 16100, married: 32200, hoh: 24150 };
-
+// Єдине джерело ставок штатів: lib/data.ts (щоб калькулятори не розбігалися).
 const STATE_TAXES: Record<string, number> = {
   'No state tax (AK, FL, NV, NH, SD, TN, TX, WA, WY)': 0,
-  'Alabama': 5.0, 'Arizona': 2.5, 'Arkansas': 4.7, 'California': 9.3,
-  'Colorado': 4.4, 'Connecticut': 6.5, 'Delaware': 6.6, 'Georgia': 5.5,
-  'Hawaii': 8.0, 'Idaho': 5.8, 'Illinois': 4.95, 'Indiana': 3.05,
-  'Iowa': 6.0, 'Kansas': 5.7, 'Kentucky': 4.5, 'Louisiana': 4.25,
-  'Maine': 7.15, 'Maryland': 5.75, 'Massachusetts': 5.0, 'Michigan': 4.25,
-  'Minnesota': 9.85, 'Mississippi': 5.0, 'Missouri': 5.4, 'Montana': 6.75,
-  'Nebraska': 6.84, 'New Jersey': 6.37, 'New Mexico': 5.9, 'New York': 6.85,
-  'North Carolina': 4.75, 'North Dakota': 2.5, 'Ohio': 3.99, 'Oklahoma': 5.0,
-  'Oregon': 9.9, 'Pennsylvania': 3.07, 'Rhode Island': 5.99,
-  'South Carolina': 7.0, 'Utah': 4.65, 'Vermont': 8.75, 'Virginia': 5.75,
-  'West Virginia': 6.5, 'Wisconsin': 7.65, 'District of Columbia': 8.5,
+  ...Object.fromEntries(ALL_STATES.filter(s => s.rate > 0).map(s => [s.name, Number((s.rate * 100).toFixed(2))])),
 };
-
-function calcFederal(taxable: number, filing: string): number {
-  const brackets = filing === 'married' ? BRACKETS_MFJ : BRACKETS_SINGLE;
-  let tax = 0; let prev = 0;
-  for (const b of brackets) {
-    if (taxable <= prev) break;
-    tax += (Math.min(taxable, b.max) - prev) * b.rate;
-    prev = b.max;
-  }
-  return Math.max(0, tax);
-}
 
 const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const pct = (n: number) => (n * 100).toFixed(1) + '%';
@@ -100,22 +61,15 @@ export default function MultiPlatformCalculator() {
   const calc = useMemo(() => {
     const gross = Object.values(income).reduce((s, v) => s + (parseFloat(v) || 0), 0);
     const exp   = parseFloat(expenses) || 0;
-    const net   = Math.max(0, gross - exp);
-    if (net === 0) return null;
-
-    const seTaxBase = net * 0.9235;
-    const seTax = Math.min(seTaxBase, 184500) * 0.124 + seTaxBase * 0.029;
-    const seDeduct  = seTax / 2;
-    const stdDeduct = STD_DEDUCTION[filing];
-    const taxable   = Math.max(0, net - seDeduct - stdDeduct);
-    const fedTax    = calcFederal(taxable, filing);
     const stateRate = (STATE_TAXES[state] ?? 0) / 100;
-    const stateTax  = taxable * stateRate;
-    const totalTax  = seTax + fedTax + stateTax;
-    const quarterly  = totalTax / 4;
-    const effective  = net > 0 ? totalTax / net : 0;
+    const estimate = estimateTaxRaw(gross, stateRate, filing, exp);
+    if (estimate.net === 0) return null;
 
-    return { gross, net, exp, seTax, fedTax, stateTax, totalTax, quarterly, effective, taxable };
+    return {
+      gross, net: estimate.net, exp, seTax: estimate.se, fedTax: estimate.federal,
+      stateTax: estimate.state, totalTax: estimate.total, quarterly: estimate.quarterly,
+      effective: estimate.total / estimate.net, taxable: estimate.taxable,
+    };
   }, [income, expenses, state, filing]);
 
   const setInc = (key: string, val: string) => {
@@ -124,10 +78,10 @@ export default function MultiPlatformCalculator() {
   };
 
   return (
-    <main style={{ background: '#07111F', minHeight: '100vh', paddingBottom: '80px' }}>
+    <main style={{ background: '#07111F', minHeight: '100vh', paddingBottom: '24px' }}>
 
       {/* Hero */}
-      <section style={{
+      <section className="multi-calc-hero" style={{
         background: 'linear-gradient(135deg,#0d1e35 0%,#07111F 100%)',
         borderBottom: '1px solid #1a2d45',
         padding: '48px 20px 40px',
@@ -147,14 +101,14 @@ export default function MultiPlatformCalculator() {
           <span style={{ color: '#e8b84b' }}>— DoorDash, Uber, Instacart & More</span>
         </h1>
         <p style={{ color: '#C8D8EC', fontSize: 'clamp(15px,2vw,18px)', maxWidth: '620px', margin: '0 auto', opacity: 0.85 }}>
-          Enter income from every platform you drive or deliver for. Get your combined SE tax, federal, state, and quarterly payment estimates instantly.
+          Reconcile income from DoorDash, Uber, Instacart, Amazon Flex, and other apps in one estimate. Enter each app&apos;s annual gross once, add eligible business expenses once, and review the combined estimate and quarterly schedule. Don&apos;t count shared-trip miles twice.
         </p>
       </section>
 
-      <div style={{ maxWidth: '780px', margin: '0 auto', padding: '0 16px' }}>
+      <div className="multi-calc-shell" style={{ maxWidth: '780px', margin: '0 auto', padding: '0 16px' }}>
 
         {/* ── Inputs ── */}
-        <div style={{
+        <div className="multi-calc-card" style={{
           background: '#0d1e35', border: '1px solid #1a2d45',
           borderRadius: '16px', padding: 'clamp(20px,4vw,36px)', marginTop: '32px',
         }}>
@@ -163,7 +117,7 @@ export default function MultiPlatformCalculator() {
           </h2>
 
           {/* Platform incomes — 2-col on wide, 1-col on mobile */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px', marginBottom: '20px' }}>
+          <div className="multi-calc-input-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px', marginBottom: '20px' }}>
             {PLATFORMS.map(p => (
               <div key={p.key}>
                 <label style={{ ...labelStyle }}>
@@ -208,7 +162,7 @@ export default function MultiPlatformCalculator() {
           <h2 style={{ color: '#C8D8EC', fontSize: '18px', fontWeight: 700, margin: '24px 0 16px' }}>
             Step 2 — Tax situation
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px' }}>
+          <div className="multi-calc-status-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '16px' }}>
             <div>
               <label style={{ ...labelStyle }}>Filing Status</label>
               <select
@@ -238,7 +192,7 @@ export default function MultiPlatformCalculator() {
 
         {/* ── Results ── */}
         {calc && (
-          <div style={{
+          <div className="multi-calc-card" style={{
             background: '#0d1e35', border: '1px solid #1a2d45',
             borderRadius: '16px', padding: 'clamp(20px,4vw,36px)', marginTop: '20px',
           }}>
@@ -247,13 +201,13 @@ export default function MultiPlatformCalculator() {
             </h2>
 
             {/* Summary cards */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '12px', marginBottom: '28px' }}>
+            <div className="multi-calc-summary-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '12px', marginBottom: '28px' }}>
               {[
                 { label: 'Total Gross Income', val: fmt(calc.gross), sub: 'All platforms combined', color: '#C8D8EC' },
                 { label: 'Net After Expenses', val: fmt(calc.net), sub: fmt(calc.exp) + ' in deductions', color: '#C8D8EC' },
                 { label: 'Self-Employment Tax', val: fmt(calc.seTax), sub: '15.3% × 92.35% of net', color: '#e8b84b' },
                 { label: 'Federal Income Tax', val: fmt(calc.fedTax), sub: 'After SE deduction + std deduct', color: '#60a5fa' },
-                { label: 'State Income Tax', val: fmt(calc.stateTax), sub: (STATE_TAXES[state] ?? 0) + '% rate', color: '#4ade80' },
+                { label: 'Estimated State Tax', val: fmt(calc.stateTax), sub: (STATE_TAXES[state] ?? 0) + '% simplified rate', color: '#4ade80' },
                 { label: 'Total Tax Owed', val: fmt(calc.totalTax), sub: 'Effective rate: ' + pct(calc.effective), color: '#e8b84b' },
               ].map(c => (
                 <div key={c.label} style={{
@@ -281,7 +235,7 @@ export default function MultiPlatformCalculator() {
                   Your estimated tax is under $1,000 — quarterly payments may not be required. Verify with a tax professional.
                 </p>
               )}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '10px' }}>
+              <div className="multi-calc-quarter-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(160px,1fr))', gap: '10px' }}>
                 {QUARTERLY_DATES.map(q => (
                   <div key={q.date} style={{
                     background: '#07111F', border: '1px solid #1a2d45',
@@ -325,7 +279,7 @@ export default function MultiPlatformCalculator() {
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '10px' }}>
                 {PLATFORMS.filter(p => p.href).map(p => (
-                  <Link key={p.key} href={p.href!} style={{
+                  <Link key={p.key} href={p.href!} className="multi-calc-platform-link" style={{
                     background: 'transparent',
                     border: '2px solid ' + p.color,
                     borderRadius: '10px',
@@ -363,14 +317,14 @@ export default function MultiPlatformCalculator() {
             Multi-App Gig Tax FAQ
           </h2>
           {[
-            { q: 'Do I add up all gig app income for taxes?', a: 'Yes. The IRS considers all 1099 income together. Income from DoorDash, Uber, Instacart, Amazon Flex, and any other platform is combined and subject to SE tax of 15.3% on 92.35% of net earnings, plus federal and state income tax.' },
+            { q: 'Why enter income from each app separately?', a: 'Separate fields make it easier to reconcile platform statements. This estimator adds the entered gross amounts, subtracts the eligible business expenses you enter once, and estimates a combined total. It is a planning tool, not tax-return preparation; do not count shared-trip miles twice.' },
             { q: 'What is the self-employment tax rate for gig workers in 2026?', a: 'The SE tax rate is 15.3% — 12.4% for Social Security (on earnings up to $184,500) and 2.9% for Medicare. You can deduct half of your SE tax from gross income, which reduces your federal and state tax.' },
             { q: 'How do I calculate quarterly taxes for multiple gig apps?', a: 'Add all net income, calculate total annual tax, divide by 4. Pay by Apr 15, Jun 15, Sep 15 2026, and Jan 15 2027. If you expect $1,000+ in tax owed, quarterly payments are required to avoid IRS penalties.' },
             { q: 'Can I deduct mileage for DoorDash and Uber at the same time?', a: 'Yes — but only once per mile. If you pick up a DoorDash and Uber Eats order on the same trip, you cannot deduct the mileage twice. Track miles per platform and total across all apps. The 2026 standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1).' },
           ].map(item => (
             <div key={item.q} style={{
               background: '#0d1e35', border: '1px solid #1a2d45',
-              borderRadius: '12px', padding: '20px', marginBottom: '12px',
+              borderRadius: '12px', padding: '20px', marginBottom: '8px',
             }}>
               <h3 style={{ color: '#e8b84b', fontSize: '16px', fontWeight: 700, marginBottom: '10px' }}>{item.q}</h3>
               <p style={{ color: '#C8D8EC', fontSize: '15px', lineHeight: 1.7, margin: 0 }}>{item.a}</p>

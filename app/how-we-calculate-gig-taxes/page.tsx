@@ -49,8 +49,9 @@ export default function HowWeCalculatePage() {
         <div className="badge">Methodology & Sources</div>
         <h1>How GigWiseTax Calculates Your Taxes</h1>
         <p className="lead">
-          Every number in our calculator is based on published IRS formulas and official state tax rates.
-          This page explains exactly how we arrive at each figure — so you can verify our math.
+          Federal estimates use published IRS tax-year 2026 figures. State results use a simplified
+          percentage model and are not a calculation of your state tax return. This page describes
+          the model's scope and limitations so you can interpret the estimates carefully.
         </p>
 
         {/* SE TAX */}
@@ -117,8 +118,7 @@ export default function HowWeCalculatePage() {
             </div>
           </div>
           <p style={{fontSize:12,color:'rgba(255,255,255,0.5)',marginTop:8,lineHeight:1.6}}>
-            Note: Our calculator applies the 2026 progressive federal brackets, the standard deduction, and the Social Security wage cap. State tax is estimated as a flat rate on taxable income, so results are planning estimates, not a tax return.
-            Actual federal tax depends on additional deductions, credits, and other income.
+            Note: Our central estimator applies the 2026 progressive federal brackets, standard deduction, and Social Security wage cap. Some platform calculators may not yet use every shared rule. State tax is estimated using a simplified flat percentage, so results are planning estimates, not a tax return. Actual federal tax depends on additional deductions, credits, and other income.
           </p>
         </div>
 
@@ -126,24 +126,17 @@ export default function HowWeCalculatePage() {
         <div className="section">
           <h2>Step 3 — State Income Tax</h2>
           <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
-            We include state income tax for all 50 states + DC (50 states + D.C.).
-            Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire,
-            South Dakota, Tennessee, Texas, Washington, and Wyoming.
+            The estimator applies one simplified percentage from its state table to estimated federal taxable income.
+            It does not calculate each state's progressive brackets, state-specific deductions or credits, residency rules,
+            or local taxes. A zero in the table means the model adds no state income tax estimate; check current state guidance
+            for other taxes that may apply.
           </p>
           <div className="source-box">
-            <div className="source-label">State Rate Sources</div>
+            <div className="source-label">State Estimate Method</div>
             <div className="source-text">
-              State flat rates and bracket midpoints sourced from each state&apos;s Department of Revenue.
-              We use the marginal rate applicable to the entered income level for the selected filing status.
-              Rates verified for tax year 2026.
-            </div>
-          </div>
-          <div className="source-box">
-            <div className="source-label">Key State Rates Used</div>
-            <div className="source-text">
-              California 9.3% · New York 6.85% · Illinois 4.95% · Georgia 5.5% ·
-              North Carolina 5.25% · Ohio 4.0% · Arizona 2.5% · Colorado 4.4% ·
-              Texas 0% · Florida 0% · Washington 0% · Nevada 0%
+              The current implementation stores one percentage per state in the app&apos;s shared data table.
+              These values are not a full state tax schedule and have not been independently verified here against
+              every state&apos;s tax-year 2026 rules. Treat the state result as a rough planning placeholder, not a state tax calculation.
             </div>
           </div>
         </div>
@@ -171,7 +164,7 @@ export default function HowWeCalculatePage() {
           <div className="source-box">
             <div className="source-label">Simplifications in our model</div>
             <div className="source-text" style={{lineHeight:1.8}}>
-              • Additional Medicare Tax (0.9% on income over $200,000) — not included<br/>
+              • Additional Medicare Tax uses a simplified self-employment-only threshold; W-2 wages and other Medicare wages are not combined<br/>
               • Qualified Business Income (QBI) deduction — not included<br/>
               • Child tax credit, earned income credit, and other credits — not included<br/>
               • Local/city income taxes (e.g. NYC) — not included<br/>

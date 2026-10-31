@@ -1,5 +1,6 @@
 import { example as gtxExample } from '@/lib/examples'
-import { notFound } from 'next/navigation'
+import { notFound } from 'next/navigation'
+
 import { estimateTax } from '@/lib/tax-rules'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
@@ -328,8 +329,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   return {
     title: s.rate === 0
       ? `Walmart Spark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Walmart Spark ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Walmart Spark ${s.name} 2026: $30K net = ~${gtxExample(30000,{stateRate:s.rate}).text.se} SE tax + ${gtxExample(30000,{stateRate:s.rate}).text.federal} fed. ${rateStr}. Quarterly: ~${gtxExample(30000,{stateRate:s.rate}).text.quarterly}. Free calculator, no signup.`,
+      : `Walmart Spark ${s.name} Taxes 2026 — $30K Planning Estimate $${estimateTax(30000, s.rate).total.toLocaleString('en-US')}`,
+    description: `Walmart Spark ${s.name} 2026 planning example: $30K net = ~${gtxExample(30000,{stateRate:s.rate}).text.se} SE + ${gtxExample(30000,{stateRate:s.rate}).text.federal} federal + simplified state estimate. ${rateStr}; not a full state tax calculation. Quarterly: ~${gtxExample(30000,{stateRate:s.rate}).text.quarterly}.`,
     alternates: { canonical: `https://www.gigwisetax.com/walmart-spark/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -342,9 +343,6 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
   const rateStr = state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
   const noTax = state.rate === 0
-  const fedRate = 0.22
-  const seRate = 0.153
-
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
 
@@ -367,7 +365,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           Free {PLATFORM_NAME} tax calculator for {state.name} ({state.abbr}).
           {noTax
             ? ` ${state.name} has NO state income tax — you only pay federal SE tax (15.3%) and federal income tax.`
-            : ` ${state.name} has a ${rateStr} state income tax rate on top of federal SE tax (15.3%).`}
+            : ` This estimator uses a simplified ${rateStr} state-rate input in addition to federal tax; it does not calculate the full state tax schedule.`}
           {' '}No signup required.
         </p>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
@@ -413,17 +411,14 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <tr style={{ background: 'rgba(165,180,252,.1)' }}>
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>Annual Net Income</th>
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>SE Tax</th>
-              {!noTax && <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>State Tax</th>}
+              {!noTax && <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>State Estimate</th>}
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>Federal Tax</th>
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>Total Est.</th>
             </tr>
           </thead>
           <tbody>
             {[10000,25000,50000,75000,100000].map(income => {
-              const se = Math.round(income * seRate * 0.9235)
-              const st = noTax ? 0 : Math.round(income * state.rate)
-              const fed = Math.round((income - se/2) * fedRate * 0.6)
-              const total = se + st + fed
+              const { se, state: st, federal: fed, total } = estimateTax(income, state.rate)
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
                   <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>

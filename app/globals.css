@@ -10,6 +10,8 @@ html,body{overflow-x:hidden!important;max-width:100vw;}
   --foreground: #ffffff;
 }
 
+html, body { background: var(--background); }
+
 
 
 @media (max-width: 600px) {
@@ -197,6 +199,22 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   footer span { font-size: 13px !important; }
 }
 
+@media (max-width: 600px) {
+  [style*="padding:24px"], [style*="padding: 24px"],
+  [style*="padding:20px 24px"], [style*="padding: 20px 24px"] {
+    padding: 14px 12px !important;
+  }
+  html body table.deadline-table tbody tr {
+    margin-bottom: 8px !important;
+    padding: 8px 10px !important;
+  }
+  html body table.deadline-table tbody td {
+    min-width: 0 !important;
+    gap: 8px;
+    font-size: 14px !important;
+  }
+}
+
 /* Hub platform cards */
 .hub-card {
   background: rgba(255,255,255,0.04);
@@ -238,6 +256,8 @@ a[style*="B22234"]:hover,div[style*="B22234"]:hover{
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 20px rgba(232,184,75,0.2) !important;
 }
+.p-grid > a { display: flex; min-width: 0; }
+.p-grid > a > div { width: 100%; min-width: 0; }
 .plat-btn {
   display: block;
   background: #B22234;

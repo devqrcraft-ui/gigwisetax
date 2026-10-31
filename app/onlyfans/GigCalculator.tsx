@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import PartnerCTA from '@/app/PartnerCTA'
+import { estimateTaxRaw } from '@/lib/tax-rules'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
@@ -17,43 +18,22 @@ export default function GigCalculator({
 }) {
   const [income, setIncome]     = useState('')
   const [stateSlug, setStateSlug] = useState('california')
-  const [filing, setFiling]     = useState<'single'|'married'>('single')
+  const [filing, setFiling]     = useState<'single'|'married'|'hoh'>('single')
   const [result, setResult]     = useState<any>(null)
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
   const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
 
   const calculate = () => {
-    const net = parseFloat(income) || 0
-    if (!net) return
+    const gross = parseFloat(income) || 0
+    if (!gross) return
     const st = states.find(s => s.slug === stateSlug)
-    const seBase   = net * 0.9235
-    const seTax    = Math.min(seBase, 184500) * 0.124 + seBase * 0.029
-    const seDeduct = seTax * 0.5
-    const std = filing === 'married' ? 32200 : 16100
-    const taxable  = Math.max(0, net - seDeduct - std)
-    let federal = 0
-    if (filing === 'married') {
-      if (taxable > 768700) federal = 206583.50 + (taxable - 768700) * 0.37
-      else if (taxable > 512450) federal = 116896.00 + (taxable - 512450) * 0.35
-      else if (taxable > 403550) federal = 82048.00 + (taxable - 403550) * 0.32
-      else if (taxable > 211400) federal = 35932.00 + (taxable - 211400) * 0.24
-      else if (taxable > 100800) federal = 11600.00 + (taxable - 100800) * 0.22
-      else if (taxable > 24800) federal = 2480.00 + (taxable - 24800) * 0.12
-      else federal = taxable * 0.10
-    } else {
-      if (taxable > 640600) federal = 192979.25 + (taxable - 640600) * 0.37
-      else if (taxable > 256225) federal = 58448.00 + (taxable - 256225) * 0.35
-      else if (taxable > 201775) federal = 41024.00 + (taxable - 201775) * 0.32
-      else if (taxable > 105700) federal = 17966.00 + (taxable - 105700) * 0.24
-      else if (taxable > 50400) federal = 5800.00 + (taxable - 50400) * 0.22
-      else if (taxable > 12400) federal = 1240.00 + (taxable - 12400) * 0.12
-      else federal = taxable * 0.10
-    }
-    const stateTax = taxable * (st?.rate ?? 0.05)
-    const total    = federal + seTax + stateTax
-    const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)
-    setResult({ seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    const estimate = estimateTaxRaw(gross, st?.rate ?? 0.05, filing)
+    setResult({
+      seTax: estimate.se, federal: estimate.federal, stateTax: estimate.state,
+      total: estimate.total, quarterly: estimate.quarterly,
+      rate: ((estimate.total / gross) * 100).toFixed(1), stateAbbr: st?.abbr ?? '?',
+    })
   }
 
   const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -115,7 +95,7 @@ export default function GigCalculator({
             {[
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
-              { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
+              { label: `${result.stateAbbr} State Estimate`, val: fmt(result.stateTax), sub: 'Simplified rate input', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
             ].map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
@@ -126,9 +106,9 @@ export default function GigCalculator({
             ))}
           </div>
 
-          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
-               Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
+          <div style={{ background: 'rgba(232,184,75,0.08)', borderBottom: '1px solid rgba(232,184,75,0.2)', padding: '12px 20px' }}>
+            <span style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)' }}>
+              Planning estimate only. Other income, spouse wages, withholding, credits, and state-specific rules can change what you owe; use Form 1040-ES with your full tax picture.
             </span>
           </div>
 

@@ -7,7 +7,7 @@ export default function TaxFreshness() {
   })
   const a = { color: '#e8b84b', textDecoration: 'underline' } as const
   return (
-    <div style={{ margin: '24px 0 0', padding: '14px 18px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
+    <div className="tax-freshness" style={{ margin: '24px 0 0', padding: '14px 18px', borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,0.8)' }}>
       <strong style={{ color: '#fff' }}>Tax inputs last verified: {label}.</strong>{' '}
       Sources:{' '}
       <a style={a} href={TAX_RULES_2026.sources.brackets} target="_blank" rel="noopener noreferrer">IRS 2026 brackets and standard deduction</a>,{' '}

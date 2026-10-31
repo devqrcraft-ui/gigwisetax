@@ -22,7 +22,7 @@ export default function PrivacyPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Privacy Policy
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}> Privacy Policy</h1>
-          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: October 19, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
+          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: October 23, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
         </div>
       </div>
 
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
 
           <div style={section}>
             <h2 style={h2}>5. Third-Party Services</h2>
-            <p style={p}>We display clearly labelled sponsored links and, on one guide page, one sponsored banner from third-party companies. Current partners: Community Tax and Online Check Writer through the Awin network, and Liberty Tax through Commission Junction (shown during filing season). When you click a sponsored link you leave GigWiseTax: the partner and its network may set their own cookies and measure the click, and we may earn a commission. The banner image on the guide page is loaded from the Awin network, so Awin can see your IP address and browser details when that page loads. We do not send your calculator inputs, income or any personal information to these companies. Their handling of data is described in their own privacy policies.</p>
+            <p style={p}>We display clearly labelled sponsored links and, on a few guide and tool pages, one sponsored banner per page from third-party companies. Current partners: Community Tax and Online Check Writer through the Awin network, and Liberty Tax through Commission Junction (shown during filing season). When you click a sponsored link you leave GigWiseTax: the partner and its network may set their own cookies and measure the click, and we may earn a commission. The banner images on those pages are loaded from the Awin network, so Awin can see your IP address and browser details when such a page loads. We do not send your calculator inputs, income or any personal information to these companies. Their handling of data is described in their own privacy policies.</p>
             <p style={p}>We use <strong>Vercel</strong> to host our website. Vercel may collect standard server access logs (IP address, browser type, pages visited) for security and performance. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>Vercel's Privacy Policy</a>.</p>
           </div>
 

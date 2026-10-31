@@ -10,7 +10,7 @@ import type { Metadata } from 'next'
 
 export async function generateStaticParams() { return [{ platform: 'onlyfans' }] }
 
-export async function generateMetadata({ params }: { params: { platform: string } }): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'onlyfans')
   if (!p) return {}
   return {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { platform: string 
 }
 
 
-export default function PlatformPage({ params }: { params: { platform: string } }) {
+export default function PlatformPage() {
   const platform = PLATFORMS.find(p => p.slug === 'onlyfans')
   if (!platform) return notFound()
 
@@ -163,18 +163,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$40,000 net income</strong>, OnlyFans creators owe approximately <strong>$7,933 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>' + gtxExample(40000).text.quarterly + '</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'OnlyFans takes a <strong>20% platform fee</strong> — deductible as a business expense on Schedule C'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Camera, lighting, home studio, and content creation tools are <strong>fully deductible</strong>'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–30%</strong> of every payout — OnlyFans does not withhold federal or state taxes'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Baseline example: <strong>$40,000 net profit</strong>, single filer, no mileage, credits, or state tax = about <strong>$7,933 SE + federal</strong> before state tax'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Equal-quarter baseline: <strong>' + gtxExample(40000).text.quarterly + '</strong>; withholding, prior-year safe harbor, and uneven income can change payment timing'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Check how platform fees are reported on your tax statement; do not deduct a fee twice if the income figure is already net of that fee'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Equipment, internet, and home-studio costs may be deductible only to the extent they are ordinary, necessary, and used for business'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Your tax reserve depends on filing status, withholding, eligible expenses, credits, and state rules; this is not tax-return preparation'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — OnlyFans</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              OnlyFans workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately {gtxExample(40000).text.se} SE tax + {gtxExample(40000).text.federal} federal income tax = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>{gtxExample(40000).text.quarterly}</strong>. Set aside 25% of every payment. Equipment, internet, and home studio expenses may be deductible if you use them for your business.
+              For a $40,000 net-profit baseline, single filer, no mileage or other deductions, and no state tax, this model estimates {gtxExample(40000).text.se} SE plus {gtxExample(40000).text.federal} federal = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} before state tax</strong>. Actual federal and state liability varies with other income, eligibility, expenses, credits, and filing details.
             </p>
           </div>
 
