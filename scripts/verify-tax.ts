@@ -1,5 +1,5 @@
 // Запуск: npx tsx scripts/verify-tax.ts   (падає з кодом 1, якщо щось розійшлось з еталоном)
-import { estimateTax, TAX_RULES_2026 } from '../lib/tax-rules'
+import { estimateTax, federalTax, TAX_RULES_2026 } from '../lib/tax-rules'
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 type Row = [string, number, number, Partial<ReturnType<typeof estimateTax>>]
@@ -14,6 +14,10 @@ const cases: Row[] = [
   ['60K FL', 60000, 0, { takeHome: 47011 }],
 ]
 let bad = 0
+for (const [taxable, expected] of [[17700, 1770], [67450, 7740], [105700, 16155], [201750, 39207], [256200, 56631], [640600, 191171]]) {
+  const actual = federalTax(taxable, 'hoh')
+  if (Math.abs(actual - expected) > 0.01) { bad++; console.log('FAIL HOH federal', taxable, 'got', actual, 'expected', expected) }
+}
 for (const [name, g, r, exp] of cases) {
   const got = estimateTax(g, r)
   for (const k of Object.keys(exp) as (keyof typeof got)[]) {

@@ -39,12 +39,14 @@ export function federalTax(taxable: number, filing: Filing = 'single'): number {
 export function estimateTaxRaw(gross: number, stateRate = 0, filing: Filing = 'single', mileDeduct = 0) {
   const net = Math.max(0, gross - mileDeduct)
   const seBase = net * 0.9235
-  const se = Math.min(seBase, TAX_RULES_2026.ssWageBase) * 0.124 + seBase * 0.029
-  const taxable = Math.max(0, net - se / 2 - TAX_RULES_2026.standardDeduction[filing])
+  const seCore = Math.min(seBase, TAX_RULES_2026.ssWageBase) * 0.124 + seBase * 0.029
+  // Form 8959: +0.9% понад $200k (single/HoH) або $250k (MFJ); без W-2 доходу; не входить у відрахування половини SE.
+  const se = seCore + Math.max(0, seBase - (filing === 'married' ? 250000 : 200000)) * 0.009
+  const taxable = Math.max(0, net - seCore / 2 - TAX_RULES_2026.standardDeduction[filing])
   const federal = federalTax(taxable, filing)
   const state = taxable * stateRate
   const total = se + federal + state
-  return { net, se, federal, state, total, quarterly: total / 4, takeHome: gross - total }
+  return { net, se, federal, state, taxable, total, quarterly: total / 4, takeHome: gross - total }
 }
 
 /** Округлені значення так само, як їх показує калькулятор (Math.round на кожному полі окремо). */
