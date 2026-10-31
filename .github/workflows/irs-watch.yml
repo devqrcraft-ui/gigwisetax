@@ -21,3 +21,6 @@ jobs:
         run: npx tsx scripts/check-irs.ts
       - name: Internal consistency (calculators, stale numbers)
         run: npx tsx scripts/verify-tax.ts
+      - name: State rate freshness (reminder only)
+        continue-on-error: true
+        run: npx tsx scripts/check-state-freshness.ts
