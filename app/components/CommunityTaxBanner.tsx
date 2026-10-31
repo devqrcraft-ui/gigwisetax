@@ -26,7 +26,7 @@ export default function CommunityTaxBanner({ page }: { page: string }) {
           alt="Community Tax: tax resolution services (sponsored banner)"
           loading="lazy"
           decoding="async"
-          style={{ maxWidth: '100%', height: 'auto', border: 0, borderRadius: 6 }}
+          style={{ display: 'block', margin: '0 auto', maxWidth: '100%', height: 'auto', border: 0, borderRadius: 6 }}
         />
       </a>
     </aside>
