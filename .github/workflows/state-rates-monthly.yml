@@ -1,0 +1,34 @@
+name: State rates monthly review
+
+on:
+  schedule:
+    - cron: '0 7 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Build report
+        run: REPORT_FILE=report.md npx tsx scripts/check-state-freshness.ts
+      - name: Open one issue per month
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          T="State rates review $(date -u +%Y-%m)"
+          gh label create state-rates --color 0e8a16 || true
+          N=$(gh issue list --label state-rates --state all --search "$T in:title" --json title --jq "[.[] | select(.title == \"$T\")] | length")
+          if [ "$N" -gt 0 ]; then echo "issue exists, skipping"; exit 0; fi
+          gh issue create --title "$T" --label state-rates --body-file report.md
