@@ -23,3 +23,21 @@ console.log('primary:', primary, '| secondary:', secondary.length, '| unverified
 console.log('older than ' + MAX_DAYS + ' days:', stale.length ? stale.join(', ') : 'none')
 console.log('secondary only:', secondary.join(', ') || 'none')
 console.log('unverified:', unverified.join(', ') || 'none')
+
+import { writeFileSync } from 'node:fs'
+if (process.env.REPORT_FILE) {
+  const L = [
+    'Monthly review of state income tax rates (lib/data.ts vs lib/state-rate-sources.ts).',
+    '',
+    'primary: ' + primary + ' | secondary: ' + secondary.length + ' | unverified: ' + unverified.length,
+    'older than ' + MAX_DAYS + ' days: ' + (stale.length ? stale.join(', ') : 'none'),
+    '',
+    'secondary only: ' + (secondary.join(', ') || 'none'),
+    '',
+    'unverified: ' + (unverified.join(', ') || 'none'),
+    '',
+    'How to close: compare each rate with the state tax authority (primary source), fix lib/data.ts if needed, then update checkedOn, level and sourceUrl in lib/state-rate-sources.ts. Do not change checkedOn without a real check.',
+    'Known open items: Maryland, Washington DC, Missouri (vote 2026-11-03).',
+  ]
+  writeFileSync(process.env.REPORT_FILE, L.join('\n') + '\n')
+}
