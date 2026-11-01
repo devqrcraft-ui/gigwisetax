@@ -607,29 +607,32 @@ export default function HomeClient() {
             <span style={{fontSize:11,fontWeight:800,color:'#e8b84b',letterSpacing:'1.5px',textTransform:'uppercase'}}>Illustrative Examples</span>
           </div>
           <h2 style={{fontSize:22,fontWeight:900,color:'#fff',marginBottom:6,marginLeft:13}}>What Gig Workers May Pay: Example Calculations</h2>
-          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Illustrative single-filer examples using 2026 IRS brackets and the standard deduction, with no other income, credits or withholding. SE tax + federal + state included.</p>
+          <p style={{fontSize:13,color:'rgba(255,255,255,0.45)',marginBottom:20,marginLeft:13}}>Illustrative Single-filer planning examples with no mileage, other income, credits or withholding. State amounts use simplified rate inputs, not full state tax schedules; the Airbnb example assumes active Schedule C income.</p>
           <div style={{display:'grid',gridTemplateColumns:'1fr',gap:0,border:'1px solid rgba(255,255,255,0.08)',borderRadius:10,overflow:'hidden'}}>
             {[
-              {label:'DoorDash $40,000 — California',se:'$5,652',fed:'$2,281',state:'$1,960',net:'~$30,107',href:'/doordash/california'},
-              {label:'Uber $50,000 — Texas',se:'$7,065',fed:'$3,396',state:'$0',net:'~$39,539',href:'/uber/texas'},
-              {label:'OnlyFans $60,000 — Florida',se:'$8,478',fed:'$4,511',state:'$0',net:'~$47,011',href:'/onlyfans/florida'},
-              {label:'Etsy $30,000 — New York',se:'$4,239',fed:'$1,178',state:'$807',net:'~$23,776',href:'/etsy/new-york'},
-              {label:'Instacart $35,000 — Illinois',se:'$4,945',fed:'$1,723',state:'$813',net:'~$27,518',href:'/instacart/illinois'},
-              {label:'Airbnb $55,000 (Schedule C host) — Washington',se:'$7,771',fed:'$3,954',state:'$0',net:'~$43,275',href:'/airbnb/washington'},
-            ].map((ex,i)=>(
-              <a key={i} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '2px solid rgba(232,184,75,0.25)',padding:'16px 16px',textDecoration:'none',display:'block'}}>
-                <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.label}</div>
+              {platform:'DoorDash',gross:40000,stateSlug:'california',stateName:'California',href:'/doordash/california'},
+              {platform:'Uber',gross:50000,stateSlug:'texas',stateName:'Texas',href:'/uber/texas'},
+              {platform:'OnlyFans',gross:60000,stateSlug:'florida',stateName:'Florida',href:'/onlyfans/florida'},
+              {platform:'Etsy',gross:30000,stateSlug:'new-york',stateName:'New York',href:'/etsy/new-york'},
+              {platform:'Instacart',gross:35000,stateSlug:'illinois',stateName:'Illinois',href:'/instacart/illinois'},
+              {platform:'Airbnb (Schedule C host)',gross:55000,stateSlug:'washington',stateName:'Washington',href:'/airbnb/washington'},
+            ].map((ex,i)=>{
+              const state = ALL_STATES.find(item => item.slug === ex.stateSlug)!
+              const estimate = estimateTaxRaw(ex.gross,state.rate,'single')
+              const money = (amount:number) => '$' + Math.round(amount).toLocaleString('en-US')
+              return <a key={ex.platform} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '2px solid rgba(232,184,75,0.25)',padding:'16px 16px',textDecoration:'none',display:'block'}}>
+                <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.platform} {money(ex.gross)} — {ex.stateName}</div>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px 8px',marginBottom:14,textAlign:'center'}}>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>SE Tax</div>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>Federal</div>
-                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>State</div>
-                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.se}</div>
-                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.fed}</div>
-                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{ex.state}</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>State Estimate</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.se)}</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.federal)}</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.state)}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.12)',paddingTop:10,marginTop:4,fontSize:22,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Take-home {ex.net}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.12)',paddingTop:10,marginTop:4,fontSize:22,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Illustrative take-home {money(estimate.takeHome)}</div>
               </a>
-            ))}
+            })}
           </div>
         </div>
 
