@@ -13,7 +13,7 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'alaska':         (p, r, n) => `Alaska has NO state income tax — one of only 9 states with no income tax. ${p} workers in Alaska only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
   'arizona':        (p, r, n) => `Arizona reduced its state income tax to a flat ${r} in 2023 — one of the lowest rates in the US. ${p} workers in Arizona must file AZ Form 140ES for quarterly estimated payments.`,
   'arkansas':       (p, r, n) => `Arkansas has a ${r} state income tax rate. ${p} workers in Arkansas must file both federal and AR state quarterly estimated tax payments using AR Form AR1000ES.`,
-  'california':     (p, r, n) => `California has one of the highest state income tax rates in the USA (up to 13.3%). For ${p} workers in California, the base planning rate is ${r}. California also requires separate estimated tax payments to the Franchise Tax Board (FTB) using Form 540-ES.`,
+  'california':     (p, r, n) => `California has a progressive individual income-tax schedule. This estimator uses a simplified ${r} state-rate input and does not calculate the full FTB schedule, credits, or local taxes. Review the California Franchise Tax Board guidance for your return.`,
   'colorado':       (p, r, n) => `Colorado has a flat ${r} state income tax rate. ${p} workers in Colorado must file both federal Form 1040-ES and Colorado Form DR 0105EP for quarterly estimated payments.`,
   'connecticut':    (p, r, n) => `Connecticut has a ${r} state income tax rate for most ${p} workers. Connecticut requires quarterly estimated payments using Form CT-1040ES if you expect to owe $1,000 or more.`,
   'delaware':       (p, r, n) => `Delaware has a ${r} state income tax rate. ${p} workers in Delaware must file both federal and Delaware quarterly estimated payments using Form 200-ES.`,
@@ -40,7 +40,7 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'new-hampshire':  (p, r, n) => `New Hampshire has NO state income tax on wages or self-employment income. ${p} workers in New Hampshire only pay federal SE tax and federal income tax. No state quarterly payments required.`,
   'new-jersey':     (p, r, n) => `New Jersey has a ${r} state income tax rate — one of the highest in the US. ${p} workers in New Jersey must file both federal Form 1040-ES and New Jersey Form NJ-1040-ES for quarterly estimated payments.`,
   'new-mexico':     (p, r, n) => `New Mexico has a ${r} state income tax rate. ${p} workers in New Mexico must file both federal and New Mexico Form PIT-ES for quarterly estimated payments.`,
-  'new-york':       (p, r, n) => `New York state income tax applies at ${r} for most ${p} workers. New York City residents pay an additional NYC income tax (2.55–3.88%), making total state+city tax one of the highest in the USA. File NY Form IT-2105 for quarterly estimated payments.`,
+  'new-york':       (p, r, n) => `New York has state and, for some residents, local tax rules. This estimator uses a simplified ${r} state-rate input and does not calculate the full New York or New York City tax schedules, credits, or MCTMT. Review New York Tax Department guidance for estimated payments.`,
   'north-carolina': (p, r, n) => `North Carolina has a flat ${r} state income tax rate. ${p} workers in North Carolina must file both federal Form 1040-ES and NC Form NC-40 for quarterly estimated payments.`,
   'north-dakota':   (p, r, n) => `North Dakota has a very low ${r} state income tax rate — one of the lowest in the US. ${p} workers in North Dakota must file both federal and North Dakota Form ND-1ES for quarterly estimated payments.`,
   'ohio':           (p, r, n) => `Ohio has a ${r} state income tax rate plus local city income taxes in many municipalities. ${p} workers in Ohio must file both federal Form 1040-ES and Ohio Form IT 1040ES for quarterly estimated payments.`,
@@ -135,11 +135,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} tax calculator for {state.name} ({state.abbr}).
-              {noStateTax
-                ? ` ${state.name} has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.`
-                : ` Includes the ${stateRateStr} ${state.name} state income tax plus federal SE tax (15.3%) and federal income tax.`
-              } Quarterly payment schedule with Google Calendar export. No signup required.
+              Free {platform.name} tax calculator for {state.name} ({state.abbr}). This planning model estimates federal tax and
+              {noStateTax ? ` includes no ${state.name} individual-income-tax component.` : ` uses a simplified ${stateRateStr} state-rate input, not the full ${state.name} tax schedule.`}
+              {' '}Local taxes, credits, other income, and withholding are not fully modeled. No signup required.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {[
@@ -158,12 +156,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {/* TNC-Specific State Fees/Laws — pilot states only */}
         {(() => {
           const TNC_RULES = {
-            'new-york': { label: '4% TNC ASSESSMENT ON EVERY RIDE', text: "New York imposes a 4% Temporary Transportation Assessment (TNC assessment) on every Uber ride, collected by Uber and remitted to the state. This is separate from your income tax — it does not reduce your self-employment tax bill, and you don't file anything extra for it yourself. New York City drivers also fall under the state's minimum per-trip earnings standard set by the NYC Taxi and Limousine Commission." },
+            'new-york': { label: 'LOCAL TAXES AND RIDESHARE RULES', text: 'This calculator does not model New York City local income taxes, metropolitan transportation taxes, or ride-level assessments. New York estimated-payment requirements depend on taxable income and withholding; check the official state guidance.', sources: [{ label: 'New York estimated tax guidance', url: 'https://www.tax.ny.gov/pit/estimated_tax/default.htm' }] },
             'massachusetts': { label: '$0.20 PER-RIDE FEE + $34.48/HR EARNINGS FLOOR', text: "Massachusetts charges a $0.20 excise fee on every rideshare ride, paid by Uber (not deducted from your earnings). Separately, Massachusetts Question 3 set a minimum earnings floor of $34.48/hour of active driving time as of January 15, 2026 — if your Uber payouts fall short of this floor across a pay period, Uber owes you the difference. This earnings floor is taxable income like any other Uber payout." },
             'rhode-island': { label: '7% RIDESHARE SALES TAX', text: 'Rhode Island applies its standard 7% sales tax to rideshare rides, collected from riders by Uber. This does not affect your driver income tax or self-employment tax — it is a tax on the fare paid by the passenger, not a tax on your earnings.' },
             'south-carolina': { label: '1% RIDESHARE REVENUE TAX', text: "South Carolina imposes a 1% tax on rideshare trip revenue, collected and remitted by Uber. Like the other TNC-specific fees on this list, this is a rider-facing or platform-remitted charge and does not change how you calculate your own self-employment or income tax as a driver." },
             'washington': { label: 'STATE-MANDATED PAY FLOOR: $0.70/MIN + $1.63/MILE', text: "Washington state (ESHB 2076) sets a minimum compensation floor for rideshare drivers of $0.70 per minute plus $1.63 per mile of active trip time, before Uber's cut. Washington has no state income tax, so Seattle-area drivers only owe federal SE tax and federal income tax — but should expect materially higher gross payouts per trip than drivers in states without a pay floor." },
-            'california': { label: "AB 1340: DRIVERS GAINED UNION RIGHTS JAN 1, 2026", text: 'California AB 1340, effective January 1, 2026, grants rideshare drivers the right to unionize while keeping their independent-contractor status under Prop 22 intact. This does not change your tax classification — you are still a 1099 independent contractor responsible for 15.3% SE tax plus California state income tax up to 9.3% on net earnings.' },
+            'california': { label: 'CALIFORNIA TNC DRIVER LABOR LAW', text: 'California AB 1340 establishes a framework for TNC driver organizations and collective bargaining. This calculator does not determine worker classification, Prop 22 eligibility, or labor-law rights; it only provides a simplified tax estimate.', sources: [{ label: 'California AB 1340 (official bill text)', url: 'https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB1340' }] },
           };
           const rule = TNC_RULES[state.slug];
           if (!rule) return null;
@@ -175,6 +173,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <p style={{margin:0,fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
                 {rule.text}
               </p>
+              {'sources' in rule && <div style={{ marginTop: 8, display: 'flex', flexWrap: 'wrap', gap: 12 }}>{rule.sources.map(source => <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" style={{ color: '#e8b84b', fontSize: 13, textDecoration: 'underline' }}>{source.label}</a>)}</div>}
             </div>
           );
         })()}
@@ -202,9 +201,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {/* TAX BREAKDOWN */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 12 }} className="three-grid">
                   {[
-                    { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
-                    { label: 'Federal Tax', val: '10–37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
-                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
+                    { label: 'Self-employment tax', val: 'Estimated', sub: 'Federal Schedule SE model', color: '#B22234' },
+                    { label: 'Federal income tax', val: 'Progressive', sub: 'Uses selected filing status', color: 'rgba(255,255,255,0.9)' },
+                    { label: `${state.abbr} State Estimate`, val: noStateTax ? 'None modeled' : stateRateStr, sub: noStateTax ? 'No income-tax component' : 'Simplified rate input', color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>
