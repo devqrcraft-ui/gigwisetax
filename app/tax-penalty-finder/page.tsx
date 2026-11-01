@@ -47,7 +47,7 @@ export default function TaxPenaltyFinder() {
     if (quarterly === false) tips.push('Review federal withholding and estimated-payment safe harbors. Any underpayment penalty depends on payment dates, withholding, and prior-year tax; no penalty amount is estimated here.')
     if (inc > 60000 && entity !== 's-corp') tips.push('Consider a CPA review of S-Corporation eligibility and costs; no savings estimate is made without a reasonable-salary analysis.')
     tips.push('Retirement-plan deductions depend on eligibility, plan rules, and contribution limits; confirm them before relying on tax savings.')
-    setResult({ potentialTaxSavings: Math.round(potentialTaxSavings), potentialDeductions: Math.round(modeledDeductions), estimatedQuarterly: Math.round(baselineTax.quarterly), tips })
+    setResult({ potentialTaxSavings: Math.round(potentialTaxSavings), potentialDeductions: Math.round(modeledDeductions), estimatedQuarterly: Math.round(taxAfterDeductions.quarterly), tips })
   }
 
   const bg   = { minHeight: '100vh', background: '#0d1117', padding: '40px 20px' }
@@ -65,7 +65,7 @@ export default function TaxPenaltyFinder() {
       <div style={card}>
         <div style={hdr}>
           <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:6 }}>GIGWISETAX — FREE ANALYSIS</div>
-          <div style={{ color:'#fff', fontSize:22, fontWeight:800 }}>Your Tax Penalty Report</div>
+          <div style={{ color:'#fff', fontSize:22, fontWeight:800 }}>Your Tax Planning Summary</div>
           <div style={{ color:'rgba(255,255,255,.6)', fontSize:13, marginTop:4 }}>{platform} • ${parseFloat(income).toLocaleString('en-US')} income</div>
         </div>
         <div style={body}>
@@ -78,7 +78,7 @@ export default function TaxPenaltyFinder() {
             <div style={{ background:'rgba(232,184,75,0.1)', border:'1px solid rgba(232,184,75,0.3)', borderRadius:8, padding:16, textAlign:'center' }}>
               <div style={{ fontSize:11, fontWeight:700, color:'#f39c12', letterSpacing:1 }}>MODELED DEDUCTIONS</div>
               <div style={{ fontSize:28, fontWeight:900, color: 'rgba(255,255,255,0.9)', margin:'6px 0' }}>{fmt(result.potentialDeductions)}</div>
-              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>mileage and office placeholder; phone unpriced</div>
+              <div style={{ fontSize:11, color:'rgba(255,255,255,0.5)' }}>mileage plus any selected office placeholder; phone unpriced</div>
             </div>
             <div style={{ background:'rgba(99,102,241,0.12)', border:'1px solid rgba(99,102,241,0.35)', borderRadius:8, padding:16, textAlign:'center' }}>
               <div style={{ fontSize:11, fontWeight:700, color:'#2563eb', letterSpacing:1 }}>FEDERAL QUARTERLY ESTIMATE</div>
@@ -97,13 +97,14 @@ export default function TaxPenaltyFinder() {
           </div>
           <div style={{ background:'#1e2d5a', borderRadius:8, padding:20, textAlign:'center' }}>
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1, marginBottom:8 }}>NEED HELP REVIEWING YOUR OPTIONS?</div>
-            <a href="https://1099deductions.com" target="_blank" rel="noopener"
+            <p style={{ fontSize:12, color:'rgba(255,255,255,0.65)', margin:'0 0 10px' }}>Related tools from our site network; these are separate tools, not IRS filing services.</p>
+            <a href="https://1099deductions.com" target="_blank" rel="noopener noreferrer"
               style={{ display:'block', background:'#B22234', color:'#fff', borderRadius:6, padding:'14px', fontSize:15, fontWeight:800, textDecoration:'none', marginBottom:10 }}>
-              File with TurboTax Self-Employed →
+              View the 1099 Deductions Checklist →
             </a>
-            <a href="https://privatepaycheck.com" target="_blank" rel="noopener"
+            <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer"
               style={{ display:'block', background:'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.9)', borderRadius:6, padding:'12px', fontSize:14, fontWeight:700, textDecoration:'none', border:'1px solid rgba(255,255,255,0.12)' }}>
-              Track expenses with QuickBooks SE →
+              Open the W-2 Paycheck Calculator →
             </a>
           </div>
           <button onClick={() => { setResult(null); setStep(0) }} style={{ ...btnG, marginTop:16 }}>← Start Over</button>
@@ -128,16 +129,16 @@ export default function TaxPenaltyFinder() {
             <div style={{ color:'#e8b84b', fontSize:12, fontWeight:700, letterSpacing:1 }}>{step === 0 ? 'START' : `STEP ${step} OF 7`}</div>
             <div style={{ color:'rgba(255,255,255,.5)', fontSize:12 }}>GigWiseTax</div>
           </div>
-          {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step/7)*100}}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
+          {step > 0 && <div style={{ height:4, background:'rgba(255,255,255,0.12)', borderRadius:4, marginTop:12 }}><div style={{ height:'100%', width:`${(step / 7) * 100}%`, background:'#B22234', borderRadius:4, transition:'width .3s' }}/></div>}
         </div>
         <div style={body}>
           {step === 0 && (
             <div style={{ textAlign:'center' }}>
               <div style={{ fontSize:48, marginBottom:16 }}></div>
-              <h2 style={{ fontSize:20, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 10px' }}>Find Your Tax Overpayment</h2>
+              <h2 style={{ fontSize:20, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 10px' }}>Estimate Potential Tax Savings</h2>
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:14, margin:'0 0 24px', lineHeight:1.6 }}>This federal-only illustration uses simplified assumptions; eligibility and actual savings depend on your full tax return.</p>
               <div style={{ background:'rgba(255,255,255,0.05)', borderRadius:8, padding:16, marginBottom:24, textAlign:'left' }}>
-                {['Takes only 60 seconds','Personalized to your platform','Shows exact dollar savings','100% free — no signup needed'].map((t,i) => (
+                {['Takes only a few steps','Tailored to your platform choice','Illustrates selected deduction assumptions','100% free — no signup needed'].map((t,i) => (
                   <div key={i} style={{ display:'flex', gap:8, marginBottom:6, fontSize:14, color: 'rgba(255,255,255,0.85)' }}><span style={{ color:'#22c55e', fontWeight:800 }}>✓</span>{t}</div>
                 ))}
               </div>
@@ -172,10 +173,10 @@ export default function TaxPenaltyFinder() {
           {step === 3 && hasMileage && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>How many miles do you drive per year?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>IRS rate: <strong>72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026</strong> — your biggest deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 6px' }}>Enter qualifying business miles; the model applies the 2026 IRS rate split by when you drove.</p>
               <input type="text" inputMode="numeric" value={miles} onChange={e => setMiles(e.target.value)} placeholder="e.g. 15000" style={{...inp, color:"#ffffff", background: "#07111F"}}/>
               {miles && <div style={{ background: 'rgba(5,150,105,0.12)', border:'1px solid #22c55e', borderRadius:6, padding:12, marginTop:12, fontSize:13, color:'#4ade80', fontWeight:600 }}>
-                 Potential deduction: ${(mileageDeductEvenSplit(parseFloat(miles))).toLocaleString('en-US')} → saves ~${Math.round(mileageDeductEvenSplit(parseFloat(miles))*0.28).toLocaleString('en-US')} in taxes
+                 Modeled mileage deduction: ${Math.round(mileageDeductEvenSplit(parseFloat(miles))).toLocaleString('en-US')}. Tax savings depend on your full return.
               </div>}
               <button onClick={() => setStep(4)} style={btnR}>Next →</button>
               <button onClick={() => setStep(2)} style={btnG}>← Back</button>
@@ -184,7 +185,7 @@ export default function TaxPenaltyFinder() {
           {step === 4 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you have a dedicated home office?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>A room used exclusively for work = up to $1,500/yr deduction</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>If eligible, the model uses a $1,200 home-office placeholder; actual deductions require records and qualification.</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setHomeOffice(true)} style={opt(homeOffice===true)}> Yes, I do</button>
                 <button onClick={() => setHomeOffice(false)} style={opt(homeOffice===false)}> No</button>
@@ -196,7 +197,7 @@ export default function TaxPenaltyFinder() {
           {step === 5 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Do you use your phone/internet for work?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>50–80% of your bill is deductible if used for work</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Track the substantiated business-use share; this tool does not estimate phone costs.</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setPhone(true)} style={opt(phone===true)}> Yes</button>
                 <button onClick={() => setPhone(false)} style={opt(phone===false)}> No</button>
@@ -208,7 +209,7 @@ export default function TaxPenaltyFinder() {
           {step === 6 && (
             <div>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>Are you paying quarterly estimated taxes?</h2>
-              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Missing payments = IRS penalty up to 7% of owed amount</p>
+              <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>Underpayment charges depend on payment timing, withholding, and safe-harbor rules; this tool does not calculate a penalty.</p>
               <div style={{ display:'flex', gap:12 }}>
                 <button onClick={() => setQuarterly(true)} style={opt(quarterly===true)}> Yes, I pay quarterly</button>
                 <button onClick={() => setQuarterly(false)} style={opt(quarterly===false)}> No / Not sure</button>
@@ -222,14 +223,14 @@ export default function TaxPenaltyFinder() {
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', margin:'0 0 6px' }}>What's your business structure?</h2>
               <p style={{ color:'rgba(255,255,255,0.5)', fontSize:13, margin:'0 0 20px' }}>This determines how much self-employment tax you pay</p>
               <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10 }}>
-                {[{val:'sole-prop',label:'Sole Proprietor',sub:'Most common'},{val:'llc',label:'LLC',sub:'Single-member'},{val:'s-corp',label:'S-Corporation',sub:'Already optimized'},{val:'unsure',label:"I'm not sure",sub:"We'll explain"}].map(o => (
+                {[{val:'sole-prop',label:'Sole Proprietor',sub:'Schedule C'},{val:'llc',label:'LLC',sub:'Tax treatment varies'},{val:'s-corp',label:'S-Corporation',sub:'Review salary and costs'},{val:'unsure',label:"I'm not sure",sub:"We'll explain"}].map(o => (
                   <button key={o.val} onClick={() => setEntity(o.val)} style={{ ...opt(entity===o.val), padding:'14px 10px' }}>
                     <div style={{ fontWeight:800 }}>{o.label}</div>
                     <div style={{ fontSize:11, opacity:.7, marginTop:3 }}>{o.sub}</div>
                   </button>
                 ))}
               </div>
-              <button onClick={() => entity && calculate()} style={{ ...btnR, opacity: entity ? 1 : 0.5 }}> Calculate My Savings →</button>
+              <button onClick={() => entity && calculate()} style={{ ...btnR, opacity: entity ? 1 : 0.5 }}> Calculate Planning Estimate →</button>
               <button onClick={() => setStep(6)} style={btnG}>← Back</button>
             </div>
           )}
