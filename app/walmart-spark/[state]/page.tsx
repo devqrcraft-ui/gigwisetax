@@ -88,7 +88,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
 
       <div style={{ background: 'rgba(255,255,255,.03)', border: '1px solid rgba(255,255,255,.08)', borderRadius: 10, padding: 14, marginBottom: 32 }}>
         <h2 style={{ fontSize: 20, fontWeight: 800, marginBottom: 16 }}>Interactive Tax Calculator</h2>
-        <GigCalculator platform={{ slug: PLATFORM_SLUG, name: PLATFORM_NAME, emoji: PLATFORM_EMOJI, }} states={STATES} deadlines={[
+        <GigCalculator platform={{ slug: PLATFORM_SLUG, name: PLATFORM_NAME, emoji: PLATFORM_EMOJI, }} states={STATES} defaultState={stateSlug} deadlines={[
           { q: 'Q1', due: 'April 15, 2026', period: 'Jan 1 – Mar 31', days: 45 },
           { q: 'Q2', due: 'June 15, 2026', period: 'Apr 1 – May 31', days: 107 },
           { q: 'Q3', due: 'September 15, 2026', period: 'Jun 1 – Aug 31', days: 198 },
