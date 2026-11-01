@@ -2,18 +2,33 @@ import type { Metadata } from 'next'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
 import DoorDashInlineCalc from './DoorDashInlineCalc'
+import { estimateTax, TAX_RULES_2026 } from '@/lib/tax-rules'
+
+const baseline40 = estimateTax(40000, 0, 'single')
+const milesForTable = [5000, 10000, 15000, 20000, 25000]
+const mileageH1 = (miles: number) => Math.round(miles * TAX_RULES_2026.mileage.h1)
+const mileageH2 = (miles: number) => Math.round(miles * TAX_RULES_2026.mileage.h2)
+const money = (amount: number) => '$' + amount.toLocaleString('en-US')
 
 export const metadata: Metadata = {
-  title: 'DoorDash Taxes 2026: $40K = $7,933 Owed — Free Calculator',
-  description: 'DoorDash drivers on $40K owe $7,933 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tips up to $25K deductible. All 50 states.',
+  title: 'DoorDash Taxes 2026: Calculator, Mileage & Filing Guide',
+  description: `Estimate DoorDash federal taxes and mileage deductions for 2026. A $40,000 Single-filer example is ${money(baseline40.total)} before state tax, mileage, credits, and other income.`,
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does DoorDash take out in 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $40,000 net income, total federal tax is approximately $7,933."}},{"@type":"Question","name":"What is the DoorDash mileage deduction for 2026?","acceptedAnswer":{"@type":"Answer","text":"The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. A Dasher driving 20,000 miles earns a $14,500–$15,200 deduction. This is typically the largest tax deduction available to delivery drivers."}},{"@type":"Question","name":"When does DoorDash send a 1099 for 2026?","acceptedAnswer":{"@type":"Answer","text":"DoorDash sends 1099-NEC forms by January 31, 2027 for earnings in 2026. You receive a 1099-NEC if you earned over $2,000 under the OBBBA 2026 threshold. Access it via the DoorDash driver portal or Stripe Express."}},{"@type":"Question","name":"Does the No Tax on Tips law apply to DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Under the OBBBA 2026, eligible delivery drivers can deduct up to $25,000 in tips from federal taxable income. If you earned $8,000 in tips, that amount is fully excluded from your federal taxable income."}},{"@type":"Question","name":"Is the QBI deduction available for DoorDash drivers in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes and it is now permanent under OBBBA. The 20% Qualified Business Income deduction lets you deduct 20% of net DoorDash profit. On $30,000 net income that is a $6,000 deduction."}},{"@type":"Question","name":"How much should I set aside for DoorDash taxes?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25 to 30% of your net DoorDash income. In high-tax states like California or New York, set aside 30 to 35%. This covers 15.3% SE tax plus federal income tax."}},{"@type":"Question","name":"Does DoorDash report my income to the IRS?","acceptedAnswer":{"@type":"Answer","text":"Yes. DoorDash sends your 1099-NEC directly to the IRS with your SSN or EIN. The IRS matches this against your tax return. All income must be reported even without a 1099-NEC."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"DoorDash Taxes 2026","item":"https://www.gigwisetax.com/blog/doordash-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"DoorDash Taxes 2026: How Much Do You Owe? Free Calculator","datePublished":"2026-01-01","dateModified":"2026-05-21","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/doordash-taxes-2026"}}'
+const articleSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: metadata.title,
+  description: metadata.description,
+  dateModified: '2026-11-01',
+  author: { '@type': 'Organization', name: 'the GigWiseTax Team', url: 'https://www.gigwisetax.com' },
+  publisher: { '@type': 'Organization', name: 'GigWiseTax', url: 'https://www.gigwisetax.com' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
+})
 
 export default function DoorDashTaxGuide() {
   return (
@@ -44,7 +59,7 @@ export default function DoorDashTaxGuide() {
           </h1>
 
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span>
+            <span>Last updated: November 1, 2026</span>
             <span>·</span>
             <span>By the GigWiseTax Team</span>
             <span>·</span>
@@ -56,7 +71,7 @@ export default function DoorDashTaxGuide() {
         <section id="answer">
           <div style={{ background: 'rgba(232,184,75,0.07)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 10, padding: '18px 22px', marginBottom: 28 }}>
             <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-              {'DoorDash drivers pay 15.3% self-employment tax plus federal income tax. On $40,000 net income: $5,652 SE tax + $2,281 federal income tax = $7,933 total. Quarterly payment: $1,983. Set aside 25% of every DoorDash payment. The 2026 mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1) — your largest deduction.'}
+              A federal-only planning baseline: with $40,000 net profit, Single filing, no mileage or other deductions, and no state tax, the central estimator returns {money(baseline40.se)} SE + {money(baseline40.federal)} federal income tax = <strong>{money(baseline40.total)}</strong> total, or {money(baseline40.quarterly)} per quarter. State tax, mileage, credits, and other income are excluded.
             </p>
           </div>
         </section>
@@ -67,11 +82,11 @@ export default function DoorDashTaxGuide() {
             Key Takeaways
           </h2>
           <ul style={{ margin: '0 0 32px', paddingLeft: 20, lineHeight: 1.85, fontSize: 14, color: '#C8D8EC' }}>
-            <li>{'DoorDash drivers on $40,000 net income owe approximately $7,933 in total federal tax'}</li>
-            <li>{'2026 IRS mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1) — 20,000 miles = $14,500–$15,200 deduction'}</li>
-            <li>{'Tips up to $25,000 are federally deductible under the OBBBA 2026'}</li>
-            <li>{'Set aside 25 to 30% of every payment for quarterly estimated taxes'}</li>
-            <li>{'Quarterly payments due: Apr 15, Jun 15, Sep 15, Jan 15'}</li>
+            <li>{`Federal-only $40,000 Single baseline, before mileage and state tax: ${money(baseline40.total)}.`}</li>
+            <li>{`Mileage rate: ${TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun and ${TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec; the deduction depends on when miles were driven.`}</li>
+            <li>Potential tip or QBI deductions depend on current eligibility rules and are not included in this calculator.</li>
+            <li>{`The general 2026 1099-NEC threshold is ${money(TAX_RULES_2026.form1099Threshold.year2026)}; all taxable income remains reportable.`}</li>
+            <li>Estimated payments depend on withholding, credits, and safe-harbor rules; no universal set-aside percentage applies.</li>
           </ul>
         </section>
 
@@ -102,7 +117,7 @@ export default function DoorDashTaxGuide() {
 
           <blockquote style={{ borderLeft: '3px solid #e8b84b', margin: '0 0 24px', padding: '12px 18px', background: 'rgba(232,184,75,0.05)', borderRadius: '0 8px 8px 0' }}>
             <p style={{ margin: 0, fontSize: 13, fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', lineHeight: 1.7 }}>
-              {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+              {'Federal estimated payments may be required when expected tax due after withholding and refundable credits reaches the IRS threshold; withholding and prior-year safe-harbor rules can change the result.'}
             </p>
             <p style={{ margin: '8px 0 0', fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>
               {'— '}
@@ -126,7 +141,7 @@ export default function DoorDashTaxGuide() {
             What Is the 2026 IRS Mileage Rate for DoorDash Drivers?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            {'The IRS standard mileage rate for 2026 is 72.5 cents per mile (January–June; 76 cents from July 1) driven for business. This is the highest rate in years. Track every mile from the moment you accept a delivery to drop-off — not just miles with food in the car.'}
+            {`The 2026 IRS standard mileage rates are ${TAX_RULES_2026.mileage.h1 * 100} cents per mile for January–June and ${TAX_RULES_2026.mileage.h2 * 100} cents from July 1 for qualifying business miles. Keep a contemporaneous log and record when each mile was driven.`}
           </p>
 
           <div style={{ overflowX: 'auto', marginBottom: 28 }}>
@@ -134,28 +149,18 @@ export default function DoorDashTaxGuide() {
               <thead>
                 <tr style={{ background: 'rgba(232,184,75,0.12)', borderBottom: '2px solid rgba(232,184,75,0.3)' }}>
                   <th style={{ padding: '10px 14px', textAlign: 'left', color: '#e8b84b', fontWeight: 700 }}>Miles Driven</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Deduction (72.5¢)</th>
-                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Tax Saved (22%)</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Deduction if H1</th>
+                  <th style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>Deduction if H2</th>
                 </tr>
               </thead>
               <tbody>
-                {[
-                  ['5,000', '$3,625', '$798'],
-                  ['10,000', '$7,250', '$1,595'],
-                  ['15,000', '$10,875', '$2,393'],
-                  ['20,000', '$14,500', '$3,190'],
-                ].map(([miles, ded, saved], i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                    <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,0.85)' }}>{miles}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: 'rgba(255,255,255,0.85)' }}>{ded}</td>
-                    <td style={{ padding: '10px 14px', textAlign: 'right', color: 'rgba(255,255,255,0.85)' }}>{saved}</td>
+                {milesForTable.map((miles, i) => (
+                  <tr key={miles} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', ...(i === milesForTable.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : {}) }}>
+                    <td style={{ padding: '10px 14px', color: i === milesForTable.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === milesForTable.length - 1 ? 700 : 400 }}>{miles.toLocaleString('en-US')}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: i === milesForTable.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === milesForTable.length - 1 ? 700 : 400 }}>{money(mileageH1(miles))}</td>
+                    <td style={{ padding: '10px 14px', textAlign: 'right', color: i === milesForTable.length - 1 ? '#e8b84b' : 'rgba(255,255,255,0.85)', fontWeight: i === milesForTable.length - 1 ? 700 : 400 }}>{money(mileageH2(miles))}</td>
                   </tr>
                 ))}
-                <tr style={{ background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }}>
-                  <td style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700 }}>25,000</td>
-                  <td style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>$18,125</td>
-                  <td style={{ padding: '10px 14px', textAlign: 'right', color: '#e8b84b', fontWeight: 700 }}>$3,988</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -171,8 +176,8 @@ export default function DoorDashTaxGuide() {
           </p>
 
           <ol style={{ margin: '0 0 20px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage (72.5 cents/mile for January–June, then 76 cents from July 1)'}</strong>{' — Every delivery mile from pickup to drop-off plus en-route miles. Most Dashers drive 10,000 to 25,000 miles per year.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Phone bill (business %)'}</strong>{' — Deduct the business-use percentage. Most Dashers use 60 to 80% for business. On a $80/month plan that is $576 to $768 per year.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{`Mileage (${TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun; ${TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec)`}</strong>{' — Record qualifying business miles and use the applicable rate for the date driven.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Phone bill (business use)'}</strong>{' — Deduct only the documented business-use portion; keep records.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Insulated bags and equipment'}</strong>{' — Hot bags, drink carriers, any gear purchased specifically for DoorDash deliveries. 100% deductible under OBBBA bonus depreciation.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Parking and tolls'}</strong>{' — Any fees incurred while on delivery. Keep all receipts or use an expense tracking app.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Health insurance premiums'}</strong>{' — 100% deductible on Schedule 1 if not eligible for employer coverage.'}</li>
@@ -191,7 +196,8 @@ export default function DoorDashTaxGuide() {
             When Are the 2026 Quarterly Tax Deadlines for Dashers?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            {'Pay quarterly if you expect to owe $1,000 or more. Use IRS Direct Pay at irs.gov/payments. Missing a deadline triggers an underpayment penalty of approximately 7% annualized.'}
+            {'Estimated-payment requirements depend on expected tax after withholding, credits, and prior-year safe-harbor rules. The IRS underpayment interest rate is ' + (TAX_RULES_2026.underpaymentRateQ4_2026 * 100) + '% annualized for Q4 2026, but this is not a flat penalty on every missed payment; the actual charge depends on timing and amount. See IRS Direct Pay and the '}
+            <a href={TAX_RULES_2026.sources.underpaymentRate} target="_blank" rel="nofollow noopener noreferrer" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS quarterly rate notice</a>.
           </p>
 
           <div style={{ overflowX: 'auto', marginBottom: 28 }}>
@@ -234,18 +240,17 @@ export default function DoorDashTaxGuide() {
         {/* SECTION 5 */}
         <section id="new-tax-laws">
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#C8D8EC', margin: '0 0 14px' }}>
-            What Changed for DoorDash Drivers Under the OBBBA 2026?
+            Tax Rules This Calculator Does Not Model
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.85, margin: '0 0 16px', color: 'rgba(255,255,255,0.85)' }}>
-            {'The One Big Beautiful Bill Act introduced major changes for gig workers starting in 2026. These are the five most important for Dashers.'}
+            {'Federal tax laws include deductions and elections that can depend on eligibility, income limits, and filing details. The calculator below does not model every deduction, credit, state schedule, or election; verify current IRS instructions before claiming an item.'}
           </p>
 
           <ul style={{ margin: '0 0 28px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-            <li><strong style={{ color: '#C8D8EC' }}>{'No Tax on Tips — up to $25,000'}</strong>{' — Tips you earn are now federally deductible up to $25,000. Earn $8,000 in tips? That full amount excluded from federal taxable income.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'QBI Deduction — now permanent'}</strong>{' — 20% of net DoorDash profit deductible. On $30,000 net that is $6,000 off your taxable income. Was expiring after 2025.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'1099-NEC threshold raised to $2,000'}</strong>{' — DoorDash only issues a 1099-NEC if you earned $2,000 or more, up from $600. All income is still taxable regardless.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'100% bonus depreciation restored'}</strong>{' — Equipment (phone mount, bags, dash cam) fully deductible in the year of purchase. No multi-year depreciation schedule.'}</li>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage rate: 72.5 cents per mile (January–June; 76 cents from July 1)'}</strong>{' — Up from 70 cents in 2025. Driving 15,000 miles = $10,875–$11,400 deduction.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Tip and QBI deductions'}</strong>{' — Eligibility, limits, and interactions depend on current IRS rules. This calculator does not model these deductions; review official instructions before claiming them.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'1099-NEC reporting threshold'}</strong>{` — The general 2026 threshold is ${money(TAX_RULES_2026.form1099Threshold.year2026)}; all taxable income remains reportable regardless of receiving a form.`}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Equipment deductions'}</strong>{' — Business-use, depreciation, and expensing rules depend on eligibility and elections; this calculator does not model them.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage rates'}</strong>{` — ${TAX_RULES_2026.mileage.h1 * 100}¢ per business mile Jan–Jun and ${TAX_RULES_2026.mileage.h2 * 100}¢ Jul–Dec; the amount depends on qualifying miles and when driven.`}</li>
           </ul>
         </section>
 
@@ -265,31 +270,31 @@ export default function DoorDashTaxGuide() {
           {[
             {
               q: 'How much tax does DoorDash take out in 2026?',
-              a: 'DoorDash does not take out any taxes. Dashers are 1099 contractors responsible for self-employment tax (15.3%) and income tax. On $40,000 net income, total federal tax is approximately $7,933.',
+              a: `DoorDash generally does not withhold federal income or self-employment taxes for independent contractors. A federal-only $40,000 net-profit, Single-filer baseline with no mileage is ${money(baseline40.total)}; state tax and other return details are excluded.`,
             },
             {
               q: 'What is the DoorDash mileage deduction for 2026?',
-              a: 'The IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Driving 20,000 miles gives you a $14,500–$15,200 deduction — typically the largest single deduction for delivery drivers.',
+              a: `The 2026 standard business mileage rates are ${TAX_RULES_2026.mileage.h1 * 100}¢/mile for January–June and ${TAX_RULES_2026.mileage.h2 * 100}¢/mile from July. The deduction depends on qualifying business miles and when they were driven.`,
             },
             {
               q: 'When does DoorDash send a 1099 for 2026?',
-              a: 'DoorDash sends 1099-NEC forms by January 31, 2027. Under OBBBA 2026, the threshold is $2,000 (up from $600). All income is taxable even without a 1099-NEC.',
+              a: `The general 2026 1099-NEC threshold for nonemployee compensation is ${money(TAX_RULES_2026.form1099Threshold.year2026)}. All taxable income remains reportable even if no information return arrives.`,
             },
             {
               q: 'Does the No Tax on Tips law apply to DoorDash drivers in 2026?',
-              a: 'Yes. Under OBBBA 2026, eligible delivery drivers can deduct up to $25,000 in tips from federal taxable income. Earn $8,000 in tips and that full amount is excluded.',
+              a: 'Some tip income may qualify for a federal deduction, subject to eligibility and limits. This calculator does not model tip-related deductions; check current IRS instructions before claiming one.',
             },
             {
               q: 'Is the QBI deduction available for DoorDash drivers in 2026?',
-              a: 'Yes and it is now permanent under OBBBA. The 20% Qualified Business Income deduction lets you deduct 20% of net profit. On $30,000 that is $6,000 off taxable income.',
+              a: 'A QBI deduction may apply depending on eligibility, taxable-income limits, and other rules. This calculator does not include QBI; consult current IRS instructions or a tax professional for your situation.',
             },
             {
               q: 'How much should I set aside for DoorDash taxes?',
-              a: 'Set aside 25 to 30% of net DoorDash income. In high-tax states like California or New York, set aside 30 to 35%. The mileage deduction can significantly reduce this amount.',
+              a: 'There is no universal set-aside percentage. Estimate your full-year tax using net profit, filing status, other income, state, withholding, and eligible deductions; compare payments with applicable safe-harbor rules.',
             },
             {
               q: 'Does DoorDash report my income to the IRS?',
-              a: 'Yes. DoorDash sends your 1099-NEC directly to the IRS. The IRS matches it against your return. Not reporting DoorDash income results in an IRS notice and penalties.',
+              a: 'Payers may file applicable information returns with tax authorities. You remain responsible for reporting all taxable income, whether or not you receive a form.',
             },
           ].map(({ q, a }, i) => (
             <div key={i} style={{ marginBottom: 20, paddingBottom: 20, borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
