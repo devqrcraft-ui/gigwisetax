@@ -41,8 +41,7 @@ export default function GigCalculator({
     const federal = taxRaw.federal
     const stateTax = taxRaw.state
     const total = taxRaw.total
-    const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
-    setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), stateAbbr: st?.abbr ?? '?' })
   }
 
   const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -121,7 +120,7 @@ export default function GigCalculator({
               result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: 'split-rate 2026', hi: false } : null,
               { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
-              { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
+              { label: `${result.stateAbbr} State Estimate`, val: fmt(result.stateTax), sub: 'Simplified rate input', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
             ].filter(Boolean).map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
@@ -130,12 +129,6 @@ export default function GigCalculator({
                 <div style={{ fontSize: 13, color: '#7a9abf' }}>{r.sub}</div>
               </div>
             ))}
-          </div>
-
-          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
-               Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
-            </span>
           </div>
 
           <div style={{ padding: 14 }}>
