@@ -91,7 +91,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div>
             <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:14, marginBottom:20 }}>
               <h2 style={{ fontSize: 20, fontWeight: 800, color:'rgba(255,255,255,0.9)', marginBottom: 16 }}>Interactive Tax Calculator</h2>
-              <GigCalculator platform={PLATFORMS.find(p => p.slug === PLATFORM_SLUG)!} states={ALL_STATES} deadlines={DEADLINES_2026} />
+              <GigCalculator platform={PLATFORMS.find(p => p.slug === PLATFORM_SLUG)!} states={ALL_STATES} defaultState={stateSlug} deadlines={DEADLINES_2026} />
             </div>
             <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:14, marginBottom:20 }}>
               <h2 style={{ fontSize: 20, fontWeight: 800, color:'rgba(255,255,255,0.9)', marginBottom: 12 }}>{'How Much Tax Do Turo Hosts Pay in ' + state.name + '?'}</h2>

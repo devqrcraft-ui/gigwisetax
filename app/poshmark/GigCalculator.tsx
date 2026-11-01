@@ -3,28 +3,45 @@ import { useState } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import PartnerCTA from '@/app/PartnerCTA'
 import { estimateTaxRaw } from '@/lib/tax-rules'
+import ResultActions from '@/app/components/ResultActions'
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
 interface Deadline { q: string; period: string; due: string; days: number }
 const POSHMARK_COMMISSION_RATE = 0.20
+const MAX_EARNINGS = 10000000
+const MAX_MILES = 500000
+function parseNum(v: string): number {
+  const t = v.replace(/[\s,$]/g, '')
+  if (t === '') return 0
+  if (/^\d+\.\d{3}$/.test(t) || (t.match(/\./g) || []).length > 1) return NaN
+  return /^(\d+\.?\d*|\.\d+)$/.test(t) ? Number(t) : NaN
+}
+
 export default function GigCalculator({
-  platform, states, deadlines
+  platform, states, deadlines, defaultState
 }: {
   platform: Platform
   states: State[]
   deadlines: Deadline[]
+  defaultState?: string
 }) {
   const [grossSales, setGrossSales] = useState('')
   const [cogs, setCogs]             = useState('')
-  const [stateSlug, setStateSlug]   = useState('california')
+  const [stateSlug, setStateSlug]   = useState(defaultState && states.some(s => s.slug === defaultState) ? defaultState : 'california')
   const [filing, setFiling]         = useState<'single'|'married'|'hoh'>('single')
   const [result, setResult]         = useState<any>(null)
+  const [inputError, setInputError] = useState('')
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
   const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
   const calculate = () => {
-    const gross = parseFloat(grossSales) || 0
+    const checks: [number, number][] = [[parseNum(grossSales), MAX_EARNINGS], [parseNum(cogs), MAX_EARNINGS]]
+    if (checks.some(([v]) => Number.isNaN(v))) { setInputError('Use numbers only (no letters or minus signs). For thousands use a comma, e.g. 50,000.'); setResult(null); return }
+    if (checks.some(([v, mx]) => v > mx)) { setInputError('That number is too large for this estimator. Check the amount you entered.'); setResult(null); return }
+    if (!checks[0][0]) { setInputError('Enter your annual earnings to calculate.'); setResult(null); return }
+    setInputError('')
+    const gross = parseNum(grossSales)
     if (!gross) return
-    const cogsVal = parseFloat(cogs) || 0
+    const cogsVal = parseNum(cogs)
     const commission = gross * POSHMARK_COMMISSION_RATE
     const afterCommission = gross - commission
     const net = Math.max(0, afterCommission - cogsVal)
@@ -74,7 +91,7 @@ export default function GigCalculator({
               <label style={lbl}> Annual Gross Poshmark Sales (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={grossSales} onChange={e => setGrossSales(e.target.value)} placeholder="e.g. 60,000"/>
+                <input style={{ ...inp, paddingLeft: 24 }} type="text" inputMode="decimal" value={grossSales} onChange={e => setGrossSales(e.target.value)} placeholder="e.g. 60,000"/>
               </div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>The total buyers paid you — this matches the amount on your 1099-K, before Poshmark's commission.</div>
               <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
@@ -87,11 +104,12 @@ export default function GigCalculator({
               <label style={lbl}> Cost of Goods Sold (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={cogs} onChange={e => setCogs(e.target.value)} placeholder="e.g. 25,000"/>
+                <input style={{ ...inp, paddingLeft: 24 }} type="text" inputMode="decimal" value={cogs} onChange={e => setCogs(e.target.value)} placeholder="e.g. 25,000"/>
               </div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 6 }}>What you originally paid for the items you sold — thrift, wholesale, or clearance receipts. This is not on your 1099-K but it reduces your taxable profit.</div>
             </div>
           </div>
+          {inputError && (<div role="alert" style={{ color: '#ff8a8a', fontSize: 14, margin: '0 0 10px', lineHeight: 1.5 }}>{inputError}</div>)}
           <button type="button" style={{...btnDark, border: 'none', fontFamily: 'inherit', minHeight: 44, background: grossSales ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</button>
         </div>
       </div>
@@ -107,7 +125,7 @@ export default function GigCalculator({
             {[
               { label: 'Poshmark Commission', val: fmt(result.commission), sub: '20% of sales', hi: false },
               { label: 'Cost of Goods', val: fmt(result.cogsVal), sub: 'What you paid', hi: false },
-              { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
+              { label: 'SE Tax',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
             ].map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: 'rgba(255,255,255,0.05)' }}>
@@ -135,12 +153,7 @@ export default function GigCalculator({
             Net profit after commission and cost of goods: <strong>{fmt(result.net)}</strong> (from {fmt(result.gross)} gross sales)
           </div>
 
-          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
-               Recommendation: Set aside <strong>{result.saveRate}% of every payout</strong> for taxes (approx. {fmt(parseFloat(grossSales) * result.saveRate / 100 / 12)}/month)
-            </span>
-          </div>
-
+          <ResultActions platformName={platform.name} stateAbbr={result.stateAbbr} seTax={result.seTax} federal={result.federal} stateTax={result.stateTax} total={result.total} quarterly={result.quarterly} />
           <div style={{ padding: 14 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>

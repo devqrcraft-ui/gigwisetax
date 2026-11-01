@@ -78,7 +78,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: 20 }} className="main-grid">
           <div>
-            <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} />
+            <GigCalculator platform={platform} states={STATES} defaultState={stateSlug} deadlines={DEADLINES_2026} />
             <div style={card}>
               <div style={cardHd}><div style={accent} /><span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Taxes in {state.name} — 2026 Guide</span></div>
               <div style={{ padding: 14 }}>

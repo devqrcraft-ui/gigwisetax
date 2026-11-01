@@ -96,7 +96,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
           <div>
-            <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} />
+            <GigCalculator platform={platform} states={STATES} defaultState={stateSlug} deadlines={DEADLINES_2026} />
             <div style={card}>
               <div style={cardHd}>
                 <div style={accent} />

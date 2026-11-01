@@ -15,6 +15,7 @@ interface Deadline { q: string; period: string; due: string; days: number }
 const parseNum = (s: string): number => {
   const t = s.replace(/[\s,$]/g, '')
   if (t === '') return 0
+  if (/^\d+\.\d{3}$/.test(t) || (t.match(/\./g) || []).length > 1) return NaN
   return /^(\d+\.?\d*|\.\d+)$/.test(t) ? parseFloat(t) : NaN
 }
 const MAX_EARNINGS = 10000000
@@ -43,7 +44,7 @@ export default function GigCalculator({
     const gross = parseNum(income)
     const miH1 = parseNum(milesH1)
     const miH2 = parseNum(milesH2)
-    if ([gross, miH1, miH2].some(Number.isNaN)) { setInputError('Use numbers only in earnings and miles (digits and one decimal point).'); setResult(null); return }
+    if ([gross, miH1, miH2].some(Number.isNaN)) { setInputError('Use numbers only in earnings and miles (digits and one decimal point). For thousands use a comma, e.g. 50,000.'); setResult(null); return }
     if (gross > MAX_EARNINGS || miH1 > MAX_MILES || miH2 > MAX_MILES) { setInputError('That number is larger than this calculator supports. Please check earnings and miles.'); setResult(null); return }
     setInputError('')
     if (!gross) { setInputError('Enter your annual earnings to calculate.'); setResult(null); return }

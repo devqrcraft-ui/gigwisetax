@@ -2,32 +2,49 @@
 import { useState } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import { estimateTaxRaw } from '@/lib/tax-rules'
+import ResultActions from '@/app/components/ResultActions'
 import PartnerCTA from '@/app/PartnerCTA'
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
 interface Deadline { q: string; period: string; due: string; days: number }
 const MILEAGE_RATE_H1_2026 = 0.725
 const MILEAGE_RATE_H2_2026 = 0.76
+const MAX_EARNINGS = 10000000
+const MAX_MILES = 500000
+function parseNum(v: string): number {
+  const t = v.replace(/[\s,$]/g, '')
+  if (t === '') return 0
+  if (/^\d+\.\d{3}$/.test(t) || (t.match(/\./g) || []).length > 1) return NaN
+  return /^(\d+\.?\d*|\.\d+)$/.test(t) ? Number(t) : NaN
+}
+
 export default function GigCalculator({
-  platform, states, deadlines
+  platform, states, deadlines, defaultState
 }: {
   platform: Platform
   states: State[]
   deadlines: Deadline[]
+  defaultState?: string
 }) {
   const [income, setIncome]       = useState('')
   const [milesH1, setMilesH1]     = useState('')
   const [milesH2, setMilesH2]     = useState('')
-  const [stateSlug, setStateSlug] = useState('california')
+  const [stateSlug, setStateSlug] = useState(defaultState && states.some(s => s.slug === defaultState) ? defaultState : 'california')
   const [filing, setFiling]       = useState<'single'|'married'|'hoh'>('single')
   const [result, setResult]       = useState<any>(null)
+  const [inputError, setInputError] = useState('')
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
   const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
   const calculate = () => {
-    const gross = parseFloat(income) || 0
+    const checks: [number, number][] = [[parseNum(income), MAX_EARNINGS], [parseNum(milesH1), MAX_MILES], [parseNum(milesH2), MAX_MILES]]
+    if (checks.some(([v]) => Number.isNaN(v))) { setInputError('Use numbers only (no letters or minus signs). For thousands use a comma, e.g. 50,000.'); setResult(null); return }
+    if (checks.some(([v, mx]) => v > mx)) { setInputError('That number is too large for this estimator. Check the amount you entered.'); setResult(null); return }
+    if (!checks[0][0]) { setInputError('Enter your annual earnings to calculate.'); setResult(null); return }
+    setInputError('')
+    const gross = parseNum(income)
     if (!gross) return
-    const miH1 = parseFloat(milesH1) || 0
-    const miH2 = parseFloat(milesH2) || 0
+    const miH1 = parseNum(milesH1)
+    const miH2 = parseNum(milesH2)
     const mileDeduct = (miH1 * MILEAGE_RATE_H1_2026) + (miH2 * MILEAGE_RATE_H2_2026)
     const net = Math.max(0, gross - mileDeduct)
     const st = states.find(s => s.slug === stateSlug)
@@ -37,7 +54,7 @@ export default function GigCalculator({
     const stateTax = taxRaw.state
     const total = taxRaw.total
     const saveRate = Math.min(Math.ceil((total / gross) * 100) + 5, 35)
-    setResult({ gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    setResult({ over: mileDeduct > gross, gross, mileDeduct, net, seTax, federal, stateTax, total, quarterly: total / 4, rate: ((total / gross) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
   }
 
   const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -81,7 +98,7 @@ export default function GigCalculator({
               <label style={lbl}> Annual {platform.name} Earnings Before Mileage and Expenses (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
-                <input style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 20,000"/>
+                <input style={{ ...inp, paddingLeft: 24 }} type="text" inputMode="decimal" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 20,000"/>
               </div>
               <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
                 {[['10000','$10k'],['20000','$20k'],['35000','$35k'],['50000','$50k']].map(([v,l])=>(
@@ -91,13 +108,14 @@ export default function GigCalculator({
             </div>
             <div>
               <label style={lbl}> Miles Driven Jan–Jun (72.5¢/mi)</label>
-              <input style={inp} type="number" min="0" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 3,000"/>
+              <input style={inp} type="text" inputMode="decimal" value={milesH1} onChange={e => setMilesH1(e.target.value)} placeholder="e.g. 3,000"/>
             </div>
             <div>
               <label style={lbl}> Miles Driven Jul–Dec (76¢/mi)</label>
-              <input style={inp} type="number" min="0" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 3,000"/>
+              <input style={inp} type="text" inputMode="decimal" value={milesH2} onChange={e => setMilesH2(e.target.value)} placeholder="e.g. 3,000"/>
             </div>
           </div>
+          {inputError && (<div role="alert" style={{ color: '#ff8a8a', fontSize: 14, margin: '0 0 10px', lineHeight: 1.5 }}>{inputError}</div>)}
           <button type="button" style={{...btnDark, border: 'none', fontFamily: 'inherit', minHeight: 44, background: income ? "#4CAF50" : "rgba(255,255,255,0.07)", transition: "background 0.2s"}} onClick={calculate}> Calculate {platform.name} Tax Estimate</button>
         </div>
       </div>
@@ -112,7 +130,7 @@ export default function GigCalculator({
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
               result.mileDeduct > 0 ? { label: 'Mileage Deduction', val: fmt(result.mileDeduct), sub: 'split-rate 2026', hi: false } : null,
-              { label: 'SE Tax (15.3%)',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
+              { label: 'SE Tax',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
               { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Estimated', hi: false },
               { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
@@ -125,12 +143,12 @@ export default function GigCalculator({
             ))}
           </div>
 
-          <div style={{ background: 'rgba(178,34,52,0.12)', borderBottom: '1px solid #fecaca', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
-            <span style={{ fontSize: 13, color: '#B22234', fontWeight: 600 }}>
-               Recommendation: Set aside <strong>{result.saveRate}% of every payment</strong> for taxes (approx. {fmt(parseFloat(income) * result.saveRate / 100 / 12)}/month)
-            </span>
-          </div>
-
+          {result.over && (
+            <div role="status" style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 4, padding: '10px 14px', margin: '12px 14px 0', fontSize: 14, color: '#fcd34d', lineHeight: 1.6 }}>
+              Your mileage deduction ({fmt(result.mileDeduct)}) is larger than the earnings you entered, so net profit is shown as $0. Check your miles and earnings.
+            </div>
+          )}
+          <ResultActions platformName={platform.name} stateAbbr={result.stateAbbr} seTax={result.seTax} federal={result.federal} stateTax={result.stateTax} total={result.total} quarterly={result.quarterly} />
           <div style={{ padding: 14 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
