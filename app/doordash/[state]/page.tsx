@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import { estimateTax, TAX_RULES_2026 } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -60,22 +60,20 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"DoorDash Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/doordash/${state.slug}","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"DoorDash Tax Calculator","item":"https://www.gigwisetax.com/doordash"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/doordash/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"DoorDash Tax Calculator ${state.name} 2026","description":"Free DoorDash tax calculator for ${state.name} 2026.","datePublished":"2026-01-01","dateModified":"2026-06-04","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/doordash/${state.slug}"}}` }} />
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 16px 40px' }}>
 
         {/* Answer-First */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'14px 18px',marginBottom:20,marginTop:8}}>
           <p style={{margin:0,fontSize:15,lineHeight:1.8,color:'rgba(255,255,255,0.88)'}}>
             {platform.name}{' '}drivers report self-employment income in {state.name}; this estimator applies{' '}
-            <strong style={{color:'#e8b84b'}}>15.3% self-employment tax</strong>{' '}
-            on the estimator&apos;s net-profit base, plus federal tax
+            federal self-employment tax calculated on the model&apos;s net-profit base, subject to the Social Security wage limit, plus federal tax
             {noStateTax ? '.' : <span> and a simplified state estimate using <strong style={{color:'#e8b84b'}}>{stateRateStr}</strong>.</span>}
             {' '}For a <strong style={{color:'#e8b84b'}}>$40,000</strong> net-profit example, this model estimates{' '}
             <strong style={{color:'#e8b84b'}}>${example40.total.toLocaleString('en-US')}</strong> total — about <strong style={{color:'#e8b84b'}}>${example40.quarterly.toLocaleString('en-US')}</strong> per quarter. State results are not a full state-tax calculation.
           </p>
         </div>
 
-        <p style={{fontSize:13,color:'rgba(255,255,255,0.65)',margin:'-12px 0 16px',fontStyle:'italic' as const}}>By the GigWiseTax Team &nbsp;·&nbsp; ~5 min read &nbsp;·&nbsp; Updated June 2026</p>
+        <p style={{fontSize:13,color:'rgba(255,255,255,0.65)',margin:'-12px 0 16px',fontStyle:'italic' as const}}>By the GigWiseTax Team &nbsp;·&nbsp; ~5 min read &nbsp;·&nbsp; Federal tax inputs verified {TAX_RULES_2026.verifiedOn}</p>
 
         {/* Key Takeaways */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
@@ -177,7 +175,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {[
                     { label: 'SE Tax Rate', value: '15.3%', sub: 'SS + Medicare', color: '#B22234' },
                     { label: `${state.abbr} State Estimate`, value: noStateTax ? '0%' : stateRateStr, sub: noStateTax ? 'No income tax modeled' : 'Simplified input', color: noStateTax ? '#059669' : '#B22234' },
-                    { label: 'Quarterly Due', value: '4×/yr', sub: 'If owe $1,000+', color: '#e8b84b' },
+                    { label: 'Quarterly Due Dates', value: '4×/yr', sub: 'Payment rules vary by filer and state', color: '#e8b84b' },
                   ].map(s => (
                     <div key={s.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '14px 16px', textAlign: 'center' as const }}>
                       <div style={{ fontSize: 10, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 6 }}>{s.label}</div>
@@ -192,7 +190,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13, marginBottom: 20 }}>
                   <thead>
                     <tr style={{ background: 'rgba(255,255,255,0.07)' }}>
-                      {['Quarter','Due Date','Federal','State'].map(h => (
+                      {['Quarter','Due Date','Federal installment','State guidance'].map(h => (
                         <th key={h} style={{ padding: '10px 14px', color: '#e8b84b', fontWeight: 700, fontSize: 11, textTransform: 'uppercase' as const, letterSpacing: '0.5px', textAlign: 'left' as const }}>{h}</th>
                       ))}
                     </tr>
@@ -205,16 +203,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                           {d.q} 2026
                         </td>
                         <td style={{ padding: '8px 10px', fontWeight: 700, color: d.isNext ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
-                        <td style={{ padding: '8px 10px', color: '#059669', fontWeight: 600, fontSize: 14 }}>✓ Required</td>
+                        <td style={{ padding: '8px 10px', color: '#059669', fontWeight: 600, fontSize: 14 }}>If required</td>
                         <td style={{ padding: '8px 10px', fontSize: 14 }}>
                           {noStateTax
-                            ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
-                            : <span style={{ color: 'rgba(255,255,255,0.85)' }}>Required</span>}
+                            ? <span style={{ color: '#059669', fontWeight: 600 }}>No state income-tax component modeled</span>
+                            : <span style={{ color: 'rgba(255,255,255,0.85)' }}>Check state payment rules</span>}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
+                <p style={{ margin: '-12px 0 16px', fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>Dates shown are federal installment due dates. Whether you must pay federally depends on withholding and safe-harbor rules; state requirements vary by jurisdiction.</p>
 
                 {/* Deductions */}
                 <h3 style={{ fontSize: 16, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 10 }}>Top Tax Deductions for {platform.name} Workers in {state.name}</h3>
@@ -230,22 +229,22 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {
                     q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
-                      ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax.`
+                      ? `This model includes federal SE and income tax and no ${state.name} individual-income-tax component. Other local or business taxes are not modeled.`
                       : `For a $50,000 net-profit example, this estimator returns about $${example50.total.toLocaleString('en-US')} combined, including a simplified ${stateRateStr} state-rate input. This is not the state's full tax schedule; actual liability depends on state brackets, deductions, credits, and local taxes.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
                     a: noStateTax
-                      ? `In ${state.name}, make federal quarterly estimated payments (Form 1040-ES) if you expect to owe $1,000+. No state quarterly payments required.`
-                      : `Federal estimated payments may be required if you expect to owe $1,000 or more after withholding and credits. State payment thresholds and timing differ; check the ${state.name} revenue department.`,
+                      ? `Federal estimated payments may be required depending on expected tax after withholding and safe-harbor rules. This model includes no ${state.name} individual-income-tax component; check the state revenue department for other state or local obligations.`
+                      : `Federal and state estimated payments depend on your full return, withholding, and jurisdiction-specific thresholds. Check the ${state.name} revenue department for state due dates and requirements.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in ${state.name}?`,
-                    a: `Federal SE tax is generally 15.3% on the applicable net earnings base, subject to the Social Security wage limit and other rules. This estimator ${noStateTax ? 'adds no state income tax' : `uses a simplified ${stateRateStr} state-rate input`}; it does not calculate the full state tax schedule.`,
+                    a: `This estimator applies the shared federal Schedule SE rules to the modeled net-profit base. It does not combine W-2 or spouse wages when evaluating Additional Medicare effects. ${noStateTax ? 'No state individual-income-tax component is modeled.' : `The ${stateRateStr} state-rate input is simplified and not a full state tax schedule.`}`,
                   },
                   {
                     q: `What mileage rate can DoorDash drivers deduct in ${state.name} in 2026?`,
-                    a: `DoorDash drivers in ${state.name} can deduct 72.5 cents per mile (January–June; 76 cents from July 1) for deliveries in 2026. On 10,000 delivery miles that is a $7,250–$7,600 deduction directly reducing taxable profit.`,
+                    a: `For 2026, the standard business mileage rates are ${TAX_RULES_2026.mileage.h1 * 100} cents per mile for January–June and ${TAX_RULES_2026.mileage.h2 * 100} cents from July 1. The deduction depends on qualifying business miles and when they were driven.`,
                   },
                   {
                     q: `Does the No Tax on Tips law apply to DoorDash drivers in ${state.name}?`,
