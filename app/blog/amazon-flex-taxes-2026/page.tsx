@@ -1,13 +1,21 @@
 import Link from 'next/link'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import AuthorBox from '@/app/components/AuthorBox'
-import { UNDERPAYMENT_PENALTY_RATE_2026 } from '@/lib/data'
+import { STATES } from '@/lib/data'
 import type { Metadata } from 'next'
+import { estimateTax, TAX_RULES_2026 } from '@/lib/tax-rules'
+
+const californiaRate = STATES.find(state => state.slug === 'california')!.rate
+const example50 = estimateTax(50000, californiaRate, 'single')
+const mileageMiles = 25000
+const mileageH1Deduction = Math.round(mileageMiles * TAX_RULES_2026.mileage.h1)
+const mileageH2Deduction = Math.round(mileageMiles * TAX_RULES_2026.mileage.h2)
+const money = (amount: number) => '$' + amount.toLocaleString('en-US')
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' },
-  title: 'Amazon Flex Taxes 2026: $40K = $5,652 SE Tax + Deductions',
-  description: 'How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢–76¢/mile), quarterly payments, and top deductions.',
+  title: 'Amazon Flex Taxes 2026: Mileage, 1099s & Tax Guide',
+  description: 'A practical 2026 tax guide for Amazon Flex drivers: track mileage, estimate federal tax, understand filing assumptions, and review quarterly-payment rules.',
 }
 
 export default function AmazonFlexTaxesBlogPost() {
@@ -20,8 +28,8 @@ export default function AmazonFlexTaxesBlogPost() {
     <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
       
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Taxes 2026: Complete Guide for Drivers","item":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Taxes 2026: Complete Guide for Drivers","description":"How to calculate and pay taxes as an Amazon Flex driver in 2026. SE tax, mileage deduction (72.5¢–76¢/mile), quarterly payments, and top deductions.","url":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Taxes 2026: Mileage, 1099s & Tax Guide","item":"https://www.gigwisetax.com/blog/amazon-flex-taxes-2026"}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'BlogPosting', headline: metadata.title, description: metadata.description, url: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026', dateModified: '2026-11-01', author: { '@type': 'Organization', name: 'the GigWiseTax Team', url: 'https://www.gigwisetax.com' }, publisher: { '@type': 'Organization', name: 'GigWiseTax', url: 'https://www.gigwisetax.com' }, mainEntityOfPage: 'https://www.gigwisetax.com/blog/amazon-flex-taxes-2026' }) }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -35,19 +43,19 @@ export default function AmazonFlexTaxesBlogPost() {
             ))}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.3, margin: '0 0 12px' }}>
-             Amazon Flex Taxes 2026: Complete Guide for Drivers
+             Amazon Flex Taxes 2026: Mileage, 1099s & Tax Guide
           </h1>
       {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Amazon Flex drivers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $40,000 net income: approximately $5,652 SE tax + $2,281 federal income tax = <strong style={{ color:'#fff' }}>$7,933 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,983</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢–76¢/mile is the top deduction for Amazon Flex drivers.
+              For a $50,000 net-profit input, Single filing status, California selected, and no mileage deduction entered, the model estimates {money(example50.se)} self-employment tax + {money(example50.federal)} federal income tax + {money(example50.state)} simplified California state estimate = <strong style={{ color:'#fff' }}>{money(example50.total)} total</strong>. The quarterly estimate is <strong style={{ color:'#e8b84b' }}>{money(example50.quarterly)}</strong>. This is a planning model, not a return; California uses a simplified state-rate input rather than its full tax schedule.
             </p>
           </div>
           <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> January 15, 2026</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> Updated November 1, 2026</span>
             <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> 8 min read</span>
-            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> Updated for 2026 IRS rates</span>
+            <span style={{ fontSize: 12, color: 'rgba(255,255,255,.4)' }}> Tax year 2026</span>
           </div>
         </div>
       </div>
@@ -63,17 +71,16 @@ export default function AmazonFlexTaxesBlogPost() {
             <div style={{ fontSize: 14, fontWeight: 800, color: '#4ade80', marginBottom: 8 }}> Quick Summary</div>
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {[
-                'Amazon Flex drivers are 1099 independent contractors — no taxes withheld',
-                'Self-employment tax: 15.3% on 92.35% of net income',
-                'Mileage deduction: 72.5 cents per mile (January–June; 76 cents from July 1) in 2026',
-                'Must pay quarterly taxes if you expect to owe $1,000+',
+                'This guide models active Schedule C income; actual filing treatment can differ',
+                'Mileage rates are split by when qualifying business miles were driven',
+                'Federal estimated payments depend on expected tax after withholding and credits',
                 'Top deductions: mileage, phone, dolly/equipment, parking, tolls',
               ].map(item => <li key={item} style={{ fontSize: 13, color: '#4ade80', lineHeight: 1.7, marginBottom: 4 }}>{item}</li>)}
             </ul>
           </div>
 
           <p style={p}>
-            Amazon Flex has become one of America's most popular side gigs, with over 500,000 active drivers delivering packages across all 50 states. But unlike a regular Amazon warehouse job, Flex drivers are classified as <strong>independent contractors</strong> — which means Amazon deducts nothing from your earnings for taxes.
+            This guide focuses on the self-employed tax model for Amazon Flex delivery income. The worked example assumes active Schedule C income; your tax treatment and result can differ with other income, expenses, withholding, filing status, and deduction eligibility.
           </p>
           <p style={p}>
             That's great news for your paycheck every week. It's a shock every April if you haven't been setting money aside.
@@ -82,15 +89,15 @@ export default function AmazonFlexTaxesBlogPost() {
                     <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-              <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$7,933</strong> in total federal tax</li>
-              <li>2026 IRS mileage rate is <strong>72.5¢–76¢/mile</strong> — driving 20,000 miles = <strong>$14,500–$15,200</strong> deduction</li>
-              <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
-              <li>Amazon sends <strong>1099-NEC</strong> if you earn $2,000+ in 2026</li>
-              <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
+              <li>$50,000 net-profit input, Single, California, and no mileage entered: <strong>{money(example50.total)}</strong> total planning estimate including a simplified state component</li>
+              <li>Mileage rates: <strong>{TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun</strong> and <strong>{TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec</strong>; the deduction depends on when business miles were driven</li>
+              <li>Tip-related deductions, if applicable, are not included in this worked example</li>
+              <li>The general 2026 1099-NEC threshold is <strong>${TAX_RULES_2026.form1099Threshold.year2026.toLocaleString('en-US')}</strong>; all taxable income must still be reported</li>
+              <li>Estimated payments depend on your full return, withholding, and safe-harbor status; there is no universal set-aside percentage</li>
             </ul>
           </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
-            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+            {'Estimated tax payments may be required under federal safe-harbor rules. Review IRS Form 1040-ES and consider withholding, prior-year tax, and current-year income.'}
             <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
@@ -109,31 +116,26 @@ export default function AmazonFlexTaxesBlogPost() {
           </div>
 <h2 id="1099-forms" style={h2}>Does Amazon Flex Send a 1099?</h2>
           <p style={p}>
-            Yes. Amazon sends a <strong>1099-NEC</strong> (Non-Employee Compensation) to every Flex driver who earns $2,000 or more in a calendar year. Your 1099-NEC will arrive by January 31, 2027 for the 2026 tax year.
-          </p>
-          <p style={p}>
-            Important: Even if you earn less than the 1099 reporting threshold and don't receive a 1099, the IRS still requires you to report all self-employment income. Amazon reports all payments to the IRS regardless of threshold.
+            For 2026 payments, the general 1099-NEC reporting threshold is <strong>{money(TAX_RULES_2026.form1099Threshold.year2026)}</strong>. Whether a payer sends a 1099-NEC or another form depends on payment type and reporting rules. You must still report all taxable income even if no information return arrives.
           </p>
 
           <h2 id="how-much-tax" style={h2}>How Much Tax Do Amazon Flex Drivers Owe?</h2>
           <p style={p}>
             Your total tax burden as a Flex driver has two main components:
           </p>
-          <h3 style={h3}>1. Self-Employment (SE) Tax — 15.3%</h3>
+          <h3 style={h3}>1. Self-Employment Tax</h3>
           <p style={p}>
-            This covers Social Security (12.4%) and Medicare (2.9%). The SE tax is calculated on <strong>92.35% of your net profit</strong> (after deductions). You can then deduct 50% of the SE tax from your gross income.
+            Self-employment tax is calculated from net self-employment earnings under Schedule SE rules. This model applies the shared 2026 rules and wage-base limit, but does not combine W-2 or spouse wages when evaluating Additional Medicare effects; results can differ when those wages apply.
           </p>
           <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16, marginBottom: 16 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}> Example: $50,000 Amazon Flex Income</div>
             {[
-              ['Net income (after mileage deduction)', '$50,000'],
-              ['SE tax base (× 92.35%)', '$46,175'],
-              ['SE tax (× 15.3%)', '$7,065'],
-              ['Deduct 50% of SE tax from income', '−$3,532'],
-              ['Taxable income (approx.)', '$46,468'],
-              ['Federal income tax (22% bracket, single)', '$10,223'],
-              ['State tax (CA 9.3% example)', '$4,321'],
-              ['TOTAL estimated taxes', '$21,609'],
+              ['Net-profit input (no mileage entered)', '$50,000'],
+              ['Self-employment tax', money(example50.se)],
+              ['Federal income tax (Single)', money(example50.federal)],
+              ['California state estimate (simplified input)', money(example50.state)],
+              ['Total modeled taxes', money(example50.total)],
+              ['Estimated amount per quarter', money(example50.quarterly)],
             ].map(([l, v]) => (
               <div key={l} style={{ display: 'flex', justifyContent: 'space-between', padding: '5px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', fontSize: 13 }}>
                 <span style={{ color: 'rgba(255,255,255,0.85)' }}>{l}</span>
@@ -144,18 +146,17 @@ export default function AmazonFlexTaxesBlogPost() {
 
           <h3 style={h3}>2. Federal + State Income Tax</h3>
           <p style={p}>
-            After deducting half of your SE tax, your remaining profit is taxed at your regular federal income tax bracket rate, plus your state's rate. Use our <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> to get your exact estimate.
+            After the modeled half-SE-tax adjustment and standard deduction, federal tax uses progressive brackets. The state component shown by our calculator is a simplified input, not a full state tax schedule. Use the <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> for a planning estimate based on mileage and state.
           </p>
 
           <h2 id="mileage-deduction" style={h2}>The Mileage Deduction: Your Biggest Tax Break</h2>
           <p style={p}>
-            The IRS standard mileage rate for 2026 is <strong>72.5 cents per mile (January–June; 76 cents from July 1)</strong>. For Amazon Flex drivers — who typically drive 20,000–40,000 business miles per year — this is the single largest deduction available.
+            The 2026 IRS standard mileage rates are <strong>{TAX_RULES_2026.mileage.h1 * 100} cents per mile for January–June and {TAX_RULES_2026.mileage.h2 * 100} cents for July–December</strong>. The deduction depends on qualifying business miles and when they were driven; keep a contemporaneous mileage log.
           </p>
           <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: '16px 20px', marginBottom: 16 }}>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 8 }}> Mileage Savings Example</div>
             <div style={{ fontSize: 14, color: 'rgba(255,255,255,.8)', lineHeight: 1.8 }}>
-              25,000 miles × 72.5¢ (Jan–Jun rate) = <strong style={{ color: '#e8b84b', fontSize: 18 }}>$18,125 deduction</strong><br />
-              At 30% effective rate → saves you approximately <strong style={{ color: '#e8b84b' }}>$5,438 in taxes</strong>
+              For 25,000 qualifying miles, the deduction is about <strong style={{ color: '#e8b84b', fontSize: 18 }}>{money(mileageH1Deduction)}</strong> if all miles are in January–June, or <strong style={{ color: '#e8b84b', fontSize: 18 }}>{money(mileageH2Deduction)}</strong> if all are in July–December. Tax savings depend on your full return.
             </div>
           </div>
           <p style={p}>
@@ -168,8 +169,8 @@ export default function AmazonFlexTaxesBlogPost() {
           <h2 id="top-deductions" style={h2}>Top Tax Deductions for Amazon Flex Drivers 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10, marginBottom: 20 }}>
             {[
-              { icon: '', title: 'Mileage (72.5¢–76¢/mile)', desc: 'Biggest deduction. Track every delivery mile.' },
-              { icon: '', title: 'Phone & Data', desc: '50–80% of bill used for Flex app and navigation.' },
+              { icon: '', title: `Mileage (${TAX_RULES_2026.mileage.h1 * 100}¢–${TAX_RULES_2026.mileage.h2 * 100}¢/mile)`, desc: 'Track qualifying business miles and use the rate for the date driven.' },
+              { icon: '', title: 'Phone & Data', desc: 'Document and deduct only the substantiated business-use portion.' },
               { icon: '', title: 'Hand Truck / Dolly', desc: 'Equipment for large Amazon packages — fully deductible.' },
               { icon: '', title: 'Flashlight & Safety Gear', desc: 'Required for early morning or evening deliveries.' },
               { icon: '', title: 'Parking & Tolls', desc: 'All parking fees and tolls during deliveries.' },
@@ -187,7 +188,7 @@ export default function AmazonFlexTaxesBlogPost() {
 
           <h2 id="quarterly-payments" style={h2}>Quarterly Tax Payments for Amazon Flex Drivers</h2>
           <p style={p}>
-            If you expect to owe $1,000 or more in taxes, the IRS requires you to pay estimated taxes four times per year. Most Flex drivers earning $20,000+ fall into this category.
+            Federal estimated payments may be required based on expected tax after withholding, credits, and prior-year safe-harbor rules. Income alone does not determine the filing requirement; review IRS Form 1040-ES for your situation.
           </p>
           <div style={{ background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, overflow: 'hidden', marginBottom: 16 }}>
             <div style={{ background: 'rgba(255,255,255,0.07)', padding: '10px 16px', fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,.5)', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>2026 Quarterly Deadlines</div>
@@ -209,27 +210,18 @@ export default function AmazonFlexTaxesBlogPost() {
             ))}
           </div>
           <p style={p}>
-            Pay online at <a href="https://irs.gov/payments" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS.gov/payments</a> using Direct Pay (free) or EFTPS. Missing a quarterly payment triggers a penalty of roughly {UNDERPAYMENT_PENALTY_RATE_2026}% annually on the unpaid amount.
+            Pay online at <a href="https://irs.gov/payments" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS.gov/payments</a> using Direct Pay or EFTPS. The IRS underpayment interest rate is {TAX_RULES_2026.underpaymentRateQ4_2026 * 100}% annualized for Q4 2026; this is not a flat penalty on every missed payment, and the actual charge depends on timing and amount. See the <a href={TAX_RULES_2026.sources.underpaymentRate} target="_blank" rel="nofollow noopener noreferrer" style={{ color: '#B22234', fontWeight: 600 }}>IRS quarterly rate notice</a>.
           </p>
 
           <h2 id="set-aside" style={h2}>How Much Should Amazon Flex Drivers Set Aside?</h2>
           <p style={p}>
-            A safe rule of thumb: <strong>set aside 25–30% of every Amazon Flex payment</strong> you receive. The exact percentage depends on your state, filing status, and other income sources. Drivers in no-income-tax states like Texas or Florida can often get away with 22–25%.
+            There is no single set-aside percentage that fits every driver. The estimate above does not include W-2 wages, spouse income, withholding, credits, or all deductions; compare your complete tax projection with prior-year safe-harbor amounts.
           </p>
           <p style={p}>
             Use our free <Link href="/amazon-flex" style={{ color: '#B22234', fontWeight: 600 }}>Amazon Flex Tax Calculator</Link> to get your personalized estimate.
           </p>
 
           
-
-          {/* AUTHOR BOX */}
-          <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-            <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
-            <div>
-              <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
-              <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
-            </div>
-          </div>
 
           <div style={{ background: 'rgba(232,184,75,0.1)', border: '1px solid #fde68a', borderRadius: 8, padding: '16px 20px', marginTop: 32 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#fcd34d', marginBottom: 6 }}> Disclaimer</div>
@@ -255,12 +247,12 @@ export default function AmazonFlexTaxesBlogPost() {
           </div>
 
           <div style={{ background: '#07111F', border: '2px dashed #d8dce6', borderRadius: 8, overflow: 'hidden', marginBottom: 16 }}>
-            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 13, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored</div>
+            <div style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: 13, fontWeight: 800, color: '#7a9abf', textTransform: 'uppercase' as const, letterSpacing: '1px' }}>Sponsored W-2 Tool</div>
             <div style={{ padding: 16 }}>
-              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}> QuickBooks Self-Employed</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginBottom: 12, lineHeight: 1.6 }}>Track mileage and expenses automatically. Built for Amazon Flex drivers.</div>
-              <a href="https://privatepaycheck.com" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>✓ Try Free 30 Days</div>
+              <div style={{ fontSize: 14, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 6 }}>PrivatePaycheck</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.85)', marginBottom: 12, lineHeight: 1.6 }}>A separate W-2 paycheck calculator; it does not track Amazon Flex mileage or expenses.</div>
+              <a href="https://privatepaycheck.com" target="_blank" rel="sponsored nofollow noopener noreferrer" style={{ textDecoration: 'none' }}>
+                <div style={{ background: '#0d7a40', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 12, fontWeight: 700, textAlign: 'center' as const, cursor: 'pointer' }}>Open W-2 Paycheck Calculator</div>
               </a>
             </div>
           </div>
