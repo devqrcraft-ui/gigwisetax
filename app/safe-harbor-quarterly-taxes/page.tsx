@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/safe-harbor-quarterly-taxes' },
 };
 
-const faqSchema = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the safe harbor rule for quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"The IRS safe harbor rule protects you from underpayment penalties if you pay either: (1) 100% of your prior year's total tax liability, or (2) 90% of your current year's tax liability — whichever is smaller. High earners (AGI over $150,000) must pay 110% of prior year tax."}},{"@type":"Question","name":"What is the IRS underpayment penalty rate in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS underpayment penalty rate is the federal short-term rate plus 3 percentage points, currently approximately 7% annually. The penalty is calculated on each underpaid quarter separately, not on the full year amount."}},{"@type":"Question","name":"What happens if I don't pay quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"If you owe $1,000 or more in federal taxes for the year and didn't pay enough quarterly, the IRS charges an underpayment penalty. The penalty is calculated per quarter — missing Q1 accrues a longer penalty than missing Q4. You still owe the full tax when you file, plus the penalty amount."}},{"@type":"Question","name":"Can I avoid the quarterly tax penalty if I'm a first-year gig worker?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you had zero tax liability in the prior year (your total tax was $0), you are exempt from the underpayment penalty for the current year, even if you owe a large amount when you file. This typically applies to your first year of self-employment."}},{"@type":"Question","name":"What is the 2026 quarterly tax due date schedule?","acceptedAnswer":{"@type":"Answer","text":"2026 quarterly estimated tax deadlines: Q1 (Jan–Mar income) due April 15, 2026. Q2 (Apr–May income) due June 15, 2026. Q3 (Jun–Aug income) due September 15, 2026. Q4 (Sep–Dec income) due January 15, 2027."}},{"@type":"Question","name":"Should I use the annualized income method or regular quarterly payments?","acceptedAnswer":{"@type":"Answer","text":"Most gig workers use equal quarterly payments based on their estimated annual income. The annualized income installment method (IRS Form 2210) is better if your income varies significantly by quarter — for example, if you earn 60% of income in Q4. It calculates each quarter's payment based on actual income earned that quarter, potentially reducing or eliminating penalties."}}]};
 
 const CSS = `
   body{background:#0d1117;}
@@ -80,7 +79,6 @@ export default function SafeHarborPage() {
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: CSS}} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify(faqSchema)}} />
 
       <div className="sh-wrap">
         <div className="sh-badge">IRS Safe Harbor · Penalties · 2026</div>
