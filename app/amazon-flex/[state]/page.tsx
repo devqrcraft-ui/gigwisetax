@@ -68,12 +68,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
-    title: s.rate === 0
-      ? `Amazon Flex ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Amazon Flex ${s.name} Taxes 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Amazon Flex ${s.name} 2026: $40K net = ~$${estimateTax(40000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(40000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(40000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+    title: `Amazon Flex Tax Calculator for ${s.name} 2026 | Free Estimate`,
+    description: `Estimate Amazon Flex self-employment and federal income taxes for ${s.name}. Includes a simplified state-rate input, quarterly planning, and mileage assumptions; not a full state tax calculation.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }

@@ -62,7 +62,6 @@ const nextConfig: NextConfig = {
     {
       source: "/(.*)",
       headers: [
-        { key: "Cache-Control", value: "public, s-maxage=31536000, stale-while-revalidate=86400" },
         { key: "X-Content-Type-Options", value: "nosniff" },
         { key: "X-Frame-Options", value: "DENY" },
       ],

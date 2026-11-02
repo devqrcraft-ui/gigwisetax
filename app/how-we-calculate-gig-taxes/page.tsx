@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'How We Calculate Gig Worker Taxes 2026 — Methodology | GigWiseTax',
-  description: 'Transparent methodology for GigWiseTax calculations. SE tax formula (IRS Schedule SE), 2026 federal brackets, state tax sources, and quarterly payment math explained.',
+  description: 'See how GigWiseTax estimates Schedule C and rental-income taxes, 2026 federal brackets, simplified state tax, and quarterly payments—with assumptions and limitations.',
   alternates: { canonical: 'https://www.gigwisetax.com/how-we-calculate-gig-taxes' },
 };
 
@@ -58,10 +58,13 @@ export default function HowWeCalculatePage() {
         <div className="section">
           <h2>Step 1 — Self-Employment Tax (IRS Schedule SE)</h2>
           <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
-            Self-employment tax covers Social Security (12.4%) and Medicare (2.9%) — the same taxes
-            W-2 employees split with their employer. As a gig worker, you pay both halves: 15.3% total.
+            In Schedule C scenarios, self-employment tax covers Social Security (12.4%) and Medicare (2.9%) — the same taxes
+            W-2 employees split with their employer. As a self-employed worker, you pay both halves: 15.3% total.
             The IRS allows a small adjustment before applying the rate.
           </p>
+          <div className="formula-note">
+            The Airbnb calculator also offers a Schedule E rental-income scenario. That scenario does not model self-employment tax or the half-SE-tax deduction; it assumes the entered amount is net rental income and does not determine which tax treatment applies.
+          </div>
           <div className="formula-box">
             <div className="formula-title">IRS Schedule SE Formula</div>
             <div className="formula-line">1. SE Base = Net Profit × <span>0.9235</span></div>
@@ -85,8 +88,9 @@ export default function HowWeCalculatePage() {
         <div className="section">
           <h2>Step 2 — Federal Income Tax (2026 Brackets)</h2>
           <p style={{fontSize:13,color: '#7a9abf',lineHeight:1.7,marginBottom:16}}>
-            Federal income tax is calculated on adjusted gross income (AGI), which is net profit minus
-            the SE deduction (half of SE tax). We apply the standard deduction before estimating the bracket.
+            In Schedule C scenarios, federal income tax starts from net profit minus the SE deduction
+            (half of SE tax). In the Schedule E scenario, the model uses net rental income without an SE deduction.
+            We apply the selected filing status's standard deduction before estimating federal brackets.
           </p>
           <table className="bracket-table">
             <thead>

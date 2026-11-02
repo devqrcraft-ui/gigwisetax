@@ -19,13 +19,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state: stateSlug } = await params
   const s = ALL_STATES.find(x => x.slug === stateSlug)
   if (!s) return {}
-  const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
-  const example50 = estimateTax(50000, s.rate)
   return {
-    title: s.rate === 0
-      ? `Turo ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Turo ${s.name} Taxes 2026 — $50K Earner Owes $${estimateTax(50000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Turo ${s.name} 2026 planning example: $50K net profit = ~$${example50.se} SE + $${example50.federal} federal + $${example50.state} simplified state estimate; ~$${example50.quarterly} quarterly. Not a tax return.`,
+    title: `Turo Tax Estimate for ${s.name} 2026 | Schedule C Scenario`,
+    description: `Review a simplified active-business Turo tax estimate for ${s.name}. The model assumes Schedule C and does not determine tax treatment or calculate depreciation and a full state return.`,
     alternates: { canonical: `https://www.gigwisetax.com/turo/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -65,25 +61,25 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </div>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '4px 16px 0' }}>
           <div style={{ fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16, display:'flex', gap:12, flexWrap:'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>2026 tax-year planning estimate</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~5 min read · 1,200 words'}</span>
           </div>
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Turo Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'This simplified $50,000 net-profit example for ' + state.name + ' estimates $' + example50.se.toLocaleString('en-US') + ' SE tax + $' + example50.federal.toLocaleString('en-US') + ' federal + $' + example50.state.toLocaleString('en-US') + ' state = $' + example50.total.toLocaleString('en-US') + ' total. The state component is a simplified rate input, not a full state tax calculation. Estimated quarterly amount: $' + example50.quarterly.toLocaleString('en-US') + '. Vehicle depreciation and passive Schedule E treatment are not modeled.'}
+              {'Assuming active Schedule C income, single filing status, and no vehicle expenses entered, this $50,000 example for ' + state.name + ' estimates $' + example50.se.toLocaleString('en-US') + ' SE tax + $' + example50.federal.toLocaleString('en-US') + ' federal + $' + example50.state.toLocaleString('en-US') + ' simplified state estimate = $' + example50.total.toLocaleString('en-US') + ' total. This is not a full state calculation; depreciation and other treatment are not modeled.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
-              <li>Turo hosts are independent contractors — Turo withholds zero taxes</li>
+              <li>Tax treatment depends on the rental activity; this estimator assumes an active Schedule C scenario</li>
               <li>{'On $50,000 net profit: $' + example50.se.toLocaleString('en-US') + ' SE + $' + example50.federal.toLocaleString('en-US') + ' federal + $' + example50.state.toLocaleString('en-US') + ' simplified state estimate = $' + example50.total.toLocaleString('en-US') + ' total in ' + state.name}</li>
               <li>{'Estimated quarterly amount: $' + example50.quarterly.toLocaleString('en-US') + '. Actual payments depend on your full tax situation.'}</li>
-              <li>Vehicle depreciation is the largest deduction — up to $12,400/year</li>
-              <li>Deduct Turo service fees (25-35% of revenue), insurance, cleaning, repairs</li>
-              <li>File Schedule C — report all Turo income on your federal tax return</li>
+              <li>Vehicle expenses and depreciation depend on business use, records, and tax rules</li>
+              <li>Eligible platform fees, insurance, cleaning, and repair costs may be deductible when properly allocated</li>
+              <li>Report taxable income using the treatment that applies to your facts; this calculator does not classify it</li>
             </ul>
           </section>
         </div>
@@ -96,11 +92,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:14, marginBottom:20 }}>
               <h2 style={{ fontSize: 20, fontWeight: 800, color:'rgba(255,255,255,0.9)', marginBottom: 12 }}>{'How Much Tax Do Turo Hosts Pay in ' + state.name + '?'}</h2>
               <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, marginBottom:16 }}>
-                {state.name + (noTax ? ' has no state income tax. Turo hosts in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + rateStr + ' state income tax rate. Turo hosts in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')}
+                {state.name + (noTax ? ' has no state individual income-tax rate in this model.' : ' uses a simplified ' + rateStr + ' state-rate input, not a full state tax calculation.') + ' Whether Turo income is subject to self-employment tax depends on how the activity is classified. Estimated-payment requirements depend on your full tax situation.'}
               </p>
               <blockquote style={{ borderLeft:'3px solid rgba(232,184,75,0.5)', margin:'16px 0', padding:'12px 20px', background:'rgba(232,184,75,0.04)', borderRadius:'0 6px 6px 0' }}>
                 <p style={{ margin:0, fontSize:13, fontStyle:'italic', color:'rgba(255,255,255,0.7)', lineHeight:1.7 }}>
-                  {'Car-sharing income is generally self-employment income subject to Schedule C reporting and self-employment tax.'} — <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{ color:'#e8b84b' }}>IRS Self-Employed Tax Center</a>
+                  This calculator assumes active Schedule C income for its estimate. It does not determine whether that treatment applies or model passive rental treatment, depreciation, or local taxes.
                 </p>
               </blockquote>
               <div style={{ overflowX:'auto', marginBottom:24, borderRadius:6, border:'1px solid rgba(255,255,255,0.08)' }}>
@@ -141,9 +137,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={{ background:'rgba(255,255,255,0.03)', border:'1px solid rgba(255,255,255,0.08)', borderRadius:10, padding:14, marginBottom:20 }}>
               <h2 style={{ fontSize: 18, fontWeight: 800, color:'rgba(255,255,255,0.9)', marginBottom: 12 }}>{'FAQ — Turo Taxes in ' + state.name + ' 2026'}</h2>
               {[
-                { q: 'Do Turo hosts pay taxes in ' + state.name + '?', a: noTax ? 'Yes. In ' + state.name + ', Turo hosts pay 15.3% self-employment tax plus federal income tax. There is no ' + state.name + ' state income tax.' : 'Yes. In ' + state.name + ', Turo hosts pay 15.3% SE tax, federal income tax (10-37%), plus ' + rateStr + ' ' + state.name + ' state income tax.' },
-                { q: 'Do I need quarterly payments in ' + state.name + '?', a: noTax ? 'In ' + state.name + ', you only need federal quarterly estimated payments (Form 1040-ES) if you expect to owe $1,000 or more.' : 'Yes. In ' + state.name + ', make both federal (Form 1040-ES) and state quarterly estimated payments if you expect to owe $1,000 or more.' },
-                { q: 'Does Turo take out taxes in ' + state.name + '?', a: 'No. Turo does not withhold taxes. You pay all SE tax, federal income tax' + (noTax ? '' : ', and ' + state.name + ' state income tax') + ' yourself through quarterly estimated payments.' },
+                { q: 'Do Turo hosts pay taxes in ' + state.name + '?', a: 'Turo income may be taxable, but treatment depends on the activity and your full facts. This calculator assumes an active Schedule C scenario and uses ' + (noTax ? 'no state individual income-tax rate' : 'a simplified ' + rateStr + ' state-rate input') + '; it does not calculate a full state return.' },
+                { q: 'Do I need quarterly payments in ' + state.name + '?', a: 'Estimated-payment requirements depend on your full tax situation, withholding, and applicable federal and state rules. Review current agency guidance before paying.' },
+                { q: 'Does Turo take out taxes in ' + state.name + '?', a: 'Do not assume platform payments satisfy your tax obligations. Review your payment statements and determine any tax due based on your facts; this estimate does not calculate withholding.' },
               ].map((item, i) => (
                 <div key={i} style={{ borderBottom:'1px solid rgba(255,255,255,0.08)', paddingBottom:10, marginBottom:8 }}>
                   <div style={{ fontWeight:700, color:'rgba(255,255,255,0.9)', fontSize:15, marginBottom:6 }}>{item.q}</div>

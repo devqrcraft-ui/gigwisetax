@@ -14,12 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
   return {
-    title: s.rate === 0
-      ? `Shipt ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Shipt ${s.name} Taxes 2026 — $30K Earner Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: 'Shipt ' + s.name + ' 2026: $30K net = ~$4,239 SE tax + federal. ' + stateStr + '. Mileage 72.5¢–76¢/mile. Free calculator, no signup.',
+    title: `Shipt Tax Calculator for ${s.name} 2026 | Free Estimate`,
+    description: `Estimate Shipt self-employment and federal income taxes for ${s.name}. Includes a simplified state-rate input and mileage planning; not a full state tax calculation.`,
     keywords: 'Shipt taxes ' + s.name + ', shipt 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/shipt/' + s.slug },
   }
@@ -34,8 +31,8 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
   const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
   const stateNote = state.name + (noStateTax
-    ? ' has no state income tax. Shipt shoppers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.'
-    : ' has a ' + stateRateStr + ' state income tax rate. Shipt shoppers in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')
+    ? ' has no state individual income-tax rate in this model.'
+    : ' uses a simplified ' + stateRateStr + ' state-rate input, not a full state tax calculation.') + ' Tax treatment and estimated-payment requirements depend on your full situation.'
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
@@ -57,22 +54,20 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
           Shipt Tax Calculator {state.name} 2026
         </h1>
         <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 16 }}>
-          Last updated: May 2026 · By the GigWiseTax Team
+          2026 tax-year planning estimate · By the GigWiseTax Team
         </div>
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '14px 18px', marginBottom: 20 }}>
           <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.7 }}>
-            Shipt shoppers in <strong>{state.name}</strong> pay <strong>15.3% self-employment tax</strong> on net earnings plus federal income tax.
-            {noStateTax ? ' ' + state.name + ' has no state income tax.' : ' ' + state.name + ' adds ' + stateRateStr + ' state income tax.'}
-            {' '}On $30K net: ~$4,239 SE tax. Mileage at 72.5¢–76¢/mile saves $2,175+ per year.
+            This federal-only $30,000 net-profit example assumes self-employment income and a single filer: approximately $4,239 SE tax plus $1,178 federal tax. It does not include state tax or a separate mileage deduction; {stateNote}
           </p>
         </div>
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 28 }}>
           <div style={{ fontWeight: 800, color: '#e8b84b', marginBottom: 10, fontSize: 13 }}>⚡ KEY TAKEAWAYS</div>
           <ul style={{ margin: 0, padding: '0 0 0 18px', fontSize: 14, lineHeight: 1.9, color: 'rgba(255,255,255,0.85)' }}>
-            <li>Shipt shoppers owe 15.3% SE tax on all net earnings</li>
-            <li>$30K net income = ~$4,239 SE tax + federal income tax</li>
-            <li>Mileage deduction: 72.5¢–76¢/mile — 3,000 miles = $2,175 saved</li>
-            <li>{noStateTax ? state.name + ' has no state income tax' : state.name + ' state tax: ' + stateRateStr + ' — make quarterly payments'}</li>
+            <li>Self-employment tax may apply to net earnings, depending on your tax treatment</li>
+            <li>The $30K example is federal-only and does not subtract a separate mileage deduction</li>
+            <li>Eligible mileage is a business deduction, not an equal amount of tax savings</li>
+            <li>{stateNote}</li>
             <li>Quarterly deadlines 2026: Apr 15, Jun 15, Sep 15, Jan 15 2027</li>
           </ul>
         </div>
@@ -105,10 +100,10 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
                 </div>
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>FAQ — Shipt Taxes in {state.name} 2026</h3>
                 {[
-                  { q: 'Do Shipt shoppers pay taxes in ' + state.name + '?', a: noStateTax ? 'Yes. In ' + state.name + ', Shipt shoppers pay 15.3% SE tax plus federal income tax. No ' + state.name + ' state income tax.' : 'Yes. In ' + state.name + ', Shipt shoppers pay 15.3% SE tax, federal income tax (10-37%), plus ' + stateRateStr + ' ' + state.name + ' state income tax.' },
-                  { q: 'Do I need quarterly payments in ' + state.name + '?', a: noStateTax ? 'In ' + state.name + ', you only need federal quarterly estimated payments (Form 1040-ES) if you expect to owe $1,000+. No state payments required.' : 'Yes. In ' + state.name + ', make both federal (Form 1040-ES) and state quarterly estimated payments if you expect to owe $1,000+.' },
-                  { q: 'Does Shipt take out taxes in ' + state.name + '?', a: 'No. Shipt does not withhold taxes. As an independent contractor, you pay all SE tax, federal income tax' + (noStateTax ? '' : ', and ' + state.name + ' state income tax') + ' yourself through quarterly payments.' },
-                  { q: 'What mileage can Shipt shoppers deduct in ' + state.name + '?', a: 'Shipt shoppers deduct 72.5¢ per mile driven for deliveries in 2026 (IRS standard mileage rate). Keep a mileage log with dates, destinations, and business purpose.' },
+                  { q: 'Do Shipt shoppers pay taxes in ' + state.name + '?', a: 'Tax obligations depend on your work classification, income, deductions, and filing situation. ' + stateNote },
+                  { q: 'Do I need quarterly payments in ' + state.name + '?', a: 'Estimated federal or state payments may be required based on your full tax picture. Safe-harbor rules, withholding, credits, and state-specific rules can affect whether and how much you need to pay.' },
+                  { q: 'Does Shipt take out taxes in ' + state.name + '?', a: 'Withholding and tax forms depend on your work and payment arrangement. Review your payment statements and do not assume platform payments satisfy your tax obligations.' },
+                  { q: 'What mileage can Shipt shoppers deduct in ' + state.name + '?', a: 'Eligible business mileage may qualify for a deduction using the applicable method and current-year rate. Keep a contemporaneous mileage log; the deduction reduces taxable profit and is not an equal amount of tax savings.' },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>
                     <div style={{ fontWeight: 700, color: 'rgba(255,255,255,0.9)', fontSize: 16, marginBottom: 6 }}>Q: {item.q}</div>

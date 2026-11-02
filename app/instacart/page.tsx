@@ -20,13 +20,13 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'instacart')
   if (!p) return {}
   return {
-    title: `Instacart Tax Calculator 2026 — Free Estimate of What You Owe`,
-    description: `Estimate 2026 Instacart taxes from filing status, state, and mileage. Federal-only $35K Single example: ${money(baseline35.total)}; state results use a simplified rate input, not a full state tax schedule.`,
+    title: 'Instacart Tax Calculator 2026 | Free Shopper Estimate',
+    description: 'Estimate 2026 Instacart taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
     keywords: `instacart tax calculator, instacart shopper taxes 2026, instacart self employment tax, instacart quarterly taxes, how much tax do instacart shoppers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `${p.name} Tax Calculator 2026 — Free, All 50 States + DC`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      title: 'Instacart Tax Calculator 2026 | Free Shopper Estimate',
+      description: 'Estimate 2026 Instacart taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }

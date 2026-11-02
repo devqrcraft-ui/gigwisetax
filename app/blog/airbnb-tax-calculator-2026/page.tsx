@@ -1,18 +1,17 @@
 import AuthorBox from '@/app/components/AuthorBox'
 import TaxFreshness from '@/app/components/TaxFreshness'
+import { estimateTax } from '@/lib/tax-rules'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Airbnb Host Taxes 2026: $50K Income = $10,461 Tax Owed',
-  description: 'Airbnb hosts on $50K owe $10,461 in 2026 taxes. Free calculator — depreciation, cleaning, utilities, mortgage interest. All 50 states, no signup.',
+  title: 'Airbnb Tax Calculator 2026 | Schedule E vs Schedule C',
+  description: 'Compare simplified Airbnb rental-income and Schedule C scenarios for 2026. Learn the assumptions behind federal and state estimates, expenses, and reporting.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/airbnb-tax-calculator-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Airbnb host pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"An Airbnb host earning $50,000 net profit pays approximately $7,065 in self-employment tax (15.3%) plus $4,500 in federal income tax, totaling $10,461. Quarterly estimated payment is $2,615. Use our free Airbnb tax calculator for your exact estimate."}},{"@type":"Question","name":"What can Airbnb hosts deduct on taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Airbnb hosts can deduct mortgage interest, property taxes, depreciation (27.5 years for residential), cleaning and maintenance, utilities (% of property), supplies, platform fees, and home office if applicable. Depreciation is typically the largest deduction for property owners."}},{"@type":"Question","name":"Does Airbnb send a 1099 form to hosts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Airbnb sends a 1099-K when gross payouts exceed $20,000 across more than 200 transactions. The form is available in your Airbnb account under Transaction History by January 31 each year. Report all income even without a 1099."}},{"@type":"Question","name":"What is the 14-day rule for Airbnb hosts?","acceptedAnswer":{"@type":"Answer","text":"If you rent your home for 14 days or fewer per year, rental income is tax-free and you do not need to report it. However, you also cannot deduct rental expenses. Hosts renting more than 14 days must report all income."}},{"@type":"Question","name":"How do Airbnb hosts pay quarterly estimated taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $50,000 net income, quarterly estimated payments are approximately $2,615. IRS due dates are April 15, June 15, September 15, and January 15. Pay via IRS Direct Pay or EFTPS."}},{"@type":"Question","name":"Can Airbnb hosts deduct depreciation in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Residential rental property depreciates over 27.5 years. On a $300,000 property (land excluded), the annual depreciation deduction is approximately $10,909. For short-term rentals averaging 7 days or less, you may qualify for faster depreciation schedules."}},{"@type":"Question","name":"What is the QBI deduction for Airbnb hosts in 2026?","acceptedAnswer":{"@type":"Answer","text":"The Qualified Business Income (QBI) deduction allows eligible Airbnb hosts to deduct up to 20% of net rental income. Under OBBBA 2026, QBI is now permanent. Hosts who provide substantial services (cleaning, meals) are more likely to qualify."}}]}'
-
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Calculator 2026","item":"https://www.gigwisetax.com/blog/airbnb-tax-calculator-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026: $50K Income = $10,461 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-05-31","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/airbnb-tax-calculator-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026: Schedule E vs Schedule C","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/airbnb-tax-calculator-2026"}}'
 
 export default function AirbnbTaxCalculator2026() {
   return (
@@ -36,10 +35,10 @@ export default function AirbnbTaxCalculator2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            Airbnb Host Taxes 2026: $50K Income = $10,461 Tax Owed
+            Airbnb Host Taxes 2026: Schedule E vs Schedule C
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>2026 tax-year guide</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~9 min read · 2,200 words'}</span>
           </div>
@@ -49,7 +48,7 @@ export default function AirbnbTaxCalculator2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Airbnb hosts pay self-employment tax plus federal income tax as independent contractors. On <strong style={{ color: '#e8edf8' }}>$50,000 net income</strong> in 2026: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color: '#e8edf8' }}>$10,461 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$2,615</strong>. Depreciation on your property is the single largest deduction — a $300,000 home generates ~$10,909/year in write-offs.
+              Rental income is commonly reported on Schedule E; services and other facts can affect whether Schedule C and self-employment tax apply. In a simplified Schedule C example, $50,000 of net profit produces about $7,065 SE tax and $3,396 federal income tax, or <strong style={{ color: '#e8edf8' }}>$10,461 before state tax</strong>. It assumes single filing status, no other income, and no credits; it is not a classification decision.
             </p>
           </div>
         </section>
@@ -60,12 +59,12 @@ export default function AirbnbTaxCalculator2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$50K net income = $10,461 total tax owed in 2026 ($2,615/quarter)',
+                'A $50K Schedule C net-profit example = about $10,461 federal tax before state tax',
                 'SE tax rate: 15.3% on net profit — 12.4% Social Security + 2.9% Medicare',
                 'Depreciation: $300K property = $10,909/year deduction over 27.5 years',
-                'Airbnb sends 1099-K when gross payouts exceed $20,000 across more than 200 transactions',
-                '14-day rule: rent 14 days or fewer = tax-free income, no deductions',
-                'QBI deduction: up to 20% of net rental income — permanent under OBBBA 2026',
+                'Tax-form reporting thresholds do not determine whether rental income is taxable',
+                'The 14-day exception has dwelling-use requirements; verify that your property qualifies',
+                'QBI eligibility depends on the activity and statutory limits; not all rental income qualifies',
               ].map((t, i) => (
                 <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
                   <span style={{ position: 'absolute' as const, left: 0, top: 9, width: 5, height: 5, borderRadius: '50%', background: '#e8b84b', display: 'block' }} />
@@ -102,7 +101,10 @@ export default function AirbnbTaxCalculator2026() {
             How Much Tax Do Airbnb Hosts Owe in 2026?
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Airbnb hosts who earn more than $400 in net profit must pay self-employment tax and federal income tax. Unlike W-2 employees, Airbnb does not withhold any taxes — you are responsible for calculating and paying quarterly estimated payments.
+            Schedule C illustration for a single filer, no state tax, no other income, and no credits; all amounts are net profit after expenses. The Schedule E scenario is not represented in this table.
+          </p>
+          <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            Airbnb rental income may be subject to federal income tax, but it is not automatically self-employment income. Reporting treatment and estimated-payment requirements depend on your activity and full tax situation.
           </p>
           <div style={{ overflowX: 'auto', marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
@@ -117,12 +119,17 @@ export default function AirbnbTaxCalculator2026() {
               </thead>
               <tbody>
                 {[
-                  ['$25,000', '$3,443', '$1,500', '$4,943', '$1,236'],
-                  ['$35,000', '$4,819', '$2,800', '$7,619', '$1,905'],
-                  ['$50,000', '$7,065', '$3,396', '$10,461', '$2,615'],
-                  ['$75,000', '$10,597', '$8,500', '$19,097', '$4,774'],
-                  ['$100,000', '$14,130', '$14,000', '$28,130', '$7,033'],
-                ].map(([inc, se, fed, tot, qtr], i, arr) => (
+                  [25000, 35000, 50000, 75000, 100000].map(income => {
+                    const estimate = estimateTax(income, 0, 'single')
+                    return [
+                      '$' + income.toLocaleString('en-US'),
+                      '$' + estimate.se.toLocaleString('en-US'),
+                      '$' + estimate.federal.toLocaleString('en-US'),
+                      '$' + estimate.total.toLocaleString('en-US'),
+                      '$' + estimate.quarterly.toLocaleString('en-US'),
+                    ]
+                  }),
+                ].flat().map(([inc, se, fed, tot, qtr], i, arr) => (
                   <tr key={i} style={i === arr.length - 1
                     ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' }
                     : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -137,11 +144,11 @@ export default function AirbnbTaxCalculator2026() {
             </table>
           </div>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Use the <a href="/airbnb" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Airbnb tax calculator</a> to get your exact estimate based on income, deductions, and state taxes.
+            Use the <a href="/airbnb" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Airbnb tax calculator</a> for a simplified planning estimate based on a selected scenario, income, filing status, and state.
           </p>
 
           <blockquote style={{ borderLeft: '3px solid rgba(232,184,75,0.4)', paddingLeft: 16, margin: '20px 0', fontStyle: 'italic', color: 'rgba(255,255,255,0.7)', fontSize: 14, lineHeight: 1.8 }}>
-            Per IRS Publication 527: rental income is generally reportable on Schedule E. Hosts who provide substantial services — such as cleaning and meals — report on Schedule C and pay self-employment tax.{' '}
+            IRS Publication 527 explains rental real-estate reporting. Services and other facts can affect treatment; this guide's calculator scenarios do not determine your classification.{' '}
             <a href="https://www.irs.gov/publications/p527" rel="nofollow" target="_blank" style={{ color: '#e8b84b', textDecoration: 'none' }}>IRS Publication 527 →</a>
           </blockquote>
         </section>
@@ -152,16 +159,16 @@ export default function AirbnbTaxCalculator2026() {
             Top Tax Deductions for Airbnb Hosts in 2026
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Deductions directly reduce your taxable income. A host earning $50,000 gross with $15,000 in deductions pays tax on $35,000 — saving approximately $4,000 in taxes.
+            Eligible deductions can reduce taxable rental income, but eligibility and allocation rules vary. A deduction is not equal to tax savings, and this guide does not calculate the tax effect of a specific expense.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
               'Mortgage interest — deduct the rental-use percentage of your mortgage interest',
               'Property taxes — deductible proportional to rental days vs personal use days',
               'Depreciation — largest deduction: residential property over 27.5 years',
-              'Cleaning and maintenance — 100% deductible if for rental guests only',
+              'Cleaning and maintenance — eligible costs may be deductible when properly allocated',
               'Utilities — electricity, water, internet deducted by rental-use percentage',
-              'Airbnb platform fees — the 3% host service fee is fully deductible',
+              'Eligible Airbnb platform fees may be deductible when properly allocated',
               'Supplies — toiletries, linens, coffee, paper towels for guests',
               'Insurance — rental property insurance or renters insurance portion',
               'Home office — if you manage the property from a dedicated space',
@@ -241,7 +248,7 @@ export default function AirbnbTaxCalculator2026() {
             Quarterly Estimated Tax Payments for Airbnb Hosts
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments. Missing payments triggers IRS underpayment penalties.
+            Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits. Safe-harbor rules and exceptions affect whether a penalty applies.
           </p>
           <ol style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
             {[
@@ -254,12 +261,12 @@ export default function AirbnbTaxCalculator2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Rule of thumb: set aside <strong style={{ color: '#e8edf8' }}>25–30%</strong> of every Airbnb payout. On $50K net income, each quarterly payment is approximately <strong style={{ color: '#e8b84b' }}>$2,615</strong>. Pay via IRS Direct Pay or EFTPS.
+            Estimated payments depend on your full tax picture, including filing status, other income, withholding, credits, and state. Use the calculator as a planning estimate, not as a required payment amount.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Safe harbor rule: pay 100% of prior year tax liability to avoid penalties',
-              'High earners (AGI over $150K): safe harbor requires 110% of prior year tax',
+              'A prior-year safe harbor may apply; the required percentage depends on income and current IRS rules',
+              'Withholding, credits, and annualized-income rules can affect estimated-payment requirements',
               'Use the free Airbnb tax calculator to estimate each quarterly payment',
               'Open a separate bank account for tax savings — prevents spending withheld funds',
             ].map((item, i) => (
@@ -274,21 +281,21 @@ export default function AirbnbTaxCalculator2026() {
             Tax Forms Airbnb Hosts Receive in 2026
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Airbnb provides tax forms in your account under Transaction History by January 31 each year.
+            Check your account documents and current information-return rules. A form threshold does not determine whether income is taxable or reportable.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              '1099-K: gross payouts when you receive $20,000 or more across more than 200 transactions in 2026',
-              'Annual earnings summary: total payouts, fees, and adjustments breakdown',
+              'Check current Airbnb account documents and information-return rules',
+              'Annual earnings summary: payouts, fees, and adjustments, if provided',
               'Schedule E: report passive rental income and deductions (most hosts)',
-              'Schedule C: required if you provide substantial services like cleaning or meals',
-              'Form 4562: claim depreciation on your rental property each year',
+              'Schedule C may apply depending on services and other facts; this guide does not classify income',
+              'Form 4562: may be used to report depreciation when required',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Report all income even if Airbnb does not send a 1099 — the IRS requires you to report all rental income, with no minimum. Keep your own records via the Airbnb host dashboard and a separate accounting spreadsheet.
+            Keep your own records of rental income and expenses. A missing information return does not by itself make taxable income nonreportable.
           </p>
         </section>
 
@@ -298,15 +305,14 @@ export default function AirbnbTaxCalculator2026() {
             QBI Deduction for Airbnb Hosts in 2026
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            The Qualified Business Income (QBI) deduction — made permanent under OBBBA 2026 — allows eligible Airbnb hosts to deduct up to <strong style={{ color: '#e8edf8' }}>20%</strong> of net rental income from taxable income.
+            Some taxpayers may qualify for the Section 199A qualified business income deduction. Eligibility, the amount, and any rental real-estate safe harbor depend on the activity and statutory requirements; do not assume all rental income qualifies.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Hosts on Schedule C (substantial services) qualify more easily than Schedule E',
-              'Safe harbor: 250+ hours of rental services per year for Schedule E hosts',
-              'On $50,000 net income, QBI deduction = $10,000 — saving $2,200 at 22% rate',
-              'Income limits may apply for high earners above $201,750 (single taxable income) in 2026',
-              'Combine QBI with depreciation for maximum tax reduction',
+              'QBI eligibility depends on the nature of the activity and current statutory requirements',
+              'Rental-real-estate safe harbor rules are separate from Schedule E reporting and have additional conditions',
+              'The deduction is limited by taxable income and other rules; an automatic 20% deduction should not be assumed',
+              'Review current IRS guidance or consult a tax professional before claiming QBI',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}
@@ -322,13 +328,13 @@ export default function AirbnbTaxCalculator2026() {
             Frequently Asked Questions
           </h2>
           {[
-            ['How much tax does an Airbnb host pay in 2026?', 'An Airbnb host earning $50,000 net profit pays approximately $7,065 in self-employment tax plus $4,500 in federal income tax, totaling $10,461. Quarterly estimated payment is $2,615. Use our free calculator for your exact figure.'],
-            ['What can Airbnb hosts deduct on taxes in 2026?', 'Airbnb hosts can deduct mortgage interest, property taxes, depreciation (27.5 years), cleaning, utilities, supplies, platform fees, and home office if applicable. Depreciation is typically the largest deduction.'],
-            ['Does Airbnb send a 1099 form to hosts?', 'Yes. Airbnb sends a 1099-K when gross payouts exceed $20,000 across more than 200 transactions. The form is available in your account under Transaction History by January 31. Report all income even without a 1099.'],
-            ['What is the 14-day rule for Airbnb hosts?', 'If you rent your home for 14 days or fewer per year, rental income is tax-free and does not need to be reported. Hosts renting more than 14 days must report all income and can claim deductions.'],
-            ['How do Airbnb hosts pay quarterly estimated taxes?', 'On $50,000 net income, quarterly payments are approximately $2,615. IRS due dates are April 15, June 15, September 15, and January 15. Pay via IRS Direct Pay or EFTPS.'],
-            ['Can Airbnb hosts deduct depreciation in 2026?', 'Yes. Residential property depreciates over 27.5 years. A $300,000 depreciable basis generates $10,909 per year in deductions. Furniture and appliances may qualify for 100% bonus depreciation under OBBBA 2026.'],
-            ['What is the QBI deduction for Airbnb hosts?', 'The QBI deduction allows up to 20% of net rental income to be deducted. On $50,000 net income that is $10,000 — saving $2,200 at a 22% tax rate. Made permanent under OBBBA 2026.'],
+            ['How much tax does an Airbnb host pay in 2026?', 'In a simplified Schedule C example, $50,000 net profit produces about $10,461 in federal tax before state tax: $7,065 SE tax and $3,396 federal income tax. It assumes single filing status, no other income, and no credits; the calculator does not determine your tax classification.'],
+            ['What can Airbnb hosts deduct on taxes in 2026?', 'Potential expenses include eligible mortgage interest, property taxes, depreciation, cleaning, utilities, supplies, and platform fees. Eligibility and allocation depend on property use and tax treatment.'],
+            ['Does Airbnb send a 1099 form to hosts?', 'The form depends on current reporting rules and your payment activity. Check your account documents; a reporting threshold does not determine whether income is taxable or reportable.'],
+            ['What is the 14-day rule for Airbnb hosts?', 'A limited exception may apply when a dwelling used as a residence is rented for fewer than 15 days during the year. Eligibility depends on the dwelling-use requirements; confirm current IRS rules before relying on it.'],
+            ['How do Airbnb hosts pay quarterly estimated taxes?', 'Estimated-payment requirements and amounts depend on the host’s full tax situation, including withholding, credits, and state rules. Review the current IRS 1040-ES instructions.'],
+            ['Can Airbnb hosts deduct depreciation in 2026?', 'Depreciation may be available for eligible rental property and assets, subject to basis, business-use, recovery-period, and other rules. Land is not depreciable; review current IRS guidance.'],
+            ['What is the QBI deduction for Airbnb hosts?', 'Some hosts may qualify for the Section 199A deduction, subject to eligibility tests and limits. Rental income does not automatically qualify; review current IRS guidance.'],
           ].map(([q, a], i, arr) => (
             <div key={i} style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding: '18px 0' }}>
               <h3 style={{ fontSize: 15, fontWeight: 600, color: '#e8edf8', margin: '0 0 8px' }}>{q}</h3>

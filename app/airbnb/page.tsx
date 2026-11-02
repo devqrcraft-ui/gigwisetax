@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'airbnb')
   if (!p) return {}
   return {
-    title: `Airbnb Tax Calculator 2026 — Free Estimate of What You Owe`,
-    description: `Enter your Airbnb income and expenses: see 2026 taxes, quarterly payments and whether self-employment tax applies (Schedule E vs C). Free, no signup.`,
+    title: 'Airbnb Host Tax Calculator 2026 | Schedule E & C Estimates',
+    description: 'Estimate Airbnb rental-income taxes with Schedule E or Schedule C assumptions. Includes federal tax and a simplified state estimate; treatment depends on your activity and services.',
     keywords: `airbnb tax calculator, airbnb host taxes 2026, airbnb self employment tax, airbnb rental income taxes, how much tax do airbnb hosts pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `Airbnb Host Tax Calculator 2026 — Free, All 50 States + DC, No Signup`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      title: 'Airbnb Host Tax Calculator 2026 | Schedule E & C Estimates',
+      description: 'Estimate Airbnb rental-income taxes with Schedule E or Schedule C assumptions. Includes federal tax and a simplified state estimate; treatment depends on your activity and services.',
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
@@ -34,55 +34,6 @@ export default function PlatformPage({ params }: { params: { platform: string } 
   const isPlatformDriver = false
   const isRental = true
   const isCreator = false
-
-  const schemaJson = {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: `${platform.name} Tax Calculator 2026`,
-    description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,
-    url: `https://www.gigwisetax.com/${platform.slug}`,
-  }
-
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `How much tax do I pay on ${platform.name} income?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `As a ${platform.name} independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10–37% depending on total income), plus any state income tax. Most ${platform.name} workers should set aside 25–30% of net income for taxes.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `Does ${platform.name} withhold taxes?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `No. ${platform.name} classifies workers as independent contractors and does not withhold federal, state, or Social Security/Medicare taxes. You are responsible for calculating and paying your own taxes quarterly using IRS Form 1040-ES.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `When are ${platform.name} quarterly taxes due in 2026?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `For 2026: Q1 taxes are due April 15, 2026. Q2 is due June 15, 2026. Q3 is due September 15, 2026. Q4 is due January 15, 2027.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: `What is the ${platform.name} 1099 threshold for 2026?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `For 2026, ${platform.name} generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
-        },
-      },
-    ],
-  }
-
-
 
   const deductionsSchema = {
     '@context': 'https://schema.org',
@@ -99,7 +50,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       { '@type': 'ListItem', position: 7, name: "Repairs & maintenance" },
       { '@type': 'ListItem', position: 8, name: "Depreciation (Schedule E)" },
       { '@type': 'ListItem', position: 9, name: "Internet & cable" },
-      { '@type': 'ListItem', position: 10, name: "Half of self-employment tax" },
+      { '@type': 'ListItem', position: 10, name: "Tax preparation and accounting fees (if eligible)" },
       { '@type': 'ListItem', position: 11, name: "Accounting & tax software" },
       { '@type': 'ListItem', position: 12, name: "Home insurance (proportional)" }
     ],
@@ -114,7 +65,19 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Airbnb Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Airbnb workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Airbnb earnings. Download your annual tax summary or 1099-NEC from the Airbnb app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Airbnb income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: 'How to organize Airbnb rental tax records',
+        description: 'A recordkeeping checklist for Airbnb rental income; tax classification depends on the rental activity and services.',
+        step: [
+          { '@type': 'HowToStep', position: 1, name: 'Track rental income', text: 'Keep booking statements, payout records, and any tax forms received.' },
+          { '@type': 'HowToStep', position: 2, name: 'Separate rental and personal use', text: 'Record rental days, personal-use days, and shared expenses for the property.' },
+          { '@type': 'HowToStep', position: 3, name: 'Review tax classification', text: 'Use the rental activity and services provided to determine the appropriate reporting treatment; seek professional advice when needed.' },
+          { '@type': 'HowToStep', position: 4, name: 'Document expenses', text: 'Keep receipts and records for eligible property expenses, repairs, and depreciation.' },
+          { '@type': 'HowToStep', position: 5, name: 'Check payment and filing rules', text: 'Review federal, state, and local lodging-tax requirements for your circumstances.' },
+        ],
+      }) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Airbnb Host Tax Calculator 2026","item":"https://www.gigwisetax.com/airbnb"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Airbnb Host Tax Calculator 2026","url":"https://www.gigwisetax.com/airbnb","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -138,12 +101,12 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 50 states + DC.
-              Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
-              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 50 states + DC.
+              Free {platform.name} rental-income tax estimator for 2026. Compare Schedule E and Schedule C assumptions, estimate federal tax, and include a simplified state-rate estimate for all 50 states + DC.
+              Tax classification and estimated-payment requirements depend on your facts and full return. No signup required.
+              Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax tax model</a>.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-              {[' IRS Schedule SE', ' All 50 States + DC', ' No Signup', ` 2026 Tax Rules`, platform.badge ? `▸ ${platform.badge}` : ' Instant Results'].filter(Boolean).map(b => (
+              {[' Schedule E & C scenarios', ' All 50 States + DC', ' No Signup', ` 2026 Tax Rules`, 'State rate simplified'].map(b => (
                 <span key={b} style={{ background: 'rgba(255,255,255,.07)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 3, padding: '4px 10px', fontSize: 11, color: 'rgba(255,255,255,.55)', fontWeight: 500 }}>{b}</span>
               ))}
             </div>
@@ -157,25 +120,25 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           {/* LEFT */}
           <div>
             {/* CALCULATOR */}
-            <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026}/>
+            <GigCalculator platform={platform} states={STATES} deadlines={DEADLINES_2026} allowScheduleEMode />
 
 
           {/* KEY TAKEAWAYS */}
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$50,000 net income</strong>, Airbnb hosts owe approximately <strong>$10,461 total tax</strong> in 2026'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$2,615</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li>Rental income is not automatically subject to self-employment tax; reporting depends on the activity and services provided.</li>
+          <li>The estimator offers separate Schedule E and Schedule C scenarios; it does not decide which applies to your rental.</li>
           <li dangerouslySetInnerHTML={{__html: 'Depreciation, mortgage interest, utilities, and cleaning fees are <strong>top Airbnb deductions</strong>'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Short-term rental income under 14 days/year may be <strong>tax-free</strong> under the Augusta Rule'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Airbnb collects occupancy taxes in some states — you still report rental income (Schedule E, or Schedule C with SE tax if you provide hotel-like services)'}}/>
+          <li>Rental income from a home rented fewer than 15 days may qualify for a specific exclusion; the 14-day rule has related expense limits.</li>
+          <li>Occupancy and lodging taxes are separate from federal and state income tax; local collection rules vary.</li>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
-            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb</div>
+            <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Airbnb Rental Income Tax Scenarios — 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings, plus federal income tax. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Set aside 25% of every payment. Depreciation, mortgage interest, and utilities are key Airbnb deductions.
+              Rental income is generally reported on Schedule E, while substantial guest services or other facts may affect whether Schedule C applies. The calculator lets you compare simplified Schedule E and Schedule C scenarios; it does not determine your tax classification. Federal estimates assume the selected filing status and no other income. State results use a simplified rate and exclude lodging taxes.
             </p>
           </div>
 
@@ -191,16 +154,13 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   How {platform.name} Taxes Work in 2026
                 </h2>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
-                  As a {platform.name} worker, you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
-                  This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from your payments.
-                  You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
+                  Airbnb hosts are not all classified as independent contractors. Rental income is generally reported under Schedule E; services and other facts can affect whether Schedule C and self-employment tax apply. Airbnb payment reporting does not by itself determine how income is taxed.
                 </p>
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Plan from your full tax picture</div>
                   <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                    Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
-                    If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
+                    The amount to reserve depends on your rental classification, expenses, other income, withholding, and state/local rules. Estimated payments may be required based on your full return and prior-year safe-harbor amounts.
                   </p>
                 </div>
 
@@ -209,10 +169,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
                   {[
-                    { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
-                    { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: 'rgba(255,255,255,0.9)' },
-                    { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: 'rgba(255,255,255,0.9)' },
-                    { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
+                    { label: ' Schedule E scenario', value: 'No SE tax modeled', detail: 'Rental income assumption; classification depends on facts', color: '#059669' },
+                    { label: ' Schedule C scenario', value: 'SE tax included', detail: 'For qualifying business-service assumptions', color: '#B22234' },
+                    { label: ' Federal income tax', value: 'Estimated', detail: 'Assumes no other income or credits', color: 'rgba(255,255,255,0.9)' },
+                    { label: ' State tax', value: 'Simplified', detail: 'Flat-rate estimate; local taxes excluded', color: 'rgba(255,255,255,0.9)' },
                   ].map(item => (
                     <div key={item.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 14, borderLeft: `4px solid ${item.color}` }}>
                       <div style={{ fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.55)', marginBottom: 4 }}>{item.label}</div>
@@ -287,7 +247,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   <div style={{ background: 'rgba(22,101,52,0.12)', border: '1px solid rgba(22,101,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
                     <div style={{ fontWeight: 700, color: '#86efac', marginBottom: 8 }}>▸ Airbnb Hosts: 14-Day Rule</div>
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                      If you rent your property for <strong>14 days or fewer</strong> per year, rental income is tax-free (Section 280A exclusion).
+                      If a home is rented for fewer than 15 days during the year, a federal exclusion may apply; related rental-expense deductions are also limited. Review IRS Publication 527.
                       Above 14 days, you must report income but can deduct a proportional share of mortgage interest, property taxes, utilities, and depreciation.
                     </p>
                   </div>
@@ -306,28 +266,28 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
                 {/* FAQ */}
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 16 }}>
-                  Frequently Asked Questions — {platform.name} Taxes 2026
+                  Frequently Asked Questions — {platform.name} Rental Taxes 2026
                 </h3>
                 {[
                   {
                     q: `Does ${platform.name} withhold taxes from my payments?`,
-                    a: `No. ${platform.name} classifies all workers as independent contractors (1099). They do not withhold federal income tax, state income tax, Social Security, or Medicare taxes. You must calculate and pay these yourself using IRS Form 1040-ES.`,
+                    a: `Airbnb hosts are not all independent contractors. Rental income is generally reported on Schedule E; substantial guest services or other facts may change the tax treatment. A tax form from a platform does not determine whether income is Schedule E or Schedule C.`,
                   },
                   {
                     q: `How much should I set aside for ${platform.name} taxes?`,
-                    a: `Set aside 25–30% of your net ${platform.name} income for taxes. This covers the 15.3% self-employment tax plus federal income tax. In high-tax states like California or New York, set aside 30–35%.`,
+                    a: `There is no single percentage that fits every host. Consider your rental classification, deductible expenses, other income, withholding, state income tax, and local lodging taxes. Use the calculator only as a planning estimate.`,
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `${platform.name} may provide tax-reporting forms depending on your payments and activity. The form type or reporting threshold does not determine whether rental income is taxable; report income according to the applicable tax rules even if no form is received.`,
                   },
                   {
-                    q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
-                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
+                    q: `Do Airbnb hosts pay self-employment tax in 2026?`,
+                    a: `Not all rental income is subject to self-employment tax. Rental income generally reported on Schedule E is not subject to SE tax; substantial services and other facts may affect whether Schedule C treatment applies. This calculator offers scenarios but does not determine your classification.`,
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
-                    a: `Yes. The $2,000 threshold (for 2026 payments) only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                    a: `Tax-form reporting thresholds do not determine whether rental income is taxable. Reporting and any self-employment tax depend on your facts and applicable rules; consult IRS Publication 527 or a tax professional.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>

@@ -11,22 +11,22 @@ import Link from 'next/link'
 const STATES = TAX_STATES.map(({ abbr: code, name, rate }) => ({ code, name, rate }))
 
 const DEDUCTIONS = [
-  { icon:'', label:'Depreciation (MACRS)', desc:'Cars depreciate over 5 years under MACRS. First-year bonus depreciation may allow up to 100% deduction in year one.' },
-  { icon:'', label:'Insurance Premium', desc:'Turo\'s protection plans and any supplemental commercial coverage are deductible to the extent of business use.' },
-  { icon:'', label:'Repairs & Maintenance', desc:'Oil changes, tires, detailing, repairs — all deductible based on your rental vs. personal use ratio.' },
+  { icon:'', label:'Depreciation (MACRS)', desc:'Business-use depreciation may be available; recovery period, limits, and expensing depend on the vehicle and current rules.' },
+  { icon:'', label:'Insurance Premium', desc:'Eligible insurance costs may be deductible to the extent attributable to rental activity.' },
+  { icon:'', label:'Repairs & Maintenance', desc:'Eligible vehicle costs require records and an appropriate allocation between rental and personal use.' },
   { icon:'', label:'Cleaning Between Rentals', desc:'Professional cleaning, car washes, and supplies used to prepare the car for guests.' },
-  { icon:'', label:'Gas (if you supply it)', desc:'Some hosts include gas. Keep all receipts — deductible as an ordinary business expense.' },
+  { icon:'', label:'Fuel (if supplied)', desc:'Document fuel costs and allocate them to eligible rental use.' },
   { icon:'', label:'Photography & Marketing', desc:'Professional photos, subscriptions, and any tools used to improve your listing.' },
   { icon:'', label:'Parking & Storage', desc:'Dedicated parking or storage used when the vehicle is staged for rental.' },
   { icon:'', label:'Phone & Apps', desc:'Pro-rata portion of phone plan used to manage bookings, communicate with guests, and track income.' },
 ]
 
 const FAQ = [
-  { q:'Is Turo income taxable?', a:'Yes. All income earned from renting your car on Turo is taxable as self-employment or rental income. Turo issues a 1099-K if you receive $20,000+ across more than 200 transactions. You must report all income regardless.' },
-  { q:'Is Turo rental income subject to self-employment tax?', a:'It depends. If you rent out 1–2 cars occasionally, it may qualify as passive rental income (no SE tax). If you actively manage multiple cars as a business, the IRS may treat it as self-employment income subject to 15.3% SE tax. Consult a CPA for your specific situation.' },
-  { q:'What is the biggest tax deduction for Turo hosts?', a:'Depreciation is typically the largest deduction. Under MACRS, a car used for business depreciates over 5 years. Section 179 or bonus depreciation may allow full deduction in the first year for vehicles over 6,000 lbs GVWR.' },
-  { q:'How do I calculate the business-use percentage for my Turo car?', a:'Divide rental days by total days in the year. Example: 180 rental days ÷ 365 = 49.3% business use. This percentage applies to all vehicle expenses like insurance, maintenance, and depreciation.' },
-  { q:'Does Turo report my income to the IRS?', a:'Yes. Turo files a 1099-K for hosts receiving $20,000+ in payments across more than 200 transactions. Always report your Turo income accurately on Schedule C or Schedule E.' },
+  { q:'Is Turo income taxable?', a:'Income from vehicle sharing may be taxable and generally must be reported. The appropriate forms and treatment depend on your activity and facts; a platform information return does not determine tax treatment.' },
+  { q:'Is Turo rental income subject to self-employment tax?', a:'It depends on how the activity is classified. This calculator assumes active Schedule C income and includes a simplified SE-tax estimate; it does not determine whether that assumption applies.' },
+  { q:'What expenses may Turo hosts deduct?', a:'Potential expenses include eligible platform fees, insurance, cleaning, repairs, and vehicle depreciation, allocated to rental use and subject to tax rules. Keep supporting records.' },
+  { q:'How do I calculate the business-use percentage for my Turo car?', a:'Keep records of rental activity, vehicle availability and use, and related costs. Rental days divided by 365 is only a simplified estimate and may not reflect the allocation required for your facts.' },
+  { q:'Does Turo report my income to the IRS?', a:'Payment reporting depends on current rules and your payment activity. Check your account documents, and report taxable income even if you do not receive an information return.' },
 ]
 
 
@@ -62,7 +62,7 @@ export default function TuroPage() {
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
-    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Turo Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Turo workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Turo earnings. Download your annual tax summary or 1099-NEC from the Turo app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Turo income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"Tax Planning Steps for Turo Hosts","description":"General recordkeeping and tax-planning steps for vehicle-sharing income; treatment depends on the host's facts.","step":[{"@type":"HowToStep","position":1,"name":"Keep payment records","text":"Save Turo statements and records of all rental-related income and fees; do not rely only on an information return."},{"@type":"HowToStep","position":2,"name":"Track vehicle use and costs","text":"Keep records of rental activity, vehicle use, and expenses, and use an allocation method appropriate to your facts."},{"@type":"HowToStep","position":3,"name":"Determine tax treatment","text":"Confirm the applicable reporting treatment for your activity; this calculator assumes an active Schedule C scenario and does not classify income."},{"@type":"HowToStep","position":4,"name":"Review estimated payments","text":"Estimate taxes using your full income, deductions, withholding, filing status, and state rules."},{"@type":"HowToStep","position":5,"name":"File applicable forms","text":"Report income and expenses using the forms and treatment that apply to your circumstances."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Turo Host Tax Calculator 2026","item":"https://www.gigwisetax.com/turo"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Turo Host Tax Calculator 2026","url":"https://www.gigwisetax.com/turo","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -181,7 +181,7 @@ export default function TuroPage() {
           <li>Baseline example: $50,000 California payouts, single, no vehicle expenses entered: approximately <strong>{fmt(baseline.total)}</strong> total, including a simplified state estimate.</li>
           <li>Baseline quarterly estimate: <strong>{fmt(baseline.quarterly)}</strong>; actual required payments depend on your full tax situation.</li>
           <li dangerouslySetInnerHTML={{__html: 'Depreciation, insurance, car maintenance, and cleaning fees are <strong>top Turo deductions</strong>'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Turo takes a <strong>10–35% platform fee</strong> — deductible as a business expense on Schedule C'}}/>
+          <li>Platform fees may be deductible when properly documented and allocated to the rental activity</li>
           <li>Tax set-aside varies with net profit, filing status, other income, and state; use the estimate above as a planning figure.</li>
             </ul>
           </div>

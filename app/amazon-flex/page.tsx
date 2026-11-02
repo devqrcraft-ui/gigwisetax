@@ -15,13 +15,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'amazon-flex')
   if (!p) return {}
   return {
-    title: `Amazon Flex Tax Calculator 2026 — Free Estimate of What You Owe`,
-    description: `Enter your Amazon Flex earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $40K net = $5,652 SE tax.`,
+    title: 'Amazon Flex Tax Calculator 2026 | Free 1099 Estimate',
+    description: 'Estimate 2026 Amazon Flex taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
     keywords: `amazon flex tax calculator, amazon flex driver taxes 2026, amazon flex self employment tax, amazon flex quarterly taxes, amazon flex 1099`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `Amazon Flex Tax Calculator 2026 — Free, Instant Results`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      title: 'Amazon Flex Tax Calculator 2026 | Free 1099 Estimate',
+      description: 'Estimate 2026 Amazon Flex taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }

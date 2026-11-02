@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
-import { estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
+import { estimateScheduleERaw, estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { STATES as ALL_STATES } from '@/lib/data'
 import Link from 'next/link'
 
@@ -46,7 +46,7 @@ const QUICK_EXAMPLES = [
   { label: 'Uber driver',          platform: 'Uber',     income: '30000', state: 'CA', filing: 'single',  tag: '$30k · California', href: '/uber' },
   { label: 'DoorDash + Instacart', platform: 'DoorDash', income: '40000', state: 'TX', filing: 'single',  tag: '$40k · Texas',      href: '/doordash' },
   { label: 'OnlyFans creator',     platform: 'OnlyFans', income: '60000', state: 'NY', filing: 'single',  tag: '$60k · New York',   href: '/onlyfans' },
-  { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k · Florida',    href: '/airbnb' },
+  { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k net rental · Florida', href: '/airbnb' },
 ]
 
 function QuarterlyEstimator() {
@@ -150,6 +150,7 @@ export default function HomeClient() {
     return () => window.removeEventListener('resize', check)
   }, [])
   const [platform, setPlatform] = useState('DoorDash')
+  const [airbnbSchedule, setAirbnbSchedule] = useState<'e'|'c'>('e')
   const [income, setIncome]   = useState('')
   const [milesH1, setMilesH1] = useState('')
   const [milesH2, setMilesH2] = useState('')
@@ -167,16 +168,20 @@ export default function HomeClient() {
   const loadExample = (ex: typeof QUICK_EXAMPLES[0]) => {
     setTab('calc')
     setPlatform(ex.platform)
+    if (ex.platform === 'Airbnb') setAirbnbSchedule('e')
     setIncome(ex.income)
     setStateCode(ex.state)
     setFiling(ex.filing)
     const gross = parseFloat(ex.income) || 0
     const state = STATES.find(s => s.code === ex.state)
-    const estimate = estimateTaxRaw(gross, state?.rate ?? 0.05, ex.filing as 'single' | 'married' | 'hoh')
+    const estimate = ex.platform === 'Airbnb'
+      ? estimateScheduleERaw(gross, state?.rate ?? 0.05, ex.filing as 'single' | 'married' | 'hoh')
+      : estimateTaxRaw(gross, state?.rate ?? 0.05, ex.filing as 'single' | 'married' | 'hoh')
     setResult({
       seTax: estimate.se, federal: estimate.federal, stateTax: estimate.state,
       total: estimate.total, quarterly: estimate.quarterly,
       rate: ((estimate.total / gross) * 100).toFixed(1),
+      scheduleE: ex.platform === 'Airbnb',
     })
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -184,11 +189,14 @@ export default function HomeClient() {
   const calculate = () => {
     const net = parseFloat(income) || 0
     if (!net) return
-    const deductions = (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
     const st = STATES.find(s => s.code === stateCode)
-    // Єдине джерело правил: lib/tax-rules.ts (відрахування, прогресивні брекети, стеля SS). HOH = single, як у platform-калькуляторах.
-    const r = estimateTaxRaw(net, st?.rate ?? 0.05, filing === 'married' ? 'married' : filing === 'hoh' ? 'hoh' : 'single', deductions)
-    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1) })
+    const filingStatus = filing === 'married' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
+    const scheduleE = platform === 'Airbnb' && airbnbSchedule === 'e'
+    const deductions = scheduleE ? 0 : (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
+    const r = scheduleE
+      ? estimateScheduleERaw(net, st?.rate ?? 0.05, filingStatus)
+      : estimateTaxRaw(net, st?.rate ?? 0.05, filingStatus, deductions)
+    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1), scheduleE })
   }
 
   /* ── shared style tokens ── */
@@ -216,7 +224,7 @@ export default function HomeClient() {
           {/* 3 promise bullets — visible on all screens */}
           <div style={{ padding: '0 0 0 16px', display: 'flex', flexDirection: 'column' as const, gap: 6, marginBottom: 10 }}>
             {[
-              '✓ SE tax 15.3% + federal + state (50 states + DC)',
+              '✓ SE tax (15.3% rate on 92.35% of net earnings) + federal + state estimate',
               '✓ DoorDash, Uber, OnlyFans, Airbnb, Etsy, Instacart & more',
               '✓ Free, no signup — results in seconds',
             ].map(b => (
@@ -296,28 +304,47 @@ export default function HomeClient() {
               <div style={card}>
                 <div style={cardHd}>
                   <div style={accent}/>
-                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Self-Employment Tax Estimator</span>
-                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color:'rgba(255,255,255,.8)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>IRS SE</span>
+                  <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform === 'Airbnb' ? 'Airbnb Rental Income Tax Estimator' : 'Self-Employment Tax Estimator'}</span>
+                  <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color:'rgba(255,255,255,.8)', fontSize: 12, padding: '2px 6px', borderRadius: 3, whiteSpace: 'nowrap' as const, flexShrink: 0 }}>
+                    {platform === 'Airbnb' ? `Schedule ${airbnbSchedule.toUpperCase()}` : 'IRS SE'}
+                  </span>
                 </div>
                 <div style={{ padding: 16 }}>
 
                   {/* Section 1 */}
                   <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8, paddingBottom: 6, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-                    1. Your Gig Income
+                    1. {platform === 'Airbnb' ? 'Rental Income & Tax Treatment' : 'Your Gig Income'}
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label} htmlFor="gig-platform-0">▸ Gig Platform</label>
-                      <select style={inp}  id="gig-platform-0" value={platform} onChange={e => setPlatform(e.target.value)}>
+                      <select style={inp}  id="gig-platform-0" value={platform} onChange={e => { setPlatform(e.target.value); setResult(null) }}>
                         {PLATFORMS.map(p => <option key={p.name} value={p.name}>{p.name}</option>)}
                       </select>
                     </div>
+                    {platform === 'Airbnb' && (
+                      <div>
+                        <label style={label} htmlFor="airbnb-tax-schedule">Rental tax scenario</label>
+                        <select style={inp} id="airbnb-tax-schedule" value={airbnbSchedule} onChange={e => { setAirbnbSchedule(e.target.value as 'e'|'c'); setResult(null) }}>
+                          <option value="e">Schedule E — rental income</option>
+                          <option value="c">Schedule C — services/business</option>
+                        </select>
+                        <div style={{ fontSize: 12, color: '#7a9abf', marginTop: 4 }}>Choose based on your facts. This tool cannot determine classification.</div>
+                      </div>
+                    )}
                     <div>
-                      <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1"> Annual Gig Revenue (USD)</label>
+                      <label style={label} htmlFor="annual-gig-revenue-usd-setinco-1">
+                        {platform === 'Airbnb' && airbnbSchedule === 'e' ? 'Annual Net Rental Income' : 'Annual Gig Revenue'} (USD)
+                      </label>
                       <div style={{ position: 'relative' }}>
                         <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: '#8fa8c8', fontWeight: 700 }}>$</span>
                         <input id="annual-gig-revenue-usd-setinco-1" style={{ ...inp, paddingLeft: 24 }} type="number" min="0" value={income} onChange={e => setIncome(e.target.value)} placeholder="45,000"/>
                       </div>
+                      {platform === 'Airbnb' && airbnbSchedule === 'e' && (
+                        <div style={{ fontSize: 12, color: '#7a9abf', marginTop: 4 }}>
+                          Enter net rental income after eligible rental expenses; do not subtract mileage or expenses again below.
+                        </div>
+                      )}
 
           {/* INCOME PRESETS */}
           <div style={{display:'flex',flexWrap:'wrap',gap:'6px',marginTop:'8px',marginBottom:'4px'}}>
@@ -330,10 +357,12 @@ export default function HomeClient() {
                     </div>
                   </div>
 
-                  {/* Section 2 */}
+                  {/* Schedule E uses net rental income; operating expenses are entered for Schedule C scenarios. */}
+                  {!(platform === 'Airbnb' && airbnbSchedule === 'e') && <>
                   <div style={{ fontSize: 13, fontWeight: 800, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 8, paddingBottom: 6, borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
                     2. Business Expenses <span style={{ fontWeight: 400, fontSize: 12, color: '#7a9abf' }}>(optional)</span>
                   </div>
+                  </>}
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
                       <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder="Jan–Jun miles (72.5¢)" aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder="Jul–Dec miles (76¢)" aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
@@ -385,7 +414,7 @@ export default function HomeClient() {
                   {/* 4 boxes */}
                   <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid rgba(255,255,255,0.1)', minWidth: 0 }} className="results-row">
                     {[
-                      { label: 'SE Tax (15.3%)',    val: fmt(result.seTax),    sub: 'Schedule SE' },
+                      { label: result.scheduleE ? 'SE Tax' : 'SE Tax (15.3%)', val: fmt(result.seTax), sub: result.scheduleE ? 'Not modeled for Schedule E' : 'Schedule SE' },
                       { label: 'Federal Tax',       val: fmt(result.federal),  sub: 'Estimated'   },
                       { label: `${stateCode} State`,val: fmt(result.stateTax), sub: 'Estimated'   },
                       { label: 'Total Annual Tax',  val: fmt(result.total),    sub: `${result.rate}% effective`, hi: true },
@@ -397,6 +426,11 @@ export default function HomeClient() {
                       </div>
                     ))}
                   </div></div>
+                  {result.scheduleE && (
+                    <p style={{ margin: 0, padding: '12px 16px', color: '#fcd34d', fontSize: 13, lineHeight: 1.6 }}>
+                      Schedule E scenario: enter net rental income after eligible expenses. The estimate excludes other income, passive-loss limits, credits, and lodging taxes; it is not a filing determination.
+                    </p>
+                  )}
 
                   {/* 4 quarterly boxes */}
                   <div style={{ padding: 20 }}>
@@ -437,11 +471,18 @@ export default function HomeClient() {
                   <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>How This Calculator Works</span>
                 </div>
                 <div style={{ padding: '12px 16px', display: 'grid', gridTemplateColumns: '1fr', gap: 14 }} className="form-grid">
-                  {[
-                    { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
-                    { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($16,100 single / $32,200 married). Rates from 10% to 37%.' },
-                    { label: 'State income tax', detail: '2026 state rates for all 50 states + DC — from 0% (TX, FL, NV, WA) to 13.3% (CA). Updated each tax year.' },
-                  ].map(item => (
+                  {(platform === 'Airbnb' && airbnbSchedule === 'e'
+                    ? [
+                        { label: 'Rental income scenario', detail: 'Schedule E estimate assumes the amount entered is net rental income. Classification depends on facts and services provided; this tool does not determine it.' },
+                        { label: 'Federal income tax', detail: 'Uses 2026 federal brackets and the standard deduction. Other income, credits, passive-loss limits, and special circumstances are not modeled.' },
+                        { label: 'State income tax', detail: 'Uses a simplified flat state-rate estimate. Local taxes, lodging taxes, and state-specific rules are not included.' },
+                      ]
+                    : [
+                        { label: 'Self-employment tax', detail: '92.35% of net earnings × 15.3% (12.4% Social Security + 2.9% Medicare). You deduct 50% of SE tax from taxable income.' },
+                        { label: 'Federal income tax', detail: '2026 IRS tax brackets with standard deduction ($16,100 single / $32,200 married). Rates from 10% to 37%.' },
+                        { label: 'State income tax', detail: 'Uses a simplified flat state-rate estimate. Local taxes and state-specific deductions are not included.' },
+                      ]
+                  ).map(item => (
                     <div key={item.label} style={{ borderLeft: '3px solid #e8b84b', paddingLeft: 12 }}>
                       <div style={{ fontSize: 13, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 4 }}>{item.label}</div>
                       <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.6 }}>{item.detail}</div>

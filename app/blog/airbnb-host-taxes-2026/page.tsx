@@ -1,11 +1,12 @@
 import AuthorBox from '@/app/components/AuthorBox'
 import TaxFreshness from '@/app/components/TaxFreshness'
+import { estimateScheduleERaw } from '@/lib/tax-rules'
 import type { Metadata } from 'next'
 
 export const metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/airbnb-host-taxes-2026' },
   title: 'Airbnb Host Taxes 2026 — Complete Guide | GigWiseTax',
-  description: 'How Airbnb hosts file taxes in 2026. Schedule E vs Schedule C, deductions, occupancy tax. Free calculator.',
+  description: 'Understand common Airbnb tax treatments for 2026, including Schedule E vs Schedule C, potential deductions, and estimate assumptions.',
   keywords: 'airbnb host taxes 2026, airbnb tax calculator, airbnb 1099-K, airbnb schedule E',
 }
 
@@ -15,7 +16,7 @@ export default function BlogPost() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Host Taxes 2026 — Complete Guide","item":"https://www.gigwisetax.com/blog/airbnb-host-taxes-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026 — Complete Guide","description":"How Airbnb hosts file taxes in 2026. Schedule E vs Schedule C, deductions, occupancy tax. Free calculator.","url":"https://www.gigwisetax.com/blog/airbnb-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Host Taxes 2026 — Complete Guide","description":"Understand common Airbnb tax treatments for 2026, including Schedule E vs Schedule C, potential deductions, and estimate assumptions.","url":"https://www.gigwisetax.com/blog/airbnb-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
@@ -32,30 +33,30 @@ export default function BlogPost() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Most Airbnb hosts report rental income on Schedule E and owe no self-employment tax. Hosts who provide hotel-like services (daily cleaning, meals) file Schedule C and pay 15.3% SE tax on net earnings. For a Schedule C host with $50,000 net income: approximately $7,065 SE tax + $3,396 federal income tax = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Set aside 28% of every payout. Depreciation and mortgage interest are your biggest deductions.
+          Rental income is commonly reported on Schedule E, while the services provided and other facts can affect whether Schedule C and self-employment tax apply. In a simplified Schedule C example, $50,000 of net profit produces about $7,065 SE tax and $3,396 federal income tax, or <strong style={{ color:'#fff' }}>$10,461 before state tax</strong>. The example assumes single filing status, no other income, and no credits; it is not a classification decision. Eligible expenses such as depreciation or mortgage interest depend on property use and tax rules.
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
-          Airbnb sends you a 1099-K if you earned $20,000 or more across more than 200 transactions. As a host you can deduct mortgage interest, cleaning, repairs, and depreciation. Here is the complete 2026 guide.
+          Check Airbnb statements and current information-return rules for any tax documents. A form threshold does not determine whether income is taxable or reportable. This guide compares common rental-income tax treatments and potential expenses.
         </p>
       </div>
 
       <div style={{ background: 'rgba(232,184,75,.1)', border: '1px solid rgba(232,184,75,.3)', borderRadius: 8, padding: 16, marginBottom: 24, fontSize: 14, color: '#e8b84b' }}>
-          {String.raw`* Airbnb rental income is typically NOT subject to SE tax (Schedule E) unless you provide substantial services (daily cleaning, meals).`}
+          {String.raw`* Rental income is not automatically subject to self-employment tax. Tax treatment depends on the activity, services, and other facts.`}
         </div>
 
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li>Airbnb hosts on <strong>$50,000</strong> net income owe approximately <strong>$10,461</strong> in total federal tax</li>
-          <li>The <strong>14-day rule</strong> — rent your home 14 days or fewer per year and income is <strong>100% tax-free</strong></li>
-          <li>Mortgage interest, depreciation, cleaning, and repairs are <strong>fully deductible</strong> for rental portion</li>
-          <li>Airbnb sends <strong>1099-K</strong> if you process $20,000+ in payments across more than 200 transactions in 2026</li>
-          <li>Set aside <strong>30%</strong> of every payout — Airbnb does not withhold taxes</li>
+          <li>A simplified Schedule C example at <strong>$50,000</strong> net profit estimates <strong>$10,461</strong> in federal tax before state tax</li>
+          <li>The 14-day exception applies only when the dwelling-use requirements are met; verify the rules for your property</li>
+          <li>Eligible mortgage interest, depreciation, cleaning, and repair expenses may be deductible when properly allocated</li>
+          <li>Tax-form reporting thresholds do not determine whether rental income is taxable or reportable</li>
+          <li>Estimated tax needs depend on your full tax picture; a single set-aside percentage does not fit every host</li>
         </ul>
       </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
-            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+            {'Estimated tax requirements can depend on expected tax due, withholding, credits, safe-harbor rules, and other circumstances.'}
             <cite style={{display:'block',marginTop:8,fontSize:12,color:'rgba(255,255,255,0.45)',fontStyle:'normal'}}>
               {'— '}<a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>IRS.gov — Self-Employed Tax Center</a>
             </cite>
@@ -70,11 +71,11 @@ export default function BlogPost() {
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Cleaning Services</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>100% deductible for cleaning between guests</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Potentially deductible when eligible and properly allocated</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Repairs & Maintenance</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Plumbing, electrical, HVAC — all deductible</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Eligible repairs may be deductible; improvements are treated differently</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Photography</div>
@@ -86,21 +87,24 @@ export default function BlogPost() {
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Airbnb Platform Fees</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>The 3% host fee is fully deductible</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Eligible platform fees may be deductible when properly allocated</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Furnishings</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Depreciated over useful life or Section 179</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Business-use depreciation or expensing may apply subject to eligibility and current rules</div>
         </div>
         <div style={{ background: 'rgba(255,255,255,.05)', borderRadius: 8, padding: '14px 16px', border: '1px solid rgba(255,255,255,.08)' }}>
           <div style={{ fontWeight: 700, marginBottom: 4 }}> Depreciation</div>
-          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Structural depreciation over 27.5 years</div>
+          <div style={{ fontSize: 13, color: 'rgba(255,255,255,.5)' }}>Residential rental property may use a 27.5-year recovery period; land is not depreciable</div>
         </div>
       </div>
 
       <h2 style={{ fontSize: 24, fontWeight: 800, marginBottom: 16, borderBottom: '2px solid rgba(165,180,252,.2)', paddingBottom: 8 }}>
-        Estimated Tax by Income — 2026
+        Simplified Schedule E Federal Estimate — 2026
       </h2>
+      <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 13, lineHeight: 1.7 }}>
+        Single filer, no other income, no state tax, no credits or passive-loss limitations. The amount is assumed to be net rental income after expenses; the calculator does not determine your filing treatment.
+      </p>
       <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 32 }}>
         <thead>
           <tr style={{ background: 'rgba(165,180,252,.1)' }}>
@@ -111,24 +115,18 @@ export default function BlogPost() {
           </tr>
         </thead>
         <tbody>
-          <tr style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-            <td style={{ padding: '12px 16px', fontWeight: 700 }}>$20,000</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$0*</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$2,400</td>
-            <td style={{ padding: '12px 16px', fontWeight: 700, color: '#e8b84b' }}>$2,400</td>
-          </tr>
-          <tr style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-            <td style={{ padding: '12px 16px', fontWeight: 700 }}>$40,000</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$0*</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$5,600</td>
-            <td style={{ padding: '12px 16px', fontWeight: 700, color: '#e8b84b' }}>$5,600</td>
-          </tr>
-          <tr style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
-            <td style={{ padding: '12px 16px', fontWeight: 700 }}>$75,000</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$0*</td>
-            <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>$12,600</td>
-            <td style={{ padding: '12px 16px', fontWeight: 700, color: '#e8b84b' }}>$12,600</td>
-          </tr>
+          {[20000, 40000, 75000].map((income, index, rows) => {
+            const estimate = estimateScheduleERaw(income, 0, 'single')
+            const amount = '$' + Math.round(estimate.federal).toLocaleString('en-US')
+            return (
+              <tr key={income} style={{ borderBottom: index < rows.length - 1 ? '1px solid rgba(255,255,255,.05)' : 'none' }}>
+                <td style={{ padding: '12px 16px', fontWeight: 700 }}>{'$' + income.toLocaleString('en-US')}</td>
+                <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>Not modeled</td>
+                <td style={{ padding: '12px 16px', color: 'rgba(255,255,255,.7)' }}>{amount}</td>
+                <td style={{ padding: '12px 16px', fontWeight: 700, color: '#e8b84b' }}>{amount}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
 

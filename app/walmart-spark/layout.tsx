@@ -1,20 +1,20 @@
 import type { Metadata } from 'next'
 export const metadata: Metadata = {
-  title: 'Walmart Spark Tax Calculator 2026 — $30K Net = $4,239 SE Tax',
-  description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage deduction included. Free calculator, all 50 states + DC, no signup.',
+  title: 'Walmart Spark Tax Calculator 2026 | Free 1099 Estimate',
+  description: 'Estimate 2026 Walmart Spark taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
   keywords: 'walmart spark tax calculator 2026, spark driver self employment tax, walmart spark 1099 taxes, spark driver quarterly taxes',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/walmart-spark' },
   openGraph: {
-    title: 'Walmart Spark Tax Calculator 2026 — $30K Net = $4,239 SE Tax',
-    description: 'Walmart Spark drivers on $30K net owe $4,239 SE tax + federal in 2026. Mileage deduction included. Free calculator, all 50 states + DC.',
+    title: 'Walmart Spark Tax Calculator 2026 | Free 1099 Estimate',
+    description: 'Estimate 2026 Walmart Spark taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
     url: 'https://www.gigwisetax.com/walmart-spark',
     siteName: 'GigWiseTax',
     type: 'website',
     images: [{ url: 'https://www.gigwisetax.com/og-image.png', width: 1200, height: 630, alt: 'Walmart Spark Tax Calculator 2026' }],
   },
-  twitter: { card: 'summary_large_image', site: '@gigwisetax', creator: '@gigwisetax', title: 'Walmart Spark Tax Calculator 2026 — $30K Net = $4,239 SE Tax', description: 'Free Walmart Spark tax calculator. $30K net = $4,239 SE tax. All 50 States + DC.' },
+  twitter: { card: 'summary_large_image', site: '@gigwisetax', creator: '@gigwisetax', title: 'Walmart Spark Tax Calculator 2026 | Free 1099 Estimate', description: 'Estimate 2026 Walmart Spark self-employment and federal taxes. Add mileage and state for a planning estimate. Free; no signup.' },
 }
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>

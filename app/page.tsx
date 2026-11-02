@@ -2,12 +2,12 @@ import HomeClient from './home-client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Calculator 2026 — Free 1099 Tax Estimator',
-  description: 'Free 1099 tax calculator for gig workers: estimate 2026 SE tax, federal and state tax, and quarterly payments for DoorDash, Uber, Etsy and more. No signup.',
+  title: '1099 Tax Calculator 2026 for Gig Workers | Free Estimate',
+  description: 'Estimate 2026 self-employment, federal, and state taxes for gig income. Choose a platform, mileage, filing status, and state to see a planning estimate. Free; no signup.',
   alternates: { canonical: 'https://www.gigwisetax.com' },
   openGraph: {
-    title: 'Gig Worker Tax Calculator 2026 — Free 1099 Tax Estimator',
-    description: 'Calculate SE tax, federal and state taxes for any gig platform. Free, private, no signup.',
+    title: '1099 Tax Calculator 2026 for Gig Workers | Free Estimate',
+    description: 'Estimate 2026 self-employment, federal, and state taxes for gig income. Choose a platform, mileage, filing status, and state to see a planning estimate. Free; no signup.',
     url: 'https://www.gigwisetax.com',
     siteName: 'GigWiseTax',
     type: 'website',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GigWiseTax — 1099 Self-Employment Tax Calculator","url":"https://www.gigwisetax.com","description":"Free 1099 self-employment tax calculator. Calculates SE tax 15.3%, federal and state taxes for DoorDash, Uber, Instacart, OnlyFans and all gig workers. All 50 States + DC.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much self-employment tax do gig workers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Gig workers pay 15.3% self-employment (SE) tax on 92.35% of net earnings. You can deduct half of SE tax from your federal taxable income."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Usually, if you expect to owe $1,000 or more after withholding and credits. Exceptions and safe-harbor rules apply, such as paying at least 90% of the current-year tax or 100% of the prior-year tax (110% for higher earners). 2026 deadlines: April 15, June 15, September 15, January 15 2027."}},{"@type":"Question","name":"What is the 1099 threshold for gig work in 2026?","acceptedAnswer":{"@type":"Answer","text":"Platforms generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). You must report all income even without a 1099."}},{"@type":"Question","name":"How much should I set aside for taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Set aside 25-30% of net gig income. Higher earners in CA or NY should set aside 35-40% to cover SE tax, federal, and state income tax."}}]}` }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GigWiseTax Gig and Rental Tax Estimator","url":"https://www.gigwisetax.com","description":"Free planning estimate of self-employment, federal, and simplified state income tax for gig workers, with Schedule E and Schedule C scenarios for Airbnb rentals.","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much self-employment tax do gig workers pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"For Schedule C self-employment income, SE tax is generally calculated using 92.35% of net earnings and the Social Security and Medicare rates. Tax treatment can differ for rental and other income; this calculator does not classify income."}},{"@type":"Question","name":"Do I need to pay quarterly taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits. Safe-harbor rules and exceptions apply; review current IRS guidance."}},{"@type":"Question","name":"What tax forms will a gig platform send?","acceptedAnswer":{"@type":"Answer","text":"The tax form depends on the platform, payment arrangement, and current reporting rules. A form threshold does not determine whether income is taxable or reportable."}},{"@type":"Question","name":"How much should I set aside for taxes as a gig worker?","acceptedAnswer":{"@type":"Answer","text":"There is no single percentage that fits every worker. An estimate depends on net profit, filing status, other income, withholding, credits, and state or local rules."}}]}` }} />
       <HomeClient />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"}` }} />
 
@@ -45,10 +45,10 @@ export default function Page() {
         <section style={{maxWidth:'960px',margin:'0 auto',padding:'0 16px 20px'}}>
           <h2 style={{fontSize:'clamp(18px,3vw,24px)',fontWeight:800,color:'#a5b4fc',marginBottom:'8px'}}>Frequently Asked Questions — Gig Worker Taxes 2026</h2>
           <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
-            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much self-employment tax do gig workers pay in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Gig workers pay 15.3% SE tax on 92.35% of net earnings — 12.4% Social Security and 2.9% Medicare. You can deduct half of SE tax from your federal taxable income, which reduces your overall tax bill.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much self-employment tax do gig workers pay in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>For Schedule C self-employment income, SE tax is generally calculated using 92.35% of net earnings and the Social Security and Medicare rates. Tax treatment can differ for rental and other income; this calculator does not classify income.</p></div>
             <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>Do I need to pay quarterly taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Usually, if you expect to owe $1,000 or more after withholding and credits. Exceptions and safe-harbor rules apply, such as paying at least 90% of the current-year tax or 100% of the prior-year tax (110% for higher earners). 2026 deadlines: April 15, June 15, September 15, and January 15, 2027.</p></div>
-            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>What is the 1099 threshold for gig work in 2026?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Platforms generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). However, you must report all income to the IRS even without receiving a 1099 form.</p></div>
-            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much should I set aside for taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>Set aside 25–30% of net gig income for taxes. Higher earners in high-tax states like California or New York should set aside 35–40% to cover SE tax, federal, and state income tax.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>What tax forms will a gig platform send?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>The tax form depends on the platform, payment arrangement, and current reporting rules. A form threshold does not determine whether income is taxable or reportable.</p></div>
+            <div><h3 style={{fontSize:'16px',fontWeight:700,color:'#c7d2fe',marginBottom:'6px'}}>How much should I set aside for taxes as a gig worker?</h3><p style={{fontSize:'14px',lineHeight:1.7,opacity:0.8,margin:0}}>There is no single percentage that fits every worker. An estimate depends on net profit, filing status, other income, withholding, credits, and state or local rules.</p></div>
           </div>
         </section>
 
@@ -60,7 +60,7 @@ export default function Page() {
         </div>
         <h2 style={{fontSize:24,fontWeight:900,color:'#fff',textAlign:'center',marginBottom:4}}>Popular Calculators by State</h2>
         <p style={{textAlign:'center',fontSize:14,color:'rgba(255,255,255,0.5)',marginBottom:12}}>
-          Free tax calculator for every platform and state — SE tax 15.3% + federal + state.
+          Free planning estimate for self-employment, federal, and simplified state taxes, with a separate Airbnb rental-income scenario.
         </p>
         <div style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:8}} className="state-calc-grid">
           {[

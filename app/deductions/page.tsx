@@ -6,33 +6,32 @@ import Link from 'next/link'
 import AuthorBox from '@/app/components/AuthorBox'
 
 const DEDUCTIONS = [
-  { id: 1, category: ' Vehicle', title: 'Mileage Deduction', desc: '72.5¢ per business mile Jan–Jun, 76¢ Jul–Dec (2026 IRS rates)', savings: 'Avg $3,500/yr', checked: false },
-  { id: 2, category: ' Vehicle', title: 'Car Insurance (business %)', desc: 'Deduct the % of time used for work', savings: 'Avg $400/yr', checked: false },
-  { id: 3, category: ' Home', title: 'Home Office', desc: '$5 per sq ft, up to 300 sq ft = $1,500 max', savings: 'Up to $1,500/yr', checked: false },
-  { id: 4, category: ' Home', title: 'Internet Bill (business %)', desc: 'Deduct 50-80% if used for work', savings: 'Avg $600/yr', checked: false },
-  { id: 5, category: ' Tech', title: 'Phone Bill (business %)', desc: 'Deduct 50-80% of monthly bill', savings: 'Avg $720/yr', checked: false },
-  { id: 6, category: ' Tech', title: 'Equipment & Gear', desc: 'Laptop, camera, phone — 100% deductible (Section 179)', savings: 'Avg $800/yr', checked: false },
-  { id: 7, category: ' Tech', title: 'Apps & Software', desc: 'Mileage tracker, accounting software, subscriptions', savings: 'Avg $300/yr', checked: false },
-  { id: 8, category: ' Business', title: 'Business Bank Fees', desc: 'Monthly fees, wire transfers, payment processing', savings: 'Avg $200/yr', checked: false },
-  { id: 9, category: ' Business', title: 'Professional Services', desc: 'CPA, lawyer, tax prep fees', savings: 'Avg $500/yr', checked: false },
-  { id: 10, category: ' Business', title: 'Business Meals (50%)', desc: 'Client meetings, business discussions', savings: 'Avg $400/yr', checked: false },
-  { id: 11, category: ' Business', title: 'Marketing & Advertising', desc: 'Website, ads, business cards', savings: 'Avg $600/yr', checked: false },
-  { id: 12, category: ' Health', title: 'Health Insurance Premium', desc: '100% deductible if self-employed and not eligible for employer plan', savings: 'Avg $3,000/yr', checked: false },
-  { id: 13, category: ' Health', title: 'HSA Contributions', desc: 'Up to $4,400 single / $8,750 family (2026)', savings: 'Up to $4,400/yr', checked: false },
-  { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Up to 25% of net income, max $72,000 (2026)', savings: 'Up to $72,000/yr', checked: false },
-  { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Up to $72,000 total contributions (2026)', savings: 'Up to $72,000/yr', checked: false },
-  { id: 16, category: ' Education', title: 'Business Education', desc: 'Courses, books, webinars related to your work', savings: 'Avg $300/yr', checked: false },
-  { id: 17, category: ' Education', title: 'Industry Memberships', desc: 'Professional associations, trade publications', savings: 'Avg $200/yr', checked: false },
-  { id: 18, category: ' Tax', title: 'SE Tax Deduction (50%)', desc: 'Deduct half of self-employment tax from income — automatic', savings: 'Avg $2,000/yr', checked: false },
-  { id: 19, category: ' Tax', title: 'QBI Deduction (20%)', desc: 'Qualified Business Income — up to 20% of net income', savings: 'Avg $3,000/yr', checked: false },
-  { id: 20, category: ' Tax', title: 'State & Local Taxes (SALT)', desc: 'Up to $40,000 deduction (2025 rule)', savings: 'Up to $40,000/yr', checked: false },
+  { id: 1, category: ' Vehicle', title: 'Business Mileage', desc: '2026 standard-mileage rates: 72.5¢ per mile Jan–Jun and 76¢ Jul–Dec. Keep a contemporaneous log; eligibility depends on the trip.', checked: false },
+  { id: 2, category: ' Vehicle', title: 'Vehicle Actual Expenses', desc: 'If eligible, the business-use share of actual vehicle costs may be deductible instead of standard mileage. Do not claim both methods for the same costs.', checked: false },
+  { id: 3, category: ' Home', title: 'Home Office', desc: 'May qualify for the regular or simplified method if the space meets IRS exclusive-and-regular-use requirements.', checked: false },
+  { id: 4, category: ' Home', title: 'Internet Bill (business use)', desc: 'Document and claim only the portion attributable to business use.', checked: false },
+  { id: 5, category: ' Tech', title: 'Phone Bill (business use)', desc: 'Document and claim only the portion attributable to business use.', checked: false },
+  { id: 6, category: ' Tech', title: 'Equipment & Gear', desc: 'Business-use costs may be deductible; depreciation or expensing depends on eligibility and current rules.', checked: false },
+  { id: 7, category: ' Tech', title: 'Apps & Software', desc: 'Ordinary and necessary business subscriptions, such as accounting or mileage-tracking software, may qualify.', checked: false },
+  { id: 8, category: ' Business', title: 'Business Bank Fees', desc: 'Fees directly related to business accounts or transactions may qualify.', checked: false },
+  { id: 9, category: ' Business', title: 'Professional Services', desc: 'Eligible business accounting, legal, or tax-preparation fees may qualify.', checked: false },
+  { id: 10, category: ' Business', title: 'Business Meals', desc: 'Some qualifying business meals are subject to limits and documentation requirements.', checked: false },
+  { id: 11, category: ' Business', title: 'Marketing & Advertising', desc: 'Ordinary business promotion expenses may qualify; keep receipts and records.', checked: false },
+  { id: 12, category: ' Health', title: 'Self-Employed Health Insurance', desc: 'May be deductible subject to eligibility, earned-income, and coverage rules.', checked: false },
+  { id: 13, category: ' Health', title: 'HSA Contributions', desc: 'Contributions may be deductible if you meet HSA eligibility rules and annual limits.', checked: false },
+  { id: 14, category: ' Retirement', title: 'SEP-IRA Contributions', desc: 'Contribution limits depend on compensation, plan rules, and the annual limit.', checked: false },
+  { id: 15, category: ' Retirement', title: 'Solo 401(k)', desc: 'Contribution limits and eligibility depend on plan terms and annual rules.', checked: false },
+  { id: 16, category: ' Education', title: 'Business Education', desc: 'Education that maintains or improves skills for your current business may qualify; restrictions apply.', checked: false },
+  { id: 17, category: ' Education', title: 'Industry Memberships', desc: 'Business-related professional dues or publications may qualify when eligible.', checked: false },
+  { id: 18, category: ' Tax', title: 'Deduction for Half of SE Tax', desc: 'Eligible self-employed taxpayers may deduct half of SE tax as an adjustment to income; it does not reduce SE tax itself.', checked: false },
+  { id: 19, category: ' Tax', title: 'Qualified Business Income Deduction', desc: 'The QBI deduction may apply subject to income, business, and other statutory limits.', checked: false },
+  { id: 20, category: ' Tax', title: 'State and Local Taxes', desc: 'The SALT deduction is generally subject to federal limits and itemization rules that vary by tax year.', checked: false },
 ]
 
 const CATEGORIES = ['All', ' Vehicle', ' Home', ' Tech', ' Business', ' Health', ' Retirement', ' Education', ' Tax']
 export default function DeductionsChecklist() {
   const [checked, setChecked]   = useState<Set<number>>(new Set())
   const [category, setCategory] = useState('All')
-  const [income, setIncome]     = useState('')
 
   const toggle = (id: number) => {
     const next = new Set(checked)
@@ -42,8 +41,6 @@ export default function DeductionsChecklist() {
 
   const filtered = category === 'All' ? DEDUCTIONS : DEDUCTIONS.filter(d => d.category === category)
   const checkedCount = checked.size
-  const inc = parseFloat(income) || 50000
-  const estimatedSavings = Math.round(checkedCount * inc * 0.018)
 
   const bg   = { minHeight: '100vh', background: '#0d1117', padding: '40px 20px' }
   const wrap = { maxWidth: 780, margin: '0 auto' }
@@ -62,49 +59,36 @@ export default function DeductionsChecklist() {
           Gig Worker Tax Deductions 2026
         </h1>
         <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 15, margin: 0 }}>
-          Check every deduction you qualify for — see your estimated tax savings instantly
+          Review common deductions and keep track of items to discuss with a tax professional
         </p>
       </div>
 
       {/* ANSWER-FIRST */}
       <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:16,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-        Gig workers can deduct <strong style={{color:'#e8b84b'}}>mileage at 72.5¢–76¢/mile</strong>, phone bill, home office, equipment, and health insurance. The <strong style={{color:'#e8b84b'}}>QBI deduction</strong> (up to 20% of net income) and <strong style={{color:'#e8b84b'}}>50% SE tax deduction</strong> are automatic — no itemizing needed.
+        Potential deductions depend on your work, records, and eligibility. The checklist is not a determination that an expense qualifies, and a deduction is not the same as tax savings. Vehicle expense methods cannot be double-counted.
       </div>
       <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:16}}>
-        Last updated: May 2026 · By the GigWiseTax Team
+        2026 planning checklist · By the GigWiseTax Team
       </div>
       {/* KEY TAKEAWAYS */}
       <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>IRS mileage rate is <strong>72.5¢–76¢/mile</strong> in 2026 — the single biggest deduction for delivery and rideshare drivers</li>
-          <li><strong>50% of SE tax</strong> is automatically deductible above-the-line — reduces federal taxable income</li>
-          <li>QBI deduction allows up to <strong>20% of net income</strong> to be deducted — most gig workers qualify</li>
-          <li>Health insurance premiums are <strong>100% deductible</strong> if you are self-employed and not covered by an employer plan</li>
-          <li>HSA contributions up to <strong>$4,300</strong> (single) in 2026 reduce taxable income dollar-for-dollar</li>
+          <li>The deduction for half of SE tax may reduce federal income subject to tax, but does not reduce SE tax</li>
+          <li>The QBI deduction has eligibility tests and limits; not every gig worker qualifies</li>
+          <li>Health insurance and HSA deductions have separate eligibility requirements</li>
+          <li>Keep records and verify current-year rules before claiming an expense</li>
         </ul>
       </div>
-      {/* INCOME INPUT */}
-      <div style={{ background: '#0d2340', border: '1px solid #2a6496', borderRadius: 8, padding: '16px 20px', marginBottom: 20, display: 'flex', gap: 16, alignItems: 'center', flexWrap: 'wrap' as const }}>
-        <span style={{ color: 'rgba(255,255,255,.7)', fontSize: 14, fontWeight: 600 }}>Your annual income:</span>
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
-          {['20000','35000','50000','75000','100000'].map(v => (
-            <button key={v} onClick={() => setIncome(v)}
-              style={{ background: income===v?'#B22234':'#0d2340', color: '#fff', border: income===v?'2px solid #B22234':'2px solid rgba(255,255,255,.82)', borderRadius: 6, padding: '6px 12px', fontSize: 13, fontWeight: 600, cursor: 'pointer' }}>
-              ${parseInt(v)/1000}k
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* SAVINGS COUNTER */}
+      {/* SELECTION COUNTER */}
       <div style={{ background: checkedCount > 0 ? 'linear-gradient(135deg,#16a34a,#15803d)' : '#0d2340', border: checkedCount > 0 ? 'none' : '1px solid #2a6496', borderRadius: 8, padding: '20px 24px', marginBottom: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' as const, gap: 12, transition: 'all .3s' }}>
         <div>
           <div style={{ color: checkedCount > 0 ? 'rgba(255,255,255,.8)' : 'rgba(200,216,236,.7)', fontSize: 12, fontWeight: 700, letterSpacing: 1, marginBottom: 4 }}>
-            {checkedCount > 0 ? `${checkedCount} DEDUCTIONS SELECTED` : 'CHECK DEDUCTIONS BELOW'}
+            {checkedCount > 0 ? `${checkedCount} CHECKLIST ITEMS SELECTED` : 'SELECT ITEMS TO REVIEW'}
           </div>
           <div style={{ color: '#fff', fontSize: 28, fontWeight: 900 }}>
-            {checkedCount > 0 ? `~$${estimatedSavings.toLocaleString('en-US')} estimated savings` : 'Start checking deductions →'}
+            {checkedCount > 0 ? `${checkedCount} selected — eligibility not confirmed` : 'Start checking items →'}
           </div>
         </div>
         {checkedCount > 0 && (
@@ -145,7 +129,6 @@ export default function DeductionsChecklist() {
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap' as const, gap: 4 }}>
                   <div style={{ fontSize: 15, fontWeight: 700, color: checked.has(d.id) ? '#16a34a' : 'rgba(255,255,255,0.85)' }}>{d.title}</div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: '#16a34a', background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 4, padding: '2px 8px', whiteSpace: 'nowrap' as const }}>{d.savings}</div>
                 </div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.55)', marginTop: 3 }}>{d.desc}</div>
                 <div style={{ fontSize: 11, color: '#7a9abf', marginTop: 4 }}>{d.category}</div>

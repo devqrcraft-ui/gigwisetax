@@ -6,12 +6,12 @@
 import AuthorBox from '@/app/components/AuthorBox'
 import TaxFreshness from '@/app/components/TaxFreshness'
 export const metadata = {
-  title: 'Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator',
-  description: 'Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see an estimate of how much you owe. All 50 states.',
+  title: 'Airbnb Tax Deductions 2026 | Eligible Expenses & Records',
+  description: 'Review potential Airbnb rental deductions, allocation rules, and recordkeeping for 2026. Eligibility depends on property use and tax treatment.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026' },
   openGraph: {
-    title: 'Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator',
-    description: 'Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see an estimate of how much you owe. All 50 states.',
+    title: 'Airbnb Tax Deductions 2026 | Eligible Expenses & Records',
+    description: 'Review potential Airbnb rental deductions, allocation rules, and recordkeeping for 2026. Eligibility depends on property use and tax treatment.',
     type: 'article',
     url: 'https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026',
   },
@@ -69,7 +69,7 @@ export default function AirbnbTaxDeductions2026() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","item":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","description":"Every Airbnb tax deduction for 2026: cleaning, supplies, mortgage interest, depreciation, utilities. Free calculator — see an estimate of how much you owe. All 50 states.","url":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Host Checklist","description":"Potential Airbnb rental expenses, allocation rules, and recordkeeping for 2026. Eligibility depends on property use and tax treatment.","url":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -86,12 +86,11 @@ export default function AirbnbTaxDeductions2026() {
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
         <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Airbnb Deductions 2026</div>
         <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-          Airbnb hosts earning $50,000 net owe approximately $7,065 SE tax + $3,396 federal = <strong style={{ color:'#fff' }}>$10,461 total tax</strong>. Quarterly payment: <strong style={{ color:'#e8b84b' }}>$2,615</strong>. Key deductions: depreciation, cleaning fees, supplies, utilities (proportional), and mortgage interest reduce taxable income significantly. Track every expense from day one.
+          In a simplified Schedule C example, $50,000 of net profit produces about $7,065 in SE tax and $3,396 in federal income tax, or <strong style={{ color:'#fff' }}>$10,461 before state tax</strong>. It assumes single filing status, no other income, and no credits; Airbnb hosts are not automatically subject to Schedule C or SE tax. Potential expenses depend on eligibility and allocation rules.
         </p>
       </div>
           <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, textAlign: 'justify', maxWidth: 760, margin: 0 }}>
-            Every deduction Airbnb hosts can legally claim in 2026 — cleaning, depreciation, mortgage interest, utilities, supplies, and more.
-            Free tax calculator included. <span style={{fontSize:12,color:'rgba(255,255,255,.4)',display:'block',marginTop:8}}>Last updated April 2026 — reflects IRS 2026 rates.</span>
+            Common expenses that may be deductible, with allocation and eligibility considerations. <span style={{fontSize:12,color:'rgba(255,255,255,.4)',display:'block',marginTop:8}}>2026 tax-year guide.</span>
           </p>
         </div>
       </div>
@@ -114,10 +113,10 @@ export default function AirbnbTaxDeductions2026() {
               <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
               <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
                 <li>Mortgage interest, property taxes, and depreciation are the <strong>top 3 Airbnb deductions</strong></li>
-                <li>Cleaning fees, supplies, and repairs are <strong>100% deductible</strong> for rental days</li>
+                <li>Cleaning fees, supplies, and repairs may be deductible when eligible and properly allocated</li>
                 <li>Home office deduction available if you manage your Airbnb from a dedicated space</li>
-                <li>Airbnb platform fees charged to hosts are <strong>fully deductible</strong> on Schedule E</li>
-                <li>Use the <strong>rental day ratio</strong> to split shared expenses between personal and rental use</li>
+                <li>Platform fees may be deductible when properly allocated to rental activity</li>
+                <li>Shared expenses require a reasonable allocation based on the facts; one rental-day ratio may not fit every cost</li>
               </ul>
             </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
@@ -140,9 +139,9 @@ export default function AirbnbTaxDeductions2026() {
           </div>
 <h2 id="deduction-checklist" style={h2}>Complete Airbnb Tax Deduction Checklist for 2026</h2>
             <p style={prose}>
-              Airbnb hosts who rent their property for 15 or more days per year must report rental income to the IRS.
-              The good news: you can offset that income with a long list of legitimate deductions.
-              Below is every deduction the IRS allows for short-term rental hosts in 2026.
+              Rental income and expenses are generally reported according to the property’s use and applicable tax rules.
+              Potential deductions require eligibility and, for shared costs, reasonable allocation.
+              This checklist is educational and is not an exhaustive list of deductions available to every host.
             </p>
 
             {/* DEDUCTION TABLE */}
@@ -151,25 +150,25 @@ export default function AirbnbTaxDeductions2026() {
                 <tr>
                   <th style={th}>Deduction</th>
                   <th style={th}>Notes</th>
-                  <th style={th}>Typical Value</th>
+                  <th style={th}>Tax treatment</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['Cleaning & Turnover', 'Professional cleaning between guests', '$800–$3,000/yr'],
-                  ['Supplies & Toiletries', 'Soap, towels, coffee, paper goods', '$300–$1,200/yr'],
-                  ['Platform Fees (3%)', 'Airbnb host service fee is deductible', '3% of gross income'],
-                  ['Mortgage Interest', 'Proportional to % of home rented', 'Varies'],
-                  ['Property Depreciation', '27.5 year schedule (residential)', 'Often $3,000–$8,000/yr'],
-                  ['Utilities', 'Electric, gas, water — rental % only', '$500–$2,000/yr'],
-                  ['Internet & Cable', 'Business portion only', '$200–$600/yr'],
-                  ['Insurance', 'Homeowner + short-term rental rider', '$400–$1,500/yr'],
-                  ['Repairs & Maintenance', 'Must be repairs, not improvements', '$200–$2,000/yr'],
-                  ['Furniture & Appliances', 'Section 179 or bonus depreciation', 'Full cost in year 1'],
-                  ['Photography & Listing', 'Professional photos, listing upgrades', '$100–$500/yr'],
-                  ['Property Management', 'If you use a co-host or manager', '10–30% of revenue'],
-                  ['HOA Fees', 'Rental proportion only', 'Varies'],
-                  ['Smart Home Devices', 'Locks, thermostats, cameras', 'Full cost'],
+                  ['Cleaning & Turnover', 'Professional cleaning between guests', 'Eligible rental-use portion'],
+                  ['Supplies & Toiletries', 'Soap, towels, coffee, paper goods', 'Rental use only'],
+                  ['Platform Fees', 'Fees charged on rental transactions', 'Actual eligible fees, properly allocated'],
+                  ['Mortgage Interest', 'Interest on qualifying property debt', 'Rental-use portion; limitations may apply'],
+                  ['Property Depreciation', 'Eligible depreciable property', 'Basis, use, and recovery period matter'],
+                  ['Utilities', 'Electric, gas, water', 'Rental-use portion'],
+                  ['Internet & Cable', 'Shared service expenses', 'Reasonable business-use allocation'],
+                  ['Insurance', 'Eligible rental coverage', 'Rental-use portion'],
+                  ['Repairs & Maintenance', 'Repairs distinct from improvements', 'Eligibility and allocation rules apply'],
+                  ['Furniture & Appliances', 'Assets used in rental activity', 'Depreciation or expensing rules may apply'],
+                  ['Photography & Listing', 'Costs for the rental listing', 'Business-use portion, if eligible'],
+                  ['Property Management', 'Fees for management services', 'Actual eligible fees'],
+                  ['HOA Fees', 'Shared property costs', 'Rental-use portion'],
+                  ['Smart Home Devices', 'Equipment used for rental activity', 'Business-use allocation and depreciation rules'],
                 ].map(([d, n, v]) => (
                   <tr key={d}>
                     <td style={{ ...td, fontWeight: 600, color: '#e8b84b' }}>{d}</td>
@@ -180,22 +179,21 @@ export default function AirbnbTaxDeductions2026() {
               </tbody>
             </table>
 
-            <h2 id="14-day-rule" style={h2}>The 14-Day Rule — When Airbnb Income Is Tax-Free</h2>
+            <h2 id="14-day-rule" style={h2}>The 14-Day Rental Exception</h2>
             <p style={prose}>
-              If you rent your home for <strong>fewer than 15 days</strong> in 2026, the IRS does not require you to report that income at all.
-              This is one of the most valuable tax breaks available to occasional hosts.
-              However, if you use the 14-day rule, you cannot deduct any rental expenses either.
+              A limited exception may apply when a dwelling used as a residence is rented for fewer than 15 days during the year. Eligibility depends on the dwelling-use requirements and your circumstances; do not assume every short-term rental qualifies.
+              When the exception applies, special income and expense rules apply. Confirm current IRS guidance before relying on it.
             </p>
             <p style={prose}>
-              The rule applies per property. If you have two Airbnb properties, the 14-day limit applies to each separately.
+              The rules depend on the property and its use; consult IRS Publication 527 or a tax professional for your situation.
             </p>
 
             <h2 id="schedule-e-vs-c" style={h2}>Schedule E vs Schedule C: Which One Do You File?</h2>
             <p style={prose}>
-              Most Airbnb hosts file <strong>Schedule E</strong> (Supplemental Income and Loss). Schedule E rental income is <em>not</em> subject to self-employment tax (15.3%) — only federal and state income tax applies.
+              Rental real-estate income is commonly reported on <strong>Schedule E</strong>, and is not automatically subject to self-employment tax. The correct reporting depends on the rental activity and facts.
             </p>
             <p style={prose}>
-              You must use <strong>Schedule C</strong> if you provide substantial services to guests — daily maid service, meals, concierge, or other hotel-like amenities. Schedule C income is subject to SE tax. Most casual hosts qualify for Schedule E.
+              Services provided to guests and other facts can affect whether <strong>Schedule C</strong> and self-employment tax apply. The scenarios on this site are planning estimates, not a classification determination.
             </p>
 
             <h2 id="depreciation" style={h2}>Depreciation — The Biggest Airbnb Deduction</h2>
@@ -205,7 +203,7 @@ export default function AirbnbTaxDeductions2026() {
               On a $300,000 home where 40% is used for Airbnb, the annual depreciation deduction is approximately <strong>$4,364/year</strong>.
             </p>
             <p style={prose}>
-              Furniture, appliances, and equipment can be fully deducted in year one using <strong>Section 179 or 100% bonus depreciation</strong> (check current bonus depreciation phase-down rules for 2026).
+              Furniture, appliances, and equipment may be depreciated or eligible for an expensing election, depending on business use, placed-in-service date, basis, and current rules.
             </p>
 
             <h2 id="quarterly-taxes" style={h2}>Quarterly Estimated Taxes for Airbnb Hosts</h2>
@@ -238,7 +236,7 @@ export default function AirbnbTaxDeductions2026() {
 
             <h2 id="faq" style={h2}>FAQ — Airbnb Taxes 2026</h2>
             {[
-              { q: 'Does Airbnb report my income to the IRS?', a: 'Yes. Airbnb sends a 1099-K to the IRS if you process more than $20,000 in payments across more than 200 transactions in 2026. Even if you do not receive a 1099-K, you are still required to report rental income.' },
+              { q: 'Does Airbnb report my income to the IRS?', a: 'Payment reporting depends on current rules and your payment activity. Check your account documents; a reporting threshold does not determine whether income is taxable or reportable.' },
               { q: 'Can I deduct a home office as an Airbnb host?', a: 'Only if you have a dedicated space used exclusively and regularly for managing your Airbnb business (recordkeeping, guest communication, etc.). The space cannot be a guest bedroom. The deduction is calculated based on square footage percentage.' },
               { q: 'What records should Airbnb hosts keep in 2026?', a: 'Keep receipts for all expenses, mileage logs if you drive to the property, bank statements showing rental deposits, Airbnb payout statements, and records of days rented vs. personal use. Keep records for at least 3 years (7 years for depreciation claims).' },
             ].map((item, i) => (
@@ -268,7 +266,7 @@ export default function AirbnbTaxDeductions2026() {
             <div style={{ background: 'rgba(255,255,255,0.07)', borderRadius: 6, padding: 20, textAlign: 'center' as const }}>
               <div style={{ fontSize: 22, marginBottom: 8 }}>🏠</div>
               <div style={{ fontWeight: 800, color: '#fff', marginBottom: 6 }}>Airbnb Tax Calculator</div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>All 50 states · Schedule E</div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,.5)', marginBottom: 14 }}>Schedule E / C scenarios · simplified state estimate</div>
               <div style={{ background: '#e8b84b', color: '#07111F', padding: '10px 0', borderRadius: 4, fontSize: 13, fontWeight: 800 }}>Calculate Now →</div>
             </div>
           </a>

@@ -1,5 +1,5 @@
 // Запуск: npx tsx scripts/verify-tax.ts   (падає з кодом 1, якщо щось розійшлось з еталоном)
-import { estimateTax, federalTax, TAX_RULES_2026 } from '../lib/tax-rules'
+import { estimateScheduleERaw, estimateTax, federalTax, TAX_RULES_2026 } from '../lib/tax-rules'
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 type Row = [string, number, number, Partial<ReturnType<typeof estimateTax>>]
@@ -23,6 +23,11 @@ for (const [name, g, r, exp] of cases) {
   for (const k of Object.keys(exp) as (keyof typeof got)[]) {
     if (got[k] !== exp[k]) { bad++; console.log('FAIL', name, k, 'got', got[k], 'expected', exp[k]) }
   }
+}
+const scheduleE = estimateScheduleERaw(50000, 0, 'single')
+if (scheduleE.se !== 0 || scheduleE.federal !== 3820 || scheduleE.total !== 3820) {
+  bad++
+  console.log('FAIL Schedule E $50K single no state', scheduleE)
 }
 // SS-стеля: при доході вище неї SE не росте лінійно
 const hi = estimateTax(250000, 0).se, lo = estimateTax(200000, 0).se

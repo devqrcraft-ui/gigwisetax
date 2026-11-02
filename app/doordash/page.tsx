@@ -15,13 +15,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const p = PLATFORMS.find(x => x.slug === 'doordash')
   if (!p) return {}
   return {
-    title: `DoorDash Tax Calculator 2026 — Free Estimate of What You Owe`,
-    description: `Enter your DoorDash earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $40K net = $5,652 SE tax.`,
+    title: 'DoorDash Tax Calculator 2026 | Free 1099 Estimate',
+    description: 'Estimate 2026 DoorDash taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
     keywords: `doordash tax calculator, doordash self employment tax 2026, doordash quarterly taxes, doordash 1099 taxes, how much taxes do doordash drivers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
-      title: `${p.name} Tax Calculator 2026 — Free, All 50 States + DC`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      title: 'DoorDash Tax Calculator 2026 | Free 1099 Estimate',
+      description: 'Estimate 2026 DoorDash taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
@@ -54,7 +54,7 @@ export default function PlatformPage() {
         name: `How much tax do I pay on ${platform.name} income?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `As a ${platform.name} independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10–37% depending on total income), plus any state income tax. Most ${platform.name} workers should set aside 25–30% of net income for taxes.`,
+          text: `Self-employment tax generally applies at a 15.3% rate to 92.35% of net earnings, subject to the Social Security wage base and other rules. Federal income tax depends on your total taxable income, filing status, deductions, and credits; state taxes depend on where you live. There is no single set-aside percentage that fits every ${platform.name} worker.`,
         },
       },
       {
@@ -78,7 +78,7 @@ export default function PlatformPage() {
         name: `What is the ${platform.name} 1099 threshold for 2026?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `For 2026, ${platform.name} generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
+          text: `The form you receive depends on the type of payment and applicable reporting rules; check your ${platform.name} tax documents for forms issued. A reporting threshold does not make taxable income tax-free: report taxable income even if you do not receive an information return.`,
         },
       },
     ],
@@ -114,7 +114,7 @@ export default function PlatformPage() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a DoorDash Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for DoorDash workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all DoorDash earnings. Download your annual tax summary or 1099-NEC from the DoorDash app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all DoorDash income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a DoorDash Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for DoorDash workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all DoorDash earnings and review the tax forms and annual tax summary available in the Dasher app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Estimated payments may be required based on your expected tax after withholding and credits. Safe-harbor rules and exceptions apply; check IRS guidance."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report business income and deductions on Schedule C when required. Attach it to Form 1040 by the applicable filing deadline."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"DoorDash Tax Calculator","item":"https://www.gigwisetax.com/doordash"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"DoorDash Tax Calculator 2026","url":"https://www.gigwisetax.com/doordash","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -138,7 +138,7 @@ export default function PlatformPage() {
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 50 states + DC.
+              Free {platform.name} tax calculator for 2026. Estimate self-employment tax, federal income tax, and a simplified state amount for all 50 states + DC.
               Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
               Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 50 states + DC.
             </p>
@@ -167,8 +167,8 @@ export default function PlatformPage() {
           <li dangerouslySetInnerHTML={{__html: 'Baseline example: <strong>$40,000 net profit</strong> gives about <strong>$7,933 in SE + federal tax</strong> before state tax, mileage, credits, or other income'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>' + gtxExample(40000).text.quarterly + '</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July 2026</strong> — one of the largest deductions available to drivers'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'DoorDash does <strong>not withhold taxes</strong> — you owe 15.3% SE tax on every dollar of net profit'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Your reserve depends on filing status, withholding, deductions, credits, and state rules; this estimate is not a one-size-fits-all set-aside percentage'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'DoorDash generally does not withhold employee payroll taxes from independent-contractor earnings; self-employment tax generally applies at 15.3% to 92.35% of net earnings, subject to other rules'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Your tax reserve depends on filing status, other income, withholding, deductions, credits, and state rules; there is no one-size-fits-all set-aside percentage'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
@@ -197,10 +197,9 @@ export default function PlatformPage() {
                 </p>
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Plan estimated taxes using your own estimate</div>
                   <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                    Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
-                    If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
+                    There is no fixed set-aside percentage for every worker. Estimated payments are generally required when you expect to owe at least $1,000 after withholding and credits, but exceptions and safe-harbor rules apply.
                   </p>
                 </div>
 
@@ -209,7 +208,7 @@ export default function PlatformPage() {
                 </h3>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 20 }} className="form-grid">
                   {[
-                    { label: ' Self-Employment Tax', value: '15.3%', detail: '12.4% Social Security + 2.9% Medicare', color: '#B22234' },
+                    { label: ' Self-Employment Tax', value: '15.3% rate', detail: 'Applied to 92.35% of net earnings; wage-base rules apply', color: '#B22234' },
                     { label: ' Federal Income Tax', value: '10–37%', detail: 'Based on total taxable income', color: '#7dd3fc' },
                     { label: ' State Income Tax', value: '0–13.3%', detail: 'Depends on your state (0 in TX, FL, NV)', color: '#a78bfa' },
                     { label: ' SE Tax Deduction', value: '50% off', detail: 'Deduct half of SE tax from taxable income', color: '#059669' },
@@ -311,23 +310,23 @@ export default function PlatformPage() {
                 {[
                   {
                     q: `Does ${platform.name} withhold taxes from my payments?`,
-                    a: `No. ${platform.name} classifies all workers as independent contractors (1099). They do not withhold federal income tax, state income tax, Social Security, or Medicare taxes. You must calculate and pay these yourself using IRS Form 1040-ES.`,
+                    a: `${platform.name} generally does not withhold employee payroll taxes from independent-contractor earnings. You may need to make estimated payments based on your expected tax after withholding and credits; exceptions and safe-harbor rules apply.`,
                   },
                   {
                     q: `How much should I set aside for ${platform.name} taxes?`,
-                    a: `Set aside 25–30% of your net ${platform.name} income for taxes. This covers the 15.3% self-employment tax plus federal income tax. In high-tax states like California or New York, set aside 30–35%.`,
+                    a: `There is no single percentage that fits every worker. Your estimate depends on net profit, filing status, other income, withholding, deductions, credits, and state or local rules.`,
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `The form you receive depends on the type of payment and applicable reporting rules; check your ${platform.name} tax documents for forms issued. A reporting threshold does not make taxable income tax-free: report taxable income even if you do not receive an information return.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
-                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
+                    a: `Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings. The Social Security portion is subject to the annual wage base ($184,500 for 2026); other rules, including Additional Medicare Tax, can apply. You can generally deduct half of self-employment tax when calculating adjusted gross income.`,
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
-                    a: `Yes. The $2,000 threshold (for 2026 payments) only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                    a: `Yes. A reporting threshold does not exempt taxable income from reporting. Net earnings from self-employment of $400 or more generally require a tax return for self-employment tax, though filing requirements can depend on your full situation. Report taxable income even if you do not receive a 1099 form.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>

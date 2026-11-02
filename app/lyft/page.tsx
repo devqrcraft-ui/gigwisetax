@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'lyft')
   if (!p) return {}
   return {
-    title: `Lyft Tax Calculator 2026 — Free Estimate of What You Owe`,
-    description: `Enter your Lyft earnings and miles: see 2026 SE tax, federal and state tax and quarterly payments. Free, no signup. $35K net = $4,945 SE tax.`,
+    title: `Lyft Tax Calculator 2026 | Estimate Mileage & Taxes`,
+    description: `Estimate federal and simplified state taxes on Lyft driving profit. Add business miles, expenses, filing status, and state for a free 2026 planning estimate.`,
     keywords: `lyft driver tax calculator, lyft taxes 2026, lyft self employment tax, lyft quarterly taxes, lyft 1099 tax guide`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 50 States + DC`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      description: `Estimate federal and simplified state taxes on ${p.name} driving profit, with mileage and quarterly planning. Not a tax return.`,
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
@@ -39,7 +39,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: `${platform.name} Tax Calculator 2026`,
-    description: `Free ${platform.name} self-employment tax calculator for 2026. All 50 States + DC.`,
+    description: `Free 2026 ${platform.name} tax planning calculator for all 50 states and DC. Estimates self-employment, federal, and simplified state tax.`,
     url: `https://www.gigwisetax.com/${platform.slug}`,
   }
 
@@ -52,7 +52,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `How much tax do I pay on ${platform.name} income?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `As a ${platform.name} independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10–37% depending on total income), plus any state income tax. Most ${platform.name} workers should set aside 25–30% of net income for taxes.`,
+          text: `Many U.S. ${platform.name} drivers are treated as independent contractors for federal tax purposes and may owe self-employment tax on net earnings, plus federal and applicable state income tax. Tax treatment and the amount due depend on your full situation.`,
         },
       },
       {
@@ -168,14 +168,14 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,667</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — includes all miles driven on active Lyft trips'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Lyft does <strong>not withhold taxes</strong> — you pay 15.3% SE tax plus federal and state income tax'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Set aside <strong>25–28%</strong> of gross Lyft earnings to cover quarterly tax payments'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Plan for estimated tax payments based on your net profit, total income, withholding, filing status, and state'}}/>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Lyft</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              Lyft workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $35,000 net income: approximately $4,945 SE tax + $1,723 federal income tax = <strong style={{ color:'#fff' }}>$6,669 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,667</strong>. Set aside 25% of every payment. Mileage deduction at 72.5¢–76¢/mile saves thousands for Lyft drivers annually.
+              In this simplified example, $35,000 of net profit produces approximately $4,945 in self-employment tax and $1,723 in federal income tax, or about <strong style={{ color:'#fff' }}>$6,669 before state tax</strong>. It assumes single filing status, no other income, and no credits. The mileage deduction should already be reflected in net profit; do not subtract it twice.
             </p>
           </div>
 
@@ -197,10 +197,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 </p>
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}>Plan for Estimated Tax Payments</div>
                   <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                    Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
-                    If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
+                    The amount to reserve depends on your full tax picture, including net profit, other income, filing status, withholding, and state.
+                    Generally, estimated payments may be required if you expect to owe at least $1,000 after withholding and credits; safe-harbor rules and exceptions also apply.
                   </p>
                 </div>
 
@@ -315,11 +315,11 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `How much should I set aside for ${platform.name} taxes?`,
-                    a: `Set aside 25–30% of your net ${platform.name} income for taxes. This covers the 15.3% self-employment tax plus federal income tax. In high-tax states like California or New York, set aside 30–35%.`,
+                    a: `There is no single percentage that fits every ${platform.name} driver. Your estimate depends on net profit, filing status, other income, withholding, credits, and state or local taxes. Use this calculator as a starting point and review the IRS estimated-tax rules.`,
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `The information return you receive depends on how payments are reported and current reporting rules. A form threshold does not determine whether income is taxable or reportable.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
@@ -327,7 +327,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
-                    a: `Yes. The $2,000 threshold (for 2026 payments) only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                    a: `Tax-form reporting thresholds do not determine whether income is taxable. Reporting and self-employment tax requirements depend on your income and circumstances; consult current IRS guidance.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>

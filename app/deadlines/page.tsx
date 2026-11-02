@@ -10,8 +10,8 @@ import AuthorBox from '@/app/components/AuthorBox'
 import { UNDERPAYMENT_PENALTY_RATE_2026, getDeadlineStatus } from '@/lib/data'
 
 export const metadata: Metadata = {
-  title: '2026 Quarterly Tax Deadlines — Federal + 12 States | GigWiseTax',
-  description: 'Federal 2026 quarterly estimated tax due dates for gig workers: April 15, June 15, Sept 15 and Jan 15, 2027. Includes 12 states, with California 30/40/0/30 split.',
+  title: '2026 Estimated Tax Deadlines for Gig Workers | Federal & State',
+  description: 'See 2026 federal estimated-tax due dates and selected state payment schedules. Includes calendar links and reminders to confirm current agency rules.',
   keywords: '2026 quarterly tax deadlines, estimated tax deadlines 2026, IRS 1040-ES due dates 2026, gig worker tax deadlines',
   alternates: { canonical: 'https://www.gigwisetax.com/deadlines' },
 }
@@ -73,10 +73,10 @@ export default function DeadlinesPage() {
       {/* ANSWER-FIRST + KEY TAKEAWAYS */}
       <div style={{maxWidth:1200,margin:'0 auto',padding:'16px 16px 0'}}>
         <div style={{background:'rgba(232,184,75,0.07)',border:'1px solid rgba(232,184,75,0.2)',borderRadius:8,padding:'14px 18px',marginBottom:12,fontSize:14,color:'rgba(255,255,255,0.85)',lineHeight:1.8}}>
-          Gig workers must pay quarterly estimated taxes if they expect to owe <strong style={{color:'#e8b84b'}}>$1,000+</strong> for the year. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong>. Missing a deadline triggers an IRS underpayment penalty of ~{UNDERPAYMENT_PENALTY_RATE_2026}% annualized.
+          Estimated payments may generally be required if you expect to owe <strong style={{color:'#e8b84b'}}>$1,000 or more after withholding and credits</strong>; exceptions and safe-harbor rules apply. 2026 federal deadlines: <strong style={{color:'#e8b84b'}}>Apr 15 · Jun 15 · Sep 15 · Jan 15, 2027</strong>. The underpayment rate is currently {UNDERPAYMENT_PENALTY_RATE_2026}% annualized and may change.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:12}}>
-          Last updated: May 2026 · By the GigWiseTax Team
+          Tax year 2026 · By the GigWiseTax Team
         </div>
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:16}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
@@ -119,7 +119,7 @@ export default function DeadlinesPage() {
             <div style={{ fontWeight: 800, color: '#B22234', marginBottom: 8, fontSize: 16 }}> Underpayment Penalty Warning</div>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.7, margin: '0 0 10px', textAlign: 'justify' }}>
               If you expect to owe <strong>$1,000 or more</strong> in federal taxes after withholding and credits,
-              you must make quarterly estimated payments or face an <strong>underpayment penalty</strong>.
+              estimated payments may be required; safe-harbor rules, withholding, credits, and exceptions can affect whether an underpayment penalty applies.
               For 2026, the underpayment rate is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the amount owed.
             </p>
             <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>

@@ -49,6 +49,15 @@ export function estimateTaxRaw(gross: number, stateRate = 0, filing: Filing = 's
   return { net, se, federal, state, taxable, total, quarterly: total / 4, takeHome: gross - total }
 }
 
+export function estimateScheduleERaw(netRentalIncome: number, stateRate = 0, filing: Filing = 'single') {
+  const net = Math.max(0, netRentalIncome)
+  const taxable = Math.max(0, net - TAX_RULES_2026.standardDeduction[filing])
+  const federal = federalTax(taxable, filing)
+  const state = taxable * stateRate
+  const total = federal + state
+  return { net, se: 0, federal, state, taxable, total, quarterly: total / 4, takeHome: net - total }
+}
+
 /** Округлені значення так само, як їх показує калькулятор (Math.round на кожному полі окремо). */
 export function estimateTax(gross: number, stateRate = 0, filing: Filing = 'single', mileDeduct = 0) {
   const r = estimateTaxRaw(gross, stateRate, filing, mileDeduct)

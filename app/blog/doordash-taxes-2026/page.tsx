@@ -11,8 +11,8 @@ const mileageH2 = (miles: number) => Math.round(miles * TAX_RULES_2026.mileage.h
 const money = (amount: number) => '$' + amount.toLocaleString('en-US')
 
 export const metadata: Metadata = {
-  title: 'DoorDash Taxes 2026: Calculator, Mileage & Filing Guide',
-  description: `Estimate DoorDash federal taxes and mileage deductions for 2026. A $40,000 Single-filer example is ${money(baseline40.total)} before state tax, mileage, credits, and other income.`,
+  title: 'DoorDash Taxes 2026: 1099, Mileage & Quarterly Tax Guide',
+  description: 'Learn how DoorDash 1099 taxes work in 2026, including self-employment tax, business mileage, quarterly payments, and filing basics. Includes a free calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
 }
 

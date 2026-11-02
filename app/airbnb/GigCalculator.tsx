@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import PartnerCTA from '@/app/PartnerCTA'
-import { estimateTaxRaw } from '@/lib/tax-rules'
+import { estimateScheduleERaw, estimateTaxRaw } from '@/lib/tax-rules'
 import ResultActions from '@/app/components/ResultActions'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
@@ -20,16 +20,18 @@ function parseNum(v: string): number {
 }
 
 export default function GigCalculator({
-  platform, states, deadlines, defaultState
+  platform, states, deadlines, defaultState, allowScheduleEMode = false
 }: {
   platform: Platform
   states: State[]
   deadlines: Deadline[]
   defaultState?: string
+  allowScheduleEMode?: boolean
 }) {
   const [income, setIncome]     = useState('')
   const [stateSlug, setStateSlug] = useState(defaultState && states.some(s => s.slug === defaultState) ? defaultState : 'california')
   const [filing, setFiling]     = useState<'single'|'married'|'hoh'>('single')
+  const [schedule, setSchedule] = useState<'e'|'c'|null>(null)
   const [result, setResult]     = useState<any>(null)
   const [inputError, setInputError] = useState('')
 
@@ -37,6 +39,11 @@ export default function GigCalculator({
   const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
 
   const calculate = () => {
+    if (allowScheduleEMode && !schedule) {
+      setInputError('Choose the tax-treatment scenario that best matches your facts before calculating.')
+      setResult(null)
+      return
+    }
     const checks: [number, number][] = [[parseNum(income), MAX_EARNINGS]]
     if (checks.some(([v]) => Number.isNaN(v))) { setInputError('Use numbers only (no letters or minus signs). For thousands use a comma, e.g. 50,000.'); setResult(null); return }
     if (checks.some(([v, mx]) => v > mx)) { setInputError('That number is too large for this estimator. Check the amount you entered.'); setResult(null); return }
@@ -45,7 +52,9 @@ export default function GigCalculator({
     const net = parseNum(income)
     if (!net) return
     const st = states.find(s => s.slug === stateSlug)
-    const tax = estimateTaxRaw(net, st?.rate ?? 0.05, filing)
+    const tax = allowScheduleEMode && schedule === 'e'
+      ? estimateScheduleERaw(net, st?.rate ?? 0.05, filing)
+      : estimateTaxRaw(net, st?.rate ?? 0.05, filing)
     const { se: seTax, federal, state: stateTax, total, quarterly } = tax
     const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)
     setResult({ seTax, federal, stateTax, total, quarterly, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
@@ -65,7 +74,9 @@ export default function GigCalculator({
         <div style={cardHd}>
           <div style={accent}/>
           <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}>{platform.name} Tax Calculator 2026</span>
-          <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.6)', fontSize: 13, padding: '3px 9px', borderRadius: 3 }}>IRS Schedule SE</span>
+          <span style={{ marginLeft: 'auto', background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.6)', fontSize: 13, padding: '3px 9px', borderRadius: 3 }}>
+            {allowScheduleEMode ? schedule ? `Schedule ${schedule.toUpperCase()} scenario` : 'Choose tax treatment' : 'IRS Schedule SE'}
+          </span>
         </div>
         <div style={{ padding: 14 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 10 }} className="form-grid">
@@ -87,8 +98,32 @@ export default function GigCalculator({
                 <option value="hoh">Head of Household</option>
               </select>
             </div>
+            {allowScheduleEMode && (
+              <div style={{ gridColumn: '1 / -1' }}>
+                <label style={lbl} htmlFor="rental-tax-treatment"> Rental Tax Treatment Scenario</label>
+                <select
+                  style={inp}
+                  id="rental-tax-treatment"
+                  value={schedule ?? ''}
+                  onChange={e => {
+                    if (e.target.value === 'e' || e.target.value === 'c') {
+                      setSchedule(e.target.value)
+                    }
+                    setResult(null)
+                    setInputError('')
+                  }}
+                >
+                  <option value="" disabled>Select based on your facts</option>
+                  <option value="e">Schedule E — rental income (no SE tax modeled)</option>
+                  <option value="c">Schedule C — business services (SE tax included)</option>
+                </select>
+                <p style={{ color: '#7a9abf', fontSize: 12, lineHeight: 1.6, margin: '6px 0 0' }}>
+                  Choose based on your facts. Guest services and other circumstances can affect classification; this tool does not determine it.
+                </p>
+              </div>
+            )}
             <div style={{ gridColumn: '1 / -1' }}>
-              <label style={lbl}> Annual {platform.name} Net Income (USD)</label>
+              <label style={lbl}> Annual {allowScheduleEMode && schedule === 'e' ? 'Net Rental Income' : allowScheduleEMode && !schedule ? 'Net Income' : `${platform.name} Net Income`} (USD)</label>
               <div style={{ position: 'relative' }}>
                 <span style={{ position: 'absolute', left: 11, top: '50%', transform: 'translateY(-50%)', color: 'rgba(255,255,255,0.55)', fontWeight: 700 }}>$</span>
                 <input style={{ ...inp, paddingLeft: 24 }} type="text" inputMode="decimal" value={income} onChange={e => setIncome(e.target.value)} placeholder="e.g. 45,000"/>
@@ -174,7 +209,7 @@ export default function GigCalculator({
               ))}
             </div>
             <div style={{ marginTop: 14, background: 'rgba(232,184,75,0.1)', border: '1px solid rgba(232,184,75,0.3)', borderRadius: 4, padding: '10px 14px', fontSize: 14, color: '#fcd34d', lineHeight: 1.6 }}>
-               <strong>Disclaimer:</strong> Estimates for planning only. Consult a licensed CPA or visit IRS.gov for official guidance.
+               <strong>Disclaimer:</strong> Planning estimate only. Federal tax assumes this is your only income and uses the selected filing status; it excludes other income, credits, rental-use limits, and local or lodging taxes. Schedule E treatment does not include self-employment tax. Consult a tax professional for classification and filing.
             </div>
           <PartnerCTA sid="airbnb" />
           <BehindOnTaxes page="airbnb" />

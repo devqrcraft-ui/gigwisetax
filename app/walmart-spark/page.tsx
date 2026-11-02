@@ -25,9 +25,9 @@ const DEDUCTIONS = [
 ]
 
 const FAQ = [
-  { q:'Does Walmart Spark send a 1099?', a:'Walmart Spark drivers may receive a 1099-NEC or another tax form depending on the payment arrangement. For 2026 payments, the general 1099-NEC reporting threshold is $2,000 ($600 for 2025 and earlier). You must report all income even if you do not receive a form.' },
-  { q:'What is the self-employment tax rate for Spark drivers?', a:'15.3% on 92.35% of your net earnings. This covers Social Security (12.4%) and Medicare (2.9%). You can deduct half of this SE tax from your gross income.' },
-  { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Usually, if you expect to owe $1,000 or more after withholding and credits. Exceptions and safe-harbor rules apply, such as paying at least 90% of the current-year tax or 100% of the prior-year tax (110% for higher earners). Deadlines: Q1 Apr 15, Q2 Jun 15, Q3 Sep 15, Q4 Jan 15.' },
+  { q:'Does Walmart Spark send a 1099?', a:'The form you receive depends on the type of payment and applicable reporting rules; check your Walmart Spark tax documents for forms issued. A reporting threshold does not make taxable income tax-free: report taxable income even if you do not receive an information return.' },
+  { q:'What is the self-employment tax rate for Spark drivers?', a:'Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income.' },
+  { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits. Exceptions and safe-harbor rules apply. 2026 federal due dates are April 15, June 15, and September 15, 2026, and January 15, 2027.' },
   { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Track the business miles driven for Spark deliveries (not personal or commuting miles) and keep a contemporaneous log.' },
   { q:'Can I deduct my car payment as a Spark driver?', a:'Not directly. You can use either the standard mileage rate OR actual expenses (depreciation, gas, insurance) — but not both. Most drivers find standard mileage simpler and more beneficial.' },
 ]
@@ -35,7 +35,7 @@ const FAQ = [
 
 const _faqSchemaFromFAQ_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity": FAQ.map(f => ({"@type":"Question","name":f.q,"acceptedAnswer":{"@type":"Answer","text":f.a}}))};
 const _webAppSchema_walmart_spark = {"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Tax Calculator 2026","description":"Tax calculator for Walmart Spark drivers. Self-employment tax, mileage deduction, and quarterly estimated payments for 2026.","url":"https://www.gigwisetax.com/walmart-spark","operatingSystem":"Web"};
-const _faqSchema_walmart_spark = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much do Walmart Spark drivers pay in taxes?","acceptedAnswer":{"@type":"Answer","text":"Walmart Spark drivers are independent contractors and pay 15.3% self-employment tax on net earnings plus federal income tax. The mileage deduction (72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec) in 2026) is the largest available deduction and can significantly reduce taxable income."}},{"@type":"Question","name":"Does Walmart Spark send a 1099?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walmart Spark sends a 1099-NEC to drivers who earn $2,000 or more. All delivery income is taxable even without a 1099."}},{"@type":"Question","name":"What can Walmart Spark drivers deduct?","acceptedAnswer":{"@type":"Answer","text":"Standard mileage (72.5¢/mile Jan–Jun, 76¢ Jul–Dec) for active delivery miles, phone plan (business portion), insulated bags or delivery equipment, tolls and parking fees during deliveries, and any required app subscriptions."}},{"@type":"Question","name":"Do Walmart Spark drivers pay quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Yes, if expected annual tax liability is $1,000 or more. Quarterly due dates: April 15, June 15, September 15, January 15. Use our calculator to estimate your quarterly payment amount."}}]};
+const _faqSchema_walmart_spark = _faqSchemaFromFAQ_walmart_spark;
 export default function WalmartSparkPage() {
   const baseline30K = example(30000)
   const [income, setIncome]   = useState('')
@@ -67,7 +67,7 @@ export default function WalmartSparkPage() {
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
-    <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Walmart Spark Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Walmart Spark workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Walmart Spark earnings. Download your annual tax summary or 1099-NEC from the Walmart Spark app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit. You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Walmart Spark income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+    <>    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Walmart Spark Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Walmart Spark workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Walmart Spark earnings and review the tax forms and annual tax summary available to you."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Estimated payments may be required based on your expected tax after withholding and credits. Safe-harbor rules and exceptions apply; check IRS guidance."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report business income and deductions on Schedule C when required. Attach it to Form 1040 by the applicable filing deadline."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Walmart Spark Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/walmart-spark"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/walmart-spark","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -86,7 +86,7 @@ export default function WalmartSparkPage() {
             </h1>
           </div>
           <p style={{ color:'rgba(255,255,255,.55)', fontSize:14, lineHeight:1.8, paddingLeft:16, maxWidth:780, marginBottom:18 }}>
-            Free self-employment tax calculator for Walmart Spark delivery drivers. Estimate your SE tax (15.3%),
+            Free self-employment tax calculator for Walmart Spark delivery drivers. Estimate SE tax (15.3% rate applied to 92.35% of net earnings),
             federal income tax, a simplified state-rate estimate, and mileage deductions for all 50 states + DC. Instant results — no signup required.
           </p>
           <div style={{ paddingLeft:16, display:'flex', gap:8, flexWrap:'wrap' as const }}>
@@ -193,7 +193,7 @@ export default function WalmartSparkPage() {
           <li>Baseline example: $30,000 net profit, single filer, no mileage or state tax = <strong>{baseline30K.text.total} SE + federal estimate</strong>, before state tax and credits.</li>
           <li>Equal-quarter baseline: <strong>{baseline30K.text.quarterly}</strong>; actual estimated payments may differ with withholding, prior-year safe harbor, and uneven income.</li>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — mileage varies by market and schedule, so enter your own documented business miles'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Walmart Spark does <strong>not withhold taxes</strong> — all drivers are 1099 independent contractors'}}/>
+          <li dangerouslySetInnerHTML={{__html: 'Walmart Spark generally does not withhold employee payroll taxes from independent-contractor earnings; other tax obligations depend on your full situation'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Business-use portions of delivery bags, phone accessories and supplies may be <strong>deductible</strong>; do not count the same vehicle costs under both standard mileage and actual expenses'}}/>
             </ul>
           </div>
@@ -255,7 +255,7 @@ export default function WalmartSparkPage() {
             <div style={{ padding:24 }}>
               <h2 style={{ fontSize:18, fontWeight:800, color: 'rgba(255,255,255,0.9)', marginBottom:12 }}>Walmart Spark Driver Taxes: Complete 2026 Guide</h2>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>
-                Walmart Spark is one of the fastest-growing grocery and general merchandise delivery platforms in the United States, with drivers operating across 40+ states. As a Spark driver, you're classified as an <strong>independent contractor</strong>, which means Walmart does not withhold taxes from your earnings. You are responsible for paying self-employment tax (SE tax) and estimated quarterly taxes to the IRS.
+                Walmart Spark drivers generally work as independent contractors. Walmart generally does not withhold employee payroll taxes from contractor earnings; you may need to pay self-employment tax and make estimated payments based on your full tax situation.
               </p>
               <h3 style={{ fontSize:15, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:8 }}>How SE Tax Works for Spark Drivers</h3>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.75)', lineHeight:1.8, marginBottom:12 }}>
@@ -263,7 +263,7 @@ export default function WalmartSparkPage() {
               </p>
               <h3 style={{ fontSize:15, fontWeight:700, color: 'rgba(255,255,255,0.9)', marginBottom:8 }}>Quarterly Tax Deadlines for 2026</h3>
               <p style={{ fontSize:13, color:'rgba(255,255,255,0.8)', lineHeight:1.8 }}>
-                If you expect to owe $1,000 or more, pay quarterly: <strong>Q1 April 15 → Q2 June 15 → Q3 September 15 → Q4 January 15, 2027</strong>. Missing deadlines triggers IRS underpayment penalties. Most Spark drivers should set aside 25–30% of every payment received.
+                Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits. Safe-harbor rules and exceptions apply. 2026 federal due dates are <strong>April 15, June 15, and September 15, 2026, and January 15, 2027</strong>. There is no single set-aside percentage that fits every driver.
               </p>
             </div>
           </div>

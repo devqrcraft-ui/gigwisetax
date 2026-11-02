@@ -13,13 +13,13 @@ export async function generateMetadata({ params }: { params: { platform: string 
   const p = PLATFORMS.find(x => x.slug === 'shipt')
   if (!p) return {}
   return {
-    title: `${p.name} Tax Calculator 2026 — $30K Income = $5,417 Tax Owed`,
-    description: `${p.name} workers: $30K net = $4,239 SE tax + $1,178 federal. Free 2026 calculator, all 50 states + DC, no signup.`,
+    title: `${p.name} Tax Calculator 2026 | Estimate Mileage & Taxes`,
+    description: `Estimate federal and simplified state taxes on ${p.name} shopper profit. Add business expenses, filing status, and state for a free planning estimate.`,
     keywords: `shipt tax calculator, shipt self employment tax 2026, shipt quarterly taxes, shipt 1099 taxes, how much taxes do shipt workers pay`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}` },
     openGraph: {
       title: `${p.name} Tax Calculator 2026 — Free, All 50 States + DC`,
-      description: `Estimate your ${p.name} self-employment taxes instantly. Includes SE tax, federal, state, and quarterly payments.`,
+      description: `Estimate federal and simplified state taxes on ${p.name} shopper profit, with expense and quarterly planning. Not a tax return.`,
       url: `https://www.gigwisetax.com/${p.slug}`,
     },
   }
@@ -52,7 +52,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `How much tax do I pay on ${platform.name} income?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `As a ${platform.name} independent contractor, you pay 15.3% self-employment tax on net earnings, plus federal income tax (10–37% depending on total income), plus any state income tax. Most ${platform.name} workers should set aside 25–30% of net income for taxes.`,
+          text: `Many ${platform.name} shoppers are treated as independent contractors for federal tax purposes and may owe self-employment tax on net earnings, plus federal and applicable state income tax. Tax treatment and the amount due depend on your full situation.`,
         },
       },
       {
@@ -60,7 +60,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
         name: `Does ${platform.name} withhold taxes?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `No. ${platform.name} classifies workers as independent contractors and does not withhold federal, state, or Social Security/Medicare taxes. You are responsible for calculating and paying your own taxes quarterly using IRS Form 1040-ES.`,
+          text: `Withholding and tax forms depend on your work and payment arrangement. Review your payment statements and determine any tax due based on your facts; do not assume platform payments satisfy your tax obligations.`,
         },
       },
       {
@@ -73,10 +73,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
       },
       {
         '@type': 'Question',
-        name: `What is the ${platform.name} 1099 threshold for 2026?`,
+        name: `What tax forms might a ${platform.name} shopper receive?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `For 2026, ${platform.name} generally must issue a 1099-NEC if you earn $2,000 or more in 2026 ($600 for 2025 and earlier). However, you are required to report ALL income to the IRS even if you do not receive a 1099 form.`,
+          text: `Forms depend on the payment arrangement and current reporting rules. A form threshold does not determine whether income is taxable or reportable.`,
         },
       },
     ],
@@ -99,10 +99,10 @@ export default function PlatformPage({ params }: { params: { platform: string } 
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a ${platform.name} Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for ${platform.name} workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all ${platform.name} earnings. Download your annual tax summary or 1099-NEC from the ${platform.name} app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all ${platform.name} income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"Tax Planning Steps for ${platform.name} Shoppers","description":"General recordkeeping and tax-planning steps; treatment depends on the shopper's role and tax facts.","step":[{"@type":"HowToStep","position":1,"name":"Keep payment records","text":"Save platform statements, payment records, and any tax documents you receive."},{"@type":"HowToStep","position":2,"name":"Track business expenses","text":"Keep receipts and records for eligible business expenses and qualifying mileage."},{"@type":"HowToStep","position":3,"name":"Determine tax treatment","text":"Confirm whether your work is employee or self-employment income; this calculator does not classify it."},{"@type":"HowToStep","position":4,"name":"Estimate payments","text":"Estimate taxes using your full income, deductions, withholding, filing status, and state rules."},{"@type":"HowToStep","position":5,"name":"File applicable forms","text":"Report income and expenses using the forms and treatment that apply to your circumstances."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"${platform.name} Tax Calculator","item":"https://www.gigwisetax.com/shipt"}]}` }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"${platform.name} Tax Calculator 2026","url":"https://www.gigwisetax.com/shipt","dateModified":"2026-08-24","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"${platform.name} Tax Calculator 2026","url":"https://www.gigwisetax.com/shipt","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
 
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
@@ -123,7 +123,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} self-employment tax calculator for 2026. Estimate your SE tax (15.3%), federal income tax, and state tax for all 50 states + DC.
+              Free {platform.name} tax planning estimate for 2026. Estimate self-employment, federal, and simplified state taxes for all 50 states + DC.
               Get your quarterly estimated payment schedule with Google Calendar export. No signup required — results are instant.
               Powered by the <a href="/" style={{ color: 'rgba(255,255,255,.75)', fontWeight: 700 }}>GigWiseTax main calculator</a> — SE tax + federal + all 50 states + DC.
             </p>
@@ -149,18 +149,18 @@ export default function PlatformPage({ params }: { params: { platform: string } 
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'On <strong>$30,000 net income</strong>, {platform.name} workers owe approximately <strong>$5,417 total tax</strong> in 2026 — $4,239 SE tax + ~$1,178 federal'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Quarterly estimated payment: <strong>$1,354</strong> due April 15, June 15, Sep 15, Jan 15'}}/>
+          <li>Federal-only example: $30,000 net profit, single filer, no mileage entered = about $5,417; state tax is not included</li>
+          <li>Estimated payments depend on your full tax picture; check current federal and state due dates</li>
           <li dangerouslySetInnerHTML={{__html: 'IRS mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July 2026</strong> — one of the largest deductions available'}}/>
-          <li dangerouslySetInnerHTML={{__html: '{platform.name} does <strong>not withhold taxes</strong> — you owe 15.3% SE tax on every dollar of net profit'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'Most {platform.name} workers should set aside <strong>25–27%</strong> of gross earnings for taxes'}}/>
+          <li>Tax-form thresholds do not determine whether income must be reported</li>
+          <li>Tax treatment and estimated payments vary with your role and full tax situation</li>
             </ul>
           </div>
           {/* ANSWER-FIRST GEO BLOCK */}
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — {platform.name}</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {platform.name} workers pay 15.3% self-employment tax on net earnings, plus federal income tax. On $30,000 net income: approximately $4,239 SE tax + $1,178 federal income tax = <strong style={{ color:'#fff' }}>$5,417 total tax</strong>. Quarterly estimated payment: <strong style={{ color:'#e8b84b' }}>$1,354</strong>. Set aside 25% of every payment. Mileage deduction — 72.5¢/mile through June 30, 76¢/mile from July 1 — is one of the largest deductions available.
+              In this federal-only example, $30,000 of net profit produces approximately $4,239 in SE tax and $1,178 in federal income tax, or <strong style={{ color:'#fff' }}>$5,417 total</strong>. It assumes single filing status, no other income, no credits, and no mileage deduction; state tax is excluded. Do not subtract mileage twice if it is already reflected in net profit.
             </p>
           </div>
 
@@ -176,16 +176,13 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                   How {platform.name} Taxes Work in 2026
                 </h2>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, textAlign: 'justify', marginBottom: 20 }}>
-                  As a {platform.name} worker, you are classified as an <strong>independent contractor (1099)</strong> — not an employee.
-                  This means {platform.name} does not withhold any federal, state, or Social Security/Medicare taxes from your payments.
-                  You are responsible for calculating and paying your own taxes directly to the IRS four times per year.
+                  Many {platform.name} shoppers are treated as independent contractors for federal tax purposes, but work arrangements can differ. Check your documents and reporting status; a platform form does not determine whether income is taxable.
                 </p>
 
                 <div style={{ background: 'rgba(178,34,52,0.12)', border: '1px solid rgba(178,34,52,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}> Key Rule: Set Aside 25–30% of Every Payment</div>
+                  <div style={{ fontWeight: 700, color: '#B22234', marginBottom: 8 }}>Plan for Estimated Tax Payments</div>
                   <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                    Most {platform.name} workers should set aside <strong>25–30% of net income</strong> for taxes.
-                    If you expect to owe $1,000 or more in taxes, you must make quarterly estimated payments or face IRS underpayment penalties.
+                    The amount depends on net profit, other income, filing status, withholding, credits, and state. Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits; safe-harbor rules and exceptions apply.
                   </p>
                 </div>
 
@@ -284,7 +281,7 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
                       If you use a dedicated space at home exclusively for your {platform.name} business, you can deduct home office expenses.
                       The simplified method allows <strong>$5 per square foot</strong> (up to 300 sq ft = $1,500 deduction).
-                      Equipment and software are fully deductible in the year of purchase under Section 179.
+                      Eligible equipment or software may qualify for depreciation or an expensing election, depending on business use and current rules.
                     </p>
                   </div>
                 )}
@@ -296,23 +293,23 @@ export default function PlatformPage({ params }: { params: { platform: string } 
                 {[
                   {
                     q: `Does ${platform.name} withhold taxes from my payments?`,
-                    a: `No. ${platform.name} classifies all workers as independent contractors (1099). They do not withhold federal income tax, state income tax, Social Security, or Medicare taxes. You must calculate and pay these yourself using IRS Form 1040-ES.`,
+                    a: `Withholding and tax forms depend on your work and payment arrangement. Review your payment statements and determine any tax due based on your facts; do not assume platform payments satisfy your tax obligations.`,
                   },
                   {
                     q: `How much should I set aside for ${platform.name} taxes?`,
-                    a: `Set aside 25–30% of your net ${platform.name} income for taxes. This covers the 15.3% self-employment tax plus federal income tax. In high-tax states like California or New York, set aside 30–35%.`,
+                    a: `There is no single percentage that fits every ${platform.name} shopper. Your estimate depends on net profit, filing status, other income, withholding, credits, and state or local taxes.`,
                   },
                   {
                     q: `What 1099 form does ${platform.name} send?`,
-                    a: `${platform.name} issues a 1099-NEC if you are paid $2,000 or more for services in 2026 ($600 or more for 2025 and earlier), or a 1099-K if payment-processor thresholds are met. You must report ALL income even if you don't receive a 1099 form.`,
+                    a: `The information return you receive depends on how payments are reported and current rules. A form threshold does not determine whether income is taxable or reportable.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
-                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
+                    a: `For eligible self-employment income, the general SE tax rate is 15.3% on net earnings, subject to the Social Security wage base and other rules. The deductible portion and final amount depend on your circumstances; see current IRS instructions.`,
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
-                    a: `Yes. The $2,000 threshold (for 2026 payments) only determines whether ${platform.name} must send you a 1099 form. You are required to report and pay taxes on ALL self-employment income, even $1, if your total self-employment profit exceeds $400 for the year.`,
+                    a: `Tax-form reporting thresholds do not determine whether income is taxable. Reporting and self-employment tax requirements depend on your income and circumstances; consult current IRS guidance.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', paddingBottom: 16, marginBottom: 16 }}>

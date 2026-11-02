@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Gig Worker Tax Deductions Checklist 2026 — Free',
-  description: 'Every tax deduction gig workers qualify for in 2026: mileage, phone, supplies, home office and more. Free checklist, see your estimated savings.',
+  title: 'Gig Worker Tax Deductions Checklist for 2026',
+  description: 'Review common gig-worker deductions, eligibility limits, and recordkeeping. Select checklist items without treating deductions as guaranteed tax savings.',
   alternates: { canonical: 'https://www.gigwisetax.com/deductions' },
 };
 

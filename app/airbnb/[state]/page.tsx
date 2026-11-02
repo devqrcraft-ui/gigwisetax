@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import { estimateScheduleERaw } from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -73,12 +73,10 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
+  const stateStr = s.rate === 0 ? 'no state income-tax rate modeled' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% simplified state-rate input`
   return {
-    title: s.rate === 0
-      ? `Airbnb ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Airbnb ${s.name} Taxes 2026 — $50K Earner Owes $${estimateTax(50000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Airbnb ${s.name} 2026: $50K net = ~$${estimateTax(50000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(50000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(50000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+    title: `Airbnb Rental Taxes in ${s.name} 2026 | Schedule E & C`,
+    description: `Compare simplified Airbnb Schedule E rental-income and Schedule C service scenarios in ${s.name}. Federal estimate plus ${stateStr}; not a full state return or lodging-tax calculator.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -95,11 +93,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const noteGen = STATE_NOTES[stateSlug]
-  const stateNote = noteGen
-    ? noteGen(platform.name, stateRateStr, noStateTax)
-    : `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax
-        ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.`
-        : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
+  const stateNote = `This estimator compares rental-income scenarios for ${state.name}. The Schedule E scenario does not include self-employment tax; the Schedule C scenario does. ${noStateTax ? `${state.name} has no individual income-tax rate modeled here.` : `The ${stateRateStr} input is a simplified estimate, not ${state.name}'s full tax schedule.`} City and county lodging taxes are separate and are not calculated.`
+  const rentalExample = estimateScheduleERaw(50000, state.rate)
 
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
@@ -109,26 +104,26 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     {
       q: `How much is ${platform.name} tax in ${state.name}?`,
       a: noStateTax
-        ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-        : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $50,000 net income, expect to owe approximately ${estimateTax(50000, state.rate).total.toLocaleString('en-US')} total.`,
+        ? `Tax treatment depends on the rental activity and services provided. This calculator offers a Schedule E scenario without modeled SE tax and a Schedule C scenario that includes it. No ${state.name} individual income-tax rate is modeled.`
+        : `Tax treatment depends on the rental activity and services provided. This calculator offers a Schedule E scenario without modeled SE tax and a Schedule C scenario that includes it. State tax uses a simplified ${stateRateStr} input, not the full ${state.name} schedule.`,
     },
     {
       q: `Do I need to make quarterly payments in ${state.name}?`,
       a: noStateTax
-        ? `In ${state.name}, you must make federal quarterly estimated payments (IRS Form 1040-ES) if you expect to owe $1,000 or more. No state quarterly payments are required.`
-        : `Yes. In ${state.name}, you must make both federal quarterly estimated payments (IRS Form 1040-ES) and ${state.name} state quarterly payments if you expect to owe $1,000 or more.`,
+        ? `Estimated-payment requirements depend on your full return, withholding, and safe-harbor amounts. No ${state.name} individual income-tax rate is included in this estimate; check local lodging-tax rules separately.`
+        : `Estimated-payment requirements depend on your full return, withholding, and safe-harbor amounts. The calculator's state component is simplified and does not determine ${state.name} filing or payment requirements.`,
     },
     {
       q: `What is the self-employment tax rate in ${state.name} for ${platform.name} workers?`,
-      a: `The federal self-employment tax rate is 15.3% regardless of state. This covers Social Security (12.4%) and Medicare (2.9%). In ${state.name}, you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
+      a: `Rental income generally reported on Schedule E is not subject to self-employment tax. Significant guest services or other facts may affect whether Schedule C treatment applies. This calculator provides both scenarios but does not determine your classification.`,
     },
     {
       q: `Does ${platform.name} take out taxes in ${state.name}?`,
-      a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for paying all federal SE tax, federal income tax${noStateTax ? '' : `, and ${state.name} state income tax`} yourself, typically through quarterly estimated payments.`,
+      a: `${platform.name} payment reporting or withholding does not determine how your rental income is classified. Your federal and state obligations depend on your activity, expenses, other income, and local rules.`,
     },
     {
       q: `Do I need to collect occupancy or lodging tax on my ${state.name} Airbnb?`,
-      a: STATE_TOT_NOTES[stateSlug] || `${state.name} short-term rental hosts should check whether their state or city charges a transient occupancy / hotel tax separate from income tax. Airbnb auto-collects this in some jurisdictions but not all — confirm in your Airbnb host dashboard under Taxes, and check your city or county tax office directly.`,
+      a: STATE_TOT_NOTES[stateSlug] || `${state.name} short-term rental hosts should check whether their state or city charges a transient occupancy or hotel tax separate from income tax. Collection and filing rules vary by jurisdiction; verify with the relevant local tax authority.`,
     },
   ]
 
@@ -148,7 +143,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Airbnb Tax Calculator ${state.name} 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Airbnb Tax Calculator","item":"https://www.gigwisetax.com/airbnb"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/airbnb/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Calculator ${state.name} 2026","datePublished":"2026-01-01","dateModified":"2026-05-29","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/airbnb/${state.slug}"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Rental Taxes in ${state.name} 2026","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/airbnb/${state.slug}"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
         {/* HERO */}
@@ -168,35 +163,31 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               </h1>
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
-              Free {platform.name} tax calculator for {state.name} ({state.abbr}).
-              {noStateTax
-                ? ` ${state.name} has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.`
-                : ` Includes the ${stateRateStr} ${state.name} state income tax plus federal SE tax (15.3%) and federal income tax.`
-              } Quarterly payment schedule with Google Calendar export. No signup required.
+              Compare Schedule E rental-income and Schedule C service scenarios for an Airbnb in {state.name} ({state.abbr}). The state input is simplified and does not include the full state schedule or separate lodging taxes. This tool does not determine your tax classification.
             </p>
           </div>
         </div>
         <div style={{ maxWidth:1200, margin:'0 auto', padding:'4px 16px 0' }}>
           <div style={{ fontSize:13, color:'rgba(255,255,255,0.45)', marginBottom:16, display:'flex', gap:12, flexWrap:'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Last updated: November 2, 2026</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~6 min read · 1,500 words'}</span>
           </div>
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Airbnb Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Airbnb hosts in ' + state.name + ' earning $50,000 net owe approximately $' + estimateTax(50000, state.rate).total.toLocaleString('en-US') + ' total — $7,065 self-employment tax (15.3%) + $3,396 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(50000, state.rate).total / 4).toLocaleString('en-US') + '. Top deductions: depreciation, cleaning, mortgage interest, utilities.'}
+              {`For a $50,000 net-rental-income input, the Schedule E scenario estimates about $${Math.round(rentalExample.federal).toLocaleString('en-US')} federal income tax before other income, credits, rental-use limits, or state/local rules. The calculator also offers a Schedule C scenario with self-employment tax. These are planning models, not filing determinations.`}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
-              <li>Airbnb hosts are self-employed — Airbnb withholds zero taxes</li>
-              <li>{'On $50,000 net income: ~$7,065 SE tax + ~$3,396 federal = ~$10,461 total in ' + state.name}</li>
-              <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$2,615 each'}</li>
-              <li>14-day rule: rent under 15 days per year = income is tax-free</li>
-              <li>Top deductions: depreciation, cleaning fees, mortgage interest, utilities</li>
-              <li>File Schedule E (passive) or Schedule C (hotel-like services)</li>
+              <li>Rental income is not automatically subject to self-employment tax.</li>
+              <li>Schedule E and Schedule C treatment depend on the rental activity and services provided.</li>
+              <li>Estimated-payment requirements depend on the full return, withholding, and safe-harbor rules.</li>
+              <li>Renting a home for fewer than 15 days may qualify for an exclusion; related expense deductions are also limited.</li>
+              <li>Eligible rental expenses and depreciation depend on business use, personal use, and other rules.</li>
+              <li>Local lodging or occupancy taxes are separate from income tax and are not calculated here.</li>
             </ul>
           </section>
         </div>
@@ -205,7 +196,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {[
                 ` ${state.abbr}: ${noStateTax ? 'No Tax' : stateRateStr}`,
-                ' IRS Schedule SE',
+                ' Schedule E & C scenarios',
                 ' No Signup',
                 ' 2026 Tax Rules',
                 ' Instant Results',
@@ -220,7 +211,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         {/* MAIN GRID */}
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '12px 16px 20px', display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24 }} className="main-grid">
           <div>
-            <GigCalculator platform={platform} states={STATES} defaultState={stateSlug} deadlines={DEADLINES_2026} />
+            <GigCalculator platform={platform} states={STATES} defaultState={stateSlug} deadlines={DEADLINES_2026} allowScheduleEMode />
 
             {/* STATE GUIDE */}
             <div style={card}>
@@ -239,9 +230,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {/* TAX BREAKDOWN */}
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 8, marginBottom: 12 }} className="three-grid">
                   {[
-                    { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
-                    { label: 'Federal Tax', val: '10–37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
-                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
+                    { label: 'Schedule E scenario', val: 'No SE tax modeled', sub: 'Rental-income assumption', color: '#059669' },
+                    { label: 'Schedule C scenario', val: 'SE tax included', sub: 'If applicable to your activity', color: '#B22234' },
+                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'Not modeled' : stateRateStr, sub: 'Simplified rate only', color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>

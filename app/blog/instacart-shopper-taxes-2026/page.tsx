@@ -3,19 +3,28 @@ import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Instacart Shopper Taxes 2026 — $35K Net = $4,945 SE Tax',
-  description: 'Instacart shoppers on $35K net: $4,945 SE tax, but mileage 72.5¢–76¢/mi + insulated bags + phone saves $3,480+. Free 2026 calculator, all 50 states + DC.',
+  title: 'Instacart Shopper Tax Calculator 2026: Deductions & Estimate',
+  description: 'Estimate 2026 Instacart taxes, mileage deductions, and quarterly payments. Understand net profit, self-employment tax, and federal tax with a free calculator.',
   keywords: 'instacart shopper tax deductions 2026, instacart mileage deduction, instacart 1099 taxes, instacart shopper self employment tax',
   authors: [{ name: 'the GigWiseTax Team' }],
   robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Instacart shopper pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 net income, Instacart shoppers owe approximately $6,669 in 2026 — $4,945 in self-employment tax and $1,723 in federal income tax. Quarterly estimated payment is $1,667."}},{"@type":"Question","name":"Does Instacart withhold taxes from shoppers?","acceptedAnswer":{"@type":"Answer","text":"No. Instacart classifies shoppers as independent contractors and does not withhold any federal, state, Social Security, or Medicare taxes. You pay quarterly estimated taxes yourself using Form 1040-ES."}},{"@type":"Question","name":"Can Instacart shoppers deduct mileage in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart shoppers deduct 72.5 cents per mile (January–June; 76 cents from July 1) driven for business in 2026 — driving to the store, during shopping, and delivering to customers. On 10,000 miles that is a $7,250–$7,600 deduction."}},{"@type":"Question","name":"What deductions can Instacart shoppers claim?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers can deduct mileage (72.5¢/mile), insulated bags and coolers, phone bill (business portion), parking fees, tolls, and half of self-employment tax. These are reported on Schedule C."}},{"@type":"Question","name":"Does Instacart send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart sends a 1099-NEC for shoppers earning $2,000 or more in a year. The form is available in the Instacart Shopper app by January 31 each year."}},{"@type":"Question","name":"What is the quarterly estimated tax for an Instacart shopper?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 net income, quarterly estimated payments are approximately $1,667. Pay by April 15, June 15, September 15, and January 15 via IRS Direct Pay."}},{"@type":"Question","name":"Do Instacart shoppers pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Yes. Instacart shoppers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $35,000 net income that equals approximately $4,945."}}]}'
-
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax does an Instacart shopper pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $35,000 net profit, the simplified federal tax estimate is about $6,669 total (components rounded separately), including $4,945 self-employment tax and $1,723 federal income tax. This assumes single filing status, no other income, and no credits or state tax."}},{"@type":"Question","name":"Does Instacart withhold taxes from shoppers?","acceptedAnswer":{"@type":"Answer","text":"Instacart shoppers generally need to plan for taxes on contractor income. Tax forms and withholding depend on the payment arrangement; receiving a form does not determine whether income is taxable."}},{"@type":"Question","name":"Can Instacart shoppers deduct mileage in 2026?","acceptedAnswer":{"@type":"Answer","text":"Eligible business miles may qualify for the IRS 2026 standard mileage rate: 72.5 cents per mile for January–June and 76 cents from July 1. Keep contemporaneous mileage records and avoid deducting the same expense twice."}},{"@type":"Question","name":"What deductions can Instacart shoppers claim?","acceptedAnswer":{"@type":"Answer","text":"Potential Schedule C expenses can include eligible business mileage, insulated bags or coolers, and the business-use portion of a phone bill. Deductibility depends on the facts and records."}},{"@type":"Question","name":"Does Instacart send a 1099 form?","acceptedAnswer":{"@type":"Answer","text":"The tax form you receive depends on how payments are reported. A reporting threshold does not determine whether income must be reported on your tax return."}},{"@type":"Question","name":"What is the quarterly estimated tax for an Instacart shopper?","acceptedAnswer":{"@type":"Answer","text":"For the $35,000 net-profit example, the simplified federal estimate is about $1,667 per quarter before state tax, withholding, credits, and payment timing adjustments."}},{"@type":"Question","name":"Do Instacart shoppers pay self-employment tax?","acceptedAnswer":{"@type":"Answer","text":"Net earnings from self-employment are generally subject to self-employment tax. A $35,000 net-profit estimate produces about $4,945 in SE tax under the simplified assumptions shown here."}}]}'
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Shopper Taxes 2026","item":"https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Shopper Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026"}}'
+
+const articleSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'Instacart Shopper Taxes 2026: Tax Estimate, Mileage & Deductions',
+  datePublished: '2026-01-01',
+  dateModified: '2026-11-01',
+  author: { '@type': 'Organization', name: 'the GigWiseTax Team', url: 'https://www.gigwisetax.com' },
+  publisher: { '@type': 'Organization', name: 'GigWiseTax', url: 'https://www.gigwisetax.com' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://www.gigwisetax.com/blog/instacart-shopper-taxes-2026' },
+})
 
 export default function InstacartTaxes2026() {
   return (
@@ -23,6 +32,7 @@ export default function InstacartTaxes2026() {
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: breadcrumbSchema }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: articleSchema }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: faqSchema }} />
       <article
         itemScope
         itemType="https://schema.org/BlogPosting"
@@ -39,10 +49,10 @@ export default function InstacartTaxes2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            Instacart Shopper Taxes 2026: $35K Income = $6,669 Tax Owed
+            Instacart Shopper Taxes 2026: Tax Estimate, Mileage &amp; Deductions
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Updated for 2026 tax rules</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
@@ -51,7 +61,7 @@ export default function InstacartTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Instacart shoppers are independent contractors who owe self-employment tax plus federal income tax. On $35,000 net income in 2026: approximately $4,945 SE tax + $1,723 federal income tax = <strong style={{ color: '#e8edf8' }}>$6,669 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,667</strong>. The mileage deduction at 72.5¢–76¢/mile is the largest write-off — 10,000 miles eliminates $7,250–$7,600 from taxable income.
+              Full-service Instacart shoppers generally report contractor activity on Schedule C. In this simplified example, $35,000 of net profit produces about $4,945 in self-employment tax and $1,723 in federal income tax, or roughly <strong style={{ color: '#e8edf8' }}>$6,669 before state tax</strong>. The estimate assumes single filing status, no other income, and no credits. Net profit means eligible business expenses such as mileage have already been accounted for.
             </p>
           </div>
         </section>
@@ -61,10 +71,10 @@ export default function InstacartTaxes2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$35K net income = $6,669 total tax owed in 2026 ($1,667/quarter)',
+                '$35K net profit example = about $6,669 federal tax before state tax',
                 'SE tax: 15.3% on net profit — Instacart does not withhold anything',
                 'Mileage deduction: 72.5¢–76¢/mile — store trips, shopping, delivery all count',
-                'Instacart sends 1099-NEC for earnings of $2,000+ by January 31',
+                'Tax-form reporting thresholds do not determine whether income is taxable',
                 'Insulated bags, coolers, and phone bill are deductible on Schedule C',
               ].map((t, i) => (
                 <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.6, paddingLeft: 16, position: 'relative' as const }}>
@@ -105,7 +115,7 @@ export default function InstacartTaxes2026() {
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
                 <tr>
-                  {['Tax Component', 'Rate', 'Amount on $35K'].map(h => (
+                  {['Tax Component', 'Calculation', 'Amount on $35K net profit'].map(h => (
                     <th key={h} style={{ background: 'rgba(255,255,255,0.05)', color: '#e8b84b', padding: '10px 14px', textAlign: 'left' as const, fontSize: 12, fontFamily: 'monospace', letterSpacing: '0.04em', borderBottom: '1px solid rgba(232,184,75,0.2)' }}>{h}</th>
                   ))}
                 </tr>
@@ -113,8 +123,8 @@ export default function InstacartTaxes2026() {
               <tbody>
                 {[
                   ['Self-employment tax', '15.3%', '$4,945'],
-                  ['SE tax deduction (50%)', '−7.65%', '−$2,475'],
-                  ['Federal income tax (22%)', '22%', '$1,723'],
+                  ['SE tax deduction (50%)', 'Deduction', '−$2,473'],
+                  ['Federal income tax (12% marginal bracket)', '12%', '$1,723'],
                   ['Total tax owed', '', '$6,669'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
@@ -141,40 +151,40 @@ export default function InstacartTaxes2026() {
             What Can Instacart Shoppers Deduct in 2026?
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            All deductions below are reported on Schedule C and reduce net profit, lowering both income tax and SE tax.
+            Eligible business expenses generally reduce Schedule C net profit. The deduction for half of self-employment tax is claimed separately on the federal return, not as a Schedule C expense.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              'Mileage: 72.5¢–76¢/mile — driving to store, during shopping, and delivery to customer',
+              'Vehicle costs: choose the standard-mileage method or eligible actual expenses; keep records of qualifying business use',
               'Insulated bags, coolers, thermal totes used for orders',
               'Phone: business-use percentage of your monthly bill',
               'Parking fees and tolls incurred during shopping trips',
               'Instacart service fees shown on your annual earnings summary',
-              'Car washes (business-use percentage)',
+              'Parking fees and tolls for business trips may be separately deductible when eligible',
               'Half of self-employment tax (above-the-line deduction on Schedule 1)',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Instacart shoppers have a unique advantage over delivery-only drivers: the mileage includes time inside the parking lot and driving between stores on multi-store batches. Log every trip with a mileage tracking app.
+            Mileage eligibility depends on the trip and your records; commuting is generally not business mileage. Keep a contemporaneous log and do not claim both the standard-mileage method and the same vehicle costs as actual expenses.
           </p>
           <div style={{ overflowX: 'auto' as const, marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
                 <tr>
-                  {['Annual Miles', 'Mileage Deduction', 'Tax Saved (22%)'].map(h => (
+                  {['Eligible Business Miles', 'Deduction at 72.5¢–76¢/mile'].map(h => (
                     <th key={h} style={{ background: 'rgba(255,255,255,0.05)', color: '#e8b84b', padding: '10px 14px', textAlign: 'left' as const, fontSize: 12, fontFamily: 'monospace', letterSpacing: '0.04em', borderBottom: '1px solid rgba(232,184,75,0.2)' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {[
-                  ['8,000', '$5,800', '$1,276'],
-                  ['12,000', '$8,700', '$1,914'],
-                  ['16,000', '$11,600', '$2,552'],
-                  ['20,000', '$14,500', '$3,190'],
-                  ['25,000 miles', '$18,125', '$3,988'],
+                  ['8,000', '$5,800–$6,080'],
+                  ['12,000', '$8,700–$9,120'],
+                  ['16,000', '$11,600–$12,160'],
+                  ['20,000', '$14,500–$15,200'],
+                  ['25,000', '$18,125–$19,000'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
@@ -205,22 +215,22 @@ export default function InstacartTaxes2026() {
             ))}
           </ol>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Set aside 25–28% of every Instacart payment. Pay via IRS Direct Pay or EFTPS. Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>Instacart tax calculator</a> for a precise estimate based on your mileage and income.
+            Estimate your payments using your actual profit, filing status, other income, withholding, and state. Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>Instacart tax calculator</a> for a simplified planning estimate, not a filing determination.
           </p>
         </section>
 
         <section id="forms">
           <h2 style={{ fontSize: 'clamp(18px,4vw,20px)', fontWeight: 800, color: '#e8edf8', margin: '36px 0 14px', lineHeight: 1.35 }}>
-            Tax Forms: 1099-NEC from Instacart
+            Tax Forms and Payment Reporting
           </h2>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Instacart sends tax documents in the Shopper app under Earnings by January 31 each year.
+            Check your Shopper account and payment statements for the tax documents issued for your payment arrangement. A tax-form threshold does not change your obligation to report taxable income.
           </p>
           <ul style={{ paddingLeft: 20, marginBottom: 16, display: 'flex', flexDirection: 'column' as const, gap: 6 }}>
             {[
-              '1099-NEC: shopper earnings when total exceeds $2,000 for the year',
+              'Payment statements and any information returns you receive',
               'Annual earnings summary: total batches, miles logged, and fees breakdown',
-              'In-store shoppers (W-2 employees of Instacart) receive a W-2 instead',
+              'Some in-store shoppers are employees and receive a W-2',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}
@@ -255,12 +265,12 @@ export default function InstacartTaxes2026() {
             Frequently Asked Questions
           </h2>
           {[
-            ['How much tax does an Instacart shopper pay in 2026?', 'On $35,000 net income, Instacart shoppers owe approximately $6,669 — $4,945 in SE tax and $1,723 in federal income tax. Quarterly estimated payment is $1,667.'],
+            ['How much tax does an Instacart shopper pay in 2026?', 'In the simplified example, $35,000 of net profit produces about $6,669 in federal tax before state tax—$4,945 SE tax and $1,723 federal income tax. It assumes single filing status, no other income, and no credits.'],
             ['Does Instacart withhold taxes?', 'No. Instacart classifies shoppers as independent contractors and withholds nothing. You are responsible for quarterly estimated payments using Form 1040-ES.'],
-            ['Can Instacart shoppers deduct mileage in 2026?', 'Yes. The IRS rate is 72.5¢–76¢/mile for 2026. This covers driving to the store, through the parking lot, and delivering to customers. On 10,000 miles that is a $7,250–$7,600 deduction.'],
-            ['What deductions can Instacart shoppers claim?', 'Mileage (72.5¢–76¢/mile), insulated bags, coolers, phone bill (business portion), parking, tolls, and Instacart service fees. All go on Schedule C.'],
-            ['Does Instacart send a 1099 form?', 'Yes. Instacart sends a 1099-NEC for earnings of $2,000 or more. The form is available in the Shopper app by January 31 each year.'],
-            ['What is the quarterly estimated tax for an Instacart shopper?', 'On $35,000 net income, approximately $1,667 per quarter. Due April 15, June 15, September 15, and January 15.'],
+            ['Can Instacart shoppers deduct mileage in 2026?', 'Eligible business miles may use the 2026 IRS rate: 72.5¢ per mile from January through June and 76¢ from July 1. Keep adequate records, and do not deduct mileage twice.'],
+            ['What deductions can Instacart shoppers claim?', 'Potential Schedule C expenses can include eligible business mileage, insulated bags or coolers, and the business-use portion of a phone. Eligibility and records matter.'],
+            ['Does Instacart send a 1099 form?', 'The form depends on how payments are reported. A reporting threshold does not determine whether income must be reported on your tax return.'],
+            ['What is the quarterly estimated tax for an Instacart shopper?', 'For the $35,000 net-profit example, the simplified federal estimate is about $1,667 per quarter before state tax, withholding, credits, and payment timing adjustments. Actual required payments depend on your full tax situation.'],
             ['Do Instacart shoppers pay self-employment tax?', 'Yes — 15.3% on net profit. On $35,000 net income that is approximately $4,945 in SE tax before the 50% deduction.'],
           ].map(([q, a], i, arr) => (
             <div key={i} style={{ borderBottom: i < arr.length - 1 ? '1px solid rgba(255,255,255,0.07)' : 'none', padding: '18px 0' }}>
