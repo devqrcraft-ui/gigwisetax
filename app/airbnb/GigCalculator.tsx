@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import PartnerCTA from '@/app/PartnerCTA'
-import { estimateScheduleERaw, estimateTaxRaw } from '@/lib/tax-rules'
+import { estimateScheduleERawForState, estimateTaxForState } from '@/lib/tax-rules'
 import ResultActions from '@/app/components/ResultActions'
 
 interface State { slug: string; name: string; abbr: string; rate: number }
@@ -53,11 +53,11 @@ export default function GigCalculator({
     if (!net) return
     const st = states.find(s => s.slug === stateSlug)
     const tax = allowScheduleEMode && schedule === 'e'
-      ? estimateScheduleERaw(net, st?.rate ?? 0.05, filing)
-      : estimateTaxRaw(net, st?.rate ?? 0.05, filing)
+      ? estimateScheduleERawForState(net, st ?? { slug: 'unknown', rate: 0.05 }, filing)
+      : estimateTaxForState(net, st ?? { slug: 'unknown', rate: 0.05 }, filing)
     const { se: seTax, federal, state: stateTax, total, quarterly } = tax
     const saveRate = Math.min(Math.ceil((total / net) * 100) + 5, 35)
-    setResult({ seTax, federal, stateTax, total, quarterly, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?' })
+    setResult({ seTax, federal, stateTax, total, quarterly, rate: ((total / net) * 100).toFixed(1), saveRate, stateAbbr: st?.abbr ?? '?', stateTaxModeled: tax.stateTaxModeled, scheduleE: allowScheduleEMode && schedule === 'e' })
   }
 
   const card    = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -67,6 +67,7 @@ export default function GigCalculator({
   const inp     = { width: '100%', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 4, padding: '10px 12px', fontSize: 14, color: 'rgba(255,255,255,0.9)', background: 'rgba(255,255,255,0.07)', boxSizing: 'border-box' as const }
   const btnDark = { background: 'rgba(255,255,255,0.07)', color: '#fff', padding: '13px 0', borderRadius: 4, fontSize: 14, fontWeight: 800, cursor: 'pointer', textAlign: 'center' as const, width: '100%', letterSpacing: '0.3px' }
   const btnRed  = { background: '#B22234', color: '#fff', padding: '10px 0', borderRadius: 4, fontSize: 16, fontWeight: 700, cursor: 'pointer', textAlign: 'center' as const, width: '100%' }
+  const subtotalLabel = result?.scheduleE ? 'Federal Subtotal' : 'Federal + SE Subtotal'
 
   return (
     <>
@@ -85,7 +86,7 @@ export default function GigCalculator({
               <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
                 {states.map(s => (
                   <option key={s.slug} value={s.slug}>
-                    {s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}
+                    {s.name} {s.slug === 'california' ? '(state tax not modeled)' : s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}
                   </option>
                 ))}
               </select>
@@ -139,15 +140,15 @@ export default function GigCalculator({
         <div style={card}>
           <div style={cardHd}>
             <div style={accent}/>
-            <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your {platform.name} Tax Estimate</span>
+            <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> Your {platform.name} Tax Estimate{result.stateTaxModeled ? '' : `: ${result.scheduleE ? 'federal' : 'federal + SE'} subtotal; CA tax not modeled`}</span>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
             {[
-              { label: 'SE Tax',  val: fmt(result.seTax),    sub: 'Schedule SE',          hi: false },
+              { label: 'SE Tax',  val: fmt(result.seTax),    sub: result.scheduleE ? 'Not modeled for Schedule E' : 'Schedule SE',          hi: false },
               { label: 'Federal Tax',    val: fmt(result.federal),  sub: 'Estimated',             hi: false },
-              { label: `${result.stateAbbr} State Tax`, val: fmt(result.stateTax), sub: 'Simplified rate', hi: false },
-              { label: 'Total Annual',   val: fmt(result.total),    sub: `${result.rate}% effective rate`, hi: true  },
+              { label: `${result.stateAbbr} State Tax`, val: result.stateTaxModeled ? fmt(result.stateTax) : 'Not modeled', sub: result.stateTaxModeled ? 'Simplified rate' : 'Excluded from subtotal', hi: false },
+              { label: result.stateTaxModeled ? 'Total Annual' : subtotalLabel,   val: fmt(result.total),    sub: result.stateTaxModeled ? `${result.rate}% effective rate` : 'California state tax excluded', hi: true  },
             ].map((r, i) => (
               <div key={r.label} style={{ padding: '10px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.05)', borderLeft: r.hi ? '4px solid #B22234' : 'none' }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
@@ -157,7 +158,7 @@ export default function GigCalculator({
             ))}
           </div>
 
-          <ResultActions platformName={platform.name} stateAbbr={result.stateAbbr} seTax={result.seTax} federal={result.federal} stateTax={result.stateTax} total={result.total} quarterly={result.quarterly} />
+          <ResultActions platformName={platform.name} stateAbbr={result.stateAbbr} seTax={result.seTax} federal={result.federal} stateTax={result.stateTax} stateTaxModeled={result.stateTaxModeled} scheduleE={result.scheduleE} total={result.total} quarterly={result.quarterly} />
           <div style={{ padding: 14 }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, flexWrap: 'wrap' as const, gap: 8 }}>
               <span style={{ fontWeight: 700, fontSize: 14, color: 'rgba(255,255,255,0.9)' }}> Your 2026 Quarterly Payment Schedule</span>
@@ -169,14 +170,14 @@ export default function GigCalculator({
                     {q:'Q4 2026',date:'20270115'},
                   ];
                   (nextIdx === -1 ? [] : dates.slice(nextIdx)).forEach(d => {
-                    const title = encodeURIComponent(d.q + ' Estimated Tax — ' + fmt(result.quarterly));
+                    const title = encodeURIComponent(d.q + (result.stateTaxModeled ? ' Estimated Tax - ' : result.scheduleE ? ' Federal subtotal - ' : ' Federal + SE subtotal - ') + fmt(result.quarterly));
                     const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + d.date + '/' + d.date;
                     window.open(url, '_blank');
                   });
                 }}>+ Add All to Google Calendar</button>
                 <button style={{background:'rgba(255,255,255,0.08)',color:'#e8b84b',padding:'10px 16px',borderRadius:4,fontSize:14,fontWeight:600,cursor:'pointer',border:'1px solid rgba(232,184,75,0.3)'}} onClick={() => {
                   const lines = deadlines.map(d => d.q + ' 2026 — ' + d.due + ': ' + fmt(result.quarterly)).join('\n')
-                  const text = 'Quarterly Tax Schedule 2026\n' + lines + '\nTotal: ' + fmt(result.total)
+                  const text = 'Quarterly Tax Schedule 2026\n' + lines + '\n' + (result.stateTaxModeled ? 'Total: ' : result.scheduleE ? 'Federal subtotal (state tax excluded): ' : 'Federal + SE subtotal (state tax excluded): ') + fmt(result.total)
                   try {
                     const ta = document.createElement('textarea')
                     ta.value = text
@@ -201,7 +202,7 @@ export default function GigCalculator({
                   <div style={{ fontSize: 20, fontWeight: 900, color: i === nextIdx ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 6 }}>{fmt(result.quarterly)}</div>
                   {nextIdx !== -1 && i >= nextIdx && (<button style={{...btnRed, border:'none', cursor:'pointer', width:'100%'}} onClick={() => {
                     const calDates = ['20260415','20260615','20260915','20270115'];
-                    const title = encodeURIComponent(d.q + ' 2026 Estimated Tax — ' + fmt(result.quarterly));
+                    const title = encodeURIComponent(d.q + (result.stateTaxModeled ? ' 2026 Estimated Tax - ' : result.scheduleE ? ' 2026 Federal subtotal - ' : ' 2026 Federal + SE subtotal - ') + fmt(result.quarterly));
                     const url = 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + title + '&dates=' + calDates[i] + '/' + calDates[i];
                     window.open(url, '_blank');
                   }}>+ Calendar</button>)}

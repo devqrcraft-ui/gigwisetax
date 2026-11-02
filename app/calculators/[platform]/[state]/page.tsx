@@ -1,6 +1,6 @@
 // @ts-nocheck
 import Link from "next/link";
-import { estimateTaxRaw } from "@/lib/tax-rules";
+import { estimateTaxForState, isStateTaxEstimateModeled } from "@/lib/tax-rules";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -85,8 +85,12 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
      title: "Not Found" };
 
   const noTax = !s.hasTax;
-  const title = `${p.name} Tax Calculator ${s.name} 2026 — ${noTax ? "No State Tax" : `${(s.rate * 100).toFixed(1)}% State Rate`} | GigWiseTax`;
-  const description = `Free ${p.name} tax calculator for ${s.name} gig workers. Federal estimate plus ${noTax ? 'no state income-tax component' : `a simplified ${(s.rate * 100).toFixed(1)}% state-rate input, not a full state tax schedule`}. Quarterly estimate included.`;
+  const stateTaxModeled = isStateTaxEstimateModeled(s.slug);
+  const stateRateDescription = !stateTaxModeled ? 'California state tax not modeled' : noTax ? 'No State Tax' : `${(s.rate * 100).toFixed(1)}% State Rate`;
+  const title = `${p.name} Tax Calculator ${s.name} 2026 — ${stateRateDescription} | GigWiseTax`;
+  const description = !stateTaxModeled
+    ? `Free ${p.name} tax calculator for California gig workers. Shows a federal + SE subtotal; California state tax is not modeled or included.`
+    : `Free ${p.name} tax calculator for ${s.name} gig workers. Federal estimate plus ${noTax ? 'no state income-tax component' : `a simplified ${(s.rate * 100).toFixed(1)}% state-rate input, not a full state tax schedule`}. Quarterly estimate included.`;
 
   return {
     title,
@@ -97,9 +101,9 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
   };
 }
 
-function calcTax(income: number, stateRate: number, filing: string) {
+function calcTax(income: number, state: (typeof STATES)[number], filing: string) {
   const filingStatus = filing === "married" || filing === "mfj" ? "married" : filing === "hoh" ? "hoh" : "single";
-  const tax = estimateTaxRaw(income, stateRate, filingStatus);
+  const tax = estimateTaxForState(income, state, filingStatus);
   return { seTax: tax.se, federal: tax.federal, stateTax: tax.state, total: tax.total, quarterly: tax.quarterly, rate: ((tax.total / income) * 100).toFixed(1) };
 }
 
@@ -112,6 +116,7 @@ export default async function CalculatorPage({ params }: RouteProps) {
   if (!p || !s) notFound();
 
   const examples = [30000, 50000, 75000, 100000];
+  const stateTaxModeled = isStateTaxEstimateModeled(s.slug);
 
   const S = {
     page: { fontFamily: "'Segoe UI','Helvetica Neue',Arial,sans-serif", background: "#07111F", minHeight: "100vh", color: "rgba(255,255,255,0.9)" },
@@ -154,13 +159,17 @@ export default async function CalculatorPage({ params }: RouteProps) {
           <div style={{ display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" }}>
             <span style={{ background: "#B22234", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>{p.name}</span>
             <span style={{ background: '#0d2340', color: "rgba(255,255,255,.5)", fontSize: 11, padding: "3px 10px", borderRadius: 3 }}> {s.name}</span>
-            {!s.hasTax && <span style={{ background: "#0d7a40", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>✓ No State Tax</span>}
+            {!stateTaxModeled
+              ? <span style={{ background: "#9a6b00", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>State tax not modeled</span>
+              : !s.hasTax && <span style={{ background: "#0d7a40", color: "#fff", fontSize: 11, padding: "3px 10px", borderRadius: 3, fontWeight: 800 }}>✓ No State Tax</span>}
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
             {p.name} Tax Calculator — {s.name} 2026
           </h1>
           <p style={{ color: "rgba(255,255,255,.55)", fontSize: 15, lineHeight: 1.7, maxWidth: 700 }}>
-            {s.hasTax
+            {!stateTaxModeled
+              ? `Free ${p.name} self-employment tax calculator for California workers. Shows federal and self-employment tax subtotal only; California state tax is not modeled or included.`
+              : s.hasTax
               ? `Free ${p.name} self-employment tax calculator for ${s.name} workers. Includes federal SE and income tax plus a simplified ${(s.rate * 100).toFixed(1)}% state-rate input applied to the estimator's taxable base, not a full state tax schedule.`
               : `Free ${p.name} self-employment tax calculator for ${s.name} workers. This estimate includes no state income-tax component; federal tax only. Local taxes and other state-specific taxes are not modeled.`}
           </p>
@@ -176,7 +185,9 @@ export default async function CalculatorPage({ params }: RouteProps) {
               <h2 style={S.h2}> {s.name} State Tax for {p.name} Workers</h2>
               <p style={S.p}>{s.note}</p>
               <p style={S.p}>
-                {s.hasTax
+                {!stateTaxModeled
+                  ? "California state income tax is not modeled or included in the federal + SE subtotal."
+                  : s.hasTax
                   ? `This estimator models federal self-employment and income tax, then applies a simplified ${(s.rate * 100).toFixed(1)}% state-rate input to its taxable base. It does not calculate ${s.name}'s complete tax brackets, credits, or local taxes; your actual state liability may differ.`
                   : `This estimator includes no state individual-income-tax component for ${s.name}. Federal obligations still depend on your full return; local taxes and other state-specific taxes are not modeled.`}
               </p>
@@ -193,20 +204,20 @@ export default async function CalculatorPage({ params }: RouteProps) {
               <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 500 }}>
                 <thead>
                   <tr style={{ background: "rgba(255,255,255,0.05)", borderBottom: "2px solid rgba(255,255,255,0.15)" }}>
-                    {["Annual Income", "SE Tax (15.3%)", "Federal Tax", s.hasTax ? `${s.abbr} State Est.` : "State Component", "Total Tax", "Quarterly", "Rate"].map(h => (
+                    {["Annual Income", "SE Tax", "Federal Tax", !stateTaxModeled || s.hasTax ? `${s.abbr} State Est.` : "State Component", stateTaxModeled ? "Total Tax" : "Federal + SE Subtotal", "Quarterly", "Rate"].map(h => (
                       <th key={h} style={{ padding: "10px 14px", fontSize: 11, fontWeight: 700, color: "#8fa8c8", textTransform: "uppercase" as const, letterSpacing: "0.7px", textAlign: "left" }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
                 <tbody>
                   {examples.map((income, i) => {
-                    const t = calcTax(income, s.rate, "single");
+                    const t = calcTax(income, s, "single");
                     return (
                       <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,0.07)', background: i % 2 === 0 ? "rgba(255,255,255,0.04)" : "rgba(255,255,255,0.01)" }}>
                         <td style={{ padding: "12px 14px", fontWeight: 800, fontSize: 15 }}>{fmt(income)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.seTax)}</td>
                         <td style={{ padding: "12px 14px", fontSize: 14 }}>{fmt(t.federal)}</td>
-                        <td style={{ padding: "12px 14px", fontSize: 14, color: !s.hasTax ? "#059669" : "rgba(255,255,255,0.75)" }}>{!s.hasTax ? "$0 ✓" : fmt(t.stateTax)}</td>
+                        <td style={{ padding: "12px 14px", fontSize: 14, color: !stateTaxModeled || !s.hasTax ? "#059669" : "rgba(255,255,255,0.75)" }}>{!stateTaxModeled ? "Not modeled" : !s.hasTax ? "$0 ✓" : fmt(t.stateTax)}</td>
                         <td style={{ padding: "12px 14px", fontWeight: 800, color: "#B22234", fontSize: 15 }}>{fmt(t.total)}</td>
                         <td style={{ padding: "12px 14px", fontWeight: 700, fontSize: 14 }}>{fmt(t.quarterly)}</td>
                         <td style={{ padding: "12px 14px" }}>
@@ -217,7 +228,7 @@ export default async function CalculatorPage({ params }: RouteProps) {
                   })}
                 </tbody>
               </table>
-              <div style={{ padding: "8px 14px", fontSize: 11, color: "#7a9abf" }}>*Single-filer planning estimates. State amounts use a simplified rate input, not a full state tax schedule; other income, credits, and deductions may change results.</div>
+              <div style={{ padding: "8px 14px", fontSize: 11, color: "#7a9abf" }}>{!stateTaxModeled ? "*Single-filer planning estimate. California state tax is not modeled or included in this federal + SE subtotal." : "*Single-filer planning estimates. State amounts use a simplified rate input, not a full state tax schedule; other income, credits, and deductions may change results."}</div>
             </div>
           </div>
 

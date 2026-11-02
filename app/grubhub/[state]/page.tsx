@@ -1,5 +1,5 @@
-import { example as gtxExample } from '@/lib/examples'
-import { estimateTax } from '@/lib/tax-rules'
+import { money } from '@/lib/examples'
+import {estimateTax, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import { notFound } from 'next/navigation'
 import GigCalculator from '../GigCalculator'
 import type { Metadata } from 'next'
@@ -16,10 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const { state: stateSlug } = await params
   const s = STATES.find(x => x.slug === stateSlug)
   if (!s) return {}
-  const rateStr = s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
+  const example = estimateTaxForStateRounded(35000, s)
+  const rateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/,'')}% State Tax`
   return {
     title: `${PLATFORM_NAME} Tax Calculator — ${s.name} 2026 | GigWiseTax`,
-    description: `Grubhub ${s.name} 2026: $35K net = ~${gtxExample(35000,{stateRate:s.rate}).text.se} SE tax + ${gtxExample(35000,{stateRate:s.rate}).text.federal} fed. ${rateStr}. Quarterly: ~${gtxExample(35000,{stateRate:s.rate}).text.quarterly}. Free calculator, no signup.`,
+    description: !example.stateTaxModeled
+      ? `Grubhub ${s.name} 2026: $35K net = ${money(example.se)} SE tax + ${money(example.federal)} federal income tax. Federal + SE subtotal: ${money(example.total)}; California state tax is not modeled or included. Quarterly subtotal: ${money(example.quarterly)}. Free calculator, no signup.`
+      : `Grubhub ${s.name} 2026: $35K net = ${money(example.se)} SE tax + ${money(example.federal)} federal income tax. ${rateStr}; estimated total ${money(example.total)} and quarterly estimate ${money(example.quarterly)}. Free calculator, no signup.`,
     alternates: { canonical: `https://www.gigwisetax.com/grubhub/${s.slug}` },
     keywords: `${PLATFORM_SLUG} taxes ${s.name.toLowerCase()} 2026, ${PLATFORM_SLUG} tax calculator ${s.abbr.toLowerCase()}, gig worker taxes ${s.name.toLowerCase()}`,
   }
@@ -30,8 +33,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const state = STATES.find(s => s.slug === stateSlug)
   if (!state) return notFound()
 
-  const rateStr = state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
+  const rateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
   const noTax = state.rate === 0
+  const stateTaxModeled = isStateTaxEstimateModeled(state.slug)
   return (
     <main style={{ maxWidth: 900, margin: '0 auto', padding: '48px 24px', color: 'rgba(255,255,255,0.9)' }}>
 
@@ -52,7 +56,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         </h1>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, marginBottom: 20 }}>
           Free {PLATFORM_NAME} tax calculator for {state.name} ({state.abbr}).
-          {noTax
+          {!stateTaxModeled
+            ? ' California state tax is not modeled or included; this page shows a federal + SE subtotal.'
+            : noTax
             ? ` ${state.name} has NO state income tax — you only pay federal SE tax (15.3%) and federal income tax.`
             : ` ${state.name} has a ${rateStr} state income tax rate on top of federal SE tax (15.3%).`}
           {' '}No signup required.
@@ -72,7 +78,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 32 }}>
         {[
           { label: 'SE Tax Rate', value: '15.3%', note: 'Federal (all states)' },
-          { label: 'State Income Tax', value: noTax ? 'None' : rateStr, note: state.name, color: noTax ? '#86efac' : '#fca5a5' },
+          { label: 'State Income Tax', value: !stateTaxModeled ? 'Not modeled' : noTax ? 'None' : rateStr, note: state.name, color: !stateTaxModeled || noTax ? '#86efac' : '#fca5a5' },
           { label: 'Mileage Deduction', value: '72.5¢ Jan–Jun / 76¢ Jul–Dec', note: '2026 IRS rates' },
         ].map(c => (
           <div key={c.label} style={{ background: 'rgba(255,255,255,.04)', border: '1px solid rgba(255,255,255,.1)', borderRadius: 10, padding: 20, textAlign: 'center' }}>
@@ -102,17 +108,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>SE Tax</th>
               {!noTax && <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>State Tax</th>}
               <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>Federal Tax</th>
-              <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>Total Est.</th>
+              <th style={{ padding: '10px 14px', textAlign: 'left', color: '#a5b4fc', fontSize: 13 }}>{stateTaxModeled ? 'Total Est.' : 'Federal + SE subtotal'}</th>
             </tr>
           </thead>
           <tbody>
             {[10000,25000,50000,75000,100000].map(income => {
-              const { se, state: st, federal: fed, total } = estimateTax(income, state.rate)
+              const { se, state: st, federal: fed, total } = estimateTaxForStateRounded(income, state)
               return (
                 <tr key={income} style={{ borderBottom: '1px solid rgba(255,255,255,.05)' }}>
                   <td style={{ padding: '10px 14px', fontWeight: 600 }}>${income.toLocaleString('en-US')}</td>
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${se.toLocaleString('en-US')}</td>
-                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${st.toLocaleString('en-US')}</td>}
+                  {!noTax && <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>{stateTaxModeled ? `$${st.toLocaleString('en-US')}` : 'Not modeled'}</td>}
                   <td style={{ padding: '10px 14px', color: 'rgba(255,255,255,.7)' }}>${fed.toLocaleString('en-US')}</td>
                   <td style={{ padding: '10px 14px', fontWeight: 700, color: '#e8b84b' }}>${total.toLocaleString('en-US')}</td>
                 </tr>

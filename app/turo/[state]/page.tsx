@@ -2,7 +2,7 @@ import { example as gtxExample } from '@/lib/examples'
 import { notFound } from 'next/navigation'
 import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, TAX_RULES_2026, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES as ALL_STATES, DEADLINES_2026 } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -32,15 +32,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const state = ALL_STATES.find(s => s.slug === stateSlug)
   if (!state) return notFound()
 
-  const rateStr = state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
+  const rateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : state.rate === 0 ? 'No State Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/,'')}%`
   const noTax = state.rate === 0
-  const example50 = estimateTax(50000, state.rate)
+  const stateTaxModeled = isStateTaxEstimateModeled(state.slug)
+  const example50 = estimateTaxForStateRounded(50000, state)
 
   return (
     <>
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Turo Tax Calculator","item":"https://www.gigwisetax.com/turo"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/turo/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Turo Tax Calculator ${state.name} 2026","datePublished":"2026-01-01","dateModified":"2026-05-29","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/turo/${state.slug}"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Turo Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/turo/${state.slug}","dateModified":"${TAX_RULES_2026.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
@@ -107,18 +108,18 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                       <th style={{ padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontSize:13 }}>SE Tax</th>
                       {!noTax && <th style={{ padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontSize:13 }}>State Tax</th>}
                       <th style={{ padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontSize:13 }}>Federal Tax</th>
-                      <th style={{ padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontSize:13 }}>Total Est.</th>
+                      <th style={{ padding:'10px 14px', textAlign:'left', color:'#e8b84b', fontSize:13 }}>{stateTaxModeled ? 'Total Est.' : 'Federal + SE subtotal'}</th>
                     </tr>
                   </thead>
                   <tbody>
                     {[10000,25000,50000,75000,100000].map((income,i,arr) => {
-                      const { se, federal: fed, state: st, total } = estimateTax(income, state.rate)
+                      const { se, federal: fed, state: st, total } = estimateTaxForStateRounded(income, state)
                       const isLast = i === arr.length - 1
                       return (
                         <tr key={income} style={{ borderBottom:'1px solid rgba(255,255,255,0.05)', ...(isLast ? { background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)' } : {}) }}>
                           <td style={{ padding:'10px 14px', fontWeight:600, color: isLast ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>${income.toLocaleString('en-US')}</td>
                           <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>${se.toLocaleString('en-US')}</td>
-                          {!noTax && <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>${st.toLocaleString('en-US')}</td>}
+                          {!noTax && <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>{stateTaxModeled ? `$${st.toLocaleString('en-US')}` : 'Not modeled'}</td>}
                           <td style={{ padding:'10px 14px', color:'rgba(255,255,255,0.7)' }}>${fed.toLocaleString('en-US')}</td>
                           <td style={{ padding:'10px 14px', fontWeight:700, color: isLast ? '#e8b84b' : 'rgba(255,255,255,0.85)' }}>${total.toLocaleString('en-US')}</td>
                         </tr>

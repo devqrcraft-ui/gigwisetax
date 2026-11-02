@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { estimateTax } from '@/lib/tax-rules'
+import { estimateTax, estimateTaxForStateRounded, isStateTaxEstimateModeled } from '@/lib/tax-rules'
 import { STATES, DEADLINES_2026 } from '@/lib/data'
 import type { Metadata } from 'next'
 
@@ -9,12 +9,17 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const s = STATES.find(x => x.slug === stateSlug)
   if (!s) return {}
   const noTax = s.rate === 0
-  const rateStr = noTax ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
+  const stateTaxModeled = isStateTaxEstimateModeled(s.slug)
+  const rateStr = !stateTaxModeled ? 'Not modeled' : noTax ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
-    title: s.rate === 0
+    title: !stateTaxModeled
+      ? `${s.name} 1099 Tax Calculator 2026 — Federal + SE Subtotal (State Tax Not Modeled)`
+      : s.rate === 0
       ? `${s.name} 1099 Tax Calculator 2026 — No State Tax + Free SE Calculator`
-      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${estimateTax(40000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: noTax
+      : `${s.name} 1099 Tax Calculator 2026 — $40K Earner Owes $${estimateTaxForStateRounded(40000, s).total.toLocaleString('en-US')} Total`,
+    description: !stateTaxModeled
+      ? `Free ${s.name} 1099 tax calculator for 2026. Shows federal income tax and self-employment tax only; California state tax is not modeled or included in the subtotal.`
+      : noTax
       ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
       : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
     alternates: { canonical: `https://www.gigwisetax.com/1099-tax-calculator/${stateSlug}` },
@@ -27,11 +32,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!state) return notFound()
 
   const noStateTax = state.rate === 0
-  const rateStr = noStateTax ? '0%' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
-  const stateRateText = noStateTax ? 'no state income tax' : `${rateStr} state income tax`
+  const stateTaxModeled = isStateTaxEstimateModeled(state.slug)
+  const rateStr = !stateTaxModeled ? 'Not modeled' : noStateTax ? '0%' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const stateRateText = !stateTaxModeled ? 'California state tax is not modeled or included' : noStateTax ? 'no state income tax' : `${rateStr} state income tax`
 
-  const net40k = estimateTax(40000, noStateTax ? 0 : state.rate).takeHome
-  const net80k = estimateTax(80000, noStateTax ? 0 : state.rate).takeHome
+  const net40k = estimateTaxForStateRounded(40000, state).takeHome
+  const net80k = estimateTaxForStateRounded(80000, state).takeHome
 
   return (
     <>
@@ -39,8 +45,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: `How much is 1099 self-employment tax in ${state.name}?`, acceptedAnswer: { '@type': 'Answer', text: `In ${state.name}, 1099 workers pay 15.3% self-employment tax on 92.35% of net earnings, plus federal income tax. ${noStateTax ? `${state.name} has no state income tax.` : `${state.name} also charges up to ${rateStr} state income tax.`}` } },
-          { '@type': 'Question', name: `Do I need to pay quarterly taxes in ${state.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes. If you expect to owe $1,000+ in federal taxes, make quarterly estimated payments. ${noStateTax ? `${state.name} has no state income tax, so no state quarterly payments are required.` : `${state.name} also requires quarterly state estimated payments.`}` } },
+          { '@type': 'Question', name: `How much is 1099 self-employment tax in ${state.name}?`, acceptedAnswer: { '@type': 'Answer', text: `In ${state.name}, 1099 workers pay 15.3% self-employment tax on 92.35% of net earnings, plus federal income tax. ${!stateTaxModeled ? 'This calculator excludes California state tax.' : noStateTax ? `${state.name} has no state income tax.` : `${state.name} also charges up to ${rateStr} state income tax.`}` } },
+          { '@type': 'Question', name: `Do I need to pay quarterly taxes in ${state.name}?`, acceptedAnswer: { '@type': 'Answer', text: `Yes. If you expect to owe $1,000+ in federal taxes, make quarterly estimated payments. ${!stateTaxModeled ? 'California state payments are not included in this calculator.' : noStateTax ? `${state.name} has no state income tax, so no state quarterly payments are required.` : `${state.name} also requires quarterly state estimated payments.`}` } },
           { '@type': 'Question', name: `What platforms does this ${state.name} 1099 calculator work for?`, acceptedAnswer: { '@type': 'Answer', text: `This calculator works for DoorDash, Uber, Lyft, Etsy, OnlyFans, Airbnb, Amazon Flex, Instacart, Grubhub, and all other 1099 / self-employed income in ${state.name}.` } },
         ]
       }) }} />
@@ -66,13 +72,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <span style={{ fontSize: 18, fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>Self-Employment Tax for Gig Workers</span>
               </h1>
               <p style={{ color: 'rgba(255,255,255,.6)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
-                This free {state.name} 1099 tax calculator helps gig workers, freelancers and independent contractors estimate their 2026 self-employment tax, federal income tax and {noStateTax ? 'no state income tax ('+state.name+' is tax-free)' : state.name+' state income tax'} on 1099 income. Works for DoorDash, Uber, Etsy, OnlyFans, Airbnb and all gig platforms.
+                This free {state.name} 1099 tax calculator helps gig workers, freelancers and independent contractors estimate their 2026 self-employment tax, federal income tax and {!stateTaxModeled ? 'California state tax is not modeled or included' : noStateTax ? 'no state income tax ('+state.name+' is tax-free)' : state.name+' state income tax'} on 1099 income. Works for DoorDash, Uber, Etsy, OnlyFans, Airbnb and all gig platforms.
               </p>
             </div>
             <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
               <div style={{ fontSize: 11, color: noStateTax ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Tax Rate</div>
               <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax ? '#34d399' : '#f87171' }}>{rateStr}</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{noStateTax ? 'No state income tax' : 'Top marginal rate'}</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.4)', marginTop: 2 }}>{!stateTaxModeled ? 'Excluded from federal + SE subtotal' : noStateTax ? 'No state income tax' : 'Top marginal rate'}</div>
             </div>
           </div>
         </div>
@@ -86,7 +92,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{ padding: 20 }}>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.85)', lineHeight: 1.75, marginBottom: 12 }}>
               As a 1099 worker in {state.name}, you pay <strong>self-employment tax of 15.3%</strong> on 92.35% of your net earnings (this covers Social Security 12.4% and Medicare 2.9%). On top of that, you owe <strong>federal income tax</strong> at your bracket rate (10%–37%).{' '}
-              {noStateTax
+              {!stateTaxModeled
+                ? <>California state tax is not modeled or included in the calculator&apos;s federal + SE subtotal.</>
+                : noStateTax
                 ? <><strong>{state.name} has no state income tax</strong>, which means you keep more of every dollar compared to high-tax states.</>
                 : <>{state.name} additionally charges <strong>up to {rateStr} state income tax</strong> on your 1099 income.</>
               }
@@ -114,8 +122,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   <div style={{ fontSize: 12, color: '#8fa8c8', lineHeight: 1.7 }}>
                     SE tax (15.3%): ~${estimateTax(ex.gross, 0).se.toLocaleString('en-US')}<br/>
                     Federal tax: ~${estimateTax(ex.gross, 0).federal.toLocaleString('en-US')}<br/>
-                    {noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTax(ex.gross, state.rate).state.toLocaleString('en-US')}`}<br/>
-                    <strong style={{ color: '#059669' }}>Est. take-home: ~${ex.net.toLocaleString('en-US')}</strong>
+                    {!stateTaxModeled ? 'California state tax: Not modeled (excluded)' : noStateTax ? 'State tax: $0 (no state tax)' : `State tax: ~$${estimateTaxForStateRounded(ex.gross, state).state.toLocaleString('en-US')}`}<br/>
+                    <strong style={{ color: '#059669' }}>{stateTaxModeled ? 'Est. take-home' : 'Federal + SE subtotal after tax (state excluded)'}: ~${ex.net.toLocaleString('en-US')}</strong>
                   </div>
                 </div>
               ))}

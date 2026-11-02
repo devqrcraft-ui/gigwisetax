@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -28,7 +28,7 @@ export default async function ShiptStatePage({ params }: { params: Promise<{ sta
   const state    = STATES.find(s => s.slug === stateSlug)
   if (!platform || !state) return notFound()
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
   const stateNote = state.name + (noStateTax
     ? ' has no state individual income-tax rate in this model.'

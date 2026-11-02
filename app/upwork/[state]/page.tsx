@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
+  const stateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
   return {
-    title: s.rate === 0
+    title: !isStateTaxEstimateModeled(s.slug) ? `${s.name} Gig Tax Calculator 2026 - Federal + SE subtotal only; CA state tax not modeled` : s.rate === 0
       ? `Upwork ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Upwork ${s.name} Taxes 2026 — $60K Earner Owes $${estimateTax(60000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Upwork ${s.name} 2026: $60K net = ~$${estimateTax(60000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(60000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(60000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+      : `Upwork ${s.name} Taxes 2026 — $60K Earner Owes $${estimateTaxForStateRounded(60000, s).total.toLocaleString('en-US')} Total`,
+    description: `Upwork ${s.name} 2026: $60K net = ~$${estimateTaxForStateRounded(60000, s).se.toLocaleString('en-US')} SE tax + $${estimateTaxForStateRounded(60000, s).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTaxForStateRounded(60000, s).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', upwork 1099 taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -32,7 +32,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const stateNote = state.name + (noStateTax ? ' has no state income tax. Upwork workers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + stateRateStr + ' state income tax rate. Upwork workers in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')

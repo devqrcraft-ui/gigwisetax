@@ -1,5 +1,5 @@
 // Запуск: npx tsx scripts/verify-tax.ts   (падає з кодом 1, якщо щось розійшлось з еталоном)
-import { estimateScheduleERaw, estimateTax, federalTax, TAX_RULES_2026 } from '../lib/tax-rules'
+import { estimateScheduleERaw, estimateScheduleERawForState, estimateTax, estimateTaxForState, estimateTaxForStateRounded, federalTax, TAX_RULES_2026 } from '../lib/tax-rules'
 import { readdirSync, readFileSync, statSync } from 'node:fs'
 import { join } from 'node:path'
 type Row = [string, number, number, Partial<ReturnType<typeof estimateTax>>]
@@ -28,6 +28,26 @@ const scheduleE = estimateScheduleERaw(50000, 0, 'single')
 if (scheduleE.se !== 0 || scheduleE.federal !== 3820 || scheduleE.total !== 3820) {
   bad++
   console.log('FAIL Schedule E $50K single no state', scheduleE)
+}
+const californiaScheduleE = estimateScheduleERawForState(50000, { slug: 'california', rate: 0.093 }, 'single')
+if (californiaScheduleE.stateTaxModeled || californiaScheduleE.se !== 0 || californiaScheduleE.state !== 0 || californiaScheduleE.total !== californiaScheduleE.federal || californiaScheduleE.quarterly !== californiaScheduleE.total / 4) {
+  bad++
+  console.log('FAIL California Schedule E federal-only subtotal', californiaScheduleE)
+}
+const california = estimateTaxForState(50000, { slug: 'california', rate: 0.093 }, 'single')
+if (california.stateTaxModeled || california.state !== 0 || california.total !== california.se + california.federal || california.quarterly !== california.total / 4) {
+  bad++
+  console.log('FAIL California subtotal excludes unmodeled state tax', california)
+}
+const california30k = estimateTaxForStateRounded(30000, { slug: 'california', rate: 0.093 }, 'single')
+if (california30k.stateTaxModeled || california30k.se !== 4239 || california30k.federal !== 1178 || california30k.total !== 5417 || california30k.quarterly !== 1354) {
+  bad++
+  console.log('FAIL California $30K federal + SE subtotal', california30k)
+}
+const texas = estimateTaxForState(50000, { slug: 'texas', rate: 0 }, 'single')
+if (!texas.stateTaxModeled || texas.total !== texas.se + texas.federal) {
+  bad++
+  console.log('FAIL modeled no-income-tax state behavior', texas)
 }
 // SS-стеля: при доході вище неї SE не росте лінійно
 const hi = estimateTax(250000, 0).se, lo = estimateTax(200000, 0).se

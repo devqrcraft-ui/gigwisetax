@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, TAX_RULES_2026, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
+  const stateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
   return {
-    title: s.rate === 0
+    title: !isStateTaxEstimateModeled(s.slug) ? `${s.name} Gig Tax Calculator 2026 - Federal + SE subtotal only; CA state tax not modeled` : s.rate === 0
       ? `Poshmark ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Poshmark ${s.name} Taxes 2026 — $60K Seller Owes $${estimateTax(23000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Poshmark ${s.name} 2026: $60K gross, $25K COGS = $23K net profit = ~$${estimateTax(23000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(23000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Free calculator with COGS, no signup.`,
+      : `Poshmark ${s.name} Taxes 2026 — $60K Seller Owes $${estimateTaxForStateRounded(23000, s).total.toLocaleString('en-US')} Total`,
+    description: `Poshmark ${s.name} 2026: $60K gross, $25K COGS = $23K net profit = ~$${estimateTaxForStateRounded(23000, s).se.toLocaleString('en-US')} SE tax + $${estimateTaxForStateRounded(23000, s).federal.toLocaleString('en-US')} fed. ${stateStr}. Free calculator with COGS, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', poshmark reseller taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -27,7 +27,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const state    = STATES.find(s => s.slug === stateSlug)
   if (!platform || !state) return notFound()
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
   const stateNote = state.name + (noStateTax ? ' has no state income tax. Poshmark resellers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax on net profit.' : ' has a ' + stateRateStr + ' state income tax rate. Poshmark resellers in ' + state.name + ' must make both federal and state quarterly estimated tax payments on net profit.')
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -39,7 +39,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Poshmark Tax Calculator ${state.name} 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Poshmark Tax Calculator","item":"https://www.gigwisetax.com/poshmark"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/poshmark/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Poshmark Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/poshmark/${state.slug}","dateModified":"2026-07-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Poshmark Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/poshmark/${state.slug}","dateModified":"${TAX_RULES_2026.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
@@ -72,14 +72,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Poshmark Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Poshmark resellers in ' + state.name + ' with $60,000 gross sales and $25,000 in cost of goods sold owe approximately $' + estimateTax(23000, state.rate).total.toLocaleString('en-US') + ' total — net profit of $23,000, after Poshmark\'s 20% commission and cost of goods, taxed at $3,250 self-employment tax (15.3%) + $638 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(23000, state.rate).total / 4).toLocaleString('en-US') + '. The 1099-K reports gross sales, not this profit figure.'}
+              {isStateTaxEstimateModeled(state.slug)
+                ? 'Poshmark resellers in ' + state.name + ' with $60,000 gross sales and $25,000 in cost of goods sold owe approximately $' + estimateTaxForStateRounded(23000, state).total.toLocaleString('en-US') + ' total — net profit of $23,000, after Poshmark\'s 20% commission and cost of goods, taxed at $3,250 self-employment tax (15.3%) + $638 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTaxForStateRounded(23000, state).total / 4).toLocaleString('en-US') + '. The 1099-K reports gross sales, not this profit figure.'
+                : 'For the $23,000 net-profit example, the federal + SE subtotal is $' + estimateTaxForStateRounded(23000, state).total.toLocaleString('en-US') + ' (about $' + Math.round(estimateTaxForStateRounded(23000, state).total / 4).toLocaleString('en-US') + ' per quarter). California state tax is not modeled or included.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Poshmark resellers are independent contractors — Poshmark withholds zero taxes</li>
-              <li>{'On $60,000 gross sales with $25,000 COGS: net profit $23,000 → ~$3,250 SE tax + ~$638 federal = ~$3,888 total in ' + state.name}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $60,000 gross sales with $25,000 COGS: net profit $23,000 → ~$3,250 SE tax + ~$638 federal = ~$3,888 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$972 each'}</li>
               <li>The 1099-K reports gross sales — Poshmark commission and cost of goods come off before you owe tax</li>
               <li>Federal 1099-K threshold: $20,000 and 200+ transactions — some states set it far lower</li>

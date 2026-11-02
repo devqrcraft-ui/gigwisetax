@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax, TAX_RULES_2026 } from '@/lib/tax-rules'
+import {estimateTax, TAX_RULES_2026, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -15,10 +15,14 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No state income tax modeled' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% simplified state-rate input; not a full state tax calculation`
+  const stateDescription = !isStateTaxEstimateModeled(s.slug)
+    ? 'California state tax is not modeled or included in the displayed federal + SE subtotal.'
+    : s.rate === 0
+      ? `${s.name} has no state income-tax component in this estimate.`
+      : `Includes a simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input, not a full state tax calculation.`
   return {
     title: `DoorDash Tax Calculator for ${s.name} 2026 | Free Estimate`,
-    description: `Estimate DoorDash self-employment and federal income taxes for ${s.name}. Includes a simplified ${stateStr} state input, quarterly planning, and mileage assumptions; not a full state tax calculation.`,
+    description: `Estimate DoorDash self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -31,9 +35,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = state.rate === 0 ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
-  const example40 = estimateTax(40000, state.rate)
-  const example50 = estimateTax(50000, state.rate)
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : state.rate === 0 ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const example40 = estimateTaxForStateRounded(40000, state)
+  const example50 = estimateTaxForStateRounded(50000, state)
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
@@ -46,7 +50,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
     '@type': 'WebPage',
     'name': `DoorDash Tax Calculator 2026 — ${state.name}`,
     'url': `https://www.gigwisetax.com/doordash/${state.slug}`,
-    'description': `Free DoorDash tax calculator for ${state.name} 2026. Estimate SE tax 15.3% + federal & state income tax.`,
+    'description': `Free DoorDash tax calculator for ${state.name} 2026. ${isStateTaxEstimateModeled(state.slug) ? 'Estimate federal, SE, and simplified state tax.' : 'Shows a federal + SE subtotal only; California state tax is not modeled.'}`,
     'applicationCategory': 'FinanceApplication',
     'operatingSystem': 'Web',
     'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
@@ -65,9 +69,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <p style={{margin:0,fontSize:15,lineHeight:1.8,color:'rgba(255,255,255,0.88)'}}>
             {platform.name}{' '}drivers report self-employment income in {state.name}; this estimator applies{' '}
             federal self-employment tax calculated on the model&apos;s net-profit base, subject to the Social Security wage limit, plus federal tax
-            {noStateTax ? '.' : <span> and a simplified state estimate using <strong style={{color:'#e8b84b'}}>{stateRateStr}</strong>.</span>}
+            {!isStateTaxEstimateModeled(state.slug)
+              ? <span>. California state tax is not modeled or included in the subtotal.</span>
+              : noStateTax ? '.' : <span> and a simplified state estimate using <strong style={{color:'#e8b84b'}}>{stateRateStr}</strong>.</span>}
             {' '}For a <strong style={{color:'#e8b84b'}}>$40,000</strong> net-profit example, this model estimates{' '}
-            <strong style={{color:'#e8b84b'}}>${example40.total.toLocaleString('en-US')}</strong> total — about <strong style={{color:'#e8b84b'}}>${example40.quarterly.toLocaleString('en-US')}</strong> per quarter. State results are not a full state-tax calculation.
+            <strong style={{color:'#e8b84b'}}>${example40.total.toLocaleString('en-US')}</strong> {isStateTaxEstimateModeled(state.slug) ? 'total' : 'federal + SE subtotal (state tax excluded)'} — about <strong style={{color:'#e8b84b'}}>${example40.quarterly.toLocaleString('en-US')}</strong> per quarter.
           </p>
         </div>
 
@@ -77,10 +83,10 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:24}}>
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-            <li>{`$40K net-profit example: this estimator returns ~$${example40.total.toLocaleString('en-US')} total (state component is simplified)`}</li>
+            <li>{`$40K net-profit example: this estimator returns ~$${example40.total.toLocaleString('en-US')} ${isStateTaxEstimateModeled(state.slug) ? 'total (state component is simplified)' : 'federal + SE subtotal; California state tax is not modeled'}`}</li>
             <li>{'Self-employment tax is 15.3% on net profit — paid entirely by you'}</li>
             <li>{'Mileage deduction: 72.5¢–76¢/mile — 10,000 miles = $7,250–$7,600 deduction'}</li>
-            <li>{noStateTax ? state.name + ' has no state individual income tax in this estimate' : state.name + ' uses a simplified ' + stateRateStr + ' state-rate input; check state rules for your actual liability'}</li>
+            <li>{!isStateTaxEstimateModeled(state.slug) ? 'California state tax is not modeled; the estimate excludes it' : noStateTax ? state.name + ' has no state individual income tax in this estimate' : state.name + ' uses a simplified ' + stateRateStr + ' state-rate input; check state rules for your actual liability'}</li>
             <li>{'Potential deductions and credits vary by eligibility and are not all included in this estimate'}</li>
           </ul>
         </div>
@@ -95,7 +101,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{background:'rgba(178,34,52,0.08)',border:'1px solid rgba(178,34,52,0.3)',borderRadius:8,padding:'16px 20px',marginBottom:20}}>
             <div style={{fontWeight:800,color:'#B22234',marginBottom:10,fontSize:13}}>{'🏛 CALIFORNIA DOORDASH: PROP 22 + AB5 — WHAT IT MEANS FOR YOUR TAXES'}</div>
             <p style={{margin:'0 0 12px',fontSize:14,lineHeight:1.8,color:'rgba(255,255,255,0.85)'}}>
-              California DoorDash drivers may be covered by <strong style={{color:'#e8b84b'}}>Proposition 22</strong> depending on their work. This page estimates federal self-employment tax and uses a simplified state-rate input; it does not calculate California brackets, credits, local taxes, or an individual state return.
+              California DoorDash drivers may be covered by <strong style={{color:'#e8b84b'}}>Proposition 22</strong> depending on their work. This estimate includes federal taxes only; California state tax, brackets, credits, local taxes, and an individual state return are not calculated.
             </p>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8,marginBottom:12}}>
               {[
@@ -145,13 +151,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {platform.name} Tax Calculator<br/>{state.name} 2026
               </h1>
               <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 14, margin: 0, lineHeight: 1.6, maxWidth: 560 }}>
-                Estimate your {platform.name} self-employment taxes in {state.name}. Includes SE tax (15.3%), federal income tax, and {noStateTax ? 'no state individual income tax in this model' : `a simplified ${stateRateStr} state-rate input`}. It does not calculate the full state tax schedule.
+                Estimate your {platform.name} self-employment taxes in {state.name}. Includes SE tax (15.3%) and federal income tax.
+                {!isStateTaxEstimateModeled(state.slug)
+                  ? ' California state tax is not modeled or included in this subtotal.'
+                  : noStateTax ? ' No state individual income-tax component is modeled.' : ` The simplified ${stateRateStr} state-rate input is not the full state tax schedule.`}
               </p>
             </div>
-            <div style={{ background: noStateTax ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
-              <div style={{ fontSize: 11, color: noStateTax ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Model Input</div>
-              <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax ? '#34d399' : '#f87171' }}>{noStateTax ? '0%' : stateRateStr}</div>
-              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.65)', marginTop: 2 }}>{noStateTax ? 'No state income tax modeled' : 'Simplified rate, not full tax'}</div>
+            <div style={{ background: noStateTax || !isStateTaxEstimateModeled(state.slug) ? 'rgba(5,150,105,.15)' : 'rgba(178,34,52,.15)', border: `1px solid ${noStateTax || !isStateTaxEstimateModeled(state.slug) ? '#059669' : '#B22234'}`, borderRadius: 6, padding: '12px 18px', textAlign: 'center' as const, minWidth: 140 }}>
+              <div style={{ fontSize: 11, color: noStateTax || !isStateTaxEstimateModeled(state.slug) ? '#6ee7b7' : '#fca5a5', fontWeight: 700, textTransform: 'uppercase' as const, letterSpacing: '0.8px', marginBottom: 4 }}>State Model Input</div>
+              <div style={{ fontSize: 24, fontWeight: 900, color: noStateTax || !isStateTaxEstimateModeled(state.slug) ? '#34d399' : '#f87171' }}>{!isStateTaxEstimateModeled(state.slug) ? 'Not modeled' : noStateTax ? '0%' : stateRateStr}</div>
+              <div style={{ fontSize: 11, color: 'rgba(255,255,255,.65)', marginTop: 2 }}>{!isStateTaxEstimateModeled(state.slug) ? 'Excluded from subtotal' : noStateTax ? 'No state income tax modeled' : 'Simplified rate, not full tax'}</div>
             </div>
           </div>
         </div>
@@ -172,7 +181,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 8, marginBottom: 12 }} className="three-grid">
                   {[
                     { label: 'SE Tax Rate', value: '15.3%', sub: 'SS + Medicare', color: '#B22234' },
-                    { label: `${state.abbr} State Estimate`, value: noStateTax ? '0%' : stateRateStr, sub: noStateTax ? 'No income tax modeled' : 'Simplified input', color: noStateTax ? '#059669' : '#B22234' },
+                    { label: `${state.abbr} State Estimate`, value: !isStateTaxEstimateModeled(state.slug) ? 'Not modeled' : noStateTax ? '0%' : stateRateStr, sub: !isStateTaxEstimateModeled(state.slug) ? 'Excluded from subtotal' : noStateTax ? 'No income tax modeled' : 'Simplified input', color: noStateTax || !isStateTaxEstimateModeled(state.slug) ? '#059669' : '#B22234' },
                     { label: 'Quarterly Due Dates', value: '4×/yr', sub: 'Payment rules vary by filer and state', color: '#e8b84b' },
                   ].map(s => (
                     <div key={s.label} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '14px 16px', textAlign: 'center' as const }}>
@@ -226,19 +235,23 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {[
                   {
                     q: `How much is ${platform.name} tax in ${state.name}?`,
-                    a: noStateTax
+                    a: !isStateTaxEstimateModeled(state.slug)
+                      ? `For a $50,000 net-profit example, the federal + SE subtotal is about $${example50.total.toLocaleString('en-US')}; California state tax is not modeled or included.`
+                      : noStateTax
                       ? `This model includes federal SE and income tax and no ${state.name} individual-income-tax component. Other local or business taxes are not modeled.`
                       : `For a $50,000 net-profit example, this estimator returns about $${example50.total.toLocaleString('en-US')} combined, including a simplified ${stateRateStr} state-rate input. This is not the state's full tax schedule; actual liability depends on state brackets, deductions, credits, and local taxes.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
-                    a: noStateTax
+                    a: !isStateTaxEstimateModeled(state.slug)
+                      ? 'Federal estimated payments may be required based on withholding and safe-harbor rules. California state payments are not included in this estimate.'
+                      : noStateTax
                       ? `Federal estimated payments may be required depending on expected tax after withholding and safe-harbor rules. This model includes no ${state.name} individual-income-tax component; check the state revenue department for other state or local obligations.`
                       : `Federal and state estimated payments depend on your full return, withholding, and jurisdiction-specific thresholds. Check the ${state.name} revenue department for state due dates and requirements.`,
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in ${state.name}?`,
-                    a: `This estimator applies the shared federal Schedule SE rules to the modeled net-profit base. It does not combine W-2 or spouse wages when evaluating Additional Medicare effects. ${noStateTax ? 'No state individual-income-tax component is modeled.' : `The ${stateRateStr} state-rate input is simplified and not a full state tax schedule.`}`,
+                    a: `This estimator applies the shared federal Schedule SE rules to the modeled net-profit base. It does not combine W-2 or spouse wages when evaluating Additional Medicare effects. ${!isStateTaxEstimateModeled(state.slug) ? 'California state tax is not modeled or included in the subtotal.' : noStateTax ? 'No state individual-income-tax component is modeled.' : `The ${stateRateStr} state-rate input is simplified and not a full state tax schedule.`}`,
                   },
                   {
                     q: `What mileage rate can DoorDash drivers deduct in ${state.name} in 2026?`,

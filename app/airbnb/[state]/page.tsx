@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateScheduleERaw } from '@/lib/tax-rules'
+import {estimateScheduleERaw, TAX_RULES_2026, estimateScheduleERawForState, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -13,7 +13,7 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'alaska':         (p, r, n) => `Alaska has NO state income tax — one of only 9 states with no income tax. ${p} workers in Alaska only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
   'arizona':        (p, r, n) => `Arizona reduced its state income tax to a flat ${r} in 2023 — one of the lowest rates in the US. ${p} workers in Arizona must file AZ Form 140ES for quarterly estimated payments.`,
   'arkansas':       (p, r, n) => `Arkansas has a ${r} state income tax rate. ${p} workers in Arkansas must file both federal and AR state quarterly estimated tax payments using AR Form AR1000ES.`,
-  'california':     (p, r, n) => `California has one of the highest state income tax rates in the USA (up to 13.3%). For ${p} workers in California, the base planning rate is ${r}. California also requires separate estimated tax payments to the Franchise Tax Board (FTB) using Form 540-ES.`,
+  'california': (p, r, n) => `This estimator does not calculate California state income tax; its federal + SE subtotal excludes CA state tax. Check the California Franchise Tax Board for state filing and payment rules.`,
   'colorado':       (p, r, n) => `Colorado has a flat ${r} state income tax rate. ${p} workers in Colorado must file both federal Form 1040-ES and Colorado Form DR 0105EP for quarterly estimated payments.`,
   'connecticut':    (p, r, n) => `Connecticut has a ${r} state income tax rate for most ${p} workers. Connecticut requires quarterly estimated payments using Form CT-1040ES if you expect to owe $1,000 or more.`,
   'delaware':       (p, r, n) => `Delaware has a ${r} state income tax rate. ${p} workers in Delaware must file both federal and Delaware quarterly estimated payments using Form 200-ES.`,
@@ -73,10 +73,14 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'no state income-tax rate modeled' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% simplified state-rate input`
+  const stateDescription = !isStateTaxEstimateModeled(s.slug)
+    ? 'California state tax is not modeled or included.'
+    : s.rate === 0
+      ? `No ${s.name} individual income-tax rate is modeled.`
+      : `The simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input is not a full state return.`
   return {
     title: `Airbnb Rental Taxes in ${s.name} 2026 | Schedule E & C`,
-    description: `Compare simplified Airbnb Schedule E rental-income and Schedule C service scenarios in ${s.name}. Federal estimate plus ${stateStr}; not a full state return or lodging-tax calculator.`,
+    description: `Compare simplified Airbnb Schedule E rental-income and Schedule C service scenarios in ${s.name}. Federal estimates; ${stateDescription} This is not a full state return or lodging-tax calculator.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -89,12 +93,12 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const noteGen = STATE_NOTES[stateSlug]
-  const stateNote = `This estimator compares rental-income scenarios for ${state.name}. The Schedule E scenario does not include self-employment tax; the Schedule C scenario does. ${noStateTax ? `${state.name} has no individual income-tax rate modeled here.` : `The ${stateRateStr} input is a simplified estimate, not ${state.name}'s full tax schedule.`} City and county lodging taxes are separate and are not calculated.`
-  const rentalExample = estimateScheduleERaw(50000, state.rate)
+  const stateNote = `This estimator compares rental-income scenarios for ${state.name}. The Schedule E scenario does not include self-employment tax; the Schedule C scenario does. ${!isStateTaxEstimateModeled(state.slug) ? 'California state tax is not modeled or included in either scenario.' : noStateTax ? `${state.name} has no individual income-tax rate modeled here.` : `The ${stateRateStr} input is a simplified estimate, not ${state.name}'s full tax schedule.`} City and county lodging taxes are separate and are not calculated.`
+  const rentalExample = estimateScheduleERawForState(50000, state)
 
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
@@ -103,13 +107,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const faqItems = [
     {
       q: `How much is ${platform.name} tax in ${state.name}?`,
-      a: noStateTax
+      a: !isStateTaxEstimateModeled(state.slug)
+        ? `California state tax is not modeled or included in either scenario. The Schedule E scenario excludes self-employment tax; the Schedule C scenario includes it.`
+        : noStateTax
         ? `Tax treatment depends on the rental activity and services provided. This calculator offers a Schedule E scenario without modeled SE tax and a Schedule C scenario that includes it. No ${state.name} individual income-tax rate is modeled.`
         : `Tax treatment depends on the rental activity and services provided. This calculator offers a Schedule E scenario without modeled SE tax and a Schedule C scenario that includes it. State tax uses a simplified ${stateRateStr} input, not the full ${state.name} schedule.`,
     },
     {
       q: `Do I need to make quarterly payments in ${state.name}?`,
-      a: noStateTax
+      a: !isStateTaxEstimateModeled(state.slug)
+        ? 'California state tax and payment requirements are not included in this estimate; check the Franchise Tax Board and local lodging-tax rules.'
+        : noStateTax
         ? `Estimated-payment requirements depend on your full return, withholding, and safe-harbor amounts. No ${state.name} individual income-tax rate is included in this estimate; check local lodging-tax rules separately.`
         : `Estimated-payment requirements depend on your full return, withholding, and safe-harbor amounts. The calculator's state component is simplified and does not determine ${state.name} filing or payment requirements.`,
     },
@@ -143,7 +151,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Airbnb Tax Calculator ${state.name} 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Airbnb Tax Calculator","item":"https://www.gigwisetax.com/airbnb"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/airbnb/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Rental Taxes in ${state.name} 2026","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/airbnb/${state.slug}"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Airbnb Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/airbnb/${state.slug}","dateModified":"${TAX_RULES_2026.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
 
         {/* HERO */}
@@ -232,7 +240,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {[
                     { label: 'Schedule E scenario', val: 'No SE tax modeled', sub: 'Rental-income assumption', color: '#059669' },
                     { label: 'Schedule C scenario', val: 'SE tax included', sub: 'If applicable to your activity', color: '#B22234' },
-                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'Not modeled' : stateRateStr, sub: 'Simplified rate only', color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
+                    { label: `${state.abbr} State Tax`, val: !isStateTaxEstimateModeled(state.slug) || noStateTax ? 'Not modeled' : stateRateStr, sub: !isStateTaxEstimateModeled(state.slug) ? 'Excluded from subtotal' : 'Simplified rate only', color: !isStateTaxEstimateModeled(state.slug) || noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>

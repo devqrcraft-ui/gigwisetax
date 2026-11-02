@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -13,7 +13,7 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'alaska':         (p, r, n) => `Alaska has NO state income tax — one of only 9 states with no income tax. ${p} workers in Alaska only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
   'arizona':        (p, r, n) => `Arizona reduced its state income tax to a flat ${r} in 2023 — one of the lowest rates in the US. ${p} workers in Arizona must file AZ Form 140ES for quarterly estimated payments.`,
   'arkansas':       (p, r, n) => `Arkansas has a ${r} state income tax rate. ${p} workers in Arkansas must file both federal and AR state quarterly estimated tax payments using AR Form AR1000ES.`,
-  'california':     (p, r, n) => `California has one of the highest state income tax rates in the USA (up to 13.3%). For ${p} workers in California, the base planning rate is ${r}. California also requires separate estimated tax payments to the Franchise Tax Board (FTB) using Form 540-ES.`,
+  'california': (p, r, n) => `This estimator does not calculate California state income tax; its federal + SE subtotal excludes CA state tax. Check the California Franchise Tax Board for state filing and payment rules.`,
   'colorado':       (p, r, n) => `Colorado has a flat ${r} state income tax rate. ${p} workers in Colorado must file both federal Form 1040-ES and Colorado Form DR 0105EP for quarterly estimated payments.`,
   'connecticut':    (p, r, n) => `Connecticut has a ${r} state income tax rate for most ${p} workers. Connecticut requires quarterly estimated payments using Form CT-1040ES if you expect to owe $1,000 or more.`,
   'delaware':       (p, r, n) => `Delaware has a ${r} state income tax rate. ${p} workers in Delaware must file both federal and Delaware quarterly estimated payments using Form 200-ES.`,
@@ -68,9 +68,14 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
+  const stateDescription = !isStateTaxEstimateModeled(s.slug)
+    ? 'California state tax is not modeled or included in the federal + SE subtotal.'
+    : s.rate === 0
+      ? `${s.name} has no state income-tax component in this estimate.`
+      : `Includes a simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input, not a full state tax calculation.`
   return {
     title: `Amazon Flex Tax Calculator for ${s.name} 2026 | Free Estimate`,
-    description: `Estimate Amazon Flex self-employment and federal income taxes for ${s.name}. Includes a simplified state-rate input, quarterly planning, and mileage assumptions; not a full state tax calculation.`,
+    description: `Estimate Amazon Flex self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -83,13 +88,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const stateTaxModeled = isStateTaxEstimateModeled(state.slug)
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const noteGen = STATE_NOTES[stateSlug]
   const stateNote = noteGen
     ? noteGen(platform.name, stateRateStr, noStateTax)
-    : `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax
+    : !stateTaxModeled
+      ? 'California state tax is not modeled or included in the federal + SE subtotal.'
+      : `${state.name} ${noStateTax ? 'has no state income tax' : `has a ${stateRateStr} state income tax rate`}. ${noStateTax
         ? `${platform.name} workers in ${state.name} only pay federal income tax and the 15.3% self-employment tax.`
         : `${platform.name} workers in ${state.name} must make both federal and state quarterly estimated tax payments.`}`
 
@@ -133,14 +141,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18, textAlign: 'justify' }}>
               Free {platform.name} tax calculator for {state.name} ({state.abbr}).
-              {noStateTax
+              {!stateTaxModeled
+                ? ' California state tax is not modeled or included; this page shows a federal + SE subtotal.'
+                : noStateTax
                 ? ` ${state.name} has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.`
                 : ` Includes the ${stateRateStr} ${state.name} state income tax plus federal SE tax (15.3%) and federal income tax.`
               } Quarterly payment schedule with Google Calendar export. No signup required.
             </p>
             <div style={{ paddingLeft: 16, display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
               {[
-                ` ${state.abbr}: ${noStateTax ? 'No Tax' : stateRateStr}`,
+                ` ${state.abbr}: ${!stateTaxModeled ? 'Not modeled' : noStateTax ? 'No Tax' : stateRateStr}`,
                 ' IRS Schedule SE',
                 ' No Signup',
                 ' 2026 Tax Rules',
@@ -177,7 +187,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {[
                     { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
                     { label: 'Federal Tax', val: '10–37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
-                    { label: `${state.abbr} State Tax`, val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : `${state.name} rate`, color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
+                    { label: `${state.abbr} State Tax`, val: !stateTaxModeled ? 'Not modeled' : noStateTax ? 'None' : stateRateStr, sub: !stateTaxModeled ? 'Excluded from subtotal' : noStateTax ? 'No state income tax' : `${state.name} rate`, color: !stateTaxModeled || noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map((r, i) => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: `4px solid ${r.color}`, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>
@@ -209,7 +219,9 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                         <td style={{ padding: '8px 10px', fontWeight: 700, color: d.isNext ? '#B22234' : 'rgba(255,255,255,0.85)' }}>{d.due}</td>
                         <td style={{ padding: '8px 10px', color: '#059669', fontWeight: 600, fontSize: 14 }}>✓ Required</td>
                         <td style={{ padding: '8px 10px', fontSize: 14 }}>
-                          {noStateTax
+                          {!stateTaxModeled
+                            ? <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Check FTB; state tax is not modeled</span>
+                            : noStateTax
                             ? <span style={{ color: '#059669', fontWeight: 600 }}>Not required</span>
                             : <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 600 }}>Required</span>
                           }
@@ -236,23 +248,27 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 {[
                   {
                     q: `How much is ${platform.name} tax in ${state.name}?`,
-                    a: noStateTax
+                    a: !stateTaxModeled
+                      ? 'This page shows a federal + SE subtotal; California state tax is not modeled or included.'
+                      : noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $40,000 net income, expect to owe approximately $${estimateTax(40000, state.rate).total.toLocaleString('en-US')} total.`,
+                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $40,000 net income, expect to owe approximately $${estimateTaxForStateRounded(40000, state).total.toLocaleString('en-US')} total.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
-                    a: noStateTax
+                    a: !stateTaxModeled
+                      ? 'Federal estimated payments depend on your full return, withholding, and safe-harbor rules. California state tax and payment requirements are not determined by this estimate; check the FTB.'
+                      : noStateTax
                       ? `In ${state.name}, you must make federal quarterly estimated payments (IRS Form 1040-ES) if you expect to owe $1,000 or more. No state quarterly payments are required.`
                       : `Yes. In ${state.name}, you must make both federal quarterly estimated payments (IRS Form 1040-ES) and ${state.name} state quarterly payments if you expect to owe $1,000 or more.`,
                   },
                   {
                     q: `What is the self-employment tax rate in ${state.name} for ${platform.name} workers?`,
-                    a: `The federal self-employment tax rate is 15.3% regardless of state. This covers Social Security (12.4%) and Medicare (2.9%). In ${state.name}, you additionally pay ${noStateTax ? 'no state income tax' : `${stateRateStr} state income tax`}.`,
+                    a: `The federal self-employment tax rate is 15.3% regardless of state. This covers Social Security (12.4%) and Medicare (2.9%). ${!stateTaxModeled ? 'California state tax is not modeled or included here.' : noStateTax ? `${state.name} has no state income tax.` : `The ${stateRateStr} state-rate input is simplified and not a full ${state.name} tax schedule.`}`,
                   },
                   {
                     q: `Does ${platform.name} take out taxes in ${state.name}?`,
-                    a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for paying all federal SE tax, federal income tax${noStateTax ? '' : `, and ${state.name} state income tax`} yourself, typically through quarterly estimated payments.`,
+                    a: `No. ${platform.name} classifies workers as independent contractors, not employees. No taxes are withheld from your payments. You are responsible for federal SE tax and federal income tax; ${!stateTaxModeled ? 'California state tax is not modeled by this calculator, so check the FTB for your obligations.' : noStateTax ? `no ${state.name} state income-tax component is modeled here.` : `state tax may also apply in ${state.name}.`} Estimated-payment obligations depend on your full return.`,
                   },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
-import { estimateScheduleERaw, estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
+import { estimateScheduleERaw, estimateScheduleERawForState, estimateTaxForState, estimateTaxRaw, TAX_RULES_2026 } from '@/lib/tax-rules'
 import { STATES as ALL_STATES } from '@/lib/data'
 import Link from 'next/link'
 
@@ -20,7 +20,7 @@ const PLATFORMS = [
 ]
 
 // Єдина таблиця штатів (50 + DC) з lib/data.ts: однакові ставки в калькуляторі та estimator.
-const STATES = ALL_STATES.map(s => ({ code: s.abbr, name: s.name, rate: s.rate }))
+const STATES = ALL_STATES.map(s => ({ code: s.abbr, name: s.name, slug: s.slug, rate: s.rate }))
 
 const DEADLINES = [
   { q: 'Q1 2026', period: 'Jan – Mar', due: 'April 15, 2026' },
@@ -59,7 +59,11 @@ function QuarterlyEstimator() {
   const w = parseFloat(weekly) || 0;
   const annual = w * 52;
   const stateRate = (STATE_RATES[qState] ?? 5) / 100;
-  const estimate = estimateTaxRaw(annual, stateRate, qFiling);
+  const selectedState = ALL_STATES.find(s => s.name === qState)
+  const estimate = selectedState
+    ? estimateTaxForState(annual, selectedState, qFiling)
+    : estimateTaxRaw(annual, stateRate, qFiling)
+  const stateTaxModeled = !('stateTaxModeled' in estimate) || estimate.stateTaxModeled
   const { se: seTax, federal: fed, state, total, quarterly } = estimate;
   const hasResult = w > 0;
 
@@ -92,7 +96,7 @@ function QuarterlyEstimator() {
         <div>
           <label htmlFor="qe-state" style={{color:'#C8D8EC',fontSize:14,fontWeight:600,display:'block',marginBottom:6,opacity:.85}}>State</label>
           <select id="qe-state" value={qState} onChange={e=>setQState(e.target.value)} style={inp2}>
-            {Object.keys(STATE_RATES).map(s=><option key={s} value={s}>{s}</option>)}
+            {Object.keys(STATE_RATES).map(s=><option key={s} value={s}>{s === 'California' ? 'California (state tax not modeled)' : s}</option>)}
           </select>
         </div>
         <div>
@@ -108,11 +112,12 @@ function QuarterlyEstimator() {
       {hasResult ? (
         <>
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.3)',borderRadius:12,padding:'16px 20px',marginBottom:16}}>
-            <p style={{color:'#C8D8EC',fontSize:13,margin:'0 0 4px',opacity:.7}}>Estimated quarterly payment</p>
+            <p style={{color:'#C8D8EC',fontSize:13,margin:'0 0 4px',opacity:.7}}>{stateTaxModeled ? 'Estimated quarterly payment' : 'Estimated federal + SE quarterly subtotal'}</p>
             <p style={{color:'#e8b84b',fontSize:32,fontWeight:900,margin:'0 0 4px'}}>${Math.round(quarterly).toLocaleString('en-US')}</p>
-            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>Annual tax: ~${Math.round(total).toLocaleString('en-US')} (SE: ${Math.round(seTax).toLocaleString('en-US')} + Fed: ${Math.round(fed).toLocaleString('en-US')} + State: ${Math.round(state).toLocaleString('en-US')})</p>
-            {total < 1000 && <p style={{color:'#4ade80',fontSize:12,margin:'8px 0 0',fontWeight:600}}>Under $1,000 — quarterly payments likely not required.</p>}
-            {total >= 1000 && <p style={{color:'#e8b84b',fontSize:12,margin:'8px 0 0',fontWeight:600}}>IRS requires quarterly payments when you expect to owe $1,000+.</p>}
+            <p style={{color:'#C8D8EC',fontSize:12,margin:0,opacity:.6}}>{stateTaxModeled
+              ? `Annual tax: ~$${Math.round(total).toLocaleString('en-US')} (SE: $${Math.round(seTax).toLocaleString('en-US')} + Fed: $${Math.round(fed).toLocaleString('en-US')} + State: $${Math.round(state).toLocaleString('en-US')})`
+              : `Federal + SE subtotal: ~$${Math.round(total).toLocaleString('en-US')}. California state tax is not modeled.`}</p>
+            <p style={{color:'#C8D8EC',fontSize:12,margin:'8px 0 0',opacity:.7}}>Federal estimated-payment requirements depend on expected tax after withholding and safe-harbor rules.{!stateTaxModeled ? ' California state tax and payment requirements are not modeled.' : ''}</p>
           </div>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(140px,1fr))',gap:10,marginBottom:16}}>
             {DATES.map((d,i)=>(
@@ -174,13 +179,18 @@ export default function HomeClient() {
     setFiling(ex.filing)
     const gross = parseFloat(ex.income) || 0
     const state = STATES.find(s => s.code === ex.state)
-    const estimate = ex.platform === 'Airbnb'
-      ? estimateScheduleERaw(gross, state?.rate ?? 0.05, ex.filing as 'single' | 'married' | 'hoh')
-      : estimateTaxRaw(gross, state?.rate ?? 0.05, ex.filing as 'single' | 'married' | 'hoh')
+    const estimate = state
+      ? ex.platform === 'Airbnb'
+        ? estimateScheduleERawForState(gross, state, ex.filing as 'single' | 'married' | 'hoh')
+        : estimateTaxForState(gross, state, ex.filing as 'single' | 'married' | 'hoh')
+      : ex.platform === 'Airbnb'
+        ? estimateScheduleERaw(gross, 0.05, ex.filing as 'single' | 'married' | 'hoh')
+        : estimateTaxRaw(gross, 0.05, ex.filing as 'single' | 'married' | 'hoh')
     setResult({
       seTax: estimate.se, federal: estimate.federal, stateTax: estimate.state,
       total: estimate.total, quarterly: estimate.quarterly,
       rate: ((estimate.total / gross) * 100).toFixed(1),
+      stateTaxModeled: !('stateTaxModeled' in estimate) || estimate.stateTaxModeled,
       scheduleE: ex.platform === 'Airbnb',
     })
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -193,10 +203,14 @@ export default function HomeClient() {
     const filingStatus = filing === 'married' ? 'married' : filing === 'hoh' ? 'hoh' : 'single'
     const scheduleE = platform === 'Airbnb' && airbnbSchedule === 'e'
     const deductions = scheduleE ? 0 : (parseFloat(milesH1) || 0) * TAX_RULES_2026.mileage.h1 + (parseFloat(milesH2) || 0) * TAX_RULES_2026.mileage.h2 + (parseFloat(expenses) || 0)
-    const r = scheduleE
-      ? estimateScheduleERaw(net, st?.rate ?? 0.05, filingStatus)
-      : estimateTaxRaw(net, st?.rate ?? 0.05, filingStatus, deductions)
-    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1), scheduleE })
+    const r = st
+      ? scheduleE
+        ? estimateScheduleERawForState(net, st, filingStatus)
+        : estimateTaxForState(net, st, filingStatus, deductions)
+      : scheduleE
+        ? estimateScheduleERaw(net, 0.05, filingStatus)
+        : estimateTaxRaw(net, 0.05, filingStatus, deductions)
+    setResult({ seTax: r.se, federal: r.federal, stateTax: r.state, total: r.total, quarterly: r.quarterly, rate: ((r.total / net) * 100).toFixed(1), stateTaxModeled: !('stateTaxModeled' in r) || r.stateTaxModeled, scheduleE })
   }
 
   /* ── shared style tokens ── */
@@ -243,7 +257,7 @@ export default function HomeClient() {
       {/* STICKY RESULT BAR mobile */}
       {result && isMobile && (
         <div style={{ position: 'sticky', top: 60, zIndex: 90, background: 'rgba(7,17,31,0.95)', borderBottom: '2px solid #e8b84b', padding: '8px 16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: 12, color: '#C8D8EC', fontWeight: 500 }}>Estimated total tax</span>
+          <span style={{ fontSize: 12, color: '#C8D8EC', fontWeight: 500 }}>{result.stateTaxModeled ? 'Estimated total tax' : result.scheduleE ? 'Federal subtotal' : 'Federal + SE subtotal'}</span>
           <span style={{ fontSize: 16, fontWeight: 900, color: '#e8b84b' }}>
             {Math.round(result.total).toLocaleString('en-US')} <span style={{ fontSize: 13, color:'rgba(255,255,255,.75)', fontWeight:400 }}>({result.rate}%)</span>
           </span>
@@ -386,7 +400,7 @@ export default function HomeClient() {
                     <div>
                       <label style={label} htmlFor="gtx-state-home"> State of Residence</label>
                       <select style={inp}  id="gtx-state-home" value={stateCode} onChange={e => setStateCode(e.target.value)}>
-                        {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
+                        {STATES.map(s => <option key={s.code} value={s.code}>{s.name} {s.slug === 'california' ? '(state tax not modeled)' : s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(1)}%)`}</option>)}
                       </select>
                     </div>
                     <div>
@@ -414,10 +428,10 @@ export default function HomeClient() {
                   {/* 4 boxes */}
                   <div style={{ overflowX: 'auto' as const }}><div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', borderBottom: '1px solid rgba(255,255,255,0.1)', minWidth: 0 }} className="results-row">
                     {[
-                      { label: result.scheduleE ? 'SE Tax' : 'SE Tax (15.3%)', val: fmt(result.seTax), sub: result.scheduleE ? 'Not modeled for Schedule E' : 'Schedule SE' },
+                      { label: 'SE Tax', val: fmt(result.seTax), sub: result.scheduleE ? 'Not modeled for Schedule E' : 'Schedule SE' },
                       { label: 'Federal Tax',       val: fmt(result.federal),  sub: 'Estimated'   },
-                      { label: `${stateCode} State`,val: fmt(result.stateTax), sub: 'Estimated'   },
-                      { label: 'Total Annual Tax',  val: fmt(result.total),    sub: `${result.rate}% effective`, hi: true },
+                      { label: `${stateCode} State`,val: result.stateTaxModeled ? fmt(result.stateTax) : 'Not modeled', sub: result.stateTaxModeled ? 'Estimated' : 'Excluded from subtotal' },
+                      { label: result.stateTaxModeled ? 'Total Annual Tax' : result.scheduleE ? 'Federal Subtotal' : 'Federal + SE Subtotal', val: fmt(result.total), sub: result.stateTaxModeled ? `${result.rate}% effective` : 'California state tax excluded', hi: true },
                     ].map((r, i) => (
                       <div key={r.label} style={{ padding: '16px 14px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: r.hi ? 'rgba(232,184,75,0.15)' : 'rgba(13,27,62,0.6)', borderLeft: r.hi ? '4px solid #e8b84b' : 'none' }}>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '0.7px', marginBottom: 8, lineHeight: 1.4 }}>{r.label}</div>
@@ -659,19 +673,19 @@ export default function HomeClient() {
               {platform:'Airbnb (Schedule C host)',gross:55000,stateSlug:'washington',stateName:'Washington',href:'/airbnb/washington'},
             ].map((ex,i)=>{
               const state = ALL_STATES.find(item => item.slug === ex.stateSlug)!
-              const estimate = estimateTaxRaw(ex.gross,state.rate,'single')
+              const estimate = estimateTaxForState(ex.gross,state,'single')
               const money = (amount:number) => '$' + Math.round(amount).toLocaleString('en-US')
               return <a key={ex.platform} href={ex.href} style={{background: i%2===0 ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.01)',borderTop: i===0 ? 'none' : '2px solid rgba(232,184,75,0.25)',padding:'16px 16px',textDecoration:'none',display:'block'}}>
                 <div style={{fontSize:17,fontWeight:800,color:'#e8b84b',marginBottom:14,textAlign:'center'}}>{ex.platform} {money(ex.gross)} — {ex.stateName}</div>
                 <div style={{display:'grid',gridTemplateColumns:'1fr 1fr 1fr',gap:'10px 8px',marginBottom:14,textAlign:'center'}}>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>SE Tax</div>
                   <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>Federal</div>
-                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>State Estimate</div>
+                  <div style={{fontSize:12,color:'rgba(255,255,255,0.55)',fontWeight:600,textTransform:'uppercase',letterSpacing:'0.5px'}}>{estimate.stateTaxModeled ? 'State Estimate' : 'State Tax'}</div>
                   <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.se)}</div>
                   <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.federal)}</div>
-                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{money(estimate.state)}</div>
+                  <div style={{fontSize:17,color:'#f87171',fontWeight:800}}>{estimate.stateTaxModeled ? money(estimate.state) : 'Not modeled'}</div>
                 </div>
-                <div style={{borderTop:'1px solid rgba(255,255,255,0.12)',paddingTop:10,marginTop:4,fontSize:22,fontWeight:900,color:'#4ade80',textAlign:'center'}}>Illustrative take-home {money(estimate.takeHome)}</div>
+                <div style={{borderTop:'1px solid rgba(255,255,255,0.12)',paddingTop:10,marginTop:4,fontSize:22,fontWeight:900,color:'#4ade80',textAlign:'center'}}>{estimate.stateTaxModeled ? `Illustrative take-home ${money(estimate.takeHome)}` : `Federal + SE subtotal (state tax excluded) ${money(estimate.total)}`}</div>
               </a>
             })}
           </div>

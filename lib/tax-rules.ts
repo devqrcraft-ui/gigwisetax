@@ -49,6 +49,28 @@ export function estimateTaxRaw(gross: number, stateRate = 0, filing: Filing = 's
   return { net, se, federal, state, taxable, total, quarterly: total / 4, takeHome: gross - total }
 }
 
+type StateTaxInput = { slug: string; rate: number }
+
+export function isStateTaxEstimateModeled(stateSlug: string): boolean {
+  return stateSlug !== 'california'
+}
+
+export function estimateTaxForState(gross: number, stateInput: StateTaxInput, filing: Filing = 'single', mileDeduct = 0) {
+  const stateTaxModeled = isStateTaxEstimateModeled(stateInput.slug)
+  return {
+    ...estimateTaxRaw(gross, stateTaxModeled ? stateInput.rate : 0, filing, mileDeduct),
+    stateTaxModeled,
+  }
+}
+
+export function estimateScheduleERawForState(netRentalIncome: number, stateInput: StateTaxInput, filing: Filing = 'single') {
+  const stateTaxModeled = isStateTaxEstimateModeled(stateInput.slug)
+  return {
+    ...estimateScheduleERaw(netRentalIncome, stateTaxModeled ? stateInput.rate : 0, filing),
+    stateTaxModeled,
+  }
+}
+
 export function estimateScheduleERaw(netRentalIncome: number, stateRate = 0, filing: Filing = 'single') {
   const net = Math.max(0, netRentalIncome)
   const taxable = Math.max(0, net - TAX_RULES_2026.standardDeduction[filing])
@@ -64,6 +86,15 @@ export function estimateTax(gross: number, stateRate = 0, filing: Filing = 'sing
   return {
     se: Math.round(r.se), federal: Math.round(r.federal), state: Math.round(r.state),
     total: Math.round(r.total), quarterly: Math.round(r.quarterly), takeHome: Math.round(r.takeHome),
+  }
+}
+
+export function estimateTaxForStateRounded(gross: number, stateInput: StateTaxInput, filing: Filing = 'single', mileDeduct = 0) {
+  const r = estimateTaxForState(gross, stateInput, filing, mileDeduct)
+  return {
+    se: Math.round(r.se), federal: Math.round(r.federal), state: Math.round(r.state),
+    total: Math.round(r.total), quarterly: Math.round(r.quarterly), takeHome: Math.round(r.takeHome),
+    stateTaxModeled: r.stateTaxModeled,
   }
 }
 

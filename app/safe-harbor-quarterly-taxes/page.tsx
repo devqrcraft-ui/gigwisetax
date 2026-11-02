@@ -102,7 +102,7 @@ export default function SafeHarborPage() {
             <li>Safe harbor rule: pay <strong>100% of prior year tax</strong> (110% if AGI exceeded $150,000) — no penalty regardless of current earnings</li>
             <li>IRS underpayment penalty is approximately <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong> on the unpaid amount per quarter</li>
             <li>Missing <strong>Q1 (Apr 15)</strong> costs the most — penalty accrues for ~9 months; missing Q4 costs the least (~1 month)</li>
-            <li>First-year gig workers with <strong>$0 prior year tax</strong> are exempt from underpayment penalties — applies once only</li>
+            <li>You may not need estimated payments if you meet <strong>all three IRS prior-year conditions</strong>; this is not limited to your first year of gig work</li>
             <li>Quarterly deadlines: <strong>Apr 15 · Jun 15 · Sep 15 · Jan 15</strong> — owe $1,000+ and payments are required</li>
           </ul>
         </div>
@@ -338,14 +338,15 @@ export default function SafeHarborPage() {
           </div>
         </div>
 
-        {/* FIRST YEAR EXCEPTION */}
+        {/* PRIOR-YEAR EXCEPTION */}
         <div className="section">
-          <h2 className="sh-h2">First-Year Gig Worker? You May Be Exempt</h2>
+          <h2 className="sh-h2">Did You Have No Tax Liability Last Year?</h2>
           <div className="note" style={{borderColor:'rgba(74,222,128,.4)'}}>
-            <strong style={{color:'#4ade80'}}>Zero liability exception:</strong> If your total federal tax for the prior year was $0,
-            you owe no underpayment penalty this year — even if you owe thousands when you file.
-            This applies to most first-year gig workers who had no income or were covered by employer withholding all of last year.
-            The exception only applies once — year two you must pay quarterly.
+            <strong style={{color:'#4ade80'}}>Prior-year exception:</strong> You generally do not have to make estimated tax payments for this year only if all three IRS conditions are met:
+            you had no federal tax liability for the prior year, you were a U.S. citizen or resident alien for the entire prior year, and that prior tax year covered 12 months.
+            No tax liability generally means your total tax was zero or you were not required to file a federal income tax return.
+            This is not a one-time first-year exception; check the conditions for each tax year.
+            See the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener" style={{color:'#4ade80'}}>IRS estimated-tax rules</a>.
           </div>
         </div>
 
@@ -355,9 +356,9 @@ export default function SafeHarborPage() {
           <div className="faq-q"><div className="faq-qt">What is the safe harbor rule for quarterly taxes?</div><div className="faq-qa">Pay either 100% of last year's total tax (110% if AGI was over $150,000) or 90% of this year's tax — whichever is smaller. Meet either threshold and the IRS cannot charge an underpayment penalty.</div></div>
           <div className="faq-q"><div className="faq-qt">What is the IRS underpayment penalty rate in 2026?</div><div className="faq-qa">Approximately 7% annually on the underpaid amount, calculated per quarter. The penalty is the federal short-term rate plus 3 percentage points, updated quarterly by the IRS.</div></div>
           <div className="faq-q"><div className="faq-qt">What happens if I don't pay quarterly taxes?</div><div className="faq-qa">You still owe the full tax when you file — plus an underpayment penalty calculated per quarter. Missing Q1 costs the most (9 months of accrual). Missing Q4 costs the least (1 month). You cannot avoid the penalty by paying everything in April.</div></div>
-          <div className="faq-q"><div className="faq-qt">Can I avoid the penalty as a first-year gig worker?</div><div className="faq-qa">Yes — if your prior year total tax was $0, you are exempt from the underpayment penalty this year. This applies once. Starting year two, you must pay quarterly.</div></div>
+          <div className="faq-q"><div className="faq-qt">Can I avoid estimated tax payments if I had no tax liability last year?</div><div className="faq-qa">Possibly. The IRS says you do not have to pay estimated tax for the current year only if all three conditions are met: you had no tax liability for the prior year, were a U.S. citizen or resident alien for the whole prior year, and the prior tax year covered 12 months. No tax liability generally means total tax was zero or you were not required to file. This is not limited to a taxpayer's first year in gig work. See the <a href="https://www.irs.gov/businesses/small-businesses-self-employed/estimated-taxes" target="_blank" rel="noopener">IRS estimated-tax rules</a>.</div></div>
           <div className="faq-q"><div className="faq-qt">What are the 2026 quarterly tax due dates?</div><div className="faq-qa">Q1: April 15, 2026 · Q2: June 15, 2026 · Q3: September 15, 2026 · Q4: January 15, 2027. Missing these by even one day starts the penalty clock.</div></div>
-          <div className="faq-q"><div className="faq-qt">I work on multiple apps. Do I file separately for each?</div><div className="faq-qa">No. All gig income is combined on a single Schedule C (or multiple Schedule C forms if different types of business). Your quarterly payment covers all platforms combined. The IRS does not track income by platform — only your total self-employment income.</div></div>
+          <div className="faq-q"><div className="faq-qt">I work on multiple apps. Do I file separately for each?</div><div className="faq-qa">You generally do not file a separate federal tax return for each app. Report taxable gig income and related expenses for each trade or business on Schedule C as applicable. Reconcile platform statements, Forms 1099, and your own records; all taxable gig income must be reported even if you do not receive an information return. See the <a href="https://www.irs.gov/businesses/gig-economy-tax-center" target="_blank" rel="noopener">IRS Gig Economy Tax Center</a>.</div></div>
         </div>
 
         <h2 className="sh-h2" style={{marginBottom:'8px'}}>Calculate Your Quarterly Payment</h2>

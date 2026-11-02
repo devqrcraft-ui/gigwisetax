@@ -20,7 +20,7 @@ const PLATFORMS = [
 ];
 
 const TOP_STATES = [
-  { slug: "california", name: "California", abbr: "CA", rate: "9.3%" },
+  { slug: "california", name: "California", abbr: "CA", rate: "Not modeled" },
   { slug: "new-york", name: "New York", abbr: "NY", rate: "6.85%" },
   { slug: "texas", name: "Texas", abbr: "TX", rate: "No Tax" },
   { slug: "florida", name: "Florida", abbr: "FL", rate: "No Tax" },

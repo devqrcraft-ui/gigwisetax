@@ -8,6 +8,8 @@ interface Props {
   seTax: number
   federal: number
   stateTax: number
+  stateTaxModeled: boolean
+  scheduleE?: boolean
   total: number
   quarterly: number
 }
@@ -44,10 +46,16 @@ export default function ResultActions(p: Props) {
   }
   const build = () => {
     const url = window.location.origin + window.location.pathname
+    const stateText = p.stateTaxModeled
+      ? ', ' + p.stateAbbr + ' state (simplified input) ' + fmt(p.stateTax)
+      : ', ' + p.stateAbbr + ' state tax not modeled'
+    const taxDetails = p.scheduleE
+      ? 'federal ' + fmt(p.federal)
+      : 'SE tax ' + fmt(p.seTax) + ', federal ' + fmt(p.federal)
+    const totalLabel = p.stateTaxModeled ? 'total' : p.scheduleE ? 'federal subtotal (state tax excluded)' : 'federal + SE subtotal (state tax excluded)'
     const text =
-      'My 2026 ' + p.platformName + ' tax estimate (planning only): SE tax ' + fmt(p.seTax) +
-      ', federal ' + fmt(p.federal) + ', ' + p.stateAbbr + ' state (simplified input) ' + fmt(p.stateTax) +
-      ', total ' + fmt(p.total) + ' (about ' + fmt(p.quarterly) + ' per quarter). Not tax advice.'
+      'My 2026 ' + p.platformName + ' tax estimate (planning only): ' + taxDetails + stateText +
+      ', ' + totalLabel + ' ' + fmt(p.total) + ' (about ' + fmt(p.quarterly) + ' per quarter). Not tax advice.'
     return { text, url }
   }
   const onCopy = async () => {

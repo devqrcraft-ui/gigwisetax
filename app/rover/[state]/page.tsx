@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, TAX_RULES_2026, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -14,12 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
+  const stateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
   return {
-    title: s.rate === 0
+    title: !isStateTaxEstimateModeled(s.slug) ? `${s.name} Gig Tax Calculator 2026 - Federal + SE subtotal only; CA state tax not modeled` : s.rate === 0
       ? `Rover ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Rover ${s.name} Taxes 2026 — $25K Earner Owes $${estimateTax(25000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Rover ${s.name} 2026: $25K net = ~$${estimateTax(25000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(25000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(25000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+      : `Rover ${s.name} Taxes 2026 — $25K Earner Owes $${estimateTaxForStateRounded(25000, s).total.toLocaleString('en-US')} Total`,
+    description: `Rover ${s.name} 2026: $25K net = ~$${estimateTaxForStateRounded(25000, s).se.toLocaleString('en-US')} SE tax + $${estimateTaxForStateRounded(25000, s).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTaxForStateRounded(25000, s).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', rover pet sitter taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -32,7 +32,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const stateNote = state.name + (noStateTax ? ' has no state income tax. Rover pet sitters in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + stateRateStr + ' state income tax rate. Rover pet sitters in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')
@@ -46,7 +46,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Rover Tax Calculator ${state.name} 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Rover Tax Calculator","item":"https://www.gigwisetax.com/rover"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/rover/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rover Tax Calculator ${state.name} 2026","datePublished":"2026-01-01","dateModified":"2026-05-29","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/rover/${state.slug}"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Rover Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/rover/${state.slug}","dateModified":"${TAX_RULES_2026.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
@@ -79,14 +79,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Rover Taxes {'{state.name}'} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $' + estimateTax(25000, state.rate).total.toLocaleString('en-US') + ' total — $3,532 self-employment tax (15.3%) + $1,808 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(25000, state.rate).total / 4).toLocaleString('en-US') + '. Deduct mileage at 72.5¢–76¢/mile, pet supplies, and home office.'}
+              {isStateTaxEstimateModeled(state.slug)
+                ? 'Rover pet sitters in ' + state.name + ' earning $25,000 net owe approximately $' + estimateTaxForStateRounded(25000, state).total.toLocaleString('en-US') + ' total — $3,532 self-employment tax (15.3%) + $1,808 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTaxForStateRounded(25000, state).total / 4).toLocaleString('en-US') + '. Deduct mileage at 72.5¢–76¢/mile, pet supplies, and home office.'
+                : 'For the $25,000 net-profit example, the federal + SE subtotal is $' + estimateTaxForStateRounded(25000, state).total.toLocaleString('en-US') + ' (about $' + Math.round(estimateTaxForStateRounded(25000, state).total / 4).toLocaleString('en-US') + ' per quarter). California state tax is not modeled or included.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Rover sitters are independent contractors — Rover withholds zero taxes</li>
-              <li>{'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$1,335 each'}</li>
               <li>IRS mileage deduction: 72.5¢–76¢/mile for driving to client homes in 2026</li>
               <li>Deduct pet supplies, leashes, dog food used for clients, home office</li>

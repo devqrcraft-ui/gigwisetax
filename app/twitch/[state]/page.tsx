@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, TAX_RULES_2026, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
+import { money } from '@/lib/examples'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -11,12 +12,15 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
+  const example = estimateTaxForStateRounded(30000, s)
+  const stateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Income Tax' : (s.rate*100).toFixed(2).replace(/\.?0+$/, '') + '% State Tax'
   return {
-    title: s.rate === 0
+    title: !isStateTaxEstimateModeled(s.slug) ? `${s.name} Gig Tax Calculator 2026 - Federal + SE subtotal only; CA state tax not modeled` : s.rate === 0
       ? `Twitch ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Twitch ${s.name} Taxes 2026 — $30K Streamer Owes $${estimateTax(30000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Twitch ${s.name} 2026: $30K net (subs+ads+bits) = ~$4,239 SE tax + $1,307 fed. ${stateStr}. Two 1099 forms explained. Free calculator, no signup.`,
+      : `Twitch ${s.name} Taxes 2026 — $30K Streamer Owes $${estimateTaxForStateRounded(30000, s).total.toLocaleString('en-US')} Total`,
+    description: !example.stateTaxModeled
+      ? `Twitch ${s.name} 2026: $30K net (subs+ads+bits) = ${money(example.se)} SE tax + ${money(example.federal)} federal income tax. Federal + SE subtotal only; California state tax is not modeled or included. Two 1099 forms explained. Free calculator, no signup.`
+      : `Twitch ${s.name} 2026: $30K net (subs+ads+bits) = ${money(example.se)} SE tax + ${money(example.federal)} federal income tax. ${stateStr}. Two 1099 forms explained. Free calculator, no signup.`,
     keywords: p.name + ' taxes ' + s.name + ', twitch streamer taxes ' + s.slug,
     alternates: { canonical: 'https://www.gigwisetax.com/' + p.slug + '/' + s.slug },
   }
@@ -26,10 +30,13 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   const platform = PLATFORMS.find(p => p.slug === PLATFORM_SLUG)
   const state    = STATES.find(s => s.slug === stateSlug)
   if (!platform || !state) return notFound()
+  const example30k = estimateTaxForStateRounded(30000, state)
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : (state.rate*100).toFixed(2).replace(/\.?0+$/, '') + '%'
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
-  const stateNote = state.name + (noStateTax ? ' has no state income tax. Twitch streamers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + stateRateStr + ' state income tax rate. Twitch streamers in ' + state.name + ' must make both federal and state quarterly estimated tax payments.')
+  const stateNote = !isStateTaxEstimateModeled(state.slug)
+    ? 'California state tax is not modeled or included in this federal + SE subtotal.'
+    : state.name + (noStateTax ? ' has no state income tax. Twitch streamers in ' + state.name + ' only pay federal income tax and the 15.3% self-employment tax.' : ' has a ' + stateRateStr + ' state income tax rate. Twitch streamers in ' + state.name + ' may need to make federal and state estimated tax payments.')
   const card   = { background: '#07111F', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 6, marginBottom: 12, boxShadow: '0 2px 12px rgba(0,0,0,.3)', overflow: 'hidden' as const }
   const cardHd = { background: 'rgba(255,255,255,0.07)', padding: '10px 16px', display: 'flex', alignItems: 'center', gap: 10 }
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
@@ -39,7 +46,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Twitch Tax Calculator ${state.name} 2026","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Twitch Tax Calculator","item":"https://www.gigwisetax.com/twitch"},{"@type":"ListItem","position":3,"name":"${state.name}","item":"https://www.gigwisetax.com/twitch/${state.slug}"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Twitch Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/twitch/${state.slug}","dateModified":"2026-07-28","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Twitch Tax Calculator ${state.name} 2026","url":"https://www.gigwisetax.com/twitch/${state.slug}","dateModified":"${TAX_RULES_2026.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
           <div style={{ maxWidth: 1200, margin: '0 auto', padding: '16px 16px 12px' }}>
@@ -58,7 +65,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
             <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, paddingLeft: 16, maxWidth: 780, marginBottom: 18 }}>
               {'Free ' + platform.name + ' streamer tax calculator for ' + state.name + ' (' + state.abbr + ').'}
-              {noStateTax ? ' ' + state.name + ' has no state income tax — you only pay federal SE tax (15.3%) and federal income tax.' : ' Includes the ' + stateRateStr + ' ' + state.name + ' state income tax plus federal SE tax (15.3%) and federal income tax.'}
+              {!isStateTaxEstimateModeled(state.slug) ? ' Shows federal + SE subtotal only; California state tax is not modeled or included.' : noStateTax ? ' ' + state.name + ' has no state income tax — federal SE tax (15.3%) and federal income tax may still apply.' : ' Includes a simplified ' + stateRateStr + ' ' + state.name + ' state income tax estimate plus federal SE tax (15.3%) and federal income tax.'}
               {' Quarterly payment schedule included. No signup required.'}
             </p>
           </div>
@@ -72,14 +79,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <section id="answer-first" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>Quick Answer — Twitch Taxes {state.name} 2026</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              {'Twitch streamers in ' + state.name + ' earning $30,000 net (combined subs, ads, bits, and donations) owe approximately $' + estimateTax(30000, state.rate).total.toLocaleString('en-US') + ' total — $4,239 self-employment tax (15.3%) + $1,307 federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + ' + stateRateStr + ' ' + state.name + ' state income tax.') + ' Quarterly estimated payment: ~$' + Math.round(estimateTax(30000, state.rate).total / 4).toLocaleString('en-US') + '. Subscription and ad revenue arrives on a 1099-MISC, while bits arrive on a separate 1099-NEC — both count as self-employment income.'}
+              {isStateTaxEstimateModeled(state.slug)
+                ? 'Twitch streamers in ' + state.name + ' earning $30,000 net (combined subs, ads, bits, and donations) have an estimated total of $' + example30k.total.toLocaleString('en-US') + ' — $' + example30k.se.toLocaleString('en-US') + ' self-employment tax + $' + example30k.federal.toLocaleString('en-US') + ' federal income tax' + (noStateTax ? '. ' + state.name + ' has no state income tax.' : ' + a simplified state estimate of $' + example30k.state.toLocaleString('en-US') + '.') + ' Quarterly estimate: ~$' + example30k.quarterly.toLocaleString('en-US') + '. Subscription and ad revenue arrives on a 1099-MISC, while bits arrive on a separate 1099-NEC — both count as self-employment income.'
+                : 'For the $30,000 net-income example, the federal + SE subtotal is $' + example30k.total.toLocaleString('en-US') + ' (about $' + example30k.quarterly.toLocaleString('en-US') + ' per quarter). California state tax is not modeled or included.'}
             </p>
           </section>
           <section id="key-takeaways" style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', marginBottom:24 }}>
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Twitch streamers are independent contractors — Twitch withholds zero taxes</li>
-              <li>{'On $30,000 net income: ~$4,239 SE tax + ~$1,307 federal = ~$5,546 total in ' + state.name}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $30,000 net income: $' + example30k.se.toLocaleString('en-US') + ' SE tax + $' + example30k.federal.toLocaleString('en-US') + ' federal tax + $' + example30k.state.toLocaleString('en-US') + ' estimated state tax = $' + example30k.total.toLocaleString('en-US') + ' total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$1,387 each'}</li>
               <li>Twitch sends two separate 1099 forms — 1099-MISC for subs/ads, 1099-NEC for bits — both must be combined</li>
               <li>Streaming equipment, software, and internet percentage are deductible business expenses</li>
@@ -102,7 +111,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                   {[
                     { label: 'SE Tax', val: '15.3%', sub: 'Federal (all states)', color: '#B22234' },
                     { label: 'Federal Tax', val: '10-37%', sub: 'Based on income', color: 'rgba(255,255,255,0.9)' },
-                    { label: state.abbr + ' State Tax', val: noStateTax ? 'None' : stateRateStr, sub: noStateTax ? 'No state income tax' : state.name + ' rate', color: noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
+                    { label: state.abbr + ' State Tax', val: !isStateTaxEstimateModeled(state.slug) ? 'Not modeled' : noStateTax ? 'None' : stateRateStr, sub: !isStateTaxEstimateModeled(state.slug) ? 'Excluded from subtotal' : noStateTax ? 'No state income tax' : state.name + ' rate', color: !isStateTaxEstimateModeled(state.slug) || noStateTax ? '#059669' : 'rgba(255,255,255,0.85)' },
                   ].map(r => (
                     <div key={r.label} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 10, borderLeft: '4px solid ' + r.color, textAlign: 'center' as const }}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, marginBottom: 4 }}>{r.label}</div>
@@ -124,8 +133,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                 </blockquote>
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'rgba(255,255,255,0.9)', marginBottom: 8 }}>FAQ — {platform.name} Taxes in {state.name} 2026</h3>
                 {[
-                  { q: 'Do Twitch streamers pay taxes in ' + state.name + '?', a: noStateTax ? 'Yes. In ' + state.name + ', Twitch streamers pay 15.3% self-employment tax plus federal income tax. There is no ' + state.name + ' state income tax.' : 'Yes. In ' + state.name + ', Twitch streamers pay 15.3% SE tax, federal income tax (10-37%), plus ' + stateRateStr + ' ' + state.name + ' state income tax.' },
-                  { q: 'Do I need quarterly payments in ' + state.name + '?', a: noStateTax ? 'In ' + state.name + ', you only need federal quarterly estimated payments (Form 1040-ES) if you expect to owe $1,000 or more. No state payments required.' : 'Yes. In ' + state.name + ', you must make both federal (Form 1040-ES) and state quarterly estimated payments if you expect to owe $1,000 or more.' },
+                  { q: 'Do Twitch streamers pay taxes in ' + state.name + '?', a: !isStateTaxEstimateModeled(state.slug) ? 'Federal and self-employment taxes may apply. California state tax is not modeled in this estimate; check the FTB for state obligations.' : noStateTax ? 'Yes. In ' + state.name + ', Twitch streamers pay 15.3% self-employment tax plus federal income tax. There is no ' + state.name + ' state income tax.' : 'Yes. In ' + state.name + ', Twitch streamers pay 15.3% SE tax, federal income tax (10-37%), plus a simplified ' + stateRateStr + ' state estimate; actual state tax may differ.' },
+                  { q: 'Do I need quarterly payments in ' + state.name + '?', a: !isStateTaxEstimateModeled(state.slug) ? 'Federal estimated payments depend on your full return, withholding, and safe-harbor rules. California state payment requirements are not determined by this estimate; check the FTB.' : noStateTax ? 'In ' + state.name + ', federal quarterly estimated payments may be required based on your full return, withholding, and safe-harbor rules. No state income-tax component is modeled.' : 'Federal and state estimated-payment requirements depend on your full return, withholding, and state-specific rules.' },
                   { q: 'Why does Twitch send two 1099 forms in ' + state.name + '?', a: 'Twitch reports subscription and ad revenue on Form 1099-MISC as royalties, while bits are reported on a separate Form 1099-NEC. Both count as self-employment income in ' + state.name + ' or any other state, and must be added together and reported on Schedule C.' },
                 ].map((item, i) => (
                   <div key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: 10, marginBottom: 8 }}>

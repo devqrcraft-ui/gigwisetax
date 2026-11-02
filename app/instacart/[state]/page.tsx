@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'import TaxFreshness from '@/app/components/TaxFreshness'
 
-import { estimateTax } from '@/lib/tax-rules'
+import {estimateTax, estimateTaxForStateRounded, isStateTaxEstimateModeled} from '@/lib/tax-rules'
 import AuthorBox from '@/app/components/AuthorBox'
 import { PLATFORMS, STATES, DEADLINES_2026, DEDUCTIONS } from '@/lib/data'
 import GigCalculator from '../GigCalculator'
@@ -13,7 +13,7 @@ const STATE_NOTES: Record<string, (platformName: string, stateRateStr: string, n
   'alaska':         (p, r, n) => `Alaska has NO state income tax — one of only 9 states with no income tax. ${p} workers in Alaska only pay federal SE tax (15.3%) and federal income tax. No state quarterly payments required.`,
   'arizona':        (p, r, n) => `Arizona reduced its state income tax to a flat ${r} in 2023 — one of the lowest rates in the US. ${p} workers in Arizona must file AZ Form 140ES for quarterly estimated payments.`,
   'arkansas':       (p, r, n) => `Arkansas has a ${r} state income tax rate. ${p} workers in Arkansas must file both federal and AR state quarterly estimated tax payments using AR Form AR1000ES.`,
-  'california':     (p, r, n) => `California has one of the highest state income tax rates in the USA (up to 13.3%). For ${p} workers in California, the base planning rate is ${r}. California also requires separate estimated tax payments to the Franchise Tax Board (FTB) using Form 540-ES.`,
+  'california': (p, r, n) => `This estimator does not calculate California state income tax; its federal + SE subtotal excludes CA state tax. Check the California Franchise Tax Board for state filing and payment rules.`,
   'colorado':       (p, r, n) => `Colorado has a flat ${r} state income tax rate. ${p} workers in Colorado must file both federal Form 1040-ES and Colorado Form DR 0105EP for quarterly estimated payments.`,
   'connecticut':    (p, r, n) => `Connecticut has a ${r} state income tax rate for most ${p} workers. Connecticut requires quarterly estimated payments using Form CT-1040ES if you expect to owe $1,000 or more.`,
   'delaware':       (p, r, n) => `Delaware has a ${r} state income tax rate. ${p} workers in Delaware must file both federal and Delaware quarterly estimated payments using Form 200-ES.`,
@@ -68,12 +68,12 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const p = PLATFORMS.find(x => x.slug === PLATFORM_SLUG)
   const s = STATES.find(x => x.slug === stateSlug)
   if (!p || !s) return {}
-  const stateStr = s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
+  const stateStr = !isStateTaxEstimateModeled(s.slug) ? 'California state tax not modeled; subtotal excludes state tax' : s.rate === 0 ? 'No State Income Tax' : `${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% State Tax`
   return {
-    title: s.rate === 0
+    title: !isStateTaxEstimateModeled(s.slug) ? `${s.name} Gig Tax Calculator 2026 - Federal + SE subtotal only; CA state tax not modeled` : s.rate === 0
       ? `Instacart ${s.name} Taxes 2026 — No State Tax + Free SE Calculator`
-      : `Instacart ${s.name} Taxes 2026 — $35K Earner Owes $${estimateTax(35000, s.rate).total.toLocaleString('en-US')} Total`,
-    description: `Instacart ${s.name} 2026: $35K net = ~$${estimateTax(35000, s.rate).se.toLocaleString('en-US')} SE tax + $${estimateTax(35000, s.rate).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTax(35000, s.rate).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
+      : `Instacart ${s.name} Taxes 2026 — $35K Earner Owes $${estimateTaxForStateRounded(35000, s).total.toLocaleString('en-US')} Total`,
+    description: `Instacart ${s.name} 2026: $35K net = ~$${estimateTaxForStateRounded(35000, s).se.toLocaleString('en-US')} SE tax + $${estimateTaxForStateRounded(35000, s).federal.toLocaleString('en-US')} fed. ${stateStr}. Quarterly: ~$${estimateTaxForStateRounded(35000, s).quarterly.toLocaleString('en-US')}. Free calculator, no signup.`,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
     alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
   }
@@ -86,7 +86,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   if (!platform || !state) return notFound()
 
   const noStateTax   = state.rate === 0
-  const stateRateStr = noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
+  const stateRateStr = !isStateTaxEstimateModeled(state.slug) ? 'Not modeled (excluded from subtotal)' : noStateTax ? 'No State Income Tax' : `${(state.rate*100).toFixed(2).replace(/\.?0+$/, '')}%`
   const deductions   = DEDUCTIONS[PLATFORM_SLUG as keyof typeof DEDUCTIONS] || DEDUCTIONS.doordash
 
   const noteGen = STATE_NOTES[stateSlug]
@@ -241,7 +241,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     q: `How much is ${platform.name} tax in ${state.name}?`,
                     a: noStateTax
                       ? `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax plus federal income tax. There is no ${state.name} state income tax, making it one of the most tax-friendly states for gig workers.`
-                      : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $35,000 net income, expect to owe approximately $${estimateTax(35000, state.rate).total.toLocaleString('en-US')} total.`,
+                      : !isStateTaxEstimateModeled(state.slug) ? 'This calculator shows federal + SE subtotal only for California; state tax is not modeled or included.' : `In ${state.name}, ${platform.name} workers pay 15.3% self-employment tax, federal income tax (10–37%), plus ${stateRateStr} ${state.name} state income tax. On $35,000 net income, expect to owe approximately $${estimateTaxForStateRounded(35000, state).total.toLocaleString('en-US')} total.`,
                   },
                   {
                     q: `Do I need to make quarterly payments in ${state.name}?`,
