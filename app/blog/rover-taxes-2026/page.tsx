@@ -3,16 +3,16 @@ import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Rover Taxes 2026: $25K Income = $5,340 Tax Owed',
-  description: 'Rover pet sitters on $25K owe $5,340 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tips up to $25K deductible. All 50 states.',
+  title: 'Rover Taxes 2026: $25K Income = $4,246 Tax Owed',
+  description: 'Rover pet sitters on $25K owe $4,246 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tips up to $25K deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/rover-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Rover sitters file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage and supplies, and pay self-employment tax on net profit."}},{"@type":"Question","name":"What is the mileage deduction rate for Rover sitters in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Rover sitters can deduct miles driven to client homes, vet visits for boarded pets, and supply runs directly related to pet care."}},{"@type":"Question","name":"How much self-employment tax does a Rover sitter pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $25,000 net income that is approximately $3,533 in SE tax."}},{"@type":"Question","name":"Does Rover send a 1099 form to sitters?","acceptedAnswer":{"@type":"Answer","text":"Yes. Rover sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your Rover dashboard by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a Rover sitter pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $25,000 net income, quarterly estimated payments are approximately $1,335 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What supplies can Rover sitters deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters can deduct pet food for boarded animals, treats, leashes, waste bags, kennels, first-aid supplies, and equipment used exclusively for the pet care business on Schedule C."}},{"@type":"Question","name":"Can Rover sitters deduct a home office in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you board pets at home and use a dedicated space exclusively for that, you may deduct the home office using the simplified method at $5 per sq ft up to 300 sq ft."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do Rover sitters file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage and supplies, and pay self-employment tax on net profit."}},{"@type":"Question","name":"What is the mileage deduction rate for Rover sitters in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Rover sitters can deduct miles driven to client homes, vet visits for boarded pets, and supply runs directly related to pet care."}},{"@type":"Question","name":"How much self-employment tax does a Rover sitter pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $25,000 net income that is approximately $3,532 in SE tax."}},{"@type":"Question","name":"Does Rover send a 1099 form to sitters?","acceptedAnswer":{"@type":"Answer","text":"Yes. Rover sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your Rover dashboard by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a Rover sitter pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $25,000 net income, quarterly estimated payments are approximately $1,061 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What supplies can Rover sitters deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Rover sitters can deduct pet food for boarded animals, treats, leashes, waste bags, kennels, first-aid supplies, and equipment used exclusively for the pet care business on Schedule C."}},{"@type":"Question","name":"Can Rover sitters deduct a home office in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. If you board pets at home and use a dedicated space exclusively for that, you may deduct the home office using the simplified method at $5 per sq ft up to 300 sq ft."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Rover Taxes 2026","item":"https://www.gigwisetax.com/blog/rover-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rover Taxes 2026: $25K Income = $5,340 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/rover-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Rover Taxes 2026: $25K Income = $4,246 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/rover-taxes-2026"}}'
 
 export default function RoverTaxes2026() {
   return (
@@ -36,7 +36,7 @@ export default function RoverTaxes2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            Rover Taxes 2026: $25K Income = $5,340 Tax Owed
+            Rover Taxes 2026: $25K Income = $4,246 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -48,7 +48,7 @@ export default function RoverTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Rover pet sitters and dog walkers are independent contractors. On <strong style={{ color: '#e8edf8' }}>$25,000 net income</strong> in 2026: approximately $3,533 SE tax + $1,807 federal income tax = <strong style={{ color: '#e8edf8' }}>$5,340 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,335</strong>. Mileage at 72.5¢–76¢/mile and home-office deductions are the two biggest write-offs for Rover sitters.
+              Rover pet sitters and dog walkers are independent contractors. On <strong style={{ color: '#e8edf8' }}>$25,000 net income</strong> in 2026: approximately $3,532 SE tax + $713 federal income tax = <strong style={{ color: '#e8edf8' }}>$4,246 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,061</strong>. Mileage at 72.5¢–76¢/mile and home-office deductions are the two biggest write-offs for Rover sitters.
             </p>
           </div>
         </section>
@@ -58,7 +58,7 @@ export default function RoverTaxes2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$25K net income = $5,340 total tax owed in 2026 ($1,335/quarter)',
+                '$25K net income = $4,246 total tax owed in 2026 ($1,061/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
                 'IRS mileage deduction: 72.5¢–76¢/mile — deduct drives to client homes and vet visits',
                 'Rover sends 1099-K (bookings over $20,000 across more than 200 transactions) by January 31',
@@ -112,11 +112,11 @@ export default function RoverTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['$15,000', '$2,120', '$800', '$2,920', '$730'],
-                  ['$20,000', '$2,826', '$1,200', '$4,026', '$1,007'],
-                  ['$25,000', '$3,533', '$1,807', '$5,340', '$1,335'],
-                  ['$30,000', '$4,239', '$2,400', '$6,639', '$1,660'],
-                  ['$40,000', '$5,652', '$3,800', '$9,452', '$2,363'],
+                  ['$15,000', '$2,119', '$0', '$2,119', '$530'],
+                  ['$20,000', '$2,826', '$249', '$3,075', '$769'],
+                  ['$25,000', '$3,532', '$713', '$4,246', '$1,061'],
+                  ['$30,000', '$4,239', '$1,178', '$5,417', '$1,354'],
+                  ['$40,000', '$5,652', '$2,281', '$7,933', '$1,983'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
@@ -228,7 +228,7 @@ export default function RoverTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            On $25,000 net income, each quarterly payment is approximately <strong style={{ color: '#e8edf8' }}>$1,335</strong>. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide for gig workers</a> to calculate your exact amount.
+            On $25,000 net income, each quarterly payment is approximately <strong style={{ color: '#e8edf8' }}>$1,061</strong>. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide for gig workers</a> to calculate your exact amount.
           </p>
         </section>
 
@@ -279,9 +279,9 @@ export default function RoverTaxes2026() {
           {[
             ['How do Rover sitters file taxes in 2026?', 'Rover sitters file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage and supplies, and pay self-employment tax on net profit.'],
             ['What is the mileage deduction rate for Rover sitters in 2026?', 'The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Deduct miles to client homes, vet visits, and supply runs directly related to pet care.'],
-            ['How much SE tax does a Rover sitter pay?', 'Rover sitters pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $25,000 net income that is approximately $3,533 in SE tax.'],
+            ['How much SE tax does a Rover sitter pay?', 'Rover sitters pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $25,000 net income that is approximately $3,532 in SE tax.'],
             ['Does Rover send a 1099 form to sitters?', 'Yes. Rover sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your Rover dashboard by January 31 each year.'],
-            ['What quarterly payment does a Rover sitter owe?', 'On $25,000 net income, quarterly estimated payments are approximately $1,335. IRS due dates are April 15, June 15, September 15, and January 15.'],
+            ['What quarterly payment does a Rover sitter owe?', 'On $25,000 net income, quarterly estimated payments are approximately $1,061. IRS due dates are April 15, June 15, September 15, and January 15.'],
             ['What supplies can Rover sitters deduct in 2026?', 'Deduct pet food for boarded animals, treats, leashes, waste bags, kennels, first-aid supplies, and any equipment used exclusively for pet care on Schedule C.'],
             ['Can Rover sitters deduct a home office in 2026?', 'Yes. If you board pets in a dedicated home space, deduct it using the simplified method at $5 per sq ft up to 300 sq ft, or actual expenses proportional to business use.'],
           ].map(([q, a], i, arr) => (

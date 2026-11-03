@@ -3,16 +3,16 @@ import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'TaskRabbit Taxes 2026: $45K Income = $10,160 Tax Owed',
-  description: 'TaskRabbit Taskers on $45K owe $10,160 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tools deductible. All 50 states.',
+  title: 'TaskRabbit Taxes 2026: $45K Income = $9,197 Tax Owed',
+  description: 'TaskRabbit Taskers on $45K owe $9,197 in 2026 taxes. Free calculator — mileage 72.5¢–76¢/mi, tools deductible. All 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/taskrabbit-taxes-2026' },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do TaskRabbit Taskers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit Taskers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage and tools, and pay self-employment tax on net profit."}},{"@type":"Question","name":"What is the mileage deduction rate for TaskRabbit Taskers in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Taskers can deduct miles driven to client locations, hardware stores for job supplies, and any other business-related driving."}},{"@type":"Question","name":"How much self-employment tax does a TaskRabbit Tasker pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit Taskers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $45,000 net income that is approximately $6,358 in SE tax."}},{"@type":"Question","name":"Does TaskRabbit send a 1099 form to Taskers?","acceptedAnswer":{"@type":"Answer","text":"Yes. TaskRabbit sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your TaskRabbit account by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a TaskRabbit Tasker pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $45,000 net income, quarterly estimated payments are approximately $2,540 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What tools and equipment can TaskRabbit Taskers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Taskers can deduct tools, equipment, and supplies purchased for jobs — drills, levels, cleaning supplies, ladders — as long as they are used for business. Under 100% bonus depreciation in 2026, you can deduct the full cost in year one."}},{"@type":"Question","name":"Can TaskRabbit Taskers deduct a vehicle in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the standard mileage rate of 72.5 cents per mile (January–June; 76 cents from July 1) or deduct actual vehicle expenses proportional to business use. Track every trip to and from job sites."}}]}'
+const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do TaskRabbit Taskers file taxes in 2026?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit Taskers file as independent contractors using Schedule C to report income and deductions. You report earnings from your 1099-K or 1099-NEC, subtract deductions like mileage and tools, and pay self-employment tax on net profit."}},{"@type":"Question","name":"What is the mileage deduction rate for TaskRabbit Taskers in 2026?","acceptedAnswer":{"@type":"Answer","text":"The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Taskers can deduct miles driven to client locations, hardware stores for job supplies, and any other business-related driving."}},{"@type":"Question","name":"How much self-employment tax does a TaskRabbit Tasker pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"TaskRabbit Taskers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $45,000 net income that is approximately $6,358 in SE tax."}},{"@type":"Question","name":"Does TaskRabbit send a 1099 form to Taskers?","acceptedAnswer":{"@type":"Answer","text":"Yes. TaskRabbit sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your TaskRabbit account by January 31 each year."}},{"@type":"Question","name":"What quarterly estimated tax does a TaskRabbit Tasker pay in 2026?","acceptedAnswer":{"@type":"Answer","text":"On $45,000 net income, quarterly estimated payments are approximately $2,299 per quarter. IRS due dates are April 15, June 15, September 15, and January 15."}},{"@type":"Question","name":"What tools and equipment can TaskRabbit Taskers deduct in 2026?","acceptedAnswer":{"@type":"Answer","text":"Taskers can deduct tools, equipment, and supplies purchased for jobs — drills, levels, cleaning supplies, ladders — as long as they are used for business. Under 100% bonus depreciation in 2026, you can deduct the full cost in year one."}},{"@type":"Question","name":"Can TaskRabbit Taskers deduct a vehicle in 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the standard mileage rate of 72.5 cents per mile (January–June; 76 cents from July 1) or deduct actual vehicle expenses proportional to business use. Track every trip to and from job sites."}}]}'
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"TaskRabbit Taxes 2026","item":"https://www.gigwisetax.com/blog/taskrabbit-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"TaskRabbit Taxes 2026: $45K Income = $10,160 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/taskrabbit-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"TaskRabbit Taxes 2026: $45K Income = $9,197 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/taskrabbit-taxes-2026"}}'
 
 export default function TaskRabbitTaxes2026() {
   return (
@@ -36,7 +36,7 @@ export default function TaskRabbitTaxes2026() {
             itemProp="headline"
             style={{ fontSize: 'clamp(22px,5vw,24px)', fontWeight: 900, color: '#e8edf8', lineHeight: 1.3, marginBottom: 12 }}
           >
-            TaskRabbit Taxes 2026: $45K Income = $10,160 Tax Owed
+            TaskRabbit Taxes 2026: $45K Income = $9,197 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
             <span>Last updated: May 2026</span><span>·</span>
@@ -48,7 +48,7 @@ export default function TaskRabbitTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              TaskRabbit Taskers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$45,000 net income</strong> in 2026: approximately $6,358 SE tax + $3,802 federal income tax = <strong style={{ color: '#e8edf8' }}>$10,160 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$2,540</strong>. Mileage at 72.5¢–76¢/mile and tool deductions under 100% bonus depreciation are the biggest write-offs for Taskers.
+              TaskRabbit Taskers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$45,000 net income</strong> in 2026: approximately $6,358 SE tax + $2,839 federal income tax = <strong style={{ color: '#e8edf8' }}>$9,197 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$2,299</strong>. Mileage at 72.5¢–76¢/mile and tool deductions under 100% bonus depreciation are the biggest write-offs for Taskers.
             </p>
           </div>
         </section>
@@ -58,7 +58,7 @@ export default function TaskRabbitTaxes2026() {
             <div style={{ fontSize: 13, fontFamily: 'monospace', color: '#e8b84b', letterSpacing: '0.08em', textTransform: 'uppercase' as const, marginBottom: 14 }}>Key Takeaways</div>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
               {[
-                '$45K net income = $10,160 total tax owed in 2026 ($2,540/quarter)',
+                '$45K net income = $9,197 total tax owed in 2026 ($2,299/quarter)',
                 'SE tax rate: 15.3% on net profit (12.4% SS + 2.9% Medicare)',
                 'IRS mileage deduction: 72.5¢–76¢/mile — deduct every drive to job sites',
                 'Tools and equipment: 100% bonus depreciation in 2026 — deduct full cost year one',
@@ -112,11 +112,11 @@ export default function TaskRabbitTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['$20,000', '$2,826', '$1,200', '$4,026', '$1,007'],
-                  ['$30,000', '$4,239', '$2,400', '$6,639', '$1,660'],
-                  ['$40,000', '$5,652', '$3,400', '$9,052', '$2,263'],
-                  ['$45,000', '$6,358', '$3,802', '$10,160', '$2,540'],
-                  ['$60,000', '$8,478', '$5,600', '$14,078', '$3,520'],
+                  ['$20,000', '$2,826', '$249', '$3,075', '$769'],
+                  ['$30,000', '$4,239', '$1,178', '$5,417', '$1,354'],
+                  ['$40,000', '$5,652', '$2,281', '$7,933', '$1,983'],
+                  ['$45,000', '$6,358', '$2,839', '$9,197', '$2,299'],
+                  ['$60,000', '$8,478', '$4,511', '$12,989', '$3,247'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (
@@ -231,7 +231,7 @@ export default function TaskRabbitTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            On $45,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$2,540</strong>. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide for gig workers</a> to calculate your exact amount after deductions.
+            On $45,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$2,299</strong>. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide for gig workers</a> to calculate your exact amount after deductions.
           </p>
         </section>
 
@@ -284,7 +284,7 @@ export default function TaskRabbitTaxes2026() {
             ['What is the mileage deduction rate for TaskRabbit Taskers in 2026?', 'The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Deduct miles to job sites, hardware stores, and supply runs related to your tasks.'],
             ['How much SE tax does a TaskRabbit Tasker pay?', 'Taskers pay 15.3% self-employment tax on net profit — 12.4% Social Security and 2.9% Medicare. On $45,000 net income that is approximately $6,358 in SE tax.'],
             ['Does TaskRabbit send a 1099 form?', 'Yes. TaskRabbit sends a 1099-K if gross earnings exceed $20,000 across more than 200 transactions. Forms are available in your TaskRabbit account by January 31 each year.'],
-            ['What quarterly payment does a TaskRabbit Tasker owe?', 'On $45,000 net income, quarterly estimated payments are approximately $2,540. IRS due dates are April 15, June 15, September 15, and January 15.'],
+            ['What quarterly payment does a TaskRabbit Tasker owe?', 'On $45,000 net income, quarterly estimated payments are approximately $2,299. IRS due dates are April 15, June 15, September 15, and January 15.'],
             ['What tools and equipment can Taskers deduct in 2026?', 'Deduct drills, levels, ladders, cleaning supplies, and any equipment used for jobs. Under 100% bonus depreciation in 2026, deduct the full cost in year one on Schedule C.'],
             ['Can TaskRabbit Taskers deduct a vehicle in 2026?', 'Yes. Use the standard mileage rate of 72.5 cents per mile (January–June; 76 cents from July 1) or deduct actual vehicle expenses proportional to business use. Track every trip to and from job sites.'],
           ].map(([q, a], i, arr) => (

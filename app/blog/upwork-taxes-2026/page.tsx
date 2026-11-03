@@ -48,7 +48,7 @@ export default function UpworkTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Upwork freelancers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$60,000 net income</strong> in 2026: approximately $8,478 SE tax + $5,800 federal income tax = <strong style={{ color: '#e8edf8' }}>$12,989 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$3,247</strong>. Home office, software subscriptions, and the Upwork service fee are the top deductions for remote freelancers.
+              Upwork freelancers are independent contractors — no taxes are withheld. On <strong style={{ color: '#e8edf8' }}>$60,000 net income</strong> in 2026: approximately $8,478 SE tax + $4,511 federal income tax = <strong style={{ color: '#e8edf8' }}>$12,989 total tax owed</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$3,247</strong>. Home office, software subscriptions, and the Upwork service fee are the top deductions for remote freelancers.
             </p>
           </div>
         </section>
@@ -112,11 +112,11 @@ export default function UpworkTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['$30,000', '$4,239', '$2,400', '$6,639', '$1,660'],
-                  ['$40,000', '$5,652', '$3,400', '$9,052', '$2,263'],
-                  ['$50,000', '$7,065', '$4,600', '$11,665', '$2,916'],
-                  ['$60,000', '$8,478', '$5,800', '$12,989', '$3,247'],
-                  ['$80,000', '$11,304', '$8,800', '$20,104', '$5,026'],
+                  ['$30,000', '$4,239', '$1,178', '$5,417', '$1,354'],
+                  ['$40,000', '$5,652', '$2,281', '$7,933', '$1,983'],
+                  ['$50,000', '$7,065', '$3,396', '$10,461', '$2,615'],
+                  ['$60,000', '$8,478', '$4,511', '$12,989', '$3,247'],
+                  ['$80,000', '$11,304', '$7,527', '$18,830', '$4,708'],
                 ].map((row, i, arr) => (
                   <tr key={i} style={i === arr.length - 1 ? { background: 'rgba(232,184,75,0.08)', borderTop: '1px solid rgba(232,184,75,0.3)' } : { borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     {row.map((cell, j) => (

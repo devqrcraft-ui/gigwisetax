@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026' },
   title: 'DoorDash vs Uber Eats Taxes 2026: Which Platform Pays More After Tax?',
-  description: 'DoorDash driver: $40K income → $7,933 SE tax → keep $1,983 after deductions. Uber Eats: $35K → $6,669 → $1,667. Full 2026 tax comparison with mileage and deduction breakdown.',
+  description: 'DoorDash driver: $40K net income → about $7,933 total tax ($1,983 per quarter). Uber Eats: $35K → $6,669 total ($1,667 per quarter). Full 2026 tax comparison with mileage and deduction breakdown.',
   openGraph: { title: 'DoorDash vs Uber Eats Taxes 2026', description: 'Which platform pays more after taxes? Full 2026 comparison.', type: 'article', url: 'https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026' },
 }
 
@@ -48,7 +48,7 @@ export default function DoorDashVsUberEatsPost() {
 
         <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 24 }}>
           <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.75 }}>
-            <strong style={{ color: accent }}>Quick answer:</strong> DoorDash and Uber Eats have <strong>identical tax treatment</strong> — both are 1099 self-employment income taxed at 15.3% SE tax + income tax. DoorDash drivers average <strong>$40K/year → ~$1,983 net federal tax</strong> after deductions. Uber Eats drivers average <strong>$35K/year → ~$1,667 net federal tax</strong>. The mileage deduction (72.5¢–76¢/mile in 2026) is your biggest lever on both platforms.
+            <strong style={{ color: accent }}>Quick answer:</strong> DoorDash and Uber Eats have <strong>identical tax treatment</strong> — both are 1099 self-employment income taxed at 15.3% SE tax + income tax. DoorDash at <strong>$40K net → about $7,933 total tax (~$1,983 per quarter)</strong> before mileage and other deductions. Uber Eats at <strong>$35K net → about $6,669 total tax (~$1,667 per quarter)</strong>. The mileage deduction (72.5¢–76¢/mile in 2026) is your biggest lever on both platforms.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ export default function DoorDashVsUberEatsPost() {
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 24 }}>
           {[
             { q: 'Do DoorDash and Uber Eats drivers pay the same taxes?', a: 'Yes. Both are 1099 self-employment income. SE tax is 15.3% on net profit for both platforms.' },
-            { q: 'How much tax on $40,000 DoorDash income?', a: 'After mileage deduction (~$14,500–$15,200) and standard deduction ($16,100), total federal tax is approximately $4,500 for a single filer in 2026.' },
+            { q: 'How much tax on $40,000 DoorDash income?', a: 'After mileage deduction (~$14,500–$15,200) and standard deduction ($16,100), total SE tax plus federal income tax is roughly $4,200–$4,400 for a single filer in 2026 (no state tax, no other income).' },
             { q: 'Can I deduct mileage for both platforms?', a: 'Yes. Track miles separately per platform but deduct total business miles at 72.5¢–76¢/mile on one Schedule C (or two if you keep separate books).' },
             { q: 'Do I get a 1099 from both DoorDash and Uber Eats?', a: 'Yes, if you earn over $2,000 from each platform. Both issue 1099-NEC forms by January 31 of the following year.' },
             { q: 'Should I drive for both DoorDash and Uber Eats?', a: 'Dual-apping is legal and common. It maximizes hourly earnings. Both income streams go on the same Schedule C as self-employment income.' },

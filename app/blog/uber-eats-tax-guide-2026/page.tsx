@@ -202,7 +202,7 @@ export default function Page() {
             Mileage: Your Biggest Deduction as an Uber Eats Driver
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-            The 2026 IRS mileage rate is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile (January–June; 76 cents from July 1)</strong>. On 10,000 delivery miles, that is a $7,250–$7,600 deduction — saving roughly $1,088 in tax. Most Uber Eats drivers are surprised how fast miles add up.
+            The 2026 IRS mileage rate is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile (January–June; 76 cents from July 1)</strong>. On 10,000 delivery miles, that is a $7,250–$7,600 deduction — saving roughly $1,024–$1,074 in self-employment tax (the table above uses a rounded 15% estimate). Most Uber Eats drivers are surprised how fast miles add up.
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
             Count miles from the moment you go online to the moment you go offline — not just miles with food in the car. The IRS considers your entire active window as business use.
@@ -222,7 +222,7 @@ export default function Page() {
             Do Uber Eats Drivers Pay Quarterly Taxes?
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-            Yes. If you expect to owe $1,000 or more in federal tax, the IRS requires you to pay estimated taxes four times a year. Missing a payment triggers a 7% underpayment penalty.
+            Yes. If you expect to owe $1,000 or more in federal tax, the IRS requires you to pay estimated taxes four times a year. Missing a payment can trigger an underpayment penalty (interest at the IRS rate, 7% per year for Q4 2026).
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
             2026 quarterly due dates:
