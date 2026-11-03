@@ -73,11 +73,23 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     : s.rate === 0
       ? `${s.name} has no state income-tax component in this estimate.`
       : `Includes a simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input, not a full state tax calculation.`
+  const title = `Uber Tax Calculator for ${s.name} 2026 | Free Estimate`
+  const description = `Estimate Uber self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`
+  const canonicalUrl = `https://www.gigwisetax.com/${p.slug}/${s.slug}`
   return {
-    title: `Uber Tax Calculator for ${s.name} 2026 | Free Estimate`,
-    description: `Estimate Uber self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`,
+    title,
+    description,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
-    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'GigWiseTax',
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      locale: 'en_US',
+      type: 'website',
+    },
   }
 }
 

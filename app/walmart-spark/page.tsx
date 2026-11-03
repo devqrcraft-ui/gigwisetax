@@ -14,7 +14,7 @@ import { getDeadlineStatus, STATES as ALL_STATES } from '@/lib/data'
 const STATES = ALL_STATES.map(s => ({ code: s.abbr, name: s.name, rate: s.rate }))
 
 const DEDUCTIONS = [
-  { icon:'▸', label:'Mileage (72.5¢–76¢/mile 2026)', desc:'Business miles driven for Spark deliveries may be deductible. Personal and commuting miles generally are not, so keep a mileage log.' },
+  { icon:'▸', label:'Mileage (IRS business standard rates)', desc:'Business miles driven for Spark deliveries may be deductible. Personal and commuting miles generally are not, so keep a mileage log.' },
   { icon:'', label:'Phone & Data Plan', desc:'Business-use portion only, based on a reasonable allocation supported by your records.' },
   { icon:'', label:'Insulated Bags & Coolers', desc:'Required for grocery delivery. The business-use portion may be deductible; keep receipts.' },
   { icon:'', label:'Phone Charger & Mount', desc:'Car mount, cables, and power banks used for deliveries.' },
@@ -28,7 +28,7 @@ const FAQ = [
   { q:'Does Walmart Spark send a 1099?', a:'The form you receive depends on the type of payment and applicable reporting rules; check your Walmart Spark tax documents for forms issued. A reporting threshold does not make taxable income tax-free: report taxable income even if you do not receive an information return.' },
   { q:'What is the self-employment tax rate for Spark drivers?', a:'Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income.' },
   { q:'Do I need to pay quarterly taxes as a Spark driver?', a:'Estimated payments may generally be required if you expect to owe at least $1,000 after withholding and credits. Exceptions and safe-harbor rules apply. 2026 federal due dates are April 15, June 15, and September 15, 2026, and January 15, 2027.' },
-  { q:'What mileage rate can Spark drivers use in 2026?', a:'The IRS business standard mileage rate for 2026 is 72.5 cents per mile for January 1 through June 30 and 76 cents per mile from July 1 through December 31. Track the business miles driven for Spark deliveries (not personal or commuting miles) and keep a contemporaneous log.' },
+  { q:'What mileage rate can Spark drivers use in 2026?', a:`The IRS business standard mileage rate for 2026 is ${TAX_RULES_2026.mileage.h1 * 100} cents per mile for January 1 through June 30 and ${TAX_RULES_2026.mileage.h2 * 100} cents per mile from July 1 through December 31. Track the business miles driven for Spark deliveries (not personal or commuting miles) and keep a contemporaneous log.` },
   { q:'Can I deduct my car payment as a Spark driver?', a:'Not directly. You can use either the standard mileage rate OR actual expenses (depreciation, gas, insurance) — but not both. Most drivers find standard mileage simpler and more beneficial.' },
 ]
 
@@ -67,7 +67,7 @@ export default function WalmartSparkPage() {
   const cardHd = { background:'#1a1a2e', padding:'13px 20px', display:'flex', alignItems:'center', gap:10 }
 
   return (
-    <>    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Walmart Spark Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Walmart Spark workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Walmart Spark earnings and review the tax forms and annual tax summary available to you."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Estimated payments may be required based on your expected tax after withholding and credits. Safe-harbor rules and exceptions apply; check IRS guidance."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report business income and deductions on Schedule C when required. Attach it to Form 1040 by the applicable filing deadline."}]}` }} />
+    <>    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Walmart Spark Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Walmart Spark workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Walmart Spark earnings and review the tax forms and annual tax summary available to you."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at ${GTX_RULES.mileage.h1 * 100}¢/mile (Jan–Jun) and ${GTX_RULES.mileage.h2 * 100}¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax generally uses a 15.3% rate applied to 92.35% of net earnings, subject to the Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Estimated payments may be required based on your expected tax after withholding and credits. Safe-harbor rules and exceptions apply; check IRS guidance."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report business income and deductions on Schedule C when required. Attach it to Form 1040 by the applicable filing deadline."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Walmart Spark Driver Tax Calculator 2026","item":"https://www.gigwisetax.com/walmart-spark"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Walmart Spark Driver Tax Calculator 2026","url":"https://www.gigwisetax.com/walmart-spark","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -121,7 +121,10 @@ export default function WalmartSparkPage() {
                 <div>
                   <label style={lbl}>▸ Total Miles Driven (Optional)</label>
                   <input style={inp} type="number" placeholder="e.g. 18000" value={miles} onChange={e=>setMiles(String(Math.max(0,parseFloat(e.target.value)||0)))} min="0" />
-                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>IRS rate: 72.5¢–76¢/mile for 2026 · calculator assumes miles split evenly Jan–Jun / Jul–Dec</div>
+                  <div style={{ fontSize:11, color: '#7a9abf', marginTop:4 }}>
+                    IRS 2026 rates: {TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun and {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec · calculator assumes miles split evenly Jan–Jun / Jul–Dec.{' '}
+                    <a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>
+                  </div>
                 </div>
                 <div>
                   <label style={lbl} htmlFor="gtx-state-spark"> State of Residence</label>
@@ -192,7 +195,7 @@ export default function WalmartSparkPage() {
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>Baseline example: $30,000 net profit, single filer, no mileage or state tax = <strong>{baseline30K.text.total} SE + federal estimate</strong>, before state tax and credits.</li>
           <li>Equal-quarter baseline: <strong>{baseline30K.text.quarterly}</strong>; actual estimated payments may differ with withholding, prior-year safe harbor, and uneven income.</li>
-          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> — mileage varies by market and schedule, so enter your own documented business miles'}}/>
+          <li>IRS 2026 business standard mileage rates are <strong>{TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun and {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec</strong> (<a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS source</a>). Mileage varies by date and schedule, so enter your own documented business miles.</li>
           <li dangerouslySetInnerHTML={{__html: 'Walmart Spark generally does not withhold employee payroll taxes from independent-contractor earnings; other tax obligations depend on your full situation'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Business-use portions of delivery bags, phone accessories and supplies may be <strong>deductible</strong>; do not count the same vehicle costs under both standard mileage and actual expenses'}}/>
             </ul>
@@ -201,7 +204,8 @@ export default function WalmartSparkPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Walmart Spark</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              For a $30,000 net-profit baseline, single filer, no mileage and no state tax, this model estimates {baseline30K.text.se} SE tax plus {baseline30K.text.federal} federal income tax = <strong style={{ color:'#fff' }}>{baseline30K.text.total} before state tax</strong>. The calculator above lets you add documented miles and select a simplified state-rate input; it does not calculate a complete state return. IRS business mileage rates are 72.5¢/mile through June 30 and 76¢/mile from July 1, 2026.
+              For a $30,000 net-profit baseline, single filer, no mileage and no state tax, this model estimates {baseline30K.text.se} SE tax plus {baseline30K.text.federal} federal income tax = <strong style={{ color:'#fff' }}>{baseline30K.text.total} before state tax</strong>. The calculator above lets you add documented miles and select a simplified state-rate input; it does not calculate a complete state return. IRS business mileage rates are {TAX_RULES_2026.mileage.h1 * 100}¢/mile through June 30 and {TAX_RULES_2026.mileage.h2 * 100}¢/mile from July 1, 2026 (<a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>).
+              This model does not account for your W-2 Social Security wages when applying the wage base or household compensation for Additional Medicare Tax.
             </p>
           </div>
           {/* DEDUCTIONS */}
@@ -224,7 +228,7 @@ export default function WalmartSparkPage() {
                 ))}
               </div>
               <div style={{ marginTop:16, background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius:6, padding:'12px 16px', fontSize:13, color: '#4ade80' }}>
-                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The standard mileage deduction of 72.5¢–76¢/mile may be simpler than actual expenses; compare both methods and never count the same vehicle costs twice.
+                <strong>Pro Tip:</strong> Use a mileage tracking app (Stride, MileIQ) from day one. The IRS standard mileage rates are {TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun and {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec; compare the standard-mileage and actual-expense methods, and never count the same vehicle costs twice.
               </div>
             </div>
           </div>

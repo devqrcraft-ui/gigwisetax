@@ -14,6 +14,21 @@ export const metadata: Metadata = {
   title: 'DoorDash Taxes 2026: 1099, Mileage & Quarterly Tax Guide',
   description: 'Learn how DoorDash 1099 taxes work in 2026, including self-employment tax, business mileage, quarterly payments, and filing basics. Includes a free calculator.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/doordash-taxes-2026' },
+  openGraph: {
+    title: 'DoorDash Taxes 2026: 1099, Mileage & Quarterly Tax Guide',
+    description: 'Learn how DoorDash 1099 taxes work in 2026, including self-employment tax, business mileage, quarterly payments, and filing basics. Includes a free calculator.',
+    url: 'https://www.gigwisetax.com/blog/doordash-taxes-2026',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DoorDash Taxes 2026: 1099, Mileage & Quarterly Tax Guide',
+    description: 'Learn how DoorDash 1099 taxes work in 2026, including self-employment tax, business mileage, quarterly payments, and filing basics. Includes a free calculator.',
+    images: ['/og-image.png'],
+  },
 }
 
 

@@ -379,8 +379,11 @@ export default function HomeClient() {
                   </>}
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 12 }} className="form-grid">
                     <div>
-                      <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder="Jan–Jun miles (72.5¢)" aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder="Jul–Dec miles (76¢)" aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
-                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec (IRS 2026 rates)</div>
+                      <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder={`Jan–Jun miles (${TAX_RULES_2026.mileage.h1 * 100}¢)`} aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder={`Jul–Dec miles (${TAX_RULES_2026.mileage.h2 * 100}¢)`} aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
+                      <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>
+                        {TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun, {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec (IRS 2026 rates).{' '}
+                        <a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>
+                      </div>
                     </div>
                     <div>
                       <label style={label}> Other Business Expenses</label>
@@ -515,7 +518,7 @@ export default function HomeClient() {
                   <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 8 }}>
                     <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <span style={{ color: '#e8b84b', fontSize: 16, marginTop: 1 }}>▸</span>
-                      <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.65 }}><strong style={{ color: '#fff' }}>Additional Medicare Tax (0.9%)</strong> — the estimate applies a simplified threshold to self-employment income only. It does not combine W-2 wages or other Medicare wages, so high-income results may differ from Form 8959.</div>
+                      <div style={{ fontSize: 15, color: 'rgba(255,255,255,0.9)', lineHeight: 1.65 }}><strong style={{ color: '#fff' }}>Additional Medicare Tax (0.9%)</strong> — the estimate applies a simplified threshold to self-employment income only. It does not combine W-2 wages or other Medicare wages for this tax, or use W-2 Social Security wages when applying the wage base, so results may differ from Form 8959 and Schedule SE.</div>
                     </div>
                     <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                       <span style={{ color: '#e8b84b', fontSize: 16, marginTop: 1 }}>▸</span>

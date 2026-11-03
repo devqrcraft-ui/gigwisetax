@@ -20,11 +20,23 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     : s.rate === 0
       ? `${s.name} has no state income-tax component in this estimate.`
       : `Includes a simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input, not a full state tax calculation.`
+  const title = `DoorDash Tax Calculator for ${s.name} 2026 | Free Estimate`
+  const description = `Estimate DoorDash self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`
+  const canonicalUrl = `https://www.gigwisetax.com/${p.slug}/${s.slug}`
   return {
-    title: `DoorDash Tax Calculator for ${s.name} 2026 | Free Estimate`,
-    description: `Estimate DoorDash self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`,
+    title,
+    description,
     keywords: `${p.name} taxes ${s.name}, ${p.name} ${s.abbr} tax calculator 2026, ${p.slug} ${s.slug} self employment tax`,
-    alternates: { canonical: `https://www.gigwisetax.com/${p.slug}/${s.slug}` },
+    alternates: { canonical: canonicalUrl },
+    openGraph: {
+      title,
+      description,
+      url: canonicalUrl,
+      siteName: 'GigWiseTax',
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      locale: 'en_US',
+      type: 'website',
+    },
   }
 }
 
@@ -74,6 +86,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               : noStateTax ? '.' : <span> and a simplified state estimate using <strong style={{color:'#e8b84b'}}>{stateRateStr}</strong>.</span>}
             {' '}For a <strong style={{color:'#e8b84b'}}>$40,000</strong> net-profit example, this model estimates{' '}
             <strong style={{color:'#e8b84b'}}>${example40.total.toLocaleString('en-US')}</strong> {isStateTaxEstimateModeled(state.slug) ? 'total' : 'federal + SE subtotal (state tax excluded)'} — about <strong style={{color:'#e8b84b'}}>${example40.quarterly.toLocaleString('en-US')}</strong> per quarter.
+            This estimate does not account for your W-2 Social Security wages when applying the wage base or household compensation for Additional Medicare Tax.
           </p>
         </div>
 
@@ -84,8 +97,8 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>{'⚡ KEY TAKEAWAYS'}</div>
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>{`$40K net-profit example: this estimator returns ~$${example40.total.toLocaleString('en-US')} ${isStateTaxEstimateModeled(state.slug) ? 'total (state component is simplified)' : 'federal + SE subtotal; California state tax is not modeled'}`}</li>
-            <li>{'Self-employment tax is 15.3% on net profit — paid entirely by you'}</li>
-            <li>{'Mileage deduction: 72.5¢–76¢/mile — 10,000 miles = $7,250–$7,600 deduction'}</li>
+            <li>{'Self-employment tax generally applies at 15.3% to 92.35% of net earnings, subject to the Social Security wage base and other rules'}</li>
+            <li>Eligible, documented business miles: {TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun and {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec 2026. For 10,000 miles in one period, that is ${(10000 * TAX_RULES_2026.mileage.h1).toLocaleString('en-US')} or ${(10000 * TAX_RULES_2026.mileage.h2).toLocaleString('en-US')} (<a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{color:'#e8b84b'}}>IRS rate table</a>).</li>
             <li>{!isStateTaxEstimateModeled(state.slug) ? 'California state tax is not modeled; the estimate excludes it' : noStateTax ? state.name + ' has no state individual income tax in this estimate' : state.name + ' uses a simplified ' + stateRateStr + ' state-rate input; check state rules for your actual liability'}</li>
             <li>{'Potential deductions and credits vary by eligibility and are not all included in this estimate'}</li>
           </ul>
@@ -120,11 +133,11 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <h3 style={{fontSize:15,fontWeight:800,color:'rgba(255,255,255,0.9)',margin:'12px 0 8px'}}>How Prop 22 Affects Your 2026 Tax Bill</h3>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.82)'}}>
               <li>You remain an <strong style={{color:'#e8b84b'}}>independent contractor</strong> — DoorDash does not withhold taxes</li>
-              <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of CA minimum wage</strong> during active delivery time + 30¢/mile</li>
-              <li>On $40K net, this simplified estimator returns SE {`$${example40.se.toLocaleString('en-US')}`}, federal {`$${example40.federal.toLocaleString('en-US')}`}, and state {`$${example40.state.toLocaleString('en-US')}`} = <strong style={{color:'#e8b84b'}}>{`$${example40.total.toLocaleString('en-US')} estimated total`}</strong></li>
+              <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of the applicable minimum wage</strong> for engaged time, plus an annually adjusted per-engaged-mile amount. Check the <a href="https://www.treasurer.ca.gov/prop-22" rel="nofollow noopener noreferrer" target="_blank" style={{color:'#e8b84b'}}>California State Treasurer&apos;s current rate</a>.</li>
+              <li>On $40K net, this estimator returns SE {`$${example40.se.toLocaleString('en-US')}`} and federal {`$${example40.federal.toLocaleString('en-US')}`} = <strong style={{color:'#e8b84b'}}>{`$${example40.total.toLocaleString('en-US')} federal + SE subtotal`}</strong>; California state tax is not modeled or included.</li>
               <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
               <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 15, Sep 15, Jan 15</strong></li>
-              <li>Mileage deduction 72.5¢–76¢/mile reduces both federal and CA taxable income</li>
+              <li>Eligible business mileage can affect taxable income; this estimate does not calculate the California state-tax effect.</li>
             </ul>
             <blockquote style={{borderLeft:'3px solid #B22234',padding:'10px 14px',margin:'12px 0 0',background:'rgba(178,34,52,0.05)',borderRadius:'0 4px 4px 0'}}>
               <p style={{margin:0,fontSize:13,color:'rgba(255,255,255,0.7)',fontStyle:'italic',lineHeight:1.7}}>"App-based drivers who work under Proposition 22 are independent contractors and must pay self-employment tax on net earnings."</p>

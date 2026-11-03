@@ -92,7 +92,7 @@ export default function PlatformPage() {
     name: `Top Tax Deductions for Amazon Flex Workers 2026`,
     numberOfItems: 12,
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: "Mileage deduction (72.5¢/mile Jan–Jun, 76¢ Jul–Dec)" },
+      { '@type': 'ListItem', position: 1, name: `Mileage deduction (${GTX_RULES.mileage.h1 * 100}¢/mile Jan–Jun, ${GTX_RULES.mileage.h2 * 100}¢ Jul–Dec)` },
       { '@type': 'ListItem', position: 2, name: "Phone bill" },
       { '@type': 'ListItem', position: 3, name: "Auto insurance" },
       { '@type': 'ListItem', position: 4, name: "Car washes & detailing" },
@@ -116,7 +116,7 @@ export default function PlatformPage() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Amazon Flex Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Amazon Flex workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Amazon Flex earnings. Download your annual tax summary or 1099-NEC from the Amazon Flex app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at 72.5¢/mile (Jan–Jun) and 76¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax is 15.3% on net profit (Social Security + Medicare). You can deduct half of SE tax from gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Amazon Flex income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"HowTo","name":"How to File Taxes as a Amazon Flex Worker in 2026","description":"Step-by-step guide to filing self-employment taxes for Amazon Flex workers in 2026.","step":[{"@type":"HowToStep","position":1,"name":"Track your income","text":"Keep records of all Amazon Flex earnings. Download your annual tax summary or 1099-NEC from the Amazon Flex app."},{"@type":"HowToStep","position":2,"name":"Track deductible expenses","text":"Record business miles at ${GTX_RULES.mileage.h1 * 100}¢/mile (Jan–Jun) and ${GTX_RULES.mileage.h2 * 100}¢/mile (Jul–Dec), phone bill percentage, equipment, and other business expenses throughout the year."},{"@type":"HowToStep","position":3,"name":"Calculate self-employment tax","text":"Self-employment tax generally applies at 15.3% to 92.35% of net earnings, subject to the combined Social Security wage base and other rules. You can generally deduct half of self-employment tax when calculating adjusted gross income."},{"@type":"HowToStep","position":4,"name":"Pay quarterly estimated taxes","text":"Pay estimated taxes by April 15, June 15, September 15, and January 15 to avoid IRS penalties."},{"@type":"HowToStep","position":5,"name":"File Schedule C with your return","text":"Report all Amazon Flex income and deductions on Schedule C. Attach to Form 1040 by April 15, 2027."}]}` }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors."}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Amazon Flex Tax Calculator 2026","item":"https://www.gigwisetax.com/amazon-flex"}]}` }}/>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"WebPage","name":"Amazon Flex Tax Calculator 2026","url":"https://www.gigwisetax.com/amazon-flex","dateModified":"${GTX_RULES.verifiedOn}","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }}/>
@@ -166,9 +166,9 @@ export default function PlatformPage() {
           <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
             <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>✅ KEY TAKEAWAYS</div>
             <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
-          <li dangerouslySetInnerHTML={{__html: 'Baseline example: <strong>$40,000 net profit</strong>, single filer, no mileage, credits, or state tax = about <strong>$7,933 SE + federal</strong> before state tax'}}/>
+          <li>Baseline example: <strong>$40,000 net profit</strong>, single filer, no mileage, credits, or state tax = about <strong>{gtxExample(40000).text.total} SE + federal</strong> before state tax.</li>
           <li dangerouslySetInnerHTML={{__html: 'Equal-quarter baseline: <strong>' + gtxExample(40000).text.quarterly + '</strong>; withholding, safe-harbor rules, and uneven income can change payment timing'}}/>
-          <li dangerouslySetInnerHTML={{__html: 'IRS mileage deduction is <strong>72.5¢–76¢/mile</strong> in 2026; enter documented business miles rather than assuming an industry average'}}/>
+          <li>IRS 2026 business standard mileage rates are <strong>{GTX_RULES.mileage.h1 * 100}¢/mile Jan–Jun and {GTX_RULES.mileage.h2 * 100}¢/mile Jul–Dec</strong> (<a href={GTX_RULES.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS source</a>). Enter documented business miles rather than assuming an industry average.</li>
           <li dangerouslySetInnerHTML={{__html: 'Check your payment arrangement and tax forms; report all taxable income even if no information return is issued'}}/>
           <li dangerouslySetInnerHTML={{__html: 'Your reserve depends on filing status, withholding, mileage, and state rules; this tool uses a simplified state-rate input'}}/>
             </ul>
@@ -177,7 +177,8 @@ export default function PlatformPage() {
           <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'16px 0' }}>
             <div style={{ fontSize:13, fontWeight:700, color:'#e8b84b', marginBottom:10, textTransform:'uppercase' as const, letterSpacing:'0.5px' }}>2026 Tax Summary — Amazon Flex</div>
             <p style={{ fontSize:14, color:'rgba(255,255,255,0.85)', lineHeight:1.8, margin:0 }}>
-              For a $40,000 net-profit baseline, single filer, no mileage or other deductions, and no state tax, this model estimates {gtxExample(40000).text.se} SE plus {gtxExample(40000).text.federal} federal = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} before state tax</strong>. Enter documented business miles; the calculator uses a simplified state-rate input, not a complete state return.
+              For a $40,000 net-profit baseline, single filer, no mileage or other deductions, and no state tax, this model estimates {gtxExample(40000).text.se} SE plus {gtxExample(40000).text.federal} federal = <strong style={{ color:'#fff' }}>{gtxExample(40000).text.total} before state tax</strong>. Enter documented business miles; the calculator uses a simplified state-rate input, not a complete state return. IRS 2026 business mileage rates are {GTX_RULES.mileage.h1 * 100}¢/mile Jan–Jun and {GTX_RULES.mileage.h2 * 100}¢/mile Jul–Dec (<a href={GTX_RULES.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>).
+              This model does not account for your W-2 Social Security wages when applying the wage base or household compensation for Additional Medicare Tax.
             </p>
           </div>
 
@@ -276,10 +277,10 @@ export default function PlatformPage() {
 
                 {isPlatformDriver && (
                   <div style={{ background: 'rgba(3,105,161,0.12)', border: '1px solid rgba(3,105,161,0.35)', borderRadius: 6, padding: 16, marginBottom: 20 }}>
-                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: 72.5¢ (Jan–Jun) / 76¢ (Jul–Dec)</div>
+                    <div style={{ fontWeight: 700, color: '#7dd3fc', marginBottom: 8 }}>▸ 2026 IRS Mileage Rate: {GTX_RULES.mileage.h1 * 100}¢ (Jan–Jun) / {GTX_RULES.mileage.h2 * 100}¢ (Jul–Dec)</div>
                     <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, margin: 0 }}>
-                      The 2026 standard mileage rate is <strong>72.5¢/mile through June, 76¢/mile from July</strong>.
-                      Track every delivery mile using a mileage app. On 10,000 miles, that's roughly a <strong>$7,250–$7,600 deduction</strong> depending on when you drove (72.5¢/mile before July 1, 76¢/mile after) — reducing your taxable income significantly.
+                      The 2026 standard mileage rates are <strong>{GTX_RULES.mileage.h1 * 100}¢/mile through June and {GTX_RULES.mileage.h2 * 100}¢/mile from July</strong> (<a href={GTX_RULES.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>).
+                      Track eligible, documented delivery miles. For 10,000 miles driven in one rate period, the deduction is ${(10000 * GTX_RULES.mileage.h1).toLocaleString('en-US')} for Jan–Jun or ${(10000 * GTX_RULES.mileage.h2).toLocaleString('en-US')} for Jul–Dec; calculate mixed-period miles separately.
                       Use the actual expense method if your vehicle costs exceed the standard rate.
                     </p>
                   </div>
@@ -325,7 +326,7 @@ export default function PlatformPage() {
                   },
                   {
                     q: `What is the self-employment tax rate for ${platform.name} in 2026?`,
-                    a: `The self-employment tax rate is 15.3% on net earnings (92.35% of gross income). This consists of 12.4% Social Security tax and 2.9% Medicare tax. The Social Security portion only applies to the first $184,500 of net earnings in 2026 (up from $176,100 in 2025). You can deduct 50% of SE tax from your taxable income.`,
+                    a: `Self-employment tax generally applies at 15.3% to 92.35% of net profit from self-employment. The 2026 Social Security wage base is $184,500 across combined wages, tips, and net earnings; wages subject to Social Security tax reduce the remaining base. Additional Medicare tax may apply above the filing-status threshold. Generally, half of SE tax is deductible in calculating adjusted gross income.`,
                   },
                   {
                     q: `Do I need to pay ${platform.name} taxes if I earn less than the 1099 threshold?`,
