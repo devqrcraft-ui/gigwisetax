@@ -47,7 +47,7 @@ export default function MileageRate2026Post() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            The IRS standard mileage rate for 2026 is 72.5¢/mile through June, then 76¢/mile from July, for business use. On 10,000 delivery miles, that is roughly a $7,250–$7,600 deduction — saving $1,088–$1,140 in self-employment tax. This rate applies to DoorDash, Uber, Lyft, Instacart, and all gig economy drivers who use their personal vehicle for work.
+            The IRS standard mileage rate for 2026 is 72.5¢/mile through June, then 76¢/mile from July, for business use. On 10,000 delivery miles, that is roughly a $7,250–$7,600 deduction — saving $1,024–$1,074 in self-employment tax. This rate applies to DoorDash, Uber, Lyft, Instacart, and all gig economy drivers who use their personal vehicle for work.
           </p>
         </section>
         <section id="key-takeaways">
@@ -55,7 +55,7 @@ export default function MileageRate2026Post() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
           <li>2026 IRS mileage rate: 72.5¢/mile Jan–Jun, 76¢/mile Jul–Dec — highest since 2022</li>
-          <li>10,000 business miles = $7,250–$7,600 deduction ≈ $1,088–$1,140 SE tax saved</li>
+          <li>10,000 business miles = $7,250–$7,600 deduction ≈ $1,024–$1,074 SE tax saved</li>
           <li>Count miles from app-on to app-off — not just miles with passengers or food</li>
           <li>Cannot combine mileage deduction with actual gas/depreciation in the same year</li>
           <li>Use Stride, MileIQ, or a manual logbook — IRS requires contemporaneous records</li>
@@ -75,7 +75,7 @@ export default function MileageRate2026Post() {
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,.4)', textTransform: 'uppercase' as const, letterSpacing: '2px', marginBottom: 8 }}>IRS STANDARD MILEAGE RATE</div>
             <div style={{ fontSize: 56, fontWeight: 900, color: '#e8b84b', lineHeight: 1 }}>72.5¢</div>
             <div style={{ fontSize: 18, color: 'rgba(255,255,255,.7)', marginTop: 4 }}>per mile · Tax Year 2026</div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,.3)', marginTop: 8 }}>For business use of a personal vehicle · IRS Rev. Proc. 2026-01</div>
+            <div style={{ fontSize: 12, color: 'rgba(255,255,255,.3)', marginTop: 8 }}>For business use of a personal vehicle · IRS Notice 2026-10 and Announcement 2026-11</div>
           </div>
 
           <p style={p}>
@@ -136,7 +136,7 @@ export default function MileageRate2026Post() {
               ['10,000 miles', '$7,250', '$2,175'],
               ['15,000 miles', '$10,875', '$3,262'],
               ['20,000 miles', '$14,500', '$4,350'],
-              ['25,000 miles', '$16,750', '$5,437'],
+              ['25,000 miles', '$18,125', '$5,437'],
               ['30,000 miles', '$21,750', '$6,525'],
               ['40,000 miles', '$29,000', '$8,700'],
             ].map(([miles, deduction, savings]) => (

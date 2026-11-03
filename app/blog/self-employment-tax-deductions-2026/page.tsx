@@ -25,7 +25,7 @@ export default function DeductionsGuide() {
     { name: 'Vehicle Expenses (Actual)', amount: 'Varies', desc: 'Instead of mileage rate, deduct actual costs: gas, insurance, repairs, depreciation. Use whichever gives you a larger deduction.', tag: '' },
     { name: 'Equipment & Tools', amount: 'Full cost (Section 179)', desc: 'Camera, delivery bags, insulated containers, laptop, microphone — fully deductible in the year purchased under Section 179.', tag: '' },
     { name: 'Platform Fees', amount: '100% deductible', desc: 'Etsy listing fees, OnlyFans platform fees, any fees charged by your gig platform reduce your taxable income directly.', tag: '' },
-    { name: 'Retirement Contributions', amount: 'Up to $69,000/year', desc: 'SEP-IRA contributions up to 25% of net earnings (max $69,000 for 2026). Powerful way to reduce taxes AND build retirement savings.', tag: 'Big Savings' },
+    { name: 'Retirement Contributions', amount: 'Up to $72,000/year', desc: 'SEP-IRA contributions are limited to the lesser of 25% of compensation (about 20% of net self-employment earnings after the SE-tax deduction) or $72,000 for 2026. Can reduce taxable income AND build retirement savings.', tag: 'Big Savings' },
     { name: 'Education & Training', amount: '100% deductible', desc: 'Courses, books, subscriptions to improve your gig business skills. Must be related to current work.', tag: '' },
     { name: 'Banking & Payment Fees', amount: '100% deductible', desc: 'PayPal fees, Stripe fees, bank fees related to your business — all deductible on Schedule C.', tag: '' },
   ]
@@ -55,7 +55,7 @@ export default function DeductionsGuide() {
         </p>
       </div>
         <p style={{ color: 'rgba(255,255,255,.7)', lineHeight: 1.8, fontSize: 17 }}>
-          The average gig worker overpays $2,000 to $5,000 in taxes by missing deductions. This is the complete list for 2026 — every deduction available to 1099 workers, freelancers, and gig platform earners.
+          Missing deductions means paying more tax than you owe. This is the complete list for 2026 — every deduction available to 1099 workers, freelancers, and gig platform earners.
         </p>
       </div>
 
@@ -71,8 +71,7 @@ export default function DeductionsGuide() {
           <li>Mileage at <strong>72.5¢–76¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
           <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA — saves thousands per year</li>
           <li>Health insurance premiums are <strong>100% deductible</strong> for self-employed workers</li>
-          <li>SEP-IRA contributions up to <strong>$69,000</strong> reduce taxable income dollar-for-dollar</li>
-          <li>Average gig worker overpays <strong>$2,000–$5,000</strong> in taxes by missing available deductions</li>
+          <li>SEP-IRA contributions (up to $72,000 in 2026, subject to the 25% / self-employed limits) can reduce taxable income</li>
         </ul>
       </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>

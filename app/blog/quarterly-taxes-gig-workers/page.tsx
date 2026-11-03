@@ -54,7 +54,7 @@ export default function QuarterlyTaxesGuide() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,667 per quarter. Missing payments triggers a 7% underpayment penalty. Pay via IRS Direct Pay — free and takes under 5 minutes.
+            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,667 per quarter. Missing payments can trigger an underpayment penalty (interest at the IRS rate, 7% per year for Q4 2026). Pay via IRS Direct Pay — free and takes under 5 minutes.
           </p>
         </section>
         <section id="key-takeaways">
@@ -117,7 +117,7 @@ export default function QuarterlyTaxesGuide() {
             What Are the 2026 Quarterly Tax Deadlines for Gig Workers?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'The IRS splits the year into four payment periods. Each has a firm due date. Q1 covers January through March income — due April 15. Q2 covers April and May — due June 15 (Monday holiday shift). Q3 covers June through August — due September 15. Q4 covers September through December — due January 15, 2027.'}
+            {'The IRS splits the year into four payment periods. Each has a firm due date. Q1 covers January through March income — due April 15. Q2 covers April and May — due June 15. Q3 covers June through August — due September 15. Q4 covers September through December — due January 15, 2027.'}
           </p>
 
           <div style={{overflowX:'auto', marginBottom:24}}>
@@ -181,9 +181,9 @@ export default function QuarterlyTaxesGuide() {
               </thead>
               <tbody>
                 {[
-                  {inc:'$20,000', se:'$2,825', fed:'$0', q:'$706'},
-                  {inc:'$25,000', se:'$3,532', fed:'$883', q:'$1,104'},
-                  {inc:'$30,000', se:'$4,239', fed:'$1,060', q:'$1,325'},
+                  {inc:'$20,000', se:'$2,826', fed:'$249', q:'$769'},
+                  {inc:'$25,000', se:'$3,532', fed:'$713', q:'$1,061'},
+                  {inc:'$30,000', se:'$4,239', fed:'$1,178', q:'$1,354'},
                 ].map((row, i) => (
                   <tr key={i} style={{borderBottom:'1px solid rgba(255,255,255,0.05)'}}>
                     <td style={{padding:'10px 14px', color:'rgba(255,255,255,0.85)'}}>{row.inc}</td>
@@ -195,7 +195,7 @@ export default function QuarterlyTaxesGuide() {
                 <tr style={{background:'rgba(232,184,75,0.08)', borderTop:'1px solid rgba(232,184,75,0.3)'}}>
                   <td style={{padding:'10px 14px', color:'#e8b84b', fontWeight:700}}>{'$35,000 (avg)'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$4,945'}</td>
-                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$2,805'}</td>
+                  <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,723'}</td>
                   <td style={{padding:'10px 14px', textAlign:'right', color:'#e8b84b', fontWeight:700}}>{'$1,667'}</td>
                 </tr>
               </tbody>
@@ -284,7 +284,7 @@ export default function QuarterlyTaxesGuide() {
             Which Deductions Reduce Your Quarterly Tax Payment?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'Deductions reduce your net self-employment income before SE tax is calculated. A DoorDash driver logging 10,000 miles per year deducts $7,250–$7,600 — cutting their SE tax by $1,109 and saving about $277 per quarter.'}
+            {'Deductions reduce your net self-employment income before SE tax is calculated. A DoorDash driver logging 10,000 miles per year deducts $7,250–$7,600 — cutting their SE tax by roughly $1,024–$1,074 and saving about $256–$269 per quarter.'}
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
@@ -299,7 +299,7 @@ export default function QuarterlyTaxesGuide() {
           <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
             <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $1,983 to $1,556 — saving $657 per quarter or $2,628 per year.'}
+              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $1,983 to $1,433 — saving about $550 per quarter or $2,200 per year (single filer, no state tax, 72.5¢/mile).'}
             </p>
           </div>
 
@@ -324,7 +324,7 @@ export default function QuarterlyTaxesGuide() {
             },
             {
               q:'How much does a gig worker on $35,000 pay per quarter?',
-              a:'A gig worker with $35,000 net income owes roughly $1,667 per quarter — $4,945 in SE tax plus $2,805 in federal income tax, split four ways.'
+              a:'A gig worker with $35,000 net income owes roughly $1,667 per quarter — $4,945 in SE tax plus $1,723 in federal income tax ($6,669 total, split four ways).'
             },
             {
               q:'What is the safe harbor rule for quarterly taxes?',
