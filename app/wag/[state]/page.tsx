@@ -89,7 +89,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Wag walkers are independent contractors — Wag withholds zero taxes</li>
-              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $20,000 net income: ~$2,826 SE tax + ~$359 federal = ~$3,185 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $20,000 net income: ~$2,826 SE tax + ~$249 federal = ~$3,075 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$796 each'}</li>
               <li>Wag pays through Stripe Express — your 1099 comes from Stripe, not Wag, if you meet the reporting threshold</li>
               <li>Pet care is an IRS-recognized tipped occupation (Code 506) — tips may qualify for the new 2026 tips deduction</li>

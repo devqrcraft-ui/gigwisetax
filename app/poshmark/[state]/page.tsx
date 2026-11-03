@@ -81,7 +81,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Poshmark resellers are independent contractors — Poshmark withholds zero taxes</li>
-              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $60,000 gross sales with $25,000 COGS: net profit $23,000 → ~$3,250 SE tax + ~$638 federal = ~$3,888 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $60,000 gross sales with $25,000 COGS: net profit $23,000 → ~$3,250 SE tax + ~$528 federal = ~$3,777 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$972 each'}</li>
               <li>The 1099-K reports gross sales — Poshmark commission and cost of goods come off before you owe tax</li>
               <li>Federal 1099-K threshold: $20,000 and 200+ transactions — some states set it far lower</li>

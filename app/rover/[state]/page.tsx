@@ -88,7 +88,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             <h2 style={{ fontSize:'clamp(16px,3vw,18px)', fontWeight:700, color:'#e8b84b', marginBottom:12, marginTop:0 }}>Key Takeaways</h2>
             <ul style={{ margin:0, padding:'0 0 0 18px', lineHeight:1.9, fontSize:14, color:'#C8D8EC' }}>
               <li>Rover sitters are independent contractors — Rover withholds zero taxes</li>
-              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $25,000 net income: ~$3,532 SE tax + ~$1,800 federal = ~$5,340 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
+              <li>{isStateTaxEstimateModeled(state.slug) ? 'On $25,000 net income: ~$3,532 SE tax + ~$713 federal = ~$4,246 total in ' + state.name : 'California example shows a federal + SE subtotal only; state tax is not modeled or included.'}</li>
               <li>{'Quarterly payments due Apr 15, Jun 15, Sep 15, Jan 15 — ~$1,335 each'}</li>
               <li>IRS mileage deduction: 72.5¢–76¢/mile for driving to client homes in 2026</li>
               <li>Deduct pet supplies, leashes, dog food used for clients, home office</li>
