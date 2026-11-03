@@ -29,9 +29,9 @@ export default function EmployeeContractorQuiz() {
   }
 
   function getResult() {
-    if (pct>=0.75) return { label:'Independent Contractor', color:'#e8b84b', summary:'Your answers suggest an independent contractor situation. You are likely responsible for SE tax (15.3%), quarterly estimated payments, and tracking deductible business expenses like mileage and phone costs.', cta:{href:'/doordash-tax-calculator-2026',text:'Calculate your 1099 taxes →'}, cta2:{href:'/uber-tax-calculator-2026',text:'Uber driver tax calculator →'} };
-    if (pct<=0.35) return { label:'Employee', color:'#4ade80', summary:'Your answers suggest an employee situation. If you receive a W-2 with taxes withheld, you generally do not owe SE tax. If you believe you are misclassified, consult a tax professional or employment attorney.', cta:{href:'/doordash-tax-calculator-2026',text:'Have 1099 side income? Calculate it →'}, cta2:null };
-    return { label:'Mixed / Unclear', color:'#93c5fd', summary:'Your answers suggest a mixed situation. Worker classification depends on specific facts, state laws, and IRS guidelines. Consider consulting a tax professional.', cta:{href:'/doordash-tax-calculator-2026',text:'Estimate your 1099 taxes →'}, cta2:{href:'/multi-platform-gig-tax-calculator-2026',text:'Multi-app tax calculator →'} };
+    if (pct>=0.75) return { label:'Independent Contractor', color:'#e8b84b', summary:'Your answers suggest an independent contractor situation. You are likely responsible for SE tax (15.3%), quarterly estimated payments, and tracking deductible business expenses like mileage and phone costs.', cta:{href:'/doordash',text:'Calculate your 1099 taxes →'}, cta2:{href:'/uber',text:'Uber driver tax calculator →'} };
+    if (pct<=0.35) return { label:'Employee', color:'#4ade80', summary:'Your answers suggest an employee situation. If you receive a W-2 with taxes withheld, you generally do not owe SE tax. If you believe you are misclassified, consult a tax professional or employment attorney.', cta:{href:'/doordash',text:'Have 1099 side income? Calculate it →'}, cta2:null };
+    return { label:'Mixed / Unclear', color:'#93c5fd', summary:'Your answers suggest a mixed situation. Worker classification depends on specific facts, state laws, and IRS guidelines. Consider consulting a tax professional.', cta:{href:'/doordash',text:'Estimate your 1099 taxes →'}, cta2:{href:'/multi-platform-gig-tax-calculator-2026',text:'Multi-app tax calculator →'} };
   }
 
   const q = QUESTIONS[current];

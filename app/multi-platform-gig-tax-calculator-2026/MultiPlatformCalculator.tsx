@@ -14,9 +14,9 @@ const fmt = (n: number) => '$' + Math.round(n).toLocaleString('en-US');
 const pct = (n: number) => (n * 100).toFixed(1) + '%';
 
 const PLATFORMS = [
-  { key: 'doordash', label: 'DoorDash', color: '#e8b84b', href: '/doordash-tax-calculator-2026' },
-  { key: 'uber',     label: 'Uber / Uber Eats', color: '#60a5fa', href: '/uber-tax-calculator-2026' },
-  { key: 'instacart',label: 'Instacart', color: '#4ade80', href: '/instacart-tax-calculator-2026' },
+  { key: 'doordash', label: 'DoorDash', color: '#e8b84b', href: '/doordash' },
+  { key: 'uber',     label: 'Uber / Uber Eats', color: '#60a5fa', href: '/uber' },
+  { key: 'instacart',label: 'Instacart', color: '#4ade80', href: '/instacart' },
   { key: 'flex',     label: 'Amazon Flex', color: '#fb923c', href: '/amazon-flex-tax-calculator' },
   { key: 'other',    label: 'Other 1099 Income', color: '#a78bfa', href: null },
 ];
