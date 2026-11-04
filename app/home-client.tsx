@@ -295,14 +295,14 @@ export default function HomeClient() {
                 <p style={{ color: '#c3daf0', fontSize: 13, lineHeight: 1.5, margin: '0 0 8px' }}>
                   Estimate self-employment, federal, and state taxes. Enter your annual gig income, then add business mileage and eligible expenses. Estimates only—not tax advice.
                 </p>
-                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }} aria-label="Load a sample calculation">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 6 }} aria-label="Load a sample calculation">
                   {QUICK_EXAMPLES.map(ex => (
                     <button
                       key={ex.label}
                       type="button"
                       aria-label={`Load ${ex.label} example: ${ex.tag}`}
                       onClick={() => loadExample(ex)}
-                      style={{ background: '#102e52', border: '1px solid #2a6496', borderRadius: 999, padding: '6px 10px', cursor: 'pointer', color: '#c3daf0', fontSize: 12, lineHeight: 1.3 }}
+                      style={{ background: '#102e52', border: '1px solid #2a6496', borderRadius: 0, padding: '8px 10px', cursor: 'pointer', color: '#c3daf0', fontSize: 12, lineHeight: 1.3, textAlign: 'left', width: '100%' }}
                     >
                       {ex.label} · {ex.tag}
                     </button>
