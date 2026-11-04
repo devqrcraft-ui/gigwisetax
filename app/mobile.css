@@ -5,6 +5,56 @@
     width: calc(100% + 40px) !important;
     margin-left: -20px !important;
   }
+  .deadline-quarter-grid {
+    align-items: stretch !important;
+  }
+  .deadline-quarter-card {
+    display: grid !important;
+    grid-template-rows: 20px auto minmax(36px, auto) minmax(48px, auto) auto;
+    align-content: start;
+    gap: 4px;
+  }
+  .deadline-upcoming-slot {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .deadline-upcoming-slot span {
+    background: #B22234;
+    color: #fff;
+    font-size: 11px;
+    line-height: 16px;
+    padding: 0 8px;
+    border-radius: 3px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .deadline-quarter-title,
+  .deadline-quarter-period,
+  .deadline-quarter-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    line-height: 1.3;
+  }
+  .deadline-quarter-period {
+    min-height: 36px;
+  }
+  .deadline-quarter-date {
+    min-height: 48px;
+    font-size: 16px !important;
+  }
+  .deadline-quarter-actions {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+  }
+  .deadline-quarter-actions a {
+    width: 100%;
+    padding: 10px 6px !important;
+    white-space: normal !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]),
   select {
     width: 100% !important;

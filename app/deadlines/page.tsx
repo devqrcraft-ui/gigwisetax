@@ -97,15 +97,17 @@ export default function DeadlinesPage() {
               <div style={accent}/>
               <span style={{ color: '#fff', fontWeight: 700, fontSize: 16 }}> 2026 Federal Quarterly Deadlines (IRS Form 1040-ES)</span>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', borderBottom: '1px solid rgba(255,255,255,0.1)' }} className="results-row deadline-quarter-grid">
               {getDeadlineStatus().map((d, i) => (
-                <div key={d.q} style={{ padding: '12px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.isCurrent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.isCurrent ? '4px solid #B22234' : 'none', textAlign: 'center' as const, position: 'relative' as const }}>
-                  {d.isCurrent && <div style={{ position: 'absolute', top: 8, left: '50%', transform: 'translateX(-50%)', background: '#B22234', color: '#fff', fontSize: 12, padding: '2px 8px', borderRadius: 3, fontWeight: 800, whiteSpace: 'nowrap' }}> UPCOMING</div>}
-                  <div style={{ marginTop: d.isCurrent ? 16 : 0, fontSize: 16, fontWeight: 800, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 3 }}>{d.q} 2026</div>
-                  <div style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
-                  <div style={{ fontSize: 18, fontWeight: 900, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
-                  <div style={{ background: d.isCurrent ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700, display: 'inline-block', marginBottom: 8 }}>{d.daysUntil >= 0 ? d.daysUntil : 0} days</div>
-                  <a href={gcalUrl(d.q, d.due)} target="_blank" rel="noopener noreferrer" style={{ ...btnRed, display: 'inline-block', textDecoration: 'none', padding: '12px 16px' }}> + Calendar</a>
+                <div key={d.q} className="deadline-quarter-card" style={{ padding: '12px 10px', borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none', background: d.isCurrent ? 'rgba(178,34,52,0.12)' : 'rgba(255,255,255,0.04)', borderLeft: d.isCurrent ? '4px solid #B22234' : 'none', textAlign: 'center' as const }}>
+                  <div className="deadline-upcoming-slot">{d.isCurrent ? <span>UPCOMING</span> : null}</div>
+                  <div className="deadline-quarter-title" style={{ fontSize: 16, fontWeight: 800, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 3 }}>{d.q} 2026</div>
+                  <div className="deadline-quarter-period" style={{ fontSize: 13, color: '#7a9abf', marginBottom: 6 }}>{d.period}</div>
+                  <div className="deadline-quarter-date" style={{ fontSize: 18, fontWeight: 900, color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.85)', marginBottom: 5 }}>{d.due}</div>
+                  <div className="deadline-quarter-actions">
+                    <span className="deadline-days-left" style={{ background: d.isCurrent ? 'rgba(178,34,52,0.2)' : 'rgba(255,255,255,0.08)', color: d.isCurrent ? '#B22234' : 'rgba(255,255,255,0.75)', padding: '4px 10px', borderRadius: 12, fontSize: 14, fontWeight: 700 }}>{d.daysUntil >= 0 ? d.daysUntil : 0} days</span>
+                    <a href={gcalUrl(d.q, d.due)} target="_blank" rel="noopener noreferrer" style={{ ...btnRed, display: 'inline-block', textDecoration: 'none', padding: '12px 16px' }}> + Calendar</a>
+                  </div>
                 </div>
               ))}
             </div>
