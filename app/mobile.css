@@ -1,6 +1,10 @@
 /* v110 mobile: narrower side frames, centered readable cards, compact footer */
 .main-grid-outer > * { min-width: 0; }
 @media (max-width: 600px) {
+  .calculators-platform-list {
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+  }
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="submit"]):not([type="button"]),
   select {
     width: 100% !important;
