@@ -43,10 +43,10 @@ function dueLabel(due: string): string {
 }
 
 const QUICK_EXAMPLES = [
-  { label: 'Uber driver',          platform: 'Uber',     income: '30000', state: 'CA', filing: 'single',  tag: '$30k · California', href: '/uber' },
-  { label: 'DoorDash + Instacart', platform: 'DoorDash', income: '40000', state: 'TX', filing: 'single',  tag: '$40k · Texas',      href: '/doordash' },
-  { label: 'OnlyFans creator',     platform: 'OnlyFans', income: '60000', state: 'NY', filing: 'single',  tag: '$60k · New York',   href: '/onlyfans' },
-  { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k net rental · Florida', href: '/airbnb' },
+  { label: 'Uber driver',          platform: 'Uber',     income: '30000', state: 'CA', filing: 'single',  tag: '$30k · California' },
+  { label: 'DoorDash + Instacart', platform: 'DoorDash', income: '40000', state: 'TX', filing: 'single',  tag: '$40k · Texas' },
+  { label: 'OnlyFans creator',     platform: 'OnlyFans', income: '60000', state: 'NY', filing: 'single',  tag: '$60k · New York' },
+  { label: 'Airbnb host',          platform: 'Airbnb',   income: '45000', state: 'FL', filing: 'married', tag: '$45k net rental · Florida' },
 ]
 
 function QuarterlyEstimator() {
@@ -291,25 +291,21 @@ export default function HomeClient() {
           {/* ═══ CALCULATOR ═══ */}
           {tab === 'calc' && (
             <>
-              {/* QUICK EXAMPLES */}
               <div style={{ marginBottom: 10 }}>
-                <div style={{ fontSize: 13, fontWeight: 800, color:'rgba(255,255,255,.75)', textTransform:'uppercase' as const, letterSpacing: '1px', marginBottom: 8 }}>
-                   Try These Real Examples
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 10 }} className="examples-grid">
-                  {/* 2-col desktop, 1-col mobile via inline media */}
+                <p style={{ color: '#c3daf0', fontSize: 13, lineHeight: 1.5, margin: '0 0 8px' }}>
+                  Estimate self-employment, federal, and state taxes. Enter your annual gig income, then add business mileage and eligible expenses. Estimates only—not tax advice.
+                </p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }} aria-label="Load a sample calculation">
                   {QUICK_EXAMPLES.map(ex => (
-                    <a
+                    <button
                       key={ex.label}
-                      href={ex.href} onClick={e => { e.preventDefault(); loadExample(ex) }}
-                      style={{ background: '#102e52', border: '1px solid #2a6496', borderRadius: 10, padding: '12px 8px', cursor: 'pointer', transition: 'all .15s', textAlign: 'center' as const, textDecoration: 'none', display: 'block' }}
-                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8b84b'; (e.currentTarget as HTMLElement).style.background = '#1a3f6a' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2a6496'; (e.currentTarget as HTMLElement).style.background = '#102e52' }}
+                      type="button"
+                      aria-label={`Load ${ex.label} example: ${ex.tag}`}
+                      onClick={() => loadExample(ex)}
+                      style={{ background: '#102e52', border: '1px solid #2a6496', borderRadius: 999, padding: '6px 10px', cursor: 'pointer', color: '#c3daf0', fontSize: 12, lineHeight: 1.3 }}
                     >
-                      <div style={{ fontSize: 'clamp(16px,3.5vw,18px)', fontWeight: 800, color: '#ffffff', marginBottom: 6, textAlign: 'center', textShadow: '0 1px 3px rgba(0,0,0,.4)' }}>{ex.label}</div>
-                      <div style={{ fontSize: 'clamp(13px,3vw,14px)', color: '#c3daf0', marginBottom: 6, textAlign: 'center' }}>{ex.tag}</div>
-                      <div style={{ fontSize: 'clamp(14px,3vw,15px)', fontWeight: 700, color: '#f0c050', textAlign: 'center', letterSpacing: '.01em' }}>{'Open →'}</div>
-                    </a>
+                      {ex.label} · {ex.tag}
+                    </button>
                   ))}
                 </div>
               </div>
