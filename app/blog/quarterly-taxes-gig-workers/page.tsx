@@ -8,8 +8,18 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
   openGraph: {
     title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
-    description: 'Pay the right amount every quarter. No penalties. Free guide for all gig platforms.',
+    description: 'How much to pay each quarter, the 2026 due dates and how to estimate your payment.',
+    url: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
     type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
+    description: 'How much to pay each quarter, the 2026 due dates and how to estimate your payment.',
+    images: ['/og-image.png'],
   },
 }
 
@@ -62,7 +72,7 @@ export default function QuarterlyTaxesGuide() {
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
           <li>Threshold: owe $1,000+ annually → quarterly payments required</li>
-          <li>$35K gig income = $6,669 SE tax = $1,667 per quarter</li>
+          <li>$35K gig income = $6,669 total tax (SE + federal) = $1,667 per quarter</li>
           <li>Due dates: April 15 / June 15 / September 15 / January 15</li>
           <li>Safe harbor: pay 100% of last year's total tax to eliminate underpayment risk</li>
           <li>State estimated taxes also due on the same dates in most states</li>
@@ -297,9 +307,9 @@ export default function QuarterlyTaxesGuide() {
 
           {/* INFORMATION GAIN */}
           <div style={{background:'rgba(232,184,75,0.05)', border:'1px solid rgba(232,184,75,0.15)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
-            <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>UNIQUE DATA — 2026 Analysis</div>
+            <div style={{fontWeight:800, color:'#e8b84b', marginBottom:8, fontSize:13}}>Worked example — 2026</div>
             <p style={{margin:0, fontSize:14, color:'rgba(255,255,255,0.8)', lineHeight:1.8}}>
-              {'Based on typical gig worker profiles: a DoorDash driver earning $40,000 gross with 12,000 delivery miles reduces net income to $31,300 after the mileage deduction alone. Their quarterly payment drops from $1,983 to $1,433 — saving about $550 per quarter or $2,200 per year (single filer, no state tax, 72.5¢/mile).'}
+              {'Illustrative example (single filer, standard deduction, no state tax, no QBI): a DoorDash driver with $40,000 gross and 12,000 business miles, half driven before July 1 at 72.5¢ and half after at 76¢, has a mileage deduction of $8,910 and net income of $31,090. Estimated federal plus self-employment tax falls from $7,933 to $5,680, and the quarterly payment from $1,983 to $1,420 — about $563 less per quarter, or roughly $2,250 per year. Your numbers will differ.'}
             </p>
           </div>
 
