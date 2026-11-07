@@ -169,11 +169,14 @@ export default function InstacartTaxes2026() {
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
             Mileage eligibility depends on the trip and your records; commuting is generally not business mileage. Keep a contemporaneous log and do not claim both the standard-mileage method and the same vehicle costs as actual expenses.
           </p>
+          <p style={{ fontSize: 14, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
+            The following ranges show the deduction if all listed miles fall in one rate period: 72.5¢/mile for January–June or 76¢/mile for July–December. For miles driven across both periods, calculate each period separately.
+          </p>
           <div style={{ overflowX: 'auto' as const, marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
                 <tr>
-                  {['Eligible Business Miles', 'Deduction at 72.5¢–76¢/mile'].map(h => (
+                  {['Eligible Business Miles', 'Deduction if all miles are in one rate period'].map(h => (
                     <th key={h} style={{ background: 'rgba(255,255,255,0.05)', color: '#e8b84b', padding: '10px 14px', textAlign: 'left' as const, fontSize: 12, fontFamily: 'monospace', letterSpacing: '0.04em', borderBottom: '1px solid rgba(232,184,75,0.2)' }}>{h}</th>
                   ))}
                 </tr>

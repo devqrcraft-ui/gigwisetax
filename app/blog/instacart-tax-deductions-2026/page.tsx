@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator',
-  description: 'Every Instacart tax deduction for 2026: mileage 72.5c/mi, phone, insulated bags, parking. Free calculator — see exact taxes owed. All 50 states, no signup.',
+  description: 'Instacart tax deductions for 2026: mileage, phone, insulated bags, and parking. Free calculator provides a planning estimate for all 50 states.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/instacart-tax-deductions-2026' },
 }
 
@@ -12,7 +12,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Instacart Tax Deductions 2026","item":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","datePublished":"2026-01-01","dateModified":"2026-05-31","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/instacart-tax-deductions-2026"}}'
 
 export default function InstacartTaxDeductions2026() {
   return (
@@ -39,7 +39,7 @@ export default function InstacartTaxDeductions2026() {
             Instacart Tax Deductions 2026: Shopper Checklist + Free Calculator
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.65)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Last updated: November 7, 2026</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
@@ -48,7 +48,7 @@ export default function InstacartTaxDeductions2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Instacart full-service shoppers are independent contractors who owe self-employment tax on all net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,532 SE tax + $713 federal income tax = <strong style={{ color: '#e8edf8' }}>$4,246 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,061</strong>. Mileage at 72.5¢–76¢/mile is the largest deduction — 10,000 miles eliminates $7,250–$7,600 from taxable income.
+              Instacart full-service shoppers are independent contractors who owe self-employment tax on net profit. On <strong style={{ color: '#e8edf8' }}>$35,000 gross</strong> with $10,000 in deductions: approximately $3,532 SE tax + $713 federal income tax = <strong style={{ color: '#e8edf8' }}>$4,246 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,061</strong>. Mileage is a major deduction: if all 10,000 business miles were driven in one period, the deduction is $7,250 for Jan–Jun or $7,600 for Jul–Dec. A mixed-year total depends on the miles in each period.
             </p>
           </div>
         </section>
@@ -123,7 +123,7 @@ export default function InstacartTaxDeductions2026() {
               </thead>
               <tbody>
                 {[
-                  ['Mileage (10,000 miles)', '$7,250–$7,600', '$1,024–$1,074'],
+                  ['Mileage (10,000 miles in one period)', '$7,250 Jan–Jun / $7,600 Jul–Dec', '$1,024 / $1,074 SE tax component'],
                   ['Phone (60% business use)', '$480–$720', '$73–$110'],
                   ['Insulated bags and equipment', '$100–$300', '$15–$46'],
                   ['Parking and tolls', '$200–$600', '$31–$92'],
@@ -170,7 +170,7 @@ export default function InstacartTaxDeductions2026() {
             Track every mile with an app like MileIQ or Stride. The IRS requires a mileage log with date, destination, and business purpose. On <strong style={{ color: '#e8b84b' }}>15,000 miles</strong>, your deduction is <strong style={{ color: '#e8edf8' }}>$10,875–$11,400</strong> — saving roughly $1,537–$1,611 in SE tax alone.
           </p>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Instacart tax calculator</a> to enter your mileage and get your exact tax estimate.
+            Use the <a href="/instacart" style={{ color: '#e8b84b', textDecoration: 'none' }}>free Instacart tax calculator</a> for a planning estimate. State tax is simplified and the result is not a complete tax return.
           </p>
         </section>
 
@@ -238,7 +238,7 @@ export default function InstacartTaxDeductions2026() {
               'Open a separate savings account and transfer 25% of each payout immediately',
               'Use the safe harbor rule: pay 100% of prior year tax to avoid penalties',
               'Download the IRS2Go app to pay directly from your phone',
-              'Use the free Instacart tax calculator to get your exact quarterly amount',
+              'Use the free Instacart tax calculator for a planning estimate of your quarterly amount',
             ].map((item, i) => (
               <li key={i} style={{ color: '#C8D8EC', fontSize: 14, lineHeight: 1.7 }}>{item}</li>
             ))}

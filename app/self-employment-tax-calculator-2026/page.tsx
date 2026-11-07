@@ -69,7 +69,7 @@ export default function SECalculatorPage() {
         <div className="se-badge">2026 · IRS-based estimate · Free</div>
         <h1 className="se-h1">Self-Employment Tax Calculator <em>2026</em></h1>
         <p className="se-lead">
-          Calculate your exact SE tax as a gig worker, freelancer, or independent contractor.
+          Estimate your SE tax as a gig worker, freelancer, or independent contractor.
           Covers Social Security (12.4%), Medicare (2.9%), the 50% SE deduction, and QBI.
           No signup, no paywall — all math runs in your browser.
         </p>
@@ -79,7 +79,7 @@ export default function SECalculatorPage() {
           Self-employment tax is <strong style={{color:'#e8b84b'}}>15.3%</strong> on 92.35% of net profit — you pay both sides of FICA. On $60,000 net income, SE tax alone is <strong style={{color:'#e8b84b'}}>$8,478</strong>. The 50% SE deduction and QBI deduction reduce your federal income tax on top of that.
         </div>
         <div style={{fontSize:12,color:'rgba(255,255,255,0.45)',marginBottom:20}}>
-          Last updated: May 2026 · By the GigWiseTax Team
+          Last updated: November 7, 2026 · By the GigWiseTax Team
         </div>
         {/* KEY TAKEAWAYS */}
         <div style={{background:'rgba(232,184,75,0.08)',border:'1px solid rgba(232,184,75,0.25)',borderRadius:8,padding:'16px 20px',marginBottom:28}}>
@@ -171,8 +171,8 @@ export default function SECalculatorPage() {
         </div>
 
         <div className="cta-box">
-          <h2>Ready to calculate your exact gig tax?</h2>
-          <p>Select your platform for a precise breakdown including mileage, expenses, and quarterly payments.</p>
+          <h2>Ready to estimate your gig taxes?</h2>
+          <p>Select your platform for a planning estimate that includes mileage, expenses, and quarterly payments.</p>
           <Link href="/doordash" className="cta-btn">Start with DoorDash →</Link>
         </div>
 

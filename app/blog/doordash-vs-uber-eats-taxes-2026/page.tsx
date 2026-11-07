@@ -26,7 +26,7 @@ export default function DoorDashVsUberEatsPost() {
       <article itemScope itemType="https://schema.org/BlogPosting">
       
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"DoorDash vs Uber Eats Taxes 2026","item":"https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026"}]}` }} />
-      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"DoorDash vs Uber Eats Taxes 2026: Which Platform Pays More After Tax?","description":"Full 2026 tax comparison for DoorDash and Uber Eats drivers.","url":"https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026","datePublished":"2026-05-13","dateModified":"2026-05-13","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"DoorDash vs Uber Eats Taxes 2026: Which Platform Pays More After Tax?","description":"Full 2026 tax comparison for DoorDash and Uber Eats drivers.","url":"https://www.gigwisetax.com/blog/doordash-vs-uber-eats-taxes-2026","datePublished":"2026-05-13","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 28px' }}>
@@ -73,6 +73,7 @@ export default function DoorDashVsUberEatsPost() {
         <p style={p}>You pay <strong>self-employment tax of 15.3%</strong> (12.4% Social Security + 2.9% Medicare) on net profit. You can deduct 50% of SE tax from gross income. Then pay federal income tax on the remainder at your marginal rate.</p>
 
         <h2 style={h2}>2026 Tax Comparison: $40K DoorDash vs $35K Uber Eats</h2>
+        <p style={p}>Illustration assumes a single filer, $600 in other business expenses, 20,000 business miles all driven January–June, no other income, credits, or state tax. It uses the 2026 standard deduction and simplified federal brackets, and does not apply QBI or tip deductions; actual results depend on the full return.</p>
         <div style={{ overflowX: 'auto', marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
@@ -85,17 +86,17 @@ export default function DoorDashVsUberEatsPost() {
             <tbody>
               {[
                 ['Gross Income','$40,000','$35,000'],
-                ['Mileage Deduction (20K mi @ 72.5¢)','−$14,500–$15,200','−$14,500–$15,200'],
+                ['Mileage Deduction (20K mi @ 72.5¢)','−$14,500','−$14,500'],
                 ['Phone & App Deduction','−$600','−$600'],
                 ['Net Profit','$24,900','$19,900'],
-                ['SE Tax (15.3%)','$3,810','$3,045'],
-                ['50% SE Deduction','−$1,905','−$1,523'],
-                ['Federal Taxable Income','$23,000','$18,377'],
-                ['Standard Deduction 2026','−$16,100','−$16,100'],
-                ['Income After Std Deduction','$6,900','$2,277'],
-                ['Federal Income Tax (10%)','$690','$228'],
-                ['Total Federal Tax','$4,500','$3,273'],
-                ['Est. Quarterly Payment','$1,125','$818'],
+                ['SE tax (15.3% × 92.35% of profit)','$3,516','$2,812'],
+                ['Half-SE-tax deduction','−$1,758','−$1,406'],
+                ['Income after half-SE deduction','$23,142','$18,494'],
+                ['2026 standard deduction','−$16,100','−$16,100'],
+                ['Taxable income','$7,042','$2,394'],
+                ['Federal income tax (estimated)','$704','$239'],
+                ['Total federal tax','$4,220','$3,051'],
+                ['Quarterly amount (one-fourth)','$1,055','$763'],
               ].map(([label, dd, ue]) => (
                 <tr key={label} style={{ borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
                   <td style={{ padding: '9px 14px', color: 'rgba(255,255,255,0.8)' }}>{label}</td>
@@ -108,7 +109,7 @@ export default function DoorDashVsUberEatsPost() {
         </div>
 
         <h2 style={h2}>Mileage Deduction: The Key Difference</h2>
-        <p style={p}>The <strong>IRS mileage rate for 2026 is 72.5¢ per mile</strong>. This is identical for DoorDash and Uber Eats. A driver doing 20,000 business miles deducts $14,500–$15,200 — the single largest deduction available. Track every mile from the moment you open the app to your last drop-off.</p>
+        <p style={p}>The <strong>IRS mileage rate for 2026 is 72.5¢ per mile for January–June and 76¢ for July–December</strong>. If all 20,000 business miles were driven in one period, the deduction is $14,500 or $15,200, respectively. Calculate mixed-year miles by period. Track eligible business miles and keep a contemporaneous log.</p>
         <p style={p}>DoorDash drivers typically drive more miles per order (suburban markets, longer distances). Uber Eats skews toward urban areas with shorter routes. More miles = larger deduction = lower taxes.</p>
 
         <h2 style={h2}>Which Platform Is Better After Taxes?</h2>
@@ -123,7 +124,7 @@ export default function DoorDashVsUberEatsPost() {
         <div style={{ display: 'flex', flexDirection: 'column' as const, gap: 12, marginBottom: 24 }}>
           {[
             { q: 'Do DoorDash and Uber Eats drivers pay the same taxes?', a: 'Yes. Both are 1099 self-employment income. SE tax is 15.3% on net profit for both platforms.' },
-            { q: 'How much tax on $40,000 DoorDash income?', a: 'After mileage deduction (~$14,500–$15,200) and standard deduction ($16,100), total SE tax plus federal income tax is roughly $4,200–$4,400 for a single filer in 2026 (no state tax, no other income).' },
+            { q: 'How much tax on $40,000 DoorDash income?', a: 'In the article illustration ($40,000 gross, $14,500 mileage, $600 other business expenses, single filer, no other income, credits, or state tax), estimated self-employment and federal income taxes total about $4,220. Actual tax depends on the full return.' },
             { q: 'Can I deduct mileage for both platforms?', a: 'Yes. Track miles separately per platform but deduct total business miles at 72.5¢–76¢/mile on one Schedule C (or two if you keep separate books).' },
             { q: 'Do I get a 1099 from both DoorDash and Uber Eats?', a: 'Yes, if you earn over $2,000 from each platform. Both issue 1099-NEC forms by January 31 of the following year.' },
             { q: 'Should I drive for both DoorDash and Uber Eats?', a: 'Dual-apping is legal and common. It maximizes hourly earnings. Both income streams go on the same Schedule C as self-employment income.' },

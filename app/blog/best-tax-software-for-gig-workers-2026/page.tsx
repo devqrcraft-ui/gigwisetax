@@ -21,7 +21,7 @@ export default function BestTaxSoftware() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Best Tax Software for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/best-tax-software-for-gig-workers-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Tax Software for Gig Workers 2026 — Ranked & Compared","description":"Compare TurboTax, FreeTaxUSA, TaxAct and H&R Block for 1099 gig workers in 2026. See which saves you the most on self-employment taxes.","url":"https://www.gigwisetax.com/blog/best-tax-software-for-gig-workers-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Best Tax Software for Gig Workers 2026 — Ranked & Compared","description":"Compare TurboTax, FreeTaxUSA, TaxAct and H&R Block for 1099 gig workers in 2026. See which saves you the most on self-employment taxes.","url":"https://www.gigwisetax.com/blog/best-tax-software-for-gig-workers-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <article itemScope itemType="https://schema.org/BlogPosting">
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -39,13 +39,13 @@ export default function BestTaxSoftware() {
           Top picks for gig workers in 2026: TurboTax Self-Employed at $119 handles Schedule C automatically. FreeTaxUSA at $0 federal is best for simple 1099 filers. TaxAct Self-Employed at $64.95 splits the middle. All three support mileage import and SE tax calculation. Choose based on your deduction complexity — most gig workers save $200–$800 using the right software.
         </p>
       </div>
-          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, maxWidth: 760, margin: 0 }}>Updated May 2026. TurboTax Self-Employed, FreeTaxUSA, TaxAct and H&R Block compared on price, Schedule C support, mileage handling and audit protection.</p>
+          <p style={{ color: 'rgba(255,255,255,.55)', fontSize: 14, lineHeight: 1.8, maxWidth: 760, margin: 0 }}>Last updated: November 7, 2026. TurboTax Self-Employed, FreeTaxUSA, TaxAct and H&R Block compared on price, Schedule C support, mileage handling and audit protection.</p>
                 {/* AUTHOR BOX */}
             <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 8, padding: 16, marginBottom: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
               <div>
                 <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Last updated: November 7, 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
               </div>
             </div>
     </div>
@@ -95,7 +95,7 @@ export default function BestTaxSoftware() {
         <p style={prose}>The OBBBA 2026 made three changes affecting every 1099 worker: the 20% QBI deduction is now permanent, tips up to $25,000 are deductible from federal taxable income, and the standard mileage rate increased to 72.5 cents per mile (January–June; 76 cents from July 1). All four software options handle these correctly.</p>
         <div style={{ marginTop: 32, padding: '20px 24px', background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 12 }}>
           <div style={{ fontSize: 15, fontWeight: 800, color: '#e8b84b', marginBottom: 6 }}>Estimate your tax bill first</div>
-          <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Use our free gig tax calculator to see your exact quarterly payment before you file. Takes 60 seconds.</div>
+          <div style={{ fontSize: 14, color: '#8fa8c8', marginBottom: 14, lineHeight: 1.6 }}>Use our free gig tax calculator for a planning estimate of your quarterly payment before you file. Takes 60 seconds.</div>
           <a href='/doordash' style={{ display: 'inline-block', background: '#e8b84b', color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 8, textDecoration: 'none' }}>Calculate my gig taxes free</a>
         </div>
       </div>

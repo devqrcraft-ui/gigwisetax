@@ -17,7 +17,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Self-Employment Tax Rate 2026","item":"https://www.gigwisetax.com/blog/self-employment-tax-rate-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-Employment Tax Rate 2026: 15.3% Explained + How to Reduce It","datePublished":"2026-05-21","dateModified":"2026-05-21","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/self-employment-tax-rate-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-Employment Tax Rate 2026: 15.3% Explained + How to Reduce It","datePublished":"2026-05-21","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/self-employment-tax-rate-2026"}}'
 
 export default function SelfEmploymentTaxRate2026() {
   return (
@@ -45,7 +45,7 @@ export default function SelfEmploymentTaxRate2026() {
           </h1>
 
           <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
-            <span>Last updated: May 2026</span>
+            <span>Last updated: November 7, 2026</span>
             <span>·</span>
             <span>By the GigWiseTax Team</span>
             <span>·</span>
@@ -174,7 +174,7 @@ export default function SelfEmploymentTaxRate2026() {
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.75)', marginBottom:24}}>
             {'Use our free '}
             <a href="/1099-tax-calculator-2026" style={{color:'#e8b84b'}}>1099 tax calculator</a>
-            {' to get your exact SE tax in under 60 seconds — including state taxes.'}
+            {' to estimate your SE tax in under 60 seconds — including a simplified state amount.'}
           </p>
         </section>
 
@@ -240,7 +240,7 @@ export default function SelfEmploymentTaxRate2026() {
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'Mileage: 72.5 cents/mile (January–June; 76 cents from July 1) × 10,000 miles = $7,250–$7,600 deduction — saves $1,024 in SE tax'}</li>
+            <li>{'Mileage: for 10,000 business miles driven entirely in one period, the deduction is $7,250 (Jan–Jun) or $7,600 (Jul–Dec); estimated SE-tax component reduction is about $1,024 or $1,074 below the Social Security wage limit. Federal income-tax effects are separate.'}</li>
             <li>{'Phone: 60% of $100/month bill = $720/year deduction — saves $102 in SE tax'}</li>
             <li>{'Health insurance: $300/month = $3,600/year — saves $509 in SE tax'}</li>
             <li>{'Home office: 200 sq ft × $5 = $1,000 deduction — saves $141 in SE tax'}</li>

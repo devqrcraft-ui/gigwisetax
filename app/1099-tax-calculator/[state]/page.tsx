@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
       ? `Free ${s.name} 1099 tax calculator for 2026. Shows federal income tax and self-employment tax only; California state tax is not modeled or included in the subtotal.`
       : noTax
       ? `Free ${s.name} 1099 tax calculator for 2026 gig workers. See your self-employment and federal income taxes on 1099 income — with no state income tax in ${s.name}. Simple, fast and 100% private.`
-      : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. No signup, no data stored.`,
+      : `Free ${s.name} 1099 tax calculator for 2026. Estimate self-employment tax (15.3%), federal income tax and ${s.name} state tax on your 1099 income as a gig worker or freelancer. no signup; calculator inputs stay in your browser.`,
     alternates: { canonical: `https://www.gigwisetax.com/1099-tax-calculator/${stateSlug}` },
   }
 }

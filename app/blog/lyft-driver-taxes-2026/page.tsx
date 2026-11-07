@@ -12,7 +12,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Lyft Driver Taxes 2026","item":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/lyft-driver-taxes-2026"}}'
 
 export default function LyftTaxes2026() {
   return (
@@ -39,7 +39,7 @@ export default function LyftTaxes2026() {
             Lyft Driver Taxes 2026: $35K Income = $6,669 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Last updated: November 7, 2026</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
@@ -49,7 +49,7 @@ export default function LyftTaxes2026() {
         <section id="answer-first">
           <div style={{ background: 'rgba(232,184,75,0.06)', borderLeft: '3px solid #e8b84b', borderRadius: '0 6px 6px 0', padding: '16px 20px', marginBottom: 28 }}>
             <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, margin: 0 }}>
-              Lyft drivers owe self-employment tax plus federal income tax as independent contractors. On $35,000 net income in 2026: approximately $4,945 SE tax + $1,723 federal income tax = <strong style={{ color: '#e8edf8' }}>$6,669 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,667</strong>. The mileage deduction at 72.5¢–76¢/mile is the largest available write-off — 10,000 miles eliminates $7,250–$7,600 from taxable income.
+              Lyft drivers owe self-employment tax plus federal income tax as independent contractors. On $35,000 net income in 2026: approximately $4,945 SE tax + $1,723 federal income tax = <strong style={{ color: '#e8edf8' }}>$6,669 total</strong>. Quarterly estimated payment: <strong style={{ color: '#e8b84b' }}>$1,667</strong>. The mileage deduction is a major write-off: if all 10,000 business miles were driven in one period, it is $7,250 for Jan–Jun or $7,600 for Jul–Dec; calculate mixed-year miles by period.
             </p>
           </div>
         </section>
@@ -161,13 +161,13 @@ export default function LyftTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            The mileage deduction is the most valuable. A driver logging 20,000 miles per year deducts <strong style={{ color: '#e8edf8' }}>$14,500–$15,200</strong> — enough to drop from the 22% bracket to the 12% bracket on $35K gross income.
+            The mileage deduction is one of the largest business deductions. If all 20,000 business miles were driven in one period, the deduction is <strong style={{ color: '#e8edf8' }}>$14,500 for Jan–Jun or $15,200 for Jul–Dec</strong>. It reduces business profit; the effect on tax depends on the full return.
           </p>
           <div style={{ overflowX: 'auto' as const, marginBottom: 24, borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse' as const, fontSize: 13 }}>
               <thead>
                 <tr>
-                  {['Annual Miles', 'Mileage Deduction', 'Tax Saved (22%)'].map(h => (
+                  {['Miles (Jan–Jun at 72.5¢)', 'Mileage Deduction', 'Illustrative Amount at 22%'].map(h => (
                     <th key={h} style={{ background: 'rgba(255,255,255,0.05)', color: '#e8b84b', padding: '10px 14px', textAlign: 'left' as const, fontSize: 12, fontFamily: 'monospace', letterSpacing: '0.04em', borderBottom: '1px solid rgba(232,184,75,0.2)' }}>{h}</th>
                   ))}
                 </tr>

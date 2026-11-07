@@ -5,7 +5,7 @@ import AuthorBox from '@/app/components/AuthorBox';
 
 export const metadata: Metadata = {
   title: '1099 Tax Calculator 2026 — Self-Employment & SE Tax for All 50 States + DC',
-  description: 'Free 1099 tax calculator for U.S. gig workers and freelancers. Estimate self-employment tax, federal and state income tax for all 50 states + DC in 2026. No signup, no data stored.',
+  description: 'Free 1099 tax calculator for U.S. gig workers and freelancers. Estimate self-employment tax, federal and state income tax for all 50 states + DC in 2026. no signup; calculator inputs stay in your browser.',
   alternates: { canonical: 'https://www.gigwisetax.com/1099-tax-calculator-2026' },
 };
 

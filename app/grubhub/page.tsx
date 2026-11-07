@@ -26,7 +26,7 @@ const DEDUCTIONS = [
 const FAQ = [
   { q:'Does Grubhub take out taxes?', a:'No. Grubhub pays drivers as independent contractors and does not withhold federal, state, or FICA taxes. You are responsible for paying all taxes yourself, including self-employment tax.' },
   { q:'Will Grubhub send me a 1099?', a:'Yes, if you earn $20,000 or more across more than 200 transactions. You will receive a 1099-NEC (or 1099-K if paid through payment processors). You must report all income even if under $2,000.' },
-  { q:'How much should I set aside for Grubhub taxes?', a:'Most Grubhub drivers should set aside 25–30% of their net earnings. Use this calculator to get your exact estimate based on your state and filing status.' },
+  { q:'How much should I set aside for Grubhub taxes?', a:'The amount depends on your full tax situation. Use this calculator for a planning estimate based on your entries; its state amount is simplified and is not a full state tax calculation.' },
   { q:'Can I deduct the miles I drive waiting for orders?', a:'No. The IRS standard mileage deduction applies from the moment you accept an order (or activate your hotspot) to when you complete delivery. Personal miles and waiting miles generally do not count.' },
   { q:'What is the difference between Grubhub and DoorDash taxes?', a:'The tax rules are identical — both classify drivers as independent contractors subject to 15.3% SE tax. The difference is only in your income amount and the deductions each platform\'s expenses create.' },
 ]

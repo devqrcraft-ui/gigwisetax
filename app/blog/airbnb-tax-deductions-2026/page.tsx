@@ -69,7 +69,7 @@ export default function AirbnbTaxDeductions2026() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Airbnb Tax Deductions 2026: Complete Host Checklist + Calculator","item":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Host Checklist","description":"Potential Airbnb rental expenses, allocation rules, and recordkeeping for 2026. Eligibility depends on property use and tax treatment.","url":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-11-02","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Airbnb Tax Deductions 2026: Host Checklist","description":"Potential Airbnb rental expenses, allocation rules, and recordkeeping for 2026. Eligibility depends on property use and tax treatment.","url":"https://www.gigwisetax.com/blog/airbnb-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       {/* HERO */}
       <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -104,7 +104,7 @@ export default function AirbnbTaxDeductions2026() {
             <div style={{ background: 'rgba(232,184,75,0.08)', border: '1px solid rgba(232,184,75,0.25)', borderRadius: 6, padding: 18, marginBottom: 28, display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' as const }}>
               <div style={{ flex: 1 }}>
                 <div style={{ fontWeight: 800, color: '#e8b84b', fontSize: 15, marginBottom: 4 }}>Free Airbnb Tax Calculator 2026</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Enter your rental income → see exact taxes owed in your state. No signup.</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.7)' }}>Enter your rental income for a planning estimate that includes a simplified state amount. No signup.</div>
               </div>
               <a href="/airbnb" style={{ textDecoration: 'none', background: '#e8b84b', color: '#07111F', padding: '10px 20px', borderRadius: 4, fontWeight: 800, fontSize: 14, whiteSpace: 'nowrap' as const }}>Calculate Now →</a>
             </div>
@@ -252,7 +252,7 @@ export default function AirbnbTaxDeductions2026() {
               <div style={{ width: 44, height: 44, borderRadius: '50%', background: '#e8b84b', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 900, fontSize: 18, color: '#07111F', flexShrink: 0 }}>G</div>
               <div>
                 <div style={{ fontWeight: 700, color: '#fff', marginBottom: 4 }}>GigWiseTax Editorial Team</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Updated May 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
+                <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Tax estimates reviewed against IRS.gov, SSA.gov, and state revenue department sources. Last updated: November 7, 2026. Not tax advice — consult a licensed CPA for your specific situation.</div>
               </div>
             </div>
               <strong>Disclaimer:</strong> Informational purposes only. Consult a licensed CPA for your specific situation. Not affiliated with Airbnb or the IRS.

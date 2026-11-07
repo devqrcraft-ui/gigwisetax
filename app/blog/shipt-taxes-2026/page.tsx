@@ -15,7 +15,7 @@ const faqSchema = JSON.stringify({"@context":"https://schema.org","@type":"FAQPa
 
 const breadcrumbSchema = JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Shipt Taxes 2026","item":"https://www.gigwisetax.com/blog/shipt-taxes-2026"}]})
 
-const articleSchema = JSON.stringify({"@context":"https://schema.org","@type":"BlogPosting","headline":"Shipt Shopper Taxes 2026 — Free Tax Calculator + Complete Guide","datePublished":"2026-02-01","dateModified":"2026-06-10","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/shipt-taxes-2026"}})
+const articleSchema = JSON.stringify({"@context":"https://schema.org","@type":"BlogPosting","headline":"Shipt Shopper Taxes 2026 — Free Tax Calculator + Complete Guide","datePublished":"2026-02-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/shipt-taxes-2026"}})
 
 const orgSchema = JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com","logo":"https://www.gigwisetax.com/og-image.png","description":"Free gig worker tax calculators and guides for US independent contractors"})
 
@@ -49,7 +49,7 @@ export default function ShiptTaxes2026() {
           </h1>
 
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: June 10, 2026</span>
+            <span>Last updated: November 7, 2026</span>
             <span>·</span>
             <span>By the GigWiseTax Team</span>
             <span>·</span>
@@ -184,7 +184,7 @@ export default function ShiptTaxes2026() {
               </thead>
               <tbody>
                 {[
-                  ['Vehicle mileage','$7,250–$14,500–$15,200','72.5¢–76¢/mile × 10k–20k miles'],
+                  ['Vehicle mileage (10,000 business miles in one period)','$7,250 Jan–Jun / $7,600 Jul–Dec','72.5¢/mile Jan–Jun or 76¢/mile Jul–Dec; calculate mixed-year miles by period'],
                   ['Insulated bags & coolers','$50–$200','Required for grocery delivery'],
                   ['Phone (50-80%)','$300–$600','Business portion only'],
                   ['Half SE tax deduction','$2,472','Auto-deducted on Form 1040'],

@@ -1,10 +1,25 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/privacy' },
   title: 'Privacy Policy — GigWiseTax.com',
-  description: 'Privacy policy for GigWiseTax.com. We store no personal data. No registration required. Learn how we handle your information.',
+  description: 'Learn how calculator inputs are processed in your browser and how hosting, analytics, and third-party services may process technical data.',
+  openGraph: {
+    title: 'Privacy Policy — GigWiseTax.com',
+    description: 'Learn how calculator inputs are processed in your browser and how hosting, analytics, and third-party services may process technical data.',
+    url: 'https://www.gigwisetax.com/privacy',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — GigWiseTax.com',
+    description: 'Learn how calculator inputs are processed in your browser and how hosting, analytics, and third-party services may process technical data.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function PrivacyPage() {
@@ -22,7 +37,7 @@ export default function PrivacyPage() {
             <Link href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</Link> › Privacy Policy
           </div>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: '#fff', lineHeight: 1.2, margin: 0 }}> Privacy Policy</h1>
-          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: October 23, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
+          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 10, marginBottom: 0 }}>Last updated: November 7, 2026 &nbsp;·&nbsp; Effective: January 1, 2026</p>
         </div>
       </div>
 
@@ -31,7 +46,7 @@ export default function PrivacyPage() {
         <div style={{ background: 'rgba(5,150,105,0.12)', border: '1px solid rgba(74,222,128,0.25)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
           <div style={{ fontSize: 15, fontWeight: 700, color: '#4ade80', marginBottom: 6 }}> The Short Version</div>
           <div style={{ fontSize: 14, color: '#4ade80', lineHeight: 1.7 }}>
-            GigWiseTax.com does <strong>not</strong> collect, store, or transmit any personal data. All calculations run entirely in your browser. We have no user accounts. If you click a sponsored link, that partner and its network, not GigWiseTax, may collect data such as your IP address (see Section 5). We cannot see your income or tax figures — ever.
+            Calculator values are processed in your browser and are not submitted by the calculator to our application. Separately, our hosting provider may create technical access logs, and Vercel Analytics is enabled to measure site usage (see Sections 5 and 6). We do not receive your income or tax figures through the calculator.
           </div>
         </div>
 
@@ -43,14 +58,12 @@ export default function PrivacyPage() {
           </div>
 
           <div style={section}>
-            <h2 style={h2}>2. Information We Do NOT Collect</h2>
-            <p style={p}>We do not collect any of the following:</p>
+            <h2 style={h2}>2. Information Processed Locally</h2>
+            <p style={p}>The calculator uses earnings, mileage, filing status, and state information you enter, but processes those values in your browser and does not submit them to GigWiseTax's application servers. We do not ask for:</p>
             <ul style={{ paddingLeft: 24 }}>
               {[
                 'Your name, email address, or contact information',
-                'Your income, tax figures, or financial data entered into our calculators',
                 'Your Social Security Number or any government ID',
-                'Your precise location (only the state you select in the calculator dropdown)',
                 'Payment or credit card information',
               ].map(item => <li key={item} style={li}>{item}</li>)}
             </ul>
@@ -58,27 +71,23 @@ export default function PrivacyPage() {
 
           <div style={section}>
             <h2 style={h2}>3. How Our Calculators Work</h2>
-            <p style={p}>All tax calculations on GigWiseTax.com are performed entirely client-side — meaning they happen in your web browser using JavaScript. The numbers you enter into our calculator fields are never sent to our servers. When you close your browser tab, all data is gone permanently.</p>
+            <p style={p}>The tax calculations are performed in your browser using JavaScript. The calculator code does not submit the values in its fields to our application servers. Hosting logs and analytics may process technical information about page requests or usage, as described below. Values remain in page state until the page is reloaded or closed. Changing the state on the DoorDash calculator opens a state-specific page and clears the current inputs; the page asks for confirmation first if you have entered values.</p>
           </div>
 
           <div style={section}>
             <h2 style={h2}>4. Cookies</h2>
-            <p style={p}>We use only <strong>functional cookies</strong> that are strictly necessary for the website to operate. GigWiseTax itself does not set advertising cookies or use tracking pixels or third-party profiling. Partners you reach through sponsored links, and the Awin network that serves the banner on one guide page, may set their own cookies (see Section 5). The cookies we may use include:</p>
-            <ul style={{ paddingLeft: 24 }}>
-              <li style={li}><strong>Session cookies</strong> — temporary and deleted when you close your browser</li>
-              <li style={li}><strong>Preference cookies</strong> — may store your selected state or filing status locally in your browser (not transmitted to us)</li>
-            </ul>
+            <p style={p}>GigWiseTax does not use advertising cookies or tracking pixels in the calculator. Vercel Analytics and third-party services may use technical mechanisms to provide their services; see Sections 5 and 6 and the providers' privacy policies. Partners you reach through sponsored links, and the Awin network that serves the banner on one guide page, may set their own cookies.</p>
           </div>
 
           <div style={section}>
             <h2 style={h2}>5. Third-Party Services</h2>
-            <p style={p}>We display clearly labelled sponsored links and, on a few guide and tool pages, one sponsored banner per page from third-party companies. Current partners: Community Tax and Online Check Writer through the Awin network, and Liberty Tax through Commission Junction (shown during filing season). When you click a sponsored link you leave GigWiseTax: the partner and its network may set their own cookies and measure the click, and we may earn a commission. The banner images on those pages are loaded from the Awin network, so Awin can see your IP address and browser details when such a page loads. We do not send your calculator inputs, income or any personal information to these companies. Their handling of data is described in their own privacy policies.</p>
-            <p style={p}>We use <strong>Vercel</strong> to host our website. Vercel may collect standard server access logs (IP address, browser type, pages visited) for security and performance. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>Vercel's Privacy Policy</a>.</p>
+            <p style={p}>We display clearly labelled sponsored links and, on a few guide and tool pages, one sponsored banner per page from third-party companies. Current partners: Community Tax and Online Check Writer through the Awin network, and Liberty Tax through Commission Junction (shown during filing season). When you click a sponsored link you leave GigWiseTax: the partner and its network may set their own cookies and measure the click, and we may earn a commission. The banner images on those pages are loaded from the Awin network, so Awin can see your IP address and browser details when such a page loads. GigWiseTax does not intentionally send calculator inputs or income values to these companies. Their handling of data is described in their own privacy policies.</p>
+            <p style={p}>We use <strong>Vercel</strong> to host our website. Vercel may process standard request information, such as IP address, browser details, and requested pages, for hosting, security, and performance. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>Vercel's Privacy Policy</a>.</p>
           </div>
 
           <div style={section}>
             <h2 style={h2}>6. Analytics</h2>
-            <p style={p}>We may use privacy-respecting analytics (such as aggregate page view counts) to understand which calculators are most useful. Any analytics we use do not track individual users and do not include personally identifiable information.</p>
+            <p style={p}>Vercel Analytics is enabled to measure site usage. Vercel may process page-view, device, referral, and related technical telemetry under its own privacy terms. We do not send calculator field values to Analytics or receive tax amounts from these measurements. See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style={{ color: '#B22234' }}>Vercel's Privacy Policy</a>.</p>
           </div>
 
           <div style={section}>
@@ -88,7 +97,7 @@ export default function PrivacyPage() {
 
           <div style={section}>
             <h2 style={h2}>8. HTTPS & Security</h2>
-            <p style={p}>All pages on GigWiseTax.com are served over HTTPS (TLS encryption). Since we do not transmit your financial data, there is no sensitive data at risk of interception.</p>
+            <p style={p}>GigWiseTax pages are served over HTTPS (TLS encryption). The calculator does not submit its financial input values to our application servers; if you follow an external link, that provider's privacy practices apply.</p>
           </div>
 
           <div style={section}>

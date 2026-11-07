@@ -629,7 +629,7 @@ export default function HomeClient() {
           <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
             <div style={{ fontSize: 13, fontWeight: 700, color: '#8fa8c8', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
             <div style={{ fontSize: 12, color: '#c8d8ec', lineHeight: 1.7, textAlign: 'left' as const }}>
-              GigWiseTax.com is an independent, free estimation tool. Not affiliated with the IRS or any government agency. No personal data is stored. Results are estimates only — not tax advice.
+              GigWiseTax.com is an independent, free estimation tool. Not affiliated with the IRS or any government agency. Calculator inputs stay in your browser; hosting and analytics may process technical data. Results are estimates only — not tax advice.
             </div>
             <div style={{ marginTop: 12, display: 'flex', gap: 16 }}>
               {[['Privacy','/privacy'],['Terms','/terms'],['Contact','/contact']].map(([l, h]) => (

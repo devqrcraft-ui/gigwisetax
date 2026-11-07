@@ -12,7 +12,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Upwork Taxes 2026","item":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Upwork Taxes 2026: $60K Income = $12,989 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-05-27","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Upwork Taxes 2026: $60K Income = $12,989 Tax Owed","datePublished":"2026-05-27","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/upwork-taxes-2026"}}'
 
 export default function UpworkTaxes2026() {
   return (
@@ -39,7 +39,7 @@ export default function UpworkTaxes2026() {
             Upwork Taxes 2026: $60K Income = $12,989 Tax Owed
           </h1>
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Last updated: November 7, 2026</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
@@ -228,7 +228,7 @@ export default function UpworkTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            On $60,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$3,247</strong>. After deductions, your actual payment will be lower. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide</a> to calculate your exact amount.
+            On $60,000 net income, each payment is approximately <strong style={{ color: '#e8edf8' }}>$3,247</strong> before considering other return details. Use the <a href="/blog/quarterly-taxes-gig-workers" style={{ color: '#e8b84b', textDecoration: 'none' }}>quarterly tax guide</a> to estimate your amount after deductions.
           </p>
         </section>
 

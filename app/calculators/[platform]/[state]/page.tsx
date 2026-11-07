@@ -278,9 +278,9 @@ export default async function CalculatorPage({ params }: RouteProps) {
           {/* CTA */}
           <div style={{ background: "#1a1a2e", borderRadius: 6, padding: "24px 28px", textAlign: "center" }}>
             <h3 style={{ color: "#fff", fontWeight: 800, fontSize: 20, marginBottom: 10 }}>
-              Calculate Your Exact {p.name} Tax in {s.name}
+              Estimate Your {p.name} Tax in {s.name}
             </h3>
-            <p style={{ color: "rgba(255,255,255,.5)", fontSize: 14, marginBottom: 18 }}>Enter your income and get your exact quarterly payment amount. Free, no signup.</p>
+            <p style={{ color: "rgba(255,255,255,.5)", fontSize: 14, marginBottom: 18 }}>Enter your income for a planning estimate of your quarterly payment. Free, no signup.</p>
             <Link href="/" style={{ background: "#B22234", color: "#fff", padding: "13px 32px", borderRadius: 4, fontSize: 15, fontWeight: 800, textDecoration: "none", display: "inline-block" }}>
               Open Free Calculator →
             </Link>

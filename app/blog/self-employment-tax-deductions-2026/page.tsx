@@ -2,25 +2,35 @@ import AuthorBox from '@/app/components/AuthorBox'
 import TaxFreshness from '@/app/components/TaxFreshness'
 import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026' },
   title: 'Self-Employment Tax Deductions 2026 — Complete List | GigWiseTax',
-  description: 'Every tax deduction available to gig workers and self-employed in 2026. Mileage, home office, health insurance, QBI deduction, and more.',
+  description: 'A guide to common 2026 deductions for gig workers, including mileage, home office, health insurance, and QBI eligibility limits.',
   keywords: 'self employment tax deductions 2026, gig worker deductions, 1099 deductions, schedule C deductions',
   openGraph: {
     title: 'Self-Employment Tax Deductions 2026 — Complete List',
-    description: "Don't overpay. Every deduction for DoorDash, Uber, Etsy, OnlyFans creators in 2026.",
+    description: 'A guide to common 2026 deductions for gig workers, including mileage, home office, health insurance, and QBI eligibility limits.',
+    url: 'https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
     type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Self-Employment Tax Deductions 2026 — Complete List | GigWiseTax',
+    description: 'A guide to common 2026 deductions for gig workers, including mileage, home office, health insurance, and QBI eligibility limits.',
+    images: ['/og-image.png'],
   },
 }
 
 export default function DeductionsGuide() {
   const deductions = [
-    { name: 'Standard Mileage Rate', amount: '72.5¢ per mile (Jan–Jun) / 76¢ (Jul–Dec)', desc: 'Track every business mile. At 10,000 miles/year = $7,250–$7,600 deduction. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
+    { name: 'Standard Mileage Rate', amount: '72.5¢ per mile (Jan–Jun) / 76¢ (Jul–Dec)', desc: 'Track every business mile. If all 10,000 miles were driven in one period, the deduction is $7,250 for Jan–Jun or $7,600 for Jul–Dec; calculate mixed-year miles by period. Use a mileage app or Google Maps logs.', tag: 'Most Popular' },
     { name: 'Home Office Deduction', amount: 'Up to $1,500/year', desc: 'Simplified: $5/sq ft (max 300 sq ft). Regular method: % of rent, utilities, internet. Must be used exclusively for business.', tag: '' },
     { name: 'Phone & Internet', amount: '50-100% of bill', desc: 'If your phone is used for gig work (DoorDash app, messaging, navigation), deduct the business-use percentage.', tag: '' },
     { name: 'Health Insurance Premiums', amount: '100% deductible', desc: "If you're self-employed and not eligible for employer coverage, deduct 100% of health, dental, and vision premiums paid for yourself and family.", tag: 'Big Savings' },
-    { name: 'QBI Deduction (Section 199A)', amount: 'Up to 20% of net income', desc: 'Qualified Business Income deduction — reduces taxable income by up to 20% for most gig workers. Phase-outs apply above $201,750 single (taxable income).', tag: 'Big Savings' },
+    { name: 'Qualified Business Income Deduction (Section 199A)', amount: 'Up to 20% of qualified business income', desc: 'Eligible taxpayers may deduct up to 20% of qualified business income, subject to taxable-income limits, thresholds, and other rules. This reduces taxable income, not tax dollar-for-dollar; this calculator does not include QBI.', tag: '' },
     { name: 'SE Tax Deduction', amount: '50% of SE tax', desc: 'You can deduct half of your self-employment tax from gross income. This lowers your adjusted gross income automatically on Schedule 1.', tag: 'Automatic' },
     { name: 'Vehicle Expenses (Actual)', amount: 'Varies', desc: 'Instead of mileage rate, deduct actual costs: gas, insurance, repairs, depreciation. Use whichever gives you a larger deduction.', tag: '' },
     { name: 'Equipment & Tools', amount: 'Full cost (Section 179)', desc: 'Camera, delivery bags, insulated containers, laptop, microphone — fully deductible in the year purchased under Section 179.', tag: '' },
@@ -35,7 +45,7 @@ export default function DeductionsGuide() {
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Self-Employment Tax Deductions 2026 — Complete List","item":"https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-Employment Tax Deductions 2026 — Complete List","description":"Every tax deduction available to gig workers and self-employed in 2026. Mileage, home office, health insurance, QBI deduction, and more.","url":"https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Self-Employment Tax Deductions 2026 — Complete List","description":"A guide to common 2026 deductions for gig workers, including mileage, home office, health insurance, and QBI eligibility limits.","url":"https://www.gigwisetax.com/blog/self-employment-tax-deductions-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
     <main style={{ maxWidth: 800, margin: '0 auto', padding: 'clamp(16px,4vw,32px)', color: 'rgba(255,255,255,0.9)' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
@@ -45,7 +55,7 @@ export default function DeductionsGuide() {
       </nav>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#07111F)', borderRadius: 12, padding: '32px', marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
-        <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete List · Updated 2026</div>
+        <div style={{ fontSize: 13, color: '#a5b4fc', marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Complete List · Updated November 7, 2026</div>
         <h1 style={{ fontSize: 24, fontWeight: 900, lineHeight: 1.2, marginBottom: 16 }}>Self-Employment Tax Deductions 2026</h1>
       {/* ANSWER-FIRST GEO BLOCK */}
       <div style={{ background:'rgba(232,184,75,0.06)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'20px 24px', margin:'24px 0 16px' }}>
@@ -69,7 +79,7 @@ export default function DeductionsGuide() {
         <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
         <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
           <li>Mileage at <strong>72.5¢–76¢/mile</strong> is the single largest deduction for most gig workers in 2026</li>
-          <li>The <strong>20% QBI deduction</strong> is now permanent under OBBBA — saves thousands per year</li>
+          <li>Eligible taxpayers may deduct up to 20% of qualified business income, subject to limits; the deduction reduces taxable income, not tax dollar-for-dollar</li>
           <li>Health insurance premiums are <strong>100% deductible</strong> for self-employed workers</li>
           <li>SEP-IRA contributions (up to $72,000 in 2026, subject to the 25% / self-employed limits) can reduce taxable income</li>
         </ul>

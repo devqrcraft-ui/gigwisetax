@@ -160,7 +160,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
       </div>
 
       <div style={{ background: 'linear-gradient(135deg,#1a1a3e,#0d1117)', borderRadius: 12, padding: 14, border: '1px solid rgba(165,180,252,.2)', textAlign: 'center', marginBottom: 32 }}>
-        <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Calculate Your Exact {PLATFORM_NAME} Taxes in {state.name}</div>
+        <div style={{ fontSize: 20, fontWeight: 800, marginBottom: 8 }}>Estimate Your {PLATFORM_NAME} Taxes in {state.name}</div>
         <p style={{ color: 'rgba(255,255,255,.6)', marginBottom: 16 }}>Free · No signup · Instant results</p>
         <a href={`/${PLATFORM_SLUG}`} style={{ background: '#B22234', color: '#fff', padding: '12px 28px', borderRadius: 6, textDecoration: 'none', fontWeight: 700 }}>
           Open Calculator

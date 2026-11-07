@@ -12,7 +12,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"1099 vs W-2 Taxes 2026","item":"https://www.gigwisetax.com/blog/1099-vs-w2-taxes-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"1099 vs W-2 Taxes 2026: Which Costs You More?","datePublished":"2026-05-21","dateModified":"2026-05-21","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/1099-vs-w2-taxes-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"1099 vs W-2 Taxes 2026: Which Costs You More?","datePublished":"2026-05-21","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/1099-vs-w2-taxes-2026"}}'
 
 export default function Page() {
   return (
@@ -56,7 +56,7 @@ export default function Page() {
           </h1>
 
           <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginBottom: 20, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span>
+            <span>Last updated: November 7, 2026</span>
             <span>·</span>
             <span>By the GigWiseTax Team</span>
             <span>·</span>
@@ -219,7 +219,7 @@ export default function Page() {
           </p>
 
           <ol style={{ margin: '0 0 20px', paddingLeft: 20, lineHeight: 1.95, fontSize: 14, color: 'rgba(255,255,255,0.85)' }}>
-            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage deduction'}</strong>{' — 72.5 cents per mile (January–June; 76 cents from July 1) in 2026. Drive 10,000 miles for work and deduct $7,250–$7,600 from gross income.'}</li>
+            <li><strong style={{ color: '#C8D8EC' }}>{'Mileage deduction'}</strong>{' — 72.5 cents per mile for January–June and 76 cents for July–December 2026. If all 10,000 miles were driven in one period, the deduction is $7,250 or $7,600, respectively; calculate mixed-year miles by period.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Home office'}</strong>{' — $5 per square foot, up to $1,500 (simplified method). Or deduct actual expenses proportionally.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Health insurance'}</strong>{' — 100% of premiums deductible on Schedule 1 if you are not eligible for employer coverage.'}</li>
             <li><strong style={{ color: '#C8D8EC' }}>{'Solo 401(k)'}</strong>{' — Contribute up to $23,500 as employee + 25% of net earnings as employer. Massive taxable income reduction.'}</li>

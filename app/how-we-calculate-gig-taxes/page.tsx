@@ -4,6 +4,21 @@ export const metadata: Metadata = {
   title: 'How We Calculate Gig Worker Taxes 2026 — Methodology | GigWiseTax',
   description: 'See how GigWiseTax estimates Schedule C and rental-income taxes, 2026 federal brackets, simplified state tax, and quarterly payments—with assumptions and limitations.',
   alternates: { canonical: 'https://www.gigwisetax.com/how-we-calculate-gig-taxes' },
+  openGraph: {
+    title: 'How We Calculate Gig Worker Taxes 2026 — Methodology | GigWiseTax',
+    description: 'See our tax-estimation methods, assumptions, sources, and limitations.',
+    url: 'https://www.gigwisetax.com/how-we-calculate-gig-taxes',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How We Calculate Gig Worker Taxes 2026 — Methodology | GigWiseTax',
+    description: 'See our tax-estimation methods, assumptions, sources, and limitations.',
+    images: ['/og-image.png'],
+  },
 };
 
 const CSS = `

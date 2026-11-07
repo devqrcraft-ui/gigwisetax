@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates | GigWiseTax',
-  description: 'All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 15, September 15, January 15 2027. Miss one and pay a 7% penalty.',
+  description: '2026 quarterly estimated tax deadlines for gig workers, plus how IRS underpayment charges depend on the unpaid amount, timing, and applicable rate.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026' },
 }
 
@@ -22,7 +22,7 @@ export default function Page() {
     <>
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","item":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","description":"All four IRS estimated tax deadlines for gig workers in 2026: April 15, June 15, September 15, January 15 2027. Miss one and pay a 7% penalty.","url":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Gig Worker Tax Deadlines 2026 — Quarterly Payment Dates","description":"2026 quarterly estimated tax deadlines for gig workers, plus how IRS underpayment charges depend on the unpaid amount, timing, and applicable rate.","url":"https://www.gigwisetax.com/blog/gig-worker-tax-deadlines-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
 
       <article style={{ maxWidth: 760, margin: '0 auto', padding: '48px 20px 64px', fontFamily: 'system-ui,sans-serif', color: 'rgba(255,255,255,0.9)' }}>
 
@@ -41,11 +41,11 @@ export default function Page() {
         </p>
       </div>
         <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.55)', marginBottom: 32 }}>
-          Updated January 2026 · 4 min read
+          Last updated: November 7, 2026 · 4 min read
         </p>
 
         <p style={{ fontSize: 16, lineHeight: 1.75, marginBottom: 24 }}>
-          As a gig worker — whether you drive for DoorDash, deliver for Amazon Flex, rent on Airbnb, or sell on Etsy — the IRS expects you to pay taxes <strong>four times per year</strong>, not just in April. Missing a deadline triggers an underpayment penalty (currently ~{UNDERPAYMENT_PENALTY_RATE_2026}% annually). Here are every date you need for 2026.
+          As a gig worker — whether you drive for DoorDash, deliver for Amazon Flex, rent on Airbnb, or sell on Etsy — the IRS expects you to pay taxes <strong>four times per year</strong>, not just in April. An underpayment charge may apply; it depends on the unpaid installment, how long it remains unpaid, and the IRS rate applicable to that period. The Q4 2026 rate is {UNDERPAYMENT_PENALTY_RATE_2026}% annualized. Here are the 2026 dates.
         </p>
 
         {/* TABLE */}
@@ -76,9 +76,9 @@ export default function Page() {
           <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
             <li>2026 quarterly deadlines: <strong>Apr 15, Jun 15, Sep 15, Jan 15, 2027</strong></li>
             <li>Pay quarterly if you expect to owe <strong>$1,000+</strong> in taxes for the year</li>
-            <li>Missing a deadline triggers a <strong>penalty of ~3–4%</strong> of the unpaid amount</li>
+            <li>An underpayment charge depends on the unpaid amount, timing, and applicable IRS rate; the Q4 2026 rate is <strong>{UNDERPAYMENT_PENALTY_RATE_2026}% annualized</strong></li>
             <li>Use <strong>IRS Direct Pay</strong> — free, instant, no account required</li>
-            <li>Safe harbor: pay <strong>100% of last year's tax</strong> to avoid underpayment penalties</li>
+            <li>Safe harbor generally requires paying <strong>90% of current-year tax or 100% of prior-year tax</strong> (110% for some higher-income taxpayers), with required installment timing</li>
           </ul>
         </div>
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)',paddingLeft:16,margin:'20px 0',fontStyle:'italic',color:'rgba(255,255,255,0.7)',fontSize:14,lineHeight:1.8}}>
@@ -97,7 +97,7 @@ export default function Page() {
           A simple formula: <strong>Net income × 0.9235 × 15.3% (SE tax)</strong> + estimated federal income tax, divided by 4. Most gig workers in the 22% federal bracket should set aside <strong>25–30%</strong> of every payment.
         </p>
         <p style={{ fontSize: 16, lineHeight: 1.75, marginBottom: 32 }}>
-          The fastest way: use our free calculator below — it handles SE tax, all 50 state rates + DC, and shows your exact quarterly payment.
+          The fastest way: use our free calculator below — it estimates SE tax, simplified state tax, and a planning amount for quarterly payments.
         </p>
 
         {/* CTA */}
@@ -112,7 +112,7 @@ export default function Page() {
         <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 16 }}>FAQ</h2>
         {[
           ['When are gig worker quarterly tax payments due in 2026?', 'Q1: April 15 · Q2: June 15 · Q3: September 15 · Q4: January 15, 2027.'],
-          ['What happens if I miss a quarterly estimated tax deadline?', 'The IRS charges an underpayment penalty of approximately 7% annually on the amount owed for each quarter missed.'],
+          ['What happens if I miss a quarterly estimated tax deadline?', 'An underpayment charge may apply based on the unpaid installment, how long it remained unpaid, and the IRS rate applicable to that period. The 7% rate applies to Q4 2026; it is not a fixed 7% penalty on the full balance.'],
           ['How do I calculate how much to pay each quarter?', 'Estimate your annual net gig income, multiply by 0.9235 for the SE base, apply 15.3% SE tax, add your federal income tax estimate, then divide by 4. Our calculator does this instantly for all 50 states + DC.'],
         ].map(([q, a]) => (
           <details key={q as string} style={{ border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: '14px 18px', marginBottom: 10 }}>

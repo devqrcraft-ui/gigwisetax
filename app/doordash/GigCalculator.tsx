@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import BehindOnTaxes from '@/app/components/BehindOnTaxes'
 import { estimateTaxForState } from '@/lib/tax-rules'
 import PartnerCTA from '@/app/PartnerCTA'
@@ -10,7 +11,7 @@ import { MILEAGE_RATE_H1_2026, MILEAGE_RATE_H2_2026 } from '@/lib/data'
 interface State { slug: string; name: string; abbr: string; rate: number }
 interface Platform { slug: string; name: string; emoji: string }
 interface Deadline { q: string; period: string; due: string; days: number }
-
+type FilingStatus = 'single' | 'married' | 'hoh'
 
 const parseNum = (s: string): number => {
   const t = s.replace(/[\s,$]/g, '')
@@ -29,13 +30,20 @@ export default function GigCalculator({
   deadlines: Deadline[]
   defaultState?: string
 }) {
+  const router = useRouter()
   const [income, setIncome]     = useState('')
   const [milesH1, setMilesH1]   = useState('')
   const [milesH2, setMilesH2]   = useState('')
   const [stateSlug, setStateSlug] = useState(defaultState && states.some(s => s.slug === defaultState) ? defaultState : 'california')
-  const [filing, setFiling]     = useState<'single'|'married'|'hoh'>('single')
+  const [filing, setFiling]     = useState<FilingStatus>('single')
   const [result, setResult]     = useState<any>(null)
   const [inputError, setInputError] = useState('')
+
+  useEffect(() => {
+    if (defaultState && states.some(s => s.slug === defaultState)) {
+      setStateSlug(defaultState)
+    }
+  }, [defaultState, states])
 
   const fmt = (n: number) => '$' + Math.round(n || 0).toLocaleString('en-US')
   const nextIdx = deadlines.findIndex(d => new Date(d.due + ' 23:59:59').getTime() >= Date.now())
@@ -96,7 +104,15 @@ export default function GigCalculator({
             </div>
             <div>
               <label style={lbl} htmlFor="state-of-residence-0"> State of Residence</label>
-              <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => setStateSlug(e.target.value)}>
+              <select style={inp}  id="state-of-residence-0" value={stateSlug} onChange={e => {
+                const nextState = states.find(s => s.slug === e.target.value)
+                if (nextState && nextState.slug !== defaultState) {
+                  if ((income || milesH1 || milesH2) && !window.confirm('Opening the selected state page will clear the current calculator inputs. Continue?')) {
+                    return
+                  }
+                  router.push(`/${platform.slug}/${nextState.slug}`)
+                }
+              }}>
                 {states.map(s => (
                   <option key={s.slug} value={s.slug}>
                     {s.name} {s.slug === 'california' ? '(state tax not modeled)' : s.rate === 0 ? '(No State Tax)' : `(${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}%)`}

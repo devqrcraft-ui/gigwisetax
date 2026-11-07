@@ -99,7 +99,7 @@ export default function GigWorkerTaxCenter() {
             Last updated: May 2026 · By the GigWiseTax Team
           </div>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,.65)', lineHeight: 1.7, maxWidth: 700 }}>
-            SE tax 15.3% + federal + state for all 50 states + DC. Pick your platform and get your exact tax estimate in seconds. No signup, no data stored.
+            SE tax 15.3% + federal tax, with simplified state estimates for the jurisdictions listed. Choose your platform for a planning estimate; this is not a complete tax return. No signup required.
           </p>
           <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
             <Link href="/" style={{ background: '#B22234', color: '#fff', padding: '12px 24px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>→ Open Main Calculator</Link>

@@ -19,7 +19,7 @@ export default function AmazonFlexTaxGuide() {
     <>
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Amazon Flex Tax Guide 2026 — Save More With Every Deduction","item":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide 2026 — Save More With Every Deduction","description":"Amazon Flex drivers on $40K owe $7,933 in taxes. Mileage 72.5c/mi, phone, bags — all deductible. Free 2026 calculator. Quarterly payments: $1,983. All 50 states.","url":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Amazon Flex Tax Guide 2026 — Save More With Every Deduction","description":"Amazon Flex drivers on $40K owe $7,933 in taxes. Mileage 72.5c/mi, phone, bags — all deductible. Free 2026 calculator. Quarterly payments: $1,983. All 50 states.","url":"https://www.gigwisetax.com/blog/amazon-flex-tax-guide-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <div style={{ background: '#07111F', minHeight: '100vh' }}>
       <article itemScope itemType="https://schema.org/BlogPosting">
         <div style={{ background: 'linear-gradient(135deg,#1e2d5a,#07111F)', borderBottom: '1px solid rgba(255,255,255,.07)' }}>
@@ -30,7 +30,7 @@ export default function AmazonFlexTaxGuide() {
               <span style={{ color: 'rgba(255,255,255,.7)' }}>Amazon Flex Tax Guide 2026</span>
             </nav>
             <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
-              <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>May 2026</span>
+              <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>November 7, 2026</span>
               <span style={{ background: 'rgba(255,255,255,.08)', color: 'rgba(255,255,255,.5)', fontSize: 11, padding: '3px 10px', borderRadius: 3 }}>8 min read</span>
               <span style={{ background: '#059669', color: '#fff', fontSize: 11, padding: '3px 10px', borderRadius: 3, fontWeight: 700 }}>2026 Mileage 72.5c/mi</span>
             </div>
@@ -54,7 +54,7 @@ export default function AmazonFlexTaxGuide() {
               <div style={{fontWeight:800,color:'#e8b84b',marginBottom:10,fontSize:13}}>KEY TAKEAWAYS</div>
               <ul style={{margin:0,padding:'0 0 0 18px',fontSize:14,lineHeight:1.9,color:'rgba(255,255,255,0.85)'}}>
                 <li>Amazon Flex drivers on <strong>$40,000</strong> net income owe approximately <strong>$7,933</strong> in total federal tax</li>
-                <li>2026 IRS mileage rate is <strong>72.5¢–76¢/mile</strong> — driving 20,000 miles = <strong>$14,500–$15,200</strong> deduction</li>
+                <li>For 20,000 business miles driven entirely in one period, the 2026 mileage deduction is <strong>$14,500 (Jan–Jun) or $15,200 (Jul–Dec)</strong>; calculate mixed-year miles by period</li>
                 <li>Tips up to <strong>$25,000</strong> are federally deductible under OBBBA 2026</li>
                 <li>Amazon sends <strong>1099-NEC</strong> if you earn $2,000+ in 2026</li>
                 <li>Set aside <strong>25–30%</strong> of every block payment for quarterly estimated taxes</li>
@@ -75,14 +75,14 @@ export default function AmazonFlexTaxGuide() {
                 <tbody>
                   <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>Net income (after mileage)</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>$40,000</td></tr>
                   <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>Self-employment tax (15.3%)</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>$5,652</td></tr>
-                  <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>Federal income tax (est.)</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>$3,200</td></tr>
+                  <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>Federal income tax (est.)</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>$2,281</td></tr>
                   <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)', fontWeight: 700, color: '#fff' }}>Total tax owed</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)', fontWeight: 700, color: '#e8b84b' }}>$7,933</td></tr>
                   <tr><td style={{ padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>Quarterly payment</td><td style={{ textAlign: 'right', padding: '6px 0', borderTop: '1px solid rgba(255,255,255,0.06)' }}>$1,983</td></tr>
                 </tbody>
               </table>
             </div>
             <h2 style={h2}>Top Amazon Flex Deductions 2026</h2>
-            <p style={prose}>Mileage is your biggest deduction. At 72.5 cents per mile (January–June; 76 cents from July 1), 20,000 business miles = $14,500–$15,200 deduction. Track every mile with an app like MileIQ or Stride. Other key deductions include your phone (business use %), insulated delivery bags, car insurance (business %), and parking and tolls.</p>
+            <p style={prose}>Mileage is your biggest deduction. At 72.5 cents per mile (January–June; 76 cents from July 1), 20,000 business miles driven entirely in one period yield a $14,500 or $15,200 deduction, respectively. Calculate mixed-year miles by period. Track every mile with an app like MileIQ or Stride. Other key deductions include your phone (business use %), insulated delivery bags, car insurance (business %), and parking and tolls.</p>
             <h2 style={h2}>2026 Quarterly Tax Deadlines</h2>
             <p style={prose}>Amazon Flex drivers must pay estimated taxes four times per year. Missing a deadline triggers an IRS underpayment penalty. Due dates: April 15 (Q1), June 15 (Q2), September 15 (Q3), January 15 2027 (Q4). On $40,000 net income, each payment is $1,983.</p>
             <h2 style={h2}>How to File Amazon Flex Taxes</h2>
@@ -90,7 +90,7 @@ export default function AmazonFlexTaxGuide() {
             <h2 style={h2}>Frequently Asked Questions</h2>
             {[
               { q: 'How much tax does an Amazon Flex driver pay in 2026?', a: 'On $40,000 net income: $5,652 SE tax + $2,281 federal = $7,933 total. Quarterly payment: $1,983. Set aside 25% of every payment.' },
-              { q: 'What mileage rate can Amazon Flex drivers use in 2026?', a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). On 20,000 miles: $14,500–$15,200 deduction — your single biggest tax saving.' },
+              { q: 'What mileage rate can Amazon Flex drivers use in 2026?', a: 'The 2026 IRS standard mileage rate is 72.5 cents per mile for January–June and 76 cents for July–December. If all 20,000 business miles were driven in one period, the deduction is $14,500 or $15,200, respectively; mixed-year miles must be calculated by period.' },
               { q: 'Does Amazon Flex send a 1099?', a: 'Yes — Amazon sends a 1099-NEC if you earned $2,000+. You report this on Schedule C and deduct all business expenses.' },
               { q: 'When are quarterly taxes due for Amazon Flex in 2026?', a: 'April 15, June 15, September 15, and January 15 2027. Each payment: approximately $1,983 on $40,000 net income.' },
               { q: 'Can I deduct my phone as an Amazon Flex driver?', a: 'Yes — deduct the business use percentage. If you use your phone 60% for deliveries, deduct 60% of your phone bill and plan cost.' },

@@ -14,7 +14,7 @@ export default function BlogPost() {
       <article itemScope itemType="https://schema.org/BlogPosting">
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Turo Host Taxes 2026 — Complete Tax Guide","item":"https://www.gigwisetax.com/blog/turo-host-taxes-2026"}]}` }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Turo Host Taxes 2026 — Complete Tax Guide","description":"How to file Turo host taxes in 2026. Depreciation, mileage, platform fees deduction, 1099-K. Free calculator — no signup.","url":"https://www.gigwisetax.com/blog/turo-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-05-12","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `{"@context":"https://schema.org","@type":"BlogPosting","headline":"Turo Host Taxes 2026 — Complete Tax Guide","description":"How to file Turo host taxes in 2026. Depreciation, mileage, platform fees deduction, 1099-K. Free calculator — no signup.","url":"https://www.gigwisetax.com/blog/turo-host-taxes-2026","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"}}` }} />
       <nav style={{ fontSize: 13, color: 'rgba(255,255,255,.4)', marginBottom: 24 }}>
         <a href="/" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Home</a>{' > '}
         <a href="/blog" style={{ color: 'rgba(255,255,255,.4)', textDecoration: 'none' }}>Blog</a>{' > '}Turo Host Taxes 2026
@@ -71,7 +71,7 @@ export default function BlogPost() {
         </tbody>
       </table>
       <div style={{ background: 'rgba(165,180,252,.08)', borderRadius: 8, padding: 20, marginBottom: 32, border: '1px solid rgba(165,180,252,.2)' }}>
-        <div style={{ fontWeight: 700, marginBottom: 8 }}>Calculate your exact Turo tax bill</div>
+        <div style={{ fontWeight: 700, marginBottom: 8 }}>Estimate your Turo taxes</div>
         <a href="/calculators" style={{ background: '#6366f1', color: '#ffffff', fontWeight: 800, padding: '10px 22px', borderRadius: 6, textDecoration: 'none', display: 'inline-block' }}>Free Tax Calculator</a>
       </div>
     

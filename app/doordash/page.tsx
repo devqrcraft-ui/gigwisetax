@@ -23,6 +23,16 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'DoorDash Tax Calculator 2026 | Free 1099 Estimate',
       description: 'Estimate 2026 DoorDash taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
       url: `https://www.gigwisetax.com/${p.slug}`,
+      siteName: 'GigWiseTax',
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'DoorDash Tax Calculator 2026 | Free 1099 Estimate',
+      description: 'Estimate 2026 DoorDash taxes on 1099 income. Includes self-employment, federal tax, mileage and a simplified state estimate. Free; no signup.',
+      images: ['/og-image.png'],
     },
   }
 }
@@ -425,7 +435,7 @@ export default function PlatformPage() {
             <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 6, padding: 16 }}>
               <div style={{ fontSize: 11, fontWeight: 700, color: 'rgba(255,255,255,0.55)', textTransform: 'uppercase' as const, letterSpacing: '1px', marginBottom: 10 }}> About This Tool</div>
               <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.8)', lineHeight: 1.7, textAlign: 'justify' as const }}>
-                GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. No personal data is stored.
+                GigWiseTax.com is an independent, free estimation tool. Not affiliated with {platform.name}, the IRS, or any government agency. Calculator values stay in your browser; hosting and analytics may process technical data.
               </div>
             </div>
           </div>

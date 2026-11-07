@@ -12,7 +12,7 @@ const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntit
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Uber Eats Driver Taxes 2026","item":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-05-22","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed","datePublished":"2026-05-22","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/uber-eats-tax-guide-2026"}}'
 
 export default function Page() {
   return (
@@ -34,7 +34,7 @@ export default function Page() {
             Uber Eats Driver Taxes 2026: $35K Income = $6,669 Tax Owed
           </h1>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 24, display: 'flex', gap: 12, flexWrap: 'wrap' as const }}>
-            <span>Last updated: May 2026</span><span>·</span>
+            <span>Last updated: November 7, 2026</span><span>·</span>
             <span>By the GigWiseTax Team</span><span>·</span>
             <span>{'~8 min read · 2,000 words'}</span>
           </div>
@@ -202,7 +202,7 @@ export default function Page() {
             Mileage: Your Biggest Deduction as an Uber Eats Driver
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
-            The 2026 IRS mileage rate is <strong style={{ color: '#e8edf8' }}>72.5 cents per mile (January–June; 76 cents from July 1)</strong>. On 10,000 delivery miles, that is a $7,250–$7,600 deduction — saving roughly $1,024–$1,074 in self-employment tax (the table above uses a rounded 15% estimate). Most Uber Eats drivers are surprised how fast miles add up.
+            The 2026 IRS mileage rates are <strong style={{ color: '#e8edf8' }}>72.5 cents per mile for January–June and 76 cents for July–December</strong>. If all 10,000 delivery miles were driven in one period, the deduction is $7,250 or $7,600, respectively. That would reduce the SE-tax component by about $1,024 or $1,074 below the Social Security wage limit; federal income-tax effects and individual limits are separate. Most Uber Eats drivers are surprised how fast miles add up.
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.8, marginBottom: 16 }}>
             Count miles from the moment you go online to the moment you go offline — not just miles with food in the car. The IRS considers your entire active window as business use.

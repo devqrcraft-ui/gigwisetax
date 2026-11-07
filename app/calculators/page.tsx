@@ -2,10 +2,25 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/calculators' },
   title: "Gig Worker Tax Calculators by Platform & State 2026 | GigWiseTax",
-  description: "Free self-employment tax calculators for every gig platform in all 50 states. DoorDash, Uber, Etsy, OnlyFans, Instacart, Airbnb and more. Updated for 2026.",
+  description: "Free tax-planning estimates for gig workers. Choose a platform and state; state estimates are simplified and are not a complete tax calculation.",
+  openGraph: {
+    title: "Gig Worker Tax Calculators by Platform & State 2026 | GigWiseTax",
+    description: "Free tax-planning estimates for gig workers. Choose a platform and state; state estimates are simplified and are not a complete tax calculation.",
+    url: 'https://www.gigwisetax.com/calculators',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Gig Worker Tax Calculators by Platform & State 2026 | GigWiseTax",
+    description: "Free tax-planning estimates for gig workers. Choose a platform and state; state estimates are simplified and are not a complete tax calculation.",
+    images: ['/og-image.png'],
+  },
 };
 
 const PLATFORMS = [
@@ -40,10 +55,10 @@ export default function CalculatorsIndex() {
       <div style={{ background: "linear-gradient(135deg,#1e2d5a,#07111F)", borderBottom: "1px solid rgba(255,255,255,0.07)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto", padding: "36px 20px" }}>
           <h1 style={{ fontSize: 28, fontWeight: 900, color: "#fff", lineHeight: 1.25, marginBottom: 14 }}>
-            Gig Worker Tax Calculators — All Platforms × All States
+            Gig Worker Tax Calculators — Available Platforms × States
           </h1>
           <p style={{ color: "rgba(255,255,255,.55)", fontSize: 15, lineHeight: 1.7, maxWidth: 700 }}>
-            Free, no-signup tax calculators for every major gig platform in all 50 states + D.C. Pick your platform and state for an exact estimate.
+            Free, no-signup tax-planning estimates for the platforms and states shown below. State estimates are simplified inputs, not a complete state tax calculation.
           </p>
         </div>
       </div>
@@ -65,8 +80,8 @@ export default function CalculatorsIndex() {
                   <span style={{ color: state.rate === "No Tax" ? "#059669" : "#B22234", fontWeight: 700, fontSize: 11 }}>{state.rate}</span>
                 </Link>
               ))}
-              <Link href={`/${platform.slug}/california`} style={{ background: "#1a1a2e", color: "#e8b84b", borderRadius: 4, padding: "8px 14px", textDecoration: "none", fontSize: 13, fontWeight: 700 }}>
-                All 50 States →
+              <Link href={`/${platform.slug}`} style={{ background: "#1a1a2e", color: "#e8b84b", borderRadius: 4, padding: "8px 14px", textDecoration: "none", fontSize: 13, fontWeight: 700 }}>
+                Choose from all states →
               </Link>
             </div>
           </div>

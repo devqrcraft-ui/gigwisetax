@@ -4,7 +4,7 @@ import AuthorBox from '@/app/components/AuthorBox'
 
 export const metadata: Metadata = {
   title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
-  description: 'Gig workers on $35K owe $1,667/quarter in 2026. Four deadlines: Apr 15, Jun 15, Sep 15, Jan 15. Free IRS payment guide + calculator.',
+  description: 'Learn 2026 estimated-tax deadlines, safe-harbor basics, and how to plan payments. Examples are estimates; your amount depends on your full tax situation.',
   alternates: { canonical: 'https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers' },
   openGraph: {
     title: 'Quarterly Taxes for Gig Workers 2026: Deadlines & Amounts',
@@ -23,11 +23,23 @@ export const metadata: Metadata = {
   },
 }
 
-const faqSchema = '{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"When are quarterly estimated taxes due in 2026?","acceptedAnswer":{"@type":"Answer","text":"2026 quarterly deadlines: Q1 — April 15, Q2 — June 15, Q3 — September 15, Q4 — January 15, 2027. You must pay if you expect to owe $1,000 or more for the year."}},{"@type":"Question","name":"How much should a gig worker pay each quarter in 2026?","acceptedAnswer":{"@type":"Answer","text":"A gig worker earning $35,000 net owes roughly $1,667 per quarter — $6,669 total for the year. Set aside 25-30% of each payment you receive to cover this."}},{"@type":"Question","name":"How do I pay quarterly estimated taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay online at IRS Direct Pay (irs.gov/payments) — free, no account needed. Select Estimated Tax and tax year 2026. You can also use EFTPS for automatic scheduling."}},{"@type":"Question","name":"What is the safe harbor rule for quarterly taxes?","acceptedAnswer":{"@type":"Answer","text":"Pay 100% of your 2025 tax liability (or 110% if your 2025 AGI exceeded $150,000). This guarantees no underpayment penalty regardless of your 2026 income."}},{"@type":"Question","name":"What happens if I miss a quarterly tax deadline?","acceptedAnswer":{"@type":"Answer","text":"The IRS charges an underpayment penalty — currently around 7% annualized on the amount you should have paid. The penalty applies per quarter, not just at year-end."}},{"@type":"Question","name":"Do I owe quarterly taxes if I made less than $400?","acceptedAnswer":{"@type":"Answer","text":"No. If your net self-employment income is under $400 for the year, you do not owe self-employment tax and do not need to make quarterly payments."}},{"@type":"Question","name":"Can I deduct mileage to reduce my quarterly payment?","acceptedAnswer":{"@type":"Answer","text":"Yes. The 2026 IRS mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). A DoorDash driver with 500 delivery miles per month deducts $362.50 monthly, reducing their taxable income by $4,350 per year."}}]}'
+const faqSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'When are quarterly estimated taxes due in 2026?', acceptedAnswer: { '@type': 'Answer', text: '2026 quarterly deadlines: Q1 — April 15, Q2 — June 15, Q3 — September 15, Q4 — January 15, 2027. Estimated payments may be required if you expect to owe at least $1,000 after withholding and refundable credits.' } },
+    { '@type': 'Question', name: 'How much should a gig worker pay each quarter in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'For the stated single-filer example with $35,000 net profit, standard deduction, no other income, and no state tax, this model estimates about $1,667 per quarter. Actual payments depend on withholding, credits, other income, and deductions.' } },
+    { '@type': 'Question', name: 'How do I pay quarterly estimated taxes?', acceptedAnswer: { '@type': 'Answer', text: 'Pay online at IRS Direct Pay (irs.gov/payments) — free, no account needed. Select Estimated Tax and tax year 2026. You can also use EFTPS for automatic scheduling.' } },
+    { '@type': 'Question', name: 'What is the safe harbor rule for quarterly taxes?', acceptedAnswer: { '@type': 'Answer', text: 'Generally, the federal underpayment penalty can be avoided by paying enough through withholding and estimated payments to meet a safe harbor, commonly 90% of current-year tax or 100% of prior-year tax (110% for certain higher-income taxpayers). Exceptions and installment rules apply; consult IRS Form 1040-ES and Form 2210.' } },
+    { '@type': 'Question', name: 'What happens if I miss a quarterly tax deadline?', acceptedAnswer: { '@type': 'Answer', text: 'An underpayment charge may apply based on the unpaid installment, how late it is, and the applicable IRS interest rate for that period. The 7% rate applies to Q4 2026; it is not a fixed 7% penalty on the full balance.' } },
+    { '@type': 'Question', name: 'Do I owe quarterly taxes if I made less than $400?', acceptedAnswer: { '@type': 'Answer', text: 'Net self-employment earnings of $400 or more generally trigger a self-employment tax filing requirement. The separate estimated-tax payment requirement depends on expected tax after withholding and credits.' } },
+    { '@type': 'Question', name: 'Can I deduct mileage to reduce my quarterly payment?', acceptedAnswer: { '@type': 'Answer', text: 'The 2026 IRS business mileage rates are 72.5 cents per mile for January–June and 76 cents for July–December. Mileage deductions reduce business profit; the effect on total tax depends on the taxpayer’s full return.' } },
+  ],
+})
 
 const breadcrumbSchema = '{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.gigwisetax.com"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://www.gigwisetax.com/blog"},{"@type":"ListItem","position":3,"name":"Quarterly Taxes for Gig Workers 2026","item":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}]}'
 
-const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Taxes for Gig Workers 2026: Deadlines, Amounts & How to Pay","datePublished":"2026-01-01","dateModified":"2026-05-21","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}}'
+const articleSchema = '{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quarterly Taxes for Gig Workers 2026: Deadlines, Amounts & How to Pay","datePublished":"2026-01-01","dateModified":"2026-11-07","author":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"reviewedBy":{"@type":"Organization","name":"the GigWiseTax Team","url":"https://www.gigwisetax.com"},"publisher":{"@type":"Organization","name":"GigWiseTax","url":"https://www.gigwisetax.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.gigwisetax.com/blog/quarterly-taxes-gig-workers"}}'
 
 export default function QuarterlyTaxesGuide() {
   return (
@@ -56,7 +68,7 @@ export default function QuarterlyTaxesGuide() {
           </h1>
 
           <div style={{fontSize:12, color:'rgba(255,255,255,0.45)', marginBottom:20, display:'flex', gap:12, flexWrap:'wrap'}}>
-            <span>Last updated: May 2026</span>
+            <span>Last updated: November 7, 2026</span>
             <span>·</span>
             <span>By the GigWiseTax Team</span>
             <span>·</span>
@@ -64,17 +76,17 @@ export default function QuarterlyTaxesGuide() {
           </div>
         <section id="answer">
           <p style={{ margin: '0 0 24px', fontSize: 15, lineHeight: 1.75, color: '#C8D8EC' }}>
-            Gig workers who expect to owe $1,000 or more in 2026 must pay quarterly estimated taxes. A DoorDash or Lyft driver earning $35,000 owes approximately $1,667 per quarter. Missing payments can trigger an underpayment penalty (interest at the IRS rate, 7% per year for Q4 2026). Pay via IRS Direct Pay — free and takes under 5 minutes.
+            Gig workers who expect to owe at least $1,000 in federal tax after withholding and refundable credits generally need to make estimated payments. For the stated $35,000 single-filer example, this model estimates about $1,667 per quarter. An underpayment charge depends on each installment, timing, and the applicable IRS rate; 7% is the rate for Q4 2026, not a fixed penalty on the full balance.
           </p>
         </section>
         <section id="key-takeaways">
           <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '20px 24px', marginBottom: 32 }}>
             <h2 style={{ fontSize: 'clamp(16px,3vw,18px)', fontWeight: 700, color: '#e8b84b', marginTop: 0, marginBottom: 12 }}>Key Takeaways</h2>
             <ul style={{ margin: 0, padding: '0 0 0 18px', lineHeight: 1.9, fontSize: 14, color: '#C8D8EC' }}>
-          <li>Threshold: owe $1,000+ annually → quarterly payments required</li>
+          <li>Estimated payments may be required when expected federal tax due after withholding and refundable credits is at least $1,000</li>
           <li>$35K gig income = $6,669 total tax (SE + federal) = $1,667 per quarter</li>
           <li>Due dates: April 15 / June 15 / September 15 / January 15</li>
-          <li>Safe harbor: pay 100% of last year's total tax to eliminate underpayment risk</li>
+          <li>Safe harbor generally uses 90% of current-year tax or 100% of prior-year tax (110% for certain higher-income taxpayers); installment rules apply</li>
           <li>State estimated taxes also due on the same dates in most states</li>
             </ul>
           </div>
@@ -84,7 +96,7 @@ export default function QuarterlyTaxesGuide() {
         {/* ANSWER-FIRST */}
         <div style={{background:'rgba(232,184,75,0.07)', border:'1px solid rgba(232,184,75,0.2)', borderRadius:8, padding:'16px 20px', marginBottom:24}}>
           <p style={{margin:0, fontSize:15, lineHeight:1.8, color:'rgba(255,255,255,0.9)'}}>
-            {'A gig worker earning $35,000 net in 2026 owes roughly $6,669 in total tax — about $1,667 per quarter. Four deadlines apply: April 15, June 15, September 15, and January 15, 2027. Missing any deadline triggers a 7% IRS underpayment penalty on the amount owed.'}
+            {'For the stated example (single filer, $35,000 net profit, standard deduction, no other income or state tax), this model estimates about $6,669 for the year, or $1,667 per quarter. Federal estimated-tax deadlines are April 15, June 15, September 15, and January 15, 2027. A late or insufficient installment may incur an underpayment charge based on the amount and timing; 7% is the IRS rate for Q4 2026, not a fixed penalty.'}
           </p>
         </div>
 
@@ -92,10 +104,10 @@ export default function QuarterlyTaxesGuide() {
         <div style={{background:'rgba(232,184,75,0.08)', border:'1px solid rgba(232,184,75,0.25)', borderRadius:8, padding:'16px 20px', marginBottom:28}}>
           <div style={{fontWeight:800, color:'#e8b84b', marginBottom:10, fontSize:13}}>KEY TAKEAWAYS</div>
           <ul style={{margin:0, padding:'0 0 0 18px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'Pay quarterly if you expect to owe $1,000 or more in 2026 federal tax'}</li>
+            <li>{'Estimated payments may be required if you expect to owe at least $1,000 after withholding and refundable credits'}</li>
             <li>{'On $35,000 net gig income: $6,669 total tax = $1,667 per quarter'}</li>
             <li>{'2026 deadlines: April 15 · June 15 · September 15 · January 15, 2027'}</li>
-            <li>{'Safe harbor: pay 100% of your 2025 tax to avoid all penalties'}</li>
+            <li>{'Safe harbor generally uses 90% of current-year tax or 100% of prior-year tax (110% for certain higher-income taxpayers); conditions apply'}</li>
             <li>{'IRS Direct Pay is free — no account, no fee, instant confirmation'}</li>
           </ul>
         </div>
@@ -225,17 +237,17 @@ export default function QuarterlyTaxesGuide() {
             What Is the Safe Harbor Rule for Quarterly Taxes?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'The safe harbor rule protects you from underpayment penalties even if your income changes mid-year. Two options qualify:'}
+            {'Meeting an applicable federal safe harbor generally avoids the underpayment penalty, but exceptions and installment rules apply. Common thresholds are:'}
           </p>
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
-            <li>{'Pay 90% of your actual 2026 tax liability by each deadline'}</li>
-            <li>{'Pay 100% of your 2025 tax (110% if your 2025 AGI exceeded $150,000)'}</li>
-            <li>{'Spread payments evenly — one quarter cannot cover another'}</li>
-            <li>{'The prior-year method is safest if your income is unpredictable'}</li>
+            <li>{'Pay at least 90% of current-year tax through withholding and timely estimated installments'}</li>
+            <li>{'Or pay 100% of prior-year tax; this generally rises to 110% if prior-year AGI was over $150,000 ($75,000 if married filing separately)'}</li>
+            <li>{'The $1,000 test and safe-harbor calculations account for withholding and credits; special rules may apply'}</li>
+            <li>{'If income is uneven during the year, the annualized income installment method may affect the required payment schedule'}</li>
           </ul>
 
           <blockquote style={{borderLeft:'3px solid rgba(232,184,75,0.4)', paddingLeft:16, margin:'20px 0', fontStyle:'italic', color:'rgba(255,255,255,0.7)', fontSize:14, lineHeight:1.8}}>
-            {'Self-employed individuals must pay estimated taxes quarterly if they expect to owe at least $1,000 in federal tax for the year.'}
+            {'Individuals generally need estimated tax payments if they expect to owe at least $1,000 after withholding and refundable credits.'}
             <cite style={{display:'block', marginTop:8, fontSize:12, color:'rgba(255,255,255,0.45)', fontStyle:'normal'}}>
               {'— '}
               <a href="https://www.irs.gov/businesses/small-businesses-self-employed/self-employed-individuals-tax-center" rel="nofollow" target="_blank" style={{color:'#e8b84b'}}>
@@ -294,7 +306,7 @@ export default function QuarterlyTaxesGuide() {
             Which Deductions Reduce Your Quarterly Tax Payment?
           </h2>
           <p style={{fontSize:14, lineHeight:1.8, color:'rgba(255,255,255,0.85)', marginBottom:16}}>
-            {'Deductions reduce your net self-employment income before SE tax is calculated. A DoorDash driver logging 10,000 miles per year deducts $7,250–$7,600 — cutting their SE tax by roughly $1,024–$1,074 and saving about $256–$269 per quarter.'}
+            {'Deductions reduce net self-employment income before SE tax is calculated. In a simplified example below the Social Security wage limit, 10,000 business miles driven in one rate period produce a $7,250 or $7,600 deduction and reduce the SE-tax component by roughly $1,024 or $1,074 for the year. That is about $256–$269 per quarter on average for the SE-tax component only; federal income-tax effects and individual limits are separate.'}
           </p>
 
           <ul style={{margin:'0 0 20px', padding:'0 0 0 20px', fontSize:14, lineHeight:1.9, color:'rgba(255,255,255,0.85)'}}>
@@ -334,23 +346,23 @@ export default function QuarterlyTaxesGuide() {
             },
             {
               q:'How much does a gig worker on $35,000 pay per quarter?',
-              a:'A gig worker with $35,000 net income owes roughly $1,667 per quarter — $4,945 in SE tax plus $1,723 in federal income tax ($6,669 total, split four ways).'
+              a:'For the stated example (single filer, $35,000 net profit, standard deduction, no other income or state tax), this model estimates about $1,667 per quarter — $4,945 in SE tax plus $1,723 federal income tax ($6,669 total). Actual payments depend on your full return.'
             },
             {
               q:'What is the safe harbor rule for quarterly taxes?',
-              a:'Pay 100% of your 2025 tax liability (or 110% if your AGI exceeded $150,000). This protects you from underpayment penalties no matter how your 2026 income changes.'
+              a:'A common safe harbor is 90% of current-year tax or 100% of prior-year tax (110% if prior-year AGI was over $150,000, or $75,000 if married filing separately), paid through withholding and estimated installments. The $1,000 test, installment rules, and exceptions apply.'
             },
             {
               q:'What happens if I miss a quarterly tax deadline?',
-              a:'The IRS charges an underpayment penalty — currently about 7% annualized on the underpaid amount. Each quarter is calculated separately, so a late Q1 payment accrues penalties for three quarters.'
+              a:'An underpayment charge may apply based on the unpaid installment and how long it remained unpaid, using the IRS rate applicable to the period. The 7% rate applies to Q4 2026; it is not a fixed 7% penalty on the full balance.'
             },
             {
               q:'Can I deduct mileage to reduce my quarterly payment?',
-              a:'Yes. The 2026 IRS mileage rate is 72.5 cents per mile (January–June; 76 cents from July 1). Driving 10,000 miles for deliveries deducts $7,250–$7,600 from income, saving roughly $277 per quarter in taxes.'
+              a:'The 2026 IRS business mileage rates are 72.5 cents per mile for January–June and 76 cents for July–December. Mileage deductions reduce business profit; calculate miles in each period separately. The total tax effect depends on your full return.'
             },
             {
               q:'Do I pay quarterly taxes if I earned less than $400?',
-              a:'No. Net self-employment income under $400 is not subject to SE tax and does not trigger the quarterly filing requirement.'
+              a:'Net self-employment earnings below $400 generally do not trigger a self-employment tax filing requirement by themselves. Estimated-tax payments can still be required based on other income and your expected tax after withholding and credits.'
             },
             {
               q:'Which IRS form do I use for quarterly payments?',

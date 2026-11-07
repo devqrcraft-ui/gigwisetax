@@ -1,10 +1,25 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   alternates: { canonical: 'https://www.gigwisetax.com/about' },
   title: 'About GigWiseTax — Free Tax Calculator for U.S. Gig Workers',
-  description: 'GigWiseTax.com is a free, independent tax estimation tool for U.S. gig economy workers. No signup. No data stored. Built by gig workers, for gig workers.',
+  description: 'GigWiseTax is a free, independent tax-planning estimate tool for U.S. gig workers. Learn how the calculator handles your inputs and its limitations.',
+  openGraph: {
+    title: 'About GigWiseTax — Free Tax Calculator for U.S. Gig Workers',
+    description: 'GigWiseTax is a free, independent tax-planning estimate tool for U.S. gig workers.',
+    url: 'https://www.gigwisetax.com/about',
+    siteName: 'GigWiseTax',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About GigWiseTax — Free Tax Calculator for U.S. Gig Workers',
+    description: 'GigWiseTax is a free, independent tax-planning estimate tool for U.S. gig workers.',
+    images: ['/og-image.png'],
+  },
 }
 
 export default function AboutPage() {
@@ -31,7 +46,7 @@ export default function AboutPage() {
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 32 }}>
           {[
-            { icon: '', label: 'Calculations Stay Private', desc: 'Your numbers never leave your browser' },
+            { icon: '', label: 'Calculator Inputs Stay Local', desc: 'The calculator runs in your browser' },
             { icon: '', label: 'Free Forever', desc: 'No hidden fees, no premium tier required' },
             { icon: '', label: 'All 50 States + DC', desc: 'Every U.S. jurisdiction covered' },
           ].map(s => (
