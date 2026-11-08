@@ -21,7 +21,9 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
       ? `${s.name} has no state income-tax component in this estimate.`
       : `Includes a simplified ${(s.rate*100).toFixed(2).replace(/\.?0+$/, '')}% state-rate input, not a full state tax calculation.`
   const title = `DoorDash Tax Calculator for ${s.name} 2026 | Free Estimate`
-  const description = `Estimate DoorDash self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`
+  const description = !isStateTaxEstimateModeled(s.slug)
+    ? `DoorDash tax estimate for ${s.name}: federal + SE only, state tax not modeled. Quarterly and mileage planning included.`
+    : `Estimate DoorDash self-employment and federal income taxes for ${s.name}. ${stateDescription} Quarterly planning and mileage assumptions are included.`
   const canonicalUrl = `https://www.gigwisetax.com/${p.slug}/${s.slug}`
   return {
     title,
