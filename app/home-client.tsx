@@ -378,7 +378,7 @@ export default function HomeClient() {
                       <label style={label}>▸ Business Miles Driven</label><input style={inp} type="number" min="0" placeholder={`Jan–Jun miles (${TAX_RULES_2026.mileage.h1 * 100}¢)`} aria-label="Business miles driven January to June" value={milesH1} onChange={e => setMilesH1(e.target.value)}/><input style={{ ...inp, marginTop: 8 }} type="number" min="0" placeholder={`Jul–Dec miles (${TAX_RULES_2026.mileage.h2 * 100}¢)`} aria-label="Business miles driven July to December" value={milesH2} onChange={e => setMilesH2(e.target.value)}/>
                       <div style={{ fontSize: 13, color: '#7a9abf', marginTop: 4 }}>
                         {TAX_RULES_2026.mileage.h1 * 100}¢/mile Jan–Jun, {TAX_RULES_2026.mileage.h2 * 100}¢/mile Jul–Dec (IRS 2026 rates).{' '}
-                        <a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b' }}>IRS rate table</a>
+                        <a href={TAX_RULES_2026.sources.mileage} target="_blank" rel="noopener noreferrer" style={{ color:'#e8b84b', textDecoration:'underline' }}>IRS rate table</a>
                       </div>
                     </div>
                     <div>
