@@ -110,7 +110,7 @@ export default function PlatformPage() {
   const accent = { width: 3, height: 18, background: '#e8b84b', borderRadius: 2, flexShrink: 0 }
 
   return (
-    <>
+    <><main>
 
       
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(deductionsSchema) }}/>
@@ -448,6 +448,7 @@ export default function PlatformPage() {
           @media(max-width:960px){.main-grid{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}.p-grid{grid-template-columns:repeat(2,1fr)!important}}
         `}</style>
       </div>
+    </main>
     </>
   )
 }
