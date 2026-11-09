@@ -17,7 +17,7 @@ export default function DoorDashVsUberEatsPost() {
   const accent = '#e8b84b'
   const RELATED = [
     { href:'/blog/doordash-taxes-2026', tag:'DOORDASH', title:'DoorDash Taxes 2026: Full Guide' },
-    { href:'/platform/uber-eats', tag:'UBER EATS', title:'Uber Eats Tax Calculator 2026' },
+    { href:'/blog/uber-eats-tax-guide-2026', tag:'UBER EATS', title:'Uber Eats Tax Guide 2026' },
     { href:'/blog/mileage-rate-2026', tag:'MILEAGE', title:'IRS Mileage Rate 2026: 72.5¢–76¢/mile' },
   ]
 
@@ -139,8 +139,8 @@ export default function DoorDashVsUberEatsPost() {
         <div style={{ background: 'rgba(232,184,75,0.06)', border: '1px solid rgba(232,184,75,0.2)', borderRadius: 8, padding: '16px 20px', marginBottom: 32 }}>
           <p style={{ margin: '0 0 8px', fontWeight: 700, color: accent }}>Estimate your tax bill</p>
           <p style={{ margin: '0 0 12px', fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>Enter your DoorDash or Uber Eats income into the free GigWiseTax calculator — get quarterly payment amounts in 30 seconds.</p>
-          <Link href="/platform/doordash" style={{ display: 'inline-block', background: accent, color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', marginRight: 10 }}>DoorDash Calculator</Link>
-          <Link href="/platform/uber-eats" style={{ display: 'inline-block', background: 'transparent', color: accent, fontWeight: 700, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', border: '1px solid rgba(232,184,75,0.4)' }}>Uber Eats Calculator</Link>
+          <Link href="/doordash" style={{ display: 'inline-block', background: accent, color: '#07111F', fontWeight: 800, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', marginRight: 10 }}>DoorDash Calculator</Link>
+          <Link href="/blog/uber-eats-tax-guide-2026" style={{ display: 'inline-block', background: 'transparent', color: accent, fontWeight: 700, fontSize: 14, padding: '10px 20px', borderRadius: 6, textDecoration: 'none', border: '1px solid rgba(232,184,75,0.4)' }}>Uber Eats Tax Guide</Link>
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 24, marginBottom: 32 }}>
