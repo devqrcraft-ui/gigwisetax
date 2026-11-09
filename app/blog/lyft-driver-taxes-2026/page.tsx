@@ -255,7 +255,7 @@ export default function LyftTaxes2026() {
             ))}
           </ul>
           <p style={{ fontSize: 15, color: '#C8D8EC', lineHeight: 1.75, marginBottom: 14 }}>
-            See the <a href="/blog/no-tax-on-tips-calculator" style={{ color: '#e8b84b', textDecoration: 'none' }}>No Tax on Tips calculator</a> to estimate your savings.
+            See our guide to the <a href="/blog/tips-deduction-gig-workers-2026" style={{ color: '#e8b84b', textDecoration: 'none' }}>tips deduction for gig workers</a> for how the 2026 rules work.
           </p>
         </section>
 

@@ -283,7 +283,7 @@ export default function Page() {
             <li><a href="/blog/doordash-taxes-2026" style={{ color: '#e8b84b' }}>DoorDash Driver Taxes 2026: Complete Guide</a></li>
             <li><a href="/blog/lyft-driver-taxes-2026" style={{ color: '#e8b84b' }}>Lyft Driver Taxes 2026: $35K Income = $6,669 SE Tax</a></li>
             <li><a href="/blog/instacart-shopper-taxes-2026" style={{ color: '#e8b84b' }}>Instacart Shopper Taxes 2026: Full Breakdown</a></li>
-            <li><a href="/blog/grubhub-taxes-2026" style={{ color: '#e8b84b' }}>GrubHub Driver Taxes 2026</a></li>
+            <li><a href="/blog/grubhub-driver-taxes-2026" style={{ color: '#e8b84b' }}>GrubHub Driver Taxes 2026</a></li>
           </ul>
         </section>
 
