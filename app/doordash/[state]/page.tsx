@@ -144,7 +144,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
               <li>Earnings guarantee: <strong style={{color:'#e8b84b'}}>120% of the applicable minimum wage</strong> for engaged time, plus an annually adjusted per-engaged-mile amount. Check the <a href="https://www.treasurer.ca.gov/prop-22" rel="nofollow noopener noreferrer" target="_blank" style={{color:'#e8b84b'}}>California State Treasurer&apos;s current rate</a>.</li>
               <li>On $40K net, this estimator returns SE {`$${example40.se.toLocaleString('en-US')}`} and federal {`$${example40.federal.toLocaleString('en-US')}`} = <strong style={{color:'#e8b84b'}}>{`$${example40.total.toLocaleString('en-US')} federal + SE subtotal`}</strong>; California state tax is not modeled or included.</li>
               <li>AB5 does NOT apply to Prop 22 workers — no W-2, no employer withholding</li>
-              <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15, Jun 15, Sep 15, Jan 15</strong></li>
+              <li>Quarterly CA estimated tax due: <strong style={{color:'#e8b84b'}}>Apr 15 (30%), Jun 15 (40%), Jan 15 (30%)</strong> (no payment is due Sep 15)</li>
               <li>Eligible business mileage can affect taxable income; this estimate does not calculate the California state-tax effect.</li>
             </ul>
             <blockquote style={{borderLeft:'3px solid #B22234',padding:'10px 14px',margin:'12px 0 0',background:'rgba(178,34,52,0.05)',borderRadius:'0 4px 4px 0'}}>

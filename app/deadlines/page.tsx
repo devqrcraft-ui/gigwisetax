@@ -23,7 +23,7 @@ const STATES_DEADLINES = [
   { state: 'California', abbr: 'CA', rate: 'Progressive; not modeled', q1: 'April 15 (30%)', q2: 'June 15 (40%)', q3: 'None (0%)', q4: 'Jan 15 (30%)', portal: 'ftb.ca.gov' },
   { state: 'Colorado', abbr: 'CO', rate: '4.4%', q1: 'April 15', q2: 'June 15', q3: 'Sept 15', q4: 'Jan 15', portal: 'revenue.colorado.gov' },
   { state: 'Florida', abbr: 'FL', rate: 'No Tax', q1: '—', q2: '—', q3: '—', q4: '—', portal: 'N/A' },
-  { state: 'Georgia', abbr: 'GA', rate: '5.5%', q1: 'April 15', q2: 'June 15', q3: 'Sept 15', q4: 'Jan 15', portal: 'gtc.dor.ga.gov' },
+  { state: 'Georgia', abbr: 'GA', rate: '4.99%', q1: 'April 15', q2: 'June 15', q3: 'Sept 15', q4: 'Jan 15', portal: 'gtc.dor.ga.gov' },
   { state: 'Illinois', abbr: 'IL', rate: '4.95%', q1: 'April 15', q2: 'June 15', q3: 'Sept 15', q4: 'Jan 15', portal: 'mytax.illinois.gov' },
   { state: 'Nevada', abbr: 'NV', rate: 'No Tax', q1: '—', q2: '—', q3: '—', q4: '—', portal: 'N/A' },
   { state: 'New York', abbr: 'NY', rate: '6.85%', q1: 'April 15', q2: 'June 15', q3: 'Sept 15', q4: 'Jan 15', portal: 'tax.ny.gov' },
